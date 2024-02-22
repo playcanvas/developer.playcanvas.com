@@ -29,7 +29,7 @@ The game has 3 phases:
 2. Title Screen and Character Customization
 3. Main Game
 
-![Virtual Voodoo Phases][3]
+![Virtual Voodoo Phases](/images/user-manual/optimization/loading/virtual-voodoo-phases.jpg)
 
 The Preloader phase loads the assets that are needed for the first PlayCanvas scene which is the Title Screen and Character Customization. This would include assets for the UI, character model and assets.
 
@@ -37,7 +37,7 @@ When the Title Screen is active, the game starts background loading the assets t
 
 However, if the user presses the start button before the assets have finished loading, a progress bar will appear on the button instead. Once it reaches 100%, the game will automatically transition to the Main Game.
 
-![Virtual Voodoo Assets Not Ready][4]
+![Virtual Voodoo Assets Not Ready](/images/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif)
 
 With the assets being loaded in phases and giving something new for the user to interact with and/or look at periodically, the user stays engaged despite a long loading time.
 
@@ -49,10 +49,7 @@ If the game allows, using common placeholders while the more detailed assets are
 
 An example below is using a silhouette of a character as the placeholder until it has fully loaded. The silhouette placeholder is small in file size so it can be part of a preload sequence and also can be reused for other characters in the application.
 
-![Lazy Load Character][5]
+![Lazy Load Character](/images/user-manual/optimization/loading/character-load.gif)
 
 [1]: /user-manual/templates/#when-do-i-need-to-load-template-assets
 [2]: https://playcanv.as/p/tRUfwVg1/
-[3]: /images/user-manual/optimization/loading/virtual-voodoo-phases.jpg
-[4]: /images/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif
-[5]: /images/user-manual/optimization/loading/character-load.gif

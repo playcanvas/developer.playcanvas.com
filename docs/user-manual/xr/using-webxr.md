@@ -97,7 +97,7 @@ app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
 
 When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of the camera, you should add a parent entity to your camera and apply your manipulations to that entity.
 
-![Camera Offset][1]
+![Camera Offset](/images/user-manual/xr/using-webxr/camera-offset.jpg)
 
 Position, orientation and rays of different XR objects: input sources, tracked meshes, tracked planes, tracked images, and others, are provided in world space.
 
@@ -105,6 +105,5 @@ Position, orientation and rays of different XR objects: input sources, tracked m
 
 Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason, there is no way to enter XR immediately on loading a page.
 
-[1]: /images/user-manual/xr/using-webxr/camera-offset.jpg
 [2]: https://api.playcanvas.com/classes/Engine.XrManager.html
 [3]: https://immersive-web.github.io/layers/

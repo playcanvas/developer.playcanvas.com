@@ -19,7 +19,7 @@ The aforementioned frameworks are external and have separate licensing, availabl
 
 When using PlayCanvas’ built-in AR support, the scene’s primary camera’s clear color must be transparent, as so:
 
-![Transparent Clear Color][5]
+![Transparent Clear Color](/images/user-manual/xr/ar/transparent-clear-color.png)
 
 To start an AR session, device support and availability should also be checked first. Then, on user interaction, such as a button click or other input, an AR session can be started:
 
@@ -50,4 +50,3 @@ PlayCanvas provides several ‘Starter Kit’ projects to help you and your AR e
 [2]: https://webkit.org/status/#specification-webxr
 [3]: /user-manual/xr/ar/8th-wall-integration/
 [4]: /user-manual/xr/ar/zappar-integration/
-[5]: /images/user-manual/xr/ar/transparent-clear-color.png

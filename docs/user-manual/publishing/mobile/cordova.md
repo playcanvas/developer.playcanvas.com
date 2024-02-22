@@ -91,7 +91,7 @@ cordova run ios
 
 Once the executable has been generated in the build process, Simulator will start and load it. You should see something like the following:
 
-![Master Archer in Simulator][11]
+![Master Archer in Simulator](/images/user-manual/publishing/cordova/simulator-master-archer.png)
 
 To run on a physical device:
 
@@ -100,11 +100,11 @@ To run on a physical device:
 3. Navigate to the Signing & Capabilities settings for your project's Target and select a valid Team so that your app can be digitally signed before being deployed to your device.
 4. Select your iOS device in Xcode's Scheme drop-down list.
 
-![Xcode Scheme drop-down][12]
+![Xcode Scheme drop-down](/images/user-manual/publishing/cordova/xcode-scheme.png)
 
 5. Press the Run button to build, deploy and run the application on your device.
 
-![Xcode Run button][13]
+![Xcode Run button](/images/user-manual/publishing/cordova/xcode-run.png)
 
 Once you are happy with your app, you can ship it to [App Store Connect][14].
 
@@ -118,9 +118,6 @@ Once you are happy with your app, you can ship it to [App Store Connect][14].
 [8]: /user-manual/api/app-download/
 [9]: https://apps.apple.com/us/app/xcode/id497799835?mt=12
 [10]: https://cordova.apache.org/announcements/2020/06/01/cordova-ios-release-6.0.0.html
-[11]: /images/user-manual/publishing/cordova/simulator-master-archer.png
-[12]: /images/user-manual/publishing/cordova/xcode-scheme.png
-[13]: /images/user-manual/publishing/cordova/xcode-run.png
 [14]: https://developer.apple.com/app-store-connect/
 [rest-api-tools-readme]: https://github.com/playcanvas/playcanvas-rest-api-tools#cordova-publish
 [rest-api-tools-setup]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup

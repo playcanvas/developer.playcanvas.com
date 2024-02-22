@@ -6,7 +6,7 @@ A Sprite is a 2D graphic that can be rendered into Scene. A Sprite Asset is a re
 
 ## Properties
 
-![Sprites][3]
+![Sprites](/images/user-manual/assets/sprites/sprites.jpg)
 
 ### Pixels Per Unit
 
@@ -26,4 +26,3 @@ The Texture Atlas asset that the sprite references
 
 [1]: /user-manual/assets/types/texture-atlas
 [2]: /user-manual/2D/slicing
-[3]: /images/user-manual/assets/sprites/sprites.jpg

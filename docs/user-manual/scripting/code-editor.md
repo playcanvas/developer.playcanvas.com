@@ -9,13 +9,13 @@ The Code Editor is an online real-time collaborative editor that allows you to e
 
 You can open the Code Editor from inside the [PlayCanvas Editor][2] by pressing Ctrl + I. You can also click on this toolbar icon:
 
-![Code Editor Toolbar][1]
+![Code Editor Toolbar](/images/user-manual/scripting/code-editor-toolbar.png)
 
 Alternatively you can double click on a text-based asset like a Script to open the Code Editor focused on that asset.
 
 ## Interface
 
-![Code Editor][3]
+![Code Editor](/images/user-manual/scripting/code-editor.png)
 
 ### Menu
 
@@ -98,7 +98,7 @@ You can also find a term by searching in all your assets. To do this hit Ctrl + 
 
 On the left side of the input fields there are various search options. These allow you to search using a regular expression, do a case-sensitive search or search for whole words. If you would like to learn and experiment more with regex, then [RegExr][10] is great site with cheat sheets, examples and an online editor for testing regex expressions.
 
-![Find in Files][6]
+![Find in Files](/images/user-manual/scripting/find-in-files-results.png)
 
 You can double click on a line in the search results to go that particular line in the asset.
 
@@ -106,13 +106,13 @@ You can double click on a line in the search results to go that particular line 
 
 You can quickly open an asset by hitting Ctrl + P (or Cmd + P on Mac) which will open a panel where you can search for the asset by its name. Start typing the name of the asset and the panel will perform a fuzzy search to find the asset you are looking for. Hit Enter to open the selected asset.
 
-![Go to Anything][11]
+![Go to Anything](/images/user-manual/scripting/go-to-anything.gif)
 
 ## Preferences
 
 You can edit your preferences by clicking on Edit -> Preferences. Here you can change the font size for the text editor and also edit other editor related options.
 
-![Preferences][12]
+![Preferences](/images/user-manual/scripting/preferences.png)
 
 ## Extra Tips
 
@@ -120,31 +120,23 @@ You can edit your preferences by clicking on Edit -> Preferences. Here you can c
 
 Highlighting a word in the code editor will highlight all other matches in the file which makes it easier to check where a variable or function is being used.
 
-![Quick Searching][7]
+![Quick Searching](/images/user-manual/scripting/code-editor-quick-searching.gif)
 
 ### Multiple Selection Editing
 
 Holding down Alt and clicking left mouse button will add another cursor to the editor. This allows you to quickly make the same changes in multiple areas of the file.
 
-![Multiple Selection Editing][8]
+![Multiple Selection Editing](/images/user-manual/scripting/code-editor-multiple-selection.gif)
 
 ### Rectangular Selection
 
 Holding down Alt + Shift and dragging left mouse button will create a rectangular selection which is useful for selecting and editing columns of text.
 
-![Rectangular Selection][9]
+![Rectangular Selection](/images/user-manual/scripting/code-editor-rectangular-selection.gif)
 
-[1]: /images/user-manual/scripting/code-editor-toolbar.png
 [2]: /user-manual/editor/
-[3]: /images/user-manual/scripting/code-editor.png
 [4]: https://github.com/Microsoft/monaco-editor
-[6]: /images/user-manual/scripting/find-in-files-results.png
-[7]: /images/user-manual/scripting/code-editor-quick-searching.gif
-[8]: /images/user-manual/scripting/code-editor-multiple-selection.gif
-[9]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
 [10]: https://regexr.com/
-[11]: /images/user-manual/scripting/go-to-anything.gif
-[12]: /images/user-manual/scripting/preferences.png
 [13]: https://jshint.com/
 [14]: https://jshint.com/docs/
 [command-palette]: /images/user-manual/scripting/command-palette.png

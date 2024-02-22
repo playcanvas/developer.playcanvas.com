@@ -5,11 +5,11 @@ sidebar_position: 7
 
 Generally all scripts are loaded at the beginning of your application. The loading order is determined by a setting in your project which you can access from the main Editor menu or Scene Settings
 
-![Loading Order][1]
+![Loading Order](/images/user-manual/scripting/script-loading-order.jpg)
 
 The loading order panel shows all your scripts that marked as `preload` and the order that they are loaded and executed in.
 
-![Loading Order List][2]
+![Loading Order List](/images/user-manual/scripting/loading-order-list.jpg)
 
 You can drag to move individual scripts around in order.
 
@@ -30,6 +30,3 @@ this.app.scripts.on('add', function(name, scriptType) {
 ## Concatenation
 
 By default when you publish or export your application all preloaded scripts are concatenated into a single script file. This optimizes the loading by reducing the number of requests that are needed to load all your scripts.
-
-[1]: /images/user-manual/scripting/script-loading-order.jpg
-[2]: /images/user-manual/scripting/loading-order-list.jpg

@@ -34,5 +34,3 @@ Here you can add or remove other users to your Project and change their permissi
 ## Delete Project
 
 Press the DELETE button to permanently delete your project. Note that this action cannot be undone.
-
-

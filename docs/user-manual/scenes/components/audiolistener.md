@@ -6,12 +6,11 @@ The Audio Listener component specifies the listener's position in 3D space. All 
 
 The Audio Listener component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will act as the listener position for 3D sound effects.
 
-![Audio Listener component][1]
+![Audio Listener component](/images/user-manual/scenes/components/component-audiolistener.png)
 
 ## Scripting Interface
 
 You can control an Audio Listener component's properties using a [script component][2]. The Audio Listener component's scripting interface is [here][3].
 
-[1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.AudioListenerComponent.html

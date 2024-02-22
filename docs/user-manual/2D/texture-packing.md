@@ -68,4 +68,3 @@ When updating the texture atlas later in development, as long as the sprite file
 [texture-packer-online-steps]: /images/user-manual/2D/texture-packer/texture-packer-online-steps.png
 [texture-packer-tool-steps]: /images/user-manual/2D/texture-packer/texture-packer-tool-steps.png
 [playcanvas-sprite-editor]: /images/user-manual/2D/texture-packer/playcanvas-sprite-editor.png
-

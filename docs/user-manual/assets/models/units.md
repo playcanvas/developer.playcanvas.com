@@ -11,13 +11,10 @@ When authoring artwork for PlayCanvas, it is important to ensure you do so to th
 
 To check or set working units in 3D Studio Max, open the Units Setup dialog and click the System Unit Setup button:
 
-![3DS Max units][1]
+![3DS Max units](/images/user-manual/assets/models/units/max-units.png)
 
 ### Autodesk Maya
 
 To check or set working units in Maya, open the Preferences dialog:
 
-![Maya units][2]
-
-[1]: /images/user-manual/assets/models/units/max-units.png
-[2]: /images/user-manual/assets/models/units/maya-units.png
+![Maya units](/images/user-manual/assets/models/units/maya-units.png)

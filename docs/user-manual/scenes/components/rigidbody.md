@@ -8,15 +8,15 @@ The Rigid Body component can be enabled or disabled using the toggle in the top 
 
 #### Static
 
-![Rigid Body component (Static)][1]
+![Rigid Body component (Static)](/images/user-manual/scenes/components/component-rigid-body-static.png)
 
 #### Dynamic (and Kinematic)
 
-![Rigid Body component (Dynamic)][2]
+![Rigid Body component (Dynamic)](/images/user-manual/scenes/components/component-rigid-body-dynamic.png)
 
 #### Kinematic
 
-![Rigid Body component (Kinematic)][3]
+![Rigid Body component (Kinematic)](/images/user-manual/scenes/components/component-rigid-body-kinematic.png)
 
 Note that you must add a [collision component][4] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
 
@@ -37,9 +37,6 @@ Note that you must add a [collision component][4] to the same entity in order to
 
 You can control a Rigid Body component's properties using a [script component][5]. The Rigid Body component's scripting interface is [here][6].
 
-[1]: /images/user-manual/scenes/components/component-rigid-body-static.png
-[2]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
-[3]: /images/user-manual/scenes/components/component-rigid-body-kinematic.png
 [4]: /user-manual/scenes/components/collision/
 [5]: /user-manual/scenes/components/script
 [6]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html

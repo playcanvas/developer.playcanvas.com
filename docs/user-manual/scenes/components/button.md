@@ -18,7 +18,7 @@ The Button Component can be used in two Transition Modes. *Sprite Swap*, which u
 
 ## Sprite Swap Properties
 
-![Sprite Swap Button][3]
+![Sprite Swap Button](/images/user-manual/scenes/components/component-button-sprite-change.png)
 
 | Property        | Description |
 |-----------------|-------------|
@@ -31,7 +31,7 @@ The Button Component can be used in two Transition Modes. *Sprite Swap*, which u
 
 ## Tint Properties
 
-![Tint Button][4]
+![Tint Button](/images/user-manual/scenes/components/component-button-tint.png)
 
 | Property      | Description |
 |---------------|-------------|
@@ -46,7 +46,5 @@ You can control the properties of a Button component using a [script component][
 
 [1]: /user-manual/scenes/components/screen
 [2]: /user-manual/scenes/components/element
-[3]: /images/user-manual/scenes/components/component-button-sprite-change.png
-[4]: /images/user-manual/scenes/components/component-button-tint.png
 [5]: /user-manual/scenes/components/script
 [6]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html

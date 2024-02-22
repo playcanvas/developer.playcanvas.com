@@ -5,7 +5,7 @@ sidebar_position: 6
 
 The Preview Pane displays the currently selected graph or material and supports various lighting environments and shapes.
 
-![Preview Pane][1]
+![Preview Pane](/images/shader-editor/preview-pane.png)
 
 | How To |  |
 |---|---|
@@ -19,7 +19,7 @@ The Preview Pane displays the currently selected graph or material and supports 
 
 The toolbar offers control over the lighting environment and preview shape. The toolbar is shown below with the controls numbered and brief description of each.
 
-![Preview Pane Toolbar][2]
+![Preview Pane Toolbar](/images/shader-editor/preview-pane-toolbar.png)
 
 | Controls | |
 |---|---|
@@ -40,6 +40,3 @@ To use a custom lighting environment, drag and drop an HDR image file, in equire
 The Preview Pane comes with a set of simple shapes on which to preview materials, however custom shapes are also supported.
 
 To use a custom shape, drag and drop a glTF or glb model file onto the Preview Pane. The custom model will be an option in the toolbar shape selector.
-
-[1]: /images/shader-editor/preview-pane.png
-[2]: /images/shader-editor/preview-pane-toolbar.png

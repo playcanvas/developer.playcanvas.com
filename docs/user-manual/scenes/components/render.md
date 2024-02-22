@@ -6,7 +6,7 @@ The render component enables an entity to render a primitive shape or a render a
 
 The render component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the mesh instances referenced by the component will be added to the scene and rendered.
 
-![Render component][1]
+![Render component](/images/user-manual/scenes/components/component-render.png)
 
 ## Properties
 
@@ -27,6 +27,5 @@ The render component can be enabled or disabled using the toggle in the top righ
 
 You can control a render component's properties using a [script component][2]. The render component's scripting interface is [here][3].
 
-[1]: /images/user-manual/scenes/components/component-render.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.RenderComponent.html

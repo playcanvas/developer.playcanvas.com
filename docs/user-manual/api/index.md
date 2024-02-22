@@ -13,21 +13,21 @@ The REST API is currently in beta. This means we may change certain endpoints an
 
 You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page.
 
-![Account Tab][4]
+![Account Tab](/images/user-manual/api/account-tab.png)
 
 In the API Tokens section click on Generate Token.
 
-![Generate Token][1]
+![Generate Token](/images/user-manual/api/generate-token.png)
 
 Give your token a name and click the button to create your new token. A new window will appear showing you your new access token.
 
 Make sure you note that down because you will not be able to see the token once you close this window. This token is meant to be kept secret so do not share it with anyone other than your team (for example do not post this on forums).
 
-![New Token][2]
+![New Token](/images/user-manual/api/new-token.png)
 
 From your Account page you can also Revoke all the tokens you have generated or a specific one. You can also edit the name of a token.
 
-![Remove Token][3]
+![Remove Token](/images/user-manual/api/remove-token.png)
 
 When you make calls to the API you must set the 'Authorization' header in your HTTP request to this value:
 
@@ -53,19 +53,19 @@ There are several common parameters that are used in each endpoint:
 
 This can be found in the URL on the project overview page.
 
-![Project ID][6]
+![Project ID](/images/user-manual/api/project-id.png)
 
 ### scenes {#scenes}
 
 When opening a scene in the Editor, the scene id is in the URL.
 
-![Scene ID][7]
+![Scene ID](/images/user-manual/api/scene-id.png)
 
 ### branch_id {#branch_id}
 
 This is found in the [version control][5] panel and can be selected and copied.
 
-![Branch ID][8]
+![Branch ID](/images/user-manual/api/branch-id.png)
 
 ## Response Format {#response-format}
 
@@ -143,11 +143,4 @@ The response will contain the following headers to help you regulate how often y
 
 If you exceed the rate limit you will get a `429 Too Many Requests` status code. You will have to wait for the current window to reset in order to continue making requests.
 
-[1]: /images/user-manual/api/generate-token.png
-[2]: /images/user-manual/api/new-token.png
-[3]: /images/user-manual/api/remove-token.png
-[4]: /images/user-manual/api/account-tab.png
 [5]: /user-manual/version-control/
-[6]: /images/user-manual/api/project-id.png
-[7]: /images/user-manual/api/scene-id.png
-[8]: /images/user-manual/api/branch-id.png

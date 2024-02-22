@@ -30,15 +30,15 @@ In order to host your application independently of PlayCanvas' servers, do the f
 * Go to your Project and open the Editor.
 * Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
 
-![Publish Button][3]
+![Publish Button](/images/user-manual/publishing/toolbar-publish.png)
 
 * This will open up the Publishing Dialog.
 
-![Publish][4]
+![Publish](/images/user-manual/publishing/dialog-publish.png)
 
 * Click the DOWNLOAD .ZIP button
 
-![Download][5]
+![Download](/images/user-manual/publishing/dialog-publish-download.png)
 
 * Enter a name for your export. This will be the name of the .zip file that will be created for you.
 * Select the Scenes you want to include in your export from the list. Notice that the Scene with the active banner icon will be the first scene loaded when your app is launched.
@@ -67,9 +67,6 @@ There are many options for running a web server. Here are a few:
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 [2]: /user-manual/publishing/web/playcanvas-hosting
-[3]: /images/user-manual/publishing/toolbar-publish.png
-[4]: /images/user-manual/publishing/dialog-publish.png
-[5]: /images/user-manual/publishing/dialog-publish-download.png
 [6]: https://www.python.org/
 [7]: https://www.apachefriends.org/index.html
 [8]: https://httpd.apache.org/

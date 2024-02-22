@@ -33,11 +33,11 @@ MyScript.attributes.add('names', {
 
 ## Getting Attributes into Editor
 
-![Script Attributes][1]
+![Script Attributes](/images/user-manual/scripting/script-attributes.png)
 
 Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse button.
 
-![Parse Button][2]
+![Parse Button](/images/user-manual/scripting/script-parse-button.png)
 
 ## Accessing attributes in your code
 
@@ -179,6 +179,4 @@ We currently do not support defining JSON attributes as children of other JSON a
 
 :::
 
-[1]: /images/user-manual/scripting/script-attributes.png
-[2]: /images/user-manual/scripting/script-parse-button.png
 [3]: https://api.playcanvas.com/classes/Engine.ScriptAttributes.html

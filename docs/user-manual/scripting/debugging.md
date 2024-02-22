@@ -11,11 +11,11 @@ Chrome, Firefox and other browsers have Developer Tools integrated directly into
 
 In order to debug your scripts, select the Sources tab in Developer Tools (Chrome). Open the 'navigator' by clicking the icon in the top left corner of the Sources pane. You should see something similar to what is shown below:
 
-![Debugger][1]
+![Debugger](/images/user-manual/scripting/debugging/chrome-debugger.png)
 
 In Firefox it looks like this:
 
-![Firefox][2]
+![Firefox](/images/user-manual/scripting/debugging/firefox-debugger.png)
 
 The navigator lists all of the scripts currently running in the active tab, including any PlayCanvas scripts that you have written. Find one of your scripts in the navigator and select it to open the source code. You are now able to set breakpoints and debug.
 
@@ -38,8 +38,6 @@ In the situation where either it's not possible to connect to the web view direc
 * [RemoteJS][9] - Allows developers to view the console output remotely in a desktop browser and also execute JS in the console which makes it very powerful. The console output can be delayed or slow though.
 * [vConsole][10] or [Eruda][11] - Adds a widget DOM object to the page that can be expanded to show console output, network requests, the page elements and more.
 
-[1]: /images/user-manual/scripting/debugging/chrome-debugger.png
-[2]: /images/user-manual/scripting/debugging/firefox-debugger.png
 [3]: https://developer.chrome.com/docs/devtools/javascript/
 [4]: https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html
 [5]: https://developer.apple.com/safari/tools/

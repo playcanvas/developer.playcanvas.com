@@ -11,7 +11,7 @@ The Layout Group Component can be used to generate common layouts, for example, 
 
 Add a Layout Group by adding the LayoutGroup Component to an existing Element Entity.
 
-![Create Layout Group][1]
+![Create Layout Group](/images/user-manual/user-interface/layout-groups/create-layout-group.jpg)
 
 ## Layout Group Properties {#layout-group-properties}
 
@@ -63,47 +63,38 @@ The wrap property causes children that are outside of the width (for vertical gr
 
 A Layout Group applies its rules to all of its direct children. If you want to override these rules for a specific child you can do that by adding a LayoutChild Component to that child.
 
-![Layout Child][8]
+![Layout Child](/images/user-manual/user-interface/layout-groups/layout-child-max-width.jpg)
 
 In this example, the horizontal layout is using the **Stretch** width fitting to stretch each button to fit evenly into the container. The center button has a Layout Child Component with a `maxWidth` value set to 64, so it will not be stretched.
 
-![Layout Child Setup][9]
+![Layout Child Setup](/images/user-manual/user-interface/layout-groups/layout-child-setup.jpg)
 
 ## Example Layouts {#example-layouts}
 
 ### Vertical Leaderboard {#vertical-leaderboard}
 
-![Leaderboard][2]
+![Leaderboard](/images/user-manual/user-interface/layout-groups/leaderboard.jpg)
 
 This Leaderboard is setup as vertical column aligned to the top center. We're using the Width Fitting property to stretch each item to be the full width. And using the Padding and Spacing properties to leave clear gaps between the cells.
 
-![Leaderboard Setup][3]
+![Leaderboard Setup](/images/user-manual/user-interface/layout-groups/leaderboard-setup.jpg)
 
 ### Horizontal Buttons {#horizontal-buttons}
 
-![Horizontal Buttons][4]
+![Horizontal Buttons](/images/user-manual/user-interface/layout-groups/horizontal-layout.jpg)
 
 This row of buttons is laid out using a Horizontal Layout Group with some Spacing and Padding settings to make the buttons fit the correct width. No width or height fitting is used.
 
-![Horizontal Setup][5]
+![Horizontal Setup](/images/user-manual/user-interface/layout-groups/horizontal-setup.jpg)
 
 ### Grid {#grid}
 
-![Grid][6]
+![Grid](/images/user-manual/user-interface/layout-groups/grid-layout.jpg)
 
 This row of buttons is laid out using a Layout Group with the Wrap setting enabled to set up a grid. The Group Element the Layout Group is attached to is set to the correct width (button width + spacing) to force the wrap to generate a two column grid. The Horizontal layout means that the grid fills in rows not columns and the Alignment property is set to `[0.5, 1]` which means that any "loose" elements (a row with only one element) will be centered in the X axis.
 
-![Setup][7]
+![Setup](/images/user-manual/user-interface/layout-groups/grid-setup.jpg)
 
-[1]: /images/user-manual/user-interface/layout-groups/create-layout-group.jpg
-[2]: /images/user-manual/user-interface/layout-groups/leaderboard.jpg
-[3]: /images/user-manual/user-interface/layout-groups/leaderboard-setup.jpg
-[4]: /images/user-manual/user-interface/layout-groups/horizontal-layout.jpg
-[5]: /images/user-manual/user-interface/layout-groups/horizontal-setup.jpg
-[6]: /images/user-manual/user-interface/layout-groups/grid-layout.jpg
-[7]: /images/user-manual/user-interface/layout-groups/grid-setup.jpg
-[8]: /images/user-manual/user-interface/layout-groups/layout-child-max-width.jpg
-[9]: /images/user-manual/user-interface/layout-groups/layout-child-setup.jpg
 [10]: /user-manual/user-interface/layout-groups#grid
 [11]: /user-manual/user-interface/layout-groups#vertical-leaderboard
 [12]: /user-manual/user-interface/layout-groups#horizontal-buttons

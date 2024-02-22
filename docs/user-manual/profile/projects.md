@@ -5,7 +5,7 @@ sidebar_position: 2
 
 The Projects tab lists all the projects you have created or have been granted access to.
 
-![projects_page][1]
+![projects_page](/images/user-manual/profile/profile.png "Projects")
 
 ## New Project {#new-project}
 
@@ -25,17 +25,17 @@ If you have an Organization account another way to unlock projects is by purchas
 
 If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership.
 
-![transfer-ownership-menu][4]
+![transfer-ownership-menu](/images/user-manual/profile/projects/transfer-ownership-menu.png)
 
 A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to.
 
-![transfer-ownership-dialog][5]
+![transfer-ownership-dialog](/images/user-manual/profile/projects/transfer-ownership-dialog.png)
 
 Enter the username and click FIND or press Enter. Then click TRANSFER.
 
 The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list.
 
-![transfer-ownership-accept][6]
+![transfer-ownership-accept](/images/user-manual/profile/projects/transfer-ownership-accept.png)
 
 If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
 
@@ -57,7 +57,7 @@ There are two methods to create an offline backup archive of a project:
 
 #### From the Projects List {#from-the-projects-list}
 
-![export-archive][2]
+![export-archive](/images/user-manual/profile/projects/export-archive-button.jpg)
 
 You can export a .zip archive of your project to keep an offline backup. You can later choose to import that .zip archive as a new project.
 
@@ -73,18 +73,12 @@ We've written a [Node-based open source tool][9] to make this process easier for
 
 ### Restoring a Project from an Archive File {#restoring-a-project-from-an-archive-file}
 
-![import-archive][3]
+![import-archive](/images/user-manual/profile/projects/import-archive-button.jpg)
 
 With an archive zip file created from one of the methods in '[Backing Up a Project to an Archive File](#backing-up-a-project-to-an-archive-file)', you can import it as a new project on PlayCanvas.
 
 Click on 'Import Project' on the left hand side of the Projects page and select the zip file to import it.
 
-[1]: /images/user-manual/profile/profile.png "Projects"
-[2]: /images/user-manual/profile/projects/export-archive-button.jpg
-[3]: /images/user-manual/profile/projects/import-archive-button.jpg
-[4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
-[5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
-[6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
 [7]: /user-manual/dashboard/header/
 [8]: /user-manual/api/project-archive/
 [9]: https://github.com/playcanvas/playcanvas-rest-api-tools#archiving-a-project

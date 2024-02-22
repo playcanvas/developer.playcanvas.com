@@ -12,7 +12,7 @@ The Model component enables an entity to render a primitive shape or a model ass
 
 The Model component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the model will be added to the scene and rendered.
 
-![Model component][1]
+![Model component](/images/user-manual/scenes/components/component-model.png)
 
 ## Properties
 
@@ -35,7 +35,6 @@ You can control a Model component's properties using a [script component][2]. Th
 
 You can learn how to customize the materials of your model [here][4].
 
-[1]: /images/user-manual/scenes/components/component-model.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.ModelComponent.html
 [4]: /user-manual/assets/types/material/#assigning-materials

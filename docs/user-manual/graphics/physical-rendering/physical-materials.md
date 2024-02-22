@@ -15,7 +15,7 @@ First a note about Cubemaps and Workflows
 
 ## Metalness and Specular Workflow
 
-![Workflows][4]
+![Workflows](/images/user-manual/graphics/physical-rendering/workflows.jpg)
 
 PBR is often split into two different methods of building assets or workflows. The two workflows are equivalent and offer the same results. It is really down to your preference as to which you choose. At PlayCanvas we usually choose the "metalness" flow as we find the metalness map simpler to create and is as it is only a single channel it is usually more efficient.
 
@@ -41,7 +41,7 @@ It can also be known as **albedo** or **base color**.
 
 You can often find the charts of recorded values for diffuse/albedo values on the internet.
 
-![Metals][3]
+![Metals](/images/user-manual/graphics/physical-rendering/metals.jpg)
 
 | Material | RGB                                      |
 |----------|------------------------------------------|
@@ -89,7 +89,5 @@ There are many other additional properties to investigate that can be used to ma
 
 [1]: https://store.playcanvas.com
 [2]: /user-manual/glossary#high-dynamic-range
-[3]: /images/user-manual/graphics/physical-rendering/metals.jpg
-[4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
 [5]: https://marmoset.co/posts/pbr-texture-conversion/
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/

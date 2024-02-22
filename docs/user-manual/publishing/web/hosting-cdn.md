@@ -11,7 +11,7 @@ The first step is to download a web build of your application following the step
 
 The simplest change to make is to load all assets from a different location. This is done by setting the `ASSET_PREFIX` property in your `__settings__.js`.
 
-![settings.js][2]
+![settings.js](/images/user-manual/publishing/web/cdn-settings-assets-prefix.png)
 
 The `ASSET_PREFIX` will be prepended to all request that are made for an asset (including a scene) both during the preload phase and during runtime. For example, you should set this to the root folder of your CDN asset store.  In the above example, previously an asset that would had a URL like `files/123456/1/texture.jpg` will now be loaded from `http://keepy-up-cdn.example.com/files/123456/1/texture.jpg`.
 
@@ -19,11 +19,11 @@ The `ASSET_PREFIX` will be prepended to all request that are made for an asset (
 
 There are a few remaining files that are referenced directly by the `index.html`. In particular, the style sheet, the PlayCanvas javascript engine, the `__settings__.js`, `__loading__.js` and `__start__.js` application scripts. Update your index.html as seen below.
 
-![index.html][3]
+![index.html](/images/user-manual/publishing/web/cdn-index.png)
 
 In `__settings__.js`, the path to the application settings `config.json` would need to be changed as well. Update
 
-![settings.js][6]
+![settings.js](/images/user-manual/publishing/web/cdn-settings-config-prefix.png)
 
 ## Copy Files to CDN
 
@@ -40,7 +40,7 @@ And these files are referenced by the index.html:
 - `__start__.js`
 - `styles.css`
 
-![CDN files][4]
+![CDN files](/images/user-manual/publishing/web/cdn-files.png)
 
 You should copy all these files onto your CDN hosting service.
 
@@ -51,8 +51,4 @@ Your application is now ready to load files from a separate server. The final st
 Setting up CORS is different depending on which CDN or server you are using. You will need to check the documentation of your server or CDN provider to find out how to set up CORS header. For example, the page for Amazon Web Services CORS settings is [here][5]
 
 [1]: /user-manual/publishing/web/self-hosting
-[2]: /images/user-manual/publishing/web/cdn-settings-assets-prefix.png
-[3]: /images/user-manual/publishing/web/cdn-index.png
-[4]: /images/user-manual/publishing/web/cdn-files.png
 [5]: https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html
-[6]: /images/user-manual/publishing/web/cdn-settings-config-prefix.png

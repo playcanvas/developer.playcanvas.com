@@ -7,11 +7,11 @@ The Sprite Editor is used to edit both Texture Atlas assets and Sprite assets. I
 
 To open the Sprite Editor, double-click on any Texture Atlas or Sprite asset in the Editor asset panel.
 
-![Sprite Editor][1]
+![Sprite Editor](/images/user-manual/2D/sprite-editor/sprite-editor-highlights.jpg)
 
 ## Viewport
 
-![Viewport][2]
+![Viewport](/images/user-manual/2D/sprite-editor/viewport.jpg)
 
 The viewport in the Sprite Editor shows the currently selected Texture Atlas. Frames are shown as grey boxes on the texture atlas. The currently selected asset is shown with two sets of handles. green and blue. Green handles modify the frame's width and height, blue handles modify the frame's border property.
 
@@ -29,7 +29,7 @@ The inspector panel shows the properties of the currently selected item. The ins
 
 ### Texture Atlas Inspector
 
-![Texture Atlas Inspector][3]
+![Texture Atlas Inspector](/images/user-manual/2D/sprite-editor/texture-atlas-inspector.jpg)
 
 The Texture Atlas Inspector allows you to automatically slice a texture atlas into a fixed grid.
 
@@ -48,7 +48,7 @@ Once all your settings are chose, click the **Generate Frames** button to create
 
 ### Frame Inspector
 
-![Frame Inspector][4]
+![Frame Inspector](/images/user-manual/2D/sprite-editor/frame-inspector.jpg)
 
 The Frame Inspector lets you set the properties for an individual frame or group of frames. It is visible when you select one or more Frames. The Frame Inspector is also where you create a new Sprite from.
 
@@ -67,7 +67,7 @@ Create a new Sprite Asset and assign the frames that you have selected to the Sp
 
 ### Sprite Inspector
 
-![Sprite Inspector][5]
+![Sprite Inspector](/images/user-manual/2D/sprite-editor/sprite-inspector.jpg)
 
 The Sprite Inspector is visible when a Sprite Asset is selected. This inspector is used to edit the properties of one or more Sprites. See the [Sprite Asset][6] for more details on the properties.
 
@@ -85,10 +85,5 @@ The Asset Panel shows you all the Sprite Assets that have been created from the 
 
 *Artwork created by [PixelBoy](https://twitter.com/2pblog1)*
 
-[1]: /images/user-manual/2D/sprite-editor/sprite-editor-highlights.jpg
-[2]: /images/user-manual/2D/sprite-editor/viewport.jpg
-[3]: /images/user-manual/2D/sprite-editor/texture-atlas-inspector.jpg
-[4]: /images/user-manual/2D/sprite-editor/frame-inspector.jpg
-[5]: /images/user-manual/2D/sprite-editor/sprite-inspector.jpg
 [6]: /user-manual/assets/types/sprite/
 [7]: /user-manual/2D/slicing/

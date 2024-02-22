@@ -5,7 +5,7 @@ sidebar_position: 2
 
 Shader Editor supports many types of nodes, but they all have the following structure:
 
-![Graph Editor Node][1]
+![Graph Editor Node](/images/shader-editor/graph-editor-node.png)
 
 | Node structure | |
 |---|---|
@@ -22,5 +22,3 @@ Based on this, we can identify three categories of nodes:
 - Input nodes - these have output ports, but no input ports.
 - Output nodes - these have input ports, but no output ports.
 - Transform nodes - these have both input ports and output ports.
-
-[1]: /images/shader-editor/graph-editor-node.png

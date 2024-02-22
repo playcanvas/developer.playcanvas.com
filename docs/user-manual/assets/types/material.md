@@ -16,13 +16,13 @@ Materials are imported automatically when you upload a 3D model (e.g. FBX or COL
 
 You can create new materials directly from the PlayCanvas Editor interface.
 
-![Create Material][1]
+![Create Material](/images/user-manual/assets/materials/create-asset-menu.jpg)
 
 This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
 
 ## Selecting a Material {#selecting-a-material}
 
-![Model Inspector][2]
+![Model Inspector](/images/user-manual/assets/materials/model-inspector-simple.jpg)
 
 In order to edit a material, first you must select it. This will bring up the material inspector.
 
@@ -32,13 +32,13 @@ Generally, clicking on a material preview icon will take you to the material ins
 
 ## Assigning Materials {#assigning-materials}
 
-![Model Component][3]
+![Model Component](/images/user-manual/assets/materials/model.png)
 
 You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
 
 When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials.
 
-![Model Inspector Free Slot][4]
+![Model Inspector Free Slot](/images/user-manual/assets/materials/model-inspector-free-slot.jpg)
 
 Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
 
@@ -46,25 +46,25 @@ You can also drag and drop material Assets from the asset panel onto the materia
 
 Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
 
-![Select Mesh Instance][5]
+![Select Mesh Instance](/images/user-manual/assets/materials/select.png)
 
 After selecting the mesh instance a new material picker will appear in the model component:
 
-![Selected Mesh Instance][6]
+![Selected Mesh Instance](/images/user-manual/assets/materials/selected.png)
 
 Then you can select a different material for this particular Entity:
 
-![Select Different Material][7]
+![Select Different Material](/images/user-manual/assets/materials/overridden.png)
 
 ## Editing a Material {#editing-a-material}
 
-![Material Inspector][8]
+![Material Inspector](/images/user-manual/assets/materials/material-inspector.jpg)
 
 Once you have a material selected you can edit its properties.
 
 ## Material Maps {#material-maps}
 
-![Material Map Slot][11]
+![Material Map Slot](/images/user-manual/assets/materials/material-map-slot.jpg)
 
 Much of editing a material involves creating and assigning textures maps to the various slots detailed on the pages above.
 
@@ -215,13 +215,3 @@ Other Render States gives additional controls over how a mesh is rendered with t
 | Cull            | Options are: <ul><li>None: Both front faces and back faces are rendered.</li><li>Front Faces: front faces are rendered and back faces are not.</li><li>Back Faces: back faces are rendered and front faces are not. This is the default.</li></ul> PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note that backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels. |
 | Blend Type      | Options are: <ul><li>None: The mesh is opaque. This is the default.</li><li>Normal: The mesh is transparent, like stained glass.</li><li>Additive: The mesh color is added to whatever has already been rendered to the frame buffer.</li><li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li><li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.</li></ul> |
 | Shadow Sampling | Options are: <ul><li>Hard</li><li>PCF 3x3</li></ul> |
-
-[1]: /images/user-manual/assets/materials/create-asset-menu.jpg
-[2]: /images/user-manual/assets/materials/model-inspector-simple.jpg
-[3]: /images/user-manual/assets/materials/model.png
-[4]: /images/user-manual/assets/materials/model-inspector-free-slot.jpg
-[5]: /images/user-manual/assets/materials/select.png
-[6]: /images/user-manual/assets/materials/selected.png
-[7]: /images/user-manual/assets/materials/overridden.png
-[8]: /images/user-manual/assets/materials/material-inspector.jpg
-[11]: /images/user-manual/assets/materials/material-map-slot.jpg

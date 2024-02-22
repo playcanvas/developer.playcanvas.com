@@ -2,7 +2,7 @@
 title: Texture Atlas
 ---
 
-![Texture Atlas][1]
+![Texture Atlas](/images/user-manual/assets/texture-atlas/texture-atlas.jpg)
 
 A Texture Atlas asset is a texture asset with additional data which describes 'Frames' inside the texture. Frames are regions defined in the texture as a rectangle with a 'pivot' point which sets the positional and rotational center of the frame.
 
@@ -28,7 +28,6 @@ The Frames of a texture atlas are keyed by a unique value, usually a integer str
 
 In addition to frame data the Texture Atlas contains the properties as a [texture asset][2].
 
-[1]: /images/user-manual/assets/texture-atlas/texture-atlas.jpg
 [2]: /user-manual/assets/types/texture
 [3]: /user-manual/scenes/settings#create-atlases
 [4]: /user-manual/assets/types/sprite

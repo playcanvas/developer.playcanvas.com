@@ -9,7 +9,7 @@ Anim events can be used to trigger event listeners during the playback of an ani
 
 To create a new event, select the animation asset in the asset panel which you'd like to create an event for. You should then see the `+ EVENT` button in the asset inspector as shown below:
 
-![Animation Asset With Event][1]
+![Animation Asset With Event](/images/user-manual/anim/animation_asset_with_events.png)
 
 Each event has the following modifiable properties:
 
@@ -38,5 +38,3 @@ AnimationEvents.prototype.initialize = function() {
 ```
 
 Any number of animation events can be attached to a single animation asset and used by any number of anim components. Making use of the additional `number` and `string` properties of an event allows you to differentiate between events that are passed to the same event listener.
-
-[1]: /images/user-manual/anim/animation_asset_with_events.png

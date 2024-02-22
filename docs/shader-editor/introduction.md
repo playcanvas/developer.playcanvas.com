@@ -12,10 +12,10 @@ Instead of writing shader programs directly, in __Shader Editor__ you construct 
 ### Example
 
 For example, the following effect animates multiple surface normal maps and combines them with special effect lighting:
-![sample effect][1]
+![sample effect](/images/shader-editor/sample-effect.gif)
 
 The effect is made up of various graphs, including the following one. This graph takes care of unpacking the normals in a normal map:
-![sample graph][2]
+![sample graph](/images/shader-editor/sample-graph.png)
 
 __Shader Editor__ will convert this graph into a shader program, which is executed on a GPU at runtime:
 
@@ -37,7 +37,5 @@ Learn more about Shader Editor in general in the [Overview][3] section.
 
 Find out more about the window layout in the [Window Layout][4] section.
 
-[1]: /images/shader-editor/sample-effect.gif
-[2]: /images/shader-editor/sample-graph.png
 [3]: /shader-editor/overview
 [4]: /shader-editor/window-layout

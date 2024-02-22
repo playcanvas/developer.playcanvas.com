@@ -5,17 +5,17 @@ sidebar_position: 1
 
 To create a new script use the Asset Panel and select New Script. You will be asked to enter a name for for your new script file.
 
-![New Script][0]
+![New Script](/images/user-manual/scripting/new-script.png)
 
 Double-click the script asset in the panel to open it in the code editor.
 
-![Code Editor][1]
+![Code Editor](/images/user-manual/scripting/code-editor-new-script.png)
 
 ## Attaching to a script component
 
 The script component is created in the same way as other components. Once you have a script component you can select a script from your asset list.
 
-![Select Script][2]
+![Select Script](/images/user-manual/scripting/select-script.png)
 
 Scripts are shown by their name, when you select a script to add it to a component, the script content is parsed and any attributes that have been declared are exposed in the interface.
 
@@ -41,7 +41,4 @@ To remove a script from a component use the `destroy` method
 entity.script.destroy("rotate");
 ```
 
-[0]: /images/user-manual/scripting/new-script.png
-[1]: /images/user-manual/scripting/code-editor-new-script.png
-[2]: /images/user-manual/scripting/select-script.png
 [3]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#load

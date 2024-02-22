@@ -90,7 +90,7 @@ Often you will find that different languages might require different fonts to be
 
 At runtime when the application switches to a different locale it will load the font Asset you defined for that locale.
 
-![Localized Fonts Inspector][9]
+![Localized Fonts Inspector](/images/user-manual/user-interface/localization/localized-fonts-inspector.gif)
 
 ## Language Notes
 
@@ -112,11 +112,11 @@ Right to left languages will need extra scripts for support that can be found in
 
 In the example project, there is a folder called 'Rtl Support' that needs to [copied and pasted][11] into your project.
 
-![][12]
+![](/images/user-manual/user-interface/localization/rtl-asset-folder.png)
 
 In the folder, there is Script Type called 'RtlElement' which should be added to any Entity with a text element component that would be used to show right to left text.
 
-![][13]
+![](/images/user-manual/user-interface/localization/adding-rtl-script-type.png)
 
 ## Engine
 
@@ -135,8 +135,5 @@ For the complete engine API reference for localization see [this page][2].
 [6]: http://www.thai-language.com/ref/breaking-words
 [7]: https://en.wikipedia.org/wiki/Zero-width_space
 [8]: http://www.thai-language.com/?nav=zwsp
-[9]: /images/user-manual/user-interface/localization/localized-fonts-inspector.gif
 [10]: /tutorials/right-to-left-language-support/
 [11]: /user-manual/editor/assets/#copy-and-paste-between-projects
-[12]: /images/user-manual/user-interface/localization/rtl-asset-folder.png
-[13]: /images/user-manual/user-interface/localization/adding-rtl-script-type.png

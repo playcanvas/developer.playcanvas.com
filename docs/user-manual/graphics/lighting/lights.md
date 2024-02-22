@@ -21,13 +21,13 @@ The most familiar light source to us is the Sun. Because the Sun is so far from 
 
 When unselected, a directional light is represented by the following icon in the Editor's 3D view:
 
-![Directional light icon][1]
+![Directional light icon](/images/user-manual/graphics/lighting/lights/directional_icon.jpg)
 
 Click this icon to select the light in the Hierarchy and Inspector panels.
 
 A directional light lights an object like this:
 
-![Directional light][2]
+![Directional light](/images/user-manual/graphics/lighting/lights/directional.jpg)
 
 ### Omni Lights {#omni-lights}
 
@@ -35,13 +35,13 @@ Omni lights are light sources that emit light in all directions. An example of t
 
 When unselected, a omni light is represented by the following icon in the Editor's 3D view:
 
-![Omni light icon][3]
+![Omni light icon](/images/user-manual/graphics/lighting/lights/point_icon.jpg)
 
 Click this icon to select the light in the Hierarchy and Inspector panels.
 
 An omni light lights an object like this:
 
-![Omni light][4]
+![Omni light](/images/user-manual/graphics/lighting/lights/point.jpg)
 
 ### Spot Lights {#spot-lights}
 
@@ -49,13 +49,13 @@ Spot lights, like omni lights, emit light in all directions. However, the light 
 
 When unselected, a spot light is represented by the following icon in the Editor's 3D view:
 
-![Spot light icon][5]
+![Spot light icon](/images/user-manual/graphics/lighting/lights/spot_icon.jpg)
 
 Click this icon to select the light in the Hierarchy and Inspector panels.
 
 A spot light lights an object like this:
 
-![Spot light][6]
+![Spot light](/images/user-manual/graphics/lighting/lights/spot.jpg)
 
 ## Light Shapes {#light-shapes}
 
@@ -82,7 +82,7 @@ The disk light source shape is a round and flat light shape with a specified rad
 
 The sphere light source shape is ball shaped with a specified radius.
 
-![Shapes][7]
+![Shapes](/images/user-manual/graphics/lighting/lights/shapes.jpg)
 
 ## Use Cases {#use-cases}
 
@@ -99,11 +99,3 @@ x = no common use cases - but still can be used for application/game specific li
 ## Performance Considerations {#performance-considerations}
 
 Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where Punctual lights would appear visibly incorrect.
-
-[1]: /images/user-manual/graphics/lighting/lights/directional_icon.jpg
-[2]: /images/user-manual/graphics/lighting/lights/directional.jpg
-[3]: /images/user-manual/graphics/lighting/lights/point_icon.jpg
-[4]: /images/user-manual/graphics/lighting/lights/point.jpg
-[5]: /images/user-manual/graphics/lighting/lights/spot_icon.jpg
-[6]: /images/user-manual/graphics/lighting/lights/spot.jpg
-[7]: /images/user-manual/graphics/lighting/lights/shapes.jpg

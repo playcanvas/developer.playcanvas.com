@@ -9,21 +9,21 @@ Cameras are responsible for rendering a scene to the screen. You need at least o
 
 In the Editor's 3D View, a unselected camera is represented with the following icon:
 
-![Camera icon][1]
+![Camera icon](/images/user-manual/graphics/cameras/camera_icon.png)
 
 To create a new camera, simply create a new entity and add a camera component to it. For convenience, the Editor menu has an item that does this in a single step:
 
-![Camera creation][2]
+![Camera creation](/images/user-manual/graphics/cameras/camera_create.png)
 
 ## Orthographic vs Perspective Projection
 
 Camera's can have one of two types of projection: orthographic or perspective. Orthographic camera define a parallel projection and is often use for 2D or isometric games.
 
-![Orthographic camera][3]
+![Orthographic camera](/images/user-manual/graphics/cameras/camera_orthographic.png)
 
 More commonly used is the perspective projection. It more closely mimics how our eyes or cameras work.
 
-![Perspective camera][4]
+![Perspective camera](/images/user-manual/graphics/cameras/camera_perspective.png)
 
 ## Controlling the Viewport
 
@@ -31,15 +31,8 @@ By default, a camera will render to the full width and height of its render targ
 
 For 2-player horizontal split screen, you would create two cameras and configure their viewports as follows:
 
-![Horizontal splitscreen][5]
+![Horizontal splitscreen](/images/user-manual/graphics/cameras/camera_horizontal_splitscreen.png)
 
 And for vertical split screen, you would configure the viewports as follows:
 
-![Vertical splitscreen][6]
-
-[1]: /images/user-manual/graphics/cameras/camera_icon.png
-[2]: /images/user-manual/graphics/cameras/camera_create.png
-[3]: /images/user-manual/graphics/cameras/camera_orthographic.png
-[4]: /images/user-manual/graphics/cameras/camera_perspective.png
-[5]: /images/user-manual/graphics/cameras/camera_horizontal_splitscreen.png
-[6]: /images/user-manual/graphics/cameras/camera_vertical_splitscreen.png
+![Vertical splitscreen](/images/user-manual/graphics/cameras/camera_vertical_splitscreen.png)
