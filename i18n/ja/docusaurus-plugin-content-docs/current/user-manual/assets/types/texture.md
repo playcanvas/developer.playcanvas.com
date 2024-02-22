@@ -39,7 +39,7 @@ HDRおよびEXRは[高ダイナミックレンジフォーマット][2]です。
 
 テクスチャは、標準的なアセットプロパティ(ID、名前、タグなど)を共有しますが、テクスチャ固有のプロパティもあります。
 
-![texture_properties_jp][3]
+![Texture Properties](/images/user-manual/assets/textures/texture-properties.png)
 
 ### テクスチャのフィルタリング (Texture Filtering)
 
@@ -49,7 +49,7 @@ HDRおよびEXRは[高ダイナミックレンジフォーマット][2]です。
 
 テクスチャが斜めの角度で表面上に表示される場合、品質が低下し、ぼやけたように見えることがあります。この問題を解決するために、Anisotropyの値を設定することができます。異なるAnisotropyの値がテクスチャの外観にどのような影響を与えるかを見てみましょう。
 
-![Anisotropy_jp][4]
+![Anisotropy](/images/user-manual/assets/textures/anisotropy.png)
 
 Anisotropyが増加するにつれて、GPUでテクスチャをサンプリングするコストも増加します。
 
@@ -57,7 +57,7 @@ Anisotropyが増加するにつれて、GPUでテクスチャをサンプリン�
 
 テクスチャアドレスプロパティを使用すると、テクスチャ座標が範囲0から1以外の値でサンプリングされる方法を制御できます。さまざまなモードがスプライトにどのように影響するかを以下に示します。
 
-![texture_address_jp][5]
+![Addressing](/images/user-manual/assets/textures/texture-address.png)
 
 ## 最大テクスチャサイズ
 
@@ -77,7 +77,4 @@ If the engine attempts to utilize a texture that exceeds the max texture size re
 
 [1]: /user-manual/assets/types/material
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
-[3]: /images/user-manual/assets/textures/texture-properties.png
-[4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/texture-address.png
 [7]: https://webglreport.com/

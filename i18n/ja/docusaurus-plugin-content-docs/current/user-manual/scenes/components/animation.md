@@ -12,7 +12,7 @@ Animationコンポーネントを使用すれば、エンティティはModelコ
 
 Animationコンポーネントは、コンポーネントパネルの右上にあるトグルを使用して有効または無効にすることができます。有効にすると、コンポーネントは割り当てられたアニメーションを再生します。
 
-![Animation component][1]
+![Animation component](/images/user-manual/scenes/components/component-animation.png)
 
 ## Properties
 
@@ -27,6 +27,5 @@ Animationコンポーネントは、コンポーネントパネルの右上に�
 
 [Scriptコンポーネント][2]を使用してAnimationコンポーネントのプロパティを制御することができます。Animationコンポーネントのスクリプトインターフェースは[こちら][3]です。
 
-[1]: /images/user-manual/scenes/components/component-animation.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.AnimationComponent.html

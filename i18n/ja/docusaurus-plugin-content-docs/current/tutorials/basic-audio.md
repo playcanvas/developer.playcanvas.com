@@ -50,7 +50,7 @@ PlayCanvasの基本的なオーディオシステムは二つのコンポーネ�
 
 サウンドのプロパティは、AttributeEditorに表示されます。
 
-![サウンドコンポーネント][5]
+![Sound Component](/images/tutorials/audio/sound.jpg)
 
 タンクエンティティのSoundコンポーネントです。こちらはプロパティに関する情報です。
 
@@ -98,4 +98,3 @@ AudioListenerを作成するには、リスナーを表すエンティティを�
 [2]: /user-manual/scenes/components/audiolistener
 [3]: https://playcanvas.com/editor/scene/440098
 [4]: /user-manual/assets/importing
-[5]: /images/tutorials/audio/sound.jpg

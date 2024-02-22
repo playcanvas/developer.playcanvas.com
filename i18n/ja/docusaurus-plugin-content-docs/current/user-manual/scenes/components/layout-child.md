@@ -6,7 +6,7 @@ LayoutChildコンポーネントは、LayoutGroupコンポーネントによっ�
 
 詳細については[レイアウトグループ][0]のセクションを参照してください。
 
-![LayoutChild component][1]
+![LayoutChild component](/images/user-manual/scenes/components/component-layoutchild.png)
 
 ## Properties
 
@@ -25,6 +25,5 @@ LayoutChildコンポーネントは、LayoutGroupコンポーネントによっ�
 [Scriptコンポーネント][2]を使用して、LayoutChildコンポーネントのプロパティを制御できます。LayoutChildコンポーネントのスクリプトインターフェースは[こちら][3]です。
 
 [0]: /user-manual/user-interface/layout-groups
-[1]: /images/user-manual/scenes/components/component-layoutchild.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.LayoutChildComponent.html

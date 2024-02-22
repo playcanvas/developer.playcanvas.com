@@ -16,13 +16,13 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 UIの構造は次のようになります。
 
-![Hierarchy][4]
+![Hierarchy](/images/tutorials/ui/progressbar/hierarchy.png)
 
 ## スクリーンの設定
 
 [スクリーン][3]は次のように設定されています。
 
-![Screen][5]
+![Screen](/images/tutorials/ui/progressbar/screen.png)
 
 2Dスクリーンであるため、 `Screen Space` を選択しました。 `Reference Resolution` は、ターゲットとしている解像度です。この場合、1080 x 1920です。スケールモードとしてBlendを選択しているため、スクリーンは解像度の変更に適応します。また、スケールブレンドを1に設定しているため、スクリーンは高さの変更にのみ適応されます。
 
@@ -34,11 +34,11 @@ UIの構造は次のようになります。
 
 バックグラウンド画像は`Progress Bar`エンティティです。それには、プログレスバーの背景画像を表示する画像エレメントがあります。
 
-![Background Image][6]
+![Background Image](/images/tutorials/ui/progressbar/progress-bar-bg.png)
 
 フィル画像は、`Fill Image`エンティティです。それは`Progress Bar`エンティティの子要素であり、プログレスバーのフィルを表示するImage Elementがあります。このイメージは、親バックグラウンド画像の左にアンカーが設定されているため、要素の幅を変更してプログレスバーを拡大できます。
 
-![Fill Image][7]
+![Fill Image](/images/tutorials/ui/progressbar/progress-bar-fill.png)
 
 ## スクリプト (Script)
 
@@ -107,8 +107,4 @@ ProgressBar.prototype.update = function(dt) {
 [1]: https://playcanvas.com/editor/scene/547906
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[4]: /images/tutorials/ui/progressbar/hierarchy.png
-[5]: /images/tutorials/ui/progressbar/screen.png
-[6]: /images/tutorials/ui/progressbar/progress-bar-bg.png
-[7]: /images/tutorials/ui/progressbar/progress-bar-fill.png
 [8]: https://api.playcanvas.com/classes/Engine.ElementComponent.html#rect

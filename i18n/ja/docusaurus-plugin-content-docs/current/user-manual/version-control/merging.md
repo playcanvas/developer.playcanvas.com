@@ -13,22 +13,22 @@ PlayCanvasでは、マージは2つの異なるブランチから2つのチェ�
 
 ### マージの例
 
-![マージ時のチェックポイント][6]
-*変更YおよびZがマージ結果Cに含まれておらず、**失われます。** *
+![Merging checkpoints](/images/user-manual/version-control/merging/merging-checkpoints-1.png)
+*Changes Y & Z are not included in merge result C and **are lost**.*
 
-![マージ時のチェックポイント][7]
-*デフォルトでは、PlayCanvasはマージ先のブランチに新しいチェックポイントを作成するため、変更Yが含まれます。*
+![Merging checkpoints](/images/user-manual/version-control/merging/merging-checkpoints-2.png)
+*By default PlayCanvas creates a new checkpoint in the destination branch of a merge, so changes Y are included*
 
-![マージ時のチェックポイント][8]
-*変更Zが必要な場合は、マージを開始する前にソースブランチでチェックポイントを作成します。*
+![Merging checkpoints](/images/user-manual/version-control/merging/merging-checkpoints-3.png)
+*If changes Z are required, create a checkpoint in the source branch before starting the merge.*
 
 ## マージの開始
 
-![Start merge][3]
+![Start merge](/images/user-manual/version-control/merging/start-merge.png)
 
 マージを開始するには、現在のブランチをマージしたいブランチに切り替えます。次に、マージしたいブランチを選択して、ブランチのドロップダウンメニューから「現在のブランチにマージ」を選択します。
 
-![Merge dialog][9]
+![Merge dialog](/images/user-manual/version-control/merging/merge-dialog.png)
 
 マージを開始する前にいくつかのオプションがあります。
 
@@ -53,19 +53,12 @@ PlayCanvasでは、マージは2つの異なるブランチから2つのチェ�
 
 ### コンフリクトマネージャー
 
-![Conflict Manager][4]
+![Conflict Manager](/images/user-manual/version-control/merging/conflict-manager.jpg)
 
 コンフリクトマネージャーには、左側に競合する各リソースが表示され、選択された各リソースについて、オリジナルバージョン(Base)と各ブランチのバージョンの比較が表示されます。競合した各プロパティについて、受け入れるバージョンを選択できます。すべてのリソースのすべてのプロパティが解決されたら、「マージを完了」ボタンをクリックして、マージを終了し、新しいチェックポイントを作成します。
 
-![Resolved Conflicts][5]
+![Resolved Conflicts](/images/user-manual/version-control/merging/conflicts-resolved.jpg)
 
 コンフリクトマネージャーとマージが進行中の間、現在のブランチは他のユーザーからのさらなる編集をロックします。これにより、競合の解決が完了するときにマージによって変更が上書きされるのを防ぎます。別のユーザーがマージに必要なブランチをブロックしている場合、エディタから彼らのマージを強制的に終了することができます。
 
 [1]: /user-manual/version-control/branches
-[3]: /images/user-manual/version-control/merging/start-merge.png
-[4]: /images/user-manual/version-control/merging/conflict-manager.jpg
-[5]: /images/user-manual/version-control/merging/conflicts-resolved.jpg
-[6]: /images/user-manual/version-control/merging/merging-checkpoints-1.png
-[7]: /images/user-manual/version-control/merging/merging-checkpoints-2.png
-[8]: /images/user-manual/version-control/merging/merging-checkpoints-3.png
-[9]: /images/user-manual/version-control/merging/merge-dialog.png

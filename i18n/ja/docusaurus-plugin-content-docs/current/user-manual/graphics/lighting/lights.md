@@ -21,13 +21,13 @@ PlayCanvasには3つの種類の光源があります。
 
 非選択時、方向性光は以下のアイコンでエディタの3Dビューに表示されます。
 
-![Directional light icon][1]
+![Directional light icon](/images/user-manual/graphics/lighting/lights/directional_icon.jpg)
 
 ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
 方向性光は以下のようにオブジェクトを照らします。
 
-![Directional light][2]
+![Directional light](/images/user-manual/graphics/lighting/lights/directional.jpg)
 
 ### Omni Lights {#omni-lights}
 
@@ -35,13 +35,13 @@ PlayCanvasには3つの種類の光源があります。
 
 非選択時、オムニライトは以下のアイコンでエディタの3Dビューに表示されます。
 
-![オムニライトアイコン][3]
+![Omni light icon](/images/user-manual/graphics/lighting/lights/point_icon.jpg)
 
 ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
 オムニライトは以下のようにオブジェクトを照らします。
 
-![オムニライト][4]
+![Omni light](/images/user-manual/graphics/lighting/lights/point.jpg)
 
 ### Spot Lights {#spot-lights}
 
@@ -49,13 +49,13 @@ PlayCanvasには3つの種類の光源があります。
 
 非選択時、スポットライトは以下のアイコンでエディターの3Dビューに表示されます。
 
-![スポットライトアイコン][5]
+![Spot light icon](/images/user-manual/graphics/lighting/lights/spot_icon.jpg)
 
 ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
 スポットライトは以下のようにオブジェクトを照らします。
 
-![スポットライト][6]
+![Spot light](/images/user-manual/graphics/lighting/lights/spot.jpg)
 
 ## Light Shapes {#light-shapes}
 
@@ -82,7 +82,7 @@ PlayCanvasには3つの種類の光源があります。
 
 球体の光源形状は、指定された半径を持つ球形です。
 
-![Shapes][7]
+![Shapes](/images/user-manual/graphics/lighting/lights/shapes.jpg)
 
 ## Use Cases {#use-cases}
 
@@ -99,11 +99,3 @@ x = 一般的な使用例は無し - ただし、アプリケーション/ゲー
 ## パフォーマンスに関する考慮事項 {#performance-considerations}
 
 長方形、円盤、球体の形状を持つ光源は、点光源に比べて描画により高いコストがかかります。そのため、比較的小さな光源を使用する場合や、点光源が明らかに不正確に見えるような反射面が存在しない場合には、点光源の形状を使用してください。
-
-[1]: /images/user-manual/graphics/lighting/lights/directional_icon.jpg
-[2]: /images/user-manual/graphics/lighting/lights/directional.jpg
-[3]: /images/user-manual/graphics/lighting/lights/point_icon.jpg
-[4]: /images/user-manual/graphics/lighting/lights/point.jpg
-[5]: /images/user-manual/graphics/lighting/lights/spot_icon.jpg
-[6]: /images/user-manual/graphics/lighting/lights/spot.jpg
-[7]: /images/user-manual/graphics/lighting/lights/shapes.jpg

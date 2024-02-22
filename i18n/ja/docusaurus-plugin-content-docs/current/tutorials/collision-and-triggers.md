@@ -18,17 +18,17 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 *Collision*コンポーネントの最も重要なプロパティは、その **Type**です。これは使用されるボリュームの形状を決定します。以下の4つのオプションがあります。
 
-* **Box** シンプルなボックス
-* **Sphere** シンプルな球体
-* **Capsule** ピル形のカプセル。キャラクターには有用で、高くて細長く、丸いベースと単一の接触点があります。
-* **Mesh**: 任意のメッシュ形状をボリュームに使用することができます。
+- **Box** シンプルなボックス
+- **Sphere** シンプルな球体
+- **Capsule** ピル形のカプセル。キャラクターには有用で、高くて細長く、丸いベースと単一の接触点があります。
+- **Mesh**: 任意のメッシュ形状をボリュームに使用することができます。
 **注意** ただし、メッシュコリジョンの使用にはいくつかの制限があります。特に、*RigidBody* コンポーネントと組み合わせて使用する場合、メッシュは**Static**に設定する必要があります。
 
 ### トリガーボリューム
 
 トリガーボリュームを作成するには、単にエンティティに *Collision* コンポーネントを追加するだけです。このチュートリアルでは、斜面の下に大きなボックス形状のトリガーボリュームを追加して、落ちてくるオブジェクトをキャッチし、位置をリセットします。
 
-![Collisions & Triggers][3]
+![Collisions & Triggers](/images/tutorials/collision/collision_and_triggers.jpg)
 
 ランプの下にあるトリガーボリュームを青い外枠で表示しています。
 
@@ -38,16 +38,15 @@ Rigid Body (剛体) は、ゲーム世界における物理的なオブジェク
 
 シーン内で剛体を作成するには、エンティティを選択し、 *RigidBody* コンポーネントと *Collision* コンポーネントを追加します。デフォルトでは、これにより **static box** の剛体が作成されます。 *RigidBody*  コンポーネントには、オブジェクトのプロパティを調整するために使用できるさまざまなオプションが提供されています。
 
-![rigidbody component][4]
+![rigidbody component](/images/user-manual/scenes/components/component-rigid-body-dynamic.png)
 
 各プロパティの詳細については、[*RigidBody*のドキュメント][5]を参照してください。
 
 このデモでは、重要なプロパティは **Type** です。3つのオプションのうち1つを選択できます。
 
-* **Static** このエンティティは移動しません。
-* **Dynamic** このエンティティは、それに適用する重力や他の力の下で移動します。
-* **Kinematic** このエンティティは力に反応しないが、直接位置や速度を設定すると移動します。
-
+- **Static** このエンティティは移動しません。
+- **Dynamic** このエンティティは、それに適用する重力や他の力の下で移動します。
+- **Kinematic** このエンティティは力に反応しないが、直接位置や速度を設定すると移動します。
 
 ## 地面の設定
 
@@ -61,7 +60,7 @@ Rigid Body (剛体) は、ゲーム世界における物理的なオブジェク
 
 次に必要なのはトリガーです。
 
-![Trigger Entity][7]
+![Trigger Entity](/images/tutorials/collision/trigger_setup.jpg)
 
 このエンティティには*collision*コンポーネントがありますが、*rigidbody*がないためトリガーとして機能します。トリガーEntityには、コードが添付された*script*コンポーネントもあります。トリガーは、トリガーがアクティブになったときに何かが起こる場合のみ有用であるため、トリガーがアクティブになったときにf音声効果が再生されるように、いくつかのコードを追加する必要があります。
 
@@ -137,10 +136,5 @@ Collider.prototype.onCollisionStart = function (result) {
 以上がPlayCanvasでの衝突とトリガーの処理方法です。
 
 [1]: https://playcanvas.com/project/405871
-[3]: /images/tutorials/collision/collision_and_triggers.jpg
-[4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/scenes/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.png
-[7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: https://api.playcanvas.com/classes/Engine.Entity.html
-[9]: /images/tutorials/collision/box_setup.png

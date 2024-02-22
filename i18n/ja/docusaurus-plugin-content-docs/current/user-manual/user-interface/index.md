@@ -7,7 +7,7 @@ sidebar_position: 18
 
 ## ScreenコンポーネントとElementコンポーネント(推奨)
 
-![Intro][1]
+![Intro](/images/user-manual/user-interface/user-interface-intro-sq.png)
 
 PlayCanvasは、WebGLキャンバスの内部で直接実行されるユーザインターフェイスシステムのビルディングブロックを構成できる２つのコンポーネントを実装しています。 [Screenコンポーネント][2]はユーザインタフェースコンテナであり、[Elementコンポーネント][3]はユーザインタフェースのエレメントを追加するために使用されます。主な利点は、ゲームの他の部分と同じコンテキストでユーザインターフェイスが存在することです。これにより、アプリケーションとユーザインターフェイス間のインタラクションが可能になります。
 
@@ -21,6 +21,5 @@ DOMを使用する主な欠点はパフォーマンスです。DOMは、高い�
 
 このユーザーガイドの残りの部分では、ScreenとElementコンポーネントシステムに焦点を当て、それらを使用してPlayCanvasでユーザーインターフェイスを構築します。
 
-[1]: /images/user-manual/user-interface/user-interface-intro-sq.png
 [2]: /user-manual/scenes/components/screen
 [3]: /user-manual/scenes/components/element

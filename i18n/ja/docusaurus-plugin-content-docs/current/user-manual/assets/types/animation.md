@@ -8,11 +8,11 @@ Animationアセットは、3Dモデルで単一のアニメーションを再生
 
 インスペクタには、テンプレートまたはModelアセットとともにアニメーションをプレビューするために使用できるビューアがあります。これは、異なるキャラクターリグに適用できる単一のアニメーションがある場合に便利です。
 
-![Asset Inspector Preview][inspector-preview-gif]
+![Asset Inspector Preview](/images/user-manual/assets/animation/inspector-preview.gif)
 
 また、グラフで状態を選択すると、[Anim State Graph Editor][anim-state-graph-editor]にもビューアがあります。選択すると、グラフを使用しているシーン内のすべてのエンティティが一覧表示され、プレビューのために選択できます。
 
-![Anim State Graph Preview][anim-state-graph-preview-gif]
+![Anim State Graph Preview](/images/user-manual/assets/animation/anim-state-graph-preview.gif)
 
 ## アニメーションインポート設定 (Animation Import Settings)
 
@@ -26,7 +26,7 @@ Animationアセットは、3Dモデルで単一のアニメーションを再生
 
 これらは、プロジェクト設定のAsset Tasksの下で見つけることができます。
 
-![Animation Import Settings][animation_import_settings]
+![Animation Import Settings](/images/user-manual/assets/animation/animation-import-settings.png)
 
 ### 命名基準 (Naming Strategy)
 
@@ -55,8 +55,5 @@ GLBエクスポート形式のみで利用可能です。このオプション�
 
 [asset_pipeline]: /user-manual/glossary#asset-pipeline
 [target_asset]: /user-manual/glossary#target-asset
-[animation_import_settings]: /images/user-manual/assets/animation/animation-import-settings.png
 [mixamo]: https://www.mixamo.com/
 [anim-state-graph-editor]: /user-manual/animation/anim-state-graph-assets/
-[inspector-preview-gif]: /images/user-manual/assets/animation/inspector-preview.gif
-[anim-state-graph-preview-gif]: /images/user-manual/assets/animation/anim-state-graph-preview.gif

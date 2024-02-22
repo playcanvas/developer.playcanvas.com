@@ -18,13 +18,13 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 UIの構造は次のようになります。
 
-![Hierarchy][4]
+![Hierarchy](/images/tutorials/ui/stats/hierarchy.png)
 
 ## スクリーンの設定
 
 まず、新しい2D [Screen][3]を追加します。画面は次のようになります。
 
-![Screen][5]
+![Screen](/images/tutorials/ui/stats/screen.png)
 
 2Dスクリーンであるため、 `Screen Space` を選択しました。 `Reference Resolution` は、ターゲットとしている解像度です。この場合、1080 x 1920です。スケールモードとしてBlendを選択しているため、スクリーンは解像度の変更に適応します。また、スケールブレンドを1に設定しているため、スクリーンは高さの変更にのみ適応されます。
 
@@ -34,17 +34,17 @@ UIの構造は次のようになります。
 
 Boostカウンターを開きます - 他のエンティティも同じ構成です。`stats-boost`エンティティはビューポートで次のように表示されます。
 
-![Boost][6]
+![Boost](/images/tutorials/ui/stats/boost-editor.png)
 
 `stats-boost`のインスペクター。
 
-![Boost Attributes][7]
+![Boost Attributes](/images/tutorials/ui/stats/boost-attributes.png)
 
 ご覧のとおり、すべての要素を含む適切なサイズのGroup Elementコンポーネントがあり、画面の下部に固定されています。また、スクリプト `uiStats`が割り当てられているScript Component があります。このスクリプトを使用することで、グループの要素とのインタラクションを処理できます。
 
 ヒエラルキーにあるグループは次のように表示されます。
 
-![Boost Hierarchy][8]
+![Boost Hierarchy](/images/tutorials/ui/stats/boost-hierarchy.png)
 
 グループには次の子要素があります。
 
@@ -101,10 +101,5 @@ UiStats.prototype.setValue = function (value) {
 [1]: https://playcanvas.com/editor/scene/547905
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[4]: /images/tutorials/ui/stats/hierarchy.png
-[5]: /images/tutorials/ui/stats/screen.png
-[6]: /images/tutorials/ui/stats/boost-editor.png
-[7]: /images/tutorials/ui/stats/boost-attributes.png
-[8]: /images/tutorials/ui/stats/boost-hierarchy.png
 [9]: /tutorials/ui-elements-buttons/
 [10]: /tutorials/ui-elements-progress/

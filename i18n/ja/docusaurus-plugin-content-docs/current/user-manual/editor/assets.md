@@ -5,7 +5,7 @@ sidebar_position: 5
 
 アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査、編集などが行えます。
 
-![Assets Panel][1]
+![Assets Panel](/images/user-manual/editor/assets-panel.png)
 
 ## フォルダーの階層 {#folder-hierarchy}
 
@@ -105,7 +105,7 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 特定のシーン内でアセットが使用されている(または参照されている)場所を知ることが有用な場合もあります。エディターがアセットの参照を検出できない場合、サムネイルに小さい点が表示されます。
 
-![Unreferenced Asset][5]
+![Unreferenced Asset](/images/user-manual/editor/assets-panel/unreferenced-asset.png)
 
 :::warning
 
@@ -115,14 +115,11 @@ Editorはコードで作成されたアセットの参照を検出できませ�
 
 アセットに参照がある場合は、Referencesコンテンツメニュー項目を使用して参照することができます。
 
-![Asset References][6]
+![Asset References](/images/user-manual/editor/assets-panel/asset-references.png)
 
 参照を選択するとインスペクターパネルに読み込まれます。
 
-[1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/editor/inspector
 [3]: /user-manual/editor/viewport
 [4]: /user-manual/editor/settings
-[5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
-[6]: /images/user-manual/editor/assets-panel/asset-references.png
 [7]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#findByTag

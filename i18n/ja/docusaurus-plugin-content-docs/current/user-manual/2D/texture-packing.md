@@ -22,7 +22,7 @@ PlayCanvasと互換性のあるいくつかのテクスチャパッキングツ�
 
 TexturePacker Onlineはブラウザで動作する無料のツールで、テクスチャパッキングの基本機能を実行できます。
 
-![][texture-packer-online-steps]
+![](/images/user-manual/2D/texture-packer/texture-packer-online-steps.png)
 
 1. テクスチャアトラスをクリアします。
 2. スプライト/UIイメージを追加します。
@@ -36,7 +36,7 @@ TexturePacker Onlineはブラウザで動作する無料のツールで、テク
 
 TexturePackerはダウンロードできる有料ツールで、テクスチャアトラス作成に多くの機能とオプションがあります。スプライト/UI画像のレイアウトについてのより多くの制御機能や[9スライス][9-slicing]を設定することができます。
 
-![][texture-packer-tool-steps]
+![](/images/user-manual/2D/texture-packer/texture-packer-tool-steps.png)
 
 基本的な手順:
 
@@ -48,7 +48,7 @@ TexturePackerはダウンロードできる有料ツールで、テクスチャ�
 
 テクスチャアトラスファイルをエディタにアップロードして、[Texture Atlasアセット][texture-atlas]を作成したら、スプライトエディタを開きます。
 
-![][playcanvas-sprite-editor]
+![](/images/user-manual/2D/texture-packer/playcanvas-sprite-editor.png)
 
 'Upload Texture Packer JSON'をクリックし、JSONフレームデータファイルを選択してアップロードします。
 
@@ -65,7 +65,3 @@ TexturePackerはダウンロードできる有料ツールで、テクスチャ�
 [texture-packer-online]: https://www.codeandweb.com/tp-online
 [texture-packer-tool]: https://www.codeandweb.com/texturepacker
 [9-slicing]: /user-manual/2D/slicing/
-[texture-packer-online-steps]: /images/user-manual/2D/texture-packer/texture-packer-online-steps.png
-[texture-packer-tool-steps]: /images/user-manual/2D/texture-packer/texture-packer-tool-steps.png
-[playcanvas-sprite-editor]: /images/user-manual/2D/texture-packer/playcanvas-sprite-editor.png
-

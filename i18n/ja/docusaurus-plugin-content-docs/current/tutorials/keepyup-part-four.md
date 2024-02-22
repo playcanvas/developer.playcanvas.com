@@ -164,7 +164,7 @@ Ball.prototype.reset = function () {
 
 スクリプトの先頭には、定義したスクリプト属性のセットがあります。スクリプトの属性を定義することで、エディタにスクリプトから値を公開することができます。これを行う理由は3つあります。
 
-![Script Attributes][5]
+![Script Attributes](/images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg)
 
 まず、異なる値を持つ異なるエンティティに対して同じスクリプトを使用することができます。たとえば、色を設定するスクリプトの属性の場合、エディタでスクリプトの属性を変更するだけでエンティティの赤、青、緑のバージョンを作成できます。
 
@@ -237,5 +237,4 @@ this.entity.setLocalPosition(p);
 [2]: /tutorials/keepyup-part-two/
 [3]: /tutorials/keepyup-part-three/
 [4]: /tutorials/keepyup-part-five/
-[5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
 [6]: https://playcanvas.com/project/406050

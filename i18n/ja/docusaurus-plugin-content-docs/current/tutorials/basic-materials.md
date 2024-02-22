@@ -14,13 +14,13 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186
 
 ヒエラルキーパネルで 'New Entity'-> 'Box' メニューを選択します。これにより、ヒエラルキーに新しいボックスエンティティが作成されます。
 
-![New Box][1]
+![New Box](/images/tutorials/beginner/basic-materials/new-box.jpg)
 
 ## ステップ2 - 新しいマテリアルを作成
 
 PlayCanvasエディターのインターフェースから直接新しいマテリアルを作成します。アセットパネルで+ボタンを使用して、新しいアセットメニューを開き、マテリアルを選択します。
 
-![Add Material][2]
+![Add Material](/images/tutorials/beginner/basic-materials/new-material.jpg)
 
 これにより、新しいマテリアルアセットが作成され、画面の右側にマテリアルエディタが表示されます。マテリアルエディタで、マテリアルの名前を「Box Material」と変更してください。
 
@@ -34,7 +34,7 @@ PlayCanvasエディターのインターフェースから直接新しいマテ�
 
 マテリアルを選択するには、アセットパネルでそれをクリックするか、ボックスを選択したときにプロパティインスペクターから選択します。
 
-![Diffuse Color][4]
+![Diffuse Color](/images/tutorials/beginner/basic-materials/diffuse-panel.jpg)
 
 マテリアルエディタの右パネルで、Diffuse設定パネルを展開してください。カラープロパティをクリックして、マテリアルのDiffuseカラーを編集します。
 
@@ -44,9 +44,9 @@ PlayCanvasエディターのインターフェースから直接新しいマテ�
 
 こちらからサンプルのテクスチャをダウンロードして保存してください。
 
-![Sample Diffuse Map][5]
+![Sample Diffuse Map](/images/tutorials/beginner/basic-materials/proto_orange.png)
 
-![Sample Normal Map][6]
+![Sample Normal Map](/images/tutorials/beginner/basic-materials/proto_gray_n.png)
 
 その後、エディタにドラッグしてファイルをアップロードします。
 
@@ -54,17 +54,10 @@ PlayCanvasエディターのインターフェースから直接新しいマテ�
 
 以下のようなものが表示されます。
 
-![Cube][7]
+![Cube](/images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg)
 
 テクスチャがキューブに巻き付けられる方法を変更するには、 **Tiling** および **Offset** プロパティを変更してみてください。
 
 マテリアルを設定するのにさらに深い知識が必要な場合は、ユーザーマニュアルの[物理マテリアル][8]セクションを参照してください。
 
-[1]: /images/tutorials/beginner/basic-materials/new-box.jpg
-[2]: /images/tutorials/beginner/basic-materials/new-material.jpg
-[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
-[4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
-[5]: /images/tutorials/beginner/basic-materials/proto_orange.png
-[6]: /images/tutorials/beginner/basic-materials/proto_gray_n.png
-[7]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
 [8]: /user-manual/graphics/physical-rendering/physical-materials/

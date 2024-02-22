@@ -3,7 +3,7 @@ title: テクスチャインスペクター
 sidebar_position: 4
 ---
 
-![テクスチャインスペクター][1]
+![Texture Inspector](/images/shader-editor/inspector-pane-texture.png)
 
 テクスチャインスペクターは、テクスチャが設定される場所です。
 
@@ -11,5 +11,4 @@ sidebar_position: 4
 
 - Name - テクスチャの名前を指定します。
 
-[1]: /images/shader-editor/inspector-pane-texture.png
 [2]: /shader-editor/window-layout/assets-pane

@@ -5,7 +5,7 @@ sidebar_position: 6
 
 プレビューペイン (Preview Pane) では、現在選択されているグラフやマテリアルを表示するペインであり、さまざまな照明環境や形状をサポートしています。
 
-![プレビューペイン][1]
+![Preview Pane](/images/shader-editor/preview-pane.png)
 
 | 使い方 |  |
 |---|---|
@@ -19,7 +19,7 @@ sidebar_position: 6
 
 ツールバーでは、照明環境やプレビューの形状を制御する機能が提供されています。ツールバーは以下に示すように、各コントロールの番号が記載された状態で表示され、それぞれの簡単な説明が付いています。
 
-![プレビューパネルのツールバー][2]
+![Preview Pane Toolbar](/images/shader-editor/preview-pane-toolbar.png)
 
 | コントロール | |
 |---|---|
@@ -40,6 +40,3 @@ sidebar_position: 6
 プレビューペインには、マテリアルのプレビューに使用できるシンプルな形状がいくつか付属していますが、カスタム形状もサポートされています。
 
 カスタム形状を使用するには、glTFまたはglbモデルファイルをプレビューペインにドラッグアンドドロップします。カスタムモデルは、ツールバー形状セレクターのオプションとなります。
-
-[1]: /images/shader-editor/preview-pane.png
-[2]: /images/shader-editor/preview-pane-toolbar.png

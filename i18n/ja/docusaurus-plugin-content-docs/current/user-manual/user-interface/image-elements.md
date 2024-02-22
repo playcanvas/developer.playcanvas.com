@@ -9,13 +9,13 @@ sidebar_position: 5
 
 各イメージエレメントにはカラープロパティがあります。テクスチャが適用されていない場合、イメージエレメントは単に色のついた長方形になります。テクスチャが適用されている場合、この色はテクスチャの着色に使用されます。これにより、１つのグレースケールテクスチャだけを使ってカラーバリエーションを作成することができます。
 
-![Tinting][1]
+![Tinting](/images/user-manual/user-interface/image-element/image-tinted.png)
 
 ## 透明性 (Transparency)
 
 カラープロパティと同様に、不透明度プロパティを使用してエレメントの透明度レベルを設定することができます。
 
-![Transparent][2]
+![Transparent](/images/user-manual/user-interface/image-element/image-transparent.png)
 
 ## アドバンスマテリアル (Advanced Material)
 
@@ -34,6 +34,3 @@ sidebar_position: 5
 マスキングに使用されるイメージエレメントにTextureアセットが割り当てられていない場合、マスクは幅と高さで定義された長方形となります。
 イメージエレメントにテクスチャが割り当てられている場合、テクスチャのアルファチャンネルがマスクとして使用されます。
 画像マスクは1ビットであるため、テクスチャのアルファチャンネルを使用してマスクをフェードアウトすることはできません。
-
-[1]: /images/user-manual/user-interface/image-element/image-tinted.png
-[2]: /images/user-manual/user-interface/image-element/image-transparent.png

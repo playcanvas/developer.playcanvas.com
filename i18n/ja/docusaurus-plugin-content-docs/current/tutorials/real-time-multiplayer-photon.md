@@ -27,7 +27,7 @@ Photon(PUNとしても知られる)は多くのゲームで使用され、HTML5�
 
 [tutorial project here][2]をフォークして開始します。
 
-![Empty Project][3]
+![Empty Project](/images/tutorials/multiplayer-photon/1.png)
 
 ### Photonアカウント
 
@@ -39,7 +39,7 @@ SDKの使用とドキュメンテーションの閲覧にはアカウントの�
 
 ダッシュボードから**CREATE NEW APP**をクリックします。
 
-![Create New Application][5]
+![Create New Application](/images/tutorials/multiplayer-photon/2.png)
 
 #### Photonタイプとアプリケーション名を選択
 
@@ -48,13 +48,13 @@ SDKの使用とドキュメンテーションの閲覧にはアカウントの�
 - Photon Type: RealTime
 - Name: PlayCanvas-Photon など
 
-![Create Real Time Project][6]
+![Create Real Time Project](/images/tutorials/multiplayer-photon/3.png)
 
 #### AppIDをコピー
 
 AppIDをメモしておいてください。後日必要になります。
 
-![App Id][7]
+![App Id](/images/tutorials/multiplayer-photon/4.png)
 
 ### SDKをダウンロード
 
@@ -62,19 +62,19 @@ AppIDをメモしておいてください。後日必要になります。
 
 #### SDKをクリック
 
-![SDK][8]
+![SDK](/images/tutorials/multiplayer-photon/5.png)
 
 #### RealTime JavaScriptを選択
 
-![JavaScript SDK][9]
+![JavaScript SDK](/images/tutorials/multiplayer-photon/6.png)
 
 #### SDKをダウンロードをクリック
 
-![Download SDK][10]
+![Download SDK](/images/tutorials/multiplayer-photon/7.png)
 
 #### SDKを解凍
 
-![Unzip SDK][11]
+![Unzip SDK](/images/tutorials/multiplayer-photon/8.png)
 
 SDKはZIP形式でダウンロードされます。解凍してください: `photon-javascript-sdk_vX-X-X-X` → `lib` → **`Photon-Javascript_SDK.min.js`**。
 
@@ -84,13 +84,13 @@ SDKはZIP形式でダウンロードされます。解凍してください: `ph
 
 #### エディタにSDKをアップロード
 
-![Upload SDK][12]
+![Upload SDK](/images/tutorials/multiplayer-photon/9.jpg)
 
 SDKをエディタのアセットにドラッグ&ドロップしてください。
 
 #### Loading Typeを「Asset」から「Before Engine」に変更
 
-![Change Loading Type][13]
+![Change Loading Type](/images/tutorials/multiplayer-photon/10.png)
 
 ## マルチプレイヤー実装
 
@@ -154,13 +154,13 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 新しいスクリプトアセット**photon-loadbalancing-playcanvas.js**を作成し、エディタでRootエンティティに添付します。
 
-![Root Entity - Inspector][16]
+![Root Entity - Inspector](/images/tutorials/multiplayer-photon/11.png)
 
 #### スクリプト属性にAppIdを貼り付ける
 
 スクリプト属性にAppIdを入力してください。
 
-![Script Attributes][17]
+![Script Attributes](/images/tutorials/multiplayer-photon/12.png)
 
 ```javascript
 this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.wss ? 1 : 0, this.appId, this.appVersion );
@@ -195,7 +195,7 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 connectToRegionMaster を実行してロビーに接続できた場合はJoinedLobbyがログに表示されます。
 
-![Console Log][18]
+![Console Log](/images/tutorials/multiplayer-photon/13.png)
 
 ### ルームの作成または参加
 
@@ -287,13 +287,13 @@ PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
 };
 ```
 
-  ![Actor][19]
+  ![Actor](/images/tutorials/multiplayer-photon/14.png)
 - **actor** は `name`, `actorNr` , `isLocal` , `userId` を含みます。
 - **onActorJoin** 新しいユーザーが接続すると、参加したアクターを取得できます。
 - **onActorLeave** ユーザーが切断されると、切断されたアクターを取得できます。
 
-成功した場合、プレイヤーが参加したときにエンティティが追加されます。
-![Console log - Actors ][20]
+If successful, the entity is added when the player joins.
+![Console log - Actors ](/images/tutorials/multiplayer-photon/15.png)
 
 #### プレイヤーの移動
 
@@ -480,7 +480,7 @@ Player.prototype.update = function (dt) {
 
 Photonを使用してマルチプレイヤーをプレイできるようになりました！
 
-![Project][23]
+![Project](/images/tutorials/multiplayer-photon/16.gif)
 
 Photonを使ってルームを作成し、プレイヤーの位置を同期できます。
 
@@ -488,23 +488,7 @@ Photonを使ってルームを作成し、プレイヤーの位置を同期で�
 
 [1]: https://playcanvas.com/project/926999/
 [2]: https://playcanvas.com/project/954410/
-[3]: /images/tutorials/multiplayer-photon/1.png
 [4]: https://www.photonengine.com/
-[5]: /images/tutorials/multiplayer-photon/2.png
-[6]: /images/tutorials/multiplayer-photon/3.png
-[7]: /images/tutorials/multiplayer-photon/4.png
-[8]: /images/tutorials/multiplayer-photon/5.png
-[9]: /images/tutorials/multiplayer-photon/6.png
-[10]: /images/tutorials/multiplayer-photon/7.png
-[11]: /images/tutorials/multiplayer-photon/8.png
-[12]: /images/tutorials/multiplayer-photon/9.jpg
-[13]: /images/tutorials/multiplayer-photon/10.png
 [14]: https://doc-api.photonengine.com/en/javascript/current/Photon.LoadBalancing.LoadBalancingClient.html
 [15]: https://doc.photonengine.com/ja-jp/quantum/v1/reference/glossary
-[16]: /images/tutorials/multiplayer-photon/11.png
-[17]: /images/tutorials/multiplayer-photon/12.png
-[18]: /images/tutorials/multiplayer-photon/13.png
-[19]: /images/tutorials/multiplayer-photon/14.png
-[20]: /images/tutorials/multiplayer-photon/15.png
 [22]: /user-manual/scripting/communication/
-[23]: /images/tutorials/multiplayer-photon/16.gif

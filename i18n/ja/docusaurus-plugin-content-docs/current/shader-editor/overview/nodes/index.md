@@ -5,7 +5,7 @@ sidebar_position: 2
 
 Shader Editorではさまざまなタイプのノードがサポートされていますが、すべてのノードは以下の構造を持っています。
 
-![Graph Editor Node][1]
+![Graph Editor Node](/images/shader-editor/graph-editor-node.png)
 
 | ノードの構造 | |
 |---|---|
@@ -22,5 +22,3 @@ Shader Editorではさまざまなタイプのノードがサポートされて�
 - 入力ノード - これらは出力ポートがありますが、入力ポートはありません。
 - 出力ノード - これらは入力ポートがありますが、出力ポートはありません。
 - 変換ノード - これらは入力ポートと出力ポートの両方があります。
-
-[1]: /images/shader-editor/graph-editor-node.png

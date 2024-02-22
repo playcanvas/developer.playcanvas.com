@@ -5,7 +5,7 @@ sidebar_position: 2
 
 プロジェクトタブには、作成したプロジェクトやアクセス権が与えられたプロジェクトがすべて表示されます。
 
-![projects_page][1]
+![projects_page](/images/user-manual/profile/profile.png "Projects")
 
 ## 新しいプロジェクト {#new-project}
 
@@ -25,17 +25,17 @@ Organizationアカウントを持っている場合、プロジェクトのロ�
 
 プロジェクトの所有権を他のユーザーに移す場合は、プロジェクトの横にある矢印をクリックして、Transfer Ownershipをクリックします。
 
-![transfer-ownership-menu][4]
+![transfer-ownership-menu](/images/user-manual/profile/projects/transfer-ownership-menu.png)
 
 ユーザー名または所有するOrganizationの名前を入力するように求めるポップアップが表示されます。
 
-![transfer-ownership-dialog][5]
+![transfer-ownership-dialog](/images/user-manual/profile/projects/transfer-ownership-dialog.png)
 
 ユーザー名を入力し、FINDをクリックするかEnterキーを押します。その後、TRANSFERをクリックしてください。
 
 他のユーザーは、プロジェクトの移転を受け入れる必要があります。移転依頼は、他のユーザーのプロジェクトリストの一番上に表示されます。
 
-![transfer-ownership-accept][6]
+![transfer-ownership-accept](/images/user-manual/profile/projects/transfer-ownership-accept.png)
 
 ユーザーがリクエストを承認すると、移転が完了し、新しい所有者以外のすべてのチームメンバーがプロジェクトから削除されます。
 
@@ -57,7 +57,7 @@ Organizationアカウントを持っている場合、プロジェクトのロ�
 
 #### プロジェクトリストから {#from-the-projects-list}
 
-![export-archive][2]
+![export-archive](/images/user-manual/profile/projects/export-archive-button.jpg)
 
 .zipアーカイブをエクスポートして、オフラインバックアップを取得できます。後でその.zipアーカイブを新しいプロジェクトとしてインポートできます。
 
@@ -73,18 +73,12 @@ Organizationアカウントを持っている場合、プロジェクトのロ�
 
 ### アーカイブファイルからプロジェクトをリストアする {#restoring-a-project-from-an-archive-file}
 
-![import-archive][3]
+![import-archive](/images/user-manual/profile/projects/import-archive-button.jpg)
 
 [プロジェクトをアーカイブファイルにバックアップする](#backing-up-a-project-to-an-archive-file)に記載されている方法のいずれかで作成されたアーカイブzipファイルがあれば、それをPlayCanvas上の新しいプロジェクトとしてインポートできます。
 
 プロジェクトページの左側にある 'Import Project' をクリックして、zipファイルを選択してインポートしてください。
 
-[1]: /images/user-manual/profile/profile.png "Projects"
-[2]: /images/user-manual/profile/projects/export-archive-button.jpg
-[3]: /images/user-manual/profile/projects/import-archive-button.jpg
-[4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
-[5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
-[6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
 [7]: /user-manual/dashboard/header/
 [8]: /user-manual/api/project-archive/
 [9]: https://github.com/playcanvas/playcanvas-rest-api-tools#archiving-a-project

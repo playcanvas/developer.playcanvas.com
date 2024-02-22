@@ -20,7 +20,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 最初に、ハロー用のテクスチャが必要です。この例では、Photoshopなどのアートプログラムで作成された非常にシンプルなぼやけたブロブを使用しました。
 
-![blob][1]
+![blob](/images/tutorials/intermediate/light-halos/blob.jpg)
 
 このテクスチャはグローの基礎となります。
 
@@ -34,7 +34,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 ## エンティティ
 
-![entities][3]
+![entities](/images/tutorials/intermediate/light-halos/entity-setup.jpg)
 
 ハローのエンティティのセットアップも簡単です。ハロースクリプト用の親エンティティと、それにアタッチされた平面プリミティブを持つ子エンティティがあります。この設計を採用する理由は、`entity.lookAt`を使用してハローの向きを設定するためにコードをシンプルにするためです。平面プリミティブは上向きを向いているため、子エンティティを作成し、この子エンティティに回転を適用して平面がカメラに正しく向かうようにします。
 
@@ -125,8 +125,5 @@ Halo.prototype.update = function(dt) {
 
 以上です。シーンに追加するシンプルで綺麗な効果です。詳細は[プロジェクト][4]でご確認ください。
 
-[1]: /images/tutorials/intermediate/light-halos/blob.jpg
-[2]: /images/tutorials/intermediate/light-halos/material.png
-[3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
 [4]: https://playcanvas.com/project/406040
 [5]: https://api.playcanvas.com/classes/Engine.MeshInstance.html

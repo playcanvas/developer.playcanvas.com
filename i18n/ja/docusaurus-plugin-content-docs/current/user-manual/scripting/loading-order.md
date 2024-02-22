@@ -5,11 +5,11 @@ sidebar_position: 7
 
 一般的に、すべてのスクリプトはアプリケーションの開始時にロードされます。ロード順序は、プロジェクトの設定によって決まります。この設定には、メインのエディタメニューまたはシーンの設定からアクセスすることができます。
 
-![Loading Order][1]
+![Loading Order](/images/user-manual/scripting/script-loading-order.jpg)
 
 ローディングオーダーパネルには、`preload` としてマークされたすべてのスクリプトと、そのロードおよび実行の順序が表示されます。
 
-![Loading Order List][2]
+![Loading Order List](/images/user-manual/scripting/loading-order-list.jpg)
 
 個別のスクリプトの順番をドラッグして移動することができます。
 
@@ -30,6 +30,3 @@ this.app.scripts.on('add', function(name, scriptType) {
 ## 連結 (Concatenation)
 
 デフォルトでは、アプリケーションを公開またはエクスポートする際に、すべてのプリロードされたスクリプトが1つのスクリプトファイルに連結されます。これにより、すべてのスクリプトをロードするために必要なリクエストの数を減らすことで、読み込みを最適化します。
-
-[1]: /images/user-manual/scripting/script-loading-order.jpg
-[2]: /images/user-manual/scripting/loading-order-list.jpg

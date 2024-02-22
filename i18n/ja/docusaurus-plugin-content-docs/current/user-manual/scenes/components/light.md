@@ -8,15 +8,15 @@ Lightコンポーネントは、コンポーネントパネルの右上にある
 
 #### 方向性
 
-![Light component (Directional)][1]
+![Light component (Directional)](/images/user-manual/scenes/components/component-light-directional.png)
 
 #### オムニ
 
-![Light component (Omni)][2]
+![Light component (Omni)](/images/user-manual/scenes/components/component-light-point.png)
 
 #### スポット
 
-![Light component (Spot)][3]
+![Light component (Spot)](/images/user-manual/scenes/components/component-light-spot.png)
 
 ## Properties
 
@@ -44,8 +44,5 @@ Lightコンポーネントは、コンポーネントパネルの右上にある
 
 Lightコンポーネントのプロパティを[Scriptコンポーネント][4]を使用して制御できます。Lightコンポーネントのスクリプトインターフェースは[こちら][5]です。
 
-[1]: /images/user-manual/scenes/components/component-light-directional.png
-[2]: /images/user-manual/scenes/components/component-light-point.png
-[3]: /images/user-manual/scenes/components/component-light-spot.png
 [4]: /user-manual/scenes/components/script
 [5]: https://api.playcanvas.com/classes/Engine.LightComponent.html

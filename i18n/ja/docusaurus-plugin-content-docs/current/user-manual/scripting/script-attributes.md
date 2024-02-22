@@ -33,11 +33,11 @@ MyScript.attributes.add('names', {
 
 ## エディター上で属性を使用する
 
-![スクリプト属性][1]
+![Script Attributes](/images/user-manual/scripting/script-attributes.png)
 
 属性を宣言したらEditorは、スクリプトの属性を露出させるためにコードをパースする必要があります。属性が変更された場合は、手動で属性を更新する必要があります。パースボタンをクリックすることができます。
 
-![Parse Button][2]
+![Parse Button](/images/user-manual/scripting/script-parse-button.png)
 
 ## コード内で属性にアクセスする
 
@@ -179,6 +179,4 @@ MyScript.prototype.update = function (dt) {
 
 :::
 
-[1]: /images/user-manual/scripting/script-attributes.png
-[2]: /images/user-manual/scripting/script-parse-button.png
 [3]: https://api.playcanvas.com/classes/Engine.ScriptAttributes.html

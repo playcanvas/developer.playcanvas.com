@@ -90,7 +90,7 @@ console.log(localeNumberString);
 
 ランタイム時にアプリケーションが異なるロケールに切り替えると、そのロケールに定義したフォントアセットが読み込まれます。
 
-![Localized Fonts Inspector][9]
+![Localized Fonts Inspector](/images/user-manual/user-interface/localization/localized-fonts-inspector.gif)
 
 ## 言語ノート
 
@@ -112,18 +112,18 @@ console.log(localeNumberString);
 
 例のプロジェクトには、「Rtl Support」というフォルダがあり、プロジェクトに[コピーして貼り付ける][11]必要があります。
 
-![][12]
+![](/images/user-manual/user-interface/localization/rtl-asset-folder.png)
 
 フォルダには、「RtlElement」というスクリプトタイプがあり、右から左に表示されるテキストに使用されるText Elementコンポーネントを持つエンティティに追加する必要があります。
 
-![][13]
+![](/images/user-manual/user-interface/localization/adding-rtl-script-type.png)
 
 ## エンジン
 
 スクリプト内のキーからテキストを取得するには、次のAPIを使用します。
 
-* [pc.I18n#getText][3] 複数形のリスト内の非複数形または最初のテキスト文字列を取得するためのAPI
-* [pc.I18n#getPluralText][4] 数字に基づいて複数形のテキスト文字列を取得するためのAPI
+- [pc.I18n#getText][3] 複数形のリスト内の非複数形または最初のテキスト文字列を取得するためのAPI
+- [pc.I18n#getPluralText][4] 数字に基づいて複数形のテキスト文字列を取得するためのAPI
 
 ローカライゼーションのための完全なエンジンAPIリファレンスについては、[このページ][2]を参照してください。
 
@@ -135,8 +135,5 @@ console.log(localeNumberString);
 [6]: http://www.thai-language.com/ref/breaking-words
 [7]: https://en.wikipedia.org/wiki/Zero-width_space
 [8]: http://www.thai-language.com/?nav=zwsp
-[9]: /images/user-manual/user-interface/localization/localized-fonts-inspector.gif
 [10]: /tutorials/right-to-left-language-support/
 [11]: /user-manual/editor/assets/#copy-and-paste-between-projects
-[12]: /images/user-manual/user-interface/localization/rtl-asset-folder.png
-[13]: /images/user-manual/user-interface/localization/adding-rtl-script-type.png

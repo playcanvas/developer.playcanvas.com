@@ -13,7 +13,7 @@ PlayCanvas エンジンのマテリアルシェーダチャンクシステムは
 
 エンジンのデバッグバージョンは、オーバーライドされたチャンクを検出すると、ランタイムコンソールに API の変更を報告します。例えば
 
-![コンソール出力][2]。
+![Console output](/images/user-manual/graphics/shader-chunk-migrations/console-warning.png)
 
 アプリケーションのチャンクが最新の API に更新されたら、そのようにフラグを立てる必要があります。例えば、マテリアルのカスタムチャンクを最新のエンジンリリース (例えば v1.55) に更新した後、次のようにチャンクオブジェクトで指定します。
 
@@ -394,4 +394,3 @@ void getAO() {
 | `specularityFactorPS` | <ul><li>メタルネスワークフローのためのスペキュラー強度を制御する新しいチャンク。</li></ul> |
 
 [1]: https://github.com/playcanvas/engine/issues/4250
-[2]: /images/user-manual/graphics/shader-chunk-migrations/console-warning.png

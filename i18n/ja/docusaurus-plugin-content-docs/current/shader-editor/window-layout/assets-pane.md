@@ -5,7 +5,7 @@ sidebar_position: 4
 
 アセットペイン (Asset Pane) には、プロジェクトのグラフ、マテリアル、およびテクスチャが表示されます。
 
-![アセットペイン][1]
+![Assets Pane](/images/shader-editor/assets-pane.png)
 
 | 使い方 | |
 |---|---|
@@ -16,6 +16,5 @@ sidebar_position: 4
 | マテリアルの新規作成 | ベースグラフを選択し、[グラフインスペクター][3]で「+ NEW MATERIAL」ボタンをクリックしてください。 |
 | テクスチャの新規作成 | 対応するテクスチャファイルをアセットペインにドラッグしてください。 |
 
-[1]: /images/shader-editor/assets-pane.png
 [2]: /shader-editor/window-layout/inspector-pane
 [3]: /shader-editor/window-layout/inspector-pane/graph-inspector

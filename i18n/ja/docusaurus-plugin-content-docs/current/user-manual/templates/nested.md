@@ -11,7 +11,7 @@ PlayCanvasは、Nested Templates(ネストされたテンプレート)をサポ�
 
 以下のテンプレートインスタンスを例にしてみましょう。
 
-![Nested Example][1]
+![Nested Example](/images/user-manual/templates/nested.png)
 
 この例では、TreeはBranch TemplateのインスタンスであるBranchから構成されています。 そして、Branch TemplateはApple Templateのインスタンスから構成されています。
 
@@ -22,5 +22,3 @@ PlayCanvasは、Nested Templates(ネストされたテンプレート)をサポ�
 オーバーライドは常に選択したテンプレートインスタンスに対して相対的に行われます。したがって、Branch Templateにオーバーライドを適用すると、どこでもすべてのBranchが同じ更新を適用します。Tree Templateにオーバーライドを適用すると、他のBranchとTree Templateは変更されないままですが、すべてのTree Templateで変更が適用されます。
 
 適用するオーバーライドは常に選択したテンプレートインスタンスを基準にします。つまり、Tree Templateにオーバーライドを適用した後にTree/Branch 1を選択すると、BranchにはまだAppleのオーバーライドがあるため、変更が適用されていないことがわかります。
-
-[1]: /images/user-manual/templates/nested.png

@@ -25,7 +25,7 @@ PlayCanvasアプリケーションは、常に存在するデフォルトのレ�
 
 各カメラには、レンダリングするレイヤーのリストが設定されています。その順序は、次のセクションで説明します。
 
-![Camera Layers][6]
+![Camera Layers](/images/user-manual/graphics/layers/camera-layers.jpg)
 
 ### レイヤー構成 (Layer Composition) {#layer-composition}
 
@@ -47,7 +47,7 @@ PlayCanvasアプリケーションは、常に存在するデフォルトのレ�
 
 PlayCanvasアプリケーションは、デフォルトのレイヤーのセットで作成されます。これらのレイヤーを削除すると、一部のエンジン機能が正常に機能しなくなるため、これらのレイヤーはそのままにしておく必要があります。デフォルトの順序は次のとおりです:
 
-![Default Layers][1]
+![Default Layers](/images/user-manual/graphics/layers/default-layers.jpg)
 
 1. **World (Opaque)** - 透明でないコンポーネントとほとんどの不透明なコンポーネントのメッシュをレンダリングするために使用されます。
 1. **Depth (Opaque)** - シーンのカラーまたはDepthバッファをキャプチャするために使用されます。[Depth Layer][7]を参照してください。
@@ -65,20 +65,20 @@ PlayCanvasアプリケーションは、デフォルトのレイヤーのセッ�
 
 レイヤーの管理は、エディターの**Settings**セクション内**LAYERS**パネルからおこないます。
 
-![Creating a layer][2]
+![Creating a layer](/images/user-manual/graphics/layers/new-layer.jpg)
 
 Layersセクションで、作成するレイヤーの名前を入力し**Add Layer**をクリックします。ボタンの下に利用可能なレイヤーのリストが表示され、新規作成したレイヤーも含まれています。
 
 ### ソートモードの設定 {#setting-the-sort-mode}
 
-![Edit a layer][3]
+![Edit a layer](/images/user-manual/graphics/layers/edit-layer.jpg)
 
 レイヤーリストで、各サブレレイヤーのソートモードを選択できます。
 レイヤーを拡張し、ドロップダウンメニューからソートモードを選択してください。
 
 ### レイヤー順序の選択 {#choosing-the-layer-order}
 
-![Add layer][4]
+![Add layer](/images/user-manual/graphics/layers/add-sub-layer.jpg)
 
 レイヤー構成にサブレイヤーを追加するには、**ADD SUBLAYER**を選び、追加するサブレイヤーを選択します。レイヤーがRender Orderリストに表示されたら、各サブレイヤーをドラッグすれば順序を変更できます。
 
@@ -86,7 +86,7 @@ Layersセクションで、作成するレイヤーの名前を入力し**Add La
 
 メッシュをレンダリングするコンポーネントにはすべて`layers`プロパティがあり、このプロパティはメッシュをどのレイヤーやサブレイヤーに追加するかの決定に使用されます。これらのコンポーネントには、モデル、エレメント、スプライト、パーティクルシステムなどがあります。カメラコンポーネントとライトコンポーネントにも`layers`プロパティがあり、それぞれどのレイヤーをレンダリングするか、または照らすかを決定します。
 
-![Layer Components][5]
+![Layer Components](/images/user-manual/graphics/layers/test-layer-components.jpg)
 
 *Note:* モデルはテストレイヤーに割り当てられています。これをレンダリングするためには、カメラはそのレイヤーリストにテストレイヤーを含める必要があります。これを照らすためには、ライトもまたそのレイヤーリストにテストレイヤーを含める必要があります。
 
@@ -101,10 +101,4 @@ Layersセクションで、作成するレイヤーの名前を入力し**Add La
 2. 新たに作成したカメラのレイヤーを設定し、それがレンダリングするレイヤーを指定します。例えば、上から見下ろすマップカメラをレンダリングし、その中にテレインとビルディングのレイヤーだけを含めたい場合、キャラクターは含めないようにするなどです。 
 3. カメラがテクスチャにレンダリングする場合は、スクリプトを使用してレンダーターゲットをカメラの `renderTarget` プロパティに割り当てます。
 
-[1]: /images/user-manual/graphics/layers/default-layers.jpg
-[2]: /images/user-manual/graphics/layers/new-layer.jpg
-[3]: /images/user-manual/graphics/layers/edit-layer.jpg
-[4]: /images/user-manual/graphics/layers/add-sub-layer.jpg
-[5]: /images/user-manual/graphics/layers/test-layer-components.jpg
-[6]: /images/user-manual/graphics/layers/camera-layers.jpg
 [7]: /user-manual/graphics/cameras/depth-layer

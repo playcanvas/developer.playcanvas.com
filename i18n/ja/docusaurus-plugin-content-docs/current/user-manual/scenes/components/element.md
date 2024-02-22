@@ -10,19 +10,19 @@ Screenコンポーネント以下にElementコンポーネントがある場合�
 
 グループエレメントは、Elementコンポーネントのレイアウトプロパティだけを提供します。
 
-![Group Element][2]
+![Group Element](/images/user-manual/scenes/components/component-element-group.png)
 
 ## イメージエレメント (Image Element)
 
 Image Elementは、Textureアセットまたは単色を使用して画像を表示します。
 
-![Image Element][3]
+![Image Element](/images/user-manual/scenes/components/component-element-image.png)
 
 ## テキストエレメント (Text Element)
 
 テキストエレメントは、[Fontアセット][4]を使用してテキストを描画します。
 
-![Text Element][5]
+![Text Element](/images/user-manual/scenes/components/component-element-text.png)
 
 ## 共通コンポーネントプロパティ
 
@@ -63,10 +63,7 @@ Image Elementは、Textureアセットまたは単色を使用して画像を表
 | Wrap Lines  | テキストを折り返すことを有効にします。テキストエレメントの幅を超えるテキストは、次の行に折り返されます。 |
 
 [1]: /user-manual/user-interface
-[2]: /images/user-manual/scenes/components/component-element-group.png
-[3]: /images/user-manual/scenes/components/component-element-image.png
 [4]: /user-manual/assets/types/font/
-[5]: /images/user-manual/scenes/components/component-element-text.png
 [6]: /user-manual/user-interface/elements/#anchor
 [7]: /user-manual/user-interface/elements/#pivot
 [8]: /user-manual/graphics/layers

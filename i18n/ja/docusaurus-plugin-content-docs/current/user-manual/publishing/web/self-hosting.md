@@ -30,15 +30,15 @@ PlayCanvasサーバから独立してゲームをホスティングするには�
 * プロジェクトに移行してEditorを開く。
 * 左側のツールバーの<span class="pc-icon">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
 
-![Publish Button][3]
+![Publish Button](/images/user-manual/publishing/toolbar-publish.png)
 
 * Publishing Dialogが開きます。
 
-![パブリッシュ][4]
+![Publish](/images/user-manual/publishing/dialog-publish.png)
 
 * DOWNLOAD .ZIP ボタンをクリック
 
-![ダウンロード][5]
+![Download](/images/user-manual/publishing/dialog-publish-download.png)
 
 * エクスポートするファイルの名前を入力してください。これは、作成される .zip ファイルの名前になります。
 * 以下のリストからエクスポートに含めるシーンを選択してください。アクティブなバナーアイコンが付いているシーンが、アプリが起動されたときに最初にロードされるシーンになります。
@@ -67,9 +67,6 @@ GitHub Pagesドキュメントは、[`.nojekyll`][13]ファイルの使用に関
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 [2]: /user-manual/publishing/web/playcanvas-hosting
-[3]: /images/user-manual/publishing/toolbar-publish.png
-[4]: /images/user-manual/publishing/dialog-publish.png
-[5]: /images/user-manual/publishing/dialog-publish-download.png
 [6]: https://www.python.org/
 [7]: https://www.apachefriends.org/index.html
 [8]: https://httpd.apache.org/

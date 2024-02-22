@@ -9,11 +9,11 @@ sidebar_position: 11
 
 2020 年 12 月には、レガシースクリプトプロジェクトが近い将来 read-only になることが発表されました。エディタで開くと、プロジェクトダッシュボードには次のようなメッセージが表示されます。
 
-![Dashboard Legacy Script][2]
+![Dashboard Legacy Script](/images/user-manual/scripting/migration-guide/dashboard-warning.png)
 
 エディタには、次のようなメッセージが表示されます。
 
-![Editor Legacy Script][3]
+![Editor Legacy Script](/images/user-manual/scripting/migration-guide/editor-warning.png)
 
 レガシースクリプトプロジェクトで作業を続けたい場合は、現在の形式に移行することをお勧めします。残念なことに、これには自動化された移行プロセスはありません。代わりに、このガイドに従って手動で移行する必要があります。
 
@@ -25,7 +25,7 @@ sidebar_position: 11
 
 次に、すべてのアセットを新しいプロジェクトにコピーします(レガシープロジェクトのスクリプトは*実際にはアセットではないため*、スクリプトは除外します)。右クリックのコンテキストメニューを使用して、アセットを 1 つのプロジェクトから別のプロジェクトにコピーして貼り付けることができます。
 
-![Copy Paste Assets][4]
+![Copy Paste Assets](/images/user-manual/scripting/migration-guide/copy-assets.png)
 
 ただし、レガシースクリプトプロジェクトはかなり古いため、ファイル拡張子なしでアセットがインポートされ、インスペクターパネルで表示できないメタデータがある可能性があるため、ソースアセットをダウンロードして新しいプロジェクトにアップロードすることを検討する必要があります。
 
@@ -33,7 +33,7 @@ sidebar_position: 11
 
 プロジェクトダッシュボードから、レガシースクリプトプロジェクトのスクリプトをダウンロードします。
 
-![Download Scripts][5]
+![Download Scripts](/images/user-manual/scripting/migration-guide/download-scripts.png)
 
 レガシープロジェクトが GitHub リポジトリに接続されている場合は、そこからスクリプトをダウンロードします。
 
@@ -142,11 +142,11 @@ if (entities.length) {
 
 以下のように表示されるはずです。
 
-![Select Script Entities][6]
+![Select Script Entities](/images/user-manual/scripting/migration-guide/select-script-entities.png)
 
 次に、インスペクターで削除ボタンをクリックします。
 
-![Delete Script Components][7]
+![Delete Script Components](/images/user-manual/scripting/migration-guide/delete-script-components.png)
 
 これで、read-only プロジェクトから新しい宛先プロジェクトにゲームの階層をコピーして貼り付けることができます。
 
@@ -157,9 +157,3 @@ Scriptコンポーネントがあるすべてのエンティティを再選択�
 これで、移行が完了しました。
 
 [1]: https://blog.playcanvas.com/playcanvas-scripts-2-0/
-[2]: /images/user-manual/scripting/migration-guide/dashboard-warning.png
-[3]: /images/user-manual/scripting/migration-guide/editor-warning.png
-[4]: /images/user-manual/scripting/migration-guide/copy-assets.png
-[5]: /images/user-manual/scripting/migration-guide/download-scripts.png
-[6]: /images/user-manual/scripting/migration-guide/select-script-entities.png
-[7]: /images/user-manual/scripting/migration-guide/delete-script-components.png

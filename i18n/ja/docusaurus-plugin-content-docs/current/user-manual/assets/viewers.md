@@ -1,17 +1,17 @@
 ---
 title: アセットビューアー
-sidebar_position: 19
+sidebar_position: 8
 ---
 
 いくつかのアセットには、より詳細にチェックするためのビューアーツールがあります。これらで表示できるアセットは、インスペクターやコンテキストメニューに  'Open in Viewer' というオプションが表示されます。
 
-![Open in Viewer option][open-in-viewer-option]
+![Open in Viewer option](/images/user-manual/assets/viewers/open-in-viewer-option.jpg)
 
 これらのオプションのいずれかをクリックすると、アセットが新しいタブでビューアーで開かれます。
 
 ## モデルビューアー
 
-![Model Viewer Preview][model-viewer-preview]
+![Model Viewer Preview](/images/user-manual/assets/viewers/model-viewer-preview.jpg)
 
 (モデル: Wayfair LLC. [CC BY 4.0][cc-40] International 2021)
 
@@ -26,16 +26,13 @@ sidebar_position: 19
 
 ## Texture Tool
 
-![Texture Tool Preview][texture-tool-preview]
+![Texture Tool Preview](/images/user-manual/assets/viewers/texture-tool-preview.jpg)
 
 以下のアセットタイプで[オープンソースのテクスチャツール][texture-tool-github]が利用できます:
 
 - テクスチャ (Texture)
 - Texture Atlas
 
-[open-in-viewer-option]: /images/user-manual/assets/viewers/open-in-viewer-option.jpg
-[model-viewer-preview]: /images/user-manual/assets/viewers/model-viewer-preview.jpg
 [model-viewer-github]: https://github.com/playcanvas/model-viewer
-[texture-tool-preview]: /images/user-manual/assets/viewers/texture-tool-preview.jpg
 [texture-tool-github]: https://github.com/playcanvas/texture-tool
 [cc-40]: https://creativecommons.org/licenses/by/4.0/

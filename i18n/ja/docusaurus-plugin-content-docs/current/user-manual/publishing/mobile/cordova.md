@@ -91,7 +91,7 @@ cordova run ios
 
 実行可能ファイルがビルドプロセスで生成されると、Simulatorが開始され、それが読み込まれます。次のようなものが表示されます。
 
-![Master Archer in Simulator][11]
+![Master Archer in Simulator](/images/user-manual/publishing/cordova/simulator-master-archer.png)
 
 物理デバイスで実行するには:
 
@@ -100,11 +100,11 @@ cordova run ios
 3. プロジェクトのターゲットに対する署名と機能の設定に移動し、デジタル署名されたアプリを展開する前に有効なチームを選択します。
 4. XcodeのスキームドロップダウンリストでiOSデバイスを選択します。
 
-![Xcode Scheme drop-down][12]
+![Xcode Scheme drop-down](/images/user-manual/publishing/cordova/xcode-scheme.png)
 
 5. Runボタンを押して、アプリケーションをビルド、展開、実行します。
 
-![Xcode Run button][13]
+![Xcode Run button](/images/user-manual/publishing/cordova/xcode-run.png)
 
 アプリに満足したら、[App Store Connect] [14]に出荷することができます。
 
@@ -112,15 +112,9 @@ cordova run ios
 [2]: https://cordova.apache.org/docs/en/latest/guide/cli/index.html#installing-the-cordova-cli
 [3]: https://playcanv.as/p/JERg21J8/
 [4]: https://cordova.apache.org/docs/en/latest/config_ref/images.html
-[5]: /images/user-manual/publishing/toolbar-publish.png
-[6]: /images/user-manual/publishing/cordova/download-zip.png
-[7]: /images/user-manual/publishing/cordova/download-new-build.png
 [8]: /user-manual/api/app-download/
 [9]: https://apps.apple.com/us/app/xcode/id497799835?mt=12
 [10]: https://cordova.apache.org/announcements/2020/06/01/cordova-ios-release-6.0.0.html
-[11]: /images/user-manual/publishing/cordova/simulator-master-archer.png
-[12]: /images/user-manual/publishing/cordova/xcode-scheme.png
-[13]: /images/user-manual/publishing/cordova/xcode-run.png
 [14]: https://developer.apple.com/app-store-connect/
 [rest-api-tools-readme]: https://github.com/playcanvas/playcanvas-rest-api-tools#cordova-publish
 [rest-api-tools-setup]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
