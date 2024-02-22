@@ -287,12 +287,14 @@ PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
 };
 ```
 
-  ![Actor](/images/tutorials/multiplayer-photon/14.png)
+![Actor](/images/tutorials/multiplayer-photon/14.png)
+
 - **actor** は `name`, `actorNr` , `isLocal` , `userId` を含みます。
 - **onActorJoin** 新しいユーザーが接続すると、参加したアクターを取得できます。
 - **onActorLeave** ユーザーが切断されると、切断されたアクターを取得できます。
 
-If successful, the entity is added when the player joins.
+成功した場合、プレイヤーが参加したときにエンティティが追加されます。
+
 ![Console log - Actors ](/images/tutorials/multiplayer-photon/15.png)
 
 #### プレイヤーの移動
