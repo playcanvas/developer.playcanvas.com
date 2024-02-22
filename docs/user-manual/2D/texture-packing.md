@@ -22,7 +22,7 @@ Here are some texture packing tools that are compatible with PlayCanvas.
 
 A free browser tool that is able to do the basics of texture packing.
 
-![][texture-packer-online-steps]
+![](/images/user-manual/2D/texture-packer/texture-packer-online-steps.png)
 
 1. Clear the texture atlas.
 2. Add your sprites/UI images.
@@ -36,7 +36,7 @@ A free browser tool that is able to do the basics of texture packing.
 
 TexturePacker is a paid tool for download that has many more features and options for creating texture atlases. These include more control over the layout of the sprites/UI images and being able to set up [9 slicing][9-slicing].
 
-![][texture-packer-tool-steps]
+![](/images/user-manual/2D/texture-packer/texture-packer-tool-steps.png)
 
 Basic steps:
 
@@ -48,7 +48,7 @@ Basic steps:
 
 Once you have uploaded the texture atlas file into the Editor and created a [texture atlas asset][texture-atlas], open the Sprite Editor.
 
-![][playcanvas-sprite-editor]
+![](/images/user-manual/2D/texture-packer/playcanvas-sprite-editor.png)
 
 Click on 'Upload Texture Packer JSON' and select the JSON frame data file to upload.
 
@@ -65,6 +65,3 @@ When updating the texture atlas later in development, as long as the sprite file
 [texture-packer-online]: https://www.codeandweb.com/tp-online
 [texture-packer-tool]: https://www.codeandweb.com/texturepacker
 [9-slicing]: /user-manual/2D/slicing/
-[texture-packer-online-steps]: /images/user-manual/2D/texture-packer/texture-packer-online-steps.png
-[texture-packer-tool-steps]: /images/user-manual/2D/texture-packer/texture-packer-tool-steps.png
-[playcanvas-sprite-editor]: /images/user-manual/2D/texture-packer/playcanvas-sprite-editor.png

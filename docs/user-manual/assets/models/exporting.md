@@ -5,7 +5,7 @@ sidebar_position: 3
 
 PlayCanvas can import 3D content in the following formats: glTF binary (GLB), FBX, OBJ, 3DS and COLLADA (DAE). We strongly recommend you use GLB as it's an open source industry standard and very well supported in the Editor.
 
-![GLB Import Example][glb-import-gif]
+![GLB Import Example](/images/user-manual/assets/models/building/glb-import.gif)
 
 (Model by Loïc Norgeot and mosquito scan by Geoffrey Marchal for [Sketchfab][mosquito] licensed under [CC BY 4.0][cc-40]).
 
@@ -26,6 +26,5 @@ If GLB is not available, then please use FBX as it is a robust and well tested i
 * Select the 'Embed Media' option in the FBX exporter panel. This packages the scene's textures in the exported FBX. This preserves material to textures links during import into PlayCanvas. Otherwise, you must upload all scene textures separately and relink all textures to materials.
 * Select the 'Binary' file format option in the FBX exporter panel. This reduces FBX file size considerably.
 
-[glb-import-gif]: /images/user-manual/assets/models/building/glb-import.gif
 [cc-40]: https://creativecommons.org/licenses/by/4.0/
 [mosquito]: https://sketchfab.com/3d-models/

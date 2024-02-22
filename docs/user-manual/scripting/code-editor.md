@@ -59,7 +59,7 @@ If you have unsaved changes the Revert option in the File menu will cancel these
 
 All the text editing features can be found using the command palette via Ctrl + Shift + P (Windows) or Cmd + Shift + P (Mac).
 
-![][command-palette]
+![](/images/user-manual/scripting/command-palette.png)
 
 ## Hot Keys
 
@@ -86,7 +86,7 @@ The editor supports various shortcuts to help you when editing code. You can fin
 
 You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac). This will open up the Find panel on the top right:
 
-![][monaco-find-panel]
+![](/images/user-manual/scripting/monaco-find-panel.png)
 
 Enter your search term here and press Enter. You can navigate between matches by continuously hitting Enter (or Shift + Enter to go backwards).
 
@@ -139,5 +139,3 @@ Holding down Alt + Shift and dragging left mouse button will create a rectangula
 [10]: https://regexr.com/
 [13]: https://jshint.com/
 [14]: https://jshint.com/docs/
-[command-palette]: /images/user-manual/scripting/command-palette.png
-[monaco-find-panel]: /images/user-manual/scripting/monaco-find-panel.png
