@@ -5,7 +5,7 @@ sidebar_position: 1.2
 
 シェーダーエディターはいくつかのサブウィンドウまたはペインで構成されています。以下でペインについてハイライトし、それぞれの簡単な説明をします。
 
-![window-layout](/images/shader-editor/window-layout.png)
+![window-layout](/img/shader-editor/window-layout.png)
 
 | ペイン (Pane)                | 説明                                                       |
 | ------------------- | ----------------------------------------------------------------- |

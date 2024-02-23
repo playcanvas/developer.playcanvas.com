@@ -3,7 +3,7 @@ title: Material Inspector
 sidebar_position: 3
 ---
 
-![Material Inspector](/images/shader-editor/inspector-pane-material.png)
+![Material Inspector](/img/shader-editor/inspector-pane-material.png)
 
 The Material Inspector is where a material's settings are configured.
 

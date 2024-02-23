@@ -3,7 +3,7 @@ title: VR
 sidebar_position: 21
 ---
 
-![VR View](/images/user-manual/xr/vr-view.png)
+![VR View](/img/user-manual/xr/vr-view.png)
 
 PlayCanvas also lets you create Virtual Reality (VR) applications.
 

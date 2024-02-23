@@ -5,13 +5,13 @@ sidebar_position: 8
 
 Some of the assets have viewer tools that can help inspect them more closely. Assets that can be viewed in these will have the option to 'Open in Viewer' in the inspector and context menu.
 
-![Open in Viewer option](/images/user-manual/assets/viewers/open-in-viewer-option.jpg)
+![Open in Viewer option](/img/user-manual/assets/viewers/open-in-viewer-option.jpg)
 
 Clicking on either of these options will open the viewer with the asset in a new tab.
 
 ## Model Viewer
 
-![Model Viewer Preview](/images/user-manual/assets/viewers/model-viewer-preview.jpg)
+![Model Viewer Preview](/img/user-manual/assets/viewers/model-viewer-preview.jpg)
 
 (Model: Copyright 2021 Wayfair LLC. [CC BY 4.0][cc-40] International)
 
@@ -26,7 +26,7 @@ The Model Viewer is useful for inspecting the model node hierarchy, morph target
 
 ## Texture Tool
 
-![Texture Tool Preview](/images/user-manual/assets/viewers/texture-tool-preview.jpg)
+![Texture Tool Preview](/img/user-manual/assets/viewers/texture-tool-preview.jpg)
 
 The [open source Texture Tool][texture-tool-github] is available for the following asset types:
 

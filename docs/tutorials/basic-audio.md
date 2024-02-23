@@ -50,7 +50,7 @@ To create a Sound source select the Entity you wish to add the Sound to and choo
 
 Sound properties will now appear in the AttributeEditor.
 
-![Sound Component](/images/tutorials/audio/sound.jpg)
+![Sound Component](/img/tutorials/audio/sound.jpg)
 
 Here is the Sound component of the tank Entity. Here's some information about some of the properties:
 

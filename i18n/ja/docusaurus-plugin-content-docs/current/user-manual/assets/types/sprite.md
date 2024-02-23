@@ -6,7 +6,7 @@ title: Sprite
 
 ## Properties
 
-![Sprites](/images/user-manual/assets/sprites/sprites.jpg)
+![Sprites](/img/user-manual/assets/sprites/sprites.jpg)
 
 ### ピクセルあたりの単位 (Pixels Per Unit)
 

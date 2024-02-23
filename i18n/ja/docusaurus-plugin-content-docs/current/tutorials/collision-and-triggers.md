@@ -28,7 +28,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 トリガーボリュームを作成するには、単にエンティティに *Collision* コンポーネントを追加するだけです。このチュートリアルでは、斜面の下に大きなボックス形状のトリガーボリュームを追加して、落ちてくるオブジェクトをキャッチし、位置をリセットします。
 
-![Collisions & Triggers](/images/tutorials/collision/collision_and_triggers.jpg)
+![Collisions & Triggers](/img/tutorials/collision/collision_and_triggers.jpg)
 
 ランプの下にあるトリガーボリュームを青い外枠で表示しています。
 
@@ -38,7 +38,7 @@ Rigid Body (剛体) は、ゲーム世界における物理的なオブジェク
 
 シーン内で剛体を作成するには、エンティティを選択し、 *RigidBody* コンポーネントと *Collision* コンポーネントを追加します。デフォルトでは、これにより **static box** の剛体が作成されます。 *RigidBody*  コンポーネントには、オブジェクトのプロパティを調整するために使用できるさまざまなオプションが提供されています。
 
-![rigidbody component](/images/user-manual/scenes/components/component-rigid-body-dynamic.png)
+![rigidbody component](/img/user-manual/scenes/components/component-rigid-body-dynamic.png)
 
 各プロパティの詳細については、[*RigidBody*のドキュメント][5]を参照してください。
 
@@ -52,7 +52,7 @@ Rigid Body (剛体) は、ゲーム世界における物理的なオブジェク
 
 最初に必要なのは、地面を形成する緑色のブロックです。
 
-<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300" />
+<img loading="lazy" src="/img/tutorials/collision/ground_setup.png" width="300" />
 
 属性パネルで、*render*、*collision*、*rigidbody*コンポーネントを持つのが見えます。エンティティと*collision*全体のプロパティを増やしています。また、摩擦力と反発力のプロパティもわずかに増加しています。これにより、表面がデフォルトよりもやや粗く、やや弾力性がある状態になります。
 
@@ -60,7 +60,7 @@ Rigid Body (剛体) は、ゲーム世界における物理的なオブジェク
 
 次に必要なのはトリガーです。
 
-![Trigger Entity](/images/tutorials/collision/trigger_setup.jpg)
+![Trigger Entity](/img/tutorials/collision/trigger_setup.jpg)
 
 このエンティティには*collision*コンポーネントがありますが、*rigidbody*がないためトリガーとして機能します。トリガーEntityには、コードが添付された*script*コンポーネントもあります。トリガーは、トリガーがアクティブになったときに何かが起こる場合のみ有用であるため、トリガーがアクティブになったときにf音声効果が再生されるように、いくつかのコードを追加する必要があります。
 
@@ -99,7 +99,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 地面を **Static** に設定しました。次に、落下するオブジェクトを作成し、それらが **Dynamic** であることを確認します。
 
-<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300" />
+<img loading="lazy" src="/img/tutorials/collision/box_setup.png" width="300" />
 
 これは、ボックスの *rigidbody* と *collision* の設定です。球体とカプセルも同じように設定されています。
 

@@ -5,7 +5,7 @@ sidebar_position: 5
 
 グラフエディターは、現在選択されているグラフを表示します。ノードの作成、配置、接続、削除がここで行われます。
 
-![Graph Editor](/images/shader-editor/graph-editor.png)
+![Graph Editor](/img/shader-editor/graph-editor.png)
 
 | 使い方 | |
 |---|---|

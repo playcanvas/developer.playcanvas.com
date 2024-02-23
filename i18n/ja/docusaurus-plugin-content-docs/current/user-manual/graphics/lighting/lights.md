@@ -21,13 +21,13 @@ PlayCanvasには3つの種類の光源があります。
 
 非選択時、方向性光は以下のアイコンでエディタの3Dビューに表示されます。
 
-![Directional light icon](/images/user-manual/graphics/lighting/lights/directional_icon.jpg)
+![Directional light icon](/img/user-manual/graphics/lighting/lights/directional_icon.jpg)
 
 ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
 方向性光は以下のようにオブジェクトを照らします。
 
-![Directional light](/images/user-manual/graphics/lighting/lights/directional.jpg)
+![Directional light](/img/user-manual/graphics/lighting/lights/directional.jpg)
 
 ### Omni Lights {#omni-lights}
 
@@ -35,13 +35,13 @@ PlayCanvasには3つの種類の光源があります。
 
 非選択時、オムニライトは以下のアイコンでエディタの3Dビューに表示されます。
 
-![Omni light icon](/images/user-manual/graphics/lighting/lights/point_icon.jpg)
+![Omni light icon](/img/user-manual/graphics/lighting/lights/point_icon.jpg)
 
 ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
 オムニライトは以下のようにオブジェクトを照らします。
 
-![Omni light](/images/user-manual/graphics/lighting/lights/point.jpg)
+![Omni light](/img/user-manual/graphics/lighting/lights/point.jpg)
 
 ### Spot Lights {#spot-lights}
 
@@ -49,13 +49,13 @@ PlayCanvasには3つの種類の光源があります。
 
 非選択時、スポットライトは以下のアイコンでエディターの3Dビューに表示されます。
 
-![Spot light icon](/images/user-manual/graphics/lighting/lights/spot_icon.jpg)
+![Spot light icon](/img/user-manual/graphics/lighting/lights/spot_icon.jpg)
 
 ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
 スポットライトは以下のようにオブジェクトを照らします。
 
-![Spot light](/images/user-manual/graphics/lighting/lights/spot.jpg)
+![Spot light](/img/user-manual/graphics/lighting/lights/spot.jpg)
 
 ## Light Shapes {#light-shapes}
 
@@ -82,7 +82,7 @@ PlayCanvasには3つの種類の光源があります。
 
 球体の光源形状は、指定された半径を持つ球形です。
 
-![Shapes](/images/user-manual/graphics/lighting/lights/shapes.jpg)
+![Shapes](/img/user-manual/graphics/lighting/lights/shapes.jpg)
 
 ## Use Cases {#use-cases}
 

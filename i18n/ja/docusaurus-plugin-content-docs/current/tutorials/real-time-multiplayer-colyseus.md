@@ -72,11 +72,11 @@ PlayCanvasにColyseus JavaScript SDKを追加する必要があります。
 
 **「メニュー」→ 「設定」**を開いてください:
 
-![settings](/images/tutorials/multiplayer-colyseus/settings.png)
+![settings](/img/tutorials/multiplayer-colyseus/settings.png)
 
 設定パネルから、**「外部スクリプト」**を展開し、**「URL」**の数を増やします。
 
-![CDN](/images/tutorials/multiplayer-colyseus/ext_script.png)
+![CDN](/img/tutorials/multiplayer-colyseus/ext_script.png)
 
 新しい**「URL」**フィールドに、CDNからColyseus JavaScript SDKを含めてください:
 
@@ -208,7 +208,7 @@ export class MyRoomState extends Schema {
 
 スケール`8`のPlaneを作成しましょう。
 
-![Plane](/images/tutorials/multiplayer-colyseus/plane.jpg)
+![Plane](/img/tutorials/multiplayer-colyseus/plane.jpg)
 
 ### Playerの作成 {#creating-the-player}
 
@@ -216,7 +216,7 @@ export class MyRoomState extends Schema {
 
 `"Enabled"`プロパティのチェックを外すことを確認してください。サーバーとのアクティブな接続があるまでは、Playerのインスタンスは有効化されません。
 
-![Player](/images/tutorials/multiplayer-colyseus/player.png)
+![Player](/img/tutorials/multiplayer-colyseus/player.png)
 
 ## Stateの変更を監視 {#listening-for-state-changes}
 
@@ -397,7 +397,7 @@ Colyseusには、ゲーム開発中に役立つオプションのモニタリン
 
 ローカルサーバーからモニターパネルを表示するには、`http://localhost:2567/colyseus` にアクセスしてください。
 
-![monitor](/images/tutorials/multiplayer-colyseus/monitor.png)
+![monitor](/img/tutorials/multiplayer-colyseus/monitor.png)
 
 このパネルを通じて、スポーンしたすべてのルームやアクティブなクライアント接続を見ることができ、相互作用することができます。
 

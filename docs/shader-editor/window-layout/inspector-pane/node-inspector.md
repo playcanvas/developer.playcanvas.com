@@ -3,7 +3,7 @@ title: Node Inspector
 sidebar_position: 2
 ---
 
-![Node Inspector](/images/shader-editor/inspector-pane-node.png)
+![Node Inspector](/img/shader-editor/inspector-pane-node.png)
 
 The Node Inspector is where a node's settings are configured.
 

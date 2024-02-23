@@ -5,7 +5,7 @@ sidebar_position: 5
 
 アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査、編集などが行えます。
 
-![Assets Panel](/images/user-manual/editor/assets-panel.png)
+![Assets Panel](/img/user-manual/editor/assets-panel.png)
 
 ## フォルダーの階層 {#folder-hierarchy}
 
@@ -71,27 +71,27 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 プロジェクト間でアセットまたは複数のアセットをコピーするには、アセットを選択し、右クリックしてコンテキストメニューを表示し、 'Copy' を選択します。読み取り専用のプロジェクトの場合、コンテキストメニューが使用できない場合は、代わりにホットキーCtrl/Cmd + Cを使用することもできます。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500" />
+<img loading="lazy" src="/img/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500" />
 
 アセットをコピーしたいプロジェクトで、アセットパネルを右クリックし、 'Paste' を選択します。Ctrl/Cmd + Vのホットキーを使用することもできます。これにより、アセットがコピー先のプロジェクトに貼り付けられます。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500" />
+<img loading="lazy" src="/img/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500" />
 
 アセットのコピーと貼り付けでは、アセットに関連する依存関係もコピーされます。例えば、モデルが2つのマテリアルを参照し、それらのマテリアルが一連のテクスチャを参照している場合、それらの依存関係もコピーされます。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%" />
+<img loading="lazy" src="/img/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%" />
 
 別のプロジェクトにModelアセットをコピー＆ペーストする場合、そのアセットの依存関係も一緒にコピーされます。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%" />
+<img loading="lazy" src="/img/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%" />
 
 デフォルトでは、フラットなヒエラルキーで貼り付けられます。もしフォルダ構造を維持したい場合は、コンテキストメニューが開かれたときにShiftキーを押し続けると、'Paste (keep folders)' というオプションが表示されます。これにより、貼り付け先のフォルダをルートフォルダとしてフォルダ構造を維持しようとします。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500" />
+<img loading="lazy" src="/img/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500" />
 
 以下のように、フォルダ構造が保持された結果となります。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%" />
+<img loading="lazy" src="/img/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%" />
 
 一般的には、再利用可能なライブラリやアセットにこの機能を使用する場合は、他のプロジェクトに簡単にコピー＆ペーストできるよう、ルートレベルのフォルダに収めることをおすすめします。これにより、プロジェクトのフォルダ構造がシンプルで整理された状態を保つことができます。
 
@@ -105,7 +105,7 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 特定のシーン内でアセットが使用されている(または参照されている)場所を知ることが有用な場合もあります。エディターがアセットの参照を検出できない場合、サムネイルに小さい点が表示されます。
 
-![Unreferenced Asset](/images/user-manual/editor/assets-panel/unreferenced-asset.png)
+![Unreferenced Asset](/img/user-manual/editor/assets-panel/unreferenced-asset.png)
 
 :::warning
 
@@ -115,7 +115,7 @@ Editorはコードで作成されたアセットの参照を検出できませ�
 
 アセットに参照がある場合は、Referencesコンテンツメニュー項目を使用して参照することができます。
 
-![Asset References](/images/user-manual/editor/assets-panel/asset-references.png)
+![Asset References](/img/user-manual/editor/assets-panel/asset-references.png)
 
 参照を選択するとインスペクターパネルに読み込まれます。
 

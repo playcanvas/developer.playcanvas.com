@@ -19,7 +19,7 @@ The Editor API is open sourced on [GitHub][github-repo]. The API documentation c
 
 The API can be accessed via the browser's devtools console allowing for automation of repetitive tasks. In the example below, we are using the Editor to find all the Entities that have the tag 'red' and disabling them by running code in the browser console.
 
-![](/images/user-manual/editor/editor-api/disable-red-boxes.gif)
+![](/img/user-manual/editor/editor-api/disable-red-boxes.gif)
 
 Editor API code:
 
@@ -40,7 +40,7 @@ User scripts is the more accessible out of the two which allows you to run custo
 
 Below we have an example where a button has been added to the [Viewport][viewport] to generate and randomly place boxes into the scene.
 
-![](/images/user-manual/editor/editor-api/generate-random-boxes.gif)
+![](/img/user-manual/editor/editor-api/generate-random-boxes.gif)
 
 The PlayCanvas team are currently using the [Violentmonkey][violentmonkey] open source browser extension to manage user scripts.
 

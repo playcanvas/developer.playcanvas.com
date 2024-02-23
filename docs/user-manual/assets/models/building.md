@@ -20,7 +20,7 @@ The import of GLBs supports the following glTF features for incredibly fast scen
 
 As such, to target PlayCanvas, you do not have to use any special art tool plugins and there are no PlayCanvas-specific workflows you must follow.
 
-![GLB Import Example](/images/user-manual/assets/models/building/glb-import.gif)
+![GLB Import Example](/img/user-manual/assets/models/building/glb-import.gif)
 
 (Model by Loïc Norgeot and mosquito scan by Geoffrey Marchal for [Sketchfab][13] licensed under [CC BY 4.0][12]).
 
@@ -54,7 +54,7 @@ Regardless which modeling application you are using, there a number of things to
 
 ## Blender
 
-![Blender Logo](/images/user-manual/assets/models/building/blender-logo.jpg)
+![Blender Logo](/img/user-manual/assets/models/building/blender-logo.jpg)
 
 [Blender][4] is a fantastic free tool for 3D modeling and it is perfect for generating 3D assets for PlayCanvas.
 
@@ -101,7 +101,7 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 
 You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
 
-![Max material editor](/images/user-manual/assets/models/building/max-material-editor.jpg)
+![Max material editor](/img/user-manual/assets/models/building/max-material-editor.jpg)
 
 ### Supported Map Slots
 
@@ -141,11 +141,11 @@ Assigning a Normal Bump map to this slot enables normal mapping. Note that, by d
 
 There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
 
-![Normal map](/images/user-manual/assets/models/building/wall-norm.jpg)
+![Normal map](/img/user-manual/assets/models/building/wall-norm.jpg)
 
 Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the green component (or the Y component of each normal in the normal map) to be flipped. Loading the file into Photoshop, selecting the green channel and pressing Ctrl+I to invert the channel gives:
 
-![Normal map with Y component flipped](/images/user-manual/assets/models/building/wall-norm-yflip.jpg)
+![Normal map with Y component flipped](/img/user-manual/assets/models/building/wall-norm-yflip.jpg)
 
 Now, lighting in PlayCanvas will be consistent.
 
@@ -155,7 +155,7 @@ If the assigned normal map has an alpha channel, it will be treated as a paralla
 
 Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
 
-![Sphere map](/images/user-manual/assets/models/building/mountains-sphere.jpg)
+![Sphere map](/img/user-manual/assets/models/building/mountains-sphere.jpg)
 
 Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
 
@@ -167,7 +167,7 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 
-![Maya material editor](/images/user-manual/assets/models/building/maya-material-editor.jpg)
+![Maya material editor](/img/user-manual/assets/models/building/maya-material-editor.jpg)
 
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: https://cgcookie.com/learn-blender

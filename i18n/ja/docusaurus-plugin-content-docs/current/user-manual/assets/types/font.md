@@ -8,7 +8,7 @@ Fontアセットには、ユーザーが含めることを選択したフォン�
 
 エディターでFontアセットを編集できるプロパティは、以下のとおりです。
 
-![Font Asset](/images/user-manual/assets/fonts/font.png)
+![Font Asset](/img/user-manual/assets/fonts/font.png)
 
 ## Properties
 

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュを持つモデルをインポートすることができます。これにより、エディタで異なるメッシュを直接編集することができます。コンポーネントを追加したり、他のエンティティをアタッチしたり、エンティティ階層内のエンティティを移動/回転/スケールしたりすることができます。
 
-![Edit model hierarchy in the Editor](/images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif)
+![Edit model hierarchy in the Editor](/img/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif)
 
 ## 有効化の方法
 
@@ -17,11 +17,11 @@ PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュ�
 
 「プロジェクト設定」を開きます。
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480" />
+<img loading="lazy" src="/img/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480" />
 
 'Asset Tasks' までスクロールし、 'Import Hierarchy' を有効にします。
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360" />
+<img loading="lazy" src="/img/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360" />
 
 ## モデルのインポート
 
@@ -29,11 +29,11 @@ PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュ�
 
 概要として、モデルファイルを 'アセットパネル' にドラッグします。
 
-![Drag Model into Assets Panel](/images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif)
+![Drag Model into Assets Panel](/img/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif)
 
 インポート時に次のアセットが作成されます。
 
-![Created Assets](/images/user-manual/assets/import-pipeline/import-hierarchy/created-assets.png)
+![Created Assets](/img/user-manual/assets/import-pipeline/import-hierarchy/created-assets.png)
 
 | アセットタイプ | 説明 |
 |------------|-------------|

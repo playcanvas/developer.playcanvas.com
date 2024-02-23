@@ -39,7 +39,7 @@ HDRおよびEXRは[高ダイナミックレンジフォーマット][2]です。
 
 テクスチャは、標準的なアセットプロパティ(ID、名前、タグなど)を共有しますが、テクスチャ固有のプロパティもあります。
 
-![Texture Properties](/images/user-manual/assets/textures/texture-properties.png)
+![Texture Properties](/img/user-manual/assets/textures/texture-properties.png)
 
 ### テクスチャのフィルタリング (Texture Filtering)
 
@@ -49,7 +49,7 @@ HDRおよびEXRは[高ダイナミックレンジフォーマット][2]です。
 
 テクスチャが斜めの角度で表面上に表示される場合、品質が低下し、ぼやけたように見えることがあります。この問題を解決するために、Anisotropyの値を設定することができます。異なるAnisotropyの値がテクスチャの外観にどのような影響を与えるかを見てみましょう。
 
-![Anisotropy](/images/user-manual/assets/textures/anisotropy.png)
+![Anisotropy](/img/user-manual/assets/textures/anisotropy.png)
 
 Anisotropyが増加するにつれて、GPUでテクスチャをサンプリングするコストも増加します。
 
@@ -57,7 +57,7 @@ Anisotropyが増加するにつれて、GPUでテクスチャをサンプリン�
 
 テクスチャアドレスプロパティを使用すると、テクスチャ座標が範囲0から1以外の値でサンプリングされる方法を制御できます。さまざまなモードがスプライトにどのように影響するかを以下に示します。
 
-![Addressing](/images/user-manual/assets/textures/texture-address.png)
+![Addressing](/img/user-manual/assets/textures/texture-address.png)
 
 ## 最大テクスチャサイズ
 
@@ -65,11 +65,11 @@ Anisotropyが増加するにつれて、GPUでテクスチャをサンプリン�
 
 たとえば、2020年のMacBook Pro 16インチの場合、Chromeで最大16384x16384までサポートされていることがわかります。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" width="600" />
+<img loading="lazy" src="/img/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" width="600" />
 
 一方、Samsung S7モバイルデバイスでは、4096x4096のみサポートされています。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" width="600" />
+<img loading="lazy" src="/img/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" width="600" />
 
 If the engine attempts to utilize a texture that exceeds the max texture size reported by WebGL, it will resize it down to this maximum size at runtime. Note that this is only done for texture loaded from images (PNG, JPG, AVIF, WebP, GIF). Compressed textures cannot be resized at runtime and will simply fail to render if they are too large for the device.
 

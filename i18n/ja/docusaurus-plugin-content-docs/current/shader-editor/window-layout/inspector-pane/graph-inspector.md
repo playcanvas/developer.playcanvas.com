@@ -3,7 +3,7 @@ title: グラフインスペクター
 sidebar_position: 1
 ---
 
-![Graph Inspector](/images/shader-editor/inspector-pane-graph.png)
+![Graph Inspector](/img/shader-editor/inspector-pane-graph.png)
 
 グラフインスペクターは、グラフの設定が構成される場所です。
 

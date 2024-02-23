@@ -7,11 +7,11 @@ sidebar_position: 1
 
 次は、ブルームを適用していないイメージです。
 
-![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
+![Image without effect](/img/user-manual/graphics/posteffects/without-effects.png)
 
 そして下の画像がブルームエフェクトを適応した画像です。
 
-![Image with effect](/images/user-manual/graphics/posteffects/with-bloom.png)
+![Image with effect](/img/user-manual/graphics/posteffects/with-bloom.png)
 
 ビルトインのブルームエフェクトは以下のパラメータを持ちます:
 

@@ -9,11 +9,11 @@ sidebar_position: 2
 
 スクリーンのレンダリングモードにおける主な選択肢は、スクリーンスペースにレンダリングするか、ワールドスペースにレンダリングするかです。
 
-![Screen space](/images/user-manual/user-interface/screens/screen-space-viewport.png)
+![Screen space](/img/user-manual/user-interface/screens/screen-space-viewport.png)
 
 スクリーンスペースのScreenコンポーネントは、通常の変換階層には従いません。代わりに、カメラのオーバーレイとしてレンダリングされます。これは、2Dのインターフェイス、HUD、その他のゲームインターフェイスを作成するのに便利です。メニューから *2Dスクリーン* を追加することで、スクリーンスペースのスクリーンを作成するオプションがあります。
 
-![World Space](/images/user-manual/user-interface/screens/world-space-viewport.png)
+![World Space](/img/user-manual/user-interface/screens/world-space-viewport.png)
 
 スクリーンスペースのオプションが無効化されている場合、スクリーンは代わりに通常の変換階層を使用してレンダリングされます。エレメントは依然としてスクリーンの座標系に対して相対的に配置されますが、スクリーンは3Dの世界に表示されます。メニューから *3Dスクリーン* を追加することで、ワールドスペースのスクリーンを作成するオプションがあります。
 
@@ -23,21 +23,21 @@ PlayCanvasのアプリケーションは、さまざまなデバイスや多く�
 
 エレメントをレンダリングする最もシンプルな方法は、スケーリングを行わないことです。
 
-![iPad No Scaling](/images/user-manual/user-interface/screens/ipad-no-scaling.png)
+![iPad No Scaling](/img/user-manual/user-interface/screens/ipad-no-scaling.png)
 
 この場合、ユーザーインターフェースはiPadの解像度でうまく動作します。しかし、同じシーンをiPhoneで表示した場合、どうなるでしょうか。
 
-![iPhone No Scaling](/images/user-manual/user-interface/screens/iphone-no-scaling.png)
+![iPhone No Scaling](/img/user-manual/user-interface/screens/iphone-no-scaling.png)
 
 iPhoneの解像度が小さいため、ユーザーインターフェースは画面の端を越えてしまい、使用不能になります。
 
 Screenコンポーネントには、スクリーンスペースコンポーネントで使用できるScaling Modeプロパティがあります。これが*Blend*に設定されている場合、画面は表示されている画面の解像度に合わせてインタフェースを拡大/縮小します。iPadでブレンドスケーリングを使用した同じインターフェースは次のとおりです。
 
-![iPad Scaling](/images/user-manual/user-interface/screens/ipad-scaling.png)
+![iPad Scaling](/img/user-manual/user-interface/screens/ipad-scaling.png)
 
 iPhone上
 
-![iPhone Scaling](/images/user-manual/user-interface/screens/iphone-scaling.png)
+![iPhone Scaling](/img/user-manual/user-interface/screens/iphone-scaling.png)
 
 両方の解像度でユーザーインターフェースが機能していることがわかります。
 
@@ -47,13 +47,13 @@ Screenコンポーネントの* Reference Resolution *プロパティを「理�
 
 これらの例では、Scale Blendプロパティの変更による、PortraitからLandscapeへの変更に対するインターフェイスの応答への影響を確認できます
 
-![Scale Blend 0](/images/user-manual/user-interface/screens/scale-blend-0.png)
+![Scale Blend 0](/img/user-manual/user-interface/screens/scale-blend-0.png)
 With a value of 0 the increase in horizontal resolution makes the button too large
 
-![Scale Blend 1](/images/user-manual/user-interface/screens/scale-blend-1.png)
+![Scale Blend 1](/img/user-manual/user-interface/screens/scale-blend-1.png)
 With a value of 1 the decrease in vertical resolution makes the button too small
 
-![Scale Blend 0.5](/images/user-manual/user-interface/screens/scale-blend-0.5.png)
+![Scale Blend 0.5](/img/user-manual/user-interface/screens/scale-blend-0.5.png)
 With a value of 0.5 the two changes are balanced and the button stays the same size
 
 [1]: /user-manual/scenes/components/screen

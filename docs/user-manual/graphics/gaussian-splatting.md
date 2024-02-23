@@ -27,7 +27,7 @@ Inria's [SIGGRAPH 2023 paper](https://repo-sam.inria.fr/fungraph/3d-gaussian-spl
 
 Captured splats normally need to be edited to some degree. The generation process can often create splats in the wrong location (sometimes referred to as 'floaters') so it's useful to be able to remove these stray splats. It may also be desirable to isolate a particular object (such as a person) in a captured splat and completely remove the background.
 
-![SuperSplat](/images/user-manual/graphics/gaussian-splatting/supersplat.png)
+![SuperSplat](/img/user-manual/graphics/gaussian-splatting/supersplat.png)
 
 PlayCanvas provides a powerful 3D Gaussian Splat editor called [SuperSplat](https://playcanvas.com/supersplat/editor). SuperSplat is open-sourced under an MIT license on [GitHub](https://github.com/playcanvas/super-splat).
 
@@ -38,7 +38,7 @@ To import your PLY splat file:
 1. Drag it into the Editor's [Asset Panel](../../editor/assets).
 2. Drag the created [GSplat asset](../../assets/types/gsplat) into the [Viewport](../../editor/viewport). This will auto-create an Entity in the Hierarchy with a [GSplat component](../../scenes/components/gsplat) with your GSplat asset assigned to it.
 
-![Import Gaussian Splat](/images/user-manual/graphics/gaussian-splatting/import-gsplat.webp)
+![Import Gaussian Splat](/img/user-manual/graphics/gaussian-splatting/import-gsplat.webp)
 
 ## Limitations
 

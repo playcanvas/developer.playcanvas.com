@@ -7,7 +7,7 @@ sidebar_position: 1
 
 例えば、以下はシンプルなマテリアルグラフです。グラフは、定数の色値をマテリアルノードの emissive フィールドに接続します。
 
-![Material Graph Example](/images/shader-editor/overview-graph-material.png)
+![Material Graph Example](/img/shader-editor/overview-graph-material.png)
 
 上記のように、マテリアルノードにはいくつかの入力ポートがあります。各ポートは、ランタイム照明環境の側面を制御します。ポートの詳細は以下の通りです。
 

@@ -3,7 +3,7 @@ title: プロジェクトのダッシュボード
 sidebar_position: 7
 ---
 
-![Dashboard](/images/user-manual/dashboard/dashboard.png)
+![Dashboard](/img/user-manual/dashboard/dashboard.png)
 
 プロジェクトのダッシュボードはプロジェクトのコントロールセンターです。ダッシュボードから次のことができます。
 

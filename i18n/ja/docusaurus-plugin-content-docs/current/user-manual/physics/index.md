@@ -7,6 +7,6 @@ sidebar_position: 16
 
 物理エンジンは、自然界の常識を人工的なゲームの世界で再現しようとしています。オブジェクトを現実にあるべき姿で動かせるように試みています。
 
-![Physics Constraints](/images/user-manual/physics/physics-constraints.webp)
+![Physics Constraints](/img/user-manual/physics/physics-constraints.webp)
 
 PlayCanvasは非常に強力な物理エンジンを提供しており、様々なエフェクトを実現するために使用することができます。このセクションでは、RigidBody、衝突、力、インパルス、レイキャストなどの概念を紹介します。

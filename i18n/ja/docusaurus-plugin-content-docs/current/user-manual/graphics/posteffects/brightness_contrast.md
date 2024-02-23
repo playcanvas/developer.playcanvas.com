@@ -7,11 +7,11 @@ sidebar_position: 2
 
 これはエフェクトをかけていない画像です。
 
-![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
+![Image without effect](/img/user-manual/graphics/posteffects/without-effects.png)
 
 これがエフェクトをかけて輝度とコントラストを調整した画像です。
 
-![Image with effect](/images/user-manual/graphics/posteffects/with-brightness-contrast.png)
+![Image with effect](/img/user-manual/graphics/posteffects/with-brightness-contrast.png)
 
 ビルトインの輝度とコントラストエフェクトは以下の様な属性値が設定されています:
 

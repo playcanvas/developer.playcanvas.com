@@ -22,49 +22,49 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 マテリアルについて話し始める前に、キューブマップの設定をします。キューブマップとは、立方体のそれぞれの面に貼られた6枚のテクスチャからなるアセットです。これはシーンの遠方にある背景として処理されます。PlayCanvasの物理的マテリアルは、キューブマップを画像ベースのライティングに使用することができます。このライティングは、キューブマップの色をシーン内のマテリアルを照らす明かりとして使います。例えば、このゲームのシーンでは、キューブマップは青い空と緑の草の地面です。そのため、ゲーム内のぼーるは上からは青い光で、下からは緑の光で照らされます。[詳しくはドキュメントを参照してください][7]。
 
-![Cubemap](/images/tutorials/beginner/keepyup-part-two/cubemap-preview.jpg)
+![Cubemap](/img/tutorials/beginner/keepyup-part-two/cubemap-preview.jpg)
 
 キューブマップを設定するには、まずキューブマップアセットをNew Assetメニューから作成し、キューブマップの面に6枚のテクスチャを割り当てます。キューブマップの6面全てにテクスチャを割り当てたら、"Prefilter"ボタンをクリックしてください。**プレフィルタリングはキューブマップを正しく動作させるために必要な準備です。**
 
 ## Footballマテリアル
 
-![Football](/images/tutorials/beginner/keepyup-part-two/ball-material.jpg)
+![Football](/img/tutorials/beginner/keepyup-part-two/ball-material.jpg)
 
 サッカーボールは[PlayCanvasアセットライブラリ][2]からインポートした3Dモデルです。footballマテリアルはすでに設定済みですが、いくつか単純な調整が必要になるかもしれません。サッカーボールに使われているそれぞれのテクスチャを確認してみましょう。
 
 #### ディフューズ (Diffuse)
 
-![Diffuse](/images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg)
+![Diffuse](/img/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg)
 
 Diffuseマップは表面の色を決めます。このゲームでは黒と白のサッカーボールのパターンになっています。
 
 #### 環境マップ (Environment)
 
-![Environment](/images/tutorials/beginner/keepyup-part-two/ball-env.jpg)
+![Environment](/img/tutorials/beginner/keepyup-part-two/ball-env.jpg)
 
 スペキュラマップの効果を説明するために必要なため、環境マップの説明を簡単にここでしておきます。環境マップの設定をしたい場合は、キューブマップをマテリアルのスロットにドラッグしてください。
 
 #### スペキュラーマップ (Specular)
 
-![Specular](/images/tutorials/beginner/keepyup-part-two/ball-spec.jpg)
+![Specular](/img/tutorials/beginner/keepyup-part-two/ball-spec.jpg)
 
 specular（鏡面）セクションはマテリアルがどのように照明と相互作用するかを決定します。specularには、「Metalnessワークフロー」と「Specularワークフロー」の2つの「ワークフロー」があります。詳細は[ドキュメント][6]をご確認ください。サッカーボールではMetalnessを使用しているので、「Use Metalness」チェックボックスをオンにしてください。サッカーボールは金属製でないので、metalnessスライダーを0になるようスライドさせます。次に、光沢スライダーを使用してマテリアルの滑らかさを設定します。ボールが滑らか過ぎず、ちょうど良い光沢になるよう約半分の位置に設定します。
 
 #### 法線 (Normal)
 
-![Normal](/images/tutorials/beginner/keepyup-part-two/ball-normal.jpg)
+![Normal](/img/tutorials/beginner/keepyup-part-two/ball-normal.jpg)
 
 最終に適用するテクスチャマップはnormal（法線）マップです。normalマップは、モデルにディテールを加えるために使用します。この場合、サッカーボールの繋ぎ目がジオメトリでモデル化されていませんが(滑らかな球体)、normalマップではモデル化されています。つまり、ボールは繋ぎ目があるかのように点灯しますが、余分なポリゴンのオーバーヘッドはありません。
 
 ## Backdropマテリアル
 
-![Backdrop](/images/tutorials/beginner/keepyup-part-two/backdrop-material.jpg)
+![Backdrop](/img/tutorials/beginner/keepyup-part-two/backdrop-material.jpg)
 
 Backdropマテリアルはより単純です。テキスチャーマップは一つのみです。
 
 #### エミッシブ (Emissive)
 
-![Emissive](/images/tutorials/beginner/keepyup-part-two/backdrop-emissive.jpg)
+![Emissive](/img/tutorials/beginner/keepyup-part-two/backdrop-emissive.jpg)
 
 Emissiveマップは、表面の色を設定して、まるでその色の光を発光しているかのように見せます。つまり、シーン内の照明はEmissiveの表面の明るさに影響を与えません。Emissiveマテリアルはシーン内の他のオブジェクトには影響しませんが、実際に光は発光されません。
 
@@ -72,11 +72,11 @@ Emissiveマップは、表面の色を設定して、まるでその色の光を
 
 ## オーバーレイマテリアル
 
-![Overlay](/images/tutorials/beginner/keepyup-part-two/overlay-material.jpg)
+![Overlay](/img/tutorials/beginner/keepyup-part-two/overlay-material.jpg)
 
 オーバーレイ素材は、背景より簡単です。この場合、Emissiveプロパティの色を設定しています。
 
-![Emissive](/images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg)
+![Emissive](/img/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg)
 
 [その3][15]に進む。
 

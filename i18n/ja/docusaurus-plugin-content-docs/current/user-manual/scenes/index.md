@@ -10,13 +10,13 @@ sidebar_position: 9
 
 これらはPlayCanvasエディターで編集されます。
 
-![](/images/user-manual/scenes/scene-list.png)
+![](/img/user-manual/scenes/scene-list.png)
 
 ## シーンヒエラルキー
 
 The **Scene Hierarchy** is a graph of [Entities](entities) that can have [Components](components) to give these Entities behaviors such as having a mesh to render in the world or to play sound effects. They can also be given custom behavior with [scripts](../scripting).
 
-<img loading="lazy" src="/images/user-manual/scenes/scene-hierarchy.png" width="400" />
+<img loading="lazy" src="/img/user-manual/scenes/scene-hierarchy.png" width="400" />
 
 ## シーン設定 (Scene Settings)
 
@@ -33,4 +33,4 @@ The **Scene Hierarchy** is a graph of [Entities](entities) that can have [Compon
 * [Fog](settings#fog) (7)
 * [Lightmap properties](settings#lightmapping) (8)
 
-<img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500" />
+<img loading="lazy" src="/img/user-manual/scenes/scene-settings.png" width="500" />

@@ -3,7 +3,7 @@ title: Inspector
 sidebar_position: 3
 ---
 
-![Inspector Panel](/images/user-manual/editor/inspector/inspector.png)
+![Inspector Panel](/img/user-manual/editor/inspector/inspector.png)
 
 The Inspector panel shows attribute values for the currently selected item.
 

@@ -13,59 +13,59 @@ PlayCanvasでのアプリケーション開発は簡単で楽しいものです�
 
 まず、PROJECTSページに移動します。
 
-![Projects Page](/images/user-manual/your-first-app/projects-page.png)
+![Projects Page](/img/user-manual/your-first-app/projects-page.png)
 
 NEWボタンを選択して新しいプロジェクトを作成します。
 
-![New Project](/images/user-manual/your-first-app/new-project.png)
+![New Project](/img/user-manual/your-first-app/new-project.png)
 
 プロジェクト名に`My First App`を入力します。説明はオプションで、後で記入することもできます。CREATEをクリックします。
 
 プロジェクトが作成されたら、すぐにエディタに入りましょう。EDITORボタンをクリックします。
 
-![Editor Button](/images/user-manual/your-first-app/editor-button.png)
+![Editor Button](/img/user-manual/your-first-app/editor-button.png)
 
 エディタを初めて開くと、最小限のシーンが作成されているはずです。
 
-![Editor](/images/user-manual/your-first-app/editor.png)
+![Editor](/img/user-manual/your-first-app/editor.png)
 
 具体的には、シーンを描画するカメラ (Camera) 、ボックス (Box) 、3Dオブジェクトを照らすライト (Light) があります。
 
 ボックス (Box) を他の形状、たとえばスフィア (Sphere) に簡単に変更することができます。これを行うには、ヒエラルキーパネル (HIERARCHY) でBoxエンティティを選択します。右のインスペクターパネル (INSPECTOR) で、ModelコンポーネントのTypeプロパティをBoxからSphereに変更します。その後、Entityの名前もBoxからSphereに変更しましょう！
 
-![Box To Sphere](/images/user-manual/your-first-app/box-to-sphere.png)
+![Box To Sphere](/img/user-manual/your-first-app/box-to-sphere.png)
 
 しかし、私たちのスフィアは少し退屈な灰色です。それを赤色にしましょう！これを行うには、ASSETSパネルの**+**アイコンをクリックしてマテリアルを作成する必要があります。
 
-![Create Material](/images/user-manual/your-first-app/create-material.png)
+![Create Material](/img/user-manual/your-first-app/create-material.png)
 
 マテリアルを選択すると、そのプロパティが右のインスペクターパネルに表示されます。DIFFUSEセクションを展開し、色見本をクリックして色を赤に編集します。
 
-![Red Material](/images/user-manual/your-first-app/red-material.png)
+![Red Material](/img/user-manual/your-first-app/red-material.png)
 
 次に、マテリアルをスフィアに割り当てる必要があります。これはシンプルなドラッグアンドドロップ操作で行うことができます。
 
-![Drag And Drop Material](/images/user-manual/your-first-app/drag-and-drop-material.gif)
+![Drag And Drop Material](/img/user-manual/your-first-app/drag-and-drop-material.gif)
 
 次に、カメラエンティティの設定をしましょう。ヒエラルキーパネル (HIERARCHY) でそれを選択します。
 
-![Editor Camera Selected](/images/user-manual/your-first-app/editor-camera-selected.png)
+![Editor Camera Selected](/img/user-manual/your-first-app/editor-camera-selected.png)
 
 選択したカメラのために小さなプレビューウィンドウが表示されていることに注目してください。カメラの位置と回転を編集して、直接前からキューブを見るようにしましょう。以下の値でカメラの位置と回転を編集します。
 
-![Camera Transform](/images/user-manual/your-first-app/camera-transform.png)
+![Camera Transform](/img/user-manual/your-first-app/camera-transform.png)
 
 次に、スフィアをキーボードの矢印キーで操作できるようにしましょう。これを行うには、スクリプトを作成する必要があります。Sphereエンティティを右クリックし、`Add Component -> Script`を選択します。
 
-![Add Script Component](/images/user-manual/your-first-app/add-script-component.png)
+![Add Script Component](/img/user-manual/your-first-app/add-script-component.png)
 
 ScriptコンポーネントがSphereエンティティのインスペクター (Inspector) に表示されます。Scriptコンポーネント上にスクリプトアセットを作成するには、`movement.js`という名前を入力します。
 
-![Create Script Asset](/images/user-manual/your-first-app/create-script-asset.png)
+![Create Script Asset](/img/user-manual/your-first-app/create-script-asset.png)
 
 Enterを押すと、スクリプトが作成されます。
 
-![Edit Script](/images/user-manual/your-first-app/edit-script.png)
+![Edit Script](/img/user-manual/your-first-app/edit-script.png)
 
 次に、EDITをクリックしてコードエディターを開きます。以下のデフォルトのスクリプトが表示されます。
 
@@ -123,35 +123,35 @@ Movement.prototype.update = function(dt) {
 
 これで、Launchページを開いてアプリのプレビューが可能になりました。これを行うには、エディタの3Dビューの右上にあるLaunchボタンをクリックします。
 
-![Launch Button](/images/user-manual/your-first-app/launch-button.png)
+![Launch Button](/img/user-manual/your-first-app/launch-button.png)
 
 Launchページは新しいタブで開きます。開いたら、4つの矢印キーを押してスフィアを動かしてみてください。
 
-![Launch Page](/images/user-manual/your-first-app/launch-page.gif)
+![Launch Page](/img/user-manual/your-first-app/launch-page.gif)
 
 :::tip
 
 エディタとLaunchページの間には'ライブリンク'があります。エディタで行った変更は、Launchページにリアルタイムで反映されます！作業中にエディタとLaunchページを並べて配置すると便利です。
 
-![Editor Live Link](/images/user-manual/your-first-app/live-link.gif)
+![Editor Live Link](/img/user-manual/your-first-app/live-link.gif)
 
 :::
 
 最後のステップは、他の人と共有できるようにアプリを公開することです。これを行うには、左側のツールバーにある <span class="pc-icon">&#57911; </span>ボタンをクリックします。
 
-![Publish Button](/images/user-manual/your-first-app/publish-button.png)
+![Publish Button](/img/user-manual/your-first-app/publish-button.png)
 
 これにより、公開ダイアログが開きます。ここでビルドを公開することができます（または、セルフホスティング用にビルドをダウンロードすることもできます）。
 
-![Publish](/images/user-manual/your-first-app/publish-dialog.png)
+![Publish](/img/user-manual/your-first-app/publish-dialog.png)
 
 PUBLISH TO PLAYCANVASオプションをクリックします。次に、公開されるアプリを設定することができます。
 
-![Publish New Build](/images/user-manual/your-first-app/publish-options.png)
+![Publish New Build](/img/user-manual/your-first-app/publish-options.png)
 
 デフォルトのままにし、下にスクロールしてPUBLISH NOWを選択します。
 
-![Builds](/images/user-manual/your-first-app/builds.png)
+![Builds](/img/user-manual/your-first-app/builds.png)
 
 これで、公開ビルドのURLが手に入りました！TwitterやFacebookで世界中に共有してみてください！
 

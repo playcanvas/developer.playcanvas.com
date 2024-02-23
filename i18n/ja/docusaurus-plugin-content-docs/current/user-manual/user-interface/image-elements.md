@@ -9,13 +9,13 @@ sidebar_position: 5
 
 各イメージエレメントにはカラープロパティがあります。テクスチャが適用されていない場合、イメージエレメントは単に色のついた長方形になります。テクスチャが適用されている場合、この色はテクスチャの着色に使用されます。これにより、１つのグレースケールテクスチャだけを使ってカラーバリエーションを作成することができます。
 
-![Tinting](/images/user-manual/user-interface/image-element/image-tinted.png)
+![Tinting](/img/user-manual/user-interface/image-element/image-tinted.png)
 
 ## 透明性 (Transparency)
 
 カラープロパティと同様に、不透明度プロパティを使用してエレメントの透明度レベルを設定することができます。
 
-![Transparent](/images/user-manual/user-interface/image-element/image-transparent.png)
+![Transparent](/img/user-manual/user-interface/image-element/image-transparent.png)
 
 ## アドバンスマテリアル (Advanced Material)
 

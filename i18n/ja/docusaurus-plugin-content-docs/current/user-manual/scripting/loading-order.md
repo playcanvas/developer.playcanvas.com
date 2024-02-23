@@ -5,11 +5,11 @@ sidebar_position: 7
 
 一般的に、すべてのスクリプトはアプリケーションの開始時にロードされます。ロード順序は、プロジェクトの設定によって決まります。この設定には、メインのエディタメニューまたはシーンの設定からアクセスすることができます。
 
-![Loading Order](/images/user-manual/scripting/script-loading-order.jpg)
+![Loading Order](/img/user-manual/scripting/script-loading-order.jpg)
 
 ローディングオーダーパネルには、`preload` としてマークされたすべてのスクリプトと、そのロードおよび実行の順序が表示されます。
 
-![Loading Order List](/images/user-manual/scripting/loading-order-list.jpg)
+![Loading Order List](/img/user-manual/scripting/loading-order-list.jpg)
 
 個別のスクリプトの順番をドラッグして移動することができます。
 

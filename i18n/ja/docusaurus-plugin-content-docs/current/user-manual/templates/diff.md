@@ -5,7 +5,7 @@ sidebar_position: 1
 
 オーバーライド差分ビュー (Override Diff View) は、テンプレートインスタンスのすべてのテンプレートオーバーライドの詳細なリストを表示します。ここでは、オーバーライドされた値をTemplateアセットの値と比較し、適用または元に戻すオーバーライドを選択できます。
 
-![Diff View](/images/user-manual/templates/diff.png)
+![Diff View](/img/user-manual/templates/diff.png)
 
 ## オーバーライドの適用
 

@@ -3,7 +3,7 @@ title: ノードインスペクター
 sidebar_position: 2
 ---
 
-![Node Inspector](/images/shader-editor/inspector-pane-node.png)
+![Node Inspector](/img/shader-editor/inspector-pane-node.png)
 
 ノードインスペクターは、ノードの設定が構成される場所です。
 

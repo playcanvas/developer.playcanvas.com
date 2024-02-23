@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link';
 
 If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:
 
-<img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png" />
+<img loading="lazy" alt="Loading Screen" src="/img/user-manual/editor/loading-screen/loading-screen.png" />
 
 Clicking on **Create Default** will create a new script with some default contents. You can edit that script if you want to change the loading screen. Here is an example of a default script:
 
@@ -25,7 +25,7 @@ pc.script.createLoadingScreen(function (app) {
         splash.style.display = 'none';
 
         var logo = document.createElement('img');
-        logo.src = 'https://playcanvas.com/static-assets/images/play_text_252_white.png';
+        logo.src = 'https://playcanvas.com/static-assets/img/play_text_252_white.png';
         splash.appendChild(logo);
         logo.onload = function () {
             splash.style.display = 'block';

@@ -8,15 +8,15 @@ Lightコンポーネントは、コンポーネントパネルの右上にある
 
 #### 方向性
 
-![Light component (Directional)](/images/user-manual/scenes/components/component-light-directional.png)
+![Light component (Directional)](/img/user-manual/scenes/components/component-light-directional.png)
 
 #### オムニ
 
-![Light component (Omni)](/images/user-manual/scenes/components/component-light-point.png)
+![Light component (Omni)](/img/user-manual/scenes/components/component-light-point.png)
 
 #### スポット
 
-![Light component (Spot)](/images/user-manual/scenes/components/component-light-spot.png)
+![Light component (Spot)](/img/user-manual/scenes/components/component-light-spot.png)
 
 ## Properties
 

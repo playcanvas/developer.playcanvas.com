@@ -6,7 +6,7 @@ A Sprite is a 2D graphic that can be rendered into Scene. A Sprite Asset is a re
 
 ## Properties
 
-![Sprites](/images/user-manual/assets/sprites/sprites.jpg)
+![Sprites](/img/user-manual/assets/sprites/sprites.jpg)
 
 ### Pixels Per Unit
 

@@ -42,11 +42,11 @@ server.listen(3000);
 
 Glitch will automatically re-run the server every time you finish typing. Once you’ve copied this, you should get an error. Click on the `Logs` button on the left side of the screen to open up the server console. Here you can see any server output, as well as the errors. You should see `Error: Cannot find module 'socket.io'`.
 
-![Opening the log](/images/tutorials/multiplayer/glitch_error.png)
+![Opening the log](/img/tutorials/multiplayer/glitch_error.png)
 
 To include a package, go to `package.json` and click on the `Add Package` button on the top. Search for `socket.io`.
 
-![Adding a package](/images/tutorials/multiplayer/glitch_add_package.png)
+![Adding a package](/img/tutorials/multiplayer/glitch_add_package.png)
 
 
 Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started.` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
@@ -61,15 +61,15 @@ Create a new project on PlayCanvas. We first need to include the Socket.io clien
 
 Go to project settings.
 
-![Project settings](/images/tutorials/multiplayer/project_settings.png)
+![Project settings](/img/tutorials/multiplayer/project_settings.png)
 
 Find and open 'External Scripts'.
 
-![External scripts settings](/images/tutorials/multiplayer/external_scripts_settings.png)
+![External scripts settings](/img/tutorials/multiplayer/external_scripts_settings.png)
 
 Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
 
-![Project settings](/images/tutorials/multiplayer/added_socket_io_library.png)
+![Project settings](/img/tutorials/multiplayer/added_socket_io_library.png)
 
 
 ```
@@ -106,11 +106,11 @@ This will log whatever data is sent to the server when `playerJoined` is emitted
 
 For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody. Here is what the settings on the ground entity should look like:
 
-<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360" />
+<img loading="lazy" src="/img/tutorials/multiplayer/ground_entity.png" width="360" />
 
 Next we’ll need a player to control. Create a new capsule and call it `Player`. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
 
-<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360" />
+<img loading="lazy" src="/img/tutorials/multiplayer/player_entity.png" width="360" />
 
 Duplicate the player entity and rename it as 'Other'. Uncheck the `Enabled` box on this new entity so that it's disabled to begin with.  This is the entity we'll be using to simulate other players in the game.
 

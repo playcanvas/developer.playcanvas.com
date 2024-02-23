@@ -5,13 +5,13 @@ sidebar_position: 8
 
 いくつかのアセットには、より詳細にチェックするためのビューアーツールがあります。これらで表示できるアセットは、インスペクターやコンテキストメニューに  'Open in Viewer' というオプションが表示されます。
 
-![Open in Viewer option](/images/user-manual/assets/viewers/open-in-viewer-option.jpg)
+![Open in Viewer option](/img/user-manual/assets/viewers/open-in-viewer-option.jpg)
 
 これらのオプションのいずれかをクリックすると、アセットが新しいタブでビューアーで開かれます。
 
 ## モデルビューアー
 
-![Model Viewer Preview](/images/user-manual/assets/viewers/model-viewer-preview.jpg)
+![Model Viewer Preview](/img/user-manual/assets/viewers/model-viewer-preview.jpg)
 
 (モデル: Wayfair LLC. [CC BY 4.0][cc-40] International 2021)
 
@@ -26,7 +26,7 @@ sidebar_position: 8
 
 ## Texture Tool
 
-![Texture Tool Preview](/images/user-manual/assets/viewers/texture-tool-preview.jpg)
+![Texture Tool Preview](/img/user-manual/assets/viewers/texture-tool-preview.jpg)
 
 以下のアセットタイプで[オープンソースのテクスチャツール][texture-tool-github]が利用できます:
 

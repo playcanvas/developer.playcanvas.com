@@ -33,6 +33,6 @@ Chrome can dynamically generate a QR code for any page. From the Launch Page on 
 
 :::
 
-[1]: /images/user-manual/editor/launch-page/launch-button.png
-[2]: /images/user-manual/editor/launch-page/launch-page-side-by-side.png
-[3]: /images/user-manual/editor/launch-page/launch-page-live-link.gif
+[1]: /img/user-manual/editor/launch-page/launch-button.png
+[2]: /img/user-manual/editor/launch-page/launch-page-side-by-side.png
+[3]: /img/user-manual/editor/launch-page/launch-page-live-link.gif

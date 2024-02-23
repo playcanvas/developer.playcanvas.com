@@ -2,7 +2,7 @@
 title: Texture Atlas
 ---
 
-![Texture Atlas](/images/user-manual/assets/texture-atlas/texture-atlas.jpg)
+![Texture Atlas](/img/user-manual/assets/texture-atlas/texture-atlas.jpg)
 
 テクスチャアトラス (Texture Atlas) とは、テクスチャ内の 'フレーム' (Frames) を記述する補足データをともなうTextureアセットです。フレームは、テクスチャ内で定義された領域で 'ピボット' (Pivot) ポイントのある長方形として表示されます。ピボットポイントはフレームの位置および回転の中心を設定します。
 

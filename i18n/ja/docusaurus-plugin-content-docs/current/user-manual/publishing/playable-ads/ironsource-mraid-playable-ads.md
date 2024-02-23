@@ -43,7 +43,7 @@ ironSourceには、再生可能な広告の要件のチェックリストを実�
 
 テストモードとMRAIDの両方がページで有効になっていることを確認してください。
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600" />
+<img loading="lazy" src="/img/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600" />
 
 `config.json`の以下のオプションを設定すると、ZIPファイルが生成されます。ZIPファイルには、`index.html`からアセットデータとPlayCanvas Engineコードが別々のファイルとして含まれます。
 
@@ -72,7 +72,7 @@ ironSourceのテストツールでテストするために、HTTPSエンドポ�
 
 私たちのお勧めの方法は、[ローカルホスト][host-locally]をホストし、アプリがアクセスできるように[ngrok][ngrok]を使用することです。
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600" />
+<img loading="lazy" src="/img/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600" />
 
 これにより、エンドポイントの一意のURLが提供され、外部ファイルを参照している`index.html`に追加する必要がある。
 
@@ -114,7 +114,7 @@ ironSourceのテストツールでテストするために、HTTPSエンドポ�
 
 もしPC上で正しく再生される場合は、[ironSourceのテストツール][ironsource-test-tool]でテストすることができます。`index.html` の内容をコピーして、テストツールのMRAIDタグの領域に貼り付けてください。
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600" />
+<img loading="lazy" src="/img/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600" />
 
 「広告をテストする」をクリックし、レンダリングが完了したら、CTAボタンに到達するために広告を再生してください。CTAボタンを押した後、ツールはすべてのテストが合格したことを示し、コードを生成するオプションを提供します。
 
@@ -122,7 +122,7 @@ ironSourceのテストツールでテストするために、HTTPSエンドポ�
 
 これは、AndroidとiOSの両方で利用可能な彼らのアプリを使用して、デバイス上でテストするために使用されます。
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400" />
+<img loading="lazy" src="/img/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400" />
 
 ### ironSourceの最終エクスポート
 

@@ -3,7 +3,7 @@ title: ヒエラルキー (Hierarchy)
 sidebar_position: 2
 ---
 
-![Hierarchy Panel](/images/user-manual/editor/hierarchy/hierarchy-panel.png)
+![Hierarchy Panel](/img/user-manual/editor/hierarchy/hierarchy-panel.png)
 
 ヒエラルキーパネルは、シーン全体のツリービューを表示し、エンティティの階層から構成されます。シーンには常にツリーのトップにあるルートエンティティが含まれます。ここに表示される他のすべてのエンティティは、開発者によって追加されたものです。
 
@@ -23,13 +23,13 @@ sidebar_position: 2
 
 Near the top of the Hierarchy panel is a Search box which you can use to dynamically filter the content of the Entity tree. 
 
-![Hierarchy Panel Search](/images/user-manual/editor/hierarchy/hierarchy-search.png)
+![Hierarchy Panel Search](/img/user-manual/editor/hierarchy/hierarchy-search.png)
 
 By default, the search will filter based on entity names with 'Smart Search' enabled. Smart Search is fuzzy, which means it matches names that are similar to the search string rather than exactly the same. This is useful if you can't quite remember the name of the Entity you are searching for.
 
 You can customize the search by clicking the magnifying glass:
 
-![Hierarchy Panel Search Options](/images/user-manual/editor/hierarchy/hierarchy-search-options.png)
+![Hierarchy Panel Search Options](/img/user-manual/editor/hierarchy/hierarchy-search-options.png)
 
 ## エンティティの複製
 

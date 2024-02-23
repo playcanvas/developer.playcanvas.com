@@ -5,7 +5,7 @@ sidebar_position: 3
 
 PlayCanvas can import 3D content in the following formats: glTF binary (GLB), FBX, OBJ, 3DS and COLLADA (DAE). We strongly recommend you use GLB as it's an open source industry standard and very well supported in the Editor.
 
-![GLB Import Example](/images/user-manual/assets/models/building/glb-import.gif)
+![GLB Import Example](/img/user-manual/assets/models/building/glb-import.gif)
 
 (Model by Loïc Norgeot and mosquito scan by Geoffrey Marchal for [Sketchfab][mosquito] licensed under [CC BY 4.0][cc-40]).
 

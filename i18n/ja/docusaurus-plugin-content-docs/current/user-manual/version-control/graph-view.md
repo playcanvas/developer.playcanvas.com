@@ -9,17 +9,17 @@ sidebar_position: 10
 
 バージョンコントロールパネル ( Version Control Panel) では、選択したブランチの最新のチェックポイントのシンプルなリストが表示されますが、グラフビューでは、チェックポイント、ブランチ、およびマージを含む、全体のバージョンコントロールグラフのより大きな(拡張可能な)ビューが表示されます。
 
-![](/images/user-manual/version-control/graph-view/overview.png)
+![](/img/user-manual/version-control/graph-view/overview.png)
 
 ## グラフビューの起動
 
 グラフビュー (Graph View) にアクセスするには、バージョンコントロールパネルのトップメニューにある「グラフ」ボタンをクリック(現在のエディターブランチの場合)するか、ブランチメニュードロップダウンの「バージョンコントロールグラフ」エントリをクリックします。
 
-![](/images/user-manual/version-control/graph-view/access-buttons.png)
+![](/img/user-manual/version-control/graph-view/access-buttons.png)
 
 ## グラフノード
 
-![](/images/user-manual/version-control/graph-view/commit-node.png)
+![](/img/user-manual/version-control/graph-view/commit-node.png)
 
 グラフノードには、次の情報が含まれます。
 
@@ -29,7 +29,7 @@ sidebar_position: 10
 
 ## グラフノードコンテキストメニュー
 
-![](/images/user-manual/version-control/graph-view/context-menu.png)
+![](/img/user-manual/version-control/graph-view/context-menu.png)
 
 ノードをクリックすると、ノードとアクセス許可に応じて、以下のいずれかの選択肢に対応するコンテキストメニューが開きます。
 
@@ -39,7 +39,7 @@ sidebar_position: 10
 
 - **選択の比較 (Compare with Selected) ** - 現在のノードと、 'Select for Compare'を通じてマークされたノードとの間にDiff Viewを起動します。
 
-![](/images/user-manual/version-control/graph-view/compare-checkpoints-example.gif)
+![](/img/user-manual/version-control/graph-view/compare-checkpoints-example.gif)
 
 - **新しいブランチ (New Branch) ** - 選択したチェックポイントから新しいブランチを作成します。 ([詳細][new-branch])
 
@@ -51,19 +51,19 @@ sidebar_position: 10
 
 ## 拡張可能なノード
 
-![](/images/user-manual/version-control/graph-view/node-expand.png)
+![](/img/user-manual/version-control/graph-view/node-expand.png)
 
 最初に、グラフビューは、各ブランチから最大20のチェックポイント、および合計60のチェックポイントを表示します。
 
 ノードの右上隅にある三角形は、追加の入力または出力エッジ(ブランチやマージなど)を持っていることを意味し、 'ノードの展開'コンテキストメニューエントリを介して展開できます。
 
-![](/images/user-manual/version-control/graph-view/node-expand-example.gif)
+![](/img/user-manual/version-control/graph-view/node-expand-example.gif)
 
 ## クローズされたブランチ
 
 グラフには、常にマージ結果チェックポイントの両方の親を表示できるように、閉じたブランチのチェックポイントも含まれます。ブランチ名の後に[X]が付いています。
 
-![](/images/user-manual/version-control/graph-view/closed-branches.png)
+![](/img/user-manual/version-control/graph-view/closed-branches.png)
 
 ## グラフノードレイアウトロジック
 

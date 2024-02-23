@@ -16,13 +16,13 @@ Materials are imported automatically when you upload a 3D model (e.g. FBX or COL
 
 You can create new materials directly from the PlayCanvas Editor interface.
 
-![Create Material](/images/user-manual/assets/materials/create-asset-menu.jpg)
+![Create Material](/img/user-manual/assets/materials/create-asset-menu.jpg)
 
 This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
 
 ## Selecting a Material {#selecting-a-material}
 
-![Model Inspector](/images/user-manual/assets/materials/model-inspector-simple.jpg)
+![Model Inspector](/img/user-manual/assets/materials/model-inspector-simple.jpg)
 
 In order to edit a material, first you must select it. This will bring up the material inspector.
 
@@ -32,13 +32,13 @@ Generally, clicking on a material preview icon will take you to the material ins
 
 ## Assigning Materials {#assigning-materials}
 
-![Model Component](/images/user-manual/assets/materials/model.png)
+![Model Component](/img/user-manual/assets/materials/model.png)
 
 You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
 
 When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials.
 
-![Model Inspector Free Slot](/images/user-manual/assets/materials/model-inspector-free-slot.jpg)
+![Model Inspector Free Slot](/img/user-manual/assets/materials/model-inspector-free-slot.jpg)
 
 Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
 
@@ -46,25 +46,25 @@ You can also drag and drop material Assets from the asset panel onto the materia
 
 Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
 
-![Select Mesh Instance](/images/user-manual/assets/materials/select.png)
+![Select Mesh Instance](/img/user-manual/assets/materials/select.png)
 
 After selecting the mesh instance a new material picker will appear in the model component:
 
-![Selected Mesh Instance](/images/user-manual/assets/materials/selected.png)
+![Selected Mesh Instance](/img/user-manual/assets/materials/selected.png)
 
 Then you can select a different material for this particular Entity:
 
-![Select Different Material](/images/user-manual/assets/materials/overridden.png)
+![Select Different Material](/img/user-manual/assets/materials/overridden.png)
 
 ## Editing a Material {#editing-a-material}
 
-![Material Inspector](/images/user-manual/assets/materials/material-inspector.jpg)
+![Material Inspector](/img/user-manual/assets/materials/material-inspector.jpg)
 
 Once you have a material selected you can edit its properties.
 
 ## Material Maps {#material-maps}
 
-![Material Map Slot](/images/user-manual/assets/materials/material-map-slot.jpg)
+![Material Map Slot](/img/user-manual/assets/materials/material-map-slot.jpg)
 
 Much of editing a material involves creating and assigning textures maps to the various slots detailed on the pages above.
 
@@ -84,7 +84,7 @@ Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it
 
 ### Offset & Tiling
 
-<img loading="lazy" src="/images/user-manual/material-inspector/offset-tiling.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/offset-tiling.jpg" width="300" />
 
 | Property          | Description |
 |-------------------|-------------|
@@ -96,7 +96,7 @@ Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it
 
 Ambient properties determine how the material appears in ambient light.
 
-<img loading="lazy" src="/images/user-manual/material-inspector/ambient.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/ambient.jpg" width="300" />
 
 | Property   | Description |
 |------------|-------------|
@@ -108,7 +108,7 @@ Ambient properties determine how the material appears in ambient light.
 
 Diffuse properties define the how a material reflects diffuse light emitted by dynamic light sources in the scene.
 
-<img loading="lazy" src="/images/user-manual/material-inspector/diffuse.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/diffuse.jpg" width="300" />
 
 | Property   | Description |
 |------------|-------------|
@@ -120,7 +120,7 @@ Diffuse properties define the how a material reflects diffuse light emitted by d
 
 Specular properties defines the color of the specular highlights. i.e. the shininess
 
-<img loading="lazy" src="/images/user-manual/material-inspector/specular.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/specular.jpg" width="300" />
 
 | Property      | Description |
 |---------------|-------------|
@@ -136,7 +136,7 @@ Specular properties defines the color of the specular highlights. i.e. the shini
 
 Emissive properties control how the material emits light (as opposed to reflecting light).
 
-<img loading="lazy" src="/images/user-manual/material-inspector/emissive.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/emissive.jpg" width="300" />
 
 | Property   | Description |
 |------------|-------------|
@@ -149,7 +149,7 @@ Emissive properties control how the material emits light (as opposed to reflecti
 
 Opacity sets the transparency level.
 
-<img loading="lazy" src="/images/user-manual/material-inspector/opacity.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/opacity.jpg" width="300" />
 
 | Property   | Description |
 |------------|-------------|
@@ -160,7 +160,7 @@ Opacity sets the transparency level.
 
 Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not height maps).
 
-<img loading="lazy" src="/images/user-manual/material-inspector/normals.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/normals.jpg" width="300" />
 
 | Property   | Description |
 |------------|-------------|
@@ -171,7 +171,7 @@ Use this to specify normal maps (these determine bumpiness - note you have to us
 
 A parallax map gives further realism to a normal map by giving the illusion of depth to a surface. Note that parallax options are only enabled if you have set a normal map on the material.
 
-<img loading="lazy" src="/images/user-manual/material-inspector/parallax.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/parallax.jpg" width="300" />
 
 | Property    | Description |
 |-------------|-------------|
@@ -182,7 +182,7 @@ A parallax map gives further realism to a normal map by giving the illusion of d
 
 Environment properties determine how a material reflects the environment.
 
-<img loading="lazy" src="/images/user-manual/material-inspector/environment.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/environment.jpg" width="300" />
 
 | Property            | Description |
 |---------------------|-------------|
@@ -196,7 +196,7 @@ Environment properties determine how a material reflects the environment.
 
 Light maps contain pre-baked diffuse lighting. Using light maps is considered an optimization in that runtime dynamic lighting calculations can be pre-calculated.
 
-<img loading="lazy" src="/images/user-manual/material-inspector/lightmap.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/lightmap.jpg" width="300" />
 
 | Property   | Description |
 |------------|-------------|
@@ -206,7 +206,7 @@ Light maps contain pre-baked diffuse lighting. Using light maps is considered an
 
 Other Render States gives additional controls over how a mesh is rendered with the specified material.
 
-<img loading="lazy" src="/images/user-manual/material-inspector/other.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/other.jpg" width="300" />
 
 | Property        | Description |
 |-----------------|-------------|

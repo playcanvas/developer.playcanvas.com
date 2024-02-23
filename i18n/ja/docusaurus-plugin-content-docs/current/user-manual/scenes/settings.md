@@ -5,7 +5,7 @@ sidebar_position: 5
 
 設定パネル (SETTINGS) を使用すると、さまざまなプロパティを設定できます。エディターの左下にある`cog`ボタン([ツールバー][1])を使用してアクセスできます。
 
-![Cog](/images/user-manual/scenes/settings/cog.jpg)
+![Cog](/img/user-manual/scenes/settings/cog.jpg)
 
 ## 物理設定 (Physics Settings) {#physics-settings}
 
@@ -64,7 +64,7 @@ Filmicのトーンマッピングは、明るい太陽で照らされたシー�
 
 コンピュータのスクリーンは、物理的には線形ではなく知覚的に線形 (sRGB) な信号を出力するように設定されています。しかし、照明計算を行う際に正しい外観を得るためには、カラーテクスチャを物理的に線形な空間に変換し、完全に照らされたイメージを再び sRGB に合わせる必要があります。ガンマ補正を有効にしてレンダリングすると、不格好で過度に飽和したハイライトの数を減らすことができ、照明後の色をより正確に保持することができます。一般的に、シーンでこれを有効にすることが推奨されます。以下の画像は球体がある単純なシーンで、左側がガンマ補正されたシーンで、右側が補正されていないシーンです。
 
-![Gamma Correction](/images/user-manual/scenes/settings/gamma-correction.jpg)
+![Gamma Correction](/img/user-manual/scenes/settings/gamma-correction.jpg)
 
 ガンマ補正についてもっと知りたい場合は、[このGPU Gemsの章][5]を読んでください。
 
@@ -134,7 +134,7 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 
 ## ライトマッピング (Lightmapping) {#lightmapping}
 
-![Lightmapping Settings](/images/user-manual/scenes/settings/lightmapping-settings.png)
+![Lightmapping Settings](/img/user-manual/scenes/settings/lightmapping-settings.png)
 
 #### サイズの乗数 (Size Multiplier) {#size-multiplier}
 

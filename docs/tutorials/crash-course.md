@@ -1,7 +1,7 @@
 ---
 title: Crash Course - Make a Game
 tags: [games,basics,physics,ui]
-thumb: /images/tutorials/crash-course/crash-course-thumbnail.jpg
+thumb: /img/tutorials/crash-course/crash-course-thumbnail.jpg
 ---
 
 <iframe src="https://www.youtube.com/embed/9zqHlbW9XWE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

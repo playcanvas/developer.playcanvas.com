@@ -7,11 +7,11 @@ sidebar_position: 4
 
 これはエフェクトをかけていない画像です。
 
-![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
+![Image without effect](/img/user-manual/graphics/posteffects/without-effects.png)
 
 これがエフェクトをかけて色調と彩度を調整した画像です:
 
-![Image with effect](/images/user-manual/graphics/posteffects/with-hue-saturation.png)
+![Image with effect](/img/user-manual/graphics/posteffects/with-hue-saturation.png)
 
 ビルトインの色調-彩度エフェクトは以下の様な属性値が設定されています:
 

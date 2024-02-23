@@ -12,7 +12,7 @@ PlayCanvasエディターは、あなたのゲームを構成する[Scene][1]と
 
 ## インターフェイス
 
-<img loading="lazy" alt="Editor Interface" width="640" src="/images/user-manual/editor/editor-annotated.jpg" />
+<img loading="lazy" alt="Editor Interface" width="640" src="/img/user-manual/editor/editor-annotated.jpg" />
 
 これはPlayCanvasエディターのメインインタフェースです。ラベル付けされた主要な領域が表示されます。
 

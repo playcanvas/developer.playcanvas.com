@@ -11,7 +11,7 @@ These assets are therefore state machines for a model's animation behavior and t
 
 When selecting an animstategraph asset in the editors asset panel, you’ll open up the anim state graph editor view:
 
-![Initial Editor](/images/user-manual/anim/state_graph_editor.png)
+![Initial Editor](/img/user-manual/anim/state_graph_editor.png)
 
 Within this view you can edit your animation state graph. The following sections will highlight how different elements of the animstategraph asset can be used to define specific animation behavior.
 
@@ -23,7 +23,7 @@ There are four types of states present in state graphs. Animation states, along 
 
 ### Animation States {#animation-states}
 
-![State](/images/user-manual/anim/state.png)
+![State](/img/user-manual/anim/state.png)
 
 Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show its inspector panel on the right hand side. Within this inspector the following state variables can be modified:
 
@@ -35,23 +35,23 @@ Animation states define a playable animation such as ‘Idle’, ‘Jump’ or �
 
 ### START state {#start-state}
 
-![Start State](/images/user-manual/anim/start_state.png)
+![Start State](/img/user-manual/anim/start_state.png)
 
 The START state is the entry point of every state graph. When an anim component begins playing its assigned anim state graph, it will first enter this state and transition directly to the animation state it’s connected to. This animation state is called the default state and it can be selected via the layers panel here:
 
-![Layers](/images/user-manual/anim/layers.png)
+![Layers](/img/user-manual/anim/layers.png)
 
 It is not possible to create any other transitions to or from the START state. It can only be entered again by transitioning to the END state.
 
 ### END state {#end-state}
 
-![End State](/images/user-manual/anim/end_state.png)
+![End State](/img/user-manual/anim/end_state.png)
 
 The end state marks an exit out of the current state graph. If your animation state is set up to transition to the END state, the system will move directly to the default animation state which is connected to the START state. This is useful to create cyclical flows through the graph while still laying out your graph in a linear fashion. It is not possible to create transitions from the END state to any other state. It will always transition directly to the START state.
 
 ### ANY state {#any-state}
 
-![Any State](/images/user-manual/anim/any_state.png)
+![Any State](/img/user-manual/anim/any_state.png)
 
 This state is used to create transitions which can be activated while the system is currently in any of the other animation states. Any transitions that trigger from this state will blend as if they had been connected directly from the currently active animation state. You can create transitions from the ANY state but not to it.
 
@@ -80,7 +80,7 @@ The parameters of an anim state graph are variables which are used to control th
 
 New parameters can be added to a state graph via the parameters panel on the left inspector:
 
-![Parameters](/images/user-manual/anim/parameters.png)
+![Parameters](/img/user-manual/anim/parameters.png)
 
 Each parameter has three variables which can be set:
 
@@ -94,7 +94,7 @@ The way in which they control the state graph is through the use of transition c
 
 Each condition consists of a conditional statement which compares the current value of a parameters variable to the given value in the condition using the designated operator. For example, the following condition:
 
-![Condition](/images/user-manual/anim/condition.png)
+![Condition](/img/user-manual/anim/condition.png)
 
 Can be used in the transition between the Idle and Jump animation states to ensure that a character only jumps when the ‘Jump’ parameter has been set to true via a script.
 
@@ -104,17 +104,17 @@ So far, animstategraph assets have been discussed in the context of editing a si
 
 When an animstategraph is created, it comes with a single base layer. This layer is not deletable and for many scenarios will be the only one necessary. However if you wish to create another layer you can do so by selecting the new layer button on the layers panel to the left of the state graph view:
 
-![Layers](/images/user-manual/anim/layers.png)
+![Layers](/img/user-manual/anim/layers.png)
 
 It is then possible to switch to editing this layer by selecting it from the layer select dropdown which is present at the top right of the graph view:
 
-![Select Layer](/images/user-manual/anim/select_layer.png)
+![Select Layer](/img/user-manual/anim/select_layer.png)
 
 ### Layer Blending {#layer-blending}
 
 By default, layers animate a model in the order that they’re created in the layers panel. Any animation values they set on a model's bones will be overwritten by subsequent layers. If instead you wish to blend the animation values of the layers together, you can set the `blend type` of your layers to `Additive` rather than the default `Override`:
 
-![Layer Blend](/images/user-manual/anim/anim_layer_blend.png)
+![Layer Blend](/img/user-manual/anim/anim_layer_blend.png)
 
 The blend weight value of each layer is used when blending multiple layers to determine how much each layer should contribute to the final animation. These blend weights can be adjusted at runtime in your game scripts to update the blends of your layers in real time:
 

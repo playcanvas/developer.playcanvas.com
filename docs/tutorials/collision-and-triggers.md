@@ -27,7 +27,7 @@ The most important property of a *collision* component is it's **Type**, this de
 
 To create a Trigger Volume all we need to do is add a *collision* component to an Entity. In this tutorial we're adding a large box-shaped Trigger Volume underneath the slope to catch the falling bodies and reset their position.
 
-![Collisions & Triggers](/images/tutorials/collision/collision_and_triggers.jpg)
+![Collisions & Triggers](/img/tutorials/collision/collision_and_triggers.jpg)
 
 You can see the trigger volume underneath the ramp displayed as a blue outline.
 
@@ -37,7 +37,7 @@ A rigid body is a physical presence in your game world. You can set it up with r
 
 To create a rigid body in your Scene, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
 
-![rigidbody component](/images/user-manual/scenes/components/component-rigid-body-dynamic.png)
+![rigidbody component](/img/user-manual/scenes/components/component-rigid-body-dynamic.png)
 
 For details on each property take a look at the [*rigidbody* documentation][5].
 
@@ -51,7 +51,7 @@ For this demo, the important property is the **Type**. You can pick one of three
 
 The first Entity we need in this tutorial is the green block that forms the ground.
 
-<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300" />
+<img loading="lazy" src="/img/tutorials/collision/ground_setup.png" width="300" />
 
 You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
@@ -59,7 +59,7 @@ You can see in the attribute panel, that it has *render*, *collision* and *rigid
 
 The next Entity we'll need is the trigger.
 
-![Trigger Entity](/images/tutorials/collision/trigger_setup.jpg)
+![Trigger Entity](/img/tutorials/collision/trigger_setup.jpg)
 
 With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
 
@@ -98,7 +98,7 @@ In this case, when the trigger is fired, we reset the penetrating Entity back up
 
 We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
 
-<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300" />
+<img loading="lazy" src="/img/tutorials/collision/box_setup.png" width="300" />
 
 This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
 

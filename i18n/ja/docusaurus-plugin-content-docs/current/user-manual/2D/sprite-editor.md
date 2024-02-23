@@ -7,11 +7,11 @@ sidebar_position: 1
 
 スプライトエディターを開くには、エディターアセットパネル内の任意のTexture AtlasまたはSpriteアセットをダブルクリックします。
 
-![Sprite Editor](/images/user-manual/2D/sprite-editor/sprite-editor-highlights.jpg)
+![Sprite Editor](/img/user-manual/2D/sprite-editor/sprite-editor-highlights.jpg)
 
 ## ビューポート (Viewport)
 
-![Viewport](/images/user-manual/2D/sprite-editor/viewport.jpg)
+![Viewport](/img/user-manual/2D/sprite-editor/viewport.jpg)
 
 スプライトエディタ内のビューポートは、現在選択されているTexture Atlasを表示します。フレームはテクスチャアトラス上の灰色のボックスとして表示されます。選択されたアセットは、2つのハンドル(緑と青)で表示されます。緑のハンドルはフレームの幅と高さを変更し、青のハンドルはフレームのボーダープロパティを変更します。
 
@@ -29,7 +29,7 @@ sidebar_position: 1
 
 ### テクスチャアトラスインスペクター (Texture Atlas Inspector)
 
-![Texture Atlas Inspector](/images/user-manual/2D/sprite-editor/texture-atlas-inspector.jpg)
+![Texture Atlas Inspector](/img/user-manual/2D/sprite-editor/texture-atlas-inspector.jpg)
 
 テクスチャアトラスインスペクターでは、テクスチャアトラスを自動的に固定グリッドにスライスできます。
 
@@ -48,7 +48,7 @@ sidebar_position: 1
 
 ### フレームインスペクター
 
-![Frame Inspector](/images/user-manual/2D/sprite-editor/frame-inspector.jpg)
+![Frame Inspector](/img/user-manual/2D/sprite-editor/frame-inspector.jpg)
 
 フレームインスペクターでは、個々のフレームやフレームの集まりに対してプロパティの設定ができます。フレームを1つ以上選択している場合に表示されます。フレームインスペクターは、新しいスプライトフォームを生成する場所でもあります。
 
@@ -67,7 +67,7 @@ sidebar_position: 1
 
 ### スプライトインスペクター
 
-![Sprite Inspector](/images/user-manual/2D/sprite-editor/sprite-inspector.jpg)
+![Sprite Inspector](/img/user-manual/2D/sprite-editor/sprite-inspector.jpg)
 
 Spriteアセットが選択されているときにスプライトインスペクターが表示されます。このインスペクターは、1つ以上のスプライトのプロパティを編集するために使用されます。プロパティの詳細については、[スプライトアセット][6]を参照してください。
 

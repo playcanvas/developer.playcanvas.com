@@ -5,7 +5,7 @@ sidebar_position: 4
 
 The Assets Pane is where a project’s graphs, materials and textures appear.
 
-![Assets Pane](/images/shader-editor/assets-pane.png)
+![Assets Pane](/img/shader-editor/assets-pane.png)
 
 | Action                   | Description                                                                                         |
 | ------------------------ |---------------------------------------------------------------------------------------------------- |

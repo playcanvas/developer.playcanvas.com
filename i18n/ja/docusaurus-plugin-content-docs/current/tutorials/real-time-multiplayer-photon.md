@@ -27,7 +27,7 @@ Photon(PUNとしても知られる)は多くのゲームで使用され、HTML5�
 
 [tutorial project here][2]をフォークして開始します。
 
-![Empty Project](/images/tutorials/multiplayer-photon/1.png)
+![Empty Project](/img/tutorials/multiplayer-photon/1.png)
 
 ### Photonアカウント
 
@@ -39,7 +39,7 @@ SDKの使用とドキュメンテーションの閲覧にはアカウントの�
 
 ダッシュボードから**CREATE NEW APP**をクリックします。
 
-![Create New Application](/images/tutorials/multiplayer-photon/2.png)
+![Create New Application](/img/tutorials/multiplayer-photon/2.png)
 
 #### Photonタイプとアプリケーション名を選択
 
@@ -48,13 +48,13 @@ SDKの使用とドキュメンテーションの閲覧にはアカウントの�
 - Photon Type: RealTime
 - Name: PlayCanvas-Photon など
 
-![Create Real Time Project](/images/tutorials/multiplayer-photon/3.png)
+![Create Real Time Project](/img/tutorials/multiplayer-photon/3.png)
 
 #### AppIDをコピー
 
 AppIDをメモしておいてください。後日必要になります。
 
-![App Id](/images/tutorials/multiplayer-photon/4.png)
+![App Id](/img/tutorials/multiplayer-photon/4.png)
 
 ### SDKをダウンロード
 
@@ -62,19 +62,19 @@ AppIDをメモしておいてください。後日必要になります。
 
 #### SDKをクリック
 
-![SDK](/images/tutorials/multiplayer-photon/5.png)
+![SDK](/img/tutorials/multiplayer-photon/5.png)
 
 #### RealTime JavaScriptを選択
 
-![JavaScript SDK](/images/tutorials/multiplayer-photon/6.png)
+![JavaScript SDK](/img/tutorials/multiplayer-photon/6.png)
 
 #### SDKをダウンロードをクリック
 
-![Download SDK](/images/tutorials/multiplayer-photon/7.png)
+![Download SDK](/img/tutorials/multiplayer-photon/7.png)
 
 #### SDKを解凍
 
-![Unzip SDK](/images/tutorials/multiplayer-photon/8.png)
+![Unzip SDK](/img/tutorials/multiplayer-photon/8.png)
 
 SDKはZIP形式でダウンロードされます。解凍してください: `photon-javascript-sdk_vX-X-X-X` → `lib` → **`Photon-Javascript_SDK.min.js`**。
 
@@ -84,13 +84,13 @@ SDKはZIP形式でダウンロードされます。解凍してください: `ph
 
 #### エディタにSDKをアップロード
 
-![Upload SDK](/images/tutorials/multiplayer-photon/9.jpg)
+![Upload SDK](/img/tutorials/multiplayer-photon/9.jpg)
 
 SDKをエディタのアセットにドラッグ&ドロップしてください。
 
 #### Loading Typeを「Asset」から「Before Engine」に変更
 
-![Change Loading Type](/images/tutorials/multiplayer-photon/10.png)
+![Change Loading Type](/img/tutorials/multiplayer-photon/10.png)
 
 ## マルチプレイヤー実装
 
@@ -154,13 +154,13 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 新しいスクリプトアセット**photon-loadbalancing-playcanvas.js**を作成し、エディタでRootエンティティに添付します。
 
-![Root Entity - Inspector](/images/tutorials/multiplayer-photon/11.png)
+![Root Entity - Inspector](/img/tutorials/multiplayer-photon/11.png)
 
 #### スクリプト属性にAppIdを貼り付ける
 
 スクリプト属性にAppIdを入力してください。
 
-![Script Attributes](/images/tutorials/multiplayer-photon/12.png)
+![Script Attributes](/img/tutorials/multiplayer-photon/12.png)
 
 ```javascript
 this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.wss ? 1 : 0, this.appId, this.appVersion );
@@ -195,7 +195,7 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 connectToRegionMaster を実行してロビーに接続できた場合はJoinedLobbyがログに表示されます。
 
-![Console Log](/images/tutorials/multiplayer-photon/13.png)
+![Console Log](/img/tutorials/multiplayer-photon/13.png)
 
 ### ルームの作成または参加
 
@@ -287,7 +287,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
 };
 ```
 
-![Actor](/images/tutorials/multiplayer-photon/14.png)
+![Actor](/img/tutorials/multiplayer-photon/14.png)
 
 - **actor** は `name`, `actorNr` , `isLocal` , `userId` を含みます。
 - **onActorJoin** 新しいユーザーが接続すると、参加したアクターを取得できます。
@@ -295,7 +295,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
 
 成功した場合、プレイヤーが参加したときにエンティティが追加されます。
 
-![Console log - Actors ](/images/tutorials/multiplayer-photon/15.png)
+![Console log - Actors ](/img/tutorials/multiplayer-photon/15.png)
 
 #### プレイヤーの移動
 
@@ -482,7 +482,7 @@ Player.prototype.update = function (dt) {
 
 Photonを使用してマルチプレイヤーをプレイできるようになりました！
 
-![Project](/images/tutorials/multiplayer-photon/16.gif)
+![Project](/img/tutorials/multiplayer-photon/16.gif)
 
 Photonを使ってルームを作成し、プレイヤーの位置を同期できます。
 
