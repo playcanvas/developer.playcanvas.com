@@ -31,29 +31,7 @@ PlayCanvas provides instant and trouble free hosting for your WebGL application 
 
 Find out more in the [publishing][7] section.
 
-## Supported Browsers
-
-PlayCanvas was always designed to be plugin free, running natively in the browser. The client-side codebase is 100% JavaScript and built entirely on HTML5 and related APIs (such as WebGL). Why was this important?
-
-* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
-* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM][8] element (a canvas) and you can composite it on the page or transform it via CSS.
-* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
-
-At the time of writing, the browser requirements are currently as follows:
-
-| Browser                                     | Version | Win      | macOS    | Linux    | Chrome OS | Android  | iOS      |
-|---------------------------------------------|---------|----------|----------|----------|-----------|----------|----------|
-| [Chrome](https://www.google.com/chrome/)    | 9.0+    | &#x2713; | &#x2713; | &#x2713; | &#x2713;  | &#x2713; | &#x2713; |
-| [Safari](https://www.apple.com/safari/)     | 8.0+    |          | &#x2713; |          |           |          | &#x2713; |
-| [Firefox](https://www.mozilla.org/firefox/) | 4.0+    | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; | &#x2713; |
-| [Edge](https://www.microsoft.com/edge)      | 12.0+   | &#x2713; |          |          |           |          |          |
-| [Opera](https://www.opera.com/)             | 12.0+   | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; |          |
-
-If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][9]. If you see a spinning cube, you are all set!
-
 [5]: /user-manual/editor
 [6]: /user-manual/assets
 [7]: /user-manual/publishing
 [8]: /user-manual/glossary/#dom
-[9]: https://get.webgl.org/
