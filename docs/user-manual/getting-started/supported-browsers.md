@@ -6,7 +6,7 @@ sidebar_position: 2.5
 The browser requirements for running PlayCanvas applications are as follows:
 
 | Browser                                     | Version | Win      | macOS    | Linux    | Chrome OS | Android  | iOS      |
-|---------------------------------------------|---------|----------|----------|----------|-----------|----------|----------|
+| ------------------------------------------- | ------- | -------- | -------- | -------- | --------- | -------- | -------- |
 | [Chrome](https://www.google.com/chrome/)    | 9.0+    | ✔️      | ✔️       | ✔️      | ✔️        | ✔️      | ✔️       |
 | [Safari](https://www.apple.com/safari/)     | 8.0+    |          | ✔️      |          |           |          | ✔️       |
 | [Firefox](https://www.mozilla.org/firefox/) | 4.0+    | ✔️      | ✔️       | ✔️      |           | ✔️       | ✔️      |
