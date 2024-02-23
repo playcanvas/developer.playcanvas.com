@@ -111,7 +111,7 @@ Create a script asset named **photon-loadbalancing-playcanvas.js** to the projec
 
 ```javascript
 // photon-loadbalancing-playcanvas.js
-const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
+const PhotonLoadBalancingPlayCanvas = pc.createScript("photonLoadBalancingPlayCanvas");
 PhotonLoadBalancingPlayCanvas.attributes.add("appId", { type: "string" });
 PhotonLoadBalancingPlayCanvas.attributes.add("appVersion", { type: "string", default: "1.0" });
 PhotonLoadBalancingPlayCanvas.attributes.add("wss", { type: "boolean", default: true });
@@ -334,7 +334,7 @@ Use **raiseEvent** and **onEvent** to synchronize the player's location.
 #### Position synchronization using **raiseEvent**.
 
 ```javascript
-const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
+const PhotonLoadBalancingPlayCanvas = pc.createScript("photonLoadBalancingPlayCanvas");
 PhotonLoadBalancingPlayCanvas.attributes.add("appId", { type: "string" });
 PhotonLoadBalancingPlayCanvas.attributes.add("appVersion", {
     type: "string",
