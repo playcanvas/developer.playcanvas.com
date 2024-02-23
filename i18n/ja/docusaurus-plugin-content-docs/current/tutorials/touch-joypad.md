@@ -16,15 +16,15 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/100
 
 このライブラリでは、[PlayCanvas UI system][playcanvas-ui]が使用されているため、その前に使用したことがない場合は、UIシステムについて読むことをお勧めします。
 
-![](/images/tutorials/touchscreen-joypad-controls/preview.gif)
+![](/img/tutorials/touchscreen-joypad-controls/preview.gif)
 
 ## インストール方法
 
 Open the [example project][project-link], right click on the folder 'touch-joypad' and click on 'Copy'.
-![](/images/tutorials/touchscreen-joypad-controls/copy-folder.gif)
+![](/img/tutorials/touchscreen-joypad-controls/copy-folder.gif)
 
 Open your project, right click in the assets panel and click on 'Paste'
-![](/images/tutorials/touchscreen-joypad-controls/paste-folder.gif)
+![](/img/tutorials/touchscreen-joypad-controls/paste-folder.gif)
 
 ## ジョイスティックの追加
 
@@ -37,7 +37,7 @@ Open your project, right click in the assets panel and click on 'Paste'
 
 2DスクリーンのEntityを作成し、[テンプレートを子として追加][add-template-docs]します。
 
-![](/images/tutorials/touchscreen-joypad-controls/adding-left-half-joystick.gif)
+![](/img/tutorials/touchscreen-joypad-controls/adding-left-half-joystick.gif)
 
 ジョイスティックは3つのEntityで構成されています。
 
@@ -45,7 +45,7 @@ Open your project, right click in the assets panel and click on 'Paste'
 - ベース(青で囲まれた部分)
 - ノブ(青で囲まれた部分)
 
-![](/images/tutorials/touchscreen-joypad-controls/joystick-layout.png)
+![](/img/tutorials/touchscreen-joypad-controls/joystick-layout.png)
 
 入力領域は、タッチおよびマウス(デバッグ目的)イベントをリッスンし、イベントの伝播を停止します。
 
@@ -55,7 +55,7 @@ Open your project, right click in the assets panel and click on 'Paste'
 
 また、ジョイスティックに必要なすべてのロジックと属性を持つ'touchJoystick'があります。各属性には、詳細が記載されたツールチップがあります。
 
-![](/images/tutorials/touchscreen-joypad-controls/joystick-script-attributes.gif)
+![](/img/tutorials/touchscreen-joypad-controls/joystick-script-attributes.gif)
 
 ベースとノブのエンティティはスクリプトで制御され、UIエレメントです。ジョイスティックをテンプレート内の場所以外に配置する場合は、ベースエンティティを必要な場所に配置し、アンカーを設定してください。
 
@@ -63,22 +63,22 @@ Open your project, right click in the assets panel and click on 'Paste'
 
 タッチスクリーンゲームやアプリケーションで一般的に見つかるジョイスティックには、3つの動作タイプがあります。
 
-![](/images/tutorials/touchscreen-joypad-controls/joystick-type.png)
+![](/img/tutorials/touchscreen-joypad-controls/joystick-type.png)
 
 'Fixed in place' where the base of the joystick does not move from it's position:
-![](/images/tutorials/touchscreen-joypad-controls/joystick-fixed.gif)
+![](/img/tutorials/touchscreen-joypad-controls/joystick-fixed.gif)
 
 'Move to first touch and fixed' where the base of the joystick moves to where the user first touches in the input area and then stays fixed:
-![](/images/tutorials/touchscreen-joypad-controls/joystick-relative-fixed.gif)
+![](/img/tutorials/touchscreen-joypad-controls/joystick-relative-fixed.gif)
 
 'Move to first touch and drags' where the base of the joystick moves to where the user first touches in the input area and then is dragged when the user drags pass the joystick range:
-![](/images/tutorials/touchscreen-joypad-controls/joystick-relative-drag.gif)
+![](/img/tutorials/touchscreen-joypad-controls/joystick-relative-drag.gif)
 
 これは、ランタイムで変更できるため、アプリケーションの設定の一部として、ユーザーオプションとして追加することができます。
 
 ### ジョイスティック値の読み取り
 
-![](/images/tutorials/touchscreen-joypad-controls/joystick-deadzone-range.png)
+![](/img/tutorials/touchscreen-joypad-controls/joystick-deadzone-range.png)
 
 赤い円は死角であり、ノブの位置がその円内にある場合、ジョイスティックの値は両方の軸とも0を返します。青い円は範囲で、ノブはその円の外に出ることはできません。
 
@@ -105,7 +105,7 @@ console.log('X: ' + joystick.x + ', Y: ' + joystick.y);
 
 ボタンは画面上の固定位置のUIエレメントです。'templates'フォルダにボタンのテンプレートがあり、[子として追加][add-template-docs]する必要があります。
 
-![](/images/tutorials/touchscreen-joypad-controls/adding-button.gif)
+![](/img/tutorials/touchscreen-joypad-controls/adding-button.gif)
 
 UIエレメントであるため、[UIシステムレイアウト][elements-manual]を使用して、必要に応じて位置、サイズ、およびアンカーを特定することができます。
 

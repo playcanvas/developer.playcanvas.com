@@ -5,11 +5,11 @@ sidebar_position: 7
 
 Generally all scripts are loaded at the beginning of your application. The loading order is determined by a setting in your project which you can access from the main Editor menu or Scene Settings
 
-![Loading Order](/images/user-manual/scripting/script-loading-order.jpg)
+![Loading Order](/img/user-manual/scripting/script-loading-order.jpg)
 
 The loading order panel shows all your scripts that marked as `preload` and the order that they are loaded and executed in.
 
-![Loading Order List](/images/user-manual/scripting/loading-order-list.jpg)
+![Loading Order List](/img/user-manual/scripting/loading-order-list.jpg)
 
 You can drag to move individual scripts around in order.
 

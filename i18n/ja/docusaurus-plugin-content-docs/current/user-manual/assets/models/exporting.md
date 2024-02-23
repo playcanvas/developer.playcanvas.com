@@ -5,7 +5,7 @@ sidebar_position: 3
 
 PlayCanvasは、glTFバイナリ(GLB)、FBX、OBJ、3DS、COLLADA(DAE)の以下の形式の3Dコンテンツをインポートできます。 GLBはオープンソースの標準規格であり、エディターで非常によくサポートされているため、GLBの使用を強くお勧めします。
 
-![GLB Import Example](/images/user-manual/assets/models/building/glb-import.gif)
+![GLB Import Example](/img/user-manual/assets/models/building/glb-import.gif)
 
 (Loïc Norgeot氏によるモデルとGeoffrey Marchal氏によるモスキートスキャンは[Sketchfab][mosquito]にてライセンスされ、[CC BY 4.0] [cc-40]である。)
 

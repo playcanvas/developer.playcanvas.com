@@ -7,11 +7,11 @@ In photography and optics, [vignetting][1] is the reduction of an image's bright
 
 Here is an image without the effect:
 
-![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
+![Image without effect](/img/user-manual/graphics/posteffects/without-effects.png)
 
 And the same image with the effect applied:
 
-![Image with effect](/images/user-manual/graphics/posteffects/with-vignette.png)
+![Image with effect](/img/user-manual/graphics/posteffects/with-vignette.png)
 
 The built-in vignette effect has the following attributes:
 

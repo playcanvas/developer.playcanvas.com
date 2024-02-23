@@ -74,9 +74,9 @@ function isLowQualityGPU() {
 
 また、ユーザーが品質レベルを切り替えることができるオプションをアプリケーションに設けることをお勧めします。これにより、ユーザーは自分が快適に感じるレベルを選択し、デバイスのリソースを節約しバッテリー寿命を延ばすために品質を下げることも可能になります。
 
-[1]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-closeup.jpg
-[2]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio.jpg
-[3]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-setting.png
+[1]: /img/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-closeup.jpg
+[2]: /img/user-manual/optimization/device-pixel-ratio/device-pixel-ratio.jpg
+[3]: /img/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-setting.png
 [4]: https://api.playcanvas.com/classes/Engine.GraphicsDevice.html#maxPixelRatio
 [5]: https://www.videocardbenchmark.net/GPU_mega_page.html
 [6]: https://www.notebookcheck.net/Smartphone-Graphics-Cards-Benchmark-List.149363.0.html

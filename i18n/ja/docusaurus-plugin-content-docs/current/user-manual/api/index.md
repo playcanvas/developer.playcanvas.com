@@ -13,21 +13,21 @@ sidebar_position: 22
 
 REST APIにはhttps経由でのみアクセスできます。REST APIにアクセスするには、アクセストークンを使用する必要があります。アクセストークンは、アカウントページに移動して生成できます。
 
-![Account Tab](/images/user-manual/api/account-tab.png)
+![Account Tab](/img/user-manual/api/account-tab.png)
 
 APIトークンのセクションで、トークンを生成するをクリックします。
 
-![Generate Token](/images/user-manual/api/generate-token.png)
+![Generate Token](/img/user-manual/api/generate-token.png)
 
 トークンに名前を付け、新しいトークンを作成するボタンをクリックします。新しいアクセストークンが表示されます。
 
 このウィンドウを閉じると、トークンを見ることはできなくなるので、必ず控えてください。このトークンは秘密に保つ必要があるため、チーム以外の第三者に共有しないでください（たとえば、フォーラムに投稿しないでください）。
 
-![New Token](/images/user-manual/api/new-token.png)
+![New Token](/img/user-manual/api/new-token.png)
 
 また、アカウントページから、生成したトークンをすべて取り消すことも、特定のトークンの名前を編集することもできます。
 
-![Remove Token](/images/user-manual/api/remove-token.png)
+![Remove Token](/img/user-manual/api/remove-token.png)
 
 APIを呼び出すときは、HTTPリクエストの 'Authorization' ヘッダに次の値を設定する必要があります。
 
@@ -53,19 +53,19 @@ curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcan
 
 プロジェクト概要ページのURLから見つけることができます。
 
-![Project ID](/images/user-manual/api/project-id.png)
+![Project ID](/img/user-manual/api/project-id.png)
 
 ### scenes {#scenes}
 
 エディタでシーンを開く場合、シーンIDはURLにあります。
 
-![Scene ID](/images/user-manual/api/scene-id.png)
+![Scene ID](/img/user-manual/api/scene-id.png)
 
 ### branch_id {#branch_id}
 
 これは[バージョン管理][5]パネルで見つかり、選択してコピーできます。
 
-![Branch ID](/images/user-manual/api/branch-id.png)
+![Branch ID](/img/user-manual/api/branch-id.png)
 
 ## レスポンスフォーマット {#response-format}
 

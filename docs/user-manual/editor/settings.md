@@ -5,11 +5,11 @@ sidebar_position: 7
 
 By default, the Editor is configured with settings that should suit the majority of users. However, in some circumstances, you may wish to modify the default behavior of the Editor. To do this, load the Settings into the [Inspector](inspector.md) by clicking the 'cog' icon on the [Toolbar](toolbar.md) or in the [Viewport](viewport.md).
 
-![Settings](/images/user-manual/editor/toolbar/settings.png)
+![Settings](/img/user-manual/editor/toolbar/settings.png)
 
 Then, navigate to the `EDITOR` section:
 
-![Editor Settings](/images/user-manual/editor/settings/editor-settings.png)
+![Editor Settings](/img/user-manual/editor/settings/editor-settings.png)
 
 :::note
 

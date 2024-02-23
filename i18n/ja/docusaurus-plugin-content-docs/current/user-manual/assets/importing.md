@@ -33,14 +33,14 @@ PlayCanvasにアセットをアップロードするには、以下の手順に�
 
 アセットをGLB形式に移行する場合は、 'Project Settings' に移動してください。
 
-<img loading="lazy" src="/images/user-manual/assets/importing/project-settings.png" alt="Project settings" width="300" />
+<img loading="lazy" src="/img/user-manual/assets/importing/project-settings.png" alt="Project settings" width="300" />
 
 'Asset Tasks' を開き、 'Convert to GLB' をチェックしてください。
 
-<img loading="lazy" src="/images/user-manual/assets/importing/asset-tasks.png" alt="Asset tasks settings" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/importing/asset-tasks.png" alt="Asset tasks settings" width="400" />
 
 最後に、モデルおよび/またはアニメーションファイルを再インポートします。ドラッグアンドドロップまたは「アップロード」メニューオプションを使用して、GLBアセットを作成します。
 
-<img loading="lazy" src="/images/user-manual/assets/importing/drag-and-drop.gif" alt="Drag and drop file" />
+<img loading="lazy" src="/img/user-manual/assets/importing/drag-and-drop.gif" alt="Drag and drop file" />
 
 作成されたGLBアセットは、既存のJSONアセットの代わりにエンティティに参照されることができます。

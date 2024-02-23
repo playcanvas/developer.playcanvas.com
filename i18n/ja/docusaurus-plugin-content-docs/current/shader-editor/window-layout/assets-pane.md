@@ -5,7 +5,7 @@ sidebar_position: 4
 
 アセットペイン (Asset Pane) には、プロジェクトのグラフ、マテリアル、およびテクスチャが表示されます。
 
-![Assets Pane](/images/shader-editor/assets-pane.png)
+![Assets Pane](/img/shader-editor/assets-pane.png)
 
 | Action                   | 説明                                                                                         |
 | ------------------------ |---------------------------------------------------------------------------------------------------- |

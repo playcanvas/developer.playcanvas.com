@@ -52,12 +52,12 @@ CREATE をクリックすると、[profile][4] ページに移動します。
 
 アカウントを変換したら、ログアウトします。次に、新しいオーナー (Owner)のアカウントでログインし、変換されたアカウントとそのすべてのプロジェクトにアクセスできます。
 
-[1]: /images/user-manual/organizations/organizations.jpg
-[2]: /images/user-manual/organizations/dropdown.png
-[3]: /images/user-manual/organizations/new-organization.jpg
+[1]: /img/user-manual/organizations/organizations.jpg
+[2]: /img/user-manual/organizations/dropdown.png
+[3]: /img/user-manual/organizations/new-organization.jpg
 [4]: /user-manual/profile
 [5]: /user-manual/profile/projects/#transfer-project-ownership
 [6]: /user-manual/organizations/managing-organizations/#projects
 [7]: /user-manual/profile/account
-[8]: /images/user-manual/organizations/convert.png
-[9]: /images/user-manual/organizations/convert-popup.png
+[8]: /img/user-manual/organizations/convert.png
+[9]: /img/user-manual/organizations/convert-popup.png

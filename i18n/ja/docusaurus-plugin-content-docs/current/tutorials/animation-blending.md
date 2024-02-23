@@ -26,7 +26,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 モデルにアニメーションを適用するには、animationコンポーネントをエンティティに追加します。以下は、PlayCanvasエディターで表示されるスキンキャラクターの設定です。
 
-![Animated Entity](/images/tutorials/animation_blending.jpg)
+![Animated Entity](/img/tutorials/animation_blending.jpg)
 
 Animationコンポーネントをインスペクターで見ることができます。2つのアニメーションアセットが割り当てられています：'idle' サイクルと 'punch' サイクルです。Animationコンポーネントをこのように設定することで、最初のアニメーション（idleサイクル）が再生され、ループオプションが設定されているため、無限にアニメーションが続きます。ただし、もう少し興味深い機能を実現したいと考えています。
 

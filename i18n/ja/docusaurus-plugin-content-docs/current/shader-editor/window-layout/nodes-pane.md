@@ -3,7 +3,7 @@ title: ノードペイン
 sidebar_position: 2
 ---
 
-![Nodes Pane](/images/shader-editor/nodes-pane.png)
+![Nodes Pane](/img/shader-editor/nodes-pane.png)
 
 ノードペイン (Nodes Pane) は、グラフを構築するための組み込みノードをリスト表示します。ノードはカテゴリ別にサブセクションに分類されています。
 

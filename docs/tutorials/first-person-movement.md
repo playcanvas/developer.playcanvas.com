@@ -26,7 +26,7 @@ On the rigidbody component, we also have the following values set in the Editor 
 * To limit the maximum velocity, we have linear damping applied that stops the player from sliding after the player has released input keys.
 * To stop the player from rolling over, we also reduced the angular Factor to 0 on all axes.
 
-![Rigidbody Attributes](/images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg)
+![Rigidbody Attributes](/img/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg)
 
 ```javascript
 var FirstPersonMovement = pc.createScript('firstPersonMovement');

@@ -3,7 +3,7 @@ title: Nodes Pane
 sidebar_position: 2
 ---
 
-![Nodes Pane](/images/shader-editor/nodes-pane.png)
+![Nodes Pane](/img/shader-editor/nodes-pane.png)
 
 The Nodes Pane lists the built-in nodes available for constructing graphs. Nodes are grouped into sub-sections by category.
 

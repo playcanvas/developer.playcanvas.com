@@ -84,7 +84,7 @@ Asset Materialsをクリックすると、Modelアセットが選択されます
 
 ### Offset & Tiling
 
-<img loading="lazy" src="/images/user-manual/material-inspector/offset-tiling.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/offset-tiling.jpg" width="300" />
 
 | プロパティ名          | 説明 |
 |-------------------|-------------|
@@ -96,7 +96,7 @@ Asset Materialsをクリックすると、Modelアセットが選択されます
 
 Ambientプロパティは、マテリアルが周囲光でどのように表示されるかを決定します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/ambient.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/ambient.jpg" width="300" />
 
 | プロパティ名   | 説明 |
 |------------|-------------|
@@ -108,7 +108,7 @@ Ambientプロパティは、マテリアルが周囲光でどのように表示�
 
 Diffuseプロパティは、マテリアルがシーン内の動的な光源から放射される拡散光をどのように反射するかを定義します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/diffuse.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/diffuse.jpg" width="300" />
 
 | プロパティ名   | 説明 |
 |------------|-------------|
@@ -120,7 +120,7 @@ Diffuseプロパティは、マテリアルがシーン内の動的な光源か�
 
 Specularプロパティは、Specularハイライト（光沢）の色を定義します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/specular.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/specular.jpg" width="300" />
 
 | プロパティ名      | 説明 |
 |---------------|-------------|
@@ -136,7 +136,7 @@ Specularプロパティは、Specularハイライト（光沢）の色を定義�
 
 Emissiveプロパティは、マテリアルの発光を制御します。（反射する光とは異なります）
 
-<img loading="lazy" src="/images/user-manual/material-inspector/emissive.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/emissive.jpg" width="300" />
 
 | プロパティ名   | 説明 |
 |------------|-------------|
@@ -149,7 +149,7 @@ Emissiveプロパティは、マテリアルの発光を制御します。（反
 
 Opacityは、透明度のレベルを設定します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/opacity.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/opacity.jpg" width="300" />
 
 | プロパティ名   | 説明 |
 |------------|-------------|
@@ -160,7 +160,7 @@ Opacityは、透明度のレベルを設定します。
 
 Normalマップを指定するためにこれを使用します（これらは凹凸性を決定します - PlayCanvasでは、HeightマップではなくNormalマップを使用する必要があります）。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/normals.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/normals.jpg" width="300" />
 
 | プロパティ名   | 説明 |
 |------------|-------------|
@@ -171,7 +171,7 @@ Normalマップを指定するためにこれを使用します（これらは�
 
 Parallaxマップは、表面に視差を与えることでNormalマップにさらなるリアルな感覚を加えます。Parallaxオプションは、マテリアルにNormalマップを設定した場合にのみ有効になります。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/parallax.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/parallax.jpg" width="300" />
 
 | プロパティ名    | 説明 |
 |-------------|-------------|
@@ -182,7 +182,7 @@ Parallaxマップは、表面に視差を与えることでNormalマップにさ
 
 Environmentプロパティは、マテリアルが環境をどのように反射するかを決定します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/environment.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/environment.jpg" width="300" />
 
 | プロパティ名            | 説明 |
 |---------------------|-------------|
@@ -196,7 +196,7 @@ Environmentプロパティは、マテリアルが環境をどのように反射
 
 Light Mapには事前にベイクされたDiffuse Lightingが含まれています。Light Mapの使用は、実行時に行われる動的なライトの計算を事前に計算できるため、最適化と考えられます。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/lightmap.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/lightmap.jpg" width="300" />
 
 | プロパティ名   | 説明 |
 |------------|-------------|
@@ -206,7 +206,7 @@ Light Mapには事前にベイクされたDiffuse Lightingが含まれていま�
 
 その他のレンダリング状態を使用して、マテリアルでメッシュをレンダリングする方法を追加で制御できます。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/other.jpg" width="300" />
+<img loading="lazy" src="/img/user-manual/material-inspector/other.jpg" width="300" />
 
 | プロパティ名        | 説明 |
 |-----------------|-------------|
@@ -216,12 +216,12 @@ Light Mapには事前にベイクされたDiffuse Lightingが含まれていま�
 | Blend Type      | オプションは次のとおりです。<ul> <li>None: メッシュは不透明です。これがデフォルトです。</li> <li>Normal: メッシュは透明で、ステンドグラスのようです。</li> <li>Additive: メッシュの色がフレームバッファにすでにレンダリングされているものに加えられます。</li> <li>Pre-multiply: Normal'ブレンドと同様ですが、このマテリアルでレンダリングされるメッシュの色がすでにそのアルファ値で調整されていると想定されます。</li><li>Multiply: レンダリング時に、メッシュの色がフレームバッファにすでにレンダリングされたものと乗算されます。</li></ul> |
 | Shadow Sampling | オプションは: <ul><li>Hard</li><li>PCF 3x3</li></ul>  |
 
-[1]: /images/user-manual/assets/materials/create-asset-menu.jpg
-[2]: /images/user-manual/assets/materials/model-inspector-simple.jpg
-[3]: /images/user-manual/assets/materials/model.png
-[4]: /images/user-manual/assets/materials/model-inspector-free-slot.jpg
-[5]: /images/user-manual/assets/materials/select.png
-[6]: /images/user-manual/assets/materials/selected.png
-[7]: /images/user-manual/assets/materials/overridden.png
-[8]: /images/user-manual/assets/materials/material-inspector.jpg
-[11]: /images/user-manual/assets/materials/material-map-slot.jpg
+[1]: /img/user-manual/assets/materials/create-asset-menu.jpg
+[2]: /img/user-manual/assets/materials/model-inspector-simple.jpg
+[3]: /img/user-manual/assets/materials/model.png
+[4]: /img/user-manual/assets/materials/model-inspector-free-slot.jpg
+[5]: /img/user-manual/assets/materials/select.png
+[6]: /img/user-manual/assets/materials/selected.png
+[7]: /img/user-manual/assets/materials/overridden.png
+[8]: /img/user-manual/assets/materials/material-inspector.jpg
+[11]: /img/user-manual/assets/materials/material-map-slot.jpg

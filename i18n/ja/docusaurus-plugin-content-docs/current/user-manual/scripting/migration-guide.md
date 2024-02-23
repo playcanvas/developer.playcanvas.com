@@ -9,11 +9,11 @@ sidebar_position: 11
 
 2020 年 12 月には、レガシースクリプトプロジェクトが近い将来 read-only になることが発表されました。エディタで開くと、プロジェクトダッシュボードには次のようなメッセージが表示されます。
 
-![Dashboard Legacy Script](/images/user-manual/scripting/migration-guide/dashboard-warning.png)
+![Dashboard Legacy Script](/img/user-manual/scripting/migration-guide/dashboard-warning.png)
 
 エディタには、次のようなメッセージが表示されます。
 
-![Editor Legacy Script](/images/user-manual/scripting/migration-guide/editor-warning.png)
+![Editor Legacy Script](/img/user-manual/scripting/migration-guide/editor-warning.png)
 
 レガシースクリプトプロジェクトで作業を続けたい場合は、現在の形式に移行することをお勧めします。残念なことに、これには自動化された移行プロセスはありません。代わりに、このガイドに従って手動で移行する必要があります。
 
@@ -25,7 +25,7 @@ sidebar_position: 11
 
 次に、すべてのアセットを新しいプロジェクトにコピーします(レガシープロジェクトのスクリプトは*実際にはアセットではないため*、スクリプトは除外します)。右クリックのコンテキストメニューを使用して、アセットを 1 つのプロジェクトから別のプロジェクトにコピーして貼り付けることができます。
 
-![Copy Paste Assets](/images/user-manual/scripting/migration-guide/copy-assets.png)
+![Copy Paste Assets](/img/user-manual/scripting/migration-guide/copy-assets.png)
 
 ただし、レガシースクリプトプロジェクトはかなり古いため、ファイル拡張子なしでアセットがインポートされ、インスペクターパネルで表示できないメタデータがある可能性があるため、ソースアセットをダウンロードして新しいプロジェクトにアップロードすることを検討する必要があります。
 
@@ -33,7 +33,7 @@ sidebar_position: 11
 
 プロジェクトダッシュボードから、レガシースクリプトプロジェクトのスクリプトをダウンロードします。
 
-![Download Scripts](/images/user-manual/scripting/migration-guide/download-scripts.png)
+![Download Scripts](/img/user-manual/scripting/migration-guide/download-scripts.png)
 
 レガシープロジェクトが GitHub リポジトリに接続されている場合は、そこからスクリプトをダウンロードします。
 
@@ -142,11 +142,11 @@ if (entities.length) {
 
 以下のように表示されるはずです。
 
-![Select Script Entities](/images/user-manual/scripting/migration-guide/select-script-entities.png)
+![Select Script Entities](/img/user-manual/scripting/migration-guide/select-script-entities.png)
 
 次に、インスペクターで削除ボタンをクリックします。
 
-![Delete Script Components](/images/user-manual/scripting/migration-guide/delete-script-components.png)
+![Delete Script Components](/img/user-manual/scripting/migration-guide/delete-script-components.png)
 
 これで、read-only プロジェクトから新しい宛先プロジェクトにゲームの階層をコピーして貼り付けることができます。
 

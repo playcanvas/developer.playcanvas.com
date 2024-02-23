@@ -8,11 +8,11 @@ Animationアセットは、3Dモデルで単一のアニメーションを再生
 
 インスペクタには、テンプレートまたはModelアセットとともにアニメーションをプレビューするために使用できるビューアがあります。これは、異なるキャラクターリグに適用できる単一のアニメーションがある場合に便利です。
 
-![Asset Inspector Preview](/images/user-manual/assets/animation/inspector-preview.gif)
+![Asset Inspector Preview](/img/user-manual/assets/animation/inspector-preview.gif)
 
 また、グラフで状態を選択すると、[Anim State Graph Editor][anim-state-graph-editor]にもビューアがあります。選択すると、グラフを使用しているシーン内のすべてのエンティティが一覧表示され、プレビューのために選択できます。
 
-![Anim State Graph Preview](/images/user-manual/assets/animation/anim-state-graph-preview.gif)
+![Anim State Graph Preview](/img/user-manual/assets/animation/anim-state-graph-preview.gif)
 
 ## アニメーションインポート設定 (Animation Import Settings)
 
@@ -26,7 +26,7 @@ Animationアセットは、3Dモデルで単一のアニメーションを再生
 
 これらは、プロジェクト設定のAsset Tasksの下で見つけることができます。
 
-![Animation Import Settings](/images/user-manual/assets/animation/animation-import-settings.png)
+![Animation Import Settings](/img/user-manual/assets/animation/animation-import-settings.png)
 
 ### 命名基準 (Naming Strategy)
 

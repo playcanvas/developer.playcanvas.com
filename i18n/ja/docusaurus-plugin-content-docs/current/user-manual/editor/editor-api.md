@@ -19,7 +19,7 @@ The Editor APIは[GitHub][github-repo]でオープンソース化されていま
 
 APIはブラウザの開発者ツールコンソールを介してアクセスでき、繰り返しタスクを自動化することができます。以下の例では、エディタを使用して、タグ「red」を持つすべてのエンティティを検索し、ブラウザコンソールでコードを実行して無効にしています。
 
-![](/images/user-manual/editor/editor-api/disable-red-boxes.gif)
+![](/img/user-manual/editor/editor-api/disable-red-boxes.gif)
 
 Editor API コード:
 
@@ -40,7 +40,7 @@ Editor API コード:
 
 以下には、[Viewport][viewport]にボタンが追加され、ボックスをシーンにランダムに配置する例があります。
 
-![](/images/user-manual/editor/editor-api/generate-random-boxes.gif)
+![](/img/user-manual/editor/editor-api/generate-random-boxes.gif)
 
 PlayCanvas チームは現在、[Violentmonkey][violentmonkey]オープンソースブラウザーエクステンションを使用してユーザースクリプトを管理しています。
 

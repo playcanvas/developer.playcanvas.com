@@ -11,10 +11,10 @@ PlayCanvasのアートワークを制作する際には、希望するスケー�
 
 3D Studio Maxで作業単位を確認または設定するには、Units Setupダイアログを開き、System Unit Setupボタンをクリックします。
 
-![3DS Max units](/images/user-manual/assets/models/units/max-units.png)
+![3DS Max units](/img/user-manual/assets/models/units/max-units.png)
 
 ### Autodesk Maya
 
 Mayaで作業単位を確認または設定するには、Preferencesダイアログを開いてください。
 
-![Maya units](/images/user-manual/assets/models/units/maya-units.png)
+![Maya units](/img/user-manual/assets/models/units/maya-units.png)

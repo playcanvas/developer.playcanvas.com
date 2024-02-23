@@ -7,11 +7,11 @@ sidebar_position: 3
 
 エディタのユーザーは、ランチボタンメニューからミニスタッツパネルを有効にすることができます。
 
-<img loading="lazy" alt="Launch Menu" width="600" src="/images/user-manual/optimization/mini-stats/launch-menu-mini-stats.png" />
+<img loading="lazy" alt="Launch Menu" width="600" src="/img/user-manual/optimization/mini-stats/launch-menu-mini-stats.png" />
 
 ミニスタッツをクリックすると、3つのサポートされているサイズを切り替えることができます。
 
-<img loading="lazy" alt="Mini Stats" width="411" src="/images/user-manual/optimization/mini-stats/mini-stats.gif" />
+<img loading="lazy" alt="Mini Stats" width="411" src="/img/user-manual/optimization/mini-stats/mini-stats.gif" />
 
 表示される情報は以下の通りです。
 

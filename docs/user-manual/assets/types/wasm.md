@@ -17,7 +17,7 @@ Please note that PlayCanvas Editor currently supports [Emscripten][2] compiled W
 ## Wasm Module Properties
 
 Once the files have been added to the project, select the Wasm Module to display its properties in the Inspector Panel:
-![Wasm Module Properties](/images/user-manual/assets/wasm-module.png)
+![Wasm Module Properties](/img/user-manual/assets/wasm-module.png)
 
 ### Name
 

@@ -27,17 +27,17 @@ sidebar_position: 4
 
 You can modify the viewport render mode using this drop-down menu in the top-right of the viewport:
 
-![Viewport Render Mode Menu](/images/user-manual/editor/viewport/render-mode-menu.png)
+![Viewport Render Mode Menu](/img/user-manual/editor/viewport/render-mode-menu.png)
 
 It allows you to toggle wireframe rendering:
 
-![Viewport Wireframe](/images/user-manual/editor/viewport/wireframe.png)
+![Viewport Wireframe](/img/user-manual/editor/viewport/wireframe.png)
 
 You can also visualize your scene in various debug render modes. This restricts the rendered scene to just show albedo, normals, AO, emission and more.
 
-![Viewport Render Modes](/images/user-manual/editor/viewport/render-modes.png)
+![Viewport Render Modes](/img/user-manual/editor/viewport/render-modes.png)
 
-[1]: /images/user-manual/editor/viewport/viewport.jpg
-[2]: /images/user-manual/editor/viewport/camera-dropdown.jpg
-[3]: /images/user-manual/editor/viewport/gizmos.jpg
+[1]: /img/user-manual/editor/viewport/viewport.jpg
+[2]: /img/user-manual/editor/viewport/camera-dropdown.jpg
+[3]: /img/user-manual/editor/viewport/gizmos.jpg
 [4]: /user-manual/glossary#gizmo

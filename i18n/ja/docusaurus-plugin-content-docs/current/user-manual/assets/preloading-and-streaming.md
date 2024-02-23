@@ -7,7 +7,7 @@ sidebar_position: 7
 
 ## プリロード (Preload) {#preload}
 
-![Asset Properties](/images/user-manual/assets/preloading-and-streaming/asset-properties.jpg)
+![Asset Properties](/img/user-manual/assets/preloading-and-streaming/asset-properties.jpg)
 
 プロジェクト内のすべてのアセットには、 `preload` というプロパティがあります。デフォルトでは、これはtrueに設定されています。アセットがpreloadとマークされている場合、アプリケーションの初期化フェーズが開始される前にダウンロードされ、作成されます。
 
@@ -15,7 +15,7 @@ sidebar_position: 7
 
 ## ストリーミング (Streaming) {#streaming}
 
-![Streaming](/images/user-manual/assets/preloading-and-streaming/streaming.gif)
+![Streaming](/img/user-manual/assets/preloading-and-streaming/streaming.gif)
 
 もしシーン内のエンティティがアセットを参照している場合、そのエンティティが有効化されるとローディングリクエストが開始されます。エンティティがシーン内で有効化されると、このリクエストはアプリケーションが開始されるとすぐに行われます。
 

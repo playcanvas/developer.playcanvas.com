@@ -52,7 +52,7 @@ enabledプロパティがtrueの場合、シーンのロード時にカメラは
 
 カメラの視野角（Field of View）は、カメラが表示するシーンの範囲を決定します。視野角は度（°）で表され、デフォルト値の45°は、ビューの上端から下端までの間がカメラの位置から45°の弧を形成することを意味します。
 
-![Field of view](/images/tutorials/basic-cameras/field-of-view.png)
+![Field of view](/img/tutorials/basic-cameras/field-of-view.png)
 
 この図では、`fov`の値がディスプレイの幅とは独立しているため、ワイドスクリーンのビュー（ライトブルー）は縦方向には同じ量を表示しますが、横方向には狭いスクリーンのビュー（ダークブルー）よりも多くを表示します。
 

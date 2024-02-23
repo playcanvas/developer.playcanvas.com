@@ -3,7 +3,7 @@ title: Dashboard Header
 sidebar_position: 1
 ---
 
-![Dashboard](/images/user-manual/dashboard/dashboard-header.jpg)
+![Dashboard](/img/user-manual/dashboard/dashboard-header.jpg)
 
 The Dashboard Header provides various buttons to quickly perform common actions for a project.
 

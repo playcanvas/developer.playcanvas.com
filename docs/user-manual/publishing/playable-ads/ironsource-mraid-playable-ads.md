@@ -43,7 +43,7 @@ ironSource have a fantastic test tool [here][ironsource-test-tool] which can be 
 
 Check that Testing mode and MRAID are both enabled on the page.
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600" />
+<img loading="lazy" src="/img/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600" />
 
 Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
 
@@ -72,7 +72,7 @@ We will need to serve the files from a HTTPS endpoint to test with the ironSourc
 
 Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600" />
+<img loading="lazy" src="/img/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600" />
 
 This will give a unique URL for the endpoint that we need to add to the `index.html` where it is referencing external files.
 
@@ -114,13 +114,13 @@ Test locally on your PC by double clicking on the `index.html` to ensure that it
 
 If it plays correctly on your PC, we can test on [ironSource's test tool][ironsource-test-tool] by copying the contents of `index.html` and pasting into MRAID tag area of the test tool.
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600" />
+<img loading="lazy" src="/img/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600" />
 
 Click on 'Test Ad' and once it renders, play the ad to reach a CTA button. After pressing the CTA button, the tool should show that all the tests have passed and give you an option to generate a code.
 
 This is used to test on device using their app that is available on both Android and iOS.
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400" />
+<img loading="lazy" src="/img/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400" />
 
 ### Final export for ironSource
 

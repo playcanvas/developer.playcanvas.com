@@ -13,7 +13,7 @@ PlayCanvasには、物理シミュレーションをセットアップするた�
 
 Scene Settingsパネルのインポートボタンを使用して、ammo.jsモジュールをプロジェクトにインポートできます。
 
-![Physics Settings](/images/user-manual/physics/physics-settings.png)
+![Physics Settings](/img/user-manual/physics/physics-settings.png)
 
 これにより、PlayCanvasが提供するammo.jsのデフォルトビルドがインポートされます。独自のバージョンのammo.jsをコンパイルし、代わりにプロジェクトに追加することもできます。詳細は、[このページ][11]を参照してください。
 
@@ -53,7 +53,7 @@ Collisionコンポーネントは、ボディの物理的な形状を指定し�
 
 ほとんどの場合、何らかのStaticな物理環境を作成する必要があります。たとえば、競馬場やサッカー場などです。最も単純な例は平面です。PlayCanvasは平面タイプのCollisionプリミティブを公開しませんが、ボックスのプリミティブを提供します。StaticなRigidBodyである1単位の高さの10x10ボックスを設定する方法は次のとおりです。
 
-![Static Ground](/images/user-manual/physics/static-ground.png)
+![Static Ground](/img/user-manual/physics/static-ground.png)
 
 より複雑なものが必要な場合は、CollisionコンポーネントタイプをMeshに設定し、モデルアセットを割り当てることもできます。
 
@@ -61,17 +61,17 @@ Collisionコンポーネントは、ボディの物理的な形状を指定し�
 
 物理は動きに関連するものです。DynamicなRigidBodyを作成するとより面白くなります。Dynamicな1x1x1ボックスを作成してみましょう：
 
-![Dynamic Box](/images/user-manual/physics/dynamic-box.png)
+![Dynamic Box](/img/user-manual/physics/dynamic-box.png)
 
 ボックスは、Staticな地面と衝突したときに興味深い方法で跳ね返るように回転されています。
 
-![Falling Box](/images/user-manual/physics/falling-box.gif)
+![Falling Box](/img/user-manual/physics/falling-box.gif)
 
 ## Kinematicボディの作成 {#creating-kinematic-bodies}
 
 場合によっては、シーン内の物理オブジェクトの動きを明示的に制御し、これらのオブジェクトが他の物理オブジェクトに対して抵抗できない力を発揮できるようにするべきです。たとえば、プレイヤーを別の階に運ぶための動くプラットフォームを作るとします。これを実現するためには、RigidBodyのタイプをKinematicに設定します。それでは、Kinematicボックスを作成してみましょう。
 
-![Kinematic Box](/images/user-manual/physics/kinematic-box.png)
+![Kinematic Box](/img/user-manual/physics/kinematic-box.png)
 
 Kinematicボディのアニメーション化が自身で行う必要があります。上記のKinematicボックスには、movement.jsというスクリプトが割り当てられた、スクリプトコンポーネントも含まれています。
 
@@ -91,7 +91,7 @@ Movement.prototype.update = function(dt) {
 
 このスクリプトは、正弦関数を使用して、ワールドのX軸に沿ってボックスをアニメーション化します。Kinematicボディを移動するには、 `setPosition`、` setRotation`および `setEulerAngles`のようなエンティティ上の標準の変換関数を使用します。シーンを実行すると、ダイナミックボックスがKinematicボックスの上に落ち、その上に乗ったまま運ばれます。
 
-![Kinematic Box](/images/user-manual/physics/kinematic-box.gif)
+![Kinematic Box](/img/user-manual/physics/kinematic-box.gif)
 
 ## Dynamicボディのテレポート {#teleporting-dynamic-bodies}
 

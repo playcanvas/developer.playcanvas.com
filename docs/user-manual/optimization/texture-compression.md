@@ -11,23 +11,23 @@ The Editor has the ability to apply lossy compression schemes to your textures t
 
 Consider this texture asset:
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/brick.jpg" alt="Brick Texture" width="256" height="256" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/brick.jpg" alt="Brick Texture" width="256" height="256" />
 
 It's a 512x512 JPG that is 202KB in size. However, JPG is a compressed format and when passed to the graphics engine, it is expanded to an uncompressed RGB8 format that occupies 1.05MB of VRAM (including mipmap levels).
 
 Enabling texture compression achieves the following results:
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis Compression results" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis Compression results" width="400" />
 
 The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 46KB using the Default quality setting and ETC Mode.
 
 Below is a side by side comparison of the brick texture on Mac with Chrome:
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison" /></a>
+<a href="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison" /></a>
 
 Here is another example of the PlayCanvas cube [with Basis (ETC mode)][2] and [without][3] on Mac with Chrome:
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison" /></a>
+<a href="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison" /></a>
 
 ## Using Basis Texture Compression {#using-basis-texture-compression}
 
@@ -40,7 +40,7 @@ Once the texture has been imported into the Editor, select it and scroll down in
 5. Change the quality setting to balance file size vs quality. Lower quality results in smaller file sizes.
 6. Click on Compress Basis.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Enabling Basis Texture Compression" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Enabling Basis Texture Compression" width="400" />
 
 The Basis WASM module will add 253KB of extra gzipped data to the preload download size but that should be offset by the texture size savings compared to using the legacy texture compression format files ([see below][4]).
 
@@ -49,11 +49,11 @@ To remove Basis compression from a texture:
 1. Untick BASIS.
 2. Click on Compress Basis.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Disabling Basis Texture Compression" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Disabling Basis Texture Compression" width="400" />
 
 If you would no longer want to use Basis, remove Basis compression from all textures and delete the Basis folder from the project.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400" />
 
 ## Basis Limitations {#basis-limitations}
 
@@ -78,14 +78,14 @@ To use the Legacy Texture Compression options, select the texture and scroll dow
 2. Tick all the formats you wish to use.
 3. Click on Compress Legacy.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Enabling Legacy Texture Compression" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Enabling Legacy Texture Compression" width="400" />
 
 To remove a or several formats:
 
 1. Untick all the formats you wish to remove.
 2. Click on Compress Legacy.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400" />
 
 ## Migrating from Legacy to Basis Texture Compression {#migrating-from-legacy-to-basis-texture-compression}
 
@@ -94,7 +94,7 @@ If you have a project that is already using the Legacy Texture Compression forma
 1. Remove all the legacy texture formats.
 2. Enable and use Basis.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Migrate from Legacy to Basis" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Migrate from Legacy to Basis" width="400" />
 
 [1]: https://github.com/BinomialLLC/basis_universal
 [2]: https://playcanv.as/p/j8rsh3eO/

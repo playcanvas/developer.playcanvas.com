@@ -3,7 +3,7 @@ title: マテリアルインスペクター
 sidebar_position: 3
 ---
 
-![Material Inspector](/images/shader-editor/inspector-pane-material.png)
+![Material Inspector](/img/shader-editor/inspector-pane-material.png)
 
 マテリアルインスペクターは、マテリアルの設定が構成される場所です。
 

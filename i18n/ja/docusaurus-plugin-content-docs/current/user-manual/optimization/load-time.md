@@ -53,6 +53,6 @@ Using [Virtual Voodoo][2] as an example, we can show the 'typical' sequence that
 
 [1]: /user-manual/templates/#when-do-i-need-to-load-template-assets
 [2]: https://playcanv.as/p/tRUfwVg1/
-[3]: /images/user-manual/optimization/loading/virtual-voodoo-phases.jpg
-[4]: /images/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif
-[5]: /images/user-manual/optimization/loading/character-load.gif
+[3]: /img/user-manual/optimization/loading/virtual-voodoo-phases.jpg
+[4]: /img/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif
+[5]: /img/user-manual/optimization/loading/character-load.gif

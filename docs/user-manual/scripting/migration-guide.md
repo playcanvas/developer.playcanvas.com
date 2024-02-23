@@ -9,11 +9,11 @@ In July 2016, PlayCanvas adopted its [current scripting system][1] (sometimes kn
 
 In December 2020, it was announced that legacy script projects would be made read-only in the near future. When you open one in the Editor, you will see the following message in the project dashboard:
 
-![Dashboard Legacy Script](/images/user-manual/scripting/migration-guide/dashboard-warning.png)
+![Dashboard Legacy Script](/img/user-manual/scripting/migration-guide/dashboard-warning.png)
 
 And the following message in the Editor:
 
-![Editor Legacy Script](/images/user-manual/scripting/migration-guide/editor-warning.png)
+![Editor Legacy Script](/img/user-manual/scripting/migration-guide/editor-warning.png)
 
 If you want to continue to work on legacy script projects, we recommend that you migrate them to the current format. Unfortunately, there is no automated migration process for this. Instead, it is a manual process, but this guide will walk you through it.
 
@@ -25,7 +25,7 @@ We will begin by creating a new, blank project to transfer assets and code into.
 
 Next, copy all assets to your new project (minus scripts which in legacy projects are *not* true assets). It is possible to copy and paste assets from one project to another (using the right-click context menu).
 
-![Copy Paste Assets](/images/user-manual/scripting/migration-guide/copy-assets.png)
+![Copy Paste Assets](/img/user-manual/scripting/migration-guide/copy-assets.png)
 
 However, legacy script projects are quite old. Years ago, assets were imported without file extensions and some metadata might not be available to view in the Inspector panel. So you might want to consider downloading your source assets and uploading them to your new project.
 
@@ -33,7 +33,7 @@ However, legacy script projects are quite old. Years ago, assets were imported w
 
 Download the scripts from your legacy script project via the Project Dashboard:
 
-![Download Scripts](/images/user-manual/scripting/migration-guide/download-scripts.png)
+![Download Scripts](/img/user-manual/scripting/migration-guide/download-scripts.png)
 
 If your legacy project is connected to a GitHub repo, download your scripts from there.
 
@@ -142,11 +142,11 @@ if (entities.length) {
 
 You should see something like the following:
 
-![Select Script Entities](/images/user-manual/scripting/migration-guide/select-script-entities.png)
+![Select Script Entities](/img/user-manual/scripting/migration-guide/select-script-entities.png)
 
 You can then hit the delete button in the Inspector:
 
-![Delete Script Components](/images/user-manual/scripting/migration-guide/delete-script-components.png)
+![Delete Script Components](/img/user-manual/scripting/migration-guide/delete-script-components.png)
 
 Now you can successfully copy and paste your game's hierarchy from the read-only project to the new destination project.
 

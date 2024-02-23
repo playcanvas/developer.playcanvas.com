@@ -7,7 +7,7 @@ sidebar_position: 3
 
 トリガーボリュームを作成するには、エンティティに[Collisionコンポーネント][1]を追加して、その形状を設定します。トリガーボリュームエンティティにはRigidBodyコンポーネントを追加しないでください。
 
-![Trigger Volume](/images/user-manual/physics/trigger-volume.png)
+![Trigger Volume](/img/user-manual/physics/trigger-volume.png)
 
 RigidBodyベースのエンティティがボリュームに出入りしたかどうかを確認するには、簡単なスクリプトが必要です。
 

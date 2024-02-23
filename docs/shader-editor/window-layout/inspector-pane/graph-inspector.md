@@ -3,7 +3,7 @@ title: Graph Inspector
 sidebar_position: 1
 ---
 
-![Graph Inspector](/images/shader-editor/inspector-pane-graph.png)
+![Graph Inspector](/img/shader-editor/inspector-pane-graph.png)
 
 The Graph Inspector is where a graph's settings are configured.
 

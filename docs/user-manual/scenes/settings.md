@@ -5,7 +5,7 @@ sidebar_position: 5
 
 The Settings panel lets you set up various properties. It is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
 
-![Cog](/images/user-manual/scenes/settings/cog.jpg)
+![Cog](/img/user-manual/scenes/settings/cog.jpg)
 
 ## Physics Settings {#physics-settings}
 
@@ -64,7 +64,7 @@ The exposure value tweaks the overall brightness of the scene.
 
 Computer screens are set up to output not physically linear, but perceptually linear (sRGB) signal. However, for correct appearance when performing lighting calculations, color textures must be converted to physically linear space, and then the fully lit image must be fit again into sRGB. Rendering with gamma correction enabled reduces the number of ugly, overly saturated highlights and better preserves color after lighting, and it's generally recommended that this be enabled in your scene. The following image shows a simple scene with a sphere. On the left the scene has been gamma corrected while on the right, the scene is uncorrected.
 
-![Gamma Correction](/images/user-manual/scenes/settings/gamma-correction.jpg)
+![Gamma Correction](/img/user-manual/scenes/settings/gamma-correction.jpg)
 
 To find out more about gamma correction, read [this GPU Gems chapter][5].
 
@@ -134,7 +134,7 @@ Enable the legacy audio components. Use this only for compatibility with old pro
 
 ## Lightmapping {#lightmapping}
 
-![Lightmapping Settings](/images/user-manual/scenes/settings/lightmapping-settings.png)
+![Lightmapping Settings](/img/user-manual/scenes/settings/lightmapping-settings.png)
 
 #### Size Multiplier {#size-multiplier}
 

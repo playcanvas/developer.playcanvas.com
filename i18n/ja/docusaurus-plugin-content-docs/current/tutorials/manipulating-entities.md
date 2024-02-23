@@ -16,7 +16,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186
 
 エンティティの移動や操作方法を理解する上で重要なのは、ローカル座標系とワールド座標系の理解です。ワールド座標系はすべてのエンティティで共有されており、固定された原点 `(0,0,0)` と固定された向きがあります。ワールド座標系では、`(0,1,0)` が上を向いています。ローカル座標系はエンティティ自体に対する相対的な座標系です。したがって、ローカル原点はエンティティの位置であり、向きはエンティティの向きに従います。
 
-![World and Local Coordinate Systems](/images/tutorials/world-and-local.png)
+![World and Local Coordinate Systems](/img/tutorials/world-and-local.png)
 
 *ワールド座標系とローカル座標系*
 

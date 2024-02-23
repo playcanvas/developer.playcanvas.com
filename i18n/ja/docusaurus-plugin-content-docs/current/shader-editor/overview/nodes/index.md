@@ -5,7 +5,7 @@ sidebar_position: 2
 
 Shader Editorではさまざまなタイプのノードがサポートされていますが、すべてのノードは以下の構造を持っています。
 
-![Graph Editor Node](/images/shader-editor/graph-editor-node.png)
+![Graph Editor Node](/img/shader-editor/graph-editor-node.png)
 
 | ノードの構造 | |
 |---|---|

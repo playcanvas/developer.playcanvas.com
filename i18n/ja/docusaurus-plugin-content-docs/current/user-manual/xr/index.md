@@ -3,7 +3,7 @@ title: XR
 sidebar_position: 20
 ---
 
-![VR View](/images/user-manual/xr/vr-view.png)
+![VR View](/img/user-manual/xr/vr-view.png)
 
 PlayCanvas lets you create [AR][6] (Augmented Reality) and [VR][7] (Virtual Reality) applications for a variety of devices based on the new WebXR API, as well as through external integrations.
 

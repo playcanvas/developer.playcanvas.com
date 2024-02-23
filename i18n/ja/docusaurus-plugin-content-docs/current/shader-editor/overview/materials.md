@@ -9,10 +9,10 @@ sidebar_position: 3
 
 たとえば、次のマテリアルシェーダーが与えられた場合:
 
-![Material Graph](/images/shader-editor/overview-materials-graph.png)
+![Material Graph](/img/shader-editor/overview-materials-graph.png)
 
 複数のマテリアルを作成することができ、それぞれが異なるVec3パラメータの設定を持つことができます:
 
-![Material Previews](/images/shader-editor/overview-materials-previews.png)
+![Material Previews](/img/shader-editor/overview-materials-previews.png)
 
 [3]: /shader-editor/window-layout/inspector-pane/material-inspector

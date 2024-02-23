@@ -19,7 +19,7 @@ wasmモジュールの導入前に作成されたプロジェクトは、デフ�
 
 プロジェクトがammo.jsの旧バージョンを使用しているかどうかを確認するには、シーン設定パネルに移動します。
 
-![Physics Legacy Settings](/images/user-manual/physics/physics-legacy-settings.png)
+![Physics Legacy Settings](/img/user-manual/physics/physics-legacy-settings.png)
 
 「物理を有効にする」と表示されない場合、新規のプロジェクトのため、ammo.jsの従来の組み込みバージョンを使用することができません。
  

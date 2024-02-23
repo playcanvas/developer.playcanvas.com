@@ -8,7 +8,7 @@ You can create a Font asset by uploading a font file ending in `.ttf`, `.ttc`, `
 
 Here are the properties that you can edit for a Font asset in the Editor:
 
-![Font Asset](/images/user-manual/assets/fonts/font.png)
+![Font Asset](/img/user-manual/assets/fonts/font.png)
 
 ## Properties
 

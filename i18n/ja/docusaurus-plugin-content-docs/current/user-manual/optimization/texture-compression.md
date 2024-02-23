@@ -11,23 +11,23 @@ sidebar_position: 1
 
 次のようなTextureアセットがあるとします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/brick.jpg" alt="Brick Texture" width="256" height="256" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/brick.jpg" alt="Brick Texture" width="256" height="256" />
 
 これは512x512のJPGでサイズは202KBです。しかし、JPGは圧縮された形式であり、グラフィックエンジンに渡されると解凍されたRGB8形式に拡張され、ミップマップレベルを含めると1.05MBのVRAMを占有します。
 
 テクスチャ圧縮を有効にすると、以下のような結果が得られます。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis Compression results" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis Compression results" width="400" />
 
 圧縮により、VRAMの使用量が6分の1に減少しました。さらに、この場合、圧縮によりダウンロードサイズが202KBからDefault品質設定とETCモードを使用して最小46KBまで減少しました。
 
 以下に、MacのChromeでのレンガテクスチャの並べて比較を示します。
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison" /></a>
+<a href="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison" /></a>
 
 以下は、MacとChromeで PlayCanvas のキューブを Basis (ETCモード)[2] で比較したものと、[圧縮していないもの][3]です。
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison" /></a>
+<a href="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison" /></a>
 
 ## Basis テクスチャ圧縮の使用 {#using-basis-texture-compression}
 
@@ -40,7 +40,7 @@ sidebar_position: 1
 5. ファイルサイズと品質のバランスを取るために、品質設定を変更します。品質を下げると、より小さなファイルサイズになります。
 6. Compress Basis をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Enabling Basis Texture Compression" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Enabling Basis Texture Compression" width="400" />
 
 BasisのWASMモジュールは、プリロードダウンロードサイズに追加で253KBのgzip圧縮データを追加しますが、それはレガシーのテクスチャ圧縮フォーマットのファイルを使用する場合と比較してテクスチャサイズの節約によって相殺されるはずです（[下記参照][4]）。
 
@@ -49,11 +49,11 @@ BasisのWASMモジュールは、プリロードダウンロードサイズに�
 1. BASIS のチェックを外します。
 2. Compress Basis をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Disabling Basis Texture Compression" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Disabling Basis Texture Compression" width="400" />
 
 もう Basis を使用しない場合は、すべてのテクスチャから Basis 圧縮を削除し、プロジェクトから Basis フォルダを削除してください。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400" />
 
 ## Basis の制限 {#basis-limitations}
 
@@ -78,14 +78,14 @@ Legacy Texture Compression オプションを使用するには、テクスチ�
 2. 使いたいすべてのフォーマットをチェックします。
 3. Compress Legacy をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Enabling Legacy Texture Compression" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Enabling Legacy Texture Compression" width="400" />
 
 フォーマットを1つまたは複数削除するには:
 
 1. 削除したいすべてのフォーマットのチェックを外します。
 2. Compress Legacy をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400" />
 
 ## Legacy テクスチャ圧縮から Basis テクスチャ圧縮への移行 {#migrating-from-legacy-to-basis-texture-compression}
 
@@ -94,7 +94,7 @@ Legacy Texture Compression オプションを使用するには、テクスチ�
 1. すべての Legacy テクスチャフォーマットを削除します。
 2. Basis を有効にして使用します。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Migrate from Legacy to Basis" width="400" />
+<img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Migrate from Legacy to Basis" width="400" />
 
 
 [1]: https://github.com/BinomialLLC/basis_universal
@@ -102,4 +102,4 @@ Legacy Texture Compression オプションを使用するには、テクスチ�
 [3]: https://playcanv.as/p/nAW3WkW8/
 [4]: #legacy-texture-compression
 [5]: #using-basis-texture-compression
-[6]: /images/user-manual/assets/textures/texture-compression/compression-results.png
+[6]: /img/user-manual/assets/textures/texture-compression/compression-results.png

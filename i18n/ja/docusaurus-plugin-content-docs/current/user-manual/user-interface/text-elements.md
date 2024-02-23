@@ -25,7 +25,7 @@ Text elements support a simple markup syntax that allows you to apply different 
 
 Assuming the base color of the text element is white, this will render as follows:
 
-![Text Markup](/images/user-manual/user-interface/text-element/text-markup.png)
+![Text Markup](/img/user-manual/user-interface/text-element/text-markup.png)
 
 :::tip
 
@@ -37,7 +37,7 @@ entity.element.enableMarkup = true;
 
 Or by enabling it in the Editor:
 
-![Enable Markup](/images/user-manual/user-interface/text-element/enable-markup.png)
+![Enable Markup](/img/user-manual/user-interface/text-element/enable-markup.png)
 
 :::
 
@@ -51,7 +51,7 @@ Or by enabling it in the Editor:
 
 デフォルトで、テキストエレメントは、テキスト文字列と一致するように幅と高さを自動的に調整するように設定されています。これを無効にして、要素の高さと幅をEditorパネルで直接指定することができます。
 
-![Auto Size](/images/user-manual/user-interface/text-element/auto-size.png)
+![Auto Size](/img/user-manual/user-interface/text-element/auto-size.png)
 
 :::note
 
@@ -63,11 +63,11 @@ Or by enabling it in the Editor:
 
 テキスト要素には、アライメントという配置を補助するための追加ツールがあります。Word Processのようなツールをしているとこのプロパティがの機能に慣れます。今回のケースではプリセットではなく変更可能な変数が公開されます。アラインメントは0と1の間の２つの値`[X, Y]`で構成されています。`[0,0]`は左下の配置、`[0.5,0.5]`は中央、`[1,1]`は右上に配置されます。
 
-![Top Left](/images/user-manual/user-interface/text-element/alignment-bottom-left.png)
+![Top Left](/img/user-manual/user-interface/text-element/alignment-bottom-left.png)
 
-![Centered](/images/user-manual/user-interface/text-element/alignment-centered.png)
+![Centered](/img/user-manual/user-interface/text-element/alignment-centered.png)
 
-![Bottom Right](/images/user-manual/user-interface/text-element/alignment-top-right.png)
+![Bottom Right](/img/user-manual/user-interface/text-element/alignment-top-right.png)
 
 ## フォントサイズと行の高さ
 
@@ -75,29 +75,29 @@ font sizeプロパティは、Screenコンポーネントピクセルでフォ�
 
 同等のフォントサイズとデフォルトの行の高さ：
 
-![Font Size Line Equal](/images/user-manual/user-interface/text-element/font-line-equal.png)
+![Font Size Line Equal](/img/user-manual/user-interface/text-element/font-line-equal.png)
 
 ラインの高さを上げてラインの間隔を広げる：
 
-![Font Size Line Spaced](/images/user-manual/user-interface/text-element/font-line-spaced.png)
+![Font Size Line Spaced](/img/user-manual/user-interface/text-element/font-line-spaced.png)
 
 ## スペーシング (Spacing)
 
 spacingプロパティは文字列内の文字間の距離を伸ばします。フォントは、各文字に対して前方にカーソルを移動する理想的な距離を定義します。spacingプロパティはこの距離の乗数です。
 
-![Spacing](/images/user-manual/user-interface/text-element/spacing.png)
+![Spacing](/img/user-manual/user-interface/text-element/spacing.png)
 
 ## 着色 (Tinting)
 
 Colorプロパティを使用すると、文字列を選択した色に色付けすることができます。
 
-![Tinted](/images/user-manual/user-interface/text-element/tinted.png)
+![Tinted](/img/user-manual/user-interface/text-element/tinted.png)
 
 ## 透明性 (Tranparency)
 
 Opacityプロパティでは、文字列の透明度を設定できます
 
-![Transparent](/images/user-manual/user-interface/text-element/transparent.png)
+![Transparent](/img/user-manual/user-interface/text-element/transparent.png)
 
 [1]: /user-manual/assets/types/font
 [11]: /user-manual/user-interface/localization

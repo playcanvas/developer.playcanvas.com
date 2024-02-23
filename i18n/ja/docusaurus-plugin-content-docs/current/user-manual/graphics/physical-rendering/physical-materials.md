@@ -15,7 +15,7 @@ Editorに入りマテリアルを作成しても、マテリアルが下のサ�
 
 ## メタリック (Metalness) とスペキュラ (Specular) ワークフロー
 
-![Workflows](/images/user-manual/graphics/physical-rendering/workflows.jpg)
+![Workflows](/img/user-manual/graphics/physical-rendering/workflows.jpg)
 
 PBRは、アセットまたはワークフローの作成に2つの異なる方法をよく使われます。2つのワークフローは同等で同じ結果を提供します。どちらを選択するかは、好み次第です。PlayCanvasでは、通常、メタリックフローを選択します。単一チャンネルのMetalnessマップが作成しやすく、通常はより効率的であるためです。
 
@@ -42,7 +42,7 @@ Diffuseカラーは **アルベド** や **ベースカラー** と呼ばれる�
 
 インターネット上を探すと、拡散色/アルベドの値と素材の対応表をすぐに見つけることができます。
 
-![Metals](/images/user-manual/graphics/physical-rendering/metals.jpg)
+![Metals](/img/user-manual/graphics/physical-rendering/metals.jpg)
 
 | マテリアル (Material) | RGB                                      |
 |----------|------------------------------------------|

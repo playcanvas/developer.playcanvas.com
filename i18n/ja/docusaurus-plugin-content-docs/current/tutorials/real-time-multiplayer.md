@@ -43,11 +43,11 @@ server.listen(3000);
 
 Glitchは、タイピングを終えると自動的にサーバーを再実行します。これをコピーした後、エラーが発生します。画面左側の `Logs` ボタンをクリックして、サーバーコンソールを開いてください。ここでは、サーバーの出力やエラーを見ることができます。 `Error: Cannot find module 'socket.io'` のエラーが表示されるはずです。
 
-![Opening the log](/images/tutorials/multiplayer/glitch_error.png)
+![Opening the log](/img/tutorials/multiplayer/glitch_error.png)
 
 パッケージを含めるには、`package.json` に移動し、トップの `Add Package` ボタンをクリックします。 `socket.io` を検索します。
 
-![Adding a package](/images/tutorials/multiplayer/glitch_add_package.png)
+![Adding a package](/img/tutorials/multiplayer/glitch_add_package.png)
 
 
 これでログを消去し、`server.js` にスペースを追加して再実行すると、ログに `Server started.` が表示されます。サーバーのデプロイが成功しました!トップの `Show` ボタンをクリックしても、実際には何も表示されません。なぜなら、サーバーがhttpリクエストを受信するのではなく、websocketリクエストを待機しているからです。
@@ -62,15 +62,15 @@ PlayCanvasで新しいプロジェクトを作成します。Socket.ioのクラ�
 
 プロジェクトの設定に移動します。
 
-![Project settings](/images/tutorials/multiplayer/project_settings.png)
+![Project settings](/img/tutorials/multiplayer/project_settings.png)
 
 'External Scripts'を見つけて開きます。
 
-![External scripts settings](/images/tutorials/multiplayer/external_scripts_settings.png)
+![External scripts settings](/img/tutorials/multiplayer/external_scripts_settings.png)
 
 値を0から1に変更し、[フレームワークサーバー][11]からのソケットライブラリのCDN URLを追加します。この場合、書いている時点で最新のバージョンであるv3.1.1を使用します。
 
-![Project settings](/images/tutorials/multiplayer/added_socket_io_library.png)
+![Project settings](/img/tutorials/multiplayer/added_socket_io_library.png)
 
 
 ```
@@ -111,11 +111,11 @@ socket.on ('playerJoined', function (name) {
 
 このデモでは、リアルタイムマルチプレイヤーでプレイヤーが移動するようにしたいため、環境を作成する必要があります。グラウンドとして使用するエンティティを作成し、Collision (ボックス形状) とStaticタイプのRigidBodyを追加します。以下は、グラウンドエンティティの設定です：
 
-<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360" />
+<img loading="lazy" src="/img/tutorials/multiplayer/ground_entity.png" width="360" />
 
 次に、操作するプレイヤーを作成する必要があります。新しいカプセルを作成し、 `Player` と呼びます。ダイナミックなリジッドボディと衝突ボックスを追加し、リジッドボディの設定を以下の画像のように変更します。
 
-<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360" />
+<img loading="lazy" src="/img/tutorials/multiplayer/player_entity.png" width="360" />
 
 プレイヤーエンティティを複製し、 'Other' という名前に変更します。この新しいエンティティの `Enabled` ボックスをオフにして、最初は無効にします。これは、ゲーム内の他のプレイヤーをシミュレートするために使用するエンティティです。
 

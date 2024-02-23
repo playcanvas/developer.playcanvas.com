@@ -5,17 +5,17 @@ sidebar_position: 2
 
 Shadows are a great way to add realism to your games. However, dynamic (realtime) shadows, can come with a significant runtime performance cost. For a more performant way of adding static shadows to your scene. See [Lightmaps][4].
 
-![Characters with shadow casting](/images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg)
+![Characters with shadow casting](/img/user-manual/graphics/lighting/shadows/doom3_shadows.jpg)
 
 The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop.
 
 ## Enabling Shadows {#enabling-shadows}
 
-<img loading="lazy" src="/images/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480" />
+<img loading="lazy" src="/img/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480" />
 
 By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
 
-![Model Component](/images/user-manual/scenes/components/component-model.png)
+![Model Component](/img/user-manual/scenes/components/component-model.png)
 
 Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all render and model components cast and receive shadows. To modify these properties, select the entity in the Hierarchy, locate the render or model component in the Inspector and uncheck the 'Cast Shadows' or 'Receive Shadows' option as required.
 
@@ -35,11 +35,11 @@ Number of cascades represents the number of view frustum subdivisions, and can b
 
 A screenshot showing a single shadow cascade.
 
-![One cascade](/images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg)
+![One cascade](/img/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg)
 
 A screenshot showing four shadow cascades.
 
-![Four cascades](/images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg)
+![Four cascades](/img/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg)
 
 ### Distribution of cascades {#distribution-of-cascades}
 
@@ -57,7 +57,7 @@ The shadow distance is the distance from the viewpoint beyond which directional 
 
 The intensity of the shadow, where 1 represents full intensity shadow cast by this light, and 0 represents no shadow.
 
-![Shadow Intensity](/images/user-manual/graphics/lighting/shadows/shadow-intensity.gif)
+![Shadow Intensity](/img/user-manual/graphics/lighting/shadows/shadow-intensity.gif)
 
 ### Shadow Resolution {#shadow-resolution}
 
@@ -77,7 +77,7 @@ The Normal Offset Bias solves this problem. In addition to using the depth bias,
 
 The outline of a shadow is called the penumbra. This is a transition from dark to light which gives shadows a soft edge. Softening shadow edges is the default in PlayCanvas but you can change this setting if you wish to achieve hard edged shadows. See below for a comparison of soft and hard edged shadows:
 
-![Hard vs soft shadows](/images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg)
+![Hard vs soft shadows](/img/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg)
 
 Soft shadows are achieved by performing more samples of the shadow map on the GPU. The algorithm used is called Percentage Closest Filtering or PCF for short. This algorithm reads 9 localized samples (a 3 by 3 matrix) from the shadow map instead of just one as is used for hard shadows.
 

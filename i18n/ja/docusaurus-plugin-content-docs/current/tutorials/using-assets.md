@@ -55,7 +55,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 このプロジェクトでは**A**と**B**のアセットが**プリロード**されています。つまり、ロード画面中にこれらのアセットがダウンロードされます。アプリケーションを開始してすぐに使用できるようになります。アセットがロードされると、ロードされたリソースには`asset.resource`という名前が付けられ、[Renderコンポーネントアセットプロパティ][8]にアセットを割り当てることができます。`asset.loaded`が`false`であれば、アセットはロードされていません。
 
-<img loading="lazy" src="/images/tutorials/using_assets/using-assets-a-preload.png" width="360" />
+<img loading="lazy" src="/img/tutorials/using_assets/using-assets-a-preload.png" width="360" />
 
 ですから、`A`と`B`のモデルはプリロードされ、実行されるとすぐに使用できることがわかっています。このコードは、スペースバーが押されている場合は、Renderコンポーネントのレンダーアセットをリソースプロパティに変更します。この場合、`asset.resource`は`pc.Render`オブジェクトになります。各異なったアセットタイプ(オーディオ、テクスチャなど)について、`asset.resource`プロパティは関連するタイプになります。
 
@@ -80,7 +80,7 @@ if (app.keyboard.isPressed(pc.KEY_C)) {
 
 **C** のレンダーアセットは *プリロード* されていないため、上記のコードでリソースがロードされてから使用するかどうかを確認しています。 `asset.loaded` がfalseであれば、リソースはロードされていません。 **C** のレンダーアセットがロードされている場合、 `this.c.resource` は `pc.Render` プロパティになり、 `asset.loaded` がtrueになります。そして私たちはそれを割り当てることができます。
 
-<img loading="lazy" src="/images/tutorials/using_assets/using-assets-c-preload.png" width="360" />
+<img loading="lazy" src="/img/tutorials/using_assets/using-assets-c-preload.png" width="360" />
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
