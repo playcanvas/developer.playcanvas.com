@@ -1,6 +1,7 @@
 ---
 title: Importing your first Model and Animation
 tags: [animation,basics]
+thumb: /img/tutorials/importing-first-model-and-animation/thumbnail.jpg
 ---
 
 <div className="iframe-container">
