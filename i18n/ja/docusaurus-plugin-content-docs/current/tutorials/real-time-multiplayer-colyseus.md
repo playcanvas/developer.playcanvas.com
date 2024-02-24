@@ -126,12 +126,12 @@ PlayCanvasプロジェクトを**「起動」**すると、クライアントは
 
 Colyseusでは、共有データを `Schema` 構造を使用して定義します。
 
-> `Schema` is a special data type from Colyseus that is capable of encoding its changes/mutations *incrementally*. The encoding and decoding process happens internally by the framework and its SDK.
+> `Schema`はColyseusからの特別なデータ型で、その変更/変異を_増分的に_エンコードする能力があります。エンコードとデコードのプロセスはフレームワークとそのSDKによって内部的に行われます。
 
 ステート同期のループは次のようになります。
 
 1. 状態の変更(変異)は、サーバー→クライアント間で自動的に同期されます。
-2. Clients, by attaching callbacks to their local *read-only* `Schema` structures, can observe for state mutations and react to it.
+2. クライアントは、ローカルの_読み取り専用_の`Schema`構造体にコールバックをアタッチすることで、状態の変化を観察し、それに対応することができます。
 3. クライアントは任意のメッセージをサーバーに送信することができます - それが何をするかはサーバーが決定します - そして状態を変化させることができます（ステップ**1.**に戻ります）
 
 ---
@@ -310,11 +310,11 @@ this.room.state.players.onRemove((player, sessionId) => {
 ```typescript
 // ...
 this.app.mouse.on(pc.EVENT_MOUSEDOWN, (event) => {
-  // Create the "bounding box" for the floor
+  // 床の「バウンディングボックス」を作成します
   const boundingBox = new pc.BoundingBox(new pc.Vec3(0, 0, 0), new pc.Vec3(4, 0.001, 4));;
 
-  // Initialize the ray and work out the direction of the ray
-  // from the a screen position
+  // rayを初期化し、rayの方向を決定します
+  // スクリーン位置からのrayの方向を決定します
   const ray = new pc.Ray();
   const targetPosition = new pc.Vec3();
 
@@ -323,15 +323,15 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, (event) => {
   ray.origin.copy(cameraEntity.getPosition());
   ray.direction.sub(ray.origin).normalize();
 
-  // Test the ray against the ground
+  // 地面に対してrayをテストします
   const result = boundingBox.intersectsRay(ray, targetPosition);
 
   if (result) {
-    // Adjust position height
+    // 位置の高さを調整
     targetPosition.y = 1.031;
 
     //
-    // Send new target player position to server.
+    // 新しい目標プレイヤー位置をサーバーに送信します。
     //
     this.room.send("updatePosition", {
         x: targetPosition.x,

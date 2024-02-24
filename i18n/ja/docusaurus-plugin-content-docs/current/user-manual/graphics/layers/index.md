@@ -94,7 +94,7 @@ Layersセクションで、作成するレイヤーの名前を入力し**Add La
 
 通常、シーンには多くのエンティティが含まれ、それらはメッシュをレンダリングします。これらのそれぞれが正確に1つのレイヤーに存在することが推奨されます。ほとんどの場合、これらはワールドレイヤーになりますが、よりコントロールを行うために、テレイン、ビルディング、キャラクターなどのレイヤーに割り当てることができます。 
 
-A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture.
+新しいシーンにはデフォルトで一つのカメラが含まれており、多くのアプリケーションではこれだけで十分です。追加のカメラは、シーン内の異なるカメラ間でカットする場合や、ピクチャーインピクチャーや分割画面をレンダリングする場合、またはシーンをテクスチャにレンダリングする場合などに有用です。 
 
 追加のカメラを追加するときには、以下の手順を推奨します。
 

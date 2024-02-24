@@ -97,7 +97,7 @@ this.app.root.addChild(instance);
 
 ## Templateアセットをいつロードする必要がありますか? {#when-do-i-need-to-load-template-assets}
 
-Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data.
+テンプレートはエンティティの階層とデータを保存します。テンプレートインスタンスがエディタのシーンに追加されると、エンティティの階層とデータがシーン・データに含まれます。
 
 実行時に、テンプレートインスタンスはアセットにリンクされていないため、アセットのプリロード/ロードを行わないことによりダウンロードサイズを減らすことができます。 
 

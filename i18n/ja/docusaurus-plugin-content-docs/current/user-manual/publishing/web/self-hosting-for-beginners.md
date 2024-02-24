@@ -92,7 +92,7 @@ PlayCanvasアプリケーションのセルフホスティングに関する[詳
 
 ### クライアント
 
-Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server.
+以下のような理由で、PlayCanvasのよく使われるフォーマットに対するコンテンツタイプが設定されていないサーバーがあるため、サーバーからアプリケーションを読み込もうとするとエラーが発生する場合があります。
 
 もしブラウザーでアセットが正しく提供されていないというエラーや警告が出た場合は、これらのタイプを追加する必要があるかもしれません。
 

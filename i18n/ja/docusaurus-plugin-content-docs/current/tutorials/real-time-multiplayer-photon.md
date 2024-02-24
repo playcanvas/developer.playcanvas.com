@@ -41,7 +41,7 @@ SDKの使用とドキュメンテーションの閲覧にはアカウントの�
 
 ![Create New Application](/img/tutorials/multiplayer-photon/2.png)
 
-#### Select Photon Type and Application name
+#### Photonタイプとアプリケーション名を選択
 
 以下を入力してください。
 
@@ -156,7 +156,7 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 ![Root Entity - Inspector](/img/tutorials/multiplayer-photon/11.png)
 
-#### Paste AppId into the script attribute
+#### スクリプト属性にAppIdを貼り付ける
 
 スクリプト属性にAppIdを入力してください。
 
@@ -330,7 +330,7 @@ Player.prototype.update = function (dt) {
 
 他のプレーヤーの位置を同期するために、**raiseEvent** と **onEvent** を使用します。
 
-#### Position synchronization using **raiseEvent**
+#### **raiseEvent** を使用した位置の同期
 
 ```javascript
 const PhotonLoadBalancingPlayCanvas = pc.createScript("photonLoadBalancingPlayCanvas");
@@ -478,7 +478,7 @@ Player.prototype.update = function (dt) {
 
 - **this.app.fire** は、スクリプト間の [通信][22]に使用されます。
 
-### Done
+### 完成
 
 Photonを使用してマルチプレイヤーをプレイできるようになりました！
 

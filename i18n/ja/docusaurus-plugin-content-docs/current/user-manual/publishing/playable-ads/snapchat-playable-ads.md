@@ -29,7 +29,7 @@ SnapchatのPlayable Adでは、[MRAID 2.0 API][mraid-api]標準が使用され�
 
 画像をできるだけ小さく保ち、[TinyPNG][4]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 
-## Playable ad checklist
+## Playable Ad のチェックリスト
 
 Snapchatの広告ネットワークは、ユーザーに提供するときに独自のトラッキングバージョンに置き換えることができる`index.html`内のコールトゥアクション関数が必要です。URLはSnapchat Ad campaignツールで設定されます。
 

@@ -18,9 +18,9 @@ title: Texture Atlas
 
 ```javascript
 {
-    rect: [0, 0, 0, 0],  // u,v,width,height - width and height in pixels
-    pivot: [0, 0],       // x,y - as a proportion 0-1
-    border: [0, 0, 0, 0] // left, bottom, right - top in pixels
+    rect: [0, 0, 0, 0],  // u,v,width,height - 幅と高さはピクセル単位
+    pivot: [0, 0],       // x,y - 比率0-1
+    border: [0, 0, 0, 0] // left, bottom, right, top - 上はピクセル単位
 }
 ```
 

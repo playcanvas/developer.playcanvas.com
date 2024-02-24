@@ -27,7 +27,7 @@ PlayCanvasは、[公式の外部ツール][2]を通じて[Facebook Playable Ad][
 
 画像をできるだけ小さく保ち、[TinyPNG][7]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 
-## Playable ad checklist
+## Playable Ad のチェックリスト
 
 * `FbPlayableAd.onCTAClick( )` の関数呼び出しを呼び出しの一部として追加しましたか?
 

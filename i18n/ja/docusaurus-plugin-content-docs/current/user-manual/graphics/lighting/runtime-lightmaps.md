@@ -118,7 +118,7 @@ Soft Directional Lightや環境ライトのベイキングの場合、ベイク�
 
 **サイズの乗数 (Size Multiplier) **設定は、すべてのモデルとレンダリングコンポーネントに影響します。PlayCanvasは、モデルに必要な解像度のライトマップを自動的に決定します。モデルのスケールとジオメトリの領域サイズに基づいて、この値を計算します。モデルの**Size Multiplier**フィールドを変更するか、コンポーネントのグローバル設定をレンダリングすることにより、この計算に影響を与えることができます。
 
-For example, consider a plane that is 1x1 unit (meter) in size. If the Global Size Multiplier is 16 and the Model Component Multiplier is 2, it will generate a Lightmap Texture size of 32x32 (`1 sq/m * 16 * 2`). You will have 32x32 pixels on one square meter, which is about 3cm a pixel size.
+たとえば、サイズが1x1ユニット(メーター)の平面を検討してください。グローバルサイズの乗数が16で、モデルコンポーネント乗数が2の場合、32x32(`1 sq/m * 16 * 2`)のライトマップテクスチャサイズが生成されます。1平方メートルに32x32ピクセルがあり、これはピクセルサイズの約3cmです。
 
 **最大解像度 (Max Resolution) ** は、メモリを節約するために生成されたライトマップの最大解像度制限を設定します。
 

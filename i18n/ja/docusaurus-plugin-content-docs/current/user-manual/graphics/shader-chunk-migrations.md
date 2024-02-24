@@ -114,11 +114,11 @@ These are the chunk that had their signature changed to accept individual member
 
 ### *Engine v1.62*
 
-In PlayCanvas, we have two sets of shader chunks, one set we refer to as the shader frontend, which provide values for the arguments passed to our lighting algorithm, also called the shader backend.
+PlayCanvasには、2つのシェーダーチャンクがあります。1つはシェーダーフロントエンドと呼ばれ、ライティングアルゴリズムに渡される引数の値を提供します。もう1つはシェーダーバックエンドと呼ばれ、またライティングアルゴリズムとも呼ばれます。
 
-With 1.62, we are creating a clearer distinction between these two, such that the values passed to the backend are well defined and known in advance, not automatically generated. This allows for writing a fully custom shader that can interface with our lighting code just like how our native materials do.
+1.62では、これら2つの間に明確な区別を作成し、バックエンドに渡される値が事前に明確に定義され、自動生成されないようにします。これにより、ネイティブのマテリアルと同様に、ライティングコードとインターフェースすることができる完全にカスタム化されたシェーダーを作成できます。
 
-As a result of that, almost all backend chunks have been changed to accommodate for the split. This means that any custom backend shader chunks must move away from using globals to using the arguments passed to them by the lighting backend.
+その結果、ほとんどのバックエンドチャンクが変更され、分割に対応するようになりました。これは、カスタムバックエンドシェーダーチャンクがグローバル変数を使用するのではなく、ライティングバックエンドから渡された引数を使用するように移行する必要があることを意味します。
 
 この変更により、クリアコートの特定のチャンクなど、いくつかのチャンクは不要になりました。これらの機能は、グローバル値に依存しなくなったため再利用できるようになりました。
 
@@ -134,7 +134,7 @@ vec3 combineColor() {
 }
 ```
 
-Is now expressed:
+は、次のように表されます。
 
 ```glsl
 vec3 combineColor(vec3 albedo, vec3 sheenSpecularity, float clearcoatSpecularity) {
@@ -149,52 +149,52 @@ vec3 combineColor(vec3 albedo, vec3 sheenSpecularity, float clearcoatSpecularity
 ```glsl
 struct LitShaderArguments
 {
-    // Transparency
+    // 透明度
     float opacity;
 
-    // Normal direction in world space
+    // ワールド空間での法線方向 
     vec3 worldNormal;
 
-    // Surface albedo absorbance
+    // 表面の吸収率 
     vec3 albedo;
 
-    // Transmission factor (refraction), range [0..1]
+    // 透過係数（屈折度）, 範囲 [0..1] 
     float transmission;
 
-    // Uniform thickness of medium, used by transmission, range [0..inf]
+    // 厚さ, 透過で使用, 範囲 [0..inf]
     float thickness;
 
-    // The f0 specularity factor
+    // f0 スペキュラリティ係数 
     vec3 specularity;
 
-    // The microfacet glossiness factor, range [0..1]
+    // マイクロファセットの光沢係数 [0..1]
     float gloss;
 
-    // Surface metalness factor, range [0..1]
+    // 表面のメタリック係数 [0..1]
     float metalness;
 
-    // Specularity intensity factor, range [0..1]
+    // スペキュラリティの強度係数 [0..1]
     float specularityFactor;
 
-    // Ambient occlusion amount, range [0..1]
+    // 環境遮蔽の量 [0..1]
     float ao;
 
-    // Emission color
+    // 発光色
     vec3 emission;
 
-    // Light map color
+    // ライトマップの色
     vec3 lightmap;
 
-    // Light map direction
+    // ライトマップの方向
     vec3 lightmapDir;
 
-    // Iridescence extension arguments
+    // 虹彩効果拡張の引数
     IridescenceArgs iridescence;
 
-    // Clearcoat extension arguments
+    // クリアコート拡張の引数
     ClearcoatArgs clearcoat;
 
-    // Sheen extension arguments
+    // シーン拡張の引数
     SheenArgs sheen;
 };
 ```
@@ -204,10 +204,10 @@ struct LitShaderArguments
 ```glsl
 struct IridescenceArgs
 {
-    // Iridescence effect intensity, range [0..1]
+    // 虹彩効果の強度、範囲 [0..1]
     float intensity;
 
-    // Thickness of the iridescent microfilm layer, value is in nanometers, range [0..1000]
+    // 虹彩薄膜層の厚さ、値はナノメートル単位、範囲 [0..1000]
     float thickness;
 };
 ```
@@ -217,13 +217,13 @@ ClearcoatArgs:
 ```glsl
 struct ClearcoatArgs
 {
-    // Intensity of the clearcoat layer, range [0..1]
+    // クリアコートレイヤーの強度、範囲  [0..1]
     float specularity;
 
-    // Glossiness of clearcoat layer, range [0..1]
+    // クリアコートレイヤーの光沢度、範囲 [0..1]
     float gloss;
 
-    // The normal used for the clearcoat layer
+    // クリアコートレイヤーに使用される法線ベクトル 
     vec3 worldNormal;
 };
 ```
@@ -233,10 +233,10 @@ SheenArgs:
 ```glsl
 struct SheenArgs
 {
-    // Glossiness of the sheen layer, range [0..1]
+    // Sheenレイヤーの光沢度 [0..1]
     float gloss;
 
-    // The color of the f0 specularity factor for the sheen layer
+    // Sheenレイヤーのf0スペキュラリティ係数の色 
     vec3 specularity;
 };
 ```
@@ -247,17 +247,18 @@ struct SheenArgs
 | `aoDiffuseOcc` | <ul><li> `dAO` を使用する代わりに、AOのfloat値を受け入れます。</li></ul> |
 | `aoSpec(Occ/OccConst/OccConstSimple/OccSimple)` | <ul><li> `dGlossiness` 、 `dAo` 、 `dNormalW` 、 `dViewDirW` を使用する代わりに、float形式のグロス（光沢度）、float形式のAO、vec3形式のワールド法線、およびvec3形式の視点方向を受け入れます。</li></ul> |
 | `combine` | <ul><li> `dAlbedo` 、 `sSpecularity` 、 `ccSpecularity` を使用する代わりに、vec3形式のアルベド、シーンのスペキュラリティ（鏡面反射）、およびクリアコートのスペキュラリティ（鏡面反射）のfloat値を受け入れます。</li></ul> |
-| `clusteredLight` | <ul><li>Reliance on globals have been reduced to only `dLightPosW`, `dLightDirW`, `dLightDirNormW` and `dShadowCoord` which is initialized per light</li></ul> |
-| `clusteredLightShadow` | <ul><li>For omni lights, generates a local variable instead of relying on `dShadowCoord`. For spot lights, accepts the shadow coordinate instead of using `dShadowCoord` as before</li></ul> |
+| `clusteredLight` | <ul><li>グローバル変数への依存は、ライトごとに初期化される  `dLightPosW` 、 `dLightDirW` 、 `dLightDirNormW` 、および  `dShadowCoord` のみに減少しています。</li></ul> |
+| `clusteredLightShadow` | <ul><li> オムニライトの場合、 `dShadowCoord`  に依存する代わりにローカル変数を生成します。スポットライトの場合、以前の `dShadowCoord` を使用する代わりにシャドウ座標を受け入れます。</li></ul> |
 | `combine` | <ul><li> `dAlbedo` 、 `sSpecularity` 、 `ccSpecularity` を使用する代わりに、vec3形式のアルベド、vec3形式のシーンのスペキュラリティ（鏡面反射）、およびfloat形式のクリアコートのスペキュラリティ（鏡面反射）を受け入れます。</li></ul> |
 | `end` | <ul><li>アルベド、シーンのスペキュラリティ（鏡面反射）、クリアコートのスペキュラリティ（鏡面反射）を `litShaderArgs` を使用して結合し、`dEmission` に依存する代わりに `litShaderArgs.emission` を使用します。</li></ul> |
 | `fallOff(InvSquared/Linear)` | <ul><li> `dLightDirW` を使用する代わりに、光の半径の float 値と光の方向の vec3 を受け入れます。</li></ul> |
 | `fresnelSchlick` | <ul><li>`dGlossiness` 、 `dIridescenceFresnel` 、 `dIridescence` に依存する代わりに、グロス（光沢度）と `IridescenceArgs`（虹彩効果引数）を受け入れます。</li></ul> |
 | `iridescenceDiffraction` | <ul><li> `dIridescenceThickness` を使用する代わりに、虹彩効果の厚さの float 値を受け入れます。</li></ul> |
-| `lightDiffuseLambert` | <ul><li>Accepts vec3 world normal, a vec3 view direction, a vec3 light direction and a vec3 normalized light direction instead of using `dNormalW`, `dViewDirW`, `dLightDirW` and `dLightDirNormW`</li></ul> |
-| `lightSheen` | <ul><li>Accepts a vec3 half vector, a vec3 world normal, a vec3 view direction, a vec3 normalized light direction and a float gloss instead of relying on `dNormalW`, `dViewDirW`, `dLightDirNormW` and `dGlossiness`</li></ul> |
+| `lightDiffuseLambert` | <ul><li> `dNormalW` 、 `dViewDirW` 、 `dLightDirW` 、 `dLightDirNormW`  を使用する代わりに、vec3 形式のワールド法線、視点の方向、光の方向、正規化された光の方向を受け入れます。</li></ul> |
+| `lightSheen` | <ul><li> `dNormalW` 、 `dViewDirW` 、 `dLightDirNormW` 、 `dGlossiness` に依存する代わりに、vec3 形式のハーフベクトル、ワールド法線、視点の方向、正規化された光の方向、およびグロス（光沢度）の float 値を受け入れます。</li></ul> |
 | `lightSpecular(AnisoGGX/Blinn/Phong)` | <ul><li> `dReflDirW` 、 `dNormalW` 、 `dViewDirW` 、 `dGlossiness/ccGlossiness` 、 `dTBN`  に依存する代わりに、vec3 形式のリフレクション（反射）のためのハーフベクトル、Phong のみに使用される vec3 形式のリフレクション（反射）方向、vec3 形式のワールド法線、vec3 形式の視点方向、float 形式のグロス値（光沢度）、および TBN のための 3x3 マトリクスを引数として受け入れます。 </li></ul> |
-| `lightmap(DirAdd/Add)` | <ul><li>Accepts a vec3 lightmap value, a vec3 lightmap direction, a vec3 world normal, a vec3 view direction, float gloss, vec3 specularity, a read-write vec3 normalized light direction, a vec3 geometric normal and IridescenceArgs instead of relying on `dLightMap`, `dLightmapDir`, `dNormalW`, `dViewDirW`, `dGlossiness`, `dVertexNormalW` and `dSpecularity`</li></ul> |
+| `lightmap(DirAdd/Add)` | <ul><li> `dLightMap` 、 `dLightmapDir` 、 `dNormalW` 、 `dViewDirW` 、 `dGlossiness` 、 `dVertexNormalW` 、 `dSpecularity`  に依存する代わりに、vec3 形式のライトマップ値、ライトマップ方向、ワールド法線、視点の方向、float 形式のグロス（光沢度）、vec3 形式のスペキュラリティ（鏡面反射）、読み書き可能な vec3 形式の正規化された光の方向、vec3 形式の幾何学的法線、および IridescenceArgs（虹彩効果引数）を引数として受け入れます。</li></ul>
+  |
 | `ltc` | <ul><li>もはや `dViewDirW` 、 `dNormalW` 、 `dGlossiness` 、 `dSpecularity` 、 `ccGlossiness` 、 `ccSpecularity` 、そして `dLightDirW` を使用せず、代わりにそれらの値が引数として渡されることに依存します。</li></ul> |
 | `metalnessModulate` | <ul><li>チャンクによって更新される `LitShaderArguments` 構造体を受け入れます。 `dSpecularity` 、 `dMetalness` 、そして `dAlbedo` への依存を削除します。</li></ul> |
 | `output(Alpha/AlphaPremul)` | <ul><li>`dAlpha` の代わりに、 `litShaderArgs.opacity` を使用します。</li></ul> |
@@ -267,7 +268,7 @@ struct SheenArgs
 | `refraction(Cube/Dynamic)` | <ul><li> `dNormalW` 、`dAlbedo` 、 `dTransmission` 、 `dThickness` 、 `dGlossiness` 、`dSpecularity` の代わりに、vec3形式のワールド法線、浮動小数点の厚さと光沢度、vec3形式の反射率とアルベド、浮動小数点の透過率、そして `IridescenceArgs` を引数として受け入れます。また、虹彩効果の引数はフレネル関数へ渡されます。</li></ul> |
 | `shadow(Common/Coord/CoordPerspZBuffer` | <ul><li> `dLightDirW` 、 `dLightPosW` 、 `dLightDirNormW` 、`dVertexNormalW` を使用する代わりに、vec3 形式の光の方向、光の位置、正規化された光の方向、および幾何学的な法線の順列を引数として受け入れます。この順列は、異なるシャドウ座標関数の要件によって異なります。</li></ul> |
 | `shadow(EVSM/EVSMn/Standard/StandardGL2/VSM8)` | <ul><li>`dShadowCoord`を使用する代わりに、vec3シャドウサンプル座標を受け入れます</li></ul> |
-| `spot` | <ul><li>Accepts a vec3 normalized light direction instead of using `dLightDirNormW`</li></ul> |
+| `spot` | <ul><li>`dLightDirNormW`を使用する代わりに、vec3で正規化された光の方向を受け入れます</li></ul> |
 | `TBN(-/ObjectSpace/derivative/fast)` | <ul><li>`dTangentW`、`dBinormalW`、`dNormalW`を使用する代わりに、vec3接線、双接線、および法線を受け入れます。</li></ul> |
 ---
 
@@ -344,7 +345,7 @@ void getAO() {
 }
 ```
 
-This allows the engine to automatically pick the sampler uniform to use, thus potentially reducing the total number of samplers. But note, this is only supported for front-end chunks.
+これにより、エンジンは自動的に使用するサンプラーユニフォームを選択することができ、その結果、サンプラーの総数を減らすことができる可能性があります。しかし、これはフロントエンドチャンクにのみサポートされていることに注意してください。
 
 ---
 
@@ -376,7 +377,7 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 | `diffusePS` | <ul><li>アルベドディテールに対するガンマ処理の修正</li></ul> |
 | `diffuseDetailMapPS` | <ul><li>ベースアルベドと組み合わせる前にディテールマップをガンマ補正します。</li></ul> |
 | `endPS` | <ul><li> `getEmission()` の呼び出しではなく、 `dEmissive` と組み合わせるようにエミッシブを統合します。</li><li> `CLEARCOAT` マクロは `LIT_CLEARCOAT` になりました。</li></ul> |
-| `emissivePS` | <ul><li>set `dEmission` global instead of returning the value in order to bring it in line with the other frontend components</li></ul> |
+| `emissivePS` | <ul><li>他のフロントエンドコンポーネントとの整合性を図るために、値を返す代わりに `dEmission` をグローバルに設定します。</li></ul> |
 | `fresnelSchlickPS` | <ul><li>フレネル効果が屈折率に反応するようになりました。</li><li>スペキュラリティのグローバル変更は行われず、ライトごとと環境に使用する値が返されるようになりました。</li></ul> |
 | `lightmapSingleVert.js` | <ul><li>削除されました（未使用）。</li></ul> |
 | `lightmapDirPS`, `lightmapSinglePS`| <ul><li>ライトマップ関数の名称を  `addLightMap() ` ではなく  `getLightMap()` に変更しました。</li><li>  `dDiffuseLight` と `dSpecularLight` を直接更新する代わりに、 `dLightmap` と  `dLightmapDir` をグローバルに書き込むように実装を変更しました。</li><li>バックエンドはライトマップの統合を `lightmapAddPS` と `lightmapDirAddPS` で処理するようになりました。</li></ul>  |

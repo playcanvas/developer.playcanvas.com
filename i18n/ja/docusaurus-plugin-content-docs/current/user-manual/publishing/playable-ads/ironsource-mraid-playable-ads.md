@@ -29,7 +29,7 @@ ironSourceの再生可能な広告は[MRAID 2.0 API][mraid-api]標準を使用�
 
 画像をできるだけ小さく保ち、[TinyPNG][4]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 
-## Playable ad checklist
+## Playable Ad のチェックリスト
 
 * 呼び出しアクションコールバックの一部として`mraid.open`(非ストアURL用)または`mraid.openStoreUrl`(ストアアプリ用)の関数コールが追加されていますか?
 

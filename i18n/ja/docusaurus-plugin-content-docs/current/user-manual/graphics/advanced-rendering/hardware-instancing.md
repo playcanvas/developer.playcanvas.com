@@ -47,7 +47,7 @@ vertexBuffer.setData(matrices);
 
 ## カスタムシェーダー
 
-When you write custom shader that uses instancing, you need to read and use per-instance state from vertex attributes. In the following example, we read a `mat4` using vertex attributes.
+インスタンス化を使用するカスタムシェーダーを書く際には、頂点属性からインスタンスごとの状態を読み取り、使用する必要があります。以下の例では、頂点属性を使用してmat4を読み取ります。
 
 ```glsl
 attribute vec4 instance_line1;

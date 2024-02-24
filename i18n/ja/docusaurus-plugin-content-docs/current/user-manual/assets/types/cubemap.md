@@ -96,15 +96,15 @@ Cubemapの面は以下の条件を満たす必要があります。
 
 これは、ブラウザで利用可能な[PlayCanvasテクスチャツール][8]を使用して行うことができます。
 
-1. Download the HDR version of environment texture and press 'Add Files' button in PlayCanvas Texture Tool to load the file.
+1. 環境テクスチャのHDRバージョンをダウンロードし、PlayCanvasテクスチャツールの 'Add Files'  ボタンを押してファイルを読み込みます。
 2. 左側にロードしたテクスチャを選択します。
-3. Under 'Reproject' section, change the 'source' to the format of texture.
+3. 「Reproject」セクションで、ソースをテクスチャのフォーマットに変更します。
 4. フォーマットを「キューブ」に変更します。
 5. エンコーディングを次のように設定します。
-    - 'rgbe' for exporting to 'HDR'
+    - 「HDR」にエクスポートする場合は「rgbe」
     - 「PNG」にエクスポートする場合は「rgbm」
-6. Set the width to the desired size per face texture. 512 is a good balance between quality and file size.
-7. Press 'Reproject' button to do the conversion to a cubemap.
+6. 各テクスチャの解像度を設定します。幅512は、品質とファイルサイズのバランスがとれた良い選択肢です。
+7. 'Reproject' ボタンを押して、キューブマップに変換します。
 8. 'Export to PNG' または 'Export to HDR' を押して、6つの個別のキューブマップフェイステクスチャをダウンロードしてPlayCanvasにアップロードする準備を整えます。
 
 ![PlayCanvas Texture Tool](/img/user-manual/assets/cubemaps/playcanvas-texture-tool-convert.png)
