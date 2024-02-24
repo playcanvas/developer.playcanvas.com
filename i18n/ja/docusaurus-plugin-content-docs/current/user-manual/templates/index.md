@@ -9,7 +9,6 @@ sidebar_position: 12
     <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
 </div>
 
-
 ## テンプレートの作成 {#creating-templates}
 
 Templateアセットを作成するには、シーン内の任意のエンティティを右クリックして「Template &rarr; New Template」を選択します。これにより、新しいTemplateアセットが作成され、アセット・パネルで現在選択されたフォルダに追加されます。そして、右クリックしたエンティティはその新しいTemplateアセットのインスタンスになります。
@@ -35,6 +34,7 @@ Templateアセットに変更を加えるには、まずエディタにそのイ
 ### テンプレートのオーバーライド {#template-overrides}
 
 テンプレートのインスタンスまたはその子供に変更を加えると、テンプレート・オーバーライドが生成されます。いくつかの種類のオーバーライドがあります。
+
 * *field override*: エンティティまたはそのコンポーネントのフィールドの値が、Templateアセット内のそれと異なるオーバーライド。
 * *New Entity override*: テンプレートインスタンスの子として追加されたEntityで、Templateアセットに存在しないもの。
 * *Deleted Entity override*: テンプレートインスタンスから削除された子Entity。
@@ -97,7 +97,7 @@ this.app.root.addChild(instance);
 
 ## Templateアセットをいつロードする必要がありますか? {#when-do-i-need-to-load-template-assets}
 
-テンプレートはエンティティの階層とデータを保存します。テンプレートインスタンスがエディタのシーンに追加されると、エンティティの階層とデータがシーン・データに含まれます。
+Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data.
 
 実行時に、テンプレートインスタンスはアセットにリンクされていないため、アセットのプリロード/ロードを行わないことによりダウンロードサイズを減らすことができます。 
 

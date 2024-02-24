@@ -94,9 +94,10 @@ Layersセクションで、作成するレイヤーの名前を入力し**Add La
 
 通常、シーンには多くのエンティティが含まれ、それらはメッシュをレンダリングします。これらのそれぞれが正確に1つのレイヤーに存在することが推奨されます。ほとんどの場合、これらはワールドレイヤーになりますが、よりコントロールを行うために、テレイン、ビルディング、キャラクターなどのレイヤーに割り当てることができます。 
 
-新しいシーンにはデフォルトで一つのカメラが含まれており、多くのアプリケーションではこれだけで十分です。追加のカメラは、シーン内の異なるカメラ間でカットする場合や、ピクチャーインピクチャーや分割画面をレンダリングする場合、またはシーンをテクスチャにレンダリングする場合などに有用です。 
+A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture.
 
 追加のカメラを追加するときには、以下の手順を推奨します。
+
 1. 新規および既存のカメラの優先度を設定し、それらがレンダリングする順序を制御します。 
 2. 新たに作成したカメラのレイヤーを設定し、それがレンダリングするレイヤーを指定します。例えば、上から見下ろすマップカメラをレンダリングし、その中にテレインとビルディングのレイヤーだけを含めたい場合、キャラクターは含めないようにするなどです。 
 3. カメラがテクスチャにレンダリングする場合は、スクリプトを使用してレンダーターゲットをカメラの `renderTarget` プロパティに割り当てます。

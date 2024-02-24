@@ -49,7 +49,6 @@ Glitchは、タイピングを終えると自動的にサーバーを再実行�
 
 ![Adding a package](/img/tutorials/multiplayer/glitch_add_package.png)
 
-
 これでログを消去し、`server.js` にスペースを追加して再実行すると、ログに `Server started.` が表示されます。サーバーのデプロイが成功しました!トップの `Show` ボタンをクリックしても、実際には何も表示されません。なぜなら、サーバーがhttpリクエストを受信するのではなく、websocketリクエストを待機しているからです。
 
 左上にある(私の場合 `thundering-polo` と表示されている)をクリックすると、デプロイされたサーバーのドメインが表示されます。ここでプロジェクト名も変更できます。
@@ -72,8 +71,7 @@ PlayCanvasで新しいプロジェクトを作成します。Socket.ioのクラ�
 
 ![Project settings](/img/tutorials/multiplayer/added_socket_io_library.png)
 
-
-```
+```none
 https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
 ```
 
@@ -303,7 +301,6 @@ Network.prototype.update = function (dt) {
 };
 ```
 
-
 そして、Network.js 内に以下の新しい関数を宣言します。
 
 
@@ -338,6 +335,7 @@ socket.on ('positionUpdate', function (data) {
 ## 最後に
 
 以上です！お好みで、以下のアイデアを追加してみてください。
+
 * プレイヤーがゲームを終了したときに削除されるようにする
 * プレイヤーが端から落ちた場合の復帰機能を追加する
 
@@ -349,6 +347,5 @@ You can find the [full server code on Glitch here][10], where you can also fork 
 [2]: https://playcanvas.com/project/406048/overview/tutorial-realtime-multiplayer
 [3]: https://glitch.com/
 [4]: https://glitch.com/edit/#!/new-project
-[7]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
 [10]: https://glitch.com/edit/#!/sore-bloom-beech
 [11]: https://cdnjs.com/libraries/socket.io

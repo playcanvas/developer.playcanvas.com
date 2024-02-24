@@ -21,7 +21,7 @@ __シェーダーエディター__ では、直接シェーダープログラム
 
 __シェーダーエディター__ は、このグラフをランタイムでGPU上で実行されるシェーダープログラムに変換します。
 
-```
+```glsl
 void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
     float var_ = float(2);
     vec3 var_0 = vec3(var_,var_,var_);

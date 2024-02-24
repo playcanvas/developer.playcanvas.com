@@ -92,16 +92,16 @@ PlayCanvasアプリケーションのセルフホスティングに関する[詳
 
 ### クライアント
 
-以下のような理由で、PlayCanvasのよく使われるフォーマットに対するコンテンツタイプが設定されていないサーバーがあるため、サーバーからアプリケーションを読み込もうとするとエラーが発生する場合があります。
+Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server.
 
 もしブラウザーでアセットが正しく提供されていないというエラーや警告が出た場合は、これらのタイプを追加する必要があるかもしれません。
 
 以下は、PlayCanvasアプリケーションで使用されるコンテンツタイプのリストです：
 
 | ファイルタイプ | Content type             |
-| --------- | ------------------------ | 
+| --------- | ------------------------ |
 | AAC       | audio/aac                |
-| BASIS     | application/octet-stream | 
+| BASIS     | application/octet-stream |
 | BIN       | application/octet-stream |
 | DDS       | image/dds                |
 | GLB       | model/gltf-binary        |
@@ -116,7 +116,6 @@ PlayCanvasアプリケーションのセルフホスティングに関する[詳
 | WASM      | application/wasm         |
 | WAV       | audio/x-wav              |
 | XML       | application/xml          |
-
 
 ### Client
 

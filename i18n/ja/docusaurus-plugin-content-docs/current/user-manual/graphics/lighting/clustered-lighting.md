@@ -31,7 +31,7 @@ Directional Lights は、すべてのオブジェクトに影響を及ぼすた�
 1. カメラの錐台によってライトのリストを評価することで、カメラに対して可視なライトのリストを削除します。
 2. 可視なすべてのライトの軸に沿った境界上に、ワールドスペース3Dグリッドを配置します。
 
-![3D Grid](/img/user-manual/graphics/lighting/lights/3d_grid.png)
+    ![3D Grid](/img/user-manual/graphics/lighting/lights/3d_grid.png)
 
 3. 3Dグリッドの各セルは、それと交差するライトのインデックスを格納します。CPU上では、この情報は毎フレーム更新され、任意の位置に影響を与えるライトのリストを取得することができます。この情報はテクスチャに格納され、GPUで使用可能になります。
 4. すべての可視ライトのプロパティは、別のテクスチャに格納されるため、GPUでアクセス可能になります。
@@ -75,7 +75,7 @@ Clustered Lightingシェーダーは、サポートされるすべてのライ�
 - - **Automatic** – 配列サイズが0として指定されている場合、エンジンは必要に応じてアトラスを自動的に分割し、各可視光を等しくサイズのサブテクスチャに割り当てます。たとえば、フレームに3つのライトが表示される場合、アトラスは2x2サブテクスチャーに分割され、これらの4つのサブテクスチャーのうち3つがライトに割り当てられます。
 
 
-![Atlas Split 0](/img/user-manual/graphics/lighting/lights/atlas_split_0.png)
+    ![Atlas Split 0](/img/user-manual/graphics/lighting/lights/atlas_split_0.png)
 
 - - **Manual** – アトラスを固定数のサブテクスチャに分割できるようにします。これは、サイズが異なる場合があります。数字の配列を使用してセットアップされます。各数値は、垂直および水平の両方で分割を表します。マニュアルアトラススプリットの例については、次のセクションを参照してください。
 
@@ -115,14 +115,14 @@ Clustered Lightingシェーダーは、サポートされるすべてのライ�
 
 クラスタードライティングのデバッグとパフォーマンスチューニングを支援するために、[Layer][pc-layer-api] IDにレンダーするレイヤーを[LightingParamsの debugLayer][pc-lighting-debug-layer-api] に割り当てます。
 
-```
+```javascript
 // Assuming being in a script type
 this.app.scene.lighting.debugLayer = this.app.scene.layers.getLayerByName("World").id;
 ```
 
 そして、レンダリングを停止するには、`debugLayer` プロパティに `undefined` を代入します。
 
-```
+```javascript
 // Assuming being in a script type
 this.app.scene.lighting.debugLayer = undefined;
 ```

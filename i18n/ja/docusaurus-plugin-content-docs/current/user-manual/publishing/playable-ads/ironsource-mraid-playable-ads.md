@@ -29,7 +29,7 @@ ironSourceの再生可能な広告は[MRAID 2.0 API][mraid-api]標準を使用�
 
 画像をできるだけ小さく保ち、[TinyPNG][4]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 
-## Playable Ad のチェックリスト:
+## Playable ad checklist
 
 * 呼び出しアクションコールバックの一部として`mraid.open`(非ストアURL用)または`mraid.openStoreUrl`(ストアアプリ用)の関数コールが追加されていますか?
 
@@ -149,8 +149,6 @@ ironSourceのテストツールでテストするために、HTTPSエンドポ�
 [6]: pathname:///downloads/is-playable-ad-cube-jump.zip
 [7]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
 [mraid-api]: https://www.iab.com/guidelines/mraid/
-[guid-generator]: https://www.guidgenerator.com/
-[creative-preview]: https://play.google.com/store/apps/details?id=com.google.android.apps.audition&hl=en_GB&gl=US
 [host-locally]: /user-manual/publishing/web/self-hosting/#running-a-downloaded-build
 [ngrok]: https://ngrok.com/
 [ironsource-test-tool]: https://demos.ironsrc.com/test-tool/?adUnitLoader=mraid&mode=testing

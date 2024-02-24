@@ -127,6 +127,7 @@ ButtonLogic.prototype.initialize = function() {
     }, this);
 };
 ```
+
 このスクリプトは、シーン内のボタンエンティティにアタッチされています。
 
 ボタンコンポーネントには、マウスとタッチ入力の両方に対して機能するコールバック関数を登録できる[`クリックイベント`][click-event-api] があります。
@@ -148,5 +149,4 @@ this.entity.button.on('click', function(event) {
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[elements-tutorial]: /user-manual/user-interface/elements/
 [click-event-api]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html#event:click

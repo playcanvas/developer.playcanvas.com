@@ -41,20 +41,20 @@ thumb: "https://avatars.githubusercontent.com/u/28384334?s=300&v=4"
 
 新しいColyseusサーバーを作成するには、コマンドラインから以下を実行します:
 
-```
+```sh
 npm init colyseus-app ./playcanvas-demo-server
 ```
 
 次に`npm start`を実行して、ローカルでサーバーを動かすことができるか確認しましょう。
 
-```
+```sh
 cd playcanvas-demo-server
 npm start
 ```
 
 成功すれば、コマンドラインに以下のような出力が表示されます。
 
-```
+```sh
 > my-app@1.0.0 start
 > ts-node-dev --respawn --transpile-only src/index.ts
 
@@ -80,7 +80,7 @@ PlayCanvasにColyseus JavaScript SDKを追加する必要があります。
 
 新しい**「URL」**フィールドに、CDNからColyseus JavaScript SDKを含めてください:
 
-```
+```none
 https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 ```
 
@@ -118,7 +118,7 @@ PlayCanvasプロジェクトを**「起動」**すると、クライアントは
 
 クライアントがルームに正常に参加したことを意味するサーバーログに以下のメッセージが表示されます。
 
-```
+```none
 19U8WkmoK joined!
 ```
 
@@ -126,12 +126,12 @@ PlayCanvasプロジェクトを**「起動」**すると、クライアントは
 
 Colyseusでは、共有データを `Schema` 構造を使用して定義します。
 
-> `Schema`はColyseusからの特別なデータ型で、その変更/変異を_増分的に_エンコードする能力があります。エンコードとデコードのプロセスはフレームワークとそのSDKによって内部的に行われます。
+> `Schema` is a special data type from Colyseus that is capable of encoding its changes/mutations *incrementally*. The encoding and decoding process happens internally by the framework and its SDK.
 
 ステート同期のループは次のようになります。
 
 1. 状態の変更(変異)は、サーバー→クライアント間で自動的に同期されます。
-2. クライアントは、ローカルの_読み取り専用_の`Schema`構造体にコールバックをアタッチすることで、状態の変化を観察し、それに対応することができます。
+2. Clients, by attaching callbacks to their local *read-only* `Schema` structures, can observe for state mutations and react to it.
 3. クライアントは任意のメッセージをサーバーに送信することができます - それが何をするかはサーバーが決定します - そして状態を変化させることができます（ステップ**1.**に戻ります）
 
 ---
@@ -310,11 +310,11 @@ this.room.state.players.onRemove((player, sessionId) => {
 ```typescript
 // ...
 this.app.mouse.on(pc.EVENT_MOUSEDOWN, (event) => {
-  // 床の「バウンディングボックス」を作成します
+  // Create the "bounding box" for the floor
   const boundingBox = new pc.BoundingBox(new pc.Vec3(0, 0, 0), new pc.Vec3(4, 0.001, 4));;
 
-  // rayを初期化し、rayの方向を決定します
-  // スクリーン位置からのrayの方向を決定します
+  // Initialize the ray and work out the direction of the ray
+  // from the a screen position
   const ray = new pc.Ray();
   const targetPosition = new pc.Vec3();
 
@@ -323,15 +323,15 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, (event) => {
   ray.origin.copy(cameraEntity.getPosition());
   ray.direction.sub(ray.origin).normalize();
 
-  // 地面に対してrayをテストします
+  // Test the ray against the ground
   const result = boundingBox.intersectsRay(ray, targetPosition);
 
   if (result) {
-    // 位置の高さを調整
+    // Adjust position height
     targetPosition.y = 1.031;
 
     //
-    // 新しい目標プレイヤー位置をサーバーに送信します。
+    // Send new target player position to server.
     //
     this.room.send("updatePosition", {
         x: targetPosition.x,

@@ -15,7 +15,7 @@ Cordovaを使用してPlayCanvasアプリをネイティブにラッピングす
 
 プロジェクトを作成するには、次のコマンドを入力します。
 
-```
+```sh
 cordova create hello com.example.hello HelloWorld
 ```
 
@@ -23,7 +23,7 @@ cordova create hello com.example.hello HelloWorld
 
 したがって、[Master Archer] [3]のようなゲームの場合、適切なコマンドは次のとおりです。
 
-```
+```sh
 cordova create masterarcher com.playcanvas.masterarcher "Master Archer"
 ```
 
@@ -63,7 +63,7 @@ iOS向けのビルドは、macOSベースのコンピュータに限定されま
 
 iOS向けにアプリをビルドするには、Cordova iOSプラットフォームをプロジェクトに追加します。プロジェクトのルートから、次のコマンドを入力してください。
 
-```
+```sh
 cordova platform add ios
 ```
 
@@ -85,7 +85,7 @@ CordovaベースのPlayCanvasアプリを実行しようとすると、クロス
 
 これで、アプリをテストする準備が整いました。iOSの場合、シミュレータを使用するか、物理的なiOSデバイスで実行することができます。SimulatorはXcodeツールの一部としてインストールされ、さまざまなiOSベースのデバイスをシミュレートします。Simulatorでアプリを実行するには、次のコマンドを入力してください。
 
-```
+```sh
 cordova run ios
 ```
 
@@ -100,11 +100,11 @@ cordova run ios
 3. プロジェクトのターゲットに対する署名と機能の設定に移動し、デジタル署名されたアプリを展開する前に有効なチームを選択します。
 4. XcodeのスキームドロップダウンリストでiOSデバイスを選択します。
 
-![Xcode Scheme drop-down](/img/user-manual/publishing/cordova/xcode-scheme.png)
+    ![Xcode Scheme drop-down](/img/user-manual/publishing/cordova/xcode-scheme.png)
 
 5. Runボタンを押して、アプリケーションをビルド、展開、実行します。
 
-![Xcode Run button](/img/user-manual/publishing/cordova/xcode-run.png)
+    ![Xcode Run button](/img/user-manual/publishing/cordova/xcode-run.png)
 
 アプリに満足したら、[App Store Connect] [14]に出荷することができます。
 
@@ -112,7 +112,6 @@ cordova run ios
 [2]: https://cordova.apache.org/docs/en/latest/guide/cli/index.html#installing-the-cordova-cli
 [3]: https://playcanv.as/p/JERg21J8/
 [4]: https://cordova.apache.org/docs/en/latest/config_ref/images.html
-[8]: /user-manual/api/app-download/
 [9]: https://apps.apple.com/us/app/xcode/id497799835?mt=12
 [10]: https://cordova.apache.org/announcements/2020/06/01/cordova-ios-release-6.0.0.html
 [14]: https://developer.apple.com/app-store-connect/

@@ -38,9 +38,11 @@ PlayCanvasエディターのインターフェイスから新しいキューブ�
 ![Cubemap Properties](/img/user-manual/assets/cubemaps/cubemap-properties.png)
 
 ### フィルタリング (Filtering)
+
 この設定は、キューブマップのピクセルが拡大される際にどのように補間されるかを決定します。拡大とは、テクセルとスクリーンピクセルの比率が1未満の場合のことです。視覚的には、Linearが最も良い結果を提供し、次にNearestが続きます。
 
 ### 異方性 (Anisotropy)
+
 Anisotropyは、カメラのビューベクトルがテクスチャの表面とより近く一致する場合に、テクスチャサンプリングの品質を制御するための1から16の値です。
 
 ## テクスチャの割り当て
@@ -51,24 +53,24 @@ Anisotropyは、カメラのビューベクトルがテクスチャの表面と�
 
 Cubemapの面は以下の条件を満たす必要があります。
 
-* 正方形(幅と高さの解像度が同じ)
-* 次数の2の累乗である(1x1、2x2、4x4、8x8、16x16、32x32など)
-* すべての面は同じ解像度である必要がある
+- 正方形(幅と高さの解像度が同じ)
+- 次数の2の累乗である(1x1、2x2、4x4、8x8、16x16、32x32など)
+- すべての面は同じ解像度である必要がある
 
 エディタは、テクスチャを各面にインテリジェントに自動割り当てする方法を推測しようとします。これは、最初の面をスロットにドラッグする際に行われ、キューブマップの面の一般的な命名規則に一致するように試みます。例えば、以下のようなものです。
 
-* negx、posx、negy、posy、negz、posz
-* left、right、top|up、bottom|down、front|forward、back|backward
-* 0-5|1-6
+- negx、posx、negy、posy、negz、posz
+- left、right、top|up、bottom|down、front|forward、back|backward
+- 0-5|1-6
 
 一致するテクスチャセットの例は次の通りです。
 
-* face_posx.jpg
-* face_negx.jpg
-* face_posy.jpg
-* face_negy.jpg
-* face_posz.jpg
-* face_negz.jpg
+- face_posx.jpg
+- face_negx.jpg
+- face_posy.jpg
+- face_negy.jpg
+- face_posz.jpg
+- face_negz.jpg
 
 ## イメージベースドライティング(IBL)
 
@@ -94,24 +96,23 @@ Cubemapの面は以下の条件を満たす必要があります。
 
 これは、ブラウザで利用可能な[PlayCanvasテクスチャツール][8]を使用して行うことができます。
 
-1. 環境テクスチャのHDRバージョンをダウンロードし、PlayCanvasテクスチャツールの 'Add Files'  ボタンを押してファイルを読み込みます。
+1. Download the HDR version of environment texture and press 'Add Files' button in PlayCanvas Texture Tool to load the file.
 2. 左側にロードしたテクスチャを選択します。
-3. 「Reproject」セクションで、ソースをテクスチャのフォーマットに変更します。
+3. Under 'Reproject' section, change the 'source' to the format of texture.
 4. フォーマットを「キューブ」に変更します。
 5. エンコーディングを次のように設定します。
-    - 「HDR」にエクスポートする場合は「rgbe」
+    - 'rgbe' for exporting to 'HDR'
     - 「PNG」にエクスポートする場合は「rgbm」
-6. 各テクスチャの解像度を設定します。幅512は、品質とファイルサイズのバランスがとれた良い選択肢です。
-7. 'Reproject' ボタンを押して、キューブマップに変換します。
+6. Set the width to the desired size per face texture. 512 is a good balance between quality and file size.
+7. Press 'Reproject' button to do the conversion to a cubemap.
 8. 'Export to PNG' または 'Export to HDR' を押して、6つの個別のキューブマップフェイステクスチャをダウンロードしてPlayCanvasにアップロードする準備を整えます。
 
 ![PlayCanvas Texture Tool](/img/user-manual/assets/cubemaps/playcanvas-texture-tool-convert.png)
 
 他のキューブマップへの変換を行うことができるツールには以下があります。
 
-* Mateusz Wisniowski's [HDRI-to-CubeMap tool][9] (browser)
-* [cmftStudio][10] (desktop) with [guide][11]
-
+- Mateusz Wisniowski's [HDRI-to-CubeMap tool][9] (browser)
+- [cmftStudio][10] (desktop) with [guide][11]
 
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 [7]: https://polyhaven.com/hdris

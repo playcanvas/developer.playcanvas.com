@@ -452,19 +452,15 @@ UiController.prototype.initialize = function() {
 
 :::
 
-
 [flappy-bird-ads-demo]: https://playcanvas.com/project/877568/overview/google-h5-ads-demo
 [tutorial-template-start]: https://playcanvas.com/project/889095/overview/google-h5-ad-tutorial-start
 [tutorial-template-finished]: https://playcanvas.com/project/889020/overview/google-h5-ad-tutorial-finished
-
 [google-afg-docs]: https://developers.google.com/ad-placement/
 [adbreak-docs]: https://developers.google.com/ad-placement/apis/adbreak
 [adbreakdone-docs]: https://developers.google.com/ad-placement/apis/adbreak#adbreakdone_and_placementinfo
 [google-afg-policies]: https://support.google.com/publisherpolicies/answer/11975916
 [google-afg-signup]: https://developers.google.com/ad-placement/docs/beta
 [google-adsense]: https://www.google.com/adsense/start/
-[google-afg-signup]: https://developers.google.com/ad-placement/docs/beta
 [google-publisher-id]: https://support.google.com/adsense/answer/105516?hl=en
-
 [afg-intergration.js]: https://playcanvas.com/editor/code/877568?tabs=67299908
 [afg-setup.js]: https://playcanvas.com/editor/code/877568?tabs=67301236

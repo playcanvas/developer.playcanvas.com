@@ -41,7 +41,7 @@ SDKの使用とドキュメンテーションの閲覧にはアカウントの�
 
 ![Create New Application](/img/tutorials/multiplayer-photon/2.png)
 
-#### Photonタイプとアプリケーション名を選択
+#### Select Photon Type and Application name
 
 以下を入力してください。
 
@@ -111,7 +111,7 @@ Photonを初期化するためのプロジェクトに**photon-loadbalancing-pla
 
 ```javascript
 // photon-loadbalancing-playcanvas.js
-const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
+const PhotonLoadBalancingPlayCanvas = pc.createScript("photonLoadBalancingPlayCanvas");
 PhotonLoadBalancingPlayCanvas.attributes.add("appId", { type: "string" });
 PhotonLoadBalancingPlayCanvas.attributes.add("appVersion", { type: "string", default: "1.0" });
 PhotonLoadBalancingPlayCanvas.attributes.add("wss", { type: "boolean", default: true });
@@ -123,7 +123,7 @@ PhotonLoadBalancingPlayCanvas.attributes.add("region", {
         { "Asia, Singapore": "asia" },
         { "Australia, Melbourne": "au" },
         { "Canada, East Montreal": "cae" },
-        { "Chinese Mainland (See Instructions)  Shanghai": "cn" },
+        { "Chinese Mainland (See Instructions) Shanghai": "cn" },
         { "Europe, Amsterdam": "eu" },
         { "India, Chennai": "in" },
         { "Japan, Tokyo": "jp" },
@@ -147,8 +147,8 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
     this.loadBalancingClient.app = this.app;
 };
 ```
-- **Photon.LoadBalancing.LoadBalancingClient**  このクラスには、リアルタイム通信のためのPhoton SDKの多くの機能が含まれています。
 
+- **Photon.LoadBalancing.LoadBalancingClient**  このクラスには、リアルタイム通信のためのPhoton SDKの多くの機能が含まれています。
 
 #### Root entityのスクリプトを設定する
 
@@ -156,7 +156,7 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 ![Root Entity - Inspector](/img/tutorials/multiplayer-photon/11.png)
 
-#### スクリプト属性にAppIdを貼り付ける
+#### Paste AppId into the script attribute
 
 スクリプト属性にAppIdを入力してください。
 
@@ -330,10 +330,10 @@ Player.prototype.update = function (dt) {
 
 他のプレーヤーの位置を同期するために、**raiseEvent** と **onEvent** を使用します。
 
-#### **raiseEvent** を使用した位置の同期
+#### Position synchronization using **raiseEvent**
 
 ```javascript
-const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
+const PhotonLoadBalancingPlayCanvas = pc.createScript("photonLoadBalancingPlayCanvas");
 PhotonLoadBalancingPlayCanvas.attributes.add("appId", { type: "string" });
 PhotonLoadBalancingPlayCanvas.attributes.add("appVersion", {
     type: "string",
@@ -353,7 +353,7 @@ PhotonLoadBalancingPlayCanvas.attributes.add("region", {
         { "Asia, Singapore": "asia" },
         { "Australia, Melbourne": "au" },
         { "Canada, East Montreal": "cae" },
-        { "Chinese Mainland (See Instructions)  Shanghai": "cn" },
+        { "Chinese Mainland (See Instructions) Shanghai": "cn" },
         { "Europe, Amsterdam": "eu" },
         { "India, Chennai": "in" },
         { "Japan, Tokyo": "jp" },
@@ -478,7 +478,7 @@ Player.prototype.update = function (dt) {
 
 - **this.app.fire** は、スクリプト間の [通信][22]に使用されます。
 
-### 完成！
+### Done
 
 Photonを使用してマルチプレイヤーをプレイできるようになりました！
 
