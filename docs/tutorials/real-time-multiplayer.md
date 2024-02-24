@@ -72,7 +72,7 @@ Change the value from 0 to 1 and add the CDN URL for the socket library from the
 ![Project settings](/img/tutorials/multiplayer/added_socket_io_library.png)
 
 
-```
+```none
 https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
 ```
 

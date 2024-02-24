@@ -122,7 +122,7 @@ scopeDepthUvMatrix.setValue(view.depthUvMatrix.data);
 
 With all the preparation we can cover mono/stereo scenarios and different texture formats in a single shader:
 
-```c
+```glsl
 uniform vec4 uScreenSize; // provided by the engine
 uniform mat4 matrix_depth_uv;
 

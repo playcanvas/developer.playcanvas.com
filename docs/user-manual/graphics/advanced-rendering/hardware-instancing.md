@@ -44,10 +44,9 @@ vertexBuffer.setData(matrices);
 
 ## Custom shader
 
-When you write custom shader that uses instancing, you need to read and use per-instance state from vertex attributes.
-In the following example, we read a mat4 using vertex attributes.
+When you write custom shader that uses instancing, you need to read and use per-instance state from vertex attributes. In the following example, we read a `mat4` using vertex attributes.
 
-```
+```glsl
 attribute vec4 instance_line1;
 attribute vec4 instance_line2;
 attribute vec4 instance_line3;

@@ -15,7 +15,7 @@ To get started, follow the [instructions][2] for installing Cordova on your comp
 
 To create a project, issue the following command:
 
-```
+```sh
 cordova create hello com.example.hello HelloWorld
 ```
 
@@ -23,7 +23,7 @@ cordova create hello com.example.hello HelloWorld
 
 So, for a game like [Master Archer][3], an appropriate command would be:
 
-```
+```sh
 cordova create masterarcher com.playcanvas.masterarcher "Master Archer"
 ```
 
@@ -63,7 +63,7 @@ Building for iOS is limited to macOS based computers. You must also ensure you h
 
 To build your app for iOS, add the Cordova iOS platform to your project. From the root of your project, issue the command:
 
-```
+```sh
 cordova platform add ios
 ```
 
@@ -85,7 +85,7 @@ By default, if you attempt to run a Cordova-based PlayCanvas app, you will encou
 
 You are now ready to test your app. For iOS, you can use Simulator or run on a physical iOS device. Simulator is installed as part the Xcode tools, runs on your Mac and simulates the various iOS based devices. To run your app in Simulator, issue the following command:
 
-```
+```sh
 cordova run ios
 ```
 

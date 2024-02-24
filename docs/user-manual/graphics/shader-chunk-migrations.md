@@ -34,7 +34,7 @@ In 1.62, global variables used to pass the values between the front end back end
 
 These are the new global variables:
 
-```c
+```glsl
 // Surface albedo absorbance
 vec3 litArgs_albedo;
 
@@ -146,7 +146,7 @@ vec3 combineColor(vec3 albedo, vec3 sheenSpecularity, float clearcoatSpecularity
 
 Where we previously had globals, in 1.62 they are packed into structs, these structs are the primary LitShaderArgs which is defined as such:
 
-```c
+```glsl
 struct LitShaderArguments
 {
     // Transparency
@@ -201,7 +201,7 @@ struct LitShaderArguments
 
 The last three arguments are our shading extensions. IridescenceArgs is defined as such:
 
-```c
+```glsl
 struct IridescenceArgs
 {
     // Iridescence effect intensity, range [0..1]
@@ -214,7 +214,7 @@ struct IridescenceArgs
 
 ClearcoatArgs:
 
-```c
+```glsl
 struct ClearcoatArgs
 {
     // Intensity of the clearcoat layer, range [0..1]
@@ -230,7 +230,7 @@ struct ClearcoatArgs
 
 SheenArgs:
 
-```c
+```glsl
 struct SheenArgs
 {
     // Glossiness of the sheen layer, range [0..1]

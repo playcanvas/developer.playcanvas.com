@@ -39,7 +39,7 @@ To get information about the GPU, use the property `pc.GraphicsDevice#unmaskedRe
 
 The string will have something similar to the following:
 
-```
+```none
 ANGLE (NVIDIA GeForce GTX 1050 Direct3D11 vs_5_0 ps_5_0)
 ```
 

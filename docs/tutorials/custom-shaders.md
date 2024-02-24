@@ -22,7 +22,7 @@ WebGL uses the GLSL language to write shaders that can be run across all browser
 
 ### Vertex Shader
 
-```
+```glsl
 attribute vec3 aPosition;
 attribute vec2 aUv0;
 
@@ -40,7 +40,7 @@ void main(void)
 
 ### Fragment Shader
 
-```
+```glsl
 varying vec2 vUv0;
 
 uniform sampler2D uDiffuseMap;

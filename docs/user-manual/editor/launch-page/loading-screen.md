@@ -10,7 +10,7 @@ If you want to create a custom loading screen, you can go to the [Scene Settings
 
 Clicking on **Create Default** will create a new script with some default contents. You can edit that script if you want to change the loading screen. Here is an example of a default script:
 
-```
+```javascript
 pc.script.createLoadingScreen(function (app) {
     var showSplash = function () {
         // splash wrapper

@@ -64,7 +64,7 @@ material.update();
 
 Shader chunk code:
 
-```c
+```glsl
 uniform vec3 ambientSH[9];
 
 void addAmbient(vec3 worldNormal) {
