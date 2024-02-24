@@ -117,7 +117,6 @@ Here's a list of content types used in PlayCanvas applications:
 | WAV       | audio/x-wav              |
 | XML       | application/xml          |
 
-
 ### Client
 
 The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the `index.html` file it will start your PlayCanvas application and run all the client-side code that you have written.

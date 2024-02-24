@@ -9,7 +9,6 @@ Templates (or prefabs) allow you to speed up your development by creating Entiti
     <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
 </div>
 
-
 ## Creating Templates {#creating-templates}
 
 To create a new Template Asset you can right-click on any Entity in your Scene and select Template &rarr; New Template. This will create a new Template Asset and add it to your currently selected folder in the Asset Panel. The Entity you right clicked will become an instance of that new Template Asset automatically.

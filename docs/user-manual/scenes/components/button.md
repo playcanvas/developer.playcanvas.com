@@ -15,7 +15,6 @@ The Button Component can be used in two Transition Modes. *Sprite Swap*, which u
 | Hit Padding     | Additional space around the Image Element that will be included when testing for input events. |
 | Transition Mode | The type of effect to use when transitioning between states. Either Sprite Swap or Tint. |
 
-
 ## Sprite Swap Properties
 
 ![Sprite Swap Button](/img/user-manual/scenes/components/component-button-sprite-change.png)

@@ -45,7 +45,6 @@ In order to host your application independently of PlayCanvas' servers, do the f
 * Click on the 'DOWNLOAD' button on the bottom to download a zip file of your project ready for deployment.
 * Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your application.
 
-
 ## Self-hosting on GitHub pages {#self-hosting-on-github-pages}
 
 As a PlayCanvas application is static content, [GitHub Pages][12] can be used to host your application using the same steps as [Self-hosting on your own server](#self-hosting-on-your-own-server).

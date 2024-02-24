@@ -12,7 +12,6 @@ You can add a new Slot by clicking on the "ADD SLOT" button. You can remove a Sl
 
 The Sound component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will play the Slots that are marked as Auto Play. The rest of the Slots can be played by scripts.
 
-
 ## Component Properties
 
 | Property        | Description |

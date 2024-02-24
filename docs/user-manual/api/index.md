@@ -132,7 +132,6 @@ Calls to the REST API have a rate limit. Check your actual limits by querying [t
 | Strict          | The strict rate limit     | 5 requests/minute       | 10 requests/minute              |
 | Assets          | The assets rate limit     | 60 requests/minute      | 120 requests/minute             |
 
-
 The response will contain the following headers to help you regulate how often you call the API:
 
 | Name                    | Description                                                                                                             |

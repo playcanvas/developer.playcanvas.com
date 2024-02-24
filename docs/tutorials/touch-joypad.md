@@ -100,7 +100,6 @@ console.log('X: ' + joystick.x + ', Y: ' + joystick.y);
 
 [In the demo][project-link], the camera is controlled by the right joystick and you can see how it gets and uses the values in the [script here][orbit-camera-joypad-input-script].
 
-
 ## Adding your buttons
 
 Buttons are fixed position UI Elements on the screen. There is a template for button in the 'templates' folder and [should be added][add-template-docs] as a child of the screen Entity.
@@ -131,7 +130,6 @@ console.log('Was pressed: ' + buttons.wasPressed('button0'));
 ```
 
 [In the demo][project-link], the character is controlled by the left joystick and buttons. You can see how it gets and uses the buttons in the [script here][player-controller-script] to play attack animations.
-
 
 [project-link]: https://playcanvas.com/project/1007506/overview/touchscreen-joypad-controls
 [playcanvas-ui]: /user-manual/user-interface/

@@ -48,7 +48,6 @@ To include a package, go to `package.json` and click on the `Add Package` button
 
 ![Adding a package](/img/tutorials/multiplayer/glitch_add_package.png)
 
-
 Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started.` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
 
 You can find the domain your server is deployed at by clicking in the top left (where it says `thundering-polo` for me). This is where you can also rename the project.
@@ -70,7 +69,6 @@ Find and open 'External Scripts'.
 Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
 
 ![Project settings](/img/tutorials/multiplayer/added_socket_io_library.png)
-
 
 ```none
 https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
@@ -296,7 +294,6 @@ Network.prototype.update = function (dt) {
     this.updatePosition ();
 };
 ```
-
 
 And then declare these new functions inside Network.js:
 
