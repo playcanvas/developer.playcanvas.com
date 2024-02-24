@@ -114,7 +114,7 @@ Like the joysticks, they have an identifier so they can be accessed in code from
 | Function name | Description |
 |---------------|-------------|
 | isPressed     | Takes the button identifier and returns true if the button is currently being pressed. |
-| wasPressed    | Takes the button identifier and returns true if the button was pressed since the last frame.
+| wasPressed    | Takes the button identifier and returns true if the button was pressed since the last frame. |
 | wasReleased   | Takes the button identifier and returns true if the button was released since the last frame. |
 | wasTapped     | Takes the button identifier and returns true if the button was pressed and released within 200ms. i.e. A quick tap. |
 
