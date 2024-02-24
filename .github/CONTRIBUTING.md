@@ -77,17 +77,17 @@ For any JavaScript code, please refer to the [PlayCanvas style guide](https://gi
 When writing a link in a Markdown file use either of the following formats but please do not to mix the formats on the same page:
 
 ```markdown
-\[link text\]\[1\]
+[link text][1]
 
-\[1\]: https://example.com
+[1]: https://example.com
 ```
 
 Or
 
 ```markdown
-\[link text\]\[example-page\]
+[link text][example-page]
 
-\[example-page\]: https://example.com
+[example-page]: https://example.com
 ```
 
 The only exception is writing FAQ Markdown files (located in the `faq` folder). For those, use the `\[link text\](url)` format.
