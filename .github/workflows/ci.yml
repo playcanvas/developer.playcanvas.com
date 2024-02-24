@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - name: Checkout code
+    - name: Checkout files
       uses: actions/checkout@v4
 
     - name: Setup Node.js 18.x
@@ -32,7 +32,7 @@ jobs:
     - name: Install dependencies
       run: npm clean-install --progress=false --no-fund
 
-    - name: Build PlayCanvas
+    - name: Build
       run: npm run build
 
   lint:
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - name: Checkout code
+    - name: Checkout files
       uses: actions/checkout@v4
 
     - name: Setup Node.js 18.x
@@ -52,5 +52,5 @@ jobs:
     - name: Install dependencies
       run: npm clean-install --progress=false --no-fund
 
-    - name: Run ESLint
+    - name: Lint
       run: npm run lint
