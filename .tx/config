@@ -1730,6 +1730,13 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/getting-started/made-with-playcanvas.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-getting-started-supported-browsers]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/getting-started/supported-browsers.md
+source_file   = docs/user-manual/getting-started/supported-browsers.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/getting-started/supported-browsers.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-getting-started-workflow]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/getting-started/workflow.md
 source_file   = docs/user-manual/getting-started/workflow.md
