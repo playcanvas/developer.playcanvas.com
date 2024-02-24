@@ -41,7 +41,7 @@ The Developer Site is translated via [Transifex](https://www.transifex.com/playc
 When anything in `docs` is updated, run:
 
     tx push --silent
-    
+
 Once translation acitivity on Transifex is complete, run:
 
     tx pull -l ja --silent
