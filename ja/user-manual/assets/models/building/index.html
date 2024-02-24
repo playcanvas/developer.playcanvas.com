@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.1">
 <title data-rh="true">PlayCanvas用の3Dモデル作成 | PlayCanvas Developer Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://developer.playcanvas.com/ja/img/playcanvas-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://developer.playcanvas.com/ja/img/playcanvas-social-card.jpg"><meta data-rh="true" property="og:url" content="https://developer.playcanvas.com/ja/user-manual/assets/models/building/"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="PlayCanvas用の3Dモデル作成 | PlayCanvas Developer Site"><meta data-rh="true" name="description" content="PlayCanvasではアートやアニメーションの構築は、ほとんど全ての利用可能な3Dモデリングプログラムを使用して行うことができます。例：Blender、SketchUp、Autodesk 3D Studio Max、Autodesk Maya。"><meta data-rh="true" property="og:description" content="PlayCanvasではアートやアニメーションの構築は、ほとんど全ての利用可能な3Dモデリングプログラムを使用して行うことができます。例：Blender、SketchUp、Autodesk 3D Studio Max、Autodesk Maya。"><link data-rh="true" rel="icon" href="/ja/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://developer.playcanvas.com/ja/user-manual/assets/models/building/"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/user-manual/assets/models/building/" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/ja/user-manual/assets/models/building/" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/user-manual/assets/models/building/" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://69QRBNV3NH-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="PlayCanvas Developer Site" href="/ja/opensearch.xml"><link rel="stylesheet" href="/ja/assets/css/styles.8f787788.css">
-<script src="/ja/assets/js/runtime~main.a663a7ba.js" defer="defer"></script>
+<script src="/ja/assets/js/runtime~main.5ff30e4c.js" defer="defer"></script>
 <script src="/ja/assets/js/main.b1e34838.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -74,21 +74,21 @@
 <p><img decoding="async" loading="lazy" alt="Max material editor" src="/ja/assets/images/max-material-editor-7e677b17773271da6217a056d3219cfa.jpg" width="375" height="949" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="対応しているマップスロット">対応しているマップスロット<a href="#対応しているマップスロット" class="hash-link" aria-label="対応しているマップスロット への直接リンク" title="対応しているマップスロット への直接リンク">​</a></h3>
 <p>PlayCanvasでは、エクスポート時に一部の3DS Maxのマテリアルマップタイプを解釈します。なお、マップは3DS Maxがサポートしている任意の形式であることができますが、マップがウェブ形式  （つまりJPEG、GIF、またはPNG）でない場合は、エクスポート時にこれらの形式に変換されます。</p>
-<p><strong>Diffuseカラー</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="diffuseカラー">Diffuseカラー<a href="#diffuseカラー" class="hash-link" aria-label="Diffuseカラー への直接リンク" title="Diffuseカラー への直接リンク">​</a></h4>
 <p>このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでDiffuseマッピングが有効になります。これにより、マテリアル上で設定されているDiffuseカラー（カラーピッカーを介して）が実質的に上書きされます。Diffuseマップにアルファチャネルがある場合、それはPlayCanvasランタイムでのピクセルごとのアルファ値として使用されます。</p>
 <p>さらに、DiffuseカラースロットにRGB Multiplyマップを割り当てることも可能です。これにより、ライトマッピングが有効になります。ここでは、Map 1がDiffuseマップであり、Map 2がLight Mapです。</p>
-<p><strong>Specularカラー</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="specularカラー">Specularカラー<a href="#specularカラー" class="hash-link" aria-label="Specularカラー への直接リンク" title="Specularカラー への直接リンク">​</a></h4>
 <p>このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでスペキュラマッピングが有効になります。これにより、マテリアル上で設定されているSpecularカラー（カラーピッカーを介して）が実質的に上書きされます。これにより、表面のスペキュラ領域をマスクすることや、異なる領域でスペキュラハイライトに異なる色を付けることが可能です。Specularマップにアルファチャンネルがある場合、ピクセルごとのShininessを設定するために使用されます。</p>
-<p><strong>Specularレベル</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="specularレベル">Specularレベル<a href="#specularレベル" class="hash-link" aria-label="Specularレベル への直接リンク" title="Specularレベル への直接リンク">​</a></h4>
 <p>このスロットにBitmapマップを割り当てると、マテリアルのSpecularカラーのピクセルごとの減衰が有効になります。これにより、マテリアルに設定されているSpecularレベルが実質的に上書きされます。</p>
-<p><strong>Glossiness</strong></p>
-<p>このスロットにBitmapマップを割り当てると、マテリアルのピクセルごとのGlossinessが有効に  なります。これにより、マテリアルに設定されているGlossinessが実質的に上書きされます。</p>
-<p><strong>自己発光 (Self-Illumination)</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="光沢度-glossiness">光沢度 (Glossiness)<a href="#光沢度-glossiness" class="hash-link" aria-label="光沢度 (Glossiness) への直接リンク" title="光沢度 (Glossiness) への直接リンク">​</a></h4>
+<p>このスロットにBitmapマップを割り当てると、マテリアルのピクセルごとのGlossinessが有効になります。これにより、マテリアルに設定されているGlossinessが実質的に上書きされます。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="自己発光-self-illumination">自己発光 (Self-Illumination)<a href="#自己発光-self-illumination" class="hash-link" aria-label="自己発光 (Self-Illumination) への直接リンク" title="自己発光 (Self-Illumination) への直接リンク">​</a></h4>
 <p>このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでエミッシブマッピングが有効になります。Emissiveマップは完全なRGB（グレースケールに制限されない）であり、基本的には表面のライティングの結果に追加されます。したがって、Emissiveマップの黒いピクセルはピクセルの値に何も追加しません。他の値はピクセルの輝度を増加させます。</p>
-<p><strong>Opacity</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="opacity">Opacity<a href="#opacity" class="hash-link" aria-label="Opacity への直接リンク" title="Opacity への直接リンク">​</a></h4>
 <p>このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルで透明度マッピングが有効になります。透明度マップの黒いピクセルは完全に透明であり、白いピクセルは完全に不透明です。灰色のピクセルはいくつかの中間のアルファ値に対応します。</p>
 <p>もしマテリアルにOpacityマップがある場合、それはDiffuseマップのアルファチャンネルに設定されているアルファ値を上書きします。Opacityマップスロットを使用する場合は、Diffuseマップのアルファチャンネルよりも効率が低くなります。なぜなら、PlayCanvasランタイムでは1つではなく2つのテクスチャが生成され、デフォルトのシェーダーが少し追加の処理を行わなければならないからです。ただし、パフォーマンスに問題がなく、Opacityマップを使用するのが便利な場合は、この機能がサポートされています。</p>
-<p><strong>Bump</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bump">Bump<a href="#bump" class="hash-link" aria-label="Bump への直接リンク" title="Bump への直接リンク">​</a></h4>
 <p>このスロットにNormal Bumpマップを割り当てると、ノーマルマッピングが有効になります。ただし、デフォルトでは、Bumpスロットの &#x27;Amount&#x27; 値は30に設定されていますが、PlayCanvasではこの値を無視し、100と設定されたかのように扱います。そのため、レンダリング結果をリアルタイムのレンダリングにより近づけるために、Maxでもこの値を100に設定することを推奨します。</p>
 <p>Normalマップを作成する方法には異なる方法がありますが、主な2つの方法は緑成分の形式が異なります。たとえば、デフォルトでは、3DS Maxはレンガの壁のためのNormalマップが以下のように表示されることを期待します。</p>
 <p><img decoding="async" loading="lazy" alt="Normal map" src="/ja/assets/images/wall-norm-e594747b549d43da6f9d26a6b4417bcd.jpg" width="256" height="256" class="img_ev3q"></p>
@@ -96,7 +96,7 @@
 <p><img decoding="async" loading="lazy" alt="Normal map with Y component flipped" src="/ja/assets/images/wall-norm-yflip-17e53e6177dc9b18fae2aa0a740b97e1.jpg" width="256" height="256" class="img_ev3q"></p>
 <p>これでライティングの一貫性をPlayCanvas上で保つことができます。</p>
 <p>割り当てたNormalマップがアルファチャンネルを持つ場合、それはアルファチャンネルをHeightマップとして扱うParallaxマップとして扱われます。Heightマップの明るい部分は暗い部分よりも&#x27;高い&#x27;ものとして扱われます。</p>
-<p><strong>Reflection</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reflection">Reflection<a href="#reflection" class="hash-link" aria-label="Reflection への直接リンク" title="Reflection への直接リンク">​</a></h4>
 <p>このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでSphereマッピングが有効になります。Bitmapは次のようなものになります。</p>
 <p><img decoding="async" loading="lazy" alt="Sphere map" src="/ja/assets/images/mountains-sphere-508c28793607935c9abe7c4f438d297b.jpg" width="256" height="256" class="img_ev3q"></p>
 <p>Sphereマップはコストのかからない、もっとも信頼性の低いリフレクションマッピングの手法です。多くの場合では表面に魅力的な光沢を与えるために十分です。</p>
