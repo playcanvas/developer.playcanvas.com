@@ -48,12 +48,12 @@ This is what our group looks like in the Hierarchy:
 
 Our group has the following child Elements:
 
-* `text-title`: A Text Element for the title of the group - anchored to the top of the group.
-* `btn-minus`: An Image Element that has a child Text Element. This is our minus button and it's anchored to the bottom left of the group.
-* `btn-plus`: An Image Element that has a child Text Element. This is our plus button and it's anchored to the bottom right of the group.
-* `progress-bar`: Our progress bar anchored to the bottom of the Group. This is an Image Element for the background of the progress bar and it has 2 child Elements:
-    * `image-progress`: The resizable Image Element that actually displays progress. Anchored to the left of the `progress-bar` Element.
-    * `text`: The Text Element that displays our stats. Anchored to the center of the `progress-bar` Element.
+- `text-title`: A Text Element for the title of the group - anchored to the top of the group.
+- `btn-minus`: An Image Element that has a child Text Element. This is our minus button and it's anchored to the bottom left of the group.
+- `btn-plus`: An Image Element that has a child Text Element. This is our plus button and it's anchored to the bottom right of the group.
+- `progress-bar`: Our progress bar anchored to the bottom of the Group. This is an Image Element for the background of the progress bar and it has 2 child Elements:
+  - `image-progress`: The resizable Image Element that actually displays progress. Anchored to the left of the `progress-bar` Element.
+  - `text`: The Text Element that displays our stats. Anchored to the center of the `progress-bar` Element.
 
 ## Scripts
 
