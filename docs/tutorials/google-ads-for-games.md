@@ -460,7 +460,6 @@ Important: For the tutorial, we used test mode so we didn't show any actual ads.
 [google-afg-policies]: https://support.google.com/publisherpolicies/answer/11975916
 [google-afg-signup]: https://developers.google.com/ad-placement/docs/beta
 [google-adsense]: https://www.google.com/adsense/start/
-[google-afg-signup]: https://developers.google.com/ad-placement/docs/beta
 [google-publisher-id]: https://support.google.com/adsense/answer/105516?hl=en
 [afg-intergration.js]: https://playcanvas.com/editor/code/877568?tabs=67299908
 [afg-setup.js]: https://playcanvas.com/editor/code/877568?tabs=67301236

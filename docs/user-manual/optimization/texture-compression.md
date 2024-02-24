@@ -100,4 +100,3 @@ If you have a project that is already using the Legacy Texture Compression forma
 [2]: https://playcanv.as/p/j8rsh3eO/
 [3]: https://playcanv.as/p/nAW3WkW8/
 [4]: #legacy-texture-compression
-[5]: #using-basis-texture-compression

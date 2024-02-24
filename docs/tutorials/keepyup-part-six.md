@@ -90,4 +90,3 @@ Congratulations on reaching the end of the series! We hope you've learn a lot ab
 [7]: /user-manual/scenes/components/screen/
 [8]: /user-manual/scenes/components/element/
 [11]: https://playcanvas.com/project/406050
-[14]: https://forum.playcanvas.com/

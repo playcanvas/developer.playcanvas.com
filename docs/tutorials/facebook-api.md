@@ -290,6 +290,5 @@ Our game SWOOOP shows some of these in action. Try it on [Facebook][4] now.
 
 [1]: https://github.com/playcanvas/playcanvas-facebook
 [2]: https://developers.facebook.com/docs/graph-api
-[3]: https://developers.facebook.com/docs/javascript
 [4]: https://apps.facebook.com/swooop-playcanvas/
 [5]: https://playcanvas.com/project/405897

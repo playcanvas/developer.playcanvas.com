@@ -209,8 +209,6 @@ The [example project][asset-load-for-scene-project] below loads the assets when 
 [loadsettingscallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadSettingsCallback
 [application-root-api]: https://api.playcanvas.com/classes/Engine.Application.html#root
 [loadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneData
-[unloadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#unloadSceneData
-[copy-and-paste-assets]: /user-manual/editor/assets/#copy-and-paste-between-projects
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
 [changescene-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#changeScene

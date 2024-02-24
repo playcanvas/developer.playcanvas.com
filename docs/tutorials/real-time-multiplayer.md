@@ -343,6 +343,5 @@ You can find the [full server code on Glitch here][10], where you can also fork 
 [2]: https://playcanvas.com/project/406048/overview/tutorial-realtime-multiplayer
 [3]: https://glitch.com/
 [4]: https://glitch.com/edit/#!/new-project
-[7]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
 [10]: https://glitch.com/edit/#!/sore-bloom-beech
 [11]: https://cdnjs.com/libraries/socket.io

@@ -147,8 +147,6 @@ Follow the process on submitting the playable ad from [ironSource's documentatio
 [6]: pathname:///downloads/is-playable-ad-cube-jump.zip
 [7]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
 [mraid-api]: https://www.iab.com/guidelines/mraid/
-[guid-generator]: https://www.guidgenerator.com/
-[creative-preview]: https://play.google.com/store/apps/details?id=com.google.android.apps.audition&hl=en_GB&gl=US
 [host-locally]: /user-manual/publishing/web/self-hosting/#running-a-downloaded-build
 [ngrok]: https://ngrok.com/
 [ironsource-test-tool]: https://demos.ironsrc.com/test-tool/?adUnitLoader=mraid&mode=testing

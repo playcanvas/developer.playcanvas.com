@@ -47,6 +47,5 @@ Suitable reference space: `pc.XRSPACE_LOCALFLOOR`.
 
 PlayCanvas provides several ‘Starter Kit’ projects to help you and your AR experiences get up and running faster. When creating a new project, simply select from the dialog the template that suits you best.
 
-[2]: https://webkit.org/status/#specification-webxr
 [3]: /user-manual/xr/ar/8th-wall-integration/
 [4]: /user-manual/xr/ar/zappar-integration/
