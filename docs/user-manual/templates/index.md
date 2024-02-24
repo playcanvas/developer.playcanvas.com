@@ -35,6 +35,7 @@ In order to make changes to a Template Asset you first have to add an instance o
 ### Template Overrides {#template-overrides}
 
 When you make changes to a Template instance or its children this will generate Template Overrides. There are various types of overrides:
+
 * *Field override*: An override where the value of a field of the Entity or its Components differs to the one in the Template Asset.
 * *New Entity override*: An Entity that you have added as a child to the Template instance that does not exist in the Template Asset.
 * *Deleted Entity override*: An child Entity that you have deleted from the Template instance.

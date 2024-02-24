@@ -31,6 +31,7 @@ if (highTierDevice) {
 ```
 
 The challenge is working out the performance capabilities of the device and this can be done in a couple of ways:
+
 * Using some form of benchmark on the start of the application and observing the frame rate
 * Querying the WebGL renderer data to get the name of the GPU and checking against a known list performance tiers
 

@@ -96,6 +96,7 @@ Your scene typically contains many entities, which render meshes. It is recommen
 A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture.
 
 When you add an additional camera, these are the recommended steps:
+
 1. Set the priority of new and existing cameras to control the order in which they render.
 2. Set up the layers of the newly created camera to specify which layers it renders. For example you might render a top down map camera and only want Terrain and Building layers in it, but not Characters.
 3. If your camera renders into a texture, use a script to assign a render target to the `renderTarget` property of the camera.

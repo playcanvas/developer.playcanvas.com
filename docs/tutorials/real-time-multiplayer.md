@@ -331,6 +331,7 @@ When you're testing this, note that the server currently does not account for di
 ## Conclusion
 
 That's about it! If you'd like, try adding some of these ideas on your own:
+
 * Players are removed when they close the game.
 * Adding respawning functionality for when players fall off the edge.
 

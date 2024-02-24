@@ -8,12 +8,14 @@ PlayCanvas supports the adding post-processing effects to your projects. Post ef
 We have implemented post effects as scripts that you can add to an Entity that has a [Camera][1] component attached. To add post effects to a camera, do the following:
 
 1. Choose one of the effects below and get the script from the GitHub link.
+
   * [Bloom][3]
   * [Brightness-Contrast][4]
   * [Hue-Saturation][5]
   * [FXAA][6]
   * [Sepia][7]
   * [Vignette][8]
+
 2. Add a [Script][9] component to the Entity representing your camera.
 3. Assign the desired post effect scripts to the camera entity's Script component. Note that the order in which the post effect script are listed in the Script component determine the order in which they are applied.
 
