@@ -37,8 +37,8 @@ First choose what to do with existing frames. You can choose to *Delete Existing
 
 Then select the method of specifying the grid cells
 
-* Grid By Frame Count - Specify the number of grid cells horizontally and vertically to divide the texture into
-* Grid By Frame Size - Specify the size in pixels that each grid cell should be
+- Grid By Frame Count - Specify the number of grid cells horizontally and vertically to divide the texture into
+- Grid By Frame Size - Specify the size in pixels that each grid cell should be
 
 Then set the values for Offset and Spacing. Offset is the number of pixels to move in from the top left of the texture before starting the grid. Spacing is the number of pixels between each grid cell.
 
@@ -60,10 +60,10 @@ The Inspector lets you modify the Position, Size and Border properties of the fr
 
 Create a new Sprite Asset and assign the frames that you have selected to the Sprite, in the order that they were selected.
 
- * **New Sliced Sprite From Selection** - Create a new Sprite Asset and set its type to *Sliced*. Assign the frames that you have selected to the Sprite, in the order that they were selected.
- * **Focus on Selection** - Focus the viewport on the selected Frames. [Keyboard Shortcut: F]
- * **Trim Selected Frames** - Reduce the size of the selected frames to remove any excess empty space around an image. [Keyboard Shortcut: T]
- * **Delete Selected Frames** - Delete the selected Frames [Keyboard Shortcut: Delete]
+- **New Sliced Sprite From Selection** - Create a new Sprite Asset and set its type to *Sliced*. Assign the frames that you have selected to the Sprite, in the order that they were selected.
+- **Focus on Selection** - Focus the viewport on the selected Frames. [Keyboard Shortcut: F]
+- **Trim Selected Frames** - Reduce the size of the selected frames to remove any excess empty space around an image. [Keyboard Shortcut: T]
+- **Delete Selected Frames** - Delete the selected Frames [Keyboard Shortcut: Delete]
 
 ### Sprite Inspector
 

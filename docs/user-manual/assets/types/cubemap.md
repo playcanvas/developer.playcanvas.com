@@ -38,9 +38,11 @@ Once you have a cubemap selected, you can edit its properties.
 ![Cubemap Properties](/img/user-manual/assets/cubemaps/cubemap-properties.png)
 
 ### Filtering
+
 This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
 ### Anisotropy
+
 Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
 
 ## Assigning Textures to Cubemaps
@@ -51,24 +53,24 @@ The cubemap Preview panel displays the six faces of a cubemap flattened into the
 
 Cubemap faces must be:
 
-* Square (the same resolution in width and height)
-* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
-* All faces must be the same resolution
+- Square (the same resolution in width and height)
+- Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
+- All faces must be the same resolution
 
 To assist you, the Editor attempts to figure out how to auto-assign textures to faces intelligently. It does this when you drag the first face to a slot by trying to match commonly used naming conventions for cubemap faces, such as:
 
-* negx, posx, negy, posy, negz, posz
-* left, right, top|up, bottom|down, front|forward, back|backward
-* 0-5|1-6
+- negx, posx, negy, posy, negz, posz
+- left, right, top|up, bottom|down, front|forward, back|backward
+- 0-5|1-6
 
 An example of a texture set that would match is:
 
-* face_posx.jpg
-* face_negx.jpg
-* face_posy.jpg
-* face_negy.jpg
-* face_posz.jpg
-* face_negz.jpg
+- face_posx.jpg
+- face_negx.jpg
+- face_posy.jpg
+- face_negy.jpg
+- face_posz.jpg
+- face_negz.jpg
 
 ## Image Based Lighting
 
@@ -94,24 +96,23 @@ Environment textures often are in a equirectangular or Octahedral format ([Poly 
 
 This can be done via [PlayCanvas Texture Tool][8], available in the browser.
 
-1. Download the HDR version of environment texture and press 'Add Files' button in PlayCanvas Texture Tool to load the file. 
+1. Download the HDR version of environment texture and press 'Add Files' button in PlayCanvas Texture Tool to load the file.
 2. Select the loaded texture on the left.
-3. Under 'Reproject' section, change the 'source' to the format of texture. 
+3. Under 'Reproject' section, change the 'source' to the format of texture.
 4. Change 'target' to 'cube'.
 5. Change 'encoding' to the desired format:
-    - 'rgbe' for exporting to 'HDR' 
+    - 'rgbe' for exporting to 'HDR'
     - 'rgbm' for exporting to 'PNG'
-6. Set the width to the desired size per face texture. 512 is a good balance between quality and file size. 
-7. Press 'Reproject' button to do the conversion to a cubemap. 
+6. Set the width to the desired size per face texture. 512 is a good balance between quality and file size.
+7. Press 'Reproject' button to do the conversion to a cubemap.
 8. Press 'Export to PNG' or 'Export to HDR' to download the 6 individual cubemap face textures that are ready to be uploaded to PlayCanvas.
 
 ![PlayCanvas Texture Tool](/img/user-manual/assets/cubemaps/playcanvas-texture-tool-convert.png)
 
 Other tools that can also do this conversion include:
 
-* Mateusz Wisniowski's [HDRI-to-CubeMap tool][9] (browser)
-* [cmftStudio][10] (desktop) with [guide][11]
-
+- Mateusz Wisniowski's [HDRI-to-CubeMap tool][9] (browser)
+- [cmftStudio][10] (desktop) with [guide][11]
 
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 [7]: https://polyhaven.com/hdris

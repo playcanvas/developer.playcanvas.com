@@ -30,8 +30,8 @@ Open your project, right click in the assets panel and click on 'Paste'
 
 In the folder we've just pasted, open the 'templates' folder and there will be 4 preconfigured templates for the joysticks to cover the most common use cases.
 
-* **Left/Right Fixed Touch Joystick** - A fixed joystick that is anchored to the bottom left/right of the screen corners. Recommended for quick reaction games where an instant response is expected such as a retro platforming game.
-* **Left/Right Half Touch Joystick** - A joystick where the input area the left/right half of the screen and the joystick will move to where you touch in that area and them requires dragging for movement. Recommended for when 'pushing' or 'pulling' an object in the application.
+- **Left/Right Fixed Touch Joystick** - A fixed joystick that is anchored to the bottom left/right of the screen corners. Recommended for quick reaction games where an instant response is expected such as a retro platforming game.
+- **Left/Right Half Touch Joystick** - A joystick where the input area the left/right half of the screen and the joystick will move to where you touch in that area and them requires dragging for movement. Recommended for when 'pushing' or 'pulling' an object in the application.
 
 For this example, let's use the 'Left Half Touch Joystick' template.
 

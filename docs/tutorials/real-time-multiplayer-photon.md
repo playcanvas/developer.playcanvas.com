@@ -147,8 +147,8 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
     this.loadBalancingClient.app = this.app;
 };
 ```
-- **Photon.LoadBalancing.LoadBalancingClient**  This class contains many of the features of the Photon SDK for real-time communication.
 
+- **Photon.LoadBalancing.LoadBalancingClient**  This class contains many of the features of the Photon SDK for real-time communication.
 
 #### Set Script for Root entity
 

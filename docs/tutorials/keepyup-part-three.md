@@ -248,7 +248,6 @@ We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applicat
 
 In most cases, PlayCanvas will provide an option to pass in vector or similar option so that you can pre-allocate and re-use objects.
 
-
 ```javascript
 // get the distance of the touch/click to the ball
 var dx = (p.x - worldPos.x);

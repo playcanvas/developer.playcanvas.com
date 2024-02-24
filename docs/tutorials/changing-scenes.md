@@ -14,6 +14,4 @@ Full documentation for Loading Scenes is now in the [User Manual][documentation-
 
 <Link to='https://playcanvas.com/project/437633/'>Open Project ↗</Link>
 
-
-
 [documentation-page]: /user-manual/scenes/loading-scenes/

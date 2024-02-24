@@ -97,7 +97,7 @@ You can also use Script Attributes to pass Template Assets to your scripts inste
 
 ## When do I need to load Template Assets? {#when-do-i-need-to-load-template-assets}
 
-Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data. 
+Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data.
 
 At runtime, the Template instance is not linked to the asset and you can reduce the download size by not preloading/loading the asset.
 

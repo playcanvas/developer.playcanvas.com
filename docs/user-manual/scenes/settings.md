@@ -49,8 +49,8 @@ When using a Prefiltered Skybox, you can select the skybox mip that you want to 
 
 Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
 
-* **Linear:** imply scales HDR colors by exposure.
-* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
+- **Linear:** imply scales HDR colors by exposure.
+- **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
 
 Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
 
@@ -74,10 +74,10 @@ The Fog Type property can be used to control an approximation of an ambient fog 
 
 The types available are as follows:
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
-* Exp2 - Fog fades in from the view position according to an exponential squared function
+- None - Fog is disabled
+- Linear - Fog fades in linearly between a Fog Start and Fog End distance
+- Exp - Fog fades in from the view position according to an exponential function
+- Exp2 - Fog fades in from the view position according to an exponential squared function
 
 #### Color {#color}
 
@@ -99,16 +99,16 @@ The fog density controls the rate at which fog fades in for Exp and Exp2 fog typ
 
 Control the width and height of your Application. You can also set the resolution mode to one of the following values:
 
-* Auto - The resolution will always be the same as the canvas size
-* Fixed - The resolution will always be width x height pixels.
+- Auto - The resolution will always be the same as the canvas size
+- Fixed - The resolution will always be width x height pixels.
 
 #### Fill Mode {#fill-mode}
 
 Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
 
-* None - The canvas will be the same size as the resolution width and height.
-* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
-* Fill window - The canvas will stretch to fill the window completely.
+- None - The canvas will be the same size as the resolution width and height.
+- Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
+- Fill window - The canvas will stretch to fill the window completely.
 
 #### Device Pixel Ratio {#device-pixel-ratio}
 
@@ -147,6 +147,7 @@ The maximum texture size available for generated lightmap textures.
 #### Mode {#mode}
 
 Scene-wide mode for lightmap baking, with the following options:
+
 - **Color Only** – Bakes a single lightmap containing HDR colors.
 - **Color and Direction** – Bakes a second lightmap containing the dominant light direction, allowing for specular lighting. The Color and Direction mode is not compatible with [Soft Directional Light][13] or [Environment Light][14] baking.
 

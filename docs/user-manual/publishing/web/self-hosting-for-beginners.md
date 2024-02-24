@@ -92,16 +92,16 @@ To get good performance when serving the static content it is **critical** to en
 
 ### Content types
 
-Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server. 
+Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server.
 
 If you do get errors or warnings about assets not being served correctly in the browser, you may need to add these types.
 
 Here's a list of content types used in PlayCanvas applications:
 
 | File type | Content type             |
-| --------- | ------------------------ | 
+| --------- | ------------------------ |
 | AAC       | audio/aac                |
-| BASIS     | application/octet-stream | 
+| BASIS     | application/octet-stream |
 | BIN       | application/octet-stream |
 | DDS       | image/dds                |
 | GLB       | model/gltf-binary        |

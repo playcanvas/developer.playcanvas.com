@@ -30,16 +30,16 @@ We recommend using GLBs whenever possible for the best experience and highest co
 
 Some modeling and animation programs to consider:
 
-* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
-* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
-* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+- Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
+- Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
+- Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
 
 \* *this program can create animations too.*
 
 For generating textures, consider these programs:
 
-* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+- Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+- Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
 Note many of the programs listed above for modeling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
 
@@ -47,8 +47,8 @@ Note many of the programs listed above for modeling also allow texture painting.
 
 Regardless which modeling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
 
-* Meshes can be skinned to up to 256 bones.
-* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+- Meshes can be skinned to up to 256 bones.
+- NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
 
 ---
 
@@ -90,8 +90,8 @@ Animations included within the blend file are exported with the default fbx expo
 
 There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
 
-* [Blender Cookie][2]
-* [Blender Guru][6]
+- [Blender Cookie][2]
+- [Blender Guru][6]
 
 ---
 

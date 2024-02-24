@@ -63,9 +63,9 @@ You can also drag Assets from the Asset Panel to highlighted slots in the [Inspe
 
 You can also drag model, material, and cubemap assets directly into the [Viewport][3]
 
-* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
-* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
-* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
+- If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
+- If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
+- If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
 
 ## Copy and Paste between Projects {#copy-and-paste-between-projects}
 

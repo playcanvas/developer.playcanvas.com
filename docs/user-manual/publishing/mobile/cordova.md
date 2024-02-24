@@ -100,11 +100,11 @@ To run on a physical device:
 3. Navigate to the Signing & Capabilities settings for your project's Target and select a valid Team so that your app can be digitally signed before being deployed to your device.
 4. Select your iOS device in Xcode's Scheme drop-down list.
 
-![Xcode Scheme drop-down](/img/user-manual/publishing/cordova/xcode-scheme.png)
+    ![Xcode Scheme drop-down](/img/user-manual/publishing/cordova/xcode-scheme.png)
 
 5. Press the Run button to build, deploy and run the application on your device.
 
-![Xcode Run button](/img/user-manual/publishing/cordova/xcode-run.png)
+    ![Xcode Run button](/img/user-manual/publishing/cordova/xcode-run.png)
 
 Once you are happy with your app, you can ship it to [App Store Connect][14].
 

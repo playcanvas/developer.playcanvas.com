@@ -23,7 +23,7 @@ Drag any of these into your scene, ensure there are no other cameras and you are
 
 ![Zappar AR Camera Settings](/img/user-manual/xr/ar/zappar-camera-settings.png)
 
-After these steps, you should be able to use Zappar's SDK without issues. For further information, refer to their [Getting Started With PlayCanvas][2] docs. 
+After these steps, you should be able to use Zappar's SDK without issues. For further information, refer to their [Getting Started With PlayCanvas][2] docs.
 
 [1]: https://zap.works/universal-ar/playcanvas/
 [2]: https://docs.zap.works/universal-ar/playcanvas/getting-started/

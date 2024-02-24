@@ -14,13 +14,13 @@ PlayCanvas offers a convenient solution to generating lightmaps. Using the stand
 
 There are multiple advantages to runtime lightmap generation:
 
-* Lighting is not performed at **runtime**
-* It is possible to use hundreds of **static lights** to light your scene
-* In most cases, rendering lightmaps at runtime is **faster** than downloading many lightmap textures
-* It is possible to mix **static and dynamic lights** in the Editor
-* **Rebaking** can be performed at runtime
-* Lightmaps are **HDR**
-* Both **Color** and **Direction** data can be baked, enabling some specularity on baked surfaces
+- Lighting is not performed at **runtime**
+- It is possible to use hundreds of **static lights** to light your scene
+- In most cases, rendering lightmaps at runtime is **faster** than downloading many lightmap textures
+- It is possible to mix **static and dynamic lights** in the Editor
+- **Rebaking** can be performed at runtime
+- Lightmaps are **HDR**
+- Both **Color** and **Direction** data can be baked, enabling some specularity on baked surfaces
 
 However, a disadvantage of runtime lightmap generation is that currently we do not support baking global illumination or some other advanced features of specialized baking tools.
 
