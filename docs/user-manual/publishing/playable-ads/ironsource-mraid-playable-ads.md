@@ -29,7 +29,7 @@ This means that you would have about \~3MB for assets before the Base64 encoding
 
 Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
 
-## Playable ad checklist:
+## Playable ad checklist
 
 * Have you added the function call `mraid.open` (for non-store URLs) or `mraid.openStoreUrl` (for store apps) as part of your call to action callback?
 

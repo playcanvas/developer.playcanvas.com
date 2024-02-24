@@ -46,7 +46,7 @@ This is a value between 0 and 100 where the higher number, the smaller the file 
 
 1 or 2 is considered to be good starting point.
 
-### Cubic curves.
+### Cubic curves
 
 Only available for GLB export formats. Enable this option if you wish to keep the easing in the animation curves from the original animation. However, this will mean that the file will have extra information per keyframe and increase the size.
 

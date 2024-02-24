@@ -29,7 +29,7 @@ This means that you would have about \~3MB for assets before the Base64 encoding
 
 Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
 
-## Playable ad checklist:
+## Playable ad checklist
 
 The Snapchat ad network requires the call to action function to be in the `index.html` where the network can replace it with a unique tracking version when it is served to the user. The URL will be set in the Snapchat Ad campaign tool.
 
