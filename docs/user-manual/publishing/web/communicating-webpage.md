@@ -69,6 +69,7 @@ iframe.contentWindow.postMessage({
 ```
 
 In your application
+
 ```javascript
 window.addEventListener("message", function (event) {
     if (event.origin === "http://example.com") { // always check message came from your website

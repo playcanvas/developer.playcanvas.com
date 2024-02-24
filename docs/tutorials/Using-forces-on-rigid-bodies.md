@@ -100,6 +100,7 @@ if (app.keyboard.wasPressed(pc.KEY_R)) {
     this.reset();
 }
 ```
+
 ```javascript
 reset: function () {
     this.entity.rigidbody.teleport(0, 2, 0);
