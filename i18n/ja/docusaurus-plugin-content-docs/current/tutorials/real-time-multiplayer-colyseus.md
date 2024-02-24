@@ -41,20 +41,20 @@ thumb: "https://avatars.githubusercontent.com/u/28384334?s=300&v=4"
 
 新しいColyseusサーバーを作成するには、コマンドラインから以下を実行します:
 
-```
+```sh
 npm init colyseus-app ./playcanvas-demo-server
 ```
 
 次に`npm start`を実行して、ローカルでサーバーを動かすことができるか確認しましょう。
 
-```
+```sh
 cd playcanvas-demo-server
 npm start
 ```
 
 成功すれば、コマンドラインに以下のような出力が表示されます。
 
-```
+```sh
 > my-app@1.0.0 start
 > ts-node-dev --respawn --transpile-only src/index.ts
 
@@ -80,7 +80,7 @@ PlayCanvasにColyseus JavaScript SDKを追加する必要があります。
 
 新しい**「URL」**フィールドに、CDNからColyseus JavaScript SDKを含めてください:
 
-```
+```none
 https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 ```
 
@@ -118,7 +118,7 @@ PlayCanvasプロジェクトを**「起動」**すると、クライアントは
 
 クライアントがルームに正常に参加したことを意味するサーバーログに以下のメッセージが表示されます。
 
-```
+```none
 19U8WkmoK joined!
 ```
 

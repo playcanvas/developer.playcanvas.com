@@ -30,16 +30,16 @@ PlayCanvasは、FBXファイルのインポートもサポートしており、�
 
 検討すべき一部のモデリングおよびアニメーションプログラムは以下のとおりです。
 
-* 無料: Blender \*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*
-* 有料(低価格) : 3D-Coat, NVIL, Hexagon
-* 有料(高価格): ZBrush, Autodesk 3D Studio Max \*, Autodesk Maya \*, Luxology Modo \*
+- 無料: Blender \*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*
+- 有料(低価格) : 3D-Coat, NVIL, Hexagon
+- 有料(高価格): ZBrush, Autodesk 3D Studio Max \*, Autodesk Maya \*, Luxology Modo \*
 
 \* *このプログラムはアニメーションも作成できます*
 
 テクスチャの生成にお勧めのプログラム：
 
-* 無料: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint
-* 有料: Substance Designer (Substance Painter や Bitmap2Materialも含む), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus
+- 無料: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint
+- 有料: Substance Designer (Substance Painter や Bitmap2Materialも含む), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus
 
 モデリングについて上記に記載されているプログラムの多くはテクスチャペイントを可能にします。より多くのオプションをご希望の場合、この[外部wiki][1]ページをご確認ください。一部には古い情報もありますのでご注意ください。
 
@@ -47,8 +47,8 @@ PlayCanvasは、FBXファイルのインポートもサポートしており、�
 
 どのようなモデリングアプリケーションを使っているかにかかわらず、PlayCanvasで使用する3Dシーンを作成する際に注意しておくべきことがいくつかあります。
 
-* メッシュは256のボーンにまでスキンすることができます。
-* NURBSメッシュはPlayCanvasネイティブフォーマットへの変換時に三角形に変換されます。
+- メッシュは256のボーンにまでスキンすることができます。
+- NURBSメッシュはPlayCanvasネイティブフォーマットへの変換時に三角形に変換されます。
 
 ---
 
@@ -90,8 +90,8 @@ blendファイル内に含まれるアニメーションは、デフォルトの
 
 Blenderの使い方については様々な資料がweb上にあります。私達は以下の二つをおすすめします:
 
-* [Blender Cookie][2]
-* [Blender Guru][6]
+- [Blender Cookie][2]
+- [Blender Guru][6]
 
 ---
 
@@ -107,35 +107,35 @@ Blenderの使い方については様々な資料がweb上にあります。私�
 
 PlayCanvasでは、エクスポート時に一部の3DS Maxのマテリアルマップタイプを解釈します。なお、マップは3DS Maxがサポートしている任意の形式であることができますが、マップがウェブ形式（つまりJPEG、GIF、またはPNG）でない場合は、エクスポート時にこれらの形式に変換されます。
 
-**Diffuseカラー**
+#### Diffuseカラー
 
 このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでDiffuseマッピングが有効になります。これにより、マテリアル上で設定されているDiffuseカラー（カラーピッカーを介して）が実質的に上書きされます。Diffuseマップにアルファチャネルがある場合、それはPlayCanvasランタイムでのピクセルごとのアルファ値として使用されます。
 
 さらに、DiffuseカラースロットにRGB Multiplyマップを割り当てることも可能です。これにより、ライトマッピングが有効になります。ここでは、Map 1がDiffuseマップであり、Map 2がLight Mapです。
 
-**Specularカラー**
+#### Specularカラー
 
 このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでスペキュラマッピングが有効になります。これにより、マテリアル上で設定されているSpecularカラー（カラーピッカーを介して）が実質的に上書きされます。これにより、表面のスペキュラ領域をマスクすることや、異なる領域でスペキュラハイライトに異なる色を付けることが可能です。Specularマップにアルファチャンネルがある場合、ピクセルごとのShininessを設定するために使用されます。
 
-**Specularレベル**
+#### Specularレベル
 
 このスロットにBitmapマップを割り当てると、マテリアルのSpecularカラーのピクセルごとの減衰が有効になります。これにより、マテリアルに設定されているSpecularレベルが実質的に上書きされます。
 
-**Glossiness**
+#### 光沢度 (Glossiness)
 
 このスロットにBitmapマップを割り当てると、マテリアルのピクセルごとのGlossinessが有効になります。これにより、マテリアルに設定されているGlossinessが実質的に上書きされます。
 
-**自己発光 (Self-Illumination)**
+#### 自己発光 (Self-Illumination)
 
 このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでエミッシブマッピングが有効になります。Emissiveマップは完全なRGB（グレースケールに制限されない）であり、基本的には表面のライティングの結果に追加されます。したがって、Emissiveマップの黒いピクセルはピクセルの値に何も追加しません。他の値はピクセルの輝度を増加させます。
 
-**Opacity**
+#### Opacity
 
 このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルで透明度マッピングが有効になります。透明度マップの黒いピクセルは完全に透明であり、白いピクセルは完全に不透明です。灰色のピクセルはいくつかの中間のアルファ値に対応します。
 
 もしマテリアルにOpacityマップがある場合、それはDiffuseマップのアルファチャンネルに設定されているアルファ値を上書きします。Opacityマップスロットを使用する場合は、Diffuseマップのアルファチャンネルよりも効率が低くなります。なぜなら、PlayCanvasランタイムでは1つではなく2つのテクスチャが生成され、デフォルトのシェーダーが少し追加の処理を行わなければならないからです。ただし、パフォーマンスに問題がなく、Opacityマップを使用するのが便利な場合は、この機能がサポートされています。
 
-**Bump**
+#### Bump
 
 このスロットにNormal Bumpマップを割り当てると、ノーマルマッピングが有効になります。ただし、デフォルトでは、Bumpスロットの 'Amount' 値は30に設定されていますが、PlayCanvasではこの値を無視し、100と設定されたかのように扱います。そのため、レンダリング結果をリアルタイムのレンダリングにより近づけるために、Maxでもこの値を100に設定することを推奨します。
 
@@ -151,7 +151,7 @@ Normalマップを作成する方法には異なる方法がありますが、�
 
 割り当てたNormalマップがアルファチャンネルを持つ場合、それはアルファチャンネルをHeightマップとして扱うParallaxマップとして扱われます。Heightマップの明るい部分は暗い部分よりも'高い'ものとして扱われます。
 
-**Reflection**
+#### Reflection
 
 このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでSphereマッピングが有効になります。Bitmapは次のようなものになります。
 

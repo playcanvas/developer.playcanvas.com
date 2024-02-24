@@ -115,12 +115,14 @@ this.app.scenes.loadSceneSettings(sceneItem, function (err) {
 ネットワークリクエストが完了すると、エンジンは以下のことを実行します。
 
 `loadSceneHierarchy`
+
 - ロードされたシーンからエンティティとコンポーネントを作成し、ヒエラルキーを[アプリケーションルートノード][application-root-api]に追加します。
 - ロードされたシーン内の ScriptTypes の `initialize` および `postInitialize` 関数を呼び出します。
 - `loadSceneHierarchy` 関数に渡されたコールバックを呼び出します。
 - (オプション)[callback][loadhierarchycallback-api]の中で、ロードされたシーンのルートを表すエンティティがパラメータとして渡されます。これは必要に応じて変更または親に設定することができます。 [シーンの加算的ロード](#loading-scenes-additively)の例では、ロードされたシーンルートを現在のシーンの別のエンティティに親に設定して管理を容易にしています。
 
 `loadSceneSettings`
+
 - ロードされたシーンの設定をアプリケーションに適用します。
 - `loadSceneSettings` 関数に渡された[コールバック][loadsettingscallback-api]を呼び出します。
 
@@ -207,8 +209,6 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 [loadsettingscallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadSettingsCallback
 [application-root-api]: https://api.playcanvas.com/classes/Engine.Application.html#root
 [loadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneData
-[unloadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#unloadSceneData
-[copy-and-paste-assets]: /user-manual/editor/assets/#copy-and-paste-between-projects
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
 [changescene-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#changeScene

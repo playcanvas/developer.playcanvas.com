@@ -7,11 +7,11 @@ sidebar_position: 6
 
 Enabling Device Pixel Ratio on the Project settings will render the application at the native resolution of the screen which will make it look very crisp. However, that comes at a performance cost as now there are more pixels to fill and render each frame.
 
-![Project setting][3]
+![Project setting](/img/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-setting.png)
 
 Below is an example of the Model Viewer Starter Kit with device pixel ratio enabled and disabled. Click on the thumbnail to see the full size.
 
-![Device Pixel Ratio][1]
+![Device Pixel Ratio](/img/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-closeup.jpg)
 
 理想的には、高性能のデバイスのユーザーは最高品質でレンダリングし、低性能デバイスであってもプレイ可能なフレームレートを維持するために比率を減らせる、両方の利点を兼ね備えた状態にしたいものです。
 
@@ -31,6 +31,7 @@ if (highTierDevice) {
 ```
 
 難しいのは、デバイスの性能能力を見極めることで、これは以下のいずれかの方法で行うことができます：
+
 * アプリケーションの開始時に何らかのベンチマークを使用し、フレームレートを観察する
 * WebGLレンダラーのデータを照会してGPUの名前を取得し、既知のパフォーマンス層のリストと照らし合わせる
 
@@ -38,7 +39,7 @@ GPUについての情報を得るためには、プロパティ `pc.GraphicsDevi
 
 文字列には次のようなものが含まれます。
 
-```
+```none
 ANGLE (NVIDIA GeForce GTX 1050 Direct3D11 vs_5_0 ps_5_0)
 ```
 
@@ -74,9 +75,6 @@ function isLowQualityGPU() {
 
 また、ユーザーが品質レベルを切り替えることができるオプションをアプリケーションに設けることをお勧めします。これにより、ユーザーは自分が快適に感じるレベルを選択し、デバイスのリソースを節約しバッテリー寿命を延ばすために品質を下げることも可能になります。
 
-[1]: /img/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-closeup.jpg
-[2]: /img/user-manual/optimization/device-pixel-ratio/device-pixel-ratio.jpg
-[3]: /img/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-setting.png
 [4]: https://api.playcanvas.com/classes/Engine.GraphicsDevice.html#maxPixelRatio
 [5]: https://www.videocardbenchmark.net/GPU_mega_page.html
 [6]: https://www.notebookcheck.net/Smartphone-Graphics-Cards-Benchmark-List.149363.0.html

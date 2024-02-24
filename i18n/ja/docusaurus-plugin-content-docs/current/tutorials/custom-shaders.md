@@ -22,7 +22,7 @@ WebGLでは、すべてのブラウザで実行できるシェーダーを作成
 
 ### バーテックスシェーダー
 
-```
+```glsl
 attribute vec3 aPosition;
 attribute vec2 aUv0;
 
@@ -40,7 +40,7 @@ void main(void)
 
 ### フラグメントシェーダー
 
-```
+```glsl
 varying vec2 vUv0;
 
 uniform sampler2D uDiffuseMap;

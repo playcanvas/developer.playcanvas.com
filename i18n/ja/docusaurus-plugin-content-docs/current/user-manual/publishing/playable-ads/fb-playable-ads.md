@@ -5,7 +5,7 @@ sidebar_position: 1
 
 PlayCanvasは、[公式の外部ツール][2]を通じて[Facebook Playable Ad][1]フォーマットと要件をサポートしています。
 
-![Facebook Playable Ads][3]
+![Facebook Playable Ads](/img/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ads.gif)
 
 ツールは、構成オプションを通じて、片方が2MB(無圧縮)HTMLファイル、もう片方が5MB(無圧縮)ZIPフォーマットの両方を作成できます。Facebook Playable Adの全仕様は、[ヘルプセンター][4]で見つけることができます。
 
@@ -27,7 +27,7 @@ PlayCanvasは、[公式の外部ツール][2]を通じて[Facebook Playable Ad][
 
 画像をできるだけ小さく保ち、[TinyPNG][7]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 
-## Playable Ad のチェックリスト:
+## Playable Ad のチェックリスト
 
 * `FbPlayableAd.onCTAClick( )` の関数呼び出しを呼び出しの一部として追加しましたか?
 
@@ -71,17 +71,16 @@ npm run one-page
 
 Facebook広告を作成する手順[こちら][10]に従い、広告用のファイルがアップロードされるタイミングで、マネージャー内でテストすることができます。
 
-![Test Ad][11]
+![Test Ad](/img/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-tester.jpg)
 
 このツールによってコードパスが削除されたため、ソースに `XMLHttpRequest` が含まれる可能性があるという警告は無視してください。
 
 Facebookはまた、デバイス上でのテストも管理者を介して許可していますが、最初に広告を公開する必要があります。これはFacebookの奇妙な制限ですが、現時点では必要です。
 
-![Preview Ad][12]
+![Preview Ad](/img/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-preview-device.jpg)
 
 [1]: https://www.facebook.com/business/ads/playable-ad-format
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools
-[3]: /img/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ads.gif
 [4]: https://www.facebook.com/business/help/412951382532338
 [5]: https://playcanvas.com/project/354998/overview/cube-jump-playable-ad-for-fb
 [6]: pathname:///downloads/fb-playable-ad-cube-jump-html.zip
@@ -89,5 +88,3 @@ Facebookはまた、デバイス上でのテストも管理者を介して許可
 [8]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
 [9]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [10]: https://www.facebook.com/business/help/338940216641734
-[11]: /img/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-tester.jpg
-[12]: /img/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-preview-device.jpg

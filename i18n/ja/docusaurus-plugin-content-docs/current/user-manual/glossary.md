@@ -108,24 +108,10 @@ Textureは[Asset][asset]です。通常は、2Dまたは3Dジオメトリにマ�
 Transformation Matrixは、線形変換のセットを表す数学的行列です。特に、移動、回転、スケールが含まれます。これは、変換行列を使用して、3D空間のオブジェクトの位置、方向、サイズを表現できることを意味します。PlayCanvas Engineでは、各[Entity][entity]には、 `getLocalTransform()`メソッドを介してアクセス可能な変換行列があります。
 
 [api-reference]: https://api.playcanvas.com
-[application]: #application
 [asset]: #asset
-[asset-pipeline]: #asset-pipeline
-[attribute]: #attribute
 [component]: #component
-[dom]: #dom
 [entity]: #entity
-[framework]: #framework
-[gizmo]: #gizmo
-[high-dynamic-range]: #high-dynamic-range
-[material]: #material
-[playcanvas-editor]: #playcanvas-editor
 [playcanvas-engine]: #playcanvas-engine
-[project]: #project
 [scene]: #scene
-[script]: #script
 [source-asset]: #source-asset
 [target-asset]: #target-asset
-[template]: #template
-[texture]: #texture
-[transformation-matrix]: #transformation-matrix

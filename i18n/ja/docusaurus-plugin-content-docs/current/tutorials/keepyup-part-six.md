@@ -26,7 +26,7 @@ PlayCanvasではユーザインタフェースは[Screen Component][7]と[Elemen
 
 ![Image Element](/img/tutorials/beginner/keepyup-part-six/image-element.jpg)
 
-画像やテキストはElementコンポーネントを使用してユーザーインターフェイスに追加されます。このコンポーネントは、テクスチャアセットの形式または画像をフォントアセットの形式で表示することができます。
+画像やテキストは要素コンポーネントを使用してユーザーインターフェイスに追加されます。このコンポーネントは、テクスチャアセットの形式または画像をフォントアセットの形式で表示することができます。
 
 ![Image Attriubtes](/img/tutorials/beginner/keepyup-part-six/element-attr.jpg)
 
@@ -90,4 +90,3 @@ UiMenu.prototype.start = function (e) {
 [7]: /user-manual/scenes/components/screen/
 [8]: /user-manual/scenes/components/element/
 [11]: https://playcanvas.com/project/406050
-[14]: https://forum.playcanvas.com/

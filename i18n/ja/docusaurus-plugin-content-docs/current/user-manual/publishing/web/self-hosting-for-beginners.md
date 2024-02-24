@@ -99,9 +99,9 @@ PlayCanvasアプリケーションのセルフホスティングに関する[詳
 以下は、PlayCanvasアプリケーションで使用されるコンテンツタイプのリストです：
 
 | ファイルタイプ | Content type             |
-| --------- | ------------------------ | 
+| --------- | ------------------------ |
 | AAC       | audio/aac                |
-| BASIS     | application/octet-stream | 
+| BASIS     | application/octet-stream |
 | BIN       | application/octet-stream |
 | DDS       | image/dds                |
 | GLB       | model/gltf-binary        |
@@ -116,7 +116,6 @@ PlayCanvasアプリケーションのセルフホスティングに関する[詳
 | WASM      | application/wasm         |
 | WAV       | audio/x-wav              |
 | XML       | application/xml          |
-
 
 ### Client
 

@@ -16,11 +16,11 @@ title: Texture Atlas
 
 テクスチャアトラスのフレームは、通常の整数文字列によってキーの設定がされています。フレームのフォーマットは以下の通りです。
 
-```
+```javascript
 {
-    rect:[0、0、0、0]、// u、v、width、height - 幅と高さはピクセル単位
-    pivot:[0、0]、// x、y - 比率0-1
-    border:[0、0、0、0] // left、bottom、right - 上はピクセル単位
+    rect: [0, 0, 0, 0],  // u,v,width,height - 幅と高さはピクセル単位
+    pivot: [0, 0],       // x,y - 比率0-1
+    border: [0, 0, 0, 0] // left, bottom, right, top - 上はピクセル単位
 }
 ```
 

@@ -1,6 +1,7 @@
 ---
 title: クラッシュコース - ゲーム作成入門
 tags: [games,basics,physics,ui]
+thumb: /img/tutorials/crash-course/crash-course-thumbnail.jpg
 ---
 
 <iframe src="https://www.youtube.com/embed/9zqHlbW9XWE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -47,7 +48,6 @@ Play below! Try to get as many food items as you can before the timer runs out! 
 |           |                                                    |
 | `2:00:57` | 終了                                            |
 
-
 ## リンクとリソース
 
 * [プレゼンテーションスライドPDF][presentation-pdf]
@@ -55,7 +55,6 @@ Play below! Try to get as many food items as you can before the timer runs out! 
 * [Food Run - スターターフェーズ1 PlayCanvasプロジェクト][food-run-starter]
 * [Food Run - スターターフェーズ2 PlayCanvasプロジェクト][food-run-phase-2]
 * [Food Run - スターターフェーズ3 PlayCanvasプロジェクト][food-run-phase-3]
-
 
 [js-gamedev-summit]: https://jsgamedev.com/
 [git-nation]: https://portal.gitnation.org/contents/playcanvas-end-to-end-the-quick-version
