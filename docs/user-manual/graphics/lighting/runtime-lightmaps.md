@@ -118,7 +118,7 @@ There several combinations of light settings that can be used. Each one has a us
 
 The **Size Multiplier** setting affects all Model and Render Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the **Size Multiplier** field in the Model or Render Component's Global Settings.
 
-For example, consider a plane that is 1x1 unit (meter) in size. If the Global Size Multiplier is 16 and the Model Component Multiplier is 2, it will generate a Lightmap Texture size of 32x32 (1 sq/m * 16 * 2). You will have 32x32 pixels on one square meter, which is about 3cm a pixel size.
+For example, consider a plane that is 1x1 unit (meter) in size. If the Global Size Multiplier is 16 and the Model Component Multiplier is 2, it will generate a Lightmap Texture size of 32x32 (`1 sq/m * 16 * 2`). You will have 32x32 pixels on one square meter, which is about 3cm a pixel size.
 
 **Max Resolution** sets the maximum resolution limit for the generated lightmaps, in order to conserve memory.
 
