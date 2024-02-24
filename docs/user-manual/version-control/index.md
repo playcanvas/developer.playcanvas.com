@@ -5,9 +5,9 @@ sidebar_position: 13
 
 Once you've moved beyond the simplest of projects, you will find that version control becomes an important part of your application development process. Version Control is a catch-all term for a system that performs the following functions
 
-* Allows you to turn back time to a previous version of your code and assets
-* Allows you to see changes that have been made to a project over time
-* Allows you to trial new changes in a safe place, isolated from other developers, and merge changes when ready
+- Allows you to turn back time to a previous version of your code and assets
+- Allows you to see changes that have been made to a project over time
+- Allows you to trial new changes in a safe place, isolated from other developers, and merge changes when ready
 
 PlayCanvas has version control tools built directly into the Editor which can be broken down into three main features. **Checkpoints** are a snapshot of your project at a single point in time, they form a timeline of changes to your project; **Branches** are a single line of development perhaps representing the changes required to create one feature or by one developer. Changes to assets in one branch will not affect changes in another branch; **Merging & Resolving conflicts**, merging is the process of combining one branch into another branch, conflicts occur when both branches edit the same data. After resolving conflicts the destination branch should contain the changes from both branches.
 

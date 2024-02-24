@@ -26,7 +26,7 @@ We have divided our user interface up into the three game states: Menu, In Game 
 
 ![Image Element](/img/tutorials/beginner/keepyup-part-six/image-element.jpg)
 
-Images and Text are added to the user interface using the Element Component. This Component can display images in the form of a texture asset or text in the form a font asset. 
+Images and Text are added to the user interface using the Element Component. This Component can display images in the form of a texture asset or text in the form a font asset.
 
 ![Image Attriubtes](/img/tutorials/beginner/keepyup-part-six/element-attr.jpg)
 
@@ -90,4 +90,3 @@ Congratulations on reaching the end of the series! We hope you've learn a lot ab
 [7]: /user-manual/scenes/components/screen/
 [8]: /user-manual/scenes/components/element/
 [11]: https://playcanvas.com/project/406050
-[14]: https://forum.playcanvas.com/

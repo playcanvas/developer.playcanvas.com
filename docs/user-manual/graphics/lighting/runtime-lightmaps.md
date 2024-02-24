@@ -14,13 +14,13 @@ PlayCanvas offers a convenient solution to generating lightmaps. Using the stand
 
 There are multiple advantages to runtime lightmap generation:
 
-* Lighting is not performed at **runtime**
-* It is possible to use hundreds of **static lights** to light your scene
-* In most cases, rendering lightmaps at runtime is **faster** than downloading many lightmap textures
-* It is possible to mix **static and dynamic lights** in the Editor
-* **Rebaking** can be performed at runtime
-* Lightmaps are **HDR**
-* Both **Color** and **Direction** data can be baked, enabling some specularity on baked surfaces
+- Lighting is not performed at **runtime**
+- It is possible to use hundreds of **static lights** to light your scene
+- In most cases, rendering lightmaps at runtime is **faster** than downloading many lightmap textures
+- It is possible to mix **static and dynamic lights** in the Editor
+- **Rebaking** can be performed at runtime
+- Lightmaps are **HDR**
+- Both **Color** and **Direction** data can be baked, enabling some specularity on baked surfaces
 
 However, a disadvantage of runtime lightmap generation is that currently we do not support baking global illumination or some other advanced features of specialized baking tools.
 
@@ -118,7 +118,7 @@ There several combinations of light settings that can be used. Each one has a us
 
 The **Size Multiplier** setting affects all Model and Render Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the **Size Multiplier** field in the Model or Render Component's Global Settings.
 
-For example, consider a plane that is 1x1 unit (meter) in size. If the Global Size Multiplier is 16 and the Model Component Multiplier is 2, it will generate a Lightmap Texture size of 32x32 (1 sq/m * 16 * 2). You will have 32x32 pixels on one square meter, which is about 3cm a pixel size.
+For example, consider a plane that is 1x1 unit (meter) in size. If the Global Size Multiplier is 16 and the Model Component Multiplier is 2, it will generate a Lightmap Texture size of 32x32 (`1 sq/m * 16 * 2`). You will have 32x32 pixels on one square meter, which is about 3cm a pixel size.
 
 **Max Resolution** sets the maximum resolution limit for the generated lightmaps, in order to conserve memory.
 

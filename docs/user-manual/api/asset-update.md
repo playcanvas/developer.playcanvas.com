@@ -32,7 +32,7 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 | ---------- | --------- | :------: | ----------------------------------------------------------------------------------------------------------- |
 | `assetId`  | `number`  | ✔️      | The id of the asset.                                                                                        |
 | `file`     | `file`    | ✔️      | Data to update asset file with.                                                                             |
-| `pow2`     | `boolean` |          | Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false). |
+| `pow2`     | `boolean` |          | Only used for textures and defaults to false. Resize the texture to power of two dimensions (true / false). |
 
 ## Response Schema
 

@@ -72,6 +72,7 @@ if (inputSource.grip) {
     this.entity.setRotation(this.inputSource.getRotation());
 }
 ```
+
 ## UI
 
 3D UI is created using [Button][6] and [Element][7] components. Using combination of both, we can create interactive buttons in 3D space.

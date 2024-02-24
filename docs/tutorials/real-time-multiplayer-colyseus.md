@@ -41,20 +41,20 @@ We will be making a basic server, hosted locally on your computer for keeping pl
 
 To create a fresh new Colyseus server, run the following from your command-line:
 
-```
+```sh
 npm init colyseus-app ./playcanvas-demo-server
 ```
 
 Let's make sure you can run the server locally now, by running `npm start`:
 
-```
+```sh
 cd playcanvas-demo-server
 npm start
 ```
 
 If successful, the output should look like this in your command-line:
 
-```
+```sh
 > my-app@1.0.0 start
 > ts-node-dev --respawn --transpile-only src/index.ts
 
@@ -80,7 +80,7 @@ From the Settings panel, expand on **"External Scripts"**, and increase the numb
 
 In the new **"URL"** field, let's include the Colyseus JavaScript SDK, from a CDN:
 
-```
+```none
 https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 ```
 
@@ -118,7 +118,7 @@ Notice that `my_room` is the default room identifier set by the barebones Colyse
 
 You will be seeing the following message in your server logs, which means a client successfully joined the room!
 
-```
+```none
 19U8WkmoK joined!
 ```
 
@@ -126,12 +126,12 @@ You will be seeing the following message in your server logs, which means a clie
 
 In Colyseus, we define shared data through its `Schema` structures.
 
-> `Schema` is a special data type from Colyseus that is capable of encoding its changes/mutations _incrementally_. The encoding and decoding process happens internally by the framework and its SDK.
+> `Schema` is a special data type from Colyseus that is capable of encoding its changes/mutations *incrementally*. The encoding and decoding process happens internally by the framework and its SDK.
 
 The state synchronization loop looks like this:
 
 1. State changes (mutations) are synchronized automatically from Server → Clients
-2. Clients, by attaching callbacks to their local _read-only_ `Schema` structures, can observe for state mutations and react to it.
+2. Clients, by attaching callbacks to their local *read-only* `Schema` structures, can observe for state mutations and react to it.
 3. Clients can send arbitrary messages to the server - which decides what to do with it - and may mutate the state (Go back to step **1.**)
 
 ---
@@ -314,7 +314,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, (event) => {
   // Create the "bounding box" for the floor
   const boundingBox = new pc.BoundingBox(new pc.Vec3(0, 0, 0), new pc.Vec3(4, 0.001, 4));;
 
-  // Initialise the ray and work out the direction of the ray
+  // Initialize the ray and work out the direction of the ray
   // from the a screen position
   const ray = new pc.Ray();
   const targetPosition = new pc.Vec3();

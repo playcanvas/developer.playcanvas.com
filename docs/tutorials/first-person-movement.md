@@ -23,6 +23,7 @@ The script below performs the following functions:
 Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3].
 
 On the rigidbody component, we also have the following values set in the Editor Inspector:
+
 * To limit the maximum velocity, we have linear damping applied that stops the player from sliding after the player has released input keys.
 * To stop the player from rolling over, we also reduced the angular Factor to 0 on all axes.
 

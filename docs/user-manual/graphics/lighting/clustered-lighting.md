@@ -31,7 +31,7 @@ The following steps provide a basic overview of the Clustered Lighting implement
 1. Cull lights by all of the camera's frustums, to evaluate the list of lights visible for a frame.
 2. Place a world space 3D grid over the axis aligned bounds of all visible lights.
 
-![3D Grid](/img/user-manual/graphics/lighting/lights/3d_grid.png)
+    ![3D Grid](/img/user-manual/graphics/lighting/lights/3d_grid.png)
 
 3. Each cell in the 3D grid stores the light indices that intersect with it. On the CPU, this information is updated every frame and it is allowed to get a list of the lights that affect any positions. The information is stored in a texture and made available to the GPU.
 4. The properties of all visible lights are stored in another texture, so they are also accessible by the GPU.
@@ -74,7 +74,7 @@ All of the Shadow Maps and Cookie Textures used by visible lights are stored in 
 
 - **Automatic** – When the array size is specified as 0, the engine automatically splits the atlas as needed, to assign each visible light an equally sized sub-texture. For example, if you have three lights visible in a frame, the atlas will split into 2x2 sub-textures, and three of those four sub-textures will be assigned to the lights.
 
-![Atlas Split 0](/img/user-manual/graphics/lighting/lights/atlas_split_0.png)
+    ![Atlas Split 0](/img/user-manual/graphics/lighting/lights/atlas_split_0.png)
 
 - **Manual** – Allows the atlas to be split into a fixed number of sub-textures, which can be different sizes. It is set up using an array of numbers, where each number represents a split, both vertically and horizontally. See the next section for an example of manual atlas splits.
 
@@ -113,14 +113,14 @@ Internally, a light index is stored using 8 bits, so the maximum number of visib
 
 To help with debugging and tuning performance with Clustered Lighting, you can assign the [Layer][pc-layer-api] ID to render to to the [debugLayer of LightingParams][pc-lighting-debug-layer-api]. e.g
 
-```
+```javascript
 // Assuming being in a script type
 this.app.scene.lighting.debugLayer = this.app.scene.layers.getLayerByName("World").id;
 ```
 
 And to stop rendering, assign `undefined` to the `debugLayer` property:
 
-```
+```javascript
 // Assuming being in a script type
 this.app.scene.lighting.debugLayer = undefined;
 ```

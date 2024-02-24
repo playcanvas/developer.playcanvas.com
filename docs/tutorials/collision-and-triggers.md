@@ -106,9 +106,9 @@ This is the *rigidbody* and *collision* setup for the box component, the sphere 
 
 There are three events available on the *collision* component:
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
-* **collisionend** - fires when two rigid bodies separate.
+- **contact** - fires for every point of contact when two rigid bodies touch.
+- **collisionstart** - fires at the start of a collision when two rigid bodies touch.
+- **collisionend** - fires when two rigid bodies separate.
 
 The difference between **contact** and **collisionstart** is subtle but important. Imagine a cube landing at an angle on a flat surface. When the edge of the cube hits the surface the two corners of the cube will strike at the same moment. Three events will fire, two **contact** events for each corner of the cube, and one **collisionstart** event. Then the cube will rotate and continue to fall until it lies flat, all the while remaining in contact with the surface. When it lands flat, two more **contact** events will fire as the edge of the cube hits the surface. As the cube remained in contact with the surface all that time, no more **collisionstart** events are fired.
 

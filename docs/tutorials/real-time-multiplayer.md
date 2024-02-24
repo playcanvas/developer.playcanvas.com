@@ -48,7 +48,6 @@ To include a package, go to `package.json` and click on the `Add Package` button
 
 ![Adding a package](/img/tutorials/multiplayer/glitch_add_package.png)
 
-
 Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started.` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
 
 You can find the domain your server is deployed at by clicking in the top left (where it says `thundering-polo` for me). This is where you can also rename the project.
@@ -71,8 +70,7 @@ Change the value from 0 to 1 and add the CDN URL for the socket library from the
 
 ![Project settings](/img/tutorials/multiplayer/added_socket_io_library.png)
 
-
-```
+```none
 https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
 ```
 
@@ -297,7 +295,6 @@ Network.prototype.update = function (dt) {
 };
 ```
 
-
 And then declare these new functions inside Network.js:
 
 ```javascript
@@ -331,6 +328,7 @@ When you're testing this, note that the server currently does not account for di
 ## Conclusion
 
 That's about it! If you'd like, try adding some of these ideas on your own:
+
 * Players are removed when they close the game.
 * Adding respawning functionality for when players fall off the edge.
 
@@ -342,6 +340,5 @@ You can find the [full server code on Glitch here][10], where you can also fork 
 [2]: https://playcanvas.com/project/406048/overview/tutorial-realtime-multiplayer
 [3]: https://glitch.com/
 [4]: https://glitch.com/edit/#!/new-project
-[7]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
 [10]: https://glitch.com/edit/#!/sore-bloom-beech
 [11]: https://cdnjs.com/libraries/socket.io

@@ -27,7 +27,7 @@ The day you subscribe to an Organization account is your monthly billing date. S
 
 The Organization plan allows you to add and remove seats at any time. When seats are added or removed, it is important to understand that this will increase or decrease the cost of your plan. However, this change in cost is not accounted for immediately when the number of seats is changed. Instead, it is accounted for at the next billing date.
 
-### Example:
+### Example
 
 Imagine the following sequence of events:
 

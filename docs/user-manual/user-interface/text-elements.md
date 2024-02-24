@@ -19,7 +19,7 @@ Text elements are rendered to the screen using a single quad for each character 
 
 Text elements support a simple markup syntax that allows you to apply different colors to specific parts of the text. Consider this example:
 
-```
+```none
 [color="#ff0000"]Red[/color], [color="#00ff00"]green[/color] and [color="#0000ff"]blue[/color].
 ```
 

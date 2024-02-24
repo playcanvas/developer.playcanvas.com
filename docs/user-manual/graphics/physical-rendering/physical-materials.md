@@ -87,7 +87,5 @@ There are many other additional properties to investigate that can be used to ma
     <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All"></iframe>
 </div>
 
-[1]: https://store.playcanvas.com
-[2]: /user-manual/glossary#high-dynamic-range
 [5]: https://marmoset.co/posts/pbr-texture-conversion/
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/

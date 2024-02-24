@@ -19,7 +19,7 @@ Multiple render targets have the following restrictions:
 
 Create a render target using multiple color textures:
 
-```javascript 
+```javascript
 const colorBuffers = app.graphicsDevice.supportsMrt ? [texture0, texture1, texture2] : [texture0];
 const renderTarget = new pc.RenderTarget({
     name: 'MRT',
@@ -31,7 +31,7 @@ const renderTarget = new pc.RenderTarget({
 
 Create a camera which will be used to render to MRT:
 
-```javascript 
+```javascript
 const camera = new pc.Entity('MRTCamera');
 camera.addComponent('camera', {
     // set its priority to make it render before the main camera each frame
@@ -52,7 +52,7 @@ if (app.graphicsDevice.supportsMrt) {
 
 When rendering using `StandardMaterial` into Multiple Render Targets (MRT), it is necessary to override the output shader chunk to direct values to additional color buffers. It is important to note that the modification in this example does not affect `gl_FragColor`, which is used for the forward pass output in target 0. If you wish to override it as well, you can output values to `pcFragColor0` as well.
 
-```javascript 
+```javascript
 materials.forEach((material) => {
     material.chunks.outputPS = `
         #ifdef MYMRT_PASS

@@ -34,4 +34,3 @@ Find out more in the [publishing][7] section.
 [5]: /user-manual/editor
 [6]: /user-manual/assets
 [7]: /user-manual/publishing
-[8]: /user-manual/glossary/#dom

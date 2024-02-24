@@ -194,13 +194,12 @@ In our simulation we have a constant acceleration due to gravity, when you tap t
 
 The update loop does this:
 
->_(Change in Velocity) = (Acceleration) \* (Time since last frame)_
-
->_(New Velocity) = (Old Velocity) + (Change in Velocity)_
-
->_(Change in Position) = (New Velocity) \* (Time since last frame)_
-
->_(New Position) = (Old Position) + (Change in Position)_
+```none
+(Change in Velocity) = (Acceleration) * (Time since last frame)
+(New Velocity) = (Old Velocity) + (Change in Velocity)
+(Change in Position) = (New Velocity) * (Time since last frame)
+(New Position) = (Old Position) + (Change in Position)
+```
 
 In code this looks like this:
 

@@ -21,7 +21,7 @@ The structure of the Hierarchy can be edited via drag and drop. Simply select an
 
 ## Searching the Hierarchy
 
-Near the top of the Hierarchy panel is a Search box which you can use to dynamically filter the content of the Entity tree. 
+Near the top of the Hierarchy panel is a Search box which you can use to dynamically filter the content of the Entity tree.
 
 ![Hierarchy Panel Search](/img/user-manual/editor/hierarchy/hierarchy-search.png)
 

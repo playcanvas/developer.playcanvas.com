@@ -6,7 +6,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/7303
 
 import Link from '@docusaurus/Link';
 
-How to load a Draco compressed GLB. 
+How to load a Draco compressed GLB.
 
 See https://google.github.io/draco/ for more information on Draco 3D Data Compression.
 

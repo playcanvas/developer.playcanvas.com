@@ -5,9 +5,9 @@ sidebar_position: 1
 
 In AR, the real world can have complex illumination and various environments. For better immersion and the ability to blend between the real and the virtual world, virtual objects can be shaded and illuminated based on Light Estimation data, such as:
 
- * **Directional light** (the most prominent), its rotation, intensity and color.
- * **Ambient light** in the form of L3 spherical harmonics.
- * **Reflections** in the form of a cube map ([currently not integrated][1]).
+* **Directional light** (the most prominent), its rotation, intensity and color.
+* **Ambient light** in the form of L3 spherical harmonics.
+* **Reflections** in the form of a cube map ([currently not integrated][1]).
 
 ## Support
 
@@ -64,7 +64,7 @@ material.update();
 
 Shader chunk code:
 
-```c
+```glsl
 uniform vec3 ambientSH[9];
 
 void addAmbient(vec3 worldNormal) {

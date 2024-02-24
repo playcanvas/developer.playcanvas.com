@@ -11,7 +11,6 @@ To add a **component** to an Entity, select the Entity and then click **Add Comp
 
 [Learn more](/user-manual/scenes/components/)
 
-
 ## How do I add a script?
 
 <img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif" />
@@ -20,8 +19,6 @@ You can use JavaScript to control the behavior of entities. Select any entity, a
 
 [Learn more](/user-manual/scripting/creating-new/)
 
-
-
 ## How do I change the background color?
 
 To change the background color of your scene, you should update the Clear Color property of the camera in your scene.
@@ -29,8 +26,6 @@ To change the background color of your scene, you should update the Clear Color 
 You could also try and adding a [skybox](/user-manual/assets/types/cubemap/) to your scene.
 
 [Learn more](/user-manual/scenes/components/camera/)
-
-
 
 ## How do I change the material of a model?
 
@@ -42,8 +37,6 @@ You can create a new material and drag and drop it on your model or you can sele
 
 [Learn more](/user-manual/assets/types/material/)
 
-
-
 ## How do I create a cubemap?
 
 <img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif" />
@@ -54,22 +47,17 @@ To create a cubemap click on the **<span class="pc-icon">&#57632;</span> Add** b
 
 [Learn more](/user-manual/assets/types/cubemap/)
 
-
-
 ## How do I create an Entity?
 
 <img src="https://playcanvas.com/static-assets/instructions/new_entity.gif" />
 
 You can create a new Entity by clicking on the <span class="pc-icon">&#57632;</span> Add button in the Hierarchy panel or right click on an Entity and use the **New Entity** menu item.
 
-
-
 ## How do I create a light?
 
 You can create a light by adding a **Light** component to an Entity. You can also right click on an Entity and select New Entity / Directional Light to create a new directional light and similarly for spot lights and omni lights.
 
 [Learn more](/user-manual/scenes/components/light/)
-
 
 ## How do I create a material?
 
@@ -79,15 +67,11 @@ To create a material click on the **<span class="pc-icon">&#57632;</span> Add** 
 
 [Learn more](/user-manual/assets/types/material/)
 
-
-
 ## How do I create a new shader?
 
 You can create a new shader asset from the asset panel. Click **Add Asset -> Shader**.
 
 [View tutorial](http://developer.playcanvas.com/tutorials/custom-shaders/)
-
-
 
 ## How do I create a shape like a box or sphere?
 
@@ -99,26 +83,19 @@ You can also right click on an Entity and select New Entity/Box to add a box (si
 
 [Learn more](/user-manual/scenes/components/render/)
 
-
-
 ## How do I create a skybox?
 
 To create a skybox for your scene you first need to create a [Cubemap asset](/user-manual/assets/types/cubemap/). Then you can drag and drop the Cubemap inside the 3D viewport, or you can go to the Scene Settings and drag the Cubemap in the Skybox field.
 
 [Learn more](/user-manual/scenes/settings#skybox)
 
-
-
 ## How do I delete an asset?
 
 To delete an asset select it and press **Delete** or right click on it and select Delete.
 
-
 ## How do I delete an Entity?
 
 You can delete an Entity by selecting it and pressing **Delete**. Alternatively you can click on the <span class="pc-icon">&#57636;</span> Delete button in the Hierarchy panel or right click on the Entity and select Delete from the context menu.
-
-
 
 ## How do I duplicate an Entity?
 
@@ -126,15 +103,11 @@ To duplicate an Entity use the <span class="pc-icon">&#57638;</span> Duplicate b
 
 You can also copy and paste an Entity. To copy press **Ctrl+C** and to paste **Ctrl+V**.
 
-
-
 ## How do I play an animation?
 
 To play an animation of a 3D model you need to create an Entity with a [Model Component](/user-manual/scenes/components/model/) and an [Animation Component](/user-manual/scenes/components/animation/). The **Model Component** will render your model and the **Animation Component** will play animations.
 
 To render the model drag a model Asset in the Asset field of the Model Component. To play animations drag Animation Assets on the Assets field of the Animation Component.
-
-
 
 ## How do I play a sound?
 
@@ -144,16 +117,11 @@ You can create Audio assets by dragging audio files from your computer into the 
 
 [View tutorial](/tutorials/basic-audio/)
 
-
-
-
 ## How do I remove a component?
 
 <img src="https://playcanvas.com/static-assets/instructions/remove_component.jpg" />
 
 To remove a component, select the Entity and then click on the **<span class="pc-icon">&#57636;</span> Delete** button in the Inspector next the component’s title.
-
-
 
 ## How do I render a 3D model?
 
@@ -163,8 +131,6 @@ To render a 3D model you need to add a **Model Component** to an Entity and drag
 
 [Learn more](/user-manual/scenes/components/model/)
 
-
-
 ## How do I move / rotate / scale an Entity?
 
 <img src="https://playcanvas.com/static-assets/instructions/transform.gif" />
@@ -173,14 +139,11 @@ To move an Entity, select it and then move it using the **<span class="pc-icon">
 
 Switch between the Translate / Rotate / Scale tools by pressing 1 / 2 / 3 respectively.
 
-
-
 ## How do I upload assets?
 
 To upload Assets simply drag and drop files from your computer into the Assets panel. Your files will be processed by the server and will appear shortly after in the Assets Panel.
 
 [Learn more](/user-manual/assets/importing/)
-
 
 ## How do I use physics?
 
@@ -189,8 +152,6 @@ To give physical properties to an Entity you need to add a [Collision component]
 You can change the default [gravity](/user-manual/scenes/settings#gravity) in the Scene Settings.
 
 [View tutorial](/tutorials/collision-and-triggers/)
-
-
 
 ## How do I use real-time shadows?
 

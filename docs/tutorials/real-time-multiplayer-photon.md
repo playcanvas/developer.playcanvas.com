@@ -41,7 +41,7 @@ Click **CREATE NEW APP** from the dashboard
 
 ![Create New Application](/img/tutorials/multiplayer-photon/2.png)
 
-#### Select Photon Type and Application name.
+#### Select Photon Type and Application name
 
 Enter the following
 
@@ -123,7 +123,7 @@ PhotonLoadBalancingPlayCanvas.attributes.add("region", {
         { "Asia, Singapore": "asia" },
         { "Australia, Melbourne": "au" },
         { "Canada, East Montreal": "cae" },
-        { "Chinese Mainland (See Instructions)	Shanghai": "cn" },
+        { "Chinese Mainland (See Instructions) Shanghai": "cn" },
         { "Europe, Amsterdam": "eu" },
         { "India, Chennai": "in" },
         { "Japan, Tokyo": "jp" },
@@ -147,8 +147,8 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
     this.loadBalancingClient.app = this.app;
 };
 ```
-- **Photon.LoadBalancing.LoadBalancingClient**  This class contains many of the features of the Photon SDK for real-time communication.
 
+- **Photon.LoadBalancing.LoadBalancingClient**  This class contains many of the features of the Photon SDK for real-time communication.
 
 #### Set Script for Root entity
 
@@ -156,7 +156,7 @@ Create a new script asset **photon-loadbalancing-playcanvas.js** and attach it t
 
 ![Root Entity - Inspector](/img/tutorials/multiplayer-photon/11.png)
 
-#### Paste AppId into the script attribute.
+#### Paste AppId into the script attribute
 
 Enter AppId as a script attribute.
 
@@ -331,7 +331,7 @@ Player.prototype.update = function (dt) {
 
 Use **raiseEvent** and **onEvent** to synchronize the player's location.
 
-#### Position synchronization using **raiseEvent**.
+#### Position synchronization using **raiseEvent**
 
 ```javascript
 const PhotonLoadBalancingPlayCanvas = pc.createScript("photonLoadBalancingPlayCanvas");
@@ -354,7 +354,7 @@ PhotonLoadBalancingPlayCanvas.attributes.add("region", {
         { "Asia, Singapore": "asia" },
         { "Australia, Melbourne": "au" },
         { "Canada, East Montreal": "cae" },
-        { "Chinese Mainland (See Instructions)	Shanghai": "cn" },
+        { "Chinese Mainland (See Instructions) Shanghai": "cn" },
         { "Europe, Amsterdam": "eu" },
         { "India, Chennai": "in" },
         { "Japan, Tokyo": "jp" },
@@ -479,7 +479,7 @@ Player.prototype.update = function (dt) {
 
 - **this.app.fire** [communication][22] between scripts.
 
-### Done!
+### Done
 
 You can now play multiplayer in Photon!
 

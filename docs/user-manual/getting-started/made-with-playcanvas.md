@@ -15,7 +15,6 @@ Links to the content showcased can be found on the [blog post][2022-blog-post].
     <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/46f73gp1_TU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-
 ## PlayCanvas Showcase 2021
 
 Links to the content showcased can be found on the [blog post][2021-blog-post].

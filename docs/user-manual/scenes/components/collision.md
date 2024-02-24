@@ -7,18 +7,31 @@ The Collision component assigns a collision volume to the entity. The component 
 The Collision component can be enabled or disabled using the toggle in the top right of the component panel. If enabled and if the component is a trigger volume (because it has no sibling rigidbody component), the trigger volume will be enabled. Likewise, if the component does have a sibling rigidbody component, the rigidbody will be enabled.
 
 #### Box
+
 ![Collision component (Box)](/img/user-manual/scenes/components/component-collision-box.png)
+
 #### Capsule
+
 ![Collision component (Capsule)](/img/user-manual/scenes/components/component-collision-capsule.png)
+
 #### Compound
+
 ![Collision component (Compound)](/img/user-manual/scenes/components/component-collision-compound.png)
+
 #### Cone
+
 ![Collision component (Cone)](/img/user-manual/scenes/components/component-collision-cone.png)
+
 #### Cylinder
+
 ![Collision component (Cylinder)](/img/user-manual/scenes/components/component-collision-cylinder.png)
+
 #### Mesh
+
 ![Collision component (Mesh)](/img/user-manual/scenes/components/component-collision-mesh.png)
+
 #### Sphere
+
 ![Collision component (Sphere)](/img/user-manual/scenes/components/component-collision-sphere.png)
 
 If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.

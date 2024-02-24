@@ -29,7 +29,7 @@ This means that you would have about \~3MB for assets before the Base64 encoding
 
 Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
 
-## Playable ad checklist:
+## Playable ad checklist
 
 * Have you added the function call `mraid.open` (for non-store URLs) or `mraid.openStoreUrl` (for store apps) as part of your call to action callback?
 
@@ -147,8 +147,6 @@ Follow the process on submitting the playable ad from [ironSource's documentatio
 [6]: pathname:///downloads/is-playable-ad-cube-jump.zip
 [7]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
 [mraid-api]: https://www.iab.com/guidelines/mraid/
-[guid-generator]: https://www.guidgenerator.com/
-[creative-preview]: https://play.google.com/store/apps/details?id=com.google.android.apps.audition&hl=en_GB&gl=US
 [host-locally]: /user-manual/publishing/web/self-hosting/#running-a-downloaded-build
 [ngrok]: https://ngrok.com/
 [ironsource-test-tool]: https://demos.ironsrc.com/test-tool/?adUnitLoader=mraid&mode=testing

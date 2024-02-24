@@ -9,7 +9,6 @@ Templates (or prefabs) allow you to speed up your development by creating Entiti
     <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
 </div>
 
-
 ## Creating Templates {#creating-templates}
 
 To create a new Template Asset you can right-click on any Entity in your Scene and select Template &rarr; New Template. This will create a new Template Asset and add it to your currently selected folder in the Asset Panel. The Entity you right clicked will become an instance of that new Template Asset automatically.
@@ -35,6 +34,7 @@ In order to make changes to a Template Asset you first have to add an instance o
 ### Template Overrides {#template-overrides}
 
 When you make changes to a Template instance or its children this will generate Template Overrides. There are various types of overrides:
+
 * *Field override*: An override where the value of a field of the Entity or its Components differs to the one in the Template Asset.
 * *New Entity override*: An Entity that you have added as a child to the Template instance that does not exist in the Template Asset.
 * *Deleted Entity override*: An child Entity that you have deleted from the Template instance.
@@ -97,7 +97,7 @@ You can also use Script Attributes to pass Template Assets to your scripts inste
 
 ## When do I need to load Template Assets? {#when-do-i-need-to-load-template-assets}
 
-Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data. 
+Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data.
 
 At runtime, the Template instance is not linked to the asset and you can reduce the download size by not preloading/loading the asset.
 

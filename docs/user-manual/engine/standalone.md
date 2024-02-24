@@ -107,7 +107,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
 
     :::tip
 
-    Every time you save your source files, the tab will reload automatically. 
+    Every time you save your source files, the tab will reload automatically.
 
     :::
 
@@ -188,7 +188,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
 
     :::tip
 
-    Every time you save your source files, the tab will reload automatically. 
+    Every time you save your source files, the tab will reload automatically.
 
     :::
 

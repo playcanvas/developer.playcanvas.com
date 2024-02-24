@@ -14,25 +14,25 @@ Let's look at how you handle each of these situations:
 
 When you launch your app from the Editor, a new tab is opened called the launch page. The URL of this page is of the form:
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>
 ```
 
 Simply edit the launch page's URL by adding the following string to the end:
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-latest.js
 ```
 
 To launch with the minified build, use:
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-latest.min.js
 ```
 
 To launch with Debug mode enabled, use:
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?debug=true&use_local_engine=https://code.playcanvas.com/playcanvas-latest.dbg.js
 ```
 
@@ -40,25 +40,25 @@ To launch with Debug mode enabled, use:
 
 Previous stable builds of the PlayCanvas engine are archived on code.playcanvas.com. You can find all of the previous releases on [GitHub][2]. The engine is named with the following convention:
 
-```
+```none
     playcanvas-<major>.<minor>.<patch>.js
 ```
 
 So, for example:
 
-```
+```none
     playcanvas-0.225.0.js
 ```
 
 To launch with this specific build of the engine, use the following launch URL:
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-0.225.0.js
 ```
 
 To launch with the minified build, use:
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-0.225.0.min.js
 ```
 
@@ -72,13 +72,13 @@ The Editor only officially supports the current Engine release and the previous 
 
 If you fork the engine repo on GitHub, you can build the engine yourself. To have the launch page launch your custom build, you need to start by serving it from localhost using port 51000. Verify you can see your engine source at the URL:
 
-```
+```none
     http://localhost:51000/path/to/engine/playcanvas-latest.js
 ```
 
 To now use this engine in the launch page, edit the URL to:
 
-```
+```none
     http://launch.playcanvas.com/<scene_id>?use_local_engine=http://localhost:51000/path/to/engine/playcanvas-latest.js
 ```
 

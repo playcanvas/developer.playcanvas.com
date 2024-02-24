@@ -127,6 +127,7 @@ ButtonLogic.prototype.initialize = function() {
     }, this);
 };
 ```
+
 This script is attached to the button entities in the scene.
 
 The Button component has a [`click` event][click-event-api] against which a callback function can be registered that works for both mouse and touch input.
@@ -146,5 +147,4 @@ These events will only fire if Use Input is enabled on the Element component so 
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[elements-tutorial]: /user-manual/user-interface/elements/
 [click-event-api]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html#event:click

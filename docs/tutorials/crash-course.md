@@ -48,7 +48,6 @@ Play below! Try to get as many food items as you can before the timer runs out! 
 |           |                                                    |
 | `2:00:57` | Wrap Up                                            |
 
-
 ## Links and resources
 
 * [Presentation slides PDF][presentation-pdf]
@@ -56,7 +55,6 @@ Play below! Try to get as many food items as you can before the timer runs out! 
 * [Food Run - Starter Phase 1 PlayCanvas project][food-run-starter]
 * [Food Run - Starter Phase 2 PlayCanvas project][food-run-phase-2]
 * [Food Run - Starter Phase 3 PlayCanvas project][food-run-phase-3]
-
 
 [js-gamedev-summit]: https://jsgamedev.com/
 [git-nation]: https://portal.gitnation.org/contents/playcanvas-end-to-end-the-quick-version

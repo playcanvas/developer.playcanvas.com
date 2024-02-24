@@ -115,12 +115,14 @@ When the function is called, it performs an asynchronous network request to the 
 Once the network request has been completed, the engine will do the following:
 
 `loadSceneHierarchy`
+
 - Creates the entities and components from the loaded scene and adds the hierarchy to the [application root node][application-root-api].
 - Calls `initialize` and `postInitialize` functions on the ScriptTypes in the loaded scene.
 - Calls the callback that was passed into the `loadSceneHierarchy` function.
 - (Optional) In the [callback][loadhierarchycallback-api], the entity that represents the loaded scene root is passed as a parameter. This can be modified or reparented depending on your needs. In the [Loading Scenes Additively](#loading-scenes-additively) example, it reparents to scene root to another entity in the current scene to make it easier to manage.
 
 `loadSceneSettings`
+
 - Applies the loaded scene settings to the application.
 - Calls the [callback][loadsettingscallback-api] that was passed into the `loadSceneSettings` function.
 
@@ -207,8 +209,6 @@ The [example project][asset-load-for-scene-project] below loads the assets when 
 [loadsettingscallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadSettingsCallback
 [application-root-api]: https://api.playcanvas.com/classes/Engine.Application.html#root
 [loadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneData
-[unloadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#unloadSceneData
-[copy-and-paste-assets]: /user-manual/editor/assets/#copy-and-paste-between-projects
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
 [changescene-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#changeScene

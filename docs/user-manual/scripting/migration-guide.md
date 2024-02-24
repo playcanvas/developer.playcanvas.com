@@ -85,6 +85,7 @@ MyScript.prototype.update = function(dt) {
 ```
 
 Things to notice:
+
 * There is no constructor in the current script format. Constructor code must be moved to the `initialize` function.
 * `app` (the `pc.Application` instance of the script) becomes `this.app`.
 * `this.entity` is automatically made available to current format scripts.

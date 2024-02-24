@@ -15,7 +15,7 @@ To get started, follow the [instructions][2] for installing Cordova on your comp
 
 To create a project, issue the following command:
 
-```
+```sh
 cordova create hello com.example.hello HelloWorld
 ```
 
@@ -23,7 +23,7 @@ cordova create hello com.example.hello HelloWorld
 
 So, for a game like [Master Archer][3], an appropriate command would be:
 
-```
+```sh
 cordova create masterarcher com.playcanvas.masterarcher "Master Archer"
 ```
 
@@ -63,7 +63,7 @@ Building for iOS is limited to macOS based computers. You must also ensure you h
 
 To build your app for iOS, add the Cordova iOS platform to your project. From the root of your project, issue the command:
 
-```
+```sh
 cordova platform add ios
 ```
 
@@ -85,7 +85,7 @@ By default, if you attempt to run a Cordova-based PlayCanvas app, you will encou
 
 You are now ready to test your app. For iOS, you can use Simulator or run on a physical iOS device. Simulator is installed as part the Xcode tools, runs on your Mac and simulates the various iOS based devices. To run your app in Simulator, issue the following command:
 
-```
+```sh
 cordova run ios
 ```
 
@@ -100,11 +100,11 @@ To run on a physical device:
 3. Navigate to the Signing & Capabilities settings for your project's Target and select a valid Team so that your app can be digitally signed before being deployed to your device.
 4. Select your iOS device in Xcode's Scheme drop-down list.
 
-![Xcode Scheme drop-down](/img/user-manual/publishing/cordova/xcode-scheme.png)
+    ![Xcode Scheme drop-down](/img/user-manual/publishing/cordova/xcode-scheme.png)
 
 5. Press the Run button to build, deploy and run the application on your device.
 
-![Xcode Run button](/img/user-manual/publishing/cordova/xcode-run.png)
+    ![Xcode Run button](/img/user-manual/publishing/cordova/xcode-run.png)
 
 Once you are happy with your app, you can ship it to [App Store Connect][14].
 
@@ -112,7 +112,6 @@ Once you are happy with your app, you can ship it to [App Store Connect][14].
 [2]: https://cordova.apache.org/docs/en/latest/guide/cli/index.html#installing-the-cordova-cli
 [3]: https://playcanv.as/p/JERg21J8/
 [4]: https://cordova.apache.org/docs/en/latest/config_ref/images.html
-[8]: /user-manual/api/app-download/
 [9]: https://apps.apple.com/us/app/xcode/id497799835?mt=12
 [10]: https://cordova.apache.org/announcements/2020/06/01/cordova-ios-release-6.0.0.html
 [14]: https://developer.apple.com/app-store-connect/

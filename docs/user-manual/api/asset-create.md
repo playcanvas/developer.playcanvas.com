@@ -56,6 +56,7 @@ Content-Type: application/javascript
 {fileContent}
 ------WebKitFormBoundaryTdsfsfT--
 ```
+
 ## Parameters
 
 | Name        | Type      | Required | Description                                                                                                 |
@@ -64,9 +65,9 @@ Content-Type: application/javascript
 | `projectId` | `number`  | ✔️      | The id of the project.                                                                                      |
 | `branchId`  | `string`  | ✔️      | The id of the branch.                                                                                       |
 | `parent`    | `number`  |          | Parent asset's id.                                                                                          |
-| `preload`   | `boolean` |          | Preload the asset (true | false).                                                                           |
+| `preload`   | `boolean` |          | Preload the asset (true / false).                                                                           |
 | `file`      | `file`    |          | Data to store as the asset file.                                                                            |
-| `pow2`      | `boolean` |          | Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false). |
+| `pow2`      | `boolean` |          | Only used for textures and defaults to false. Resize the texture to power of two dimensions (true / false). |
 
 ## Response Schema
 

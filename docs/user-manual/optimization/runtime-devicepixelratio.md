@@ -31,6 +31,7 @@ if (highTierDevice) {
 ```
 
 The challenge is working out the performance capabilities of the device and this can be done in a couple of ways:
+
 * Using some form of benchmark on the start of the application and observing the frame rate
 * Querying the WebGL renderer data to get the name of the GPU and checking against a known list performance tiers
 
@@ -38,7 +39,7 @@ To get information about the GPU, use the property `pc.GraphicsDevice#unmaskedRe
 
 The string will have something similar to the following:
 
-```
+```none
 ANGLE (NVIDIA GeForce GTX 1050 Direct3D11 vs_5_0 ps_5_0)
 ```
 
