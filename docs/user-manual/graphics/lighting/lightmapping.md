@@ -67,9 +67,9 @@ To get good lightmap results we need to ensure that rendering is based only on d
 
 1. **Disable normal maps** on materials - micro surface details are too tiny to be relevant in lightmap textures.
 2. Set **Reflection to 0** and **Disable Gloss Maps** on materials - reflection can lead to caustics and complications for renderers, leading to visual artifacts. Generally lightmaps should contain only diffuse lighting and reflectivity should be implemented using some runtime technique.
-4. **Very dark materials won't produce good results** as they do not reflect light much and so will not assist Global Illumination.
-5. In the Render To Texture window (see below) set **Padding** to larger value.
-6. **Light can leak** from behind the geometry, add blocking geometry to prevent light.
+3. **Very dark materials won't produce good results** as they do not reflect light much and so will not assist Global Illumination.
+4. In the Render To Texture window (see below) set **Padding** to larger value.
+5. **Light can leak** from behind the geometry, add blocking geometry to prevent light.
 
 ![Lighmapping Light Leaking](/img/user-manual/graphics/lighting/lightmapping/lightmapping-light-leak.jpg)
 

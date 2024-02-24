@@ -31,7 +31,7 @@ The following steps provide a basic overview of the Clustered Lighting implement
 1. Cull lights by all of the camera's frustums, to evaluate the list of lights visible for a frame.
 2. Place a world space 3D grid over the axis aligned bounds of all visible lights.
 
-![3D Grid](/img/user-manual/graphics/lighting/lights/3d_grid.png)
+    ![3D Grid](/img/user-manual/graphics/lighting/lights/3d_grid.png)
 
 3. Each cell in the 3D grid stores the light indices that intersect with it. On the CPU, this information is updated every frame and it is allowed to get a list of the lights that affect any positions. The information is stored in a texture and made available to the GPU.
 4. The properties of all visible lights are stored in another texture, so they are also accessible by the GPU.
