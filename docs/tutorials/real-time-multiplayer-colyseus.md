@@ -126,12 +126,12 @@ You will be seeing the following message in your server logs, which means a clie
 
 In Colyseus, we define shared data through its `Schema` structures.
 
-> `Schema` is a special data type from Colyseus that is capable of encoding its changes/mutations _incrementally_. The encoding and decoding process happens internally by the framework and its SDK.
+> `Schema` is a special data type from Colyseus that is capable of encoding its changes/mutations *incrementally*. The encoding and decoding process happens internally by the framework and its SDK.
 
 The state synchronization loop looks like this:
 
 1. State changes (mutations) are synchronized automatically from Server → Clients
-2. Clients, by attaching callbacks to their local _read-only_ `Schema` structures, can observe for state mutations and react to it.
+2. Clients, by attaching callbacks to their local *read-only* `Schema` structures, can observe for state mutations and react to it.
 3. Clients can send arbitrary messages to the server - which decides what to do with it - and may mutate the state (Go back to step **1.**)
 
 ---
