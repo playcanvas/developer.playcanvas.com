@@ -6,7 +6,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/7171
 
 import Link from '@docusaurus/Link';
 
-Credit: https://playcanvas.com/lexxik
+Credit: https://playcanvas.com/user/lexxik
 
 Example of creating a planar reflection being used for a transparent mirror/water like surface.
 

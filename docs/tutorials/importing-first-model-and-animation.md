@@ -126,5 +126,5 @@ And that's it! We've successfully imported our first model and looping animation
 
 ![](/img/tutorials/importing-first-model-and-animation/preview.gif)
 
-[kenney-site]: https://www.kenney.nl/assets/animated-characters
+[kenney-site]: https://www.kenney.nl/assets/animated-characters-1
 [animation-documentation]: /user-manual/animation/
