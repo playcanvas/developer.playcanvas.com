@@ -2192,13 +2192,6 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/publishing/playable-ads/index.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-playable-ads-ironsource-mraid-playable-ads]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/publishing/playable-ads/ironsource-mraid-playable-ads.md
-source_file   = docs/user-manual/publishing/playable-ads/ironsource-mraid-playable-ads.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/publishing/playable-ads/ironsource-mraid-playable-ads.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-playable-ads-snapchat-playable-ads]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/publishing/playable-ads/snapchat-playable-ads.md
 source_file   = docs/user-manual/publishing/playable-ads/snapchat-playable-ads.md
