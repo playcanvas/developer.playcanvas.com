@@ -84,7 +84,7 @@ PlayCanvasにColyseus JavaScript SDKを追加する必要があります。
 https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 ```
 
-これにより、PlayCanvasスクリプトの `Colyseus` [JavaScript SDK](https://docs.colyseus.io/colyseus/getting-started/javascript-client/) を使用できます。
+これにより、PlayCanvasスクリプトの `Colyseus` [JavaScript SDK](https://docs.colyseus.io/getting-started/javascript-client/) を使用できます。
 
 ## クライアント - サーバー接続の確立 {#establishing-a-client-server-connection}
 
@@ -110,7 +110,7 @@ NetworkManager.prototype.initialize = function () {
 }
 ```
 
-> ここで、ローカルの `ws://localhost:2567` エンドポイントを使用しています。他の人とオンラインでプレイするには、 [サーバーをデプロイ](https://docs.colyseus.io/arena/getting-started/create-application/)して、公共のインターネットを使用する必要があります。[Glitch](https://glitch.com/edit/#!/tutorial-playcanvas-server)を使ってサーバーを公開することもできます。
+> ここで、ローカルの `ws://localhost:2567` エンドポイントを使用しています。他の人とオンラインでプレイするには、 [サーバーをデプロイ](https://docs.colyseus.io/deployment/)して、公共のインターネットを使用する必要があります。[Glitch](https://glitch.com/edit/#!/tutorial-playcanvas-server)を使ってサーバーを公開することもできます。
 
 PlayCanvasプロジェクトを**「起動」**すると、クライアントはサーバーと接続し、サーバーは必要に応じて`my_room`という部屋を作成します。
 
@@ -155,7 +155,7 @@ export class MyRoomState extends Schema {
 }
 ```
 
-> [スキーマ構造について](https://docs.colyseus.io/colyseus/state/schema/)もご覧ください。
+> [スキーマ構造について](https://docs.colyseus.io/state/schema/)もご覧ください。
 
 次に、サーバーサイドで `onJoin()` メソッドを変更して、ルームとの新しい接続が確立されるたびに `Player` インスタンスを作成します。
 
@@ -389,7 +389,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 });
 ```
 
-> [スキーマコールバックについてもっと読む](https://docs.colyseus.io/colyseus/state/schema/#client-side)
+> [スキーマコールバックについてもっと読む](https://docs.colyseus.io/state/schema/#client-side)
 
 ## 追加: ルームと接続のモニタリング {#extra-monitoring-rooms-and-connections}
 
@@ -401,7 +401,7 @@ Colyseusには、ゲーム開発中に役立つオプションのモニタリン
 
 このパネルを通じて、スポーンしたすべてのルームやアクティブなクライアント接続を見ることができ、相互作用することができます。
 
-> [モニタリングパネルの詳細についてはこちらをご覧ください。](https://docs.colyseus.io/colyseus/tools/monitor/)
+> [モニタリングパネルの詳細についてはこちらをご覧ください。](https://docs.colyseus.io/tools/monitor/)
 
 ## さらに詳しく {#more}
 
