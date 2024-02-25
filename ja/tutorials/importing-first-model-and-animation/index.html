@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.1">
 <title data-rh="true">最初のモデルとアニメーションのインポート方法 | PlayCanvas Developer Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://developer.playcanvas.com/ja/img/playcanvas-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://developer.playcanvas.com/ja/img/playcanvas-social-card.jpg"><meta data-rh="true" property="og:url" content="https://developer.playcanvas.com/ja/tutorials/importing-first-model-and-animation/"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="最初のモデルとアニメーションのインポート方法 | PlayCanvas Developer Site"><meta data-rh="true" name="description" content="概要"><meta data-rh="true" property="og:description" content="概要"><link data-rh="true" rel="icon" href="/ja/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://developer.playcanvas.com/ja/tutorials/importing-first-model-and-animation/"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/tutorials/importing-first-model-and-animation/" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/ja/tutorials/importing-first-model-and-animation/" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/tutorials/importing-first-model-and-animation/" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://69QRBNV3NH-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="PlayCanvas Developer Site" href="/ja/opensearch.xml"><link rel="stylesheet" href="/ja/assets/css/styles.8f787788.css">
-<script src="/ja/assets/js/runtime~main.3bb321df.js" defer="defer"></script>
+<script src="/ja/assets/js/runtime~main.0f8e1cd5.js" defer="defer"></script>
 <script src="/ja/assets/js/main.35e03b95.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -13,7 +13,7 @@
 <p>このチュートリアルでは、最初のアニメーションモデルをプロジェクトに追加する方法を説明します。</p>
 <p><img decoding="async" loading="lazy" src="/ja/assets/images/preview-beac8edb46f6f4378c0cbd3b0d3ca925.gif" width="932" height="480" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="サンプルアセットの入手">サンプルアセットの入手<a href="#サンプルアセットの入手" class="hash-link" aria-label="サンプルアセットの入手 への直接リンク" title="サンプルアセットの入手 への直接リンク">​</a></h2>
-<p><a href="https://www.kenney.nl/assets/animated-characters" target="_blank" rel="noopener noreferrer">Kenney Animated Characters アセットパック</a>を使用します。</p>
+<p><a href="https://www.kenney.nl/assets/animated-characters-1" target="_blank" rel="noopener noreferrer">Kenney Animated Characters アセットパック</a>を使用します。</p>
 <p><img decoding="async" loading="lazy" src="/ja/assets/images/kenney-site-814e85e12a9282f665663c36fc25cbf3.jpg" width="894" height="480" class="img_ev3q"></p>
 <p>ダウンロードして解凍したら、内容を確認しましょう。</p>
 <p>モデルとアニメーションのファイルを分離しているため、使いやすいです。</p>
@@ -28,7 +28,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="モデルテンプレートをシーンに追加">モデルテンプレートをシーンに追加<a href="#モデルテンプレートをシーンに追加" class="hash-link" aria-label="モデルテンプレートをシーンに追加 への直接リンク" title="モデルテンプレートをシーンに追加 への直接リンク">​</a></h2>
 <p>テンプレートアセットは、完全なEntityヒエラルキーを含み、モデルをシーンに追加するために使用されます。</p>
 <p>次のように複数の方法でできます。</p>
-<p>選択したEntityの子として、3Dビューポートにドラッグするだけです。</p>
+<p>選 択したEntityの子として、3Dビューポートにドラッグするだけです。</p>
 <p><img decoding="async" loading="lazy" src="/ja/assets/images/template-add-scene-view-94c066f62c61ac0e2c4692a4190aed1e.gif" width="934" height="480" class="img_ev3q"></p>
 <p>Entityのヒエラルキービューにドラッグすると、そのEntityの子として追加されます。</p>
 <p><img decoding="async" loading="lazy" src="/ja/assets/images/template-add-on-entity-dabf38f11f60927065c0149298536fee.gif" width="934" height="480" class="img_ev3q"></p>
@@ -60,7 +60,7 @@
 <p>キャラクターにアニメーションを追加するために、エンティティのAnimコンポーネントを使用し、さらにAnim State Graphアセットを作成する必要があります。</p>
 <p>Anim State Graphアセットは、アセットパネルで右クリックし、&#x27;New Asset&#x27;  -&gt; &#x27;Anim State Graph&#x27; を選択することで作成されます。</p>
 <p><img decoding="async" loading="lazy" src="/ja/assets/images/create-anim-state-graph-741bdacbc5b0a4f6c0655168d6cb50fb.gif" width="935" height="480" class="img_ev3q"></p>
-<p>グラフアセットには複数のステートがあり、各ステートにはアニメーションが割 り当てられることがあります。ステート間のフローは、条件付きのトランジションによって制御されます。</p>
+<p>グラフアセットには複数のステートがあり、各ステートにはアニメーションが 割り当てられることがあります。ステート間のフローは、条件付きのトランジションによって制御されます。</p>
 <p><img decoding="async" loading="lazy" src="/ja/assets/images/anim-state-graph-e9adb2e5d408466504cca93648410260.png" width="1417" height="720" class="img_ev3q"></p>
 <p>このチュートリアルでは、単一のステートと単一のアニメーションに焦点を当てます。アニメーションに関する詳細なドキュメントやチュートリアルは  <a href="/ja/user-manual/animation/">こちら</a>で確認できます。</p>
 <p>モデルにグラフを追加するためには、シーン内のテンプレートエンティティインスタンスを選択し、インスペクターにてAnimコンポーネントを追加します。</p>
