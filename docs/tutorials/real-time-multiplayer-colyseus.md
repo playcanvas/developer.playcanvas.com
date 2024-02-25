@@ -84,7 +84,7 @@ In the new **"URL"** field, let's include the Colyseus JavaScript SDK, from a CD
 https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 ```
 
-This is going to make the `Colyseus` [JavaScript SDK](https://docs.colyseus.io/colyseus/getting-started/javascript-client/) available for our PlayCanvas scripts.
+This is going to make the `Colyseus` [JavaScript SDK](https://docs.colyseus.io/getting-started/javascript-client/) available for our PlayCanvas scripts.
 
 ## Establishing a Client-Server Connection {#establishing-a-client-server-connection}
 
@@ -110,7 +110,7 @@ NetworkManager.prototype.initialize = function () {
 }
 ```
 
-> Note that we're using the local `ws://localhost:2567` endpoint here. You need to [deploy your server](https://docs.colyseus.io/arena/getting-started/create-application/) to the public internet in order to play with others online. You can also use [Glitch](https://glitch.com/edit/#!/tutorial-playcanvas-server) to host your server publicly.
+> Note that we're using the local `ws://localhost:2567` endpoint here. You need to [deploy your server](https://docs.colyseus.io/deployment/) to the public internet in order to play with others online. You can also use [Glitch](https://glitch.com/edit/#!/tutorial-playcanvas-server) to host your server publicly.
 
 When you **"Launch"** your PlayCanvas project now, your client is going to establish a connection with the server, and the server is going to create the room `my_room` on demand for you.
 
@@ -155,7 +155,7 @@ export class MyRoomState extends Schema {
 }
 ```
 
-> See more about the [Schema structures](https://docs.colyseus.io/colyseus/state/schema/).
+> See more about the [Schema structures](https://docs.colyseus.io/state/schema/).
 
 Now, still in the server-side, let's modify our `onJoin()` method to create a `Player` instance whenever a new connection is established with the room.
 
@@ -387,7 +387,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 });
 ```
 
-> Read [more about Schema callbacks](https://docs.colyseus.io/colyseus/state/schema/#client-side)
+> Read [more about Schema callbacks](https://docs.colyseus.io/state/schema/#client-side)
 
 ## Extra: Monitoring Rooms and Connections {#extra-monitoring-rooms-and-connections}
 
@@ -399,7 +399,7 @@ To view the monitor panel from your local server, go to `http://localhost:2567/c
 
 You can see and interact with all spawned rooms and active client connections through this panel.
 
-> See [more information about the monitor panel](https://docs.colyseus.io/colyseus/tools/monitor/).
+> See [more information about the monitor panel](https://docs.colyseus.io/tools/monitor/).
 
 ## More {#more}
 

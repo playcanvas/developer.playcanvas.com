@@ -262,7 +262,7 @@
         "physics",
         "ui"
       ],
-      "thumb": "/images/tutorials/crash-course/crash-course-thumbnail.jpg",
+      "thumb": "/img/tutorials/crash-course/crash-course-thumbnail.jpg",
       "filename": "crash-course"
     },
     {
@@ -488,7 +488,7 @@
         "animation",
         "basics"
       ],
-      "thumb": "/images/tutorials/importing-first-model-and-animation/thumbnail.jpg",
+      "thumb": "/img/tutorials/importing-first-model-and-animation/thumbnail.jpg",
       "filename": "importing-first-model-and-animation"
     },
     {
