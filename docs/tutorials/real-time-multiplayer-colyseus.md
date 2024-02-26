@@ -95,7 +95,7 @@ You can attach this script to a new empty entity called "NetworkManager".
 ```javascript
 var NetworkManager = pc.createScript('networkManager');
 
-NetworkManager.prototype.initialize = function () {
+NetworkManager.prototype.initialize = async function () {
   //
   // instantiate the SDK
   // (no connection is established at this point)
@@ -279,8 +279,8 @@ You can keep a special reference to the current player object by checking the `s
 // ...
 this.room.state.players.onAdd((player, sessionId) => {
   // ...
-  if (room.sessionId === sessionId) {
-    this.currentPlayerEntity = playerEntities[sessionId];
+  if (this.room.sessionId === sessionId) {
+    this.currentPlayerEntity = this.playerEntities[sessionId];
   }
   // ...
 });
