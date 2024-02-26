@@ -38,7 +38,7 @@ pc.script.createLoadingScreen((app) => {
     document.body.appendChild(div);
 
     // Hide the loading screen when the app starts
-    app.on('start', () => {
+    app.once('start', () => {
         document.body.removeChild(div);
     });
 });
@@ -80,12 +80,12 @@ pc.script.createLoadingScreen((app) => {
     app.on('preload:progress', (value) => {
         progressFiller.style.width = (value * 100) + '%';
     });
-    app.on('preload:end', () => {
+    app.once('preload:end', () => {
         app.off('preload:progress');
     });
 
     // Hide the loading screen when the app starts
-    app.on('start', () => {
+    app.once('start', () => {
         document.body.removeChild(div);
     });
 });
