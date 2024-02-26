@@ -149,7 +149,7 @@ For more tutorials on custom shaders look [here][6].
 
 See the [Custom Post Effects project here][7].
 
-[1]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
+[1]: https://github.com/playcanvas/engine/tree/main/scripts/posteffects
 [2]: https://api.playcanvas.com/classes/Engine.Shader.html
 [4]: https://api.playcanvas.com/classes/Engine.PostEffect.html
 [3]: /user-manual/scenes/components/camera

@@ -122,7 +122,7 @@ As a result of that, almost all backend chunks have been changed to accommodate 
 
 This change also makes some chunks, such as the clearcoat specific ones, redundant, as their functions have become reusable when their no longer reliant on global values.
 
-### Changes
+#### Changes
 
 This release breaks most lit/frag chunks. Most of these chunks have had their signatures changed to accept the various values they need, instead of relying on globals. With that said, most globals are still set in the shader. An example of this change is:
 

@@ -33,5 +33,5 @@ While the mini-stats panel is incorporated into the Editor's Launch page, you ca
 The ['Engine-only' examples][3] all do this.
 
 [1]: https://webglreport.com/
-[2]: https://github.com/playcanvas/engine/tree/master/extras/mini-stats
+[2]: https://github.com/playcanvas/engine/tree/main/extras/mini-stats
 [3]: https://playcanvas.github.io/
