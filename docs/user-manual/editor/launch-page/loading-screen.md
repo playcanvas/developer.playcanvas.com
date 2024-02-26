@@ -2,127 +2,93 @@
 title: Loading Screen
 ---
 
-import Link from '@docusaurus/Link';
+All newly created PlayCanvas projects use the default loading screen:
 
-If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:
+![Default Loading Screen](/img/user-manual/editor/launch-page/loading-screen/loading-screen-default.webp)
 
-<img loading="lazy" alt="Loading Screen" src="/img/user-manual/editor/loading-screen/loading-screen.png" />
+It will be displayed in both the Launch Page and your published app.
 
-Clicking on **Create Default** will create a new script with some default contents. You can edit that script if you want to change the loading screen. Here is an example of a default script:
+## Customizing the Loading Screen
+
+If you want to create a custom loading screen, load the Settings into the [Inspector](../../inspector) by clicking the 'cog' icon on the [Toolbar](../../toolbar) or in the [Viewport](../../viewport).
+
+![Settings](/img/user-manual/editor/toolbar/settings.png)
+
+Then, navigate to the `LOADING SCREEN` section:
+
+![Loading Screen Settings](/img/user-manual/editor/launch-page/loading-screen/loading-screen-settings.png)
+
+You have two options:
+
+1. **CREATE DEFAULT** - Create a new loading screen script in the [Assets Panel](../../assets) that contains the full code for the default loading screen. You can customize this loading screen to your requirements.
+2. **SELECT EXISTING** - Select a custom loading screen script from the Assets Panel.
+
+Let's assume you don't have an existing script and instead create the default loading screen script. A very minimal loading screen just displaying a solid color looks like this:
 
 ```javascript
-pc.script.createLoadingScreen(function (app) {
-    var showSplash = function () {
-        // splash wrapper
-        var wrapper = document.createElement('div');
-        wrapper.id = 'application-splash-wrapper';
-        document.body.appendChild(wrapper);
+pc.script.createLoadingScreen((app) => {
+    // Create the main loading screen div
+    const div = document.createElement('div');
+    div.style.backgroundColor = "#232323"; // Dark gray background
+    div.style.position = "absolute";
+    div.style.top = "0";
+    div.style.left = "0";
+    div.style.height = "100%";
+    div.style.width = "100%";
+    document.body.appendChild(div);
 
-        // splash
-        var splash = document.createElement('div');
-        splash.id = 'application-splash';
-        wrapper.appendChild(splash);
-        splash.style.display = 'none';
-
-        var logo = document.createElement('img');
-        logo.src = 'https://playcanvas.com/static-assets/img/play_text_252_white.png';
-        splash.appendChild(logo);
-        logo.onload = function () {
-            splash.style.display = 'block';
-        };
-
-        var container = document.createElement('div');
-        container.id = 'progress-bar-container';
-        splash.appendChild(container);
-
-        var bar = document.createElement('div');
-        bar.id = 'progress-bar';
-        container.appendChild(bar);
-
-    };
-
-    var hideSplash = function () {
-        var splash = document.getElementById('application-splash-wrapper');
-        splash.parentElement.removeChild(splash);
-    };
-
-    var setProgress = function (value) {
-        var bar = document.getElementById('progress-bar');
-        if(bar) {
-            value = Math.min(1, Math.max(0, value));
-            bar.style.width = value * 100 + '%';
-        }
-    };
-
-    var createCss = function () {
-        var css = [
-            'body {',
-            '    background-color: #283538;',
-            '}',
-            '',
-            '#application-splash-wrapper {',
-            '    position: absolute;',
-            '    top: 0;',
-            '    left: 0;',
-            '    height: 100%;',
-            '    width: 100%;',
-            '    background-color: #283538;',
-            '}',
-            '',
-            '#application-splash {',
-            '    position: absolute;',
-            '    top: calc(50% - 28px);',
-            '    width: 264px;',
-            '    left: calc(50% - 132px);',
-            '}',
-            '',
-            '#application-splash img {',
-            '    width: 100%;',
-            '}',
-            '',
-            '#progress-bar-container {',
-            '    margin: 20px auto 0 auto;',
-            '    height: 2px;',
-            '    width: 100%;',
-            '    background-color: #1d292c;',
-            '}',
-            '',
-            '#progress-bar {',
-            '    width: 0%;',
-            '    height: 100%;',
-            '    background-color: #f60;',
-            '}',
-            '',
-            '@media (max-width: 480px) {',
-            '    #application-splash {',
-            '        width: 170px;',
-            '        left: calc(50% - 85px);',
-            '    }',
-            '}'
-        ].join('\n');
-
-        var style = document.createElement('style');
-        style.type = 'text/css';
-        if (style.styleSheet) {
-            style.styleSheet.cssText = css;
-        } else {
-            style.appendChild(document.createTextNode(css));
-        }
-
-        document.head.appendChild(style);
-    };
-
-    createCss();
-    showSplash();
-
-    app.on('preload:end', function () {
-        app.off('preload:progress');
+    // Hide the loading screen when the app starts
+    app.on('start', () => {
+        document.body.removeChild(div);
     });
-    app.on('preload:progress', setProgress);
-    app.on('start', hideSplash);
 });
 ```
 
-[1]: /user-manual/editor/settings
+However, your users will thank you if you display some kind of loading bar! Let's update the script with one:
 
-<Link to='https://playcanvas.com/project/458028/'>Open Project ↗</Link>
+```javascript
+pc.script.createLoadingScreen((app) => {
+    // Create the main loading screen div
+    const div = document.createElement('div');
+    div.style.backgroundColor = "#232323"; // Dark gray background
+    div.style.position = "absolute";
+    div.style.top = "0";
+    div.style.left = "0";
+    div.style.height = "100%";
+    div.style.width = "100%";
+    document.body.appendChild(div);
+
+    // Create the progress bar div, centered on the screen
+    const progressBar = document.createElement('div');
+    progressBar.style.position = "absolute";
+    progressBar.style.top = "50%";
+    progressBar.style.left = "25%";
+    progressBar.style.transform = "translateY(-50%)";
+    progressBar.style.width = "50%";
+    progressBar.style.height = "20px";
+    progressBar.style.backgroundColor = "#d3d3d3"; // Light gray for the bar background
+    div.appendChild(progressBar);
+
+    // Create the filler for the progress bar
+    const progressFiller = document.createElement('div');
+    progressFiller.style.height = "100%";
+    progressFiller.style.backgroundColor = "#4caf50"; // Green for the progress
+    progressFiller.style.width = "0%";
+    progressBar.appendChild(progressFiller);
+
+    // Update the progress bar on preload progress
+    app.on('preload:progress', (value) => {
+        progressFiller.style.width = (value * 100) + '%';
+    });
+    app.on('preload:end', () => {
+        app.off('preload:progress');
+    });
+
+    // Hide the loading screen when the app starts
+    app.on('start', () => {
+        document.body.removeChild(div);
+    });
+});
+```
+
+Feel free to get creative! Use whatever HTML and CSS you like to create the loading screen of your dreams.
