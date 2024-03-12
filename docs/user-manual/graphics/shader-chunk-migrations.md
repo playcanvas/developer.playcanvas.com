@@ -28,6 +28,13 @@ By doing this you will no longer see warning messages in the console.
 
 The following tables break down the chunk changes by Engine release.
 
+### *Engine v1.70*
+
+| Chunk | Changes |
+| ---   | ---     |
+| `refractionDynamicPS` | <ul><li>Now accepts additional parameter `float dispersion`.</li></ul> |
+| `refractionCubePS` | <ul><li>Now accepts additional parameter `float dispersion`.</li></ul> |
+
 ### *Engine v1.65*
 
 In 1.62, global variables used to pass the values between the front end back end chunks were grouped into structures LitShaderArguments, IridescenceArgs, ClearcoatArgs and SheenArgs. Those were causing multiple compatibility issues on Android devices, and so in 1.65, these are being converted back to global variables. For example `litShaderArgs.albedo` is now `litArgs_albedo`.
