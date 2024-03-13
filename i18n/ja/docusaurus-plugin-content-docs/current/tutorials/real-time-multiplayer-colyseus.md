@@ -95,16 +95,16 @@ https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 ```javascript
 var NetworkManager = pc.createScript('networkManager');
 
-NetworkManager.prototype.initialize = function () {
+NetworkManager.prototype.initialize = async function () {
   //
-  // SDKをインスタンス化します
-  //(接続はまだ確立されていません)
+  // instantiate the SDK
+  // (no connection is established at this point)
   //
   this.app.colyseus = new Colyseus.Client("ws://localhost:2567");
 
   //
-  // ルーム「my_room」を作成または参加するようにリクエストします
-  //(サーバーとの接続を確立します)
+  // request to join or create a room "my_room"
+  // (establish connection with the server)
   //
   this.room = await this.app.colyseus.joinOrCreate("my_room");
 }
@@ -278,8 +278,8 @@ this.playerEntities[sessionId] = entity;
 // ...
 this.room.state.players.onAdd((player, sessionId) => {
   // ...
-  if (room.sessionId === sessionId) {
-    this.currentPlayerEntity = playerEntities[sessionId];
+  if (this.room.sessionId === sessionId) {
+    this.currentPlayerEntity = this.playerEntities[sessionId];
   }
   // ...
 });

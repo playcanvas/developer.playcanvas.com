@@ -1,5 +1,5 @@
 ---
-title: 画像のトラッキング
+title: Image Tracking
 sidebar_position: 1
 ---
 
