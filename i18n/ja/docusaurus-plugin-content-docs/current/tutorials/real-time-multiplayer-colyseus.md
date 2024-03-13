@@ -97,14 +97,14 @@ var NetworkManager = pc.createScript('networkManager');
 
 NetworkManager.prototype.initialize = async function () {
   //
-  // instantiate the SDK
-  // (no connection is established at this point)
+  // SDKをインスタンス化します
+  //(接続はまだ確立されていません)
   //
   this.app.colyseus = new Colyseus.Client("ws://localhost:2567");
 
   //
-  // request to join or create a room "my_room"
-  // (establish connection with the server)
+  // ルーム「my_room」を作成または参加するようにリクエストします
+  //(サーバーとの接続を確立します)
   //
   this.room = await this.app.colyseus.joinOrCreate("my_room");
 }
