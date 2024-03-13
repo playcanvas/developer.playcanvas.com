@@ -15,27 +15,27 @@ Add a Layout Group by adding the LayoutGroup Component to an existing Element En
 
 ## Layout Group Properties {#layout-group-properties}
 
-#### Orientation {#orientation}
+### Orientation {#orientation}
 
 Set the `Orientation` to Horizontal to organize your layout from left-to-right or right-to-left. Or Vertical to organize your layout top-to-bottom or bottom-to-top
 
-#### Reverse {#reverse}
+### Reverse {#reverse}
 
 ReverseX and ReverseY properties are used to set the direction the layout group is built out in. The default is left-to-right and bottom-to-top.
 
-#### Alignment {#alignment}
+### Alignment {#alignment}
 
 Alignment is used to align the child elements to the edges of the Layout Group. `[0,0]` aligns to the bottom left, `[1,1]` aligns to the top right.
 
-#### Padding {#padding}
+### Padding {#padding}
 
 Padding adds a space to the inside of the Layout Group before positioning any children.
 
-#### Spacing {#spacing}
+### Spacing {#spacing}
 
 Spacing determines the gap between each child.
 
-#### Fitting {#fitting}
+### Fitting {#fitting}
 
 The Width Fitting and Height Fitting properties determine how a child element's width or height will be adjusted by the Layout Group.
 
@@ -55,7 +55,7 @@ A value of **Shrink** will shrink the children to fit the container using the fo
 
 A value of **Both** will apply both **Stretch** and **Shrink**.
 
-#### Wrap {#wrap}
+### Wrap {#wrap}
 
 The wrap property causes children that are outside of the width (for vertical groups) or height (for horizontal groups) to be moved to a new row or column. Using the wrap property you can create grid-based layouts.
 

@@ -32,25 +32,25 @@ To set up a cubemap, first create a Cubemap asset from the New Asset menu, assig
 
 The football is a 3D model that we imported from the [PlayCanvas Asset Library][2]. The football materials will mostly be set up for you but you may need to make some simple changes. Lets look at each map used by the football
 
-#### Diffuse
+### Diffuse
 
 ![Diffuse](/img/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg)
 
 The diffuse map defines the color of the surface. In this case it is the black and white pattern of the football.
 
-#### Environment
+### Environment
 
 ![Environment](/img/tutorials/beginner/keepyup-part-two/ball-env.jpg)
 
 We're going to jump quickly to the Environment section as this is needed to see the effects of the Specular changes. To set up the Environment drag the Cubemap asset on the the cubemap slot in the material.
 
-#### Specular
+### Specular
 
 ![Specular](/img/tutorials/beginner/keepyup-part-two/ball-spec.jpg)
 
 The specular section determines how the material interacts with lights. There are two "workflows" for specular, the "Metalness workflow" and the "Specular workflow", you can find more information in our [documentation][6]. For the football we are using Metalness, so be sure to check the "Use Metalness" box. Our football is not made of metal, so we slide the metalness slider all the way down to 0. Then we use the glossiness slider to set our rough/smooth the material should be. We've set this to about halfway which gives a nice shine to the ball, but not completely smooth.
 
-#### Normal
+### Normal
 
 ![Normal](/img/tutorials/beginner/keepyup-part-two/ball-normal.jpg)
 
@@ -62,7 +62,7 @@ The final texture map we apply is the normal map. The normal map is used to add 
 
 The backdrop material is much simpler, we have only one texture map.
 
-#### Emissive
+### Emissive
 
 ![Emissive](/img/tutorials/beginner/keepyup-part-two/backdrop-emissive.jpg)
 

@@ -71,11 +71,11 @@ This is found in the [version control][5] panel and can be selected and copied.
 
 Our REST API is following some generic guidelines when it comes to the response format of each API call.
 
-#### GET resource {#get-resource}
+### GET resource {#get-resource}
 
 If you are trying to GET a single resource the response will be a JSON object with the resource you requested.
 
-#### GET multiple resources {#get-multiple-resources}
+### GET multiple resources {#get-multiple-resources}
 
 If you are trying to GET multiple resources like for example listing the Apps of a Project you will get a JSON object with this format:
 
@@ -110,7 +110,7 @@ So for example to get 32 items after the first 16 items you would send this requ
 https://playcanvas.com/api/items?limit=32&amp;skip=16
 ```
 
-#### Errors {#errors}
+### Errors {#errors}
 
 When an error is raised you will get a JSON object with this format:
 
