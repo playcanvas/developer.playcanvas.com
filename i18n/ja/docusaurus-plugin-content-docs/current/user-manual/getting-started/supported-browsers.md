@@ -10,7 +10,7 @@ The browser requirements for running PlayCanvas applications are as follows:
 | [Chrome](https://www.google.com/chrome/)    | 9.0+    | ✔️      | ✔️       | ✔️      | ✔️        | ✔️      | ✔️       |
 | [Safari](https://www.apple.com/safari/)     | 8.0+    |          | ✔️      |          |           |          | ✔️       |
 | [Firefox](https://www.mozilla.org/firefox/) | 4.0+    | ✔️      | ✔️       | ✔️      |           | ✔️       | ✔️      |
-| [Edge](https://www.microsoft.com/edge)      | 12.0+   | ✔️      |          |          |           |          |          |
+| [Edge](https://www.microsoft.com/edge)      | 12.0+   | ✔️      | ✔️         | ✔️         |           | ✔️         | ✔️         |
 | [Opera](https://www.opera.com/)             | 12.0+   | ✔️      | ✔️       | ✔️      |           | ✔️       |          |
 
 :::tip

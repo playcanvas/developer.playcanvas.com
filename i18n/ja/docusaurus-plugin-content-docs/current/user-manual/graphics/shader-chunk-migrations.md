@@ -28,6 +28,13 @@ material.chunks.APIVersion = pc.CHUNKAPI_1_55;
 
 次の表は、Engine リリースごとのチャンクの変更点をまとめたものです。
 
+### *Engine v1.70*
+
+| Chunk | Changes |
+| ---   | ---     |
+| `refractionDynamicPS` | <ul><li>Now accepts additional parameter `float dispersion`.</li></ul> |
+| `refractionCubePS` | <ul><li>Now accepts additional parameter `float dispersion`.</li></ul> |
+
 ### *Engine v1.65*
 
 In 1.62, global variables used to pass the values between the front end back end chunks were grouped into structures LitShaderArguments, IridescenceArgs, ClearcoatArgs and SheenArgs. Those were causing multiple compatibility issues on Android devices, and so in 1.65, these are being converted back to global variables. For example `litShaderArgs.albedo` is now `litArgs_albedo`.
@@ -122,7 +129,7 @@ PlayCanvasには、2つのシェーダーチャンクがあります。1つは�
 
 この変更により、クリアコートの特定のチャンクなど、いくつかのチャンクは不要になりました。これらの機能は、グローバル値に依存しなくなったため再利用できるようになりました。
 
-### Changes
+#### Changes
 
 このリリースでは、ほとんどのライト/フラグメント・チャンクが変更されています。これらのチャンクのほとんどは、グローバル変数に依存する代わりに、必要な各種の値を受け入れるようにシグネチャが変更されました。ただし、ほとんどのグローバル変数はシェーダー内で設定されています。この変更の例を示します。
 
