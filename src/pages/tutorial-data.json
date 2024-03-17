@@ -3,8 +3,6 @@
     "input",
     "camera",
     "tutorial",
-    "physics",
-    "collision",
     "loading",
     "scenes",
     "animation",
@@ -17,6 +15,8 @@
     "mobile",
     "rendering",
     "assets",
+    "collision",
+    "physics",
     "lighting",
     "games",
     "ui",
@@ -50,15 +50,6 @@
       ],
       "thumb": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/438216/3B51C6-image-75.jpg",
       "filename": "360-lookaround-camera"
-    },
-    {
-      "title": "Forces and Impulses",
-      "tags": [
-        "physics",
-        "collision"
-      ],
-      "thumb": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg",
-      "filename": "Using-forces-on-rigid-bodies"
     },
     {
       "title": "Additive Loading Scenes",
@@ -291,7 +282,7 @@
       "tags": [
         "posteffects"
       ],
-      "thumb": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg",
+      "thumb": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/ABC61F-image-75.jpg",
       "filename": "custom-posteffect"
     },
     {
@@ -1214,6 +1205,15 @@
       ],
       "thumb": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/437673/ED3EC5-image-75.jpg",
       "filename": "using-events-with-scripts"
+    },
+    {
+      "title": "Forces and Impulses",
+      "tags": [
+        "physics",
+        "collision"
+      ],
+      "thumb": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg",
+      "filename": "Using-forces-on-rigid-bodies"
     },
     {
       "title": "Vehicle Physics",
