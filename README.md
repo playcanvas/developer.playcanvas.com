@@ -1,20 +1,24 @@
 # PlayCanvas Developer Site
 
-This is source repository for the [PlayCanvas Developer Site](https://developer.playcanvas.com/). It is made up of static web content generated from Markdown files using [Docusaurus](https://docusaurus.io).
+This is the source repository for the [PlayCanvas Developer Site](https://developer.playcanvas.com/). It is made up of static web content generated from Markdown files using [Docusaurus](https://docusaurus.io).
 
 ## How to build
 
-Building the site requires an install of Node.js 18+.
+Building the site requires an installation of Node.js 18+.
 
-    cd developer.playcanvas.com
-    npm i
-    npm run build
+```sh
+cd developer.playcanvas.com
+npm i
+npm run build
+```
 
 ## How to serve
 
 To serve the built site locally:
 
-    npm run serve
+```sh
+npm run serve
+```
 
 This will automatically open the built site in your browser.
 
@@ -22,17 +26,21 @@ This will automatically open the built site in your browser.
 
 The `start` build command will automatically rebuild the site when changes are made in the `docs`, `src` or `static` folders.
 
-    npm run start
+```sh
+npm run start
+```
 
 ## Update Tutorials
 
-Tutorials are regular markdown files and can be edited directly. However if you change the front matter, ie the tags, title or thumbnail, you'll need to regenerate the tutorials index using `npm run generate-tutorial-data`. You'll also need to do this if you add or remove a tutorial.
+Tutorials are regular markdown files and can be edited directly. However, if you change the front matter (i.e. the tags, title or thumbnail), you'll need to regenerate the tutorials index using `npm run generate-tutorial-data`. You'll also need to do this if you add or remove a tutorial.
 
 ## Update FAQ
 
-The User Manual on the developer site has a FAQ page which can be found at `docs/user-manual/faq.md`. This is the only Markdown file which is generated from other files (located in the `faq` directory). If you would like to add additional FAQs, check them in to the `faq` directory and to regenerate `docs/user-manual/faq.md` run:
+The User Manual on the developer site has a FAQ page which can be found at `docs/user-manual/faq.md`. This is the only Markdown file that is generated from other files (located in the `faq` directory). If you would like to add additional FAQs, check them in to the `faq` directory and to regenerate `docs/user-manual/faq.md` run:
 
-    npm run faq
+```sh
+npm run faq
+```
 
 ## Localization
 
@@ -40,10 +48,14 @@ The Developer Site is translated via [Transifex](https://www.transifex.com/playc
 
 When anything in `docs` is updated, run:
 
-    tx push --silent
+```sh
+tx push --silent
+```
 
 Once translation acitivity on Transifex is complete, run:
 
-    tx pull -l ja --silent
+```sh
+tx pull -l ja --silent
+```
 
 Then submit a PR with the updated language content.

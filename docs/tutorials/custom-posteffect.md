@@ -1,79 +1,94 @@
 ---
 title: Custom Post Effects
 tags: [posteffects]
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/ABC61F-image-75.jpg
 ---
+
+In this tutorial, you'll learn how to create a custom watercolor post effect in PlayCanvas that applies a softening filter and a paper grain texture to your scene. By the end of this guide, you'll have a visually appealing watercolor effect that you can apply to any 3D scene.
 
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
 </div>
 
-*This tutorial uses a custom post effect to create an effect in GLSL*
+## Step 1: Setting Up Your Shaders
 
-## Overview
+First, we need to create the shaders that will define our watercolor effect. You'll create two shader assets: a vertex shader and a fragment shader.
 
-You can create your own post effects in PlayCanvas, with a bit of Javascript and GLSL. Post effects are shaders that operate on the 2D rendered image from a camera. You can apply multiple post effects to your image - each effect uses the output of the previous effect as its input.
+### Vertex Shader (watercolor.vert)
 
-In the next paragraphs we will demonstrate how to create your own post effects. You can see examples of existing post effects [here][1].
+The vertex shader will pass the UV coordinates from the vertices to the fragment shader. Create a new shader asset in PlayCanvas and name it `watercolor.vert`. Then, copy and paste the following code:
 
-## The script
+```glsl title="watercolor.vert"
+attribute vec2 aPosition;
 
-First we need to create a new script. This script will contain the [Shader Definition][2] for our post effect and also code that will add the post effect to the camera. This script needs to be attached to an Entity with a [Camera component][3]. We'll call this script posteffect_example.js:
+varying vec2 vUv0;
 
-## The effect
-
-Now we need to create a new class for our post effect. This class will derive from [pc.posteffect.PostEffect][4]. We will define this class inside our posteffect_example.js script just before the script definition:
-
-```javascript
-pc.extend(pc, function () {
-    // Constructor - Creates an instance of our post effect
-    var ExamplePostEffect = function (graphicsDevice, vs, fs) {
-        // this is the shader definition for our effect
-        this.shader = new pc.Shader(graphicsDevice, {
-            attributes: {
-                aPosition: pc.SEMANTIC_POSITION
-            },
-            vshader: vs,
-            fshader: fs
-        });
-    };
-
-    // Our effect must derive from pc.PostEffect
-    ExamplePostEffect = pc.inherits(ExamplePostEffect, pc.PostEffect);
-
-    ExamplePostEffect.prototype = pc.extend(ExamplePostEffect.prototype, {
-        // Every post effect must implement the render method which
-        // sets any parameters that the shader might require and
-        // also renders the effect on the screen
-        render: function (inputTarget, outputTarget, rect) {
-            var device = this.device;
-            var scope = device.scope;
-
-            // Set the input render target to the shader. This is the image rendered from our camera
-            scope.resolve("uColorBuffer").setValue(inputTarget.colorBuffer);
-
-            // Draw a full screen quad on the output target. In this case the output target is the screen.
-            // Drawing a full screen quad will run the shader that we defined above
-            pc.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
-        }
-    });
-
-    return {
-        ExamplePostEffect: ExamplePostEffect
-    };
-}());
+void main(void)
+{
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+    vUv0 = (aPosition.xy + 1.0) * 0.5;
+}
 ```
 
-## Wrap up
+### Fragment Shader (watercolor.frag)
 
-We now have all the required components for our post effect. All we need to do is add an instance of the ExamplePostEffect that we defined above to our camera's [post effect queue][5]. Here's the full listing:
+The fragment shader will apply the watercolor effect using the color buffer texture and UV coordinates. Create another shader asset named `watercolor.frag` and insert the following code:
+
+```glsl title="watercolor.frag"
+precision mediump float;
+
+// The texture containing our rendered scene
+uniform sampler2D uColorBuffer;
+
+// The UV coordinates passed from the vertex shader
+varying vec2 vUv0;
+
+// Function to create a simple paper grain texture
+float paperTexture(vec2 uv) {
+    // Create a pseudo-random pattern based on UV coordinates
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    // Modulate the grain intensity
+    grain = smoothstep(0.3, 0.7, grain);
+    return grain;
+}
+
+void main(void) {
+    // Sample the color from the scene texture at this fragment's UV coordinates
+    vec4 sceneColor = texture2D(uColorBuffer, vUv0);
+
+    // Apply a softening filter to mimic watercolor fluidity
+    // Blend with neighboring pixels (basic blur)
+    vec4 blurColor = vec4(0.0);
+    float offset = 0.003; // Offset for neighboring pixels; adjust for blur amount
+    for (int x = -1; x <= 1; x++) {
+        for (int y = -1; y <= 1; y++) {
+            blurColor += texture2D(uColorBuffer, vUv0 + vec2(x, y) * offset);
+        }
+    }
+    blurColor /= 9.0;
+
+    // Mix original color with blurred version
+    vec4 mixedColor = mix(sceneColor, blurColor, 0.5);
+
+    // Overlay the paper texture
+    float grain = paperTexture(vUv0 * 10.0); // Tiling of the grain texture
+    mixedColor.rgb += mixedColor.rgb * grain * 0.1; // Modulate to adjust intensity
+
+    // Output the final color
+    gl_FragColor = mixedColor;
+}
+```
+
+## Step 2: Creating the Watercolor Effect Script
+
+Now, you'll create a script to apply the shaders to your scene. Create a new script in PlayCanvas and name it `watercolor.js`. Paste in the code provided:
 
 ```javascript
 //--------------- POST EFFECT DEFINITION------------------------//
-pc.extend(pc, function () {
-    // Constructor - Creates an instance of our post effect
-    var ExamplePostEffect = function (graphicsDevice, vs, fs) {
-        // this is the shader definition for our effect
+class WatercolorEffect extends pc.PostEffect {
+    constructor(graphicsDevice, vs, fs) {
+        super(graphicsDevice);
+
         this.shader = new pc.Shader(graphicsDevice, {
             attributes: {
                 aPosition: pc.SEMANTIC_POSITION
@@ -81,78 +96,71 @@ pc.extend(pc, function () {
             vshader: vs,
             fshader: fs
         });
-    };
+    }
 
-    // Our effect must derive from pc.PostEffect
-    ExamplePostEffect = pc.inherits(ExamplePostEffect, pc.PostEffect);
+    // Every post effect must implement the render method which 
+    // sets any parameters that the shader might require and 
+    // also renders the effect on the screen
+    render(inputTarget, outputTarget, rect) {
+        // Set the input render target to the shader. This is the image rendered from our camera
+        this.device.scope.resolve("uColorBuffer").setValue(inputTarget.colorBuffer);
+        
+        // Draw a full screen quad on the output target. In this case the output target is the screen.
+        // Drawing a full screen quad will run the shader that we defined above
+        pc.drawFullscreenQuad(this.device, outputTarget, this.vertexBuffer, this.shader, rect);
+    }
+}
 
-    ExamplePostEffect.prototype = pc.extend(ExamplePostEffect.prototype, {
-        // Every post effect must implement the render method which
-        // sets any parameters that the shader might require and
-        // also renders the effect on the screen
-        render: function (inputTarget, outputTarget, rect) {
-            var device = this.device;
-            var scope = device.scope;
-
-            // Set the input render target to the shader. This is the image rendered from our camera
-            scope.resolve("uColorBuffer").setValue(inputTarget.colorBuffer);
-
-            // Draw a full screen quad on the output target. In this case the output target is the screen.
-            // Drawing a full screen quad will run the shader that we defined above
-            pc.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
-        }
-    });
-
-    return {
-        ExamplePostEffect: ExamplePostEffect
-    };
-}());
 
 //--------------- SCRIPT DEFINITION------------------------//
-var PosteffectExample = pc.createScript('posteffectExample');
+var Watercolor = pc.createScript('watercolor');
 
-PosteffectExample.attributes.add('vs', {
+Watercolor.attributes.add('vs', {
     type: 'asset',
     assetType: 'shader',
     title: 'Vertex Shader'
 });
 
-PosteffectExample.attributes.add('fs', {
+Watercolor.attributes.add('fs', {
     type: 'asset',
     assetType: 'shader',
     title: 'Fragment Shader'
 });
 
 // initialize code called once per entity
-PosteffectExample.prototype.initialize = function() {
-    var effect = new pc.ExamplePostEffect(this.app.graphicsDevice, this.vs.resource, this.fs.resource);
-
+Watercolor.prototype.initialize = function() {
+    const effect = new WatercolorEffect(this.app.graphicsDevice, this.vs.resource, this.fs.resource);
+    
     // add the effect to the camera's postEffects queue
-    var queue = this.entity.camera.postEffects;
+    const queue = this.entity.camera.postEffects;
     queue.addEffect(effect);
-
+    
     // when the script is enabled add our effect to the camera's postEffects queue
     this.on('enable', function () {
-        queue.addEffect(effect, false);
+        queue.addEffect(effect, false); 
     });
-
+    
     // when the script is disabled remove our effect from the camera's postEffects queue
     this.on('disable', function () {
-        queue.removeEffect(effect);
+        queue.removeEffect(effect); 
     });
-
-
 };
 ```
 
-For more tutorials on custom shaders look [here][6].
+:::note
 
-See the [Custom Post Effects project here][7].
+Remember to parse the script so that the Editor knows about the script's attributes!
 
-[1]: https://github.com/playcanvas/engine/tree/main/scripts/posteffects
-[2]: https://api.playcanvas.com/classes/Engine.Shader.html
-[4]: https://api.playcanvas.com/classes/Engine.PostEffect.html
-[3]: /user-manual/scenes/components/camera
-[6]: /tutorials/custom-shaders/
-[5]: https://api.playcanvas.com/classes/Engine.CameraComponent.html#postEffects
-[7]: https://playcanvas.com/project/406045
+:::
+
+## Step 3: Applying the Effect to a Camera
+
+To see your watercolor effect in action, you need to apply it to a camera in your scene:
+
+* Create a new entity with a [camera component](/user-manual/scenes/components/camera) if you haven't already.
+* Add a [script component](/user-manual/scenes/components/script) to the camera entity and assign the watercolor script to it.
+* Assign the `watercolor.vert` and `watercolor.frag` shader assets to the corresponding attributes in the watercolor script component.
+
+Now, when you play your scene, you should see the watercolor effect applied, giving your scene a soft, artistic look.
+
+See the Custom Post Effects project [here](https://playcanvas.com/project/406045).

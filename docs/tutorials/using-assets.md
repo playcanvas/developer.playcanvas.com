@@ -8,7 +8,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
     <iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 </div>
 
-*Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
+:::info
+
+Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.
+
+:::
 
 For simple games and products you will set up all your assets in the Editor, they will be preloaded before you application starts, and your app will just work.
 
@@ -18,7 +22,7 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 
 ## Setup
 
-*The project is set up as follows*
+The project is set up as follows:
 
 * Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
 * The **C** render asset is set up *not* to be preloaded.

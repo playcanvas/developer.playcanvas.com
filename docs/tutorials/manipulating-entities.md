@@ -16,9 +16,9 @@ One of the most common operations you will need to perform on Entities is to cha
 
 An important part of understanding how to move and manipulate Entities is understanding local and world co-ordinate systems. The world co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
 
-![World and Local Coordinate Systems](/img/tutorials/world-and-local.png)
+Here is a visual representation of the world-space coordinate system (left) and the local-space coordinate system (right) of an entity:
 
-*World and Local co-ordinate systems*
+![World and Local Coordinate Systems](/img/tutorials/world-and-local.png)
 
 ### Hierarchy
 
@@ -66,13 +66,13 @@ To set an Entity's orientation you can either set an absolute rotation, or apply
 
 Setting absolute rotations can be done using either [Euler angles][1] or [quaternions][2]. The Wikipedia explanations of these two mathematical representations of rotation are a little hard to follow but the basics are easy to understand. Here are the important facts:
 
-**Euler Angles**
+### Euler Angles
 
 * Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
 * If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
 * Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
-**Quaternions**
+### Quaternions
 
 * Quaternions are stored as 4 numbers and represent any orientation in 3D space.
 * They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.

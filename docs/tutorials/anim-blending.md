@@ -8,7 +8,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
     <iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Anim State Graph Blending"></iframe>
 </div>
 
-*Click on screen to focus, then press the 'p' key to blend to a punch animation*
+:::info
+
+Click on screen to focus, then press the 'p' key to blend to a punch animation.
+
+:::
 
 This tutorial illustrates the basics of animation blending.
 

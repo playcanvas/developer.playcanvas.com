@@ -12,7 +12,8 @@ This technique relies on [CubeMap][3] - the environment map that is made of 6 te
 Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tone mapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
 
 ![HDR vs LDR CubeMap for Image Based Rendering](/img/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg)
-*Notice how bright parts in the texture are clamped using LDR*
+
+Notice how bright parts in the texture are clamped using LDR.
 
 ## Energy Conservation
 
@@ -59,7 +60,7 @@ Here is an [example][7] and [project][8] of the scene using CubeMap Box Projecti
 
 [![Environment Box Projection Mapping](/img/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg)][7]
 
-*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
+The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections).
 
 [0]: https://github.com/dariomanesku/cmftStudio
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction

@@ -8,7 +8,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/9269
     <iframe loading="lazy" src="https://playcanv.as/e/p/dvJYXs1Y/" title="Real-time Multiplayer with Photon - including matchmaking"></iframe>
 </div>
 
-_Click on the floor to move_
+:::info
+
+Click on the floor to move.
+
+:::
 
 The complete project including matchmaking can be found [here][1].
 
