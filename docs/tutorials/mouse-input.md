@@ -8,7 +8,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
     <iframe loading="lazy" src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
 </div>
 
-*Move the mouse to move the cube around, press the mouse buttons to change the color of the cube*
+:::info
+
+Move the mouse to move the cube around. Press the mouse buttons to change the color of the cube.
+
+:::
 
 Mouse handling in the PlayCanvas engine is provided by the `pc.Mouse` object. The Mouse object provides a simple interface for detecting when the mouse is moved or when mouse buttons are pressed. It also removes some of the cross-browser inconsistencies with handling mouse co-ordinates.
 

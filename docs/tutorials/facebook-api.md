@@ -8,7 +8,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
     <iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
 </div>
 
-*Log in with facebook to see your photos in a 3D sculpture*
+:::info
+
+Log in with facebook to see your photos in a 3D sculpture.
+
+:::
 
 PlayCanvas is a perfect partner for building WebGL Facebook games and applications. Facebook is a great place to find a large audience for your games and PlayCanvas lets you create fast and performant games that are optimized for the web.
 

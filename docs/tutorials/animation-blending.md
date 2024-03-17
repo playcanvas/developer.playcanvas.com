@@ -14,7 +14,11 @@ This tutorial uses the deprecated Model and Animation components. Please refer t
     <iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
 </div>
 
-*Click on screen to focus, then press the 'p' key to blend to a punch animation*
+:::info
+
+Click on screen to focus, then press the 'p' key to blend to a punch animation.
+
+:::
 
 This tutorial illustrates the basics of animation blending.
 

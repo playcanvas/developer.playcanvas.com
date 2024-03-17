@@ -3,5 +3,4 @@ config:
   line-length: false
   no-alt-text: false
   no-inline-html: false
-  no-emphasis-as-heading: false
   no-bare-urls: false
