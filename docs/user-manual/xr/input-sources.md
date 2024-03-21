@@ -109,6 +109,33 @@ if (inputSource.profiles.includes('oculus-touch-v2')) {
 }
 ```
 
+## UI
+
+The UI elements such as 3D screens, buttons, scroll areas, and other components work well with input sources, and events such as "click" will trigger regardless of input type: mouse, touch, or XR input source.
+
+By default, all input source rays will be used to check for interaction with UI components, but you can disable it using a flag:
+
+```javascript
+inputSource.elementInput = false;
+```
+
+You can also access a UI entity with which the input source has interacted:
+
+```javascript
+const entity = inputSource.elementEntity;
+if (entity) {
+    // a specific entity that input source has interacted with
+}
+```
+
+It is also possible to subscribe to ButtonComponent `select` events, that are fired only by XR input sources, similar to specific events of mouse or touch:
+
+```javascript
+entity.button.on('selectstart', (evt) => {
+    // this buttons is selected by evt.inputSource
+});
+```
+
 [1]: https://api.playcanvas.com/classes/Engine.XrInputSource.html
 [2]: https://api.playcanvas.com/classes/Engine.XrInput.html
 [3]: https://api.playcanvas.com/classes/Engine.XrManager.html
