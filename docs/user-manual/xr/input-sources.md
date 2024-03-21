@@ -111,7 +111,7 @@ if (inputSource.profiles.includes('oculus-touch-v2')) {
 
 ## UI
 
-The UI elements such as 3D screens, buttons, scroll areas, and other components work well with input sources, and events such as "click" will trigger regardless of input type: mouse, touch, or XR input source.
+UI elements such as 3D screens, buttons, scroll views, and other components work well with input sources. Events such as `click` will trigger regardless of input type: mouse, touch, or XR input source.
 
 By default, all input source rays will be used to check for interaction with UI components, but you can disable it using a flag:
 
