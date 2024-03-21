@@ -124,7 +124,7 @@ You can also access a UI entity with which an input source has interacted:
 ```javascript
 const entity = inputSource.elementEntity;
 if (entity) {
-    // a specific entity that input source has interacted with
+    // a specific entity that the input source has interacted with
 }
 ```
 
