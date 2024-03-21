@@ -128,7 +128,7 @@ if (entity) {
 }
 ```
 
-It is also possible to subscribe to ButtonComponent `select` events, that are fired only by XR input sources, similar to specific events of mouse or touch:
+It is also possible to subscribe to ButtonComponent `select` events, that are fired only by XR input sources, similar to specific mouse or touch events:
 
 ```javascript
 entity.button.on('selectstart', (evt) => {
