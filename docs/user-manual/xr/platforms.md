@@ -3,13 +3,13 @@ title: Platforms
 sidebar_position: 2
 ---
 
-WebXR is a subset of APIs that requires a certain type of hardware and its capabilities, such as camera sensors, gyroscope, accelerometer, computation power, CV techniques, as well as software support.
+WebXR has specific hardware requirements providing capabilities such as camera sensors, gyroscope, accelerometer, computation power, CV techniques, as well as software support.
 
-While the market is constantly evolving with platform vendors forever improving their software, we try to ensure that PlayCanvas WebXR support is up to date, supporting the widest range of platforms.
+While the market is constantly evolving with platform vendors forever improving their software, we try to ensure that PlayCanvas' WebXR support is up to date, supporting the widest range of platforms.
 
 ## Platforms and Capabilities
 
-Below is a list of platforms that PlayCanvas was tested with.
+Below is a list of platforms that PlayCanvas has been tested on:
 
 | Platform         | VR | AR  | Capabilities                                                                                                      |
 | ---------------- | -- | --- | ----------------------------------------------------------------------------------------------------------------- |
