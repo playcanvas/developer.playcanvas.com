@@ -18,7 +18,7 @@ for (let i = 0; i < inputSources.length; i++) {
 
 Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices via the underlying platform.
 
-And some input sources are **transient** - and have a short lifespan only during their primary action, it can be (not limited to):
+Some input sources are **transient** and have a short lifespan during their primary action. Examples are:
 
 - Touch screen tap in AR session on mobile.
 - Gaze + pinch interaction used on devices with eye tracking, such as Apple Vision Pro.
