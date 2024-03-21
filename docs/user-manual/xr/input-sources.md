@@ -16,7 +16,15 @@ for (let i = 0; i < inputSources.length; i++) {
 }
 ```
 
-Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices by the underlying platform, and some input sources are transient - and have a lifespan only during their primary action (e.g. touch screen tap in an AR session on mobile). You can subscribe to `add` and `remove` events:
+Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices via the underlying platform.
+
+Some input sources are **transient** and have a short lifespan during their primary action. Examples are:
+
+- Touch screen tap in AR session on mobile.
+- Gaze + pinch interaction used on devices with eye tracking, such as Apple Vision Pro.
+- Gaze VR interaction that is common for simple VR devices.
+
+It is best to subscribe to `add` and `remove` events and then create their visual representation if needed:
 
 ```javascript
 app.xr.input.on('add', function (inputSource) {
@@ -48,12 +56,28 @@ app.xr.input.on('select', function (inputSource) {
 
 ## Ray
 
-Each input source has a ray which has an origin where it points from and a direction in which it is pointing. A ray is transformed into world space. Some examples of input sources might be, but are not limited to:
+Each input source has a ray which has an **origin** where it points from and a **direction** in which it is pointing. A ray is transformed into world space. Some examples of input sources might be, but are not limited to:
 
 - **Controllers** (e.g. Meta Quest Touch), will have a ray originating from the tip of the handheld device and the direction is based on the rotation of the device.
 - **Hands** have a ray that originates from a point between the thumb and index tips and points forward. If the underlying system does not provide a ray for hands, the PlayCanvas engine will emulate it. So all hands should have a ray.
 - **Screen**-based input. This might be available on mobile devices (mono screen) in AR session types, where the user can interact with the virtual world via a touch screen.
 - **Gaze**-based input, such as a mobile phone is inserted into a Google Cardboard style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
+
+You can check the type of the target ray:
+
+```javascript
+switch (inputSource.targetRayMode) {
+    case pc.XRTARGETRAY_SCREEN:
+        // screen-based interaction, such as touch-screen on mobile in AR mode
+        break;
+    case pc.XRTARGETRAY_POINTER:
+        // pointer-based, such as hand-held controllers or hands
+        break;
+    case pc.XRTARGETRAY_GAZE:
+        // gaze-based, that is based on viewer device orientation and position
+        break;
+}
+```
 
 Here is an example illustrating how to check whether a ray has intersected with the bounding box of a mesh:
 
