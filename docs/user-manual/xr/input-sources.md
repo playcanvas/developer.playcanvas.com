@@ -68,13 +68,13 @@ You can check the type of the target ray:
 ```javascript
 switch(inputSource.targetRayMode) {
     case pc.XRTARGETRAY_SCREEN:
-        // screen based interaction, such as touch-screen on mobile in AR mode
+        // screen-based interaction, such as touch-screen on mobile in AR mode
         break;
     case pc.XRTARGETRAY_POINTER:
-        // pointer based, such as hand-held controllers or hands
+        // pointer-based, such as hand-held controllers or hands
         break;
     case pc.XRTARGETRAY_GAZE:
-        // gaze based, that is based on viewer device orientation and position
+        // gaze-based, that is based on viewer device orientation and position
         break;
 }
 ```
