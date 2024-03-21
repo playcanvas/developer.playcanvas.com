@@ -119,7 +119,7 @@ By default, all input source rays will be used to check for interaction with UI 
 inputSource.elementInput = false;
 ```
 
-You can also access a UI entity with which the input source has interacted:
+You can also access a UI entity with which an input source has interacted:
 
 ```javascript
 const entity = inputSource.elementEntity;
