@@ -66,7 +66,7 @@ Each input source has a ray which has an **origin** where it points from and a *
 You can check the type of the target ray:
 
 ```javascript
-switch(inputSource.targetRayMode) {
+switch (inputSource.targetRayMode) {
     case pc.XRTARGETRAY_SCREEN:
         // screen-based interaction, such as touch-screen on mobile in AR mode
         break;
