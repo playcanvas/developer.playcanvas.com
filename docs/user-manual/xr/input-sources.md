@@ -132,7 +132,7 @@ It is also possible to subscribe to ButtonComponent `select` events, that are fi
 
 ```javascript
 entity.button.on('selectstart', (evt) => {
-    // this buttons is selected by evt.inputSource
+    // this button is selected by evt.inputSource
 });
 ```
 
