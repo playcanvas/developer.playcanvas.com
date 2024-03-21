@@ -5,6 +5,8 @@ sidebar_position: 5
 
 An [XrInputSource][1] represents an input mechanism that allows the user to interact with a virtual world. Those include but are not limited to handheld controllers, optically tracked hands, gaze-based input methods, and touch screens. However, an input source is not explicitly associated with traditional gamepads, mice or keyboards.
 
+<img loading="lazy" src="/img/user-manual/xr/controllers.webp" alt="Controller models with a Ray" width="720" />
+
 ## Accessing Input Sources
 
 A list of input sources is available on the [XrInput][2] manager which is created by the [XrManager][3]:
@@ -62,6 +64,8 @@ Each input source has a ray which has an **origin** where it points from and a *
 - **Hands** have a ray that originates from a point between the thumb and index tips and points forward. If the underlying system does not provide a ray for hands, the PlayCanvas engine will emulate it. So all hands should have a ray.
 - **Screen**-based input. This might be available on mobile devices (mono screen) in AR session types, where the user can interact with the virtual world via a touch screen.
 - **Gaze**-based input, such as a mobile phone is inserted into a Google Cardboard style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
+
+<img loading="lazy" src="/img/user-manual/xr/controller-ray.webp" alt="A Ray from a Controller" width="480" />
 
 You can check the type of the target ray:
 
