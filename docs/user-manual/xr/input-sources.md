@@ -18,13 +18,13 @@ for (let i = 0; i < inputSources.length; i++) {
 }
 ```
 
-Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices by the underlying platform.
+Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices via the underlying platform.
 
-And some input sources are **transient** - and have a short lifespan only during their primary action, it can be (not limited to):
+Some input sources are **transient** and have a short lifespan during their primary action. Examples are:
 
- * Touch screen tap in AR session on mobile.
- * Gaze + pinch interaction used on devices with eye tracking, such as Apple Vision Pro.
- * Gaze VR interaction that is common for simple VR devices.
+- Touch screen tap in AR session on mobile.
+- Gaze + pinch interaction used on devices with eye tracking, such as Apple Vision Pro.
+- Gaze VR interaction that is common for simple VR devices.
 
 It is best to subscribe to `add` and `remove` events and then create their visual representation if needed:
 
@@ -70,15 +70,15 @@ Each input source has a ray which has an **origin** where it points from and a *
 You can check the type of the target ray:
 
 ```javascript
-switch(inputSource.targetRayMode) {
+switch (inputSource.targetRayMode) {
     case pc.XRTARGETRAY_SCREEN:
-        // screen based interaction, such as touch-screen on mobile in AR mode
+        // screen-based interaction, such as touch-screen on mobile in AR mode
         break;
     case pc.XRTARGETRAY_POINTER:
-        // pointer based, such as hand-held controllers or hands
+        // pointer-based, such as hand-held controllers or hands
         break;
     case pc.XRTARGETRAY_GAZE:
-        // gaze based, that is based on viewer device orientation and position
+        // gaze-based, that is based on viewer device orientation and position
         break;
 }
 ```
@@ -135,6 +135,33 @@ Each input source might have a list of strings describing a type of input source
 if (inputSource.profiles.includes('oculus-touch-v2')) {
     // it is an Oculus Touch™ handheld device
 }
+```
+
+## UI
+
+UI elements such as 3D screens, buttons, scroll views, and other components work well with input sources. Events such as `click` will trigger regardless of input type: mouse, touch, or XR input source.
+
+By default, all input source rays will be used to check for interaction with UI components, but you can disable this using a flag:
+
+```javascript
+inputSource.elementInput = false;
+```
+
+You can also access a UI entity with which an input source has interacted:
+
+```javascript
+const entity = inputSource.elementEntity;
+if (entity) {
+    // a specific entity that the input source has interacted with
+}
+```
+
+It is also possible to subscribe to ButtonComponent `select` events, that are fired only by XR input sources, similar to specific mouse or touch events:
+
+```javascript
+entity.button.on('selectstart', (evt) => {
+    // this button is selected by evt.inputSource
+});
 ```
 
 [1]: https://api.playcanvas.com/classes/Engine.XrInputSource.html
