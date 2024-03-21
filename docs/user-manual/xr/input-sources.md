@@ -20,9 +20,9 @@ Input sources can be added and removed dynamically. This can be done by connecti
 
 And some input sources are **transient** - and have a short lifespan only during their primary action, it can be (not limited to):
 
- * Touch screen tap in AR session on mobile.
- * Gaze + pinch interaction used on devices with eye tracking, such as Apple Vision Pro.
- * Gaze VR interaction that is common for simple VR devices.
+* Touch screen tap in AR session on mobile.
+* Gaze + pinch interaction used on devices with eye tracking, such as Apple Vision Pro.
+* Gaze VR interaction that is common for simple VR devices.
 
 It is best to subscribe to `add` and `remove` events and then create their visual representation if needed:
 
