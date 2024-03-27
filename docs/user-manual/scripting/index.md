@@ -11,6 +11,25 @@ Generally you won't have to worry about the engine code, it's a single JavaScrip
 
 Here is an example of a simple script. It is called "rotate" and it rotates the entity that it is attached to by 10° every second.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
+```javascript
+import { ScriptType } from 'playcanvas';
+
+export class Rotate extends ScriptType {
+    update(dt) {
+        this.entity.rotate(0, 10 * dt, 0);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
+
 ```javascript
 var Rotate = pc.createScript("rotate");
 
@@ -18,6 +37,9 @@ Rotate.prototype.update = function (dt) {
     this.entity.rotate(0, 10*dt, 0);
 };
 ```
+
+</TabItem>
+</Tabs>
 
 Scripts are defined by the name given when they are created and they are attached to [Script Component][1] via the Editor or by adding a script component to an Entity in your code.
 
