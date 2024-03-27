@@ -272,7 +272,6 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 </TabItem>
 </Tabs>
 
-
 - **connectToRegionMaster** Connects to the master server in the specified region.
 - **this.region** Used to configure the region.
 
