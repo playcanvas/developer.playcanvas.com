@@ -455,7 +455,6 @@ Network.prototype.updatePosition = function () {
 </TabItem>
 </Tabs>
 
-
 Back on the server, we need to account for what happens when the player sends us their position. On the server, we need to add a new event:
 
 ```javascript

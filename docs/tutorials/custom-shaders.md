@@ -217,7 +217,6 @@ CustomShader.prototype.update = function(dt) {
 </TabItem>
 </Tabs>
 
-
 To achieve the disappearing effect we use the height map value as a threshold, and we increase the threshold over time. In the update method above we bounce the value of `t` between 0 and 1 and we set this as the `uTime` uniform.
 
 In our shader if the value of the heightmap on a pixel is less than the value time value we don't draw the pixel. In addition at values that are close to the threshold, we draw the pixel in blue to display a nice 'edge' to the effect.

@@ -594,6 +594,7 @@ export class PhotonLoadBalancingPlayCanvas extends ScriptType {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="classic" label="Classic">
 
