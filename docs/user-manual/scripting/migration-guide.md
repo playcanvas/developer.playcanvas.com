@@ -68,6 +68,35 @@ pc.script.create('myScript', function (app) {
 
 And here is the equivalent script in the current format:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
+```javascript
+import { ScriptType } from 'playcanvas';
+
+export class MyScript extends ScriptType {
+    static attributesDefinition = {
+        speed: { type: 'number', default: 10 }
+    };
+
+    // initialize code called once per entity
+    initialize() {
+        var app = this.app;       // application instance is available as this.app
+        var entity = this.entity; // entity property already set up
+    }
+
+    // update code called every frame
+    update(dt) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
+
 ```javascript
 var MyScript = pc.createScript('myScript');
 
@@ -83,6 +112,9 @@ MyScript.prototype.initialize = function() {
 MyScript.prototype.update = function(dt) {
 };
 ```
+
+</TabItem>
+</Tabs>
 
 Things to notice:
 
@@ -110,21 +142,46 @@ onDestroy: function () {
 
 To migrate these to the current script format, you would register event handlers in the script's `initialize` function:
 
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
 ```javascript
-MyScript.prototype.initialize = function() {
-    this.on("enable", function () {
+import { ScriptType } from 'playcanvas';
 
-    });
+export class Movement extends ScriptType {
+    initialize() {
 
-    this.on("disable", function () {
+    }
 
-    });
+    update(dt) {
+        this.entity.setPosition(Math.sin(Date.now() / 1000), 0.5, 0);
+    }
+}
+```
 
-    this.on("destroy", function () {
+</TabItem>
+<TabItem value="classic" label="Classic">
 
-    });
+```javascript
+export class MyScript extends ScriptType {
+    initialize() {
+        this.on("enable", function () {
+
+        });
+
+        this.on("disable", function () {
+
+        });
+
+        this.on("destroy", function () {
+
+        });
+    }
 };
 ```
+
+</TabItem>
+</Tabs>
 
 ### Step 5 - Transfer Scene Hierarchy
 

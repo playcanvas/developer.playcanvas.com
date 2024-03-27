@@ -5,6 +5,41 @@ sidebar_position: 3
 
 Here is a basic script. We can learn about the structure of a PlayCanvas script from it.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
+```javascript
+import { ScriptType } from 'playcanvas';
+
+export class Rotate extends ScriptType {
+    static attributesDefinition = {
+        speed: { type: 'number', default: 10 }
+    };
+
+    initialize() {
+        this.local = false; // choose local rotation or world rotation
+    }
+
+    update(dt) {
+        if (this.local) {
+            this.entity.rotateLocal(0, this.speed * dt, 0);
+        } else {
+            this.entity.rotate(0, this.speed * dt, 0);
+        }
+    }
+
+    swap(old) {
+        this.local = old.local;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
+
 ```javascript
 var Rotate = pc.createScript('rotate');
 
@@ -30,6 +65,9 @@ Rotate.prototype.swap = function(old) {
     this.local = old.local;
 };
 ```
+
+</TabItem>
+</Tabs>
 
 We'll break down each section of the script
 
