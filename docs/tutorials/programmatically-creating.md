@@ -82,6 +82,93 @@ When you are finished with an Entity you call the `destroy` method on the Entity
 
 ## In Action
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
+```javascript
+import { ScriptType, Entity, math } from 'playcanvas';
+
+export class EntityCreator extends ScriptType {
+    static attributesDefinition = {
+        material: {
+            type: 'asset',
+            assetType: 'material'
+        },
+        boxDimensions: {
+            type: 'number',
+            default: 10
+        },
+        lifetime: {
+            type: 'number',
+            default: 5
+        },
+        maxCubes: {
+            type: 'number',
+            default: 10
+        }
+    };
+
+    // initialize code called once per entity
+    initialize() {
+        this.entities = [];
+    }
+
+    // update code called every frame
+    update(dt) {
+        // Spawn new cubes if there are less than maxCubes
+        while (this.entities.length < this.maxCubes) {
+            this.spawnCube();
+        }
+
+        // Loop through Entities and delete them when their time is up
+        for (let i = 0; i < this.entities.length; i++) {
+            this.entities[i].timer -= dt;
+            if (this.entities[i].timer < 0) {
+                // entity.destroy() deletes all components and removes Entity from the hierarchy
+                this.entities[i].entity.destroy();
+
+                // Remove from the local list
+                this.entities.splice(i, 1);
+            }
+        }
+    }
+
+    spawnCube() {
+        const entity = new Entity();
+
+        // Add a new Model Component and add it to the Entity.
+        entity.addComponent("render", {
+            type: 'box'
+        });
+
+        // set material
+        entity.render.material = this.material.resource;
+
+        // Move to a random position
+        entity.setLocalPosition(
+            math.random(-this.boxDimensions, this.boxDimensions),
+            math.random(-this.boxDimensions, this.boxDimensions),
+            math.random(-this.boxDimensions, this.boxDimensions)
+        );
+
+        // Add to the Hierarchy
+        this.app.root.addChild(entity);
+
+        // Store in a list for some random duration before deleting
+        this.entities.push({
+            entity: entity,
+            timer: math.random(0, this.lifetime)
+        });
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
+
 ```javascript
 var EntityCreator = pc.createScript('entityCreator');
 
@@ -158,6 +245,9 @@ EntityCreator.prototype.spawnCube = function () {
     });
 };
 ```
+
+</TabItem>
+</Tabs>
 
 This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
 
