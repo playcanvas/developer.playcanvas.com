@@ -292,8 +292,8 @@ export class FacePhoto extends ScriptType {
         mesh.setParameter("texture_emissiveMap", texture);
 
         this.app.root.addChild(e);
-        var MIN = -2.5;
-        var MAX = 2.5;
+        const MIN = -2.5;
+        const MAX = 2.5;
 
         // randomly position the photo and set the aspect ratio to the same as the texture
         e.translate(math.random(MIN, MAX), math.random(MIN, MAX), math.random(MIN, MAX));
