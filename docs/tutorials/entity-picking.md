@@ -42,9 +42,9 @@ export class PickerRaycast extends ScriptType {
     initialize() {
         this.app.mouse.on(EVENT_MOUSEDOWN, this.onSelect, this);
 
-        this.on('destroy', function() {
+        this.on('destroy', () => {
             this.app.mouse.off(EVENT_MOUSEDOWN, this.onSelect, this);
-        }, this);
+        });
     }
 
     onSelect (e) {
