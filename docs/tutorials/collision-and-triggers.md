@@ -70,7 +70,7 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { ScriptType, Vec3 } from 'playcanvas';
 
 export class Trigger extends ScriptType {
     // initialize code called once per entity
