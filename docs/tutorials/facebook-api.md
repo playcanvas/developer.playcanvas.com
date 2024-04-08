@@ -406,7 +406,7 @@ This line listens for the login event from our `fb-ui.js` file. When the user lo
 
 ```javascript
 // request the most recent photos from user's facebook account
-FB.api(path, (lists) =>> {
+FB.api(path, (lists) => {
     for (var i = 0; i < lists.data.length; i++) {
         let count = lists.data.length;
         var photoId = lists.data[i].id;
