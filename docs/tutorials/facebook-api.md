@@ -284,9 +284,9 @@ export class FacePhoto extends ScriptType {
 
     createPhoto(texture) {
         // clone the image template entity
-        var e = this.template.clone();
+        const e = this.template.clone();
         e.enabled = true;
-        var mesh = e.model.meshInstances[0];
+        const mesh = e.model.meshInstances[0];
 
         // override the emissive map on the mesh instance to display the photo texture
         mesh.setParameter("texture_emissiveMap", texture);
