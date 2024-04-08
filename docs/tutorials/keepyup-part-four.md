@@ -163,7 +163,6 @@ export class Ball extends ScriptType {
         this._angSpeed = 0;
     }
 }
-
 ```
 
 </TabItem>
