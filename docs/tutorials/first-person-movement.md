@@ -70,7 +70,7 @@ export class FirstPersonMovement extends ScriptType {
         // when the mouse is clicked hide the cursor
         app.mouse.on("mousedown", () => {
             app.mouse.enablePointerLock();
-        }, this);
+        });
 
         // Check for required components
         if (!this.entity.collision) {
