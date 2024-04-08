@@ -266,7 +266,7 @@ export class FacePhoto extends ScriptType {
                 FB.api(path, (photo) => {
 
                     // create a texture asset using the image URL
-                    var asset = new Asset(photo.id, "texture", {
+                    const asset = new Asset(photo.id, "texture", {
                         url: photo.images[0].source
                     });
 
