@@ -299,7 +299,7 @@ export class FacePhoto extends ScriptType {
         e.translate(math.random(MIN, MAX), math.random(MIN, MAX), math.random(MIN, MAX));
         e.rotate(90, 0, 0);
 
-        var aspect = texture.width / texture.height;
+        const aspect = texture.width / texture.height;
         e.setLocalScale(aspect, 1, 1);
     }
 }
