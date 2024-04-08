@@ -248,7 +248,7 @@ export class FacePhoto extends ScriptType {
         const app = this.app;
         const path = string.format("{0}/photos", FB.getUserID());
 
-        const done = function() {
+        const done = () => {
             const camera = app.root.findByName("Camera");
             if (camera && camera.script.camera) {
                 camera.script.camera.setBestCameraPositionForModel();
