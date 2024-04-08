@@ -79,7 +79,6 @@ export class UiMenu extends ScriptType {
         e.stopPropagation();
     }
 }
-
 ```
 
 </TabItem>
