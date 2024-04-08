@@ -53,8 +53,8 @@ export class Game extends ScriptType {
 
     setResolution() {
         // Adjust resolution based on screen size
-        var w = window.screen.width;
-        var h = window.screen.height;
+        const w = window.screen.width;
+        const h = window.screen.height;
 
         if (w < 640) {
             this.app.setCanvasResolution(RESOLUTION_AUTO, w, h);
