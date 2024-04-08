@@ -120,8 +120,10 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType, Vec3, EVENT_KEYDOWN } from 'playcanvas';
-import { KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_A, KEY_D, KEY_W, KEY_S, KEY_F, KEY_R } from 'playcanvas';
+import {
+    ScriptType, Vec3,
+    EVENT_KEYDOWN, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_A, KEY_D, KEY_W, KEY_S, KEY_F, KEY_R
+} from 'playcanvas';
 
 export class Movement extends ScriptType {
         
