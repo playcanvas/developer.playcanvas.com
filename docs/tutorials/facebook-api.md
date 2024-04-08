@@ -257,7 +257,7 @@ export class FacePhoto extends ScriptType {
 
         // request the most recent photos from user's facebook account
         FB.api(path, (lists) => {
-            for (var i = 0; i < lists.data.length; i++) {
+            for (let i = 0; i < lists.data.length; i++) {
                 let count = lists.data.length; // Adjusted to let for block scope
                 const photoId = lists.data[i].id;
                 path = string.format("/{0}?fields=images", photoId);
