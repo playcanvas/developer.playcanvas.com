@@ -447,7 +447,6 @@ export class UiController extends ScriptType {
         }, this);
     }
 }
-
 ```
 
 </TabItem>
