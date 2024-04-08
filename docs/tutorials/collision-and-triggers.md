@@ -79,8 +79,8 @@ export class Trigger extends ScriptType {
     };
 
     onTriggerEnter(entity) {
-        this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
-        this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
+        this.entity.rigidbody.linearVelocity = Vec3.ZERO;
+        this.entity.rigidbody.angularVelocity = Vec3.ZERO;
         // Reset back to roughly the position the entity started in.
         const position = entity.getPosition();
         this/entity.rigidbody.teleport(position.x, 10, 0);
