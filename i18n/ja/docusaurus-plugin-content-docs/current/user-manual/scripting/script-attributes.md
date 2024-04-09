@@ -133,7 +133,7 @@ MyScript.attributes.add('value', {
 });
 ```
 
-Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`.
+属性に対する可能性のある値のリストを宣言するために、enumプロパティを使用します。プロパティはオプションを表す配列のオブジェクトです。`key` はオプションのタイトルで、 `value` は属性の値です。このプロパティは、`number`、`string`などの様々な属性タイプに使用できます。
 
 ### JSON属性
 

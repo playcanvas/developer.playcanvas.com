@@ -10,7 +10,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 :::info
 
-This tutorial uses a custom shader on a material to create a dissolve effect in GLSL. The complete project can be found [here][project].
+このチュートリアルでは、GLSLを使用してマテリアル上にカスタムシェーダーを作成してディゾルブエフェクトを作ります。
 
 :::
 

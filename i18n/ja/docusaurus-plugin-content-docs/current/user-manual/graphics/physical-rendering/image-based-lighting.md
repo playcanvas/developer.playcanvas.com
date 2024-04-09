@@ -60,7 +60,7 @@ CubeMap Box Projectionを使用したシーンの[例][7]と[プロジェクト]
 
 [![Environment Box Projection Mapping](/img/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg)][7]
 
-The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections).
+このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています。
 
 [0]: https://github.com/dariomanesku/cmftStudio
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction

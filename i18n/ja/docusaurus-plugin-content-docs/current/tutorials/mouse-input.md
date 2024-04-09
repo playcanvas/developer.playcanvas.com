@@ -10,7 +10,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 :::info
 
-Move the mouse to move the cube around. Press the mouse buttons to change the color of the cube.
+マウスを動かしてキューブを動かし、マウスのボタンを押してキューブの色を変えることができます。
 
 :::
 

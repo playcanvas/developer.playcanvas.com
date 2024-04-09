@@ -56,7 +56,7 @@ sidebar_position: 1
 
 #### フレームインスペクターのアクション
 
-- **New Sprite From Selection** - Create a new Sprite Asset and assign the frames that you have selected to the Sprite, in the order that they were selected.
+- **New Sprite From Selection** - 新しいスプライトアセットを生成し、スプライトに選択したフレームを選択した順に割り当てます。
 - **New Sliced Sprite From Selection** - 新しいスプライトアセットを作成し、そのタイプを*スライス*に設定します。選択したフレームを、選択した順序でスプライトに割り当てます。
 - **Focus on Selection** - 選択したフレームにビューポートをフォーカスします。[キーボードショートカット:F]
 - **Trim Selected Frames** - 画像の周りの余分な空白領域を削除するために、選択したフレームのサイズを縮小します。[キーボードショートカット:T]

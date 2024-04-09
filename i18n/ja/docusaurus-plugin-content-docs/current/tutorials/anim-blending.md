@@ -10,7 +10,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 :::info
 
-Click on screen to focus, then press the 'p' key to blend to a punch animation.
+スクリーンをクリックしてフォーカスを合わせ、'p' キーを押すとパンチアニメーションへブレンドされます。
 
 :::
 

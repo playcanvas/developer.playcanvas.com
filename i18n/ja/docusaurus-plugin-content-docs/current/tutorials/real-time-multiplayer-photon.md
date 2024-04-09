@@ -10,7 +10,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/926
 
 :::info
 
-Click on the floor to move.
+床をクリックすることで移動ができます。
 
 :::
 

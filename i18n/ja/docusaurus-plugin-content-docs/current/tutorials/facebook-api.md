@@ -10,7 +10,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 :::info
 
-Log in with facebook to see your photos in a 3D sculpture.
+Facebookにログインしてあなたの写真を3D彫刻で表示しましょう。
 
 :::
 

@@ -10,7 +10,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 :::info
 
-Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.
+クリックしてフォーカスしてSPACEBARを押してAとBのモデルを切り替えます。"L"を押すとCモデルを読み込み、"C"を押すとCモデルが表示されます。
 
 :::
 
@@ -22,7 +22,7 @@ Click to focus, hold and release SPACEBAR to switch between two A and B models. 
 
 ## セットアップ
 
-The project is set up as follows:
+プロジェクトのセットアップ
 
 * 3つのモデルアセット **A** (文字Aのモデル)、 **B** (文字Bのモデル)、 **C** (文字Cのモデル)がアップロードされています。
 * **C**レンダーアセットは *プリロードされないよう* に設定されています。
