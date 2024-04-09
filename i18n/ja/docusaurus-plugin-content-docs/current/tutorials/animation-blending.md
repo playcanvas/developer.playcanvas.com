@@ -14,7 +14,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
     <iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
 </div>
 
-*スクリーンにフォーカスしてから、パンチアニメーションにブレンドするには「p」キーを押します。*
+:::info
+
+Click on screen to focus, then press the 'p' key to blend to a punch animation.
+
+:::
 
 このチュートリアルでは、アニメーションブレンディングの基本を紹介します。
 

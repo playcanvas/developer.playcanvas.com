@@ -12,7 +12,8 @@ PlayCanvasで物理ベースレンダリングを使用する際に最良の結�
 画像データはLDRまたはHDR(高ダイナミックレンジ)の色空間に保存することができ、単一チャンネルで0.0〜1.0(256階調)以上の保存が可能です。HDRでは、ガンマ補正、トーンマッピング、露光などの環境要因の組み合わせにより、1.0以上の(白色と見なされます)を保存できます。これにより、より詳細な光の詳細を含めることができ、光の品質などのアーティストが望む結果を得られるようコントロールできます 。
 
 ![HDR vs LDR CubeMap for Image Based Rendering](/img/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg)
-*Notice how bright parts in the texture are clamped using LDR*
+
+Notice how bright parts in the texture are clamped using LDR.
 
 ## エネルギーの保全
 
@@ -59,7 +60,7 @@ CubeMap Box Projectionを使用したシーンの[例][7]と[プロジェクト]
 
 [![Environment Box Projection Mapping](/img/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg)][7]
 
-*このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています*
+The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections).
 
 [0]: https://github.com/dariomanesku/cmftStudio
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction

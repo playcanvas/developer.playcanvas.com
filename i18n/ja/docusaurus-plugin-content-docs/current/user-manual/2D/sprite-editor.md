@@ -37,8 +37,8 @@ sidebar_position: 1
 
 次に、グリッドセルを指定する方法を選択します。
 
-* Grid By Frame Count - テクスチャを水平および垂直に分割するグリッドセルの数を指定します。
-* Grid By Frame Size - 各グリッドセルのサイズをピクセル単位で指定します。
+- Grid By Frame Count - テクスチャを水平および垂直に分割するグリッドセルの数を指定します。
+- Grid By Frame Size - 各グリッドセルのサイズをピクセル単位で指定します。
 
 次に、オフセット (Offset) とスペーシング (Spacing) の値を設定します。オフセットは、グリッドを開始する前にテクスチャの左上から何ピクセル移動するかを示す数値です。スペーシングは、各グリッドセル間のピクセル数です。
 
@@ -56,14 +56,11 @@ sidebar_position: 1
 
 #### フレームインスペクターのアクション
 
-**New Sprite From Selection**
-
-新しいスプライトアセットを生成し、スプライトに選択したフレームを選択した順に割り当てます。
-
- * **New Sliced Sprite From Selection** - 新しいスプライトアセットを作成し、そのタイプを*スライス*に設定します。選択したフレームを、選択した順序でスプライトに割り当てます。
- * **Focus on Selection** - 選択したフレームにビューポートをフォーカスします。[キーボードショートカット:F]
- * **Trim Selected Frames** - 画像の周りの余分な空白領域を削除するために、選択したフレームのサイズを縮小します。[キーボードショートカット:T]
- * **Delete Selected Frames** - 選択したフレームを削除します。 [キーボードショートカット:Delete]
+- **New Sprite From Selection** - Create a new Sprite Asset and assign the frames that you have selected to the Sprite, in the order that they were selected.
+- **New Sliced Sprite From Selection** - 新しいスプライトアセットを作成し、そのタイプを*スライス*に設定します。選択したフレームを、選択した順序でスプライトに割り当てます。
+- **Focus on Selection** - 選択したフレームにビューポートをフォーカスします。[キーボードショートカット:F]
+- **Trim Selected Frames** - 画像の周りの余分な空白領域を削除するために、選択したフレームのサイズを縮小します。[キーボードショートカット:T]
+- **Delete Selected Frames** - 選択したフレームを削除します。 [キーボードショートカット:Delete]
 
 ### スプライトインスペクター
 
