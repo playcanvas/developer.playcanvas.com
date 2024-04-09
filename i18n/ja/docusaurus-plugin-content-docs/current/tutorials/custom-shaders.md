@@ -8,9 +8,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
     <iframe loading="lazy" src="https://playcanv.as/p/zwvhLoS9/" title="Custom Shaders"></iframe>
 </div>
 
-*このチュートリアルでは、GLSLを使用してマテリアル上にカスタムシェーダーを作成してディゾルブエフェクトを作ります。*
+:::info
 
-完成したプロジェクトは[こちら][project]で見つけることができます。
+このチュートリアルでは、GLSLを使用してマテリアル上にカスタムシェーダーを作成してディゾルブエフェクトを作ります。
+
+:::
 
 3DモデルをPlayCanvasにインポートすると、デフォルトで [物理マテリアル] [3]が使用されます。これは、多くのレンダリングニーズをカバーできる汎用的なマテリアルです。
 

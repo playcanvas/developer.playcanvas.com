@@ -16,9 +16,9 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186
 
 エンティティの移動や操作方法を理解する上で重要なのは、ローカル座標系とワールド座標系の理解です。ワールド座標系はすべてのエンティティで共有されており、固定された原点 `(0,0,0)` と固定された向きがあります。ワールド座標系では、`(0,1,0)` が上を向いています。ローカル座標系はエンティティ自体に対する相対的な座標系です。したがって、ローカル原点はエンティティの位置であり、向きはエンティティの向きに従います。
 
-![World and Local Coordinate Systems](/img/tutorials/world-and-local.png)
+Here is a visual representation of the world-space coordinate system (left) and the local-space coordinate system (right) of an entity:
 
-*ワールド座標系とローカル座標系*
+![World and Local Coordinate Systems](/img/tutorials/world-and-local.png)
 
 ### ヒエラルキー (Hierarchy)
 
@@ -66,13 +66,13 @@ entity.translateLocal(0、0、1);
 
 絶対回転は、[オイラー角][1]または[クォータニオン][2]を使用して行うことができます。回転のこれらの2つの数学的表現に関するWikipediaの説明は少し分かりにくいですが、基本的な考え方は簡単です。以下が重要な事実です。
 
-**オイラー角** (Euler Angles)
+### Euler Angles
 
 * オイラー角（Euler angles）は、座標系の *X軸、Y軸、Z軸の順* に、度数法で表される3つの回転です。
 * 座標系の軸を見下ろす場合、正のオイラー角は、その軸を中心に反時計回りに回転します。
 * オイラー角はわかりやすいため、その影響を頭で視覚化できます。
 
-**クォータニオン** (Quaternions)
+### Quaternions
 
 * クォータニオンは4つの数字として格納され、3D空間の任意の向きを表します。
 * 直接設定することは困難ですが、オイラー角、回転行列、または軸角度表現から設定できます。

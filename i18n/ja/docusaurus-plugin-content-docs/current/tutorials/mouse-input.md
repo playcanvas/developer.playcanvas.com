@@ -8,7 +8,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
     <iframe loading="lazy" src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
 </div>
 
-*マウスを動かしてキューブを動かし、マウスのボタンを押してキューブの色を変えることができます*
+:::info
+
+マウスを動かしてキューブを動かし、マウスのボタンを押してキューブの色を変えることができます。
+
+:::
 
 PlayCanvasのエンジンでは、`pc.Mouse`オブジェクトが提供されており、マウスが移動したときやマウスボタンが押されたときに検出するためのシンプルなインターフェイスを提供します。また、マウス座標の処理におけるブラウザ間での一貫性の問題を解決することができます。
 
