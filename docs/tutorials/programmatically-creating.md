@@ -92,7 +92,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, Entity, math } from 'playcanvas';
 
 export class EntityCreator extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         material: {
             type: 'asset',
             assetType: 'material'

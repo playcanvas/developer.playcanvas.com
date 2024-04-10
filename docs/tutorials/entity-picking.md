@@ -112,7 +112,7 @@ It's also possible to restrict the layers to pick which the script supports via 
 import { ScriptType, Picker, Vec3, Entity, EVENT_MOUSEDOWN } from 'playcanvas';
 
 export class PickerFramebuffer extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         pickAreaScale: {
             type: 'number',
             title: 'Pick Area Scale',

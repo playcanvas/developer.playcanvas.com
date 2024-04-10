@@ -229,7 +229,7 @@ The file `face-photo.js` uses the Facebook API to retrieve a list of photos from
 import { ScriptType, Vec3, string, math, Asset } from 'playcanvas';
 
 export class FacePhoto extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         template: { type: 'entity' }
     };
 

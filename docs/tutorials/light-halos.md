@@ -83,7 +83,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, Vec3 } from 'playcanvas';
 
 export class Halo extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         camera: {type: 'entity'},
         unidirectional: {type: 'boolean', default: false}
     };

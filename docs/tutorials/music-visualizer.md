@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class Analyser extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         fftsize: {
             type: 'number'
         }
@@ -111,7 +111,7 @@ Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData
 import { ScriptType, Vec3 } from 'playcanvas';
 
 export class Visualizer extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         analyser: {
             type: 'entity'
         },

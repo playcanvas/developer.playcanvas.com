@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, RESOLUTION_AUTO, FILLMODE_FILL_WINDOW } from 'playcanvas';
 
 export class Game extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         uiMenu: {type: 'entity'},
         uiInGame: {type: 'entity'},
         uiGameOver: {type: 'entity'},
@@ -257,7 +257,7 @@ The input script listens for input from the mouse or touchscreen, normalizes the
 import { ScriptType, Vec3 } from 'playcanvas';
 
 export class Input extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         ball: {type: 'entity'},
         camera: {type: 'entity'},
         ballRadius: {type: 'number', default: 0.5}

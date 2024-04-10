@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, Vec3 } from 'playcanvas';
 
 export class PointToPointConstraint extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         pivotA: {
             title: 'Pivot',
             description: 'Position of the constraint in the local space of this entity.',
@@ -285,7 +285,7 @@ You can enable CCD for any PlayCanvas rigid body using the following script:
 import { ScriptType } from 'playcanvas';
 
 export class Ccd extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         motionThreshold: {
             type: 'number',
             default: 1,

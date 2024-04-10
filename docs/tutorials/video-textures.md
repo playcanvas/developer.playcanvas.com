@@ -30,7 +30,7 @@ import { ScriptType } from 'playcanvas';
 
 export class VideoTexture extends ScriptType {
 
-    static attributesDefinition = {
+    static attributes = {
         videoAsset: {
             title: 'Video Asset',
             description: 'MP4 video asset to play back on this video texture.',

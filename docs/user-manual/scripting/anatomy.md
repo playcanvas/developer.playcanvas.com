@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class Rotate extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         speed: { type: 'number', default: 10 }
     };
 

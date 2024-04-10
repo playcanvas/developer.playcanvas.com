@@ -125,7 +125,7 @@ var Watercolor = pc.createScript('watercolor');
 
 export class WaterColor extends ScriptType {
 
- static attributesDefinition = {
+ static attributes = {
     vs: { type: 'asset', assetType: 'shader', title: 'Vertex Shader' },
     fs: { type: 'asset', assetType: 'shader', title: 'Fragment Shader' }
  }

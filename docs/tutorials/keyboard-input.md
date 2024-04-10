@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, KEY_LEFT, KEY_RIGHT, KEY_SPACE, KEY_A } from 'playcanvas';
 
 export class KeyboardHandler extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         redMaterial: {
             type: 'asset',
             assetType: 'material'

@@ -109,7 +109,7 @@ import { ScriptType, KEY_SPACE, KEY_C, KEY_L } from 'playcanvas';
 
 export class UpdateAsset extends ScriptType {
 
-    static attributesDefinition = {
+    static attributes = {
         a: { type: 'asset', assetType: 'render' },
         b: { type: 'asset', assetType: 'render' },
         c: { type: 'asset', assetType: 'render' }

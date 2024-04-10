@@ -122,7 +122,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class ButtonLogic extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         textEntity: {
             type: 'entity',
             description: 'The entity that we want to update when the button is clicked'

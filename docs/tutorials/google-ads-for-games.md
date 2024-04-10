@@ -377,7 +377,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class UiController extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         refreshButtonEntity: {type: 'entity', title: 'Refresh Button Entity'},
         interstitialAdButtonEntity: {type: 'entity', title: 'Interstitial Ad Button Entity'},
         rewardedAdButtonEntity: {type: 'entity', title: 'Rewarded Ad Button Entity'},

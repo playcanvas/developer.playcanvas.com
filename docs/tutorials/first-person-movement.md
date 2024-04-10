@@ -40,7 +40,7 @@ import { ScriptType, Vec3, Entity, Mouse, BODYTYPE_DYNAMIC } from 'playcanvas';
 import { KEY_A, KEY_Q, KEY_D, KEY_W, KEY_S } from 'playcanvas';
 
 export class FirstPersonMovement extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         camera: {
             type: 'entity',
             description: 'Optional, assign a camera entity, otherwise one is created'

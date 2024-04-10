@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, Vec3, Mesh, MeshInstance, GraphNode, Model, calculateNormals } from 'playcanvas';
 
 export class Terrain extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         heightMap: { type: 'asset', assetType: 'texture' },
         minHeight: { type: 'number', default: 0 },
         maxHeight: { type: 'number', default: 10 },

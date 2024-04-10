@@ -123,7 +123,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class PhotonLoadBalancingPlayCanvas extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         appId: { type: "string" },
         appVersion: { type: "string", default: "1.0" },
         wss: { type: "boolean", default: true },
@@ -493,7 +493,7 @@ Use **raiseEvent** and **onEvent** to synchronize the player's location.
 import { ScriptType, Entity } from 'playcanvas';
 
 export class PhotonLoadBalancingPlayCanvas extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         appId: { type: "string" },
         appVersion: { type: "string", default: "1.0" },
         wss: { type: "boolean", default: true },

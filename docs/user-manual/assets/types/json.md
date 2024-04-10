@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class JsonScript extends ScriptType {   
-    static attributesDefinition = {
+    static attributes = {
         jsonAsset: { type: 'asset', assetType: 'json' }
     }
 

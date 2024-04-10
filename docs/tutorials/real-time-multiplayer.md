@@ -124,7 +124,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, Vec3, KEY_A, KEY_D, KEY_W, KEY_S } from 'playcanvas';
 
 export class Movement extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         playerSpeed: {
             type: 'number',
             default: 30,

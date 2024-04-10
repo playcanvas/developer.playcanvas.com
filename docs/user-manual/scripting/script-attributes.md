@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class MyScript extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         speed: { type: 'number', default: 80 }
     };
 }
@@ -51,7 +51,7 @@ If you need an array of attributes set `array: true` like so:
 import { ScriptType } from 'playcanvas';
 
 export class MyScript extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         names: { type: 'string', array: true }
     };
 }
@@ -164,7 +164,7 @@ When you declare an attribute you also declare the type of the attribute. This a
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-static attributeDefinition = {
+static attributes = {
     target: { type: 'entity' }
 }
 ```
@@ -187,7 +187,7 @@ The Entity type lets your reference another entity in your hierarchy. A great wa
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-static attributeDefinition = {
+static attributes = {
     textures: { type: 'asset', assetType: 'texture', array: true })
 }
 ```
@@ -213,7 +213,7 @@ The runtime type of an Asset attribute is `pc.Asset`. You can reference the reso
 import { ScriptType } from 'playcanvas';
 
 export class MyScript extends ScriptType {
-    static attributeDefinition = {
+    static attributes = {
         textures: { type: 'asset', assetType: 'texture' })
     }
 
@@ -245,7 +245,7 @@ MyScript.prototype.initialize = function () {
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-static attributeDefinition = {
+static attributes = {
     color: { type: 'rgba' }
 }
 ```
@@ -268,7 +268,7 @@ The color attribute shows a color picker when exposed in the editor. There are t
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-static attributeDefinition = {
+static attributes = {
     wave: { type: 'curve' }, // one curve
     wave: { type: 'curve', curves: [ 'x', 'y', 'z' ] }, // three curves: x, y, z
     wave: { type: 'curve', color: 'r' }, // one curve for red channel
@@ -299,7 +299,7 @@ The Enumeration attribute allows you to choose one of the available options:
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-static attributeDefinition = {
+static attributes = {
     value: {
         type: 'number',
         enum: [
@@ -338,7 +338,7 @@ The JSON attribute allows you to create nested attributes of the other attribute
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-static attributeDefinition = {
+static attributes = {
     gameConfig: {
         type: 'json',
         schema: [{

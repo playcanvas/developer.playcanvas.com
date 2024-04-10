@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class UiMenu extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         overlay: {type: "entity"}
     };
 

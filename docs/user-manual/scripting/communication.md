@@ -60,7 +60,7 @@ Listen for events firing by using `on()` and `off()`. In this example, the displ
 import { ScriptType } from 'playcanvas';
 
 export class Display extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         playerEntity: { type: 'entity' }
     };
 

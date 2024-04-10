@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class Generate extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         numTilesX: {
             type: 'number',
             default: 10

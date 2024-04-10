@@ -86,7 +86,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, createStyle } from 'playcanvas';
 
 export class Game extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         display: {
             type: 'asset',
             assetType: 'html'

@@ -94,7 +94,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType } from 'playcanvas';
 
 export class Leaderboard extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         template: { type: "entity" },
         personal: { type: "entity" },
         leaderboard: { type: "entity" }

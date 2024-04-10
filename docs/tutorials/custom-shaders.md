@@ -231,7 +231,7 @@ import { ScriptType, SEMANTIC_TEXCOORD0, SEMANTIC_POSITION, Shader, Material } f
 
 export class CustomShader extends ScriptType {
 
-    static attributesDefinition = {
+    static attributes = {
         vs: { type: 'asset', assetType: 'shader', title: 'Vertex Shader' },
         fs: { type: 'asset', assetType: 'shader', title: 'Fragment Shader' },
         diffuseMap: { type: 'asset', assetType: 'texture', title: 'Diffuse Map' },

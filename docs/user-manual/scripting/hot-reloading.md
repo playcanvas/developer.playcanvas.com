@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
 import { ScriptType, math } from 'playcanvas';
 
 export class Rotator extends ScriptType {
-    static attributesDefinition = {
+    static attributes = {
         xSpeed: { type: 'number', default: 10 }
     };
 
