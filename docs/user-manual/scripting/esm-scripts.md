@@ -40,8 +40,8 @@ export Rotator extends Script {
 
 If you're not familiar with class based syntax this might look unfamiliar. You can learn more about javascript classes on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes). [Learn more](/user-manual/scripting/anatomy/) about the anatomy of a ESM Scripts. A single file can contain multiple ESM Scripts, however each one needs to be exported using the `export` key word.
 
-```info
-Only Scripts that are exported are available to the editor
+:::info
+Only Scripts exported using the `export` keyword are exposed to the editor
 :::
 
 ## Importing Modules
