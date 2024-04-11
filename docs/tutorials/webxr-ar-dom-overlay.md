@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 Example of how to use DOM (HTML + CSS) with WebXR AR session.
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/S01LYTIU/" title="WebXR AR: DOM Overlay" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay *;xr-spatial-tracking *" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
+    <iframe loading="lazy" src="https://playcanv.as/p/S01LYTIU/" title="WebXR AR: DOM Overlay" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay;xr-spatial-tracking" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
 <Link to='https://playcanvas.com/project/691979/'>Open Project ↗</Link>
