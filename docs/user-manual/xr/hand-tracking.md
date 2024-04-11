@@ -47,9 +47,9 @@ Hand tracking is subject to the reliability and sophistication of the underlying
 
 ## Skinning
 
-A skinned mesh for a hand can used. You can check out [this project][5] as an example.
+A skinned mesh for a hand can used. You can check out [this project][5] as an example:
 
-<img loading="lazy" src="/img/user-manual/xr/skinned-hands.webp" alt="Hand tracking using cube primitives" width="512" />
+<img loading="lazy" src="/img/user-manual/xr/skinned-hands.webp" alt="Hand tracking using skinned meshes" width="512" />
 
 [1]: https://immersive-web.github.io/webxr-hand-input/
 [2]: https://api.playcanvas.com/classes/Engine.XrHand.html

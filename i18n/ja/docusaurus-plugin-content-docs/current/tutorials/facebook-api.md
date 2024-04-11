@@ -8,7 +8,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
     <iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
 </div>
 
-*Facebookにログインしてあなたの写真を3D彫刻で表示しましょう*
+:::info
+
+Facebookにログインしてあなたの写真を3D彫刻で表示しましょう。
+
+:::
 
 PlayCanvasは、WebGLベースのFacebookゲームやアプリケーションを構築するための理想的なパートナーです。Facebookは、ゲームに対して大規模なオーディエンスを見つけるのに最適な場所であり、PlayCanvasはWeb向けに最適化された高速でパフォーマンスの良いゲームを作成することができます。
 
@@ -290,6 +294,5 @@ FacePhoto.prototype.createPhoto = function(texture) {
 
 [1]: https://github.com/playcanvas/playcanvas-facebook
 [2]: https://developers.facebook.com/docs/graph-api
-[3]: https://developers.facebook.com/docs/javascript
 [4]: https://apps.facebook.com/swooop-playcanvas/
 [5]: https://playcanvas.com/project/405897
