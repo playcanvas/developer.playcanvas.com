@@ -21,7 +21,7 @@ import { ScriptType } from 'playcanvas';
 export class MyScript extends ScriptType {
     static attributes = {
         speed: { type: 'number', default: 80 }
-    };
+    }
 }
 ```
 
@@ -53,7 +53,7 @@ import { ScriptType } from 'playcanvas';
 export class MyScript extends ScriptType {
     static attributes = {
         names: { type: 'string', array: true }
-    };
+    }
 }
 ```
 
@@ -88,12 +88,8 @@ When you declare an attribute in your script it will be available as a member va
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
-
-export class MyScript extends ScriptType {
-    update (dt) {
-        this.entity.translate(this.speed * dt, 0, 0);
-    }
+update (dt) {
+    this.entity.translate(this.speed * dt, 0, 0);
 }
 ```
 
@@ -117,20 +113,16 @@ When you modify an attribute in the editor the changes are sent to any copies of
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+initialize () {
+    // fires only for `speed` attribute
+    this.on('attr:speed', function (value, prev) {
+        // new value for speed
+    });
 
-export class MyScript extends ScriptType {
-    initialize () {
-        // fires only for `speed` attribute
-        this.on('attr:speed', function (value, prev) {
-            // new value for speed
-        });
-
-        // fires for all attribute changes
-        this.on('attr', function(name, value, prev) {
-            // new attribute value
-        });
-    }
+    // fires for all attribute changes
+    this.on('attr', function(name, value, prev) {
+        // new attribute value
+    });
 }
 ```
 
@@ -210,17 +202,13 @@ The runtime type of an Asset attribute is `pc.Asset`. You can reference the reso
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+static attributes = {
+    textures: { type: 'asset', assetType: 'texture' })
+}
 
-export class MyScript extends ScriptType {
-    static attributes = {
-        textures: { type: 'asset', assetType: 'texture' })
-    }
-
-    initialize() {
-        console.log('This is the texture asset', this.texture);
-        console.log('This is the texture resource', this.texture.resource);
-    };
+initialize() {
+    console.log('This is the texture asset', this.texture);
+    console.log('This is the texture resource', this.texture.resource);
 }
 ```
 
@@ -393,12 +381,10 @@ Here's an example of accessing the above attributes in a script:
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-class MyScript extends ScriptType {
-    update (dt) {
-        if (this.gameConfig.godMode) {
-            for (var i = 0; i < this.gameConfig.numEnemies; i++) {
-                // ...
-            }
+update (dt) {
+    if (this.gameConfig.godMode) {
+        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
+            // ...
         }
     }
 }

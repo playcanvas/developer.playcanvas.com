@@ -17,7 +17,7 @@ import { ScriptType } from 'playcanvas';
 export class Rotate extends ScriptType {
     static attributes = {
         speed: { type: 'number', default: 10 }
-    };
+    }
 
     initialize() {
         this.local = false; // choose local rotation or world rotation
@@ -71,19 +71,51 @@ Rotate.prototype.swap = function(old) {
 
 We'll break down each section of the script
 
-## Declaration of Script Type
+## Declaration of a Script
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
+```javascript
+import { ScriptType } from 'playcanvas';
+export class Rotate extends ScriptType {};
+```
+
+You define a script by creating and exporting a class that extends the `ScriptType` class. The class name is used to identify the script in script components and each script declared in a project must have a unique name. You can have multiple scripts per file, however only classes that are exported and extend ScriptType are available in the editor.
+
+</TabItem>
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Rotate = pc.createScript('rotate');
 ```
 
-This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
+This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each Script that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
+
+</TabItem>
+</Tabs>
 
 ## Script Attributes
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem value="esm" label="ESM">
+
+```javascript
+static attributes = {
+    speed: { type: 'number', default: 10 }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
+
+</TabItem>
+</Tabs>
+
 
 This line declares a script attribute. A script attribute is a property of the script instance and it is exposed to the Editor UI. This allows you to customize individual entities in the Editor. In the above example, the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.
 
@@ -93,6 +125,20 @@ Attributes are automatically inherited from a new script instance during code ho
 
 ### Initialize
 
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem value="esm" label="ESM">
+
+```javascript
+// initialize code called once per entity
+initialize() {
+    // local rotation or world rotation
+    this.local = false;
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
+
 ```javascript
 // initialize code called once per entity
 Rotate.prototype.initialize = function() {
@@ -101,6 +147,9 @@ Rotate.prototype.initialize = function() {
 };
 ```
 
+</TabItem>
+</Tabs>
+
 The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only called once for each entity. You can use it to define and initialize member variables of the script instance. If an entity or script is disabled when the application starts, the initialize method will be called the first time the entity is enabled.
 
 When an entity is cloned using the `entity.clone` method, the `initialize` method on the script is only called when the cloned entity is added to the scene hierarchy; as long as both the entity and script are enabled as well.
@@ -108,6 +157,23 @@ When an entity is cloned using the `entity.clone` method, the `initialize` metho
 If a script component has multiple scripts attached to it, the `initialize` method is called in the order of the scripts on the component.
 
 ### Update
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem value="esm" label="ESM">
+
+```javascript
+// update code called every frame
+update(dt) {
+    if (this.local) {
+        this.entity.rotateLocal(0, this.speed * dt, 0);
+    } else {
+        this.entity.rotate(0, this.speed * dt, 0);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
 
 ```javascript
 // update code called every frame
@@ -120,11 +186,28 @@ Rotate.prototype.update = function(dt) {
 };
 ```
 
+</TabItem>
+</Tabs>
+
 The update method is called for every frame; it is invoked within each entity that has an enabled script component and enabled script instance. Each frame is passed  the `dt` argument containing the time, in seconds, since the last frame.
 
 If a script component has multiple scripts attached to it, `update` is called in the order of the scripts on the component.
 
 ### Swap
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem value="esm" label="ESM">
+
+```javascript
+// swap method called for script hot-reloading
+// inherit your script state here
+swap(old) {
+    this.local = old.local;
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
 
 ```javascript
 // swap method called for script hot-reloading
@@ -133,6 +216,9 @@ Rotate.prototype.swap = function(old) {
     this.local = old.local;
 };
 ```
+
+</TabItem>
+</Tabs>
 
 The `swap` method is called whenever a ScriptType with same is added to registry. This is done automatically during Launch when a script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
 
