@@ -82,18 +82,18 @@ The Dependency Manager is available in the code editor and allows you to search 
 
 ### Hosting your own library?
 
-Also, if you have some regularly used PlayCanvas code you use across all your projects, you can publish this to NPM and simply import this directly into your projects.
+If you have some regularly used PlayCanvas code you use across all your projects, you can publish this to NPM and simply import this directly into your projects.
 
 ## Some notes
 
-Because of the new nature of ESM Scripts there are some noticeable difference compared to classic SC
+For the most part ESM Scripts provide the same functionality as classic scripts, however at a fundamental level there are a numer of key differences between ES Modules and classic scripts.
 
 ### Module Scope
-
-An important distinction between classic scripts and ESM Scripts is their scope. Classic Scripts by default populate code globally, meaning that variables defined in one scripts are available to scripts. This can be useful, but has many downsides as variables can be easily be overridden and are depending on loading order.
-
-ESM Scripts have module scope, meaning by default, variables are only available locally. If you need to use a variable from another scripts, simply export it.
 
 :::info
 ESM Scripts have module scope. Variables and are not available globally
 :::
+
+An important distinction between classic scripts and ESM Scripts is their scope. Classic Scripts by default populate code globally, meaning that variables defined in one scripts are available to scripts. This can be useful, but has many downsides as variables can be easily be overridden and are depending on loading order.
+
+ESM Scripts have module scope, meaning by default, variables are only available locally. If you need to use a variable from another scripts, simply export it.
