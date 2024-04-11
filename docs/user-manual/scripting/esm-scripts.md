@@ -69,7 +69,7 @@ Any ES Module within your project can be imported using relative paths file path
 
 ## Dependencies
 
-With ESM Scripts and the new Dependency Manger you can now import ES Modules from [NPM](npmjs.com) directly into your project. This gives you access any of the nearly 3M libraries hosted on NPM. 
+With ESM Scripts and the new Dependency Manger you can now import ES Modules from [NPM](http://npmjs.com) directly into your project. This gives you access any of the nearly 3M libraries hosted on NPM. 
 
 ### Getting started with the Dependency Manager
 
