@@ -100,7 +100,7 @@ NPM is a free public repository, so if you have some code you use consistently u
 
 We will be publishing a more detailed tutorials of publishing PlayCanvas libraries to NPM soon.
 
-## Some notes
+## Notes
 
 For the most part ESM Scripts provide the same functionality as classic scripts, however at a fundamental level there are a number of key differences between ES Modules and classic scripts.
 
@@ -113,6 +113,13 @@ ESM Scripts have module scope, meaning by default, when you define a variable it
 [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_standard_scripts) about Module scope and other difference between classic scripts.
 
 ### 3rd Party CDN's
+
+With ES Modules it's possible to import code directly from a 3rd party host or CDN such as [jsdelivr](https://www.jsdelivr.com/). Whilst this can be convenient it also means relying on external services, which can occasionally lead to challenges with reliability or expose you to security risks if the CDN encounters issues. To help keep things smooth and secure, we recommend using the Dependency Manager for using 3rd party libraries. 
+Any library installed with the Dependency Manager will be bundled into the application if enabled.
+
+:::warn
+Only import 3rd party code from a known and trusted source.
+:::
 
 ### Module Bundling
 
