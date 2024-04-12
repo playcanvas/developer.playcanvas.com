@@ -6,6 +6,17 @@ image: /img/user-manual/scripting/esm-script-meta.webp
 
 ### An update to the PlayCanvas Scripts with full support for ES Modules. 
 
+:::warning
+ESM Script are currently in beta and should not be used in production code.
+:::
+
+<video width="100%" controls autoPlay loop>
+  <source src="/video/pc-esm-scripts.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+### Modern class based syntax
+
 ES Modules are a modern standardized way of writing javascript which provide a richer set of features and solve many of their shortcomings of classic scripts. This means you can import modules locally from the asset registry or externally via a CDN. This gives you much more flexibility in how you structure your projects whilst being able to leverage existing libraries in the wider javascript ecosystem such as NPM. 
 
 You can learn more about ES Modules and their features on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
@@ -73,27 +84,38 @@ With ESM Scripts and the new Dependency Manger you can now import ES Modules fro
 
 ### Getting started with the Dependency Manager
 
-The Dependency Manager is available in the code editor and allows you to search for publicly hosted NPM libraries. You can then specify a version and use them directly in your project. In the following demo you can see how to import and use the [`canvas-confetti`](https://www.npmjs.com/package/canvas-confetti) library.
+The Dependency Manager is available in the code editor and allows you to search for publicly hosted NPM libraries. You can specify a version and use import it directly in your project. For example if you want to use the library tweening library ['gsap'](https://www.npmjs.com/package/gsap) search for it in the dependency manager and add it. Then import it in your scripts.
 
-<video width="100%" controls autoPlay loop>
-  <source src="/video/pc-esm-scripts.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+```javascript
+import gsap from "gsap";
+
+gsap.to(".box", { x: 200 })
+```
+
+PlayCanvas will automatically add the library to your project and make it available in the launcher and for published and exported projects.
 
 ### Hosting your own library?
 
-If you have some regularly used PlayCanvas code you use across all your projects, you can publish this to NPM and simply import this directly into your projects.
+NPM is a free public repository, so if you have some code you use consistently use across all your projects, you can publish this to NPM and import directly in your projects. Also, if it's something other developers might use, why not document and promote it to the wider PlayCanvas community.
+
+We will be publishing a more detailed tutorials of publishing PlayCanvas libraries to NPM soon.
 
 ## Some notes
 
-For the most part ESM Scripts provide the same functionality as classic scripts, however at a fundamental level there are a numer of key differences between ES Modules and classic scripts.
+For the most part ESM Scripts provide the same functionality as classic scripts, however at a fundamental level there are a number of key differences between ES Modules and classic scripts.
 
 ### Module Scope
 
-:::info
-ESM Scripts have module scope. Variables and are not available globally
-:::
+ESM Scripts have a different variables scope when compared to classic scripts which, by default have global scope. In practice this means that variables defined outside of any block or function are accessible globally to every other script. They all share the same global scope. In some situations this can be useful to share global state or configuration settings. But in practice, it's error prone and depends upon loading order which is easy to overlook.
 
-An important distinction between classic scripts and ESM Scripts is their scope. Classic Scripts by default populate code globally, meaning that variables defined in one scripts are available to scripts. This can be useful, but has many downsides as variables can be easily be overridden and are depending on loading order.
+ESM Scripts have module scope, meaning by default, when you define a variable it's only available locally. You need to explicitly 'export' variables which allows them to 'imported' by other modules.
 
-ESM Scripts have module scope, meaning by default, variables are only available locally. If you need to use a variable from another scripts, simply export it.
+[Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_standard_scripts) about Module scope and other difference between classic scripts.
+
+### 3rd Party CDN's
+
+### Module Bundling
+
+Bundling is the process of merging javascript modules together and producing a single javascript file, or a set of bundled files. This is generally done to minimize the number of network requests a browser has to make, and to reduce the overall load time, which makes your app start faster. Whilst ES Modules are supported natively by browsers and don't inherently require bundling, it's often beneficial in many situations and helps to reduce the perceive load time, which means happy users. Not only that, but bundling comes with a range of other benefits such as tree-shaking and pre-processing.
+
+Currently PlayCanvas does not bundle ESM Scripts, however we are actively working on this feature and you can track the [progress on Github](https://github.com/playcanvas/editor/issues/1109). Until then, ESM Scripts are published and exported in projects as-is.
