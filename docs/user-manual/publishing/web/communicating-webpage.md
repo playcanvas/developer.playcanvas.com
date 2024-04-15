@@ -120,15 +120,16 @@ In your application
 
 ```javascript
 import { Application } from 'playcanvas';
-window.addEventListener("message", function (event) {
+
+window.addEventListener("message", (event) => {
     if (event.origin === "http://example.com") { // always check message came from your website
-        var score = event.data.score;
+        const score = event.data.score;
 
         // call API method one:
         window.setScore(score);
 
         // call API method two:
-        var app = Application.getApplication();
+        const app = Application.getApplication();
         app.fire("score:set", score);
     }
 }, false);
