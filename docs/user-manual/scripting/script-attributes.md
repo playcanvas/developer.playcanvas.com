@@ -88,7 +88,7 @@ When you declare an attribute in your script it will be available as a member va
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-update (dt) {
+update(dt) {
     this.entity.translate(this.speed * dt, 0, 0);
 }
 ```
