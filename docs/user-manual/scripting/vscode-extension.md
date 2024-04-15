@@ -1,15 +1,11 @@
 ---
-<<<<<<< Updated upstream
 title: VS Code Extension
-=======
-title: Visual Studio Code Extension
->>>>>>> Stashed changes
 sidebar_position: 12
 ---
 
 ## Using VS Code Extension with Cloud Filesystem
 
-For developers seeking an enhanced code editing experience with features like advanced source control, AI copilot and a wide range of extensions, integrating Visual Studio Code (VS Code) with PlayCanvas offers a powerful alternative to the built-in Code Editor.
+For developers seeking an enhanced code editing experience with features like source control, AI copilot and a wide range of extensions, integrating Visual Studio Code (VS Code) with PlayCanvas offers a powerful alternative to the built-in Code Editor.
 
 ![Live Editing script assets with VS Code extension](/img/user-manual/scripting/vscode-extension.webp)
 
