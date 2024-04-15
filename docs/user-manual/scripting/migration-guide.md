@@ -169,11 +169,11 @@ export class MyScript extends Script {
 
         });
 
-        this.on("disable", function () {
+        this.on("disable", () => {
 
         });
 
-        this.on("destroy", function () {
+        this.on("destroy", () => {
 
         });
     }
