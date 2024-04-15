@@ -1,5 +1,9 @@
 ---
+<<<<<<< Updated upstream
 title: VS Code Extension
+=======
+title: Visual Studio Code Extension
+>>>>>>> Stashed changes
 sidebar_position: 12
 ---
 
