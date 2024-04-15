@@ -120,7 +120,7 @@ initialize () {
     });
 
     // fires for all attribute changes
-    this.on('attr', function(name, value, prev) {
+    this.on('attr', (name, value, prev) => {
         // new attribute value
     });
 }
