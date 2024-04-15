@@ -12,7 +12,7 @@ For developers seeking an enhanced code editing experience with features like ad
 * **Install Visual Studio Code**: Download and install VS Code if you haven't already done so.
 * **Install PlayCanvas VS Code Extension**: Search for [the PlayCanvas extension](https://marketplace.visualstudio.com/items?itemName=playcanvas.playcanvas) in the VS Code marketplace and install it. This extension connects VS Code to your PlayCanvas projects using the PlayCanvas API.
 
-### Configuration:
+### Configuration
 
 * Open VS Code and navigate to the settings, type "PlayCanvas" in the search bar.
 * [Generate new API Key](https://developer.playcanvas.com/user-manual/api/) and enter the key and User ID in the settings. User ID can be found in your [PlayCanvas account settings](https://playcanvas.com/account).
