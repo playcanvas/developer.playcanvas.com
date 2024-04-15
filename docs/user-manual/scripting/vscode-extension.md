@@ -7,6 +7,8 @@ sidebar_position: 12
 
 For developers seeking an enhanced code editing experience with features like advanced source control, AI copilot and a wide range of extensions, integrating Visual Studio Code (VS Code) with PlayCanvas offers a powerful alternative to the built-in Code Editor.
 
+![Live Editing script assets with VS Code extension](/img/user-manual/scripting/vscode-extension.webp)
+
 ### Setting Up the VS Code Extension
 
 * **Install Visual Studio Code**: [Download](https://code.visualstudio.com/download) and install VS Code if you haven't already done so.
@@ -16,7 +18,7 @@ For developers seeking an enhanced code editing experience with features like ad
 
 * Open VS Code and navigate to the settings, type "PlayCanvas" in the search bar.
 * [Generate new API Key](https://developer.playcanvas.com/user-manual/api/) and enter the key and User ID in the settings. User ID can be found in your [PlayCanvas account settings](https://playcanvas.com/account).
-* Modify "PlayCanvas: Use Playcanvas Types" to enable or disable PlayCanvas engine types support for enchances IntelliSense support. It adds a virtual reference to the types automatically at the top of the source file. The reference will not be uploaded with source files updates.
+* Modify "PlayCanvas: Use Playcanvas Types" to enable or disable PlayCanvas engine types support for enchanced IntelliSense support. It adds a virtual reference to the types automatically at the top of the source file. The reference will not be uploaded when script updated.
 
 ## Features
 
@@ -27,7 +29,8 @@ For developers seeking an enhanced code editing experience with features like ad
 
 ## Workflow
 
-* **Edit**: Open your project in VS Code, and edit scripts, shaders, and other text assets with rich editing support.
+* **Add Project**: Open your project in VS Code by opening Command Pallete (Ctrl+Shift+P) and typing PlayCanvas: Add Project
+* **Edit**: Edit scripts, shaders, and other text assets with rich editing support.
 * **Sync**: Save your changes in VS Code; the PlayCanvas extension automatically syncs these changes to the cloud.
 * **Preview and Debug**: Use PlayCanvas' launch page to preview and debug your application as you develop.
 
