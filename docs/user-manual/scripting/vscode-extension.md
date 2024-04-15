@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Extension
+title: VS Code Extension
 sidebar_position: 12
 ---
 
