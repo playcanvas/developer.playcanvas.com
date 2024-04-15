@@ -9,7 +9,7 @@ For developers seeking an enhanced code editing experience with features like ad
 
 ### Setting Up the VS Code Extension
 
-* **Install Visual Studio Code**: Download and install VS Code if you haven't already done so.
+* **Install Visual Studio Code**: [Download](https://code.visualstudio.com/download) and install VS Code if you haven't already done so.
 * **Install PlayCanvas VS Code Extension**: Search for [the PlayCanvas extension](https://marketplace.visualstudio.com/items?itemName=playcanvas.playcanvas) in the VS Code marketplace and install it. This extension connects VS Code to your PlayCanvas projects using the PlayCanvas API.
 
 ### Configuration
