@@ -23,9 +23,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Analyser extends ScriptType {
+export class Analyser extends Script {
     static attributes = {
         fftsize: {
             type: 'number'
@@ -110,7 +110,7 @@ Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData
 ```javascript
 import { ScriptType, Vec3 } from 'playcanvas';
 
-export class Visualizer extends ScriptType {
+export class Visualizer extends Script {
     static attributes = {
         analyser: {
             type: 'entity'

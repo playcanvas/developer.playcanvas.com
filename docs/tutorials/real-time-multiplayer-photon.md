@@ -120,9 +120,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class PhotonLoadBalancingPlayCanvas extends ScriptType {
+export class PhotonLoadBalancingPlayCanvas extends Script {
     static attributes = {
         appId: { type: "string" },
         appVersion: { type: "string", default: "1.0" },
@@ -427,7 +427,7 @@ Create a new **player.js** for character movement.
 ```javascript
 import { ScriptType, Vec3, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN } from 'playcanvas';
 
-export class Movement extends ScriptType {
+export class Movement extends Script {
     update (dt) {
         const pos = new Vec3(0, 0, 0);
         if (this.app.keyboard.isPressed(KEY_LEFT)) {
@@ -492,7 +492,7 @@ Use **raiseEvent** and **onEvent** to synchronize the player's location.
 ```javascript
 import { ScriptType, Entity } from 'playcanvas';
 
-export class PhotonLoadBalancingPlayCanvas extends ScriptType {
+export class PhotonLoadBalancingPlayCanvas extends Script {
     static attributes = {
         appId: { type: "string" },
         appVersion: { type: "string", default: "1.0" },
@@ -723,7 +723,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onEvent = function (code, content, actor
 ```javascript
 import { ScriptType, Vec3, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN } from 'playcanvas';
 
-export class Player extends ScriptType {
+export class Player extends Script {
 
     update(dt) {
         const pos = new Vec3(0, 0, 0);

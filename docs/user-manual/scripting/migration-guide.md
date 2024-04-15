@@ -75,9 +75,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class MyScript extends ScriptType {
+export class MyScript extends Script {
     static attributes = {
         speed: { type: 'number', default: 10 }
     };
@@ -146,9 +146,9 @@ To migrate these to the current script format, you would register event handlers
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Movement extends ScriptType {
+export class Movement extends Script {
     initialize() {
 
     }
@@ -163,7 +163,7 @@ export class Movement extends ScriptType {
 <TabItem value="classic" label="Classic">
 
 ```javascript
-export class MyScript extends ScriptType {
+export class MyScript extends Script {
     initialize() {
         this.on("enable", function () {
 

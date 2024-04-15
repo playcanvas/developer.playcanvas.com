@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, Vec3 } from 'playcanvas';
 
-export class Ball extends ScriptType {
+export class Ball extends Script {
     static attributes = {
         gravity: {
             type: 'number',

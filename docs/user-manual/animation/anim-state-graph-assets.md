@@ -125,9 +125,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class AnimationBlending extends ScriptType {
+export class AnimationBlending extends Script {
   initialize() {
     this.entity.anim.on('smile_start', (event) => {
       this.entity.anim.findAnimationLayer('smile').weight = 1;

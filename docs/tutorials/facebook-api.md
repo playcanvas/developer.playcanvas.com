@@ -40,9 +40,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class FbUi extends ScriptType {
+export class FbUi extends Script {
 
     initialize() {
         this.app.on("fb:init", () => {
@@ -228,7 +228,7 @@ The file `face-photo.js` uses the Facebook API to retrieve a list of photos from
 ```javascript
 import { ScriptType, Vec3, string, math, Asset } from 'playcanvas';
 
-export class FacePhoto extends ScriptType {
+export class FacePhoto extends Script {
     static attributes = {
         template: { type: 'entity' }
     };

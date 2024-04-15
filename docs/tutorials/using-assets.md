@@ -107,7 +107,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, KEY_SPACE, KEY_C, KEY_L } from 'playcanvas';
 
-export class UpdateAsset extends ScriptType {
+export class UpdateAsset extends Script {
 
     static attributes = {
         a: { type: 'asset', assetType: 'render' },

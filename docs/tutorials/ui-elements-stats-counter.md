@@ -70,7 +70,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, math } from 'playcanvas';
 
-export class UiStats extends ScriptType {
+export class UiStats extends Script {
 
     initialize() {
         // find our widgets

@@ -91,9 +91,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Leaderboard extends ScriptType {
+export class Leaderboard extends Script {
     static attributes = {
         template: { type: "entity" },
         personal: { type: "entity" },

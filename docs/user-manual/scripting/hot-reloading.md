@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, math } from 'playcanvas';
 
-export class Rotator extends ScriptType {
+export class Rotator extends Script {
     static attributes = {
         xSpeed: { type: 'number', default: 10 }
     };

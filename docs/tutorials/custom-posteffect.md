@@ -123,7 +123,7 @@ class WatercolorEffect extends PostEffect {
 //--------------- SCRIPT DEFINITION------------------------//
 var Watercolor = pc.createScript('watercolor');
 
-export class WaterColor extends ScriptType {
+export class WaterColor extends Script {
 
  static attributes = {
     vs: { type: 'asset', assetType: 'shader', title: 'Vertex Shader' },

@@ -99,9 +99,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class NetworkManager extends ScriptType {
+export class NetworkManager extends Script {
 
   async initialize() {
     //

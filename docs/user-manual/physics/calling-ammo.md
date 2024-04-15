@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, Vec3 } from 'playcanvas';
 
-export class PointToPointConstraint extends ScriptType {
+export class PointToPointConstraint extends Script {
     static attributes = {
         pivotA: {
             title: 'Pivot',
@@ -282,9 +282,9 @@ You can enable CCD for any PlayCanvas rigid body using the following script:
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Ccd extends ScriptType {
+export class Ccd extends Script {
     static attributes = {
         motionThreshold: {
             type: 'number',

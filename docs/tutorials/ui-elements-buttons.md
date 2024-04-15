@@ -119,9 +119,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class ButtonLogic extends ScriptType {
+export class ButtonLogic extends Script {
     static attributes = {
         textEntity: {
             type: 'entity',

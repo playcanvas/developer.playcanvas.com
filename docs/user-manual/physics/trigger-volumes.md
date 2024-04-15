@@ -18,9 +18,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class TriggerVolume extends ScriptType {
+export class TriggerVolume extends Script {
     initialize() {
         this.entity.collision.on('triggerenter', (entity) => {
             console.log(`${entity.name} has entered trigger volume.`);

@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, Vec3, Mesh, MeshInstance, GraphNode, Model, calculateNormals } from 'playcanvas';
 
-export class Terrain extends ScriptType {
+export class Terrain extends Script {
     static attributes = {
         heightMap: { type: 'asset', assetType: 'texture' },
         minHeight: { type: 'number', default: 0 },

@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, Vec3 } from 'playcanvas';
 
-export class Raycast extends ScriptType {
+export class Raycast extends Script {
     initialize() {
         if (!this.entity.camera) {
             console.error('This script must be applied to an entity with a camera component.');

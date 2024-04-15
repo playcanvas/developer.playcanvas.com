@@ -20,9 +20,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class TextScript extends ScriptType {
+export class TextScript extends Script {
     static attributes = {
         textAsset: { type: 'asset', assetType: 'text' }
     };

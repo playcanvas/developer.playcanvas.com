@@ -102,7 +102,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, MOUSEBUTTON_LEFT } from 'playcanvas';
 
-export class InputScript extends ScriptType {
+export class InputScript extends Script {
     initialize() {
         this.entity.element.on('mousedown', (evt) => {
             evt.stopPropagation();
@@ -158,7 +158,7 @@ Here is small script to include once in your scene:
 ```javascript
 import { ScriptType, EVENT_TOUCHEND } from 'playcanvas';
 
-export class TouchFix extends ScriptType {
+export class TouchFix extends Script {
     initialize () {
         // Only register touch events if the device supports touch
         const touch = this.app.touch;

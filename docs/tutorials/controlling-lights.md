@@ -63,7 +63,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, KEY_1, KEY_2, KEY_3, Color } from 'playcanvas';
 
-export class LightHandler extends ScriptType {
+export class LightHandler extends Script {
         
     // initialize code called once per entity
     initialize() {

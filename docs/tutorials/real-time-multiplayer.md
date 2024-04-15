@@ -123,7 +123,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, Vec3, KEY_A, KEY_D, KEY_W, KEY_S } from 'playcanvas';
 
-export class Movement extends ScriptType {
+export class Movement extends Script {
     static attributes = {
         playerSpeed: {
             type: 'number',

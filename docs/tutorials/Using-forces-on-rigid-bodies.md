@@ -125,7 +125,7 @@ import {
     EVENT_KEYDOWN, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_A, KEY_D, KEY_W, KEY_S, KEY_F, KEY_R
 } from 'playcanvas';
 
-export class Movement extends ScriptType {
+export class Movement extends Script {
         
     // initialize code called once per entity
     initialize() {

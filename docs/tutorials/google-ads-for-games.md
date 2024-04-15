@@ -374,9 +374,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class UiController extends ScriptType {
+export class UiController extends Script {
     static attributes = {
         refreshButtonEntity: {type: 'entity', title: 'Refresh Button Entity'},
         interstitialAdButtonEntity: {type: 'entity', title: 'Interstitial Ad Button Entity'},

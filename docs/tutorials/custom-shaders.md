@@ -177,9 +177,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class CustomShader extends ScriptType {
+export class CustomShader extends Script {
     update(dt) {
         this.time += dt;
 
@@ -229,7 +229,7 @@ In our shader if the value of the heightmap on a pixel is less than the value ti
 ```javascript
 import { ScriptType, SEMANTIC_TEXCOORD0, SEMANTIC_POSITION, Shader, Material } from 'playcanvas';
 
-export class CustomShader extends ScriptType {
+export class CustomShader extends Script {
 
     static attributes = {
         vs: { type: 'asset', assetType: 'shader', title: 'Vertex Shader' },

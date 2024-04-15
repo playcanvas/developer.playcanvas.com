@@ -49,7 +49,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, KEY_P } from 'playcanvas';
 
-export class AnimationBlending extends ScriptType {
+export class AnimationBlending extends Script {
     static states = {
         idle: {
             animation: 'male.json'

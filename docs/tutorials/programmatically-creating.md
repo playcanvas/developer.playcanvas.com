@@ -91,7 +91,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, Entity, math } from 'playcanvas';
 
-export class EntityCreator extends ScriptType {
+export class EntityCreator extends Script {
     static attributes = {
         material: {
             type: 'asset',

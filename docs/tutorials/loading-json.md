@@ -85,7 +85,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, createStyle } from 'playcanvas';
 
-export class Game extends ScriptType {
+export class Game extends Script {
     static attributes = {
         display: {
             type: 'asset',

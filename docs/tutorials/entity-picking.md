@@ -37,7 +37,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, EVENT_MOUSEDOWN } from 'playcanvas';
 
-export class PickerRaycast extends ScriptType {
+export class PickerRaycast extends Script {
     // initialize code called once per entity
     initialize() {
         this.app.mouse.on(EVENT_MOUSEDOWN, this.onSelect, this);
@@ -111,7 +111,7 @@ It's also possible to restrict the layers to pick which the script supports via 
 ```javascript
 import { ScriptType, Picker, Vec3, Entity, EVENT_MOUSEDOWN } from 'playcanvas';
 
-export class PickerFramebuffer extends ScriptType {
+export class PickerFramebuffer extends Script {
     static attributes = {
         pickAreaScale: {
             type: 'number',

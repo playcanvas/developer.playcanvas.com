@@ -27,7 +27,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, Vec3, MOUSEBUTTON_LEFT, MOUSEBUTTON_MIDDLE, MOUSEBUTTON_RIGHT } from 'playcanvas';
 
-export class Mouse extends ScriptType {
+export class Mouse extends Script {
     static attributes = {
         redMaterial: {
             type: 'asset',

@@ -76,9 +76,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Movement extends ScriptType {
+export class Movement extends Script {
     initialize() {
         // initialize code called once per entity
     }
@@ -117,7 +117,7 @@ To make the sphere controllable, let's add some code to the `update` function. C
 ```javascript
 import { ScriptType, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN } from 'playcanvas';
 
-export class Movement extends ScriptType {
+export class Movement extends Script {
     initialize() {
         // initialize code called once per entity
     }

@@ -31,10 +31,10 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
 // initialize code called once per entity
-export class AnimationEvents extends ScriptType {
+export class AnimationEvents extends Script {
     initialize(){
         this.entity.anim.on('plant_foot', (event) => {
             // get the foot bone from the event's string property, either right_foot or left_foot

@@ -24,9 +24,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Player extends ScriptType {
+export class Player extends Script {
     update(dt) {
         var x = 1;
         var y = 1;
@@ -57,9 +57,9 @@ Listen for events firing by using `on()` and `off()`. In this example, the displ
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Display extends ScriptType {
+export class Display extends Script {
     static attributes = {
         playerEntity: { type: 'entity' }
     };
@@ -125,9 +125,9 @@ Firing the `player:move` event:
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Player extends ScriptType {
+export class Player extends Script {
     update(dt) {
         var x = 1;
         var y = 1;
@@ -135,7 +135,7 @@ export class Player extends ScriptType {
     }
 }
 
-export class Display extends ScriptType {
+export class Display extends Script {
     initialize() {
         // Method to call when player moves
         const onPlayerMove = (x, y) => {

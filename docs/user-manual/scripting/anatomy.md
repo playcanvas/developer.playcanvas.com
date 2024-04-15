@@ -12,9 +12,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Rotate extends ScriptType {
+export class Rotate extends Script {
     static attributes = {
         speed: { type: 'number', default: 10 }
     }
@@ -77,11 +77,11 @@ We'll break down each section of the script
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
-export class Rotate extends ScriptType {};
+import { Script } from 'playcanvas';
+export class Rotate extends Script {};
 ```
 
-You define a script by creating and exporting a class that extends the `ScriptType` class. The class name is used to identify the script in script components and each script declared in a project must have a unique name. You can have multiple scripts per file, however only classes that are exported and extend ScriptType are available in the editor.
+You define a script by creating and exporting a class that extends the `Script` class. The class name is used to identify the script in script components and each script declared in a project must have a unique name. You can have multiple scripts per file, however only classes that are exported and extend Script are available in the editor.
 
 </TabItem>
 <TabItem value="classic" label="Classic">
@@ -90,7 +90,7 @@ You define a script by creating and exporting a class that extends the `ScriptTy
 var Rotate = pc.createScript('rotate');
 ```
 
-This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each Script that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
+This line creates a new Script called 'rotate'. The name of the script is used to identify the script in script components. Each Script that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
 
 </TabItem>
 </Tabs>
@@ -220,7 +220,7 @@ Rotate.prototype.swap = function(old) {
 </TabItem>
 </Tabs>
 
-The `swap` method is called whenever a ScriptType with same is added to registry. This is done automatically during Launch when a script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
+The `swap` method is called whenever a Script with same is added to registry. This is done automatically during Launch when a script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
 
 The `swap` method is passed the old script instance as an argument and you can use this to copy the state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
 

@@ -72,7 +72,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, Vec3 } from 'playcanvas';
 
-export class Trigger extends ScriptType {
+export class Trigger extends Script {
     // initialize code called once per entity
     initialize() {
         this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
@@ -149,9 +149,9 @@ Both events are useful, but in this demo we'll use the **collisionstart** event 
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Collider extends ScriptType {
+export class Collider extends Script {
     // initialize code called once per entity
     initialize() {
         this.entity.collision.on('collisionstart', this.onCollisionStart, this);

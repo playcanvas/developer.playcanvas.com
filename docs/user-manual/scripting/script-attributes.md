@@ -16,9 +16,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class MyScript extends ScriptType {
+export class MyScript extends Script {
     static attributes = {
         speed: { type: 'number', default: 80 }
     }
@@ -48,9 +48,9 @@ If you need an array of attributes set `array: true` like so:
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class MyScript extends ScriptType {
+export class MyScript extends Script {
     static attributes = {
         names: { type: 'string', array: true }
     }

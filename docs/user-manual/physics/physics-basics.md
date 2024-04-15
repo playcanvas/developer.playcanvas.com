@@ -82,9 +82,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Movement extends ScriptType {
+export class Movement extends Script {
     initialize() {
 
     }

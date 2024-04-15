@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
 ```javascript
 import { ScriptType, math } from 'playcanvas';
 
-export class ProgressBar extends ScriptType {
+export class ProgressBar extends Script {
     static attributes = {
         progressImage: { type: 'entity' },
         progressImageMaxWidth: { type: 'number' }

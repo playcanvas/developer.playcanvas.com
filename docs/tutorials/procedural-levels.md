@@ -21,9 +21,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class Generate extends ScriptType {
+export class Generate extends Script {
     static attributes = {
         numTilesX: {
             type: 'number',

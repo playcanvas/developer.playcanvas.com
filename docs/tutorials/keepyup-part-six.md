@@ -41,9 +41,9 @@ import TabItem from '@theme/TabItem';
 <TabItem  value="esm" label="ESM">
 
 ```javascript
-import { ScriptType } from 'playcanvas';
+import { Script } from 'playcanvas';
 
-export class UiMenu extends ScriptType {
+export class UiMenu extends Script {
     static attributes = {
         overlay: {type: "entity"}
     };
