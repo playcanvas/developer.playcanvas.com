@@ -29,7 +29,7 @@ For developers seeking an enhanced code editing experience with features like ad
 
 * **Edit**: Open your project in VS Code, and edit scripts, shaders, and other text assets with rich editing support.
 * **Sync**: Save your changes in VS Code; the PlayCanvas extension automatically syncs these changes to the cloud.
-* **Preview and Debug** : Use PlayCanvas's launch page to preview and debug your application as you develop.
+* **Preview and Debug**: Use PlayCanvas' launch page to preview and debug your application as you develop.
 
 ### Debugging
 
