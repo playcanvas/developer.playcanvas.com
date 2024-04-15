@@ -23,9 +23,9 @@ For developers seeking an enhanced code editing experience with features like so
 ## Features
 
 * **Real-Time Sync**: Any changes made in VS Code are automatically synced with your PlayCanvas project, ensuring that your team always has access to the latest updates.
-* **Source Control**: Switch branches to work on a certain branch.
 * **Enhanced Code Editing**: Leverage the full power of VS Code's editing features, such as IntelliSense, code snippets, AI copilot and advanced refactoring tools.
-* **Collaboration**: Collaborate on scripts and shaders with your team, with changes reflected immediately in the PlayCanvas editor and vice-versa. Use a context menu to pull the latest changes.  
+* **Source Control**: Switch branches to work on a branch.
+* **Collaboration**: Collaborate on scripts and shaders with your team, with changes reflected immediately in the PlayCanvas editor. Use a 'Pull Latest' command from the context menu to pull latest changes into VS Code evironment.  
 
 ## Workflow
 
