@@ -4,7 +4,7 @@ sidebar_position: 3
 image: /img/user-manual/scripting/esm-script-meta.webp
 ---
 
-### An update to the PlayCanvas Scripts with full support for ES Modules. 
+### An update to the PlayCanvas Scripts with full support for ES Modules
 
 :::warning
 ESM Script are currently in beta and should not be used in production code.
@@ -17,7 +17,7 @@ ESM Script are currently in beta and should not be used in production code.
 
 ### Modern class based syntax
 
-ES Modules are a modern standardized way of writing JavaScript, which provide a richer set of features and solve many of their shortcomings of classic scripts. This means you can import modules locally from an asset registry or externally via a CDN. This gives you much more flexibility in how you structure your projects whilst being able to leverage existing libraries in the wider JavaScript ecosystem, such as NPM. 
+ES Modules are a modern standardized way of writing JavaScript, which provide a richer set of features and solve many of their shortcomings of classic scripts. This means you can import modules locally from an asset registry or externally via a CDN. This gives you much more flexibility in how you structure your projects whilst being able to leverage existing libraries in the wider JavaScript ecosystem, such as NPM.
 
 You can learn more about ES Modules and their features on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
@@ -33,7 +33,7 @@ Only Scripts ending with `.mjs` are valid ES Modules.
 
 You'll notice that the newly created ESM Script has a new boilerplate, based on JavaScript class syntax. Although this looks a little different, it provides exactly the same functionality.
 
-#### ESM boilerplate
+### ESM boilerplate
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -59,7 +59,7 @@ Only ESM Scripts exported using the `export` keyword are exposed to the Editor
 
 One of the most important features of ES Modules is their ability to import and export code. For example, you can create a global `config.mjs` within a `/settings` folder and you can import it into your other scripts.
 
-```javascript 
+```javascript
 // settings.mjs
 export const ROTATION_SPEED = 0.1;
 
@@ -73,14 +73,14 @@ export Rotator extends Script {
     }
 }
 ```
+
 :::tip
 Any ES Module within your project can be imported using a relative file path.
 :::
 
-
 ## Dependencies
 
-With ESM Scripts and a new Dependency Manger you can now import ES Modules from [NPM](http://npmjs.com) directly into your project. This gives you access to any of the nearly 3M libraries hosted on NPM. 
+With ESM Scripts and a new Dependency Manger you can now import ES Modules from [NPM](http://npmjs.com) directly into your project. This gives you access to any of the nearly 3M libraries hosted on NPM.
 
 ### Getting started with the Dependency Manager
 
@@ -114,7 +114,7 @@ ESM Scripts have module scope, meaning by default, when you define a variable - 
 
 ### 3rd Party CDN's
 
-With ES Modules it is possible to import code directly from a 3rd party host or CDN, such as [jsdelivr](https://www.jsdelivr.com/). Whilst this can be convenient, it also means relying on external services, which can occasionally lead to challenges with reliability, or expose you to security risks if the CDN encounters issues. To help keep things smooth and secure, we recommend using the Dependency Manager for using 3rd party libraries. 
+With ES Modules it is possible to import code directly from a 3rd party host or CDN, such as [jsdelivr](https://www.jsdelivr.com/). Whilst this can be convenient, it also means relying on external services, which can occasionally lead to challenges with reliability, or expose you to security risks if the CDN encounters issues. To help keep things smooth and secure, we recommend using the Dependency Manager for using 3rd party libraries.
 Any library installed with the Dependency Manager will be bundled into the application if enabled.
 
 :::warning
