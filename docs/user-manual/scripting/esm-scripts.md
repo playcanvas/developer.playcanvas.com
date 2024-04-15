@@ -7,7 +7,7 @@ image: /img/user-manual/scripting/esm-script-meta.webp
 ### An update to the PlayCanvas Scripts with full support for ES Modules
 
 :::warning
-ESM Script are currently in beta and should not be used in production code.
+ESM Scripts are currently in beta and should not be used in production code.
 :::
 
 <video width="100%" controls autoPlay loop>
@@ -16,6 +16,10 @@ ESM Script are currently in beta and should not be used in production code.
 </video>
 
 ### Modern class based syntax
+
+:::info
+ESM Scripts are available in PlayCanvas engine 1.70.0
+:::
 
 ES Modules are a modern standardized way of writing JavaScript, which provide a richer set of features and solve many of their shortcomings of classic scripts. This means you can import modules locally from an asset registry or externally via a CDN. This gives you much more flexibility in how you structure your projects whilst being able to leverage existing libraries in the wider JavaScript ecosystem, such as NPM.
 
