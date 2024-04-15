@@ -28,8 +28,8 @@ import { Script } from 'playcanvas';
 
 export class Player extends Script {
     update(dt) {
-        var x = 1;
-        var y = 1;
+        const x = 1;
+        const y = 1;
         this.fire('move', x, y);
     }
 }
