@@ -165,7 +165,7 @@ export class Movement extends Script {
 ```javascript
 export class MyScript extends Script {
     initialize() {
-        this.on("enable", function () {
+        this.on("enable", () => {
 
         });
 
