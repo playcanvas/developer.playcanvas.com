@@ -115,7 +115,7 @@ When you modify an attribute in the editor the changes are sent to any copies of
 ```javascript
 initialize () {
     // fires only for `speed` attribute
-    this.on('attr:speed', function (value, prev) {
+    this.on('attr:speed', (value, prev) => {
         // new value for speed
     });
 
