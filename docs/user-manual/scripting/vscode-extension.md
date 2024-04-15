@@ -10,7 +10,6 @@ For developers seeking an enhanced code editing experience with features like ad
 ### Setting Up the VS Code Extension
 
 * **Install Visual Studio Code**: Download and install VS Code if you haven't already done so.
-
 * **Install PlayCanvas VS Code Extension**: Search for [the PlayCanvas extension](https://marketplace.visualstudio.com/items?itemName=playcanvas.playcanvas) in the VS Code marketplace and install it. This extension connects VS Code to your PlayCanvas projects using the PlayCanvas API.
 
 ### Configuration:
@@ -22,11 +21,8 @@ For developers seeking an enhanced code editing experience with features like ad
 ## Features
 
 * **Real-Time Sync**: Any changes made in VS Code are automatically synced with your PlayCanvas project, ensuring that your team always has access to the latest updates.
-
 * **Source Control**: Switch branches to work on a certain branch.
-
 * **Enhanced Code Editing**: Leverage the full power of VS Code's editing features, such as IntelliSense, code snippets, AI copilot and advanced refactoring tools.
-
 * **Collaboration**: Collaborate on scripts and shaders with your team, with changes reflected immediately in the PlayCanvas editor and vice-versa. Use a context menu to pull the latest changes.  
 
 ## Workflow
