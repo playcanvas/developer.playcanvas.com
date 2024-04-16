@@ -1,6 +1,7 @@
 ---
 title: Migration Guide
 sidebar_position: 11
+unlisted: true
 ---
 
 ## Migrating Legacy Script Projects
