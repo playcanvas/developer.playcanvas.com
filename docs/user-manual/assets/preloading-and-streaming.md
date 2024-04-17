@@ -36,10 +36,10 @@ In many cases, you don't wish assets to "popup" as they load. It's preferable to
 Here is some example javascript which shows you how you might load a set of assets using a tag.
 
 ```javascript
-var assets = this.app.assets.findByTag("level-1");
-var count = 0;
+const assets = this.app.assets.findByTag("level-1");
+let count = 0;
 
-for (var i = 0; i < assets.length; i++) {
+for (let i = 0; i < assets.length; i++) {
     assets[i].once("load", function () {
         count++;
         if (count === assets.length) {

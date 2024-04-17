@@ -166,7 +166,7 @@ Here's an example of accessing the above attributes in a script:
 ```javascript
 MyScript.prototype.update = function (dt) {
     if (this.gameConfig.godMode) {
-        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
+        for (let i = 0; i < this.gameConfig.numEnemies; i++) {
             // ...
         }
     }

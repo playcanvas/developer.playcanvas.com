@@ -15,14 +15,14 @@ Populate a vertex buffer with per instance matrices to provide their world matri
 
 ```javascript
 // store matrices for individual instances into array
-var matrices = new Float32Array(instanceCount * 16);
-var matrix = new pc.Mat4();
-var matrixIndex = 0;
-for (var i = 0; i < instanceCount; i++) {
+const matrices = new Float32Array(instanceCount * 16);
+const matrix = new pc.Mat4();
+let matrixIndex = 0;
+for (let i = 0; i < instanceCount; i++) {
     matrix.setTRS(pos, pc.Vec3.ZERO, pc.Vec3.ONE);
 
     // copy matrix elements into array of floats
-    for (var m = 0; m < 16; m++)
+    for (let m = 0; m < 16; m++)
         matrices[matrixIndex++] = matrix.data[m];
 }
 ```
@@ -30,9 +30,14 @@ for (var i = 0; i < instanceCount; i++) {
 Create a VertexBuffer which stores per-instance state and initialize it with the matrices. In the following example, we use `pc.VertexFormat.defaultInstancingFormat` which allows us to store a per-instance Mat4 matrix. Then we enable instancing on a MeshInstance, which contains the mesh geometry we want to instance.
 
 ```javascript
-var instanceCount = 10;
-var vertexBuffer = new pc.VertexBuffer(this.app.graphicsDevice, pc.VertexFormat.defaultInstancingFormat,
-                                        instanceCount, pc.BUFFER_STATIC, matrices);
+const instanceCount = 10;
+const vertexBuffer = new pc.VertexBuffer(
+    this.app.graphicsDevice,
+    pc.VertexFormat.defaultInstancingFormat,
+    instanceCount,
+    pc.BUFFER_STATIC,
+    matrices
+);
 meshInst.setInstancing(vertexBuffer);
 ```
 

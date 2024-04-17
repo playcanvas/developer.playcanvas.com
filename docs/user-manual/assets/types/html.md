@@ -10,10 +10,10 @@ The loaded HTML asset is just a string. You can use that string as you like - a 
 
 ```javascript
 // get asset from registry by id
-var asset = app.assets.get(32);
+const asset = app.assets.get(32);
 
 // create element
-var div = document.createElement('div');
+const div = document.createElement('div');
 div.innerHTML = asset.resource || '';
 document.body.appendChild(div);
 

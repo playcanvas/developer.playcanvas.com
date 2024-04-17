@@ -21,8 +21,8 @@ Trigger an event using `fire()`. In this example, the player script fires a `mov
 var Player = pc.createScript('player');
 
 Player.prototype.update = function (dt) {
-    var x = 1;
-    var y = 1;
+    const x = 1;
+    const y = 1;
     this.fire('move', x, y);
 };
 ```
@@ -37,7 +37,7 @@ Display.attributes.add('playerEntity', { type: 'entity' });
 
 Display.prototype.initialize = function () {
     // method to call when player moves
-    var onPlayerMove = function(x, y) {
+    const onPlayerMove = function(x, y) {
         console.log(x, y);
     };
 
@@ -65,8 +65,8 @@ Firing the `player:move` event:
 var Player = pc.createScript('player');
 
 Player.prototype.update = function (dt) {
-    var x = 1;
-    var y = 1;
+    const x = 1;
+    const y = 1;
     this.app.fire('player:move', x, y);
 };
 ```
@@ -78,7 +78,7 @@ var Display = pc.createScript('display');
 
 Display.prototype.initialize = function () {
     // method to call when player moves
-    var onPlayerMove = function(x, y) {
+    const onPlayerMove = function(x, y) {
         console.log(x, y);
     };
 

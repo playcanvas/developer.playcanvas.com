@@ -22,7 +22,7 @@ TextScript.attributes.add('textAsset', { type: 'asset', assetType: 'text' });
 TextScript.prototype.initialize = function() {
     if (this.textAsset) {
         // Get the Text asset's resource (a string)
-        var textData = this.textAsset.resource;
+        const textData = this.textAsset.resource;
         
         // Output the content of the text asset
         console.log('Content of text asset: ', textData);

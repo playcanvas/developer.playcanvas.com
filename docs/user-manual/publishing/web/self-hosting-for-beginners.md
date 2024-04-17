@@ -56,7 +56,7 @@ When writing PlayCanvas applications, no code you write in PlayCanvas runs serve
 In the web stack, the server is not the only place where we can do programming and respond to user input. Client-side refers to code running inside your browser. This code is always in Javascript, which is the language that browsers run. With client-side javascript you can perform many different operations. In the simplest case, you can modify the HTML page that was downloaded from the server
 
 ```javascript
-var title = document.getElementById("title");
+const title = document.getElementById("title");
 title.innerHTML = "This is the new title";
 ```
 
