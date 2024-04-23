@@ -26,7 +26,7 @@ Your private projects will become locked (inaccessible) when you cancel your sub
 
 ### How do I receive invoices?
 
-Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date.
+Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. The subject line for these emails begins with "Your receipt from PlayCanvas Ltd".
 
 :::tip
 
