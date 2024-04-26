@@ -82,7 +82,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/playcanvas-social-card.jpg',
       navbar: {
-        title: 'Docs',
+        title: 'PlayCanvas Docs',
         logo: {
           alt: 'PlayCanvas Logo',
           src: 'img/playcanvas.png',
