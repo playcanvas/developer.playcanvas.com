@@ -224,7 +224,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
             <script type="importmap">
             {
                 "imports": {
-                    "playcanvas": "https://cdn.skypack.dev/playcanvas"
+                    "playcanvas": "https://cdn.jsdelivr.net/npm/playcanvas"
                 }
             }
             </script>
@@ -300,7 +300,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
             <script type="importmap">
             {
                 "imports": {
-                    "playcanvas": "https://cdn.skypack.dev/playcanvas"
+                    "playcanvas": "https://cdn.jsdelivr.net/npm/playcanvas"
                 }
             }
             </script>
