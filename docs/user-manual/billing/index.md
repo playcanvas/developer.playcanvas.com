@@ -11,7 +11,25 @@ Yes. Once you subscribe to the Personal or Organization plan, payment will autom
 
 ### How do I cancel my subscription?
 
-You can cancel your plan at any time. Note that cancellation takes effect immediately and your account will switch to the free tier straight away. If you need to use your plan features up to the next billing date, we recommend that you set a reminder and cancel the day before.
+You can cancel your plan subscription at any time.
+
+1. Visit your [Account page](https://playcanvas.com/account).
+2. Scroll down to the 'Current Plan' section.
+3. If you have **Personal** showing here, hit 'Cancel' to cancel it.
+4. Hit 'OK' in the **CANCEL PLAN** dialog.
+5. Also in the 'Current Plan' section, you will see a list of your Organizations.
+6. For each Organization listed, click its icon to visit its Account page.
+7. Scroll down to the 'Current Plan' section.
+8. If you have **Organization** showing here, hit 'Cancel' to cancel it.
+9. Hit 'OK' in the **CANCEL PLAN** dialog.
+
+Once your subscription is cancelled, you will not be billed again unless you resubscribe.
+
+:::note
+
+When you cancel your subscription, it will not revert to the free tier immediately. Instead, this will happen at your next billing date. If between the time you cancel and your next billing date you decide you would like to continue your subscription, just return to your Account page and hit 'Resume'.
+
+:::
 
 ### What happens to my published apps when I cancel my subscription?
 
