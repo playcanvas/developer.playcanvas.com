@@ -9,7 +9,7 @@ When authoring artwork for PlayCanvas, it is important to ensure you do so to th
 
 ### Blender
 
-To get ensure units are exported correctly from Blender, check that Scene Properties unit system is set to metric and that scale is set to 1.0:
+To ensure units are exported correctly from Blender, check that Scene Properties unit system is set to metric and that scale is set to 1.0:
 
 ![Blender units](/img/user-manual/assets/models/units/blender-units.png)
 
