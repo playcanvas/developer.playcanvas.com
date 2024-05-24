@@ -13,7 +13,7 @@ To ensure units are exported correctly from Blender, check that Scene Properties
 
 ![Blender units](/img/user-manual/assets/models/units/blender-units.png)
 
-In addition, when exporting to FBX format check that "Apply Scaling" is set to "FBX All":
+In addition, when exporting to FBX format, check that "Apply Scaling" is set to "FBX All":
 
 ![Blender FBX Export](/img/user-manual/assets/models/units/blender-fbx-export.png)
 
