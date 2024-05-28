@@ -29,7 +29,7 @@ Captured splats normally need to be edited to some degree. The generation proces
 
 ![SuperSplat](/img/user-manual/graphics/gaussian-splatting/supersplat.png)
 
-PlayCanvas provides a powerful 3D Gaussian Splat editor called [SuperSplat](https://playcanvas.com/supersplat/editor). SuperSplat is open-sourced under an MIT license on [GitHub](https://github.com/playcanvas/super-splat).
+PlayCanvas provides a powerful 3D Gaussian Splat editor called [SuperSplat](https://playcanvas.com/supersplat/editor). SuperSplat is open-sourced under an MIT license on [GitHub](https://github.com/playcanvas/supersplat).
 
 ### Importing Splats
 
