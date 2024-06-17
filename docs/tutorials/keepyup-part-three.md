@@ -19,7 +19,7 @@ These two scripts `game.js` and `input.js` are attached the root entity in the s
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -114,7 +114,7 @@ export class Game extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var Game = pc.createScript('game');
@@ -250,7 +250,7 @@ Finally the game script handles the initial choice of resolution to make sure th
 
 The input script listens for input from the mouse or touchscreen, normalizes the input from the two into a general purpose "tap" and communicates with the rest of the application that a tap has occurred.
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -330,7 +330,7 @@ export class Input extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var Input = pc.createScript('input');

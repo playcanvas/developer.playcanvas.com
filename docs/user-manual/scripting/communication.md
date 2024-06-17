@@ -20,7 +20,7 @@ Trigger an event using `fire()`. In this example, the player script fires a `mov
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -36,7 +36,7 @@ export class Player extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var Player = pc.createScript('player');
@@ -53,7 +53,7 @@ Player.prototype.update = function (dt) {
 
 Listen for events firing by using `on()` and `off()`. In this example, the display script listens for the `move` event on the player and prints out the x and y values.
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -84,7 +84,7 @@ export class Display extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var Display = pc.createScript('display');
@@ -121,7 +121,7 @@ Let's try the same example using application events.
 
 Firing the `player:move` event:
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -154,7 +154,7 @@ export class Display extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var Player = pc.createScript('player');

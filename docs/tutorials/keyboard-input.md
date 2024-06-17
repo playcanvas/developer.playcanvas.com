@@ -19,7 +19,7 @@ Take a look at the keyboard input Scene in the [tutorials project][1]. Here is t
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -105,7 +105,7 @@ export class KeyboardHandler extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var KeyboardHandler = pc.createScript('keyboardHandler');

@@ -37,7 +37,7 @@ Let's take a look at the script for the main menu.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -82,7 +82,7 @@ export class UiMenu extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var UiMenu = pc.createScript('uiMenu');

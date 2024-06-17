@@ -1,51 +1,91 @@
 ---
 title: Script Attributes
+description: Expose dynamic script properties to the PlayCanvas Editor.
 sidebar_position: 5
 ---
 
-Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
+Script Attributes are a powerful feature that allow you to expose properties to the PlayCanvas editor. This means you can tweak those values at runtime via the editor to give you greater control to dynamically tweak your application as you author it. The attributes becomes accessible as UI controls within the editor, perfect for artists, designers or other non-programmer team members to adjust and modify values without writing code
 
-## Declaring Script Attributes
+## Getting Started
 
-Script Attributes are declared at the top of your script file using this format:
+Let's say you have a simple script that rotates an entity around it's Y axis.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
 
-export class MyScript extends Script {
-    static attributes = {
-        speed: { type: 'number', default: 80 }
+export class Rotator extends Script {
+    speed = 2
+
+    update(dt){
+        this.entity.rotateLocal(0, this.speed, 0)
     }
 }
 ```
 
-</TabItem>
-<TabItem value="classic" label="Classic">
+However you're not sure what the exact value of speed should be, and more-so you might want to use this script in different places, potentially with different speeds.
+
+Ideally there would be a way to dynamically set the value of speed on different instances in a way that could be tweaked at author-time,
+
+### The @attribute tag
+
+By adding an `@attribute` tag in a comment block immediately before the member, you expose it to the editor as an attribute. This creates a controller in the editor that allows you to dynamically set the value of `speed` at run time for each entity it's attached to.
+
+:::tip
+Adding an `/** @attribute */` comment before a Script member will expose it to the editor.
+:::
 
 ```javascript
-var MyScript = pc.createScript('myScript');
+import { Script } from 'playcanvas';
 
-MyScript.attributes.add('speed', {
-    type: 'number',
-    default: 80
-});
+export class Rotator extends Script {
+    /** @attribute */
+    speed = 2
+
+    update(dt){
+        this.entity.rotateLocal(0, this.speed, 0)
+    }
+}
 ```
 
-</TabItem>
-</Tabs>
+This tells the editor that the `speed` member in an attribute. The editor will generate a control that allows you to change the value of `speed` dynamically in the launch page.
 
-In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
+### Attribute constraints
+Adding the `@attribute` tag creates a UI controller that matches the specific type of attribute. For example
+
+```javascript
+/** @attribute */
+speed = 10
+```
+
+creates a numerical input box, allowing you to set numerical values for `speed`, however it's likely you might want to set a range of sensible values for speed. You can do this with the `@range` tag
+
+```javascript
+/** 
+ * @attribute
+ * @range [0, 10]
+ */
+speed = 10
+```
+
+This simply tells the editor that speed is an attribute and it's value should be within 0 - 10. The editor will create a numerical slider mapped to this range.
+
+There are other numerical constraints that you can set which help the editor limit the set of possible values
+
+```javascript
+/** 
+ * @attribute
+ * @range [0, 10]
+ * @precison 0.1
+ * @step 0.05
+ */
+speed = 10
+```
+
+ 
+In this example, we're declaring a property called `speed` which is a `number` and has a default value of `2`:
 
 If you need an array of attributes set `array: true` like so:
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -56,21 +96,6 @@ export class MyScript extends Script {
     }
 }
 ```
-
-</TabItem>
-<TabItem value="classic" label="Classic">
-
-```javascript
-var MyScript = pc.createScript('myScript');
-
-MyScript.attributes.add('names', {
-    type: 'string',
-    array: true
-});
-```
-
-</TabItem>
-</Tabs>
 
 ## Getting Attributes into Editor
 
@@ -84,127 +109,69 @@ Once you've declared your attributes the Editor needs to parse the code in order
 
 When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
 
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
 ```javascript
 update(dt) {
     this.entity.translate(this.speed * dt, 0, 0);
 }
 ```
 
-</TabItem>
-<TabItem value="classic" label="Classic">
-
-```javascript
-MyScript.prototype.update = function (dt) {
-    this.entity.translate(this.speed * dt, 0, 0);
-}
-```
-
-</TabItem>
-</Tabs>
-
-## Updating attributes
-
-When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
-```javascript
-initialize () {
-    // fires only for `speed` attribute
-    this.on('attr:speed', (value, prev) => {
-        // new value for speed
-    });
-
-    // fires for all attribute changes
-    this.on('attr', (name, value, prev) => {
-        // new attribute value
-    });
-}
-```
-
-</TabItem>
-<TabItem value="classic" label="Classic">
-
-```javascript
-MyScript.prototype.initialize = function () {
-    // fires only for `speed` attribute
-    this.on('attr:speed', function (value, prev) {
-        // new value for speed
-    });
-
-    // fires for all attribute changes
-    this.on('attr', function(name, value, prev) {
-        // new attribute value
-    });
-}
-```
-
-</TabItem>
-</Tabs>
-
 ## Attribute types
 
-When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][3] for more details.
+When you expose a script member as an attribute, the editor will show a relevant control based on the type of attribute. If the attribute is a number, it shows a numerical input, if it's a boolean, a checkbox. 
 
-### Entity attribute
+### Supported Types
+Here are the full set of supported attribute types:
 
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+- **number**
+- **string**
+- **boolean**
+- **[Vec2](https://api.playcanvas.com/classes/Engine.Vec2.html)**
+- **[Vec3](https://api.playcanvas.com/classes/Engine.Vec3.html)**
+- **[Vec4](https://api.playcanvas.com/classes/Engine.Vec4.html)**
+- **[Entity](https://api.playcanvas.com/classes/Engine.Entity.html)**
+- **[Asset](https://api.playcanvas.com/classes/Engine.Asset.html)**
+- **[Curve](https://api.playcanvas.com/classes/Engine.Curve.html)**
+- **[Color](https://api.playcanvas.com/classes/Engine.Color.html)**
+
+### The @type tag
+
+In some situations you won't actually know an attributes initial value ahead of time. For example, if you want to define an asset attribute on a script, you won't necessarily have an initial value. In these situations, where a value isn't known ahead of time, but it's type is, you can use the jsdoc `@type` tag.
 
 ```javascript
-static attributes = {
-    target: { type: 'entity' }
-}
+/**
+ * @attribute
+ * @type {Asset}
+ */
+myTexture;
 ```
 
-</TabItem>
-<TabItem value="classic" label="Classic">
+:::warning
+An attribute must either be initialized with a value `speed = 10`, or have a jsdoc type `@type {number}`. If neither are present, the attribute will ignored
+:::
 
-```javascript
-MyScript.attributes.add('target', { type: 'entity' })
-```
-
-</TabItem>
-</Tabs>
-
+#### Entity attribute
 The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
 
-### Asset attribute
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
 ```javascript
-static attributes = {
-    textures: { type: 'asset', assetType: 'texture', array: true })
-}
+/**
+ * @attribute
+ * @type {Entity}
+ */
+target
 ```
 
-</TabItem>
-<TabItem value="classic" label="Classic">
+#### Asset attribute
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `@resource` tag which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+
+The runtime type of an Asset attribute is `Asset`. You can reference the resource of an Asset attribute at runtime like so:
 
 ```javascript
-MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
-```
-
-</TabItem>
-</Tabs>
-
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
-
-The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
-```javascript
-static attributes = {
-    textures: { type: 'asset', assetType: 'texture' })
-}
+/**
+ * @attribute
+ * @type {Asset}
+ * @resource texture
+ */
+texture
 
 initialize() {
     console.log('This is the texture asset', this.texture);
@@ -212,204 +179,155 @@ initialize() {
 }
 ```
 
-</TabItem>
-<TabItem value="classic" label="Classic">
+#### Color attribute
 
 ```javascript
-MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
-
-MyScript.prototype.initialize = function () {
-    console.log('This is the texture asset', this.texture);
-    console.log('This is the texture resource', this.texture.resource);
-};
+/** @attribute */
+color = new Color()
 ```
-
-</TabItem>
-</Tabs>
-
-### Color attribute
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
-```javascript
-static attributes = {
-    color: { type: 'rgba' }
-}
-```
-
-</TabItem>
-<TabItem value="classic" label="Classic">
-
-```javascript
-MyScript.attributes.add('color', { type: 'rgba' });
-```
-
-</TabItem>
-</Tabs>
 
 The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
 
-### Curve attribute
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+#### Curve attribute
 
 ```javascript
-static attributes = {
-    wave: { type: 'curve' }, // one curve
-    wave: { type: 'curve', curves: [ 'x', 'y', 'z' ] }, // three curves: x, y, z
-    wave: { type: 'curve', color: 'r' }, // one curve for red channel
-    wave: { type: 'curve', color: 'rgba' } // four curves for full color including alpha
-}
+/**
+ * @attribute
+ * @type {Curve}
+ * @color rgba
+ */
+wave
 ```
-
-</TabItem>
-<TabItem value="classic" label="Classic">
-
-```javascript
-MyScript.attributes.add('wave', { type: 'curve' }); // one curve
-MyScript.attributes.add('wave', { type: 'curve', curves: [ 'x', 'y', 'z' ] }); // three curves: x, y, z
-MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // one curve for red channel
-MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curves for full color including alpha
-```
-
-</TabItem>
-</Tabs>
 
 The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
 
-### Enumeration attribute
 
-The Enumeration attribute allows you to choose one of the available options:
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+### Attribute arrays
+In some cases you may want to expose a list of grouped attributes together. Let's say you have a script that generates a gradient, but rather than having a start and end point, you want to allow users to set an arbitrary amount of 'color stops' on the gradient. In this case you can an array qualifier in a `@type` tag.
 
 ```javascript
-static attributes = {
-    value: {
-        type: 'number',
-        enum: [
-            { 'valueOne': 1 },
-            { 'valueTwo': 2 },
-            { 'valueThree': 3 }
-        ]
+/**
+ * @attribute
+ * @type {Color[]}
+ */
+gradientStops;
+```
+
+The `Color[]` declaration uses the [jsdoc type tag](https://jsdoc.app/tags-type) to declare that `gradientStops` is an array of `Colors`. The editor will interpret in this way, creating a controller that allows you to set multiple `Color` values in a list.
+
+In your initialize or update loop, you can iterate over `gradientStops` as an array
+
+```javascript
+initialize(){
+    this.gradientStops.forEach(color => {
+        console.log('This is a Color class', color)
+    })
+}
+```
+
+### Enumerations
+
+Sometimes you may want to constrain an attribute to a set of possible values. In this situation you can use the `@enum` tag. This uses an enumeration as a value for the attribute making the editor display a combo box constrained to the list of possible values
+
+```javascript
+
+/** @enum {number} */
+class Lights {
+    ON: 1,
+    OFF: 0,
+    UNKNOWN: 0.5
+}
+
+class MyScript extends Script {
+    /**
+     * @attribute
+     * @type {Lights}
+     */
+    ambient = Lights.OFF
+}
+```
+
+This uses the `Lights` class as an enumeration of possible values. The `@type {Lights}` indicates that `ambient` should only have a value listed in `Lights`. At author-time the editor will generate a drop-down control using the Lights enumeration keys as labels (ON/OFF/UNKNOWN) and setting the corresponding value on `ambient`. An enumerators values can only be numbers, strings, or booleans.
+
+## Grouping Complex Attributes
+
+In some situations you may want attributes that have a more complex nested structure. For example lets say you have a `GameLogic` Script with an enemy with the speed and power. Rather than declare the enemies attributes separately, it makes sense to semantically group them together.
+
+### Inline
+
+```javascript
+class GameLogic extends Script {
+    /** 
+     * @attribute 
+     * `power` and `speed` are exposed as sub attributes
+     */
+    enemy = { power: 10, speed: 3 }
+
+    initialize(){
+        console.log(this.enemy.speed) // 3
+        console.log(this.enemy.power) // 10
     }
 }
 ```
 
-</TabItem>
-<TabItem value="classic" label="Classic">
+This defines `enemy` as as single 'complex attribute', in that it's an object containing sub-attributes. What this means ,is the editor will expose the enemy attribute with nested controllable power and speed sub-attributes. This provides a more flexible way to group relevant attributes together.
+
+### Interface
+
+However what if you also want to set constraints on those same sub-attributes. For example, you may want to limit the enemies power to a more sensible range. At this point you can abstract your enemy type into it's an interface.
 
 ```javascript
-MyScript.attributes.add('value', {
-    type: 'number',
-    enum: [
-        { 'valueOne': 1 },
-        { 'valueTwo': 2 },
-        { 'valueThree': 3 }
-    ]
-});
-```
+/** 
+ * @interface 
+ * Using the `@interface` tag on a class allows it to be used to group attributes
+ */
+class Enemy {
+    /**
+     * @range [0, 11]
+     */
+    power = 10;
+    speed = 3
+}
 
-</TabItem>
-</Tabs>
-
-Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`.
-
-### JSON attribute
-
-The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
-```javascript
-static attributes = {
-    gameConfig: {
-        type: 'json',
-        schema: [{
-            name: 'numEnemies',
-            type: 'number',
-            default: 10
-        }, {
-            name: 'enemyModels',
-            type: 'asset',
-            assetType: 'model',
-            array: true
-        }, {
-            name: 'godMode',
-            type: 'boolean',
-            default: false
-        }]
-    }
+class GameLogic extends Script {
+    /**
+     * @attribute 
+     * @type {Enemy}
+     */
+    enemy
 }
 ```
 
-</TabItem>
-<TabItem value="classic" label="Classic">
+This works exactly the same as the previous example, but this time you've also specifying that power should be constrained within the _0 - 11_ range. By separating `Enemy` into it's own interface you can set individual constraints on a sub-attributes.
 
-```javascript
-MyScript.attributes.add('gameConfig', {
-    type: 'json',
-    schema: [{
-        name: 'numEnemies',
-        type: 'number',
-        default: 10
-    }, {
-        name: 'enemyModels',
-        type: 'asset',
-        assetType: 'model',
-        array: true
-    }, {
-        name: 'godMode',
-        type: 'boolean',
-        default: false
-    }]
-});
-```
-
-</TabItem>
-</Tabs>
-
-You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
-
-Here's an example of accessing the above attributes in a script:
-
-<Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
-```javascript
-update (dt) {
-    if (this.gameConfig.godMode) {
-        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
-            // ...
-        }
-    }
-}
-```
-
-</TabItem>
-<TabItem value="classic" label="Classic">
-
-```javascript
-MyScript.prototype.update = function (dt) {
-    if (this.gameConfig.godMode) {
-        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
-            // ...
-        }
-    }
-};
-```
-
-</TabItem>
-</Tabs>
-
-:::note
-
-We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.
-
+:::tip
+Declare complex attributes with the `@interface` tag on a class. Every [supported member](./#supported-types) becomes available as a sub-attribute
 :::
 
-[3]: https://api.playcanvas.com/classes/Engine.ScriptAttributes.html
+:::warn
+An interface should not contain any methods or code. It's simply used as a way to declare nested attributes. It should not be initialized in your code and will not be instantiated at runtime.
+:::
+
+
+### Complex arrays
+You can of course use complex attributes as array, just like regular attributes. This means that your `GameLogic` script can use an array of enemies, each with their own controllable power and speed properties.
+
+```javascript
+class GameLogic extends Script {
+    /**
+     * @attribute
+     * @type {Enemy[]}
+     */
+    enemies
+
+    update(){
+        this.enemies.forEach(({ power, speed }) => {
+            this.updateEnemy(power, speed)
+        })
+    }
+}
+```
+
+:::note
+We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.
+:::

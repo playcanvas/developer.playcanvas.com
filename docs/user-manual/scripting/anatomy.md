@@ -8,7 +8,7 @@ Here is a basic script. We can learn about the structure of a PlayCanvas script 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -38,7 +38,7 @@ export class Rotate extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var Rotate = pc.createScript('rotate');
@@ -73,7 +73,7 @@ We'll break down each section of the script
 
 ## Declaration of a Script
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -84,7 +84,7 @@ export class Rotate extends Script {};
 You define a script by creating and exporting a class that extends the `Script` class. The class name is used to identify the script in script components and each script declared in a project must have a unique name. You can have multiple scripts per file, however only classes that are exported and extend Script are available in the editor.
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var Rotate = pc.createScript('rotate');
@@ -97,7 +97,7 @@ This line creates a new Script called 'rotate'. The name of the script is used t
 
 ## Script Attributes
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
@@ -107,7 +107,7 @@ static attributes = {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
@@ -124,7 +124,7 @@ Attributes are automatically inherited from a new script instance during code ho
 
 ### Initialize
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
@@ -136,7 +136,7 @@ initialize() {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 // initialize code called once per entity
@@ -157,7 +157,7 @@ If a script component has multiple scripts attached to it, the `initialize` meth
 
 ### Update
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
@@ -172,7 +172,7 @@ update(dt) {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 // update code called every frame
@@ -194,7 +194,7 @@ If a script component has multiple scripts attached to it, `update` is called in
 
 ### Swap
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
@@ -206,7 +206,7 @@ swap(old) {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 // swap method called for script hot-reloading

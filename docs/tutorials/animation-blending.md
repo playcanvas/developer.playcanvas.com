@@ -43,7 +43,7 @@ So this kind of functionality goes beyond the abilities of the humble animation 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -88,7 +88,7 @@ export class AnimationBlending extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var AnimationBlending = pc.createScript('animationBlending');

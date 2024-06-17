@@ -31,7 +31,7 @@ Collision based picking uses the collision components to add a shape to each Ent
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -61,7 +61,7 @@ export class PickerRaycast extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var PickerRaycast = pc.createScript('pickerRaycast');
@@ -105,7 +105,7 @@ You are able modify the size of the buffer to be smaller to improve the performa
 
 It's also possible to restrict the layers to pick which the script supports via `layerNames` array. We can add the names of the layers that we want to pick from and also improves performance by rendering only what we need to the internal buffer.
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -188,7 +188,7 @@ export class PickerFramebuffer extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');

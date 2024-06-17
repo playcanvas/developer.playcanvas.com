@@ -16,7 +16,7 @@ Here is a simple example where we show a couple of different ways of exposing an
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -55,7 +55,7 @@ app.fire("score:set", 10);
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 // method one: define a global function to set the score
@@ -115,7 +115,7 @@ iframe.contentWindow.postMessage({
 
 In your application
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -136,7 +136,7 @@ window.addEventListener("message", (event) => {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 window.addEventListener("message", function (event) {

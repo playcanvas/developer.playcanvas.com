@@ -101,7 +101,7 @@ Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -155,7 +155,7 @@ export class UpdateAsset extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var UpdateAsset = pc.createScript('updateAsset');

@@ -117,7 +117,7 @@ Add a script component to your player, and attach a new script called `Movement.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -178,7 +178,7 @@ export class Movement extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var Movement = pc.createScript('movement');
@@ -303,7 +303,7 @@ socket.on ('playerJoined', function (data) {
 
 And then declare these new functions inside Network.js:
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -350,7 +350,7 @@ addPlayer(data) {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 Network.prototype.initializePlayers = function (data) {
@@ -418,7 +418,7 @@ Network.prototype.update = function (dt) {
 
 And then declare these new functions inside Network.js:
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -436,7 +436,7 @@ updatePosition() {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 Network.prototype.movePlayer = function (data) {

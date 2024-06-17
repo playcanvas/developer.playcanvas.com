@@ -86,7 +86,7 @@ Now, you'll create a script to apply the shaders to your scene. Create a new scr
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -152,7 +152,7 @@ export class WaterColor extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 //--------------- POST EFFECT DEFINITION------------------------//

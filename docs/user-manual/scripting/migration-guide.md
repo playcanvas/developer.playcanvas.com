@@ -71,7 +71,7 @@ And here is the equivalent script in the current format:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -95,7 +95,7 @@ export class MyScript extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -142,7 +142,7 @@ onDestroy: function () {
 
 To migrate these to the current script format, you would register event handlers in the script's `initialize` function:
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -160,7 +160,7 @@ export class Movement extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 export class MyScript extends Script {

@@ -121,7 +121,7 @@ The blend weight value of each layer is used when blending multiple layers to de
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -140,7 +140,7 @@ export class AnimationBlending extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var AnimationBlending = pc.createScript('animationBlending');

@@ -173,7 +173,7 @@ When our height map texture is loaded we can set the uniform `uHeightMap` to be 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -196,7 +196,7 @@ export class CustomShader extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 // update code called every frame
@@ -223,7 +223,7 @@ In our shader if the value of the heightmap on a pixel is less than the value ti
 
 ## Complete listing
 
-<Tabs defaultValue="classic" groupId='script-code'>
+<Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -306,7 +306,7 @@ export class CustomShader extends Script {
 ```
 
 </TabItem>
-<TabItem value="classic" label="Classic">
+<TabItem value="legacy" label="Legacy">
 
 ```javascript
 var CustomShader = pc.createScript('customShader');
