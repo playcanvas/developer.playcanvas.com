@@ -1,6 +1,7 @@
 ---
 title: Migration Guide
 sidebar_position: 11
+unlisted: true
 ---
 
 ## Migrating Legacy Script Projects
@@ -104,8 +105,8 @@ MyScript.attributes.add('speed', { type: 'number', default: 10 });
 
 // initialize code called once per entity
 MyScript.prototype.initialize = function() {
-    var app = this.app;       // application instance is available as this.app
-    var entity = this.entity; // entity property already set up
+    const app = this.app;       // application instance is available as this.app
+    const entity = this.entity; // entity property already set up
 };
 
 // update code called every frame
@@ -188,7 +189,7 @@ export class MyScript extends Script {
 Next, we will transfer the legacy project's scene hierarchy across. The PlayCanvas Editor supports a copy and paste operation between two Editor instances. However, this operation fails if legacy script components are in the selection. Therefore, you should first delete all script components from your legacy script project. To do this, select all entities with legacy script components. You can do this by running the following JavaScript in the browser's JavaScript console:
 
 ```javascript
-var entities = editor.call('entities:list').filter(function(entity) {
+const entities = editor.call('entities:list').filter(function(entity) {
     return entity.has('components.script');
 });
 if (entities.length) {

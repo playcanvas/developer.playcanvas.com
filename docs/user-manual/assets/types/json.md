@@ -60,7 +60,7 @@ JsonScript.attributes.add('jsonAsset', { type: 'asset', assetType: 'json' });
 JsonScript.prototype.initialize = function () {
     if (this.jsonAsset) {
         // Get the JSON asset's resource (an object)
-        var jsonData = this.jsonAsset.resource;
+        const jsonData = this.jsonAsset.resource;
 
         // Example: Accessing data from the JSON object
         if (jsonData.someDataField) {

@@ -29,7 +29,7 @@ Captured splats normally need to be edited to some degree. The generation proces
 
 ![SuperSplat](/img/user-manual/graphics/gaussian-splatting/supersplat.png)
 
-PlayCanvas provides a powerful 3D Gaussian Splat editor called [SuperSplat](https://playcanvas.com/supersplat/editor). SuperSplat is open-sourced under an MIT license on [GitHub](https://github.com/playcanvas/super-splat).
+PlayCanvas provides a powerful 3D Gaussian Splat editor called [SuperSplat](https://playcanvas.com/supersplat/editor). SuperSplat is open-sourced under an MIT license on [GitHub](https://github.com/playcanvas/supersplat).
 
 ### Importing Splats
 
@@ -39,6 +39,14 @@ To import your PLY splat file:
 2. Drag the created [GSplat asset](../../assets/types/gsplat) into the [Viewport](../../editor/viewport). This will auto-create an Entity in the Hierarchy with a [GSplat component](../../scenes/components/gsplat) with your GSplat asset assigned to it.
 
 ![Import Gaussian Splat](/img/user-manual/graphics/gaussian-splatting/import-gsplat.webp)
+
+## パフォーマンス
+
+Rendering splats can be expensive on both the CPU and GPU. Here are some strategies to achieve good performance:
+
+- Be mindful of the number of Gaussians in your scene since every Gaussian is sorted on camera depth every frame. You can check the number contained within a particular GSplat asset by using the [Inspector](../../assets/types/gsplat/#asset-inspector). Use SuperSplat to trim unwanted Gaussians from your PLY files.
+- Disable `Anti-Alias` in the Scene Settings. Anti-aliasing is GPU intensive and offers little benefit for rendering splats.
+- Disable `Device Pixel Ratio` in the Scene Settings. This will reduce the overall number of pixels that the GPU has to process.
 
 ## 制限事項
 

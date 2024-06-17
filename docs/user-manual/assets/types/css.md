@@ -10,10 +10,10 @@ The loaded CSS asset resource is just a string. You can use the string as you li
 
 ```javascript
 // get asset from registry by id
-var asset = app.assets.get(32);
+const asset = app.assets.get(32);
 
 // create element
-var style = document.createElement('style');
+const style = document.createElement('style');
 style.type = "text/css";
 style.textContent = asset.resource || '';
 document.head.appendChild(style);

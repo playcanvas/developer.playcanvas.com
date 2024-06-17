@@ -24,7 +24,7 @@ Scripts are shown by their name, when you select a script to add it to a compone
 If you want to dynamically add scripts while your application is running you can do so from the script component
 
 ```javascript
-var entity = new pc.Entity();
+const entity = new pc.Entity();
 entity.addComponent("script");
 entity.script.create("rotate", {
     attributes: {

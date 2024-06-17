@@ -5,6 +5,8 @@ sidebar_position: 5
 
 An [XrInputSource][1] represents an input mechanism that allows the user to interact with a virtual world. Those include but are not limited to handheld controllers, optically tracked hands, gaze-based input methods, and touch screens. However, an input source is not explicitly associated with traditional gamepads, mice or keyboards.
 
+<img loading="lazy" src="/img/user-manual/xr/controllers.webp" alt="Controller models with a Ray" width="720" />
+
 ## Input Sourcesへのアクセス
 
 入力ソースのリストは、[XrManager][3]によって作成される[XrInput][2]マネージャーで利用可能です:
@@ -16,7 +18,15 @@ for (let i = 0; i < inputSources.length; i++) {
 }
 ```
 
-Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices by the underlying platform, and some input sources are transient - and have a lifespan only during their primary action (e.g. touch screen tap in an AR session on mobile). You can subscribe to `add` and `remove` events:
+Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices via the underlying platform.
+
+Some input sources are **transient** and have a short lifespan during their primary action. Examples are:
+
+- Touch screen tap in AR session on mobile.
+- Gaze + pinch interaction used on devices with eye tracking, such as Apple Vision Pro.
+- Gaze VR interaction that is common for simple VR devices.
+
+It is best to subscribe to `add` and `remove` events and then create their visual representation if needed:
 
 ```javascript
 app.xr.input.on('add', function (inputSource) {
@@ -48,12 +58,30 @@ app.xr.input.on('select', function (inputSource) {
 
 ## レイ
 
-Each input source has a ray which has an origin where it points from and a direction in which it is pointing. A ray is transformed into world space. Some examples of input sources might be, but are not limited to:
+Each input source has a ray which has an **origin** where it points from and a **direction** in which it is pointing. A ray is transformed into world space. Some examples of input sources might be, but are not limited to:
 
- * **Controllers** (e.g. Meta Quest Touch), will have a ray originating from the tip of the handheld device and the direction is based on the rotation of the device.
- * **Hands** have a ray that originates from a point between the thumb and index tips and points forward. If the underlying system does not provide a ray for hands, the PlayCanvas engine will emulate it. So all hands should have a ray.
- * **Screen**-based input. This might be available on mobile devices (mono screen) in AR session types, where the user can interact with the virtual world via a touch screen.
- * **Gaze**-based input, such as a mobile phone is inserted into a Google Cardboard style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
+- **Controllers** (e.g. Meta Quest Touch), will have a ray originating from the tip of the handheld device and the direction is based on the rotation of the device.
+- **Hands** have a ray that originates from a point between the thumb and index tips and points forward. If the underlying system does not provide a ray for hands, the PlayCanvas engine will emulate it. So all hands should have a ray.
+- **Screen**-based input. This might be available on mobile devices (mono screen) in AR session types, where the user can interact with the virtual world via a touch screen.
+- **Gaze**-based input, such as a mobile phone is inserted into a Google Cardboard style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
+
+<img loading="lazy" src="/img/user-manual/xr/controller-ray.webp" alt="A Ray from a Controller" width="480" />
+
+You can check the type of the target ray:
+
+```javascript
+switch (inputSource.targetRayMode) {
+    case pc.XRTARGETRAY_SCREEN:
+        // screen-based interaction, such as touch-screen on mobile in AR mode
+        break;
+    case pc.XRTARGETRAY_POINTER:
+        // pointer-based, such as hand-held controllers or hands
+        break;
+    case pc.XRTARGETRAY_GAZE:
+        // gaze-based, that is based on viewer device orientation and position
+        break;
+}
+```
 
 Here is an example illustrating how to check whether a ray has intersected with the bounding box of a mesh:
 
@@ -107,6 +135,33 @@ Each input source might have a list of strings describing a type of input source
 if (inputSource.profiles.includes('oculus-touch-v2')) {
     // it is an Oculus TouchTM handheld device
 }
+```
+
+## UI
+
+UI elements such as 3D screens, buttons, scroll views, and other components work well with input sources. Events such as `click` will trigger regardless of input type: mouse, touch, or XR input source.
+
+By default, all input source rays will be used to check for interaction with UI components, but you can disable this using a flag:
+
+```javascript
+inputSource.elementInput = false;
+```
+
+You can also access a UI entity with which an input source has interacted:
+
+```javascript
+const entity = inputSource.elementEntity;
+if (entity) {
+    // a specific entity that the input source has interacted with
+}
+```
+
+It is also possible to subscribe to ButtonComponent `select` events, that are fired only by XR input sources, similar to specific mouse or touch events:
+
+```javascript
+entity.button.on('selectstart', (evt) => {
+    // this button is selected by evt.inputSource
+});
 ```
 
 [1]: https://api.playcanvas.com/classes/Engine.XrInputSource.html

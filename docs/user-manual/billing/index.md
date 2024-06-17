@@ -3,15 +3,62 @@ title: Billing
 sidebar_position: 24
 ---
 
-## Auto-renewal of Subscriptions
+Welcome to the Billing FAQ that lists the common questions relating to your PlayCanvas subscription.
 
-Once you subscribe to the Personal or Organization plan, payment will automatically be taken on a monthly basis, on the day of the month when you first subscribed.
+### Does my subscription auto-renew?
 
-## Invoices
+Yes. Once you subscribe to the Personal or Organization plan, payment will automatically be taken on a monthly basis, on the day of the month when you first subscribed.
 
-Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. Invoices are not available to download on the website itself. If invoices are not reaching your inbox, please check your spam folder. If you are missing invoices from your records, you may request for them to be resent by emailing [billing@playcanvas.com](mailto:billing@playcanvas.com).
+### How do I cancel my subscription?
 
-### Updating Invoice Details
+You can cancel your plan subscription at any time.
+
+1. Visit your [Account page](https://playcanvas.com/account).
+2. Scroll down to the 'Current Plan' section.
+3. If you have **Personal** showing here, hit 'Cancel' to cancel it.
+4. Hit 'OK' in the **CANCEL PLAN** dialog.
+5. Also in the 'Current Plan' section, you will see a list of your Organizations.
+6. For each Organization listed, click its icon to visit its Account page.
+7. Scroll down to the 'Current Plan' section.
+8. If you have **Organization** showing here, hit 'Cancel' to cancel it.
+9. Hit 'OK' in the **CANCEL PLAN** dialog.
+
+Once your subscription is cancelled, you will not be billed again unless you resubscribe.
+
+:::note
+
+When you cancel your subscription, it will not revert to the free tier immediately. Instead, this will happen at your next billing date. If between the time you cancel and your next billing date you decide you would like to continue your subscription, just return to your Account page and hit 'Resume'.
+
+:::
+
+### What happens to my published apps when I cancel my subscription?
+
+Your published apps will be completely unaffected if you cancel your subscription.
+
+### What happens to my private projects when I cancel my subscription?
+
+Your private projects will become locked (inaccessible) when you cancel your subscription. To unlock them, you have two options:
+
+1. Resubscribe to a plan.
+2. Make the projects public.
+
+### How do I receive invoices?
+
+Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. The subject line for these emails begins with "Your receipt from PlayCanvas Ltd".
+
+:::tip
+
+If invoices are not reaching your inbox, please check your spam folder.
+
+:::
+
+### Where can I find my billing history?
+
+Your historical invoices are available to download on `playcanvas.com`. Visit your account page and scroll to the `Invoices` section. You should see something similar to this:
+
+![Billing History](/img/user-manual/billing/invoices.png)
+
+### How do I update my details on my invoices?
 
 You may want to edit certain details that appear on your invoices such as:
 
@@ -21,13 +68,13 @@ You may want to edit certain details that appear on your invoices such as:
 
 To do this, visit the account page for your subscribed account (remembering that Organizations have their own account page). Navigate to the Billing Info section and hit the Edit link. Fill out the payment details form and hit 'PAY NOW'. Note that editing the details of an existing subscription will not trigger a payment straight away. But on your next scheduled billing date, the invoice will show the updated details.
 
-## Organization Billing
+### How is billing for Organization accounts calculated?
 
 The day you subscribe to an Organization account is your monthly billing date. So if you subscribe on 10th July, you will be billed on that date with subsequent billing dates as 10th August, 10th September and so on.
 
 The Organization plan allows you to add and remove seats at any time. When seats are added or removed, it is important to understand that this will increase or decrease the cost of your plan. However, this change in cost is not accounted for immediately when the number of seats is changed. Instead, it is accounted for at the next billing date.
 
-### Example
+#### Example
 
 Imagine the following sequence of events:
 
@@ -44,6 +91,6 @@ The billing events from May to October will be as follows:
 * 10th September: $50 - $50 x 21/31 = **$16.13**. The users has one seat on this billing date so is charged $50 for the upcoming month. A seat was removed on 20th August so it was only used for 10 of the 31 days between billing dates. Since the user paid $50 for that seat on the previous billing date, they are due a refund for the unused 21 days. So $50 x 21/31 is subtracted from the bill.
 * 10th October: **$50**. The plan has 1 seat and no changes were made to the plan in the previous month.
 
-## Cancelling your Plan
+### How can I contact PlayCanvas about billing?
 
-You can cancel your plan at any time. Note that cancellation takes effect immediately and your account will switch to the free tier straight away. If you need to use your plan features up to the next billing date, we recommend that you set a reminder and cancel the day before.
+If your question about billing is not answered on this page, please email [billing@playcanvas.com](mailto:billing@playcanvas.com).

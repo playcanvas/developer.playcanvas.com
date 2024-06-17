@@ -88,8 +88,8 @@ You modify the position of Tree1/Sphere. This creates an override on the positio
 You can instantiate Template Assets at runtime like so:
 
 ```javascript
-var templateAsset = this.app.assets.get(templateAssetId);
-var instance = templateAsset.resource.instantiate();
+const templateAsset = this.app.assets.get(templateAssetId);
+const instance = templateAsset.resource.instantiate();
 this.app.root.addChild(instance);
 ```
 

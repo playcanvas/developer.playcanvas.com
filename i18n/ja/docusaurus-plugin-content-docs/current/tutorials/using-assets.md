@@ -8,7 +8,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
     <iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 </div>
 
-*クリックしてフォーカスしてSPACEBARを押してAとBのモデルを切り替えます。"L"を押すとCモデルを読み込み、"C"を押すとCモデルが表示されます。*
+:::info
+
+クリックしてフォーカスしてSPACEBARを押してAとBのモデルを切り替えます。"L"を押すとCモデルを読み込み、"C"を押すとCモデルが表示されます。
+
+:::
 
 簡単なゲームや製品の場合は、すべてのアセットをエディターでセットアップし、アプリケーションが開始する前にそれらがプリロードされ、あなたのアプリケーションはうまく動作します。
 
@@ -18,7 +22,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 ## セットアップ
 
-*プロジェクトのセットアップ*
+プロジェクトのセットアップ
 
 * 3つのモデルアセット **A** (文字Aのモデル)、 **B** (文字Bのモデル)、 **C** (文字Cのモデル)がアップロードされています。
 * **C**レンダーアセットは *プリロードされないよう* に設定されています。

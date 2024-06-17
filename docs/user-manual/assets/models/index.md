@@ -7,7 +7,7 @@ sidebar_position: 4
 
 PlayCanvas supports a wide variety of formats, such as glTF binary (GLB), FBX, COLLADA and obj. We recommend using the GLB format for best results.
 
-Uploading one of these files will create a [Source Asset][3] of type 'Model' and will produce several [Target Assets][4] including a '[Template]'[7] with the model hierarchy and 'Render' assets. You can add an instance of the 'Template' in your game.
+Uploading one of these files will create a [Source Asset][3] of type 'Model' and will produce several [Target Assets][4] including a '[Template][7]' with the model hierarchy and 'Render' assets. You can add an instance of the 'Template' in your game.
 
 Learn more about:
 

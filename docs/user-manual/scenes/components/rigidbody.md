@@ -10,7 +10,7 @@ The Rigid Body component can be enabled or disabled using the toggle in the top 
 
 ![Rigid Body component (Static)](/img/user-manual/scenes/components/component-rigid-body-static.png)
 
-#### Dynamic (and Kinematic)
+#### Dynamic
 
 ![Rigid Body component (Dynamic)](/img/user-manual/scenes/components/component-rigid-body-dynamic.png)
 
@@ -18,7 +18,7 @@ The Rigid Body component can be enabled or disabled using the toggle in the top 
 
 ![Rigid Body component (Kinematic)](/img/user-manual/scenes/components/component-rigid-body-kinematic.png)
 
-Note that you must add a [collision component][4] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
+Note that you must add a [collision component][4] to the same entity in order to define the shape of the rigid body. Otherwise, the Rigid Body component has no effect and will not participate in the physics simulation.
 
 ## Properties
 

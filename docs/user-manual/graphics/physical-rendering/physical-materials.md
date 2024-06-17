@@ -15,7 +15,7 @@ First a note about Cubemaps and Workflows
 
 ## Metalness and Specular Workflow
 
-![Workflows](/img/user-manual/graphics/physical-rendering/workflows.jpg)
+![Workflows](/img/user-manual/graphics/physical-rendering/specular-metalness-workflows.png)
 
 PBR is often split into two different methods of building assets or workflows. The two workflows are equivalent and offer the same results. It is really down to your preference as to which you choose. At PlayCanvas we usually choose the "metalness" flow as we find the metalness map simpler to create and is as it is only a single channel it is usually more efficient.
 

@@ -20,7 +20,7 @@ Ideally, we want the best of both worlds where users on high-tier devices will r
 The Device pixel ratio can be changed at runtime via the property [`pc.GraphicsDevice#maxPixelRatio`][4]:
 
 ```javascript
-var device = pc.Application.getApplication().graphicsDevice;
+const device = pc.Application.getApplication().graphicsDevice;
 if (highTierDevice) {
     // Use the default device pixel ratio of the device
     device.maxPixelRatio = window.devicePixelRatio;
@@ -49,7 +49,7 @@ An example for mobile can be found below (correct at time of writing Thu 30 Jul 
 
 ```javascript
 function isLowQualityGPU() {
-    var renderer = pc.Application.getApplication().graphicsDevice.unmaskedRenderer;
+    const renderer = pc.Application.getApplication().graphicsDevice.unmaskedRenderer;
 
     // Only check the GPU if we are on mobile
     if (renderer && pc.platform.mobile) {

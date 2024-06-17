@@ -8,7 +8,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/926
     <iframe loading="lazy" src="https://playcanv.as/e/p/dvJYXs1Y/" title="Real-time Multiplayer with Photon - including matchmaking"></iframe>
 </div>
 
-_床をクリックすることで移動ができます。_
+:::info
+
+床をクリックすることで移動ができます。
+
+:::
 
 [このリンク][1]からマッチメイキングを含む完全なプロジェクトを参照できます。
 

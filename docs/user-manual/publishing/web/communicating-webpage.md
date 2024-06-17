@@ -60,8 +60,8 @@ app.fire("score:set", 10);
 ```javascript
 // method one: define a global function to set the score
 window.setScore = function (score) {
-    var app = pc.Application.getApplication();
-    var entity = app.root.findByName("Score Keeper");
+    const app = pc.Application.getApplication();
+    const entity = app.root.findByName("Score Keeper");
     entity.script.scoreKeeper.setScore(score);
 }
 
@@ -84,7 +84,7 @@ ScoreKeeper.prototype.setScore = function (score) {
 window.setScore(10);
 
 // method two:
-var app = pc.Application.getApplication();
+const app = pc.Application.getApplication();
 app.fire("score:set", 10);
 ```
 
@@ -106,7 +106,7 @@ If you add `/e` after `https://playcanv.as` in the URL, this will give you a ver
 ```html
 <iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">
 <script>
-var iframe = document.getElementById("app-frame");
+const iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({
     score: 10,
 }, "https://playcanv.as");
@@ -141,13 +141,13 @@ window.addEventListener("message", (event) => {
 ```javascript
 window.addEventListener("message", function (event) {
     if (event.origin === "http://example.com") { // always check message came from your website
-        var score = event.data.score;
+        const score = event.data.score;
 
         // call API method one:
         window.setScore(score);
 
         // call API method two:
-        var app = pc.Application.getApplication();
+        const app = pc.Application.getApplication();
         app.fire("score:set", score);
     }
 }, false);
@@ -213,10 +213,10 @@ For example:
     <script src="__start__.js"></script>
     <script src="__loading__.js"></script>
     <script>
-    var app = pc.Application.getApplication();
+    const app = pc.Application.getApplication();
     app.on("start", function () {
         // get the root of the scene.
-        var hierarchy = app.root.getChildren()[0];
+        const hierarchy = app.root.children[0];
 
         // do other stuff here
     });
