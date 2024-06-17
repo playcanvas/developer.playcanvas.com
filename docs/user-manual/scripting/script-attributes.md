@@ -3,18 +3,28 @@ title: Script Attributes
 description: Expose dynamic script properties to the PlayCanvas Editor.
 sidebar_position: 5
 ---
+:::note
+This is the documentation for the newer ESM Script Attributes which replaces the previous legacy system.
+You can find documentation for the [legacy attributes system here](./legacy/script-attributes.md)
+:::
 
-Script Attributes are a powerful feature that allow you to expose properties to the PlayCanvas editor. This means you can tweak those values at runtime via the editor to give you greater control to dynamically tweak your application as you author it. The attributes becomes accessible as UI controls within the editor, perfect for artists, designers or other non-programmer team members to adjust and modify values without writing code
+## What are Script Attributes?
+
+Script Attributes are a powerful feature that allow you to expose properties to the PlayCanvas editor. They allow you to tweak  values at runtime via the editor and give greater control to dynamically tweak your application as you author it. Script attributes becomes accessible as UI controls within the editor, perfect for artists, designers or other non-programmer team members to adjust and modify values without writing code
+
 
 ## Getting Started
 
-Let's say you have a simple script that rotates an entity around it's Y axis.
-
+Let's start with a simple example, say you have a script that rotates an entity around it's Y axis.
 
 ```javascript
 import { Script } from 'playcanvas';
 
 export class Rotator extends Script {
+    /**
+     * @attribute
+     * The speed attribute is now exposed to the editor
+     */
     speed = 2
 
     update(dt){
@@ -23,42 +33,54 @@ export class Rotator extends Script {
 }
 ```
 
-However you're not sure what the exact value of speed should be, and more-so you might want to use this script in different places, potentially with different speeds.
+The `@attribute` tag above the `speed` member exposes it to the editor as an attribute. This creates a controller in the editor that allows you to dynamically set the value of `speed` at run time for each entity it's attached to.
 
-Ideally there would be a way to dynamically set the value of speed on different instances in a way that could be tweaked at author-time,
+What this means in practice is that you can expose various members of a script to the editor and create controls to edit their values at run-time.
 
-### The @attribute tag
-
-By adding an `@attribute` tag in a comment block immediately before the member, you expose it to the editor as an attribute. This creates a controller in the editor that allows you to dynamically set the value of `speed` at run time for each entity it's attached to.
+![Attribute](/img/user-manual/scripting/attribute-basic.png)
 
 :::tip
-Adding an `/** @attribute */` comment before a Script member will expose it to the editor.
+Adding an `/** @attribute */` comment before a Script member exposes it to the editor.
 :::
 
+When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
+
 ```javascript
-import { Script } from 'playcanvas';
-
-export class Rotator extends Script {
-    /** @attribute */
-    speed = 2
-
-    update(dt){
-        this.entity.rotateLocal(0, this.speed, 0)
-    }
+update(dt) {
+    this.entity.rotateLocal(0, this.speed, 0);
 }
 ```
 
-This tells the editor that the `speed` member in an attribute. The editor will generate a control that allows you to change the value of `speed` dynamically in the launch page.
+### Attributes in the Editor
 
-### Attribute constraints
-Adding the `@attribute` tag creates a UI controller that matches the specific type of attribute. For example
+![Script Attributes](/img/user-manual/scripting/script-attributes.png)
+
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse button.
+
+![Parse Button](/img/user-manual/scripting/script-parse-button.png)
+
+## Attribute Information
+
+When you expose an attribute to the editor, you can also surface additional information that helps provide context and present more specific controls. This can help create a better user experiences for your scripts.
+
+### Attribute descriptions
+The first sentence of an `@attribute` comment block is used a description in the editor. This is a useful way to surface 
+contextual information on what the attribute is and how it behaves
 
 ```javascript
-/** @attribute */
-speed = 10
+/**
+ * @attribute
+ * Sets the speed of the Y rotation in degrees.
+ */
+speed = 2
 ```
 
-creates a numerical input box, allowing you to set numerical values for `speed`, however it's likely you might want to set a range of sensible values for speed. You can do this with the `@range` tag
+In the editor this is available as a tooltip.
+
+![Attribute Description](/img/user-manual/scripting/attribute-description.png)
+
+### Attribute constraints
+What if you also want to define a sensible range values for speed. You can do this with the `@range` tag
 
 ```javascript
 /** 
@@ -70,7 +92,10 @@ speed = 10
 
 This simply tells the editor that speed is an attribute and it's value should be within 0 - 10. The editor will create a numerical slider mapped to this range.
 
-There are other numerical constraints that you can set which help the editor limit the set of possible values
+
+![Attribute Description](/img/user-manual/scripting/attribute-constraint.png)
+
+There are additional numerical constraints that you can set which help the editor limit the set of possible values
 
 ```javascript
 /** 
@@ -82,56 +107,10 @@ There are other numerical constraints that you can set which help the editor lim
 speed = 10
 ```
 
- 
-In this example, we're declaring a property called `speed` which is a `number` and has a default value of `2`:
-
-If you need an array of attributes set `array: true` like so:
-
-```javascript
-import { Script } from 'playcanvas';
-
-export class MyScript extends Script {
-    static attributes = {
-        names: { type: 'string', array: true }
-    }
-}
-```
-
-## Getting Attributes into Editor
-
-![Script Attributes](/img/user-manual/scripting/script-attributes.png)
-
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse button.
-
-![Parse Button](/img/user-manual/scripting/script-parse-button.png)
-
-## Accessing attributes in your code
-
-When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
-
-```javascript
-update(dt) {
-    this.entity.translate(this.speed * dt, 0, 0);
-}
-```
-
 ## Attribute types
+When you expose a script member as an attribute, the editor will show a control thats relevant to the type of attribute. If the attribute is a number, it shows a numerical input, if it's a boolean, a checkbox. 
 
-When you expose a script member as an attribute, the editor will show a relevant control based on the type of attribute. If the attribute is a number, it shows a numerical input, if it's a boolean, a checkbox. 
-
-### Supported Types
-Here are the full set of supported attribute types:
-
-- **number**
-- **string**
-- **boolean**
-- **[Vec2](https://api.playcanvas.com/classes/Engine.Vec2.html)**
-- **[Vec3](https://api.playcanvas.com/classes/Engine.Vec3.html)**
-- **[Vec4](https://api.playcanvas.com/classes/Engine.Vec4.html)**
-- **[Entity](https://api.playcanvas.com/classes/Engine.Entity.html)**
-- **[Asset](https://api.playcanvas.com/classes/Engine.Asset.html)**
-- **[Curve](https://api.playcanvas.com/classes/Engine.Curve.html)**
-- **[Color](https://api.playcanvas.com/classes/Engine.Color.html)**
+An attribute can be a `number`, `string`, `boolean`, `Vec2`, `Vec3`, `Vec4`, `Entity`, `Asset` or `Color`.
 
 ### The @type tag
 
@@ -149,7 +128,7 @@ myTexture;
 An attribute must either be initialized with a value `speed = 10`, or have a jsdoc type `@type {number}`. If neither are present, the attribute will ignored
 :::
 
-#### Entity attribute
+### Entity attribute
 The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
 
 ```javascript
@@ -160,7 +139,7 @@ The Entity type lets your reference another entity in your hierarchy. A great wa
 target
 ```
 
-#### Asset attribute
+### Asset attribute
 The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `@resource` tag which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
 
 The runtime type of an Asset attribute is `Asset`. You can reference the resource of an Asset attribute at runtime like so:
@@ -179,7 +158,7 @@ initialize() {
 }
 ```
 
-#### Color attribute
+### Color attribute
 
 ```javascript
 /** @attribute */
@@ -188,7 +167,18 @@ color = new Color()
 
 The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
 
-#### Curve attribute
+### Vector attribute
+
+```javascript
+/** @attribute */
+position = new Vec3()
+```
+
+The vector attribute can be a 2, 3 or 4 dimension. The editor will show a numerical input for each component, allowing you to set each one independently.
+
+![Attribute Vector](/img/user-manual/scripting/attribute-vec3.png)
+
+### Curve attribute
 
 ```javascript
 /**
@@ -200,6 +190,9 @@ wave
 ```
 
 The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
+
+
+---
 
 
 ### Attribute arrays
@@ -214,6 +207,8 @@ gradientStops;
 ```
 
 The `Color[]` declaration uses the [jsdoc type tag](https://jsdoc.app/tags-type) to declare that `gradientStops` is an array of `Colors`. The editor will interpret in this way, creating a controller that allows you to set multiple `Color` values in a list.
+
+![Attribute Array](/img/user-manual/scripting/attribute-array.png)
 
 In your initialize or update loop, you can iterate over `gradientStops` as an array
 
@@ -249,11 +244,13 @@ class MyScript extends Script {
 
 This uses the `Lights` class as an enumeration of possible values. The `@type {Lights}` indicates that `ambient` should only have a value listed in `Lights`. At author-time the editor will generate a drop-down control using the Lights enumeration keys as labels (ON/OFF/UNKNOWN) and setting the corresponding value on `ambient`. An enumerators values can only be numbers, strings, or booleans.
 
+![Attribute Enumerations](/img/user-manual/scripting/attribute-enum.png)
+
 ## Grouping Complex Attributes
 
 In some situations you may want attributes that have a more complex nested structure. For example lets say you have a `GameLogic` Script with an enemy with the speed and power. Rather than declare the enemies attributes separately, it makes sense to semantically group them together.
 
-### Inline
+### Inline Attributes
 
 ```javascript
 class GameLogic extends Script {
@@ -272,7 +269,7 @@ class GameLogic extends Script {
 
 This defines `enemy` as as single 'complex attribute', in that it's an object containing sub-attributes. What this means ,is the editor will expose the enemy attribute with nested controllable power and speed sub-attributes. This provides a more flexible way to group relevant attributes together.
 
-### Interface
+### Interface Attributes
 
 However what if you also want to set constraints on those same sub-attributes. For example, you may want to limit the enemies power to a more sensible range. At this point you can abstract your enemy type into it's an interface.
 
@@ -304,12 +301,14 @@ This works exactly the same as the previous example, but this time you've also s
 Declare complex attributes with the `@interface` tag on a class. Every [supported member](./#supported-types) becomes available as a sub-attribute
 :::
 
-:::warn
-An interface should not contain any methods or code. It's simply used as a way to declare nested attributes. It should not be initialized in your code and will not be instantiated at runtime.
+:::warning
+**An interface should not contain any code.**
+
+An interfaces is simply a way to group related attributes. It should not be initialized in your code and will not be instantiated by the engine at runtime.
 :::
 
 
-### Complex arrays
+### Interface Attribute Arrays
 You can of course use complex attributes as array, just like regular attributes. This means that your `GameLogic` script can use an array of enemies, each with their own controllable power and speed properties.
 
 ```javascript
@@ -328,6 +327,12 @@ class GameLogic extends Script {
 }
 ```
 
+This creates an array of Enemy controls in the editor, each with it's own numerical controls for the sub attributes
+
+![Attribute Complex Arrays](/img/user-manual/scripting/attribute-complex-arrays.png)
+
 :::note
-We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.
+**Recursive or nested complex attributes are no supported**
+
+You cannot have a complex attribute that contains another complex attribute. If you find yourself needing this, we recommend restructuring your script to use a more shallow attribute definition.
 :::
