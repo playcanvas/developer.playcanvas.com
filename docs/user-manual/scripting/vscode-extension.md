@@ -13,6 +13,7 @@ For developers seeking an enhanced code editing experience with features like so
 * **Enhanced Code Editing**: Leverage the full power of VS Code's editing features, such as IntelliSense, code snippets, GitHub Copilot and advanced refactoring tools.
 * **Source Control**: Switch branches to work in isolation.
 * **Collaboration**: Collaborate on scripts and shaders with your team, with changes reflected immediately in the PlayCanvas editor. Use the `Pull Latest` command from the context menu to pull latest changes into your VS Code environment.  
+* **Find In Files**: The extension supports searching in project files - use the `PlayCanvas: Search` command to search in a project or `PlayCanvas:Find In Folder` from the context menu to search in a folder.
 
 ## Installation
 
@@ -21,8 +22,9 @@ For developers seeking an enhanced code editing experience with features like so
 
 ### Configuration
 
-* Open VS Code and navigate to Settings (`File` > `Preferences` > `Settings`) and type "PlayCanvas" in the search bar.
-* [Generate a new API Key](/user-manual/api/#authorization) and enter the key and User ID in the settings. User ID can be found in your [PlayCanvas account settings](https://playcanvas.com/account).
+* [Generate a new API Key](/user-manual/api/#authorization) and copy it to the clipboard.
+* Open your project in VS Code by opening the Command Palette (`CTRL`+`Shift`+`P`) and typing "PlayCanvas: Add Project".
+* Paste your API token into the input box. This only needs to be done once.
 * Toggle "PlayCanvas: Use Playcanvas Types" to enable or disable PlayCanvas Engine API types for enhanced IntelliSense support. It adds a virtual reference to the type definitions automatically at the top of the source file. The reference will not be uploaded when the script is updated.
 
 ## Using the Extension
