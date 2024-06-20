@@ -13,7 +13,7 @@ For developers seeking an enhanced code editing experience with features like so
 * **Enhanced Code Editing**: Leverage the full power of VS Code's editing features, such as IntelliSense, code snippets, GitHub Copilot and advanced refactoring tools.
 * **Source Control**: Switch branches to work in isolation.
 * **Collaboration**: Collaborate on scripts and shaders with your team, with changes reflected immediately in the PlayCanvas editor. Use the `Pull Latest` command from the context menu to pull latest changes into your VS Code environment.  
-* **Find In Files**: The extension supports searching in project files - use `PlayCanvas: Search` command to search in a project or `PlayCanvas:Find In Folder` from the context menu to search in a folder.
+* **Find In Files**: The extension supports searching in project files - use the `PlayCanvas: Search` command to search in a project or `PlayCanvas:Find In Folder` from the context menu to search in a folder.
 
 ## Installation
 
