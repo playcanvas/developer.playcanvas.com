@@ -22,9 +22,9 @@ For developers seeking an enhanced code editing experience with features like so
 
 ### Configuration
 
-* [Generate a new API Key](/user-manual/api/#authorization) and copy a new authentication token to clipboard.
-* Open your project in VS Code by opening the Command Pallette (`CTRL`+`Shift`+`P`) and typing "PlayCanvas: Add Project".
-* Enter new token in an input box (only once).
+* [Generate a new API Key](/user-manual/api/#authorization) and copy it to the clipboard.
+* Open your project in VS Code by opening the Command Palette (`CTRL`+`Shift`+`P`) and typing "PlayCanvas: Add Project".
+* Paste your API token into the input box. This only needs to be done once.
 * Toggle "PlayCanvas: Use Playcanvas Types" to enable or disable PlayCanvas Engine API types for enhanced IntelliSense support. It adds a virtual reference to the type definitions automatically at the top of the source file. The reference will not be uploaded when the script is updated.
 
 ## Using the Extension
