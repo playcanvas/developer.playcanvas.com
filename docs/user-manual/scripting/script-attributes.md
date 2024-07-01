@@ -246,11 +246,11 @@ This uses the `Lights` class as an enumeration of possible values. The `@type {L
 
 ![Attribute Enumerations](/img/user-manual/scripting/attribute-enum.png)
 
-## Grouping Complex Attributes
+## Grouping Attributes
 
-In some situations you may want attributes that have a more complex nested structure. For example lets say you have a `GameLogic` Script with an enemy with the speed and power. Rather than declare the enemies attributes separately, it makes sense to semantically group them together.
+In some situations you may want to logically group attributes together. For example lets say you have a `GameLogic` Script with an enemy with the speed and power. Rather than declare the attributes individually, it makes sense to group them together under one `enemy` attribute. You can do this with **Attribute Groups**.
 
-### Inline Attributes
+Attribute groups are essentially objects that contain sub-attributes:
 
 ```javascript
 class GameLogic extends Script {
@@ -267,17 +267,52 @@ class GameLogic extends Script {
 }
 ```
 
-This defines `enemy` as as single 'complex attribute', in that it's an object containing sub-attributes. What this means ,is the editor will expose the enemy attribute with nested controllable power and speed sub-attributes. This provides a more flexible way to group relevant attributes together.
+This defines `enemy` as as Attribute Group. The editor will expose the enemy attribute with nested controllable power and speed sub-attributes. It provides a more flexible way to logically group attributes together.
+
+
+:::tip
+Attribute Groups allow you to logically group together related attributes into object based structure
+:::
+
+There are different ways you can declare Attribute Groups. You can use Inline Attribute Groups or TypeDef Groups.
+
+#### Inline Group
+
+A simple inline way of declaring attribute groups
+
+```javascript
+class GameLogic extends Script {
+    /** @attribute */
+    enemy = { power: 10, speed: 3 }
+}
+```
+
+#### TypeDef Groups
+
+This is a more modular way of declaring Attribute Groups. Whilst it is more verbose than using the inline version, the typedef version is more modulear and can be used across multiple scripts and attributes.
+
+```javascript
+/**
+ * @typedef {Object} Enemy
+ * @prop {number} speed - The enemies speed
+ * @prop {number} power - The enemies power
+ */
+
+class GameLogic extends Script {
+    /** 
+     * @attribute 
+     * @type {Enemy}
+     */
+    enemy
+}
+```
 
 ### Interface Attributes
 
-However what if you also want to set constraints on those same sub-attributes. For example, you may want to limit the enemies power to a more sensible range. At this point you can abstract your enemy type into it's an interface.
+If you want to group attributes together and set individual constraints on it's members you can use an Interface Attribute. This provides a morea more flexible way of grouping attributes.
 
 ```javascript
-/** 
- * @interface 
- * Using the `@interface` tag on a class allows it to be used to group attributes
- */
+/** @interface */
 class Enemy {
     /**
      * @range [0, 11]
@@ -295,21 +330,22 @@ class GameLogic extends Script {
 }
 ```
 
-This works exactly the same as the previous example, but this time you've also specifying that power should be constrained within the _0 - 11_ range. By separating `Enemy` into it's own interface you can set individual constraints on a sub-attributes.
+In the above example we've created a new `Enemy` Interface with a power member constrained within _0 - 11_ range. We've also declared that the `GameLogic` Script has an attribute `enemy` which is a type of `Enemy`.
 
 :::tip
-Declare complex attributes with the `@interface` tag on a class. Every [supported member](./#supported-types) becomes available as a sub-attribute
+An _Interface Attribute_ allows you to both logically group attributes together and set constraints on individual sub attributes. It also allows you to modularize your code. 
 :::
 
-:::warning
-**An interface should not contain any code.**
+#### Rules of Interface attributes
+There are a number of requirements to use Interface Attributes.
 
-An interfaces is simply a way to group related attributes. It should not be initialized in your code and will not be instantiated by the engine at runtime.
-:::
-
+- An Interface Attribute must have an `/** @interface */` block comment before a class declaration
+- A Script Attribute must use an Interface Attribute using the `@type {InterfaceAttribute}` tag
+- All public members of an Interface Attribute are available to the editor and will be used. You do not need to use the `@attribute` tag on each member.
+- You cannot have nested Interface Attributes.
 
 ### Interface Attribute Arrays
-You can of course use complex attributes as array, just like regular attributes. This means that your `GameLogic` script can use an array of enemies, each with their own controllable power and speed properties.
+Interface attributes can be used as arrays, just like plain attributes. This means that your `GameLogic` script can use an array of enemies, each with their own controllable power and speed properties.
 
 ```javascript
 class GameLogic extends Script {
@@ -330,9 +366,3 @@ class GameLogic extends Script {
 This creates an array of Enemy controls in the editor, each with it's own numerical controls for the sub attributes
 
 ![Attribute Complex Arrays](/img/user-manual/scripting/attribute-complex-arrays.png)
-
-:::note
-**Recursive or nested complex attributes are no supported**
-
-You cannot have a complex attribute that contains another complex attribute. If you find yourself needing this, we recommend restructuring your script to use a more shallow attribute definition.
-:::
