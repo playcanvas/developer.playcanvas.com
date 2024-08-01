@@ -15,7 +15,7 @@ if (app.xr.supported) {
 
 ## Starting an XR Session
 
-To start XR session, you can use method on the Camera Component or [XrManager][2] on the Application. To start an XR session you need to provide CameraComponent and provide the type of XR session, reference space, and optional object with additional arguments:
+To start XR session, you can use method on the Camera Component or [XrManager][2] on the Application. To start an XR session, you need to provide CameraComponent and provide the type of XR session, reference space, and optional object with additional arguments:
 
 ```javascript
 app.xr.start(entity.camera, pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);

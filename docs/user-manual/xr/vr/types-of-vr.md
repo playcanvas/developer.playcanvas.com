@@ -3,7 +3,7 @@ title: Types of VR experiences
 sidebar_position: 2
 ---
 
-Different styles of VR experience might have different reference spaces, in which position and rotation of virtual objects relate to the real world. Refer to the `XRSPACE` constants for more information:
+Different types of VR experiences can have different reference spaces. Reference spaces are coordinate systems used to define the positions and orientations of objects and users within a VR environment. They allow the application to understand and manage spatial relationships in a consistent manner. Refer to the `XRSPACE` constants for more information:
 
 * [`XRSPACE_BOUNDEDFLOOR`](https://api.playcanvas.com/variables/Engine.XRSPACE_BOUNDEDFLOOR.html)
 * [`XRSPACE_LOCAL`](https://api.playcanvas.com/variables/Engine.XRSPACE_LOCAL.html)

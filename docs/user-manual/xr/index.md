@@ -35,7 +35,7 @@ Do not use the [WebXR API Emulator](https://chromewebstore.google.com/detail/web
 
 :::
 
-## Getting started with WebXR
+## Getting Started with WebXR
 
 To start an XR session, support and availability should be checked first. Then, on a user interaction, a session can be started:
 
