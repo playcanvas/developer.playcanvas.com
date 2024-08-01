@@ -11,7 +11,6 @@ Different styles of VR experience might have different reference spaces, in whic
 * [`XRSPACE_UNBOUNDED`](https://api.playcanvas.com/variables/Engine.XRSPACE_UNBOUNDED.html)
 * [`XRSPACE_VIEWER`](https://api.playcanvas.com/variables/Engine.XRSPACE_VIEWER.html)
 
-
 ## Room Scale VR
 
 Room Scale VR is supported by devices such as the Meta Quest, Apple Vision Pro, HTC Vive and many others. Room scale experiences are designed to allow a small or large amount of movement away from the origin position of the scene.
