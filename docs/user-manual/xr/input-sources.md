@@ -29,10 +29,10 @@ Some input sources are **transient** and have a short lifespan during their prim
 It is best to subscribe to `add` and `remove` events and then create their visual representation if needed:
 
 ```javascript
-app.xr.input.on('add', function (inputSource) {
+app.xr.input.on('add', (inputSource) => {
     // input source been added
 
-    inputSource.once('remove', function () {
+    inputSource.once('remove', () => {
         // know when input source has been removed
     });
 });
@@ -43,7 +43,7 @@ app.xr.input.on('add', function (inputSource) {
 Each input source can have a primary action `select`. For controllers, it is a primary button/trigger. For the touch-screen, it is a tap. For hands, it is a pinch of thumb and index fingers. There are also `selectstart` and `selectend` events which you can subscribe to as follows:
 
 ```javascript
-inputSource.on('select', function () {
+inputSource.on('select', () => {
     // primary action
 });
 ```
@@ -51,7 +51,7 @@ inputSource.on('select', function () {
 Or through the input manager:
 
 ```javascript
-app.xr.input.on('select', function (inputSource) {
+app.xr.input.on('select', (inputSource) => {
     // primary action
 });
 ```

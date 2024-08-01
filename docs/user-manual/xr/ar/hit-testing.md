@@ -31,10 +31,10 @@ The most basic way is to start probing straight from the viewer forward vector:
 // start a hit test
 app.xr.hitTest.start({
     spaceType: pc.XRSPACE_VIEWER, // from a viewer space
-    callback: function (err, hitTestSource) {
+    callback: (err, hitTestSource) => {
         if (err) return;
         // subscribe to hit test results
-        hitTestSource.on('result', function (position, rotation) {
+        hitTestSource.on('result', (position, rotation) => {
             // position and rotation of hit test result
             // based on a ray facing forward from the viewer reference space
         });
@@ -55,9 +55,9 @@ When an XR session is started on a monoscopic device (such as a mobile phone wit
 ```javascript
 app.xr.hitTest.start({
     profile: 'generic-touchscreen', // touch screen input sources
-    callback: function (err, hitTestSource) {
+    callback: (err, hitTestSource) => {
         if (err) return;
-        hitTestSource.on('result', function (position, rotation, inputSource) {
+        hitTestSource.on('result', (position, rotation, inputSource) => {
             // position and rotation of hit test result
             // that will be created from touch on mobile devices
         });
@@ -73,9 +73,9 @@ The most common way to start hit testing is from a ray of an input source (e.g. 
 
 ```javascript
 inputSource.hitTestStart({
-    callback: function (err, hitTestSource) {
+    callback: (err, hitTestSource) => {
         if (err) return;
-        hitTestSource.on('result', function (position, rotation) {
+        hitTestSource.on('result', (position, rotation) => {
             // position and rotation of a hit test result
             // based on a ray of an input source
         });
@@ -96,7 +96,7 @@ ray.direction.set(0, -1, 0); // point downwards
 app.xr.hitTest.start({
     spaceType: pc.XRSPACE_LOCALFLOOR,
     offsetRay: ray,
-    callback: function (err, hitTestSource) {
+    callback: (err, hitTestSource) => {
         // hit test source that will sample real world geometry
         // from the position where AR session started
     }

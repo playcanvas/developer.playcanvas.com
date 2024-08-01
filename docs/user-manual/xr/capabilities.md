@@ -39,7 +39,7 @@ Here is an example of enabling the experimental API for [WebXR Layers][3]:
 ```javascript
 app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
     optionalFeatures: [ 'layers' ],
-    callback: function(err) {
+    callback: (err) => {
         if (err) {
             console.log(err);
             return;
