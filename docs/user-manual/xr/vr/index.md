@@ -19,7 +19,7 @@ Due to an issue in WebKit on Apple Vision Pro, you must currently disable `Anti-
 
 ## Getting started with WebXR VR
 
-To start a VR session, device support and availability should be checked first. Then, on user interaction such as a button click or other input, a VR session can be started:
+To start a VR session, device support and availability should be checked first. Then, on a user interaction such as a button click or other input, a VR session can be started:
 
 ```javascript
 button.element.on('click', () => {
