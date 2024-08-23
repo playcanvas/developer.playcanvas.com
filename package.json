@@ -37,9 +37,9 @@
     "lint": "markdownlint-cli2 docs .github/CONTRIBUTING.md README.md"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.4.0",
-    "@docusaurus/plugin-client-redirects": "^3.4.0",
-    "@docusaurus/preset-classic": "^3.4.0",
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/plugin-client-redirects": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
     "@mdx-js/react": "^3.0.1",
     "clsx": "^2.1.1",
     "docusaurus-plugin-sass": "^0.2.5",
@@ -49,8 +49,8 @@
     "sass": "^1.77.8"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.4.0",
-    "@docusaurus/types": "^3.4.0",
+    "@docusaurus/module-type-aliases": "^3.5.2",
+    "@docusaurus/types": "^3.5.2",
     "markdownlint-cli2": "^0.13.0"
   },
   "browserslist": {
