@@ -98,7 +98,6 @@ NPM is a free public repository, so if you have some code you use consistently u
 
 We will be adding more detailed tutorials of publishing PlayCanvas libraries to NPM soon.
 
-
 ### 3rd Party CDN's
 
 With ES Modules it is possible to import code directly from a 3rd party host or CDN, such as [jsdelivr](https://www.jsdelivr.com/). Whilst this can be convenient, it also means relying on external services, which can occasionally lead to challenges with reliability, or expose you to security risks if the CDN encounters issues. To help keep things smooth and secure, we recommend using the Dependency Manager for using 3rd party libraries.
