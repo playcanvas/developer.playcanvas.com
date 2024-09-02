@@ -24,7 +24,7 @@ When using PlayCanvas’ built-in AR support, the scene’s primary camera’s c
 To start an AR session, device support and availability should also be checked first. Then, on user interaction, such as a button click or other input, an AR session can be started:
 
 ```javascript
-button.element.on('click', function () {
+button.element.on('click', () => {
     // check if XR is supported and AR is available
     if (app.xr.supported && app.xr.isAvailable(pc.XRTYPE_AR)) {
         // start AR using a camera component

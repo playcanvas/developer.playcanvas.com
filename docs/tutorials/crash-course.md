@@ -4,7 +4,9 @@ tags: [games,basics,physics,ui]
 thumb: /img/tutorials/crash-course/crash-course-thumbnail.jpg
 ---
 
-<iframe src="https://www.youtube.com/embed/9zqHlbW9XWE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div className="iframe-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9zqHlbW9XWE?si=lWifeMBGpaNqq7Sa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 :::note
 

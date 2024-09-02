@@ -13,9 +13,9 @@ if (app.xr.supported) {
 }
 ```
 
-## Starting
+## Starting an XR Session
 
-To start XR session, you can use method on the Camera Component or [XrManager][2] on the Application. To start an XR session you need to provide CameraComponent and provide the type of XR session, reference space, and optional object with additional arguments:
+To start XR session, you can use method on the Camera Component or [XrManager][2] on the Application. To start an XR session, you need to provide CameraComponent and provide the type of XR session, reference space, and optional object with additional arguments:
 
 ```javascript
 app.xr.start(entity.camera, pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
@@ -32,7 +32,7 @@ button.on('click', () => {
 To know when a session is started, you can subscribe to the `start` event:
 
 ```javascript
-app.xr.on('start', function () {
+app.xr.on('start', () => {
     // XR session has started
 });
 ```
@@ -41,7 +41,7 @@ Session type or reference space might not be available on a particular platform,
 
 ```javascript
 entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
-    callback: function(err) {
+    callback: (err) => {
         if (err) {
             // failed to start session
         }
@@ -60,7 +60,7 @@ app.xr.end();
 Also, the user might exit XR via some external process like the back button in the browser. [XrManager][2] will fire events associated with the session `end`:
 
 ```javascript
-app.xr.on('end', function () {
+app.xr.on('end', () => {
     // XR session has ended
 });
 ```
@@ -83,12 +83,12 @@ if (app.xr.isAvailable(pc.XRTYPE_VR)) {
 You can subscribe to availability change events too:
 
 ```javascript
-app.xr.on('available', function (type, available) {
+app.xr.on('available', (type, available) => {
     console.log('XR session', type, 'type is now', available ? 'available' : 'unavailable');
 });
 
 // or specific session type
-app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
+app.xr.on('available:' + pc.XRTYPE_VR, (available) => {
     console.log('XR session VR type is now', available ? 'available' : 'unavailable');
 });
 ```
