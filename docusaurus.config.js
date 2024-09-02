@@ -37,6 +37,7 @@ const config = {
     [ '@docusaurus/plugin-client-redirects', {
       redirects: [
         { from: ['/api', '/en/api'], to: 'https://api.playcanvas.com' },
+        { from: ['/user-manual/scripting/loading-order/', '/en/user-manual/scripting/loading-order'], to: '/user-manual/scripting/legacy/loading-order/' },
       ],
       createRedirects: (path) => {
 
