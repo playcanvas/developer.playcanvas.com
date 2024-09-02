@@ -227,7 +227,7 @@ Sometimes you may want to constrain an attribute to a set of possible values. In
 ```javascript
 
 /** @enum {number} */
-class Lights {
+const Lights = {
     ON: 1,
     OFF: 0,
     UNKNOWN: 0.5

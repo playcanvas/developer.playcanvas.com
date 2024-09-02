@@ -4,10 +4,8 @@ sidebar_position: 3
 image: /img/user-manual/scripting/esm-script-meta.webp
 ---
 
-### An update to the PlayCanvas Scripts with full support for ES Modules
-
 :::warning
-ESM Scripts are currently in beta and should not be used in production code.
+**ESM Scripts are currently in beta** and should be used cautiously
 :::
 
 <video width="100%" controls autoPlay loop>
@@ -15,10 +13,8 @@ ESM Scripts are currently in beta and should not be used in production code.
   Your browser does not support the video tag.
 </video>
 
-### Modern class based syntax
-
 :::info
-ESM Scripts are available in PlayCanvas engine 1.70.0
+ESM Scripts are available in PlayCanvas engine 2.0.0
 :::
 
 ES Modules are a modern standardized way of writing JavaScript, which provide a richer set of features and solve many of their shortcomings of classic scripts. This means you can import modules locally from an asset registry or externally via a CDN. This gives you much more flexibility in how you structure your projects whilst being able to leverage existing libraries in the wider JavaScript ecosystem, such as NPM.
@@ -47,7 +43,7 @@ export Rotator extends Script {
     initialize() {
     }
 
-    update(){
+    update(dt){
     }
 
 }
@@ -58,6 +54,10 @@ If you're not familiar with a class based syntax, this might look unfamiliar. Yo
 :::info
 Only ESM Scripts exported using the `export` keyword are exposed to the Editor
 :::
+
+### Script Attributes
+
+Class members can be exposed to the editor using [Script Attributes](./script-attributes.md) which allow you to declare a public editor interface. You can learn more about [script attributes here](./script-attributes.md)
 
 ## Importing Modules
 
