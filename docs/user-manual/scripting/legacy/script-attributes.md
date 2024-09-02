@@ -86,6 +86,7 @@ MyScript.attributes.add('target', { type: 'entity' })
 The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
 
 ### Asset attribute
+
 ```javascript
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
@@ -104,12 +105,15 @@ MyScript.prototype.initialize = function () {
 ```
 
 ### Color attribute
+
 ```javascript
 MyScript.attributes.add('color', { type: 'rgba' });
 ```
+
 The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
 
 ### Curve attribute
+
 ```javascript
 MyScript.attributes.add('wave', { type: 'curve' }); // one curve
 MyScript.attributes.add('wave', { type: 'curve', curves: [ 'x', 'y', 'z' ] }); // three curves: x, y, z
@@ -122,6 +126,7 @@ The curve attribute is used to express a value that changes over a time period. 
 ### Enumeration attribute
 
 The Enumeration attribute allows you to choose one of the available options:
+
 ```javascript
 MyScript.attributes.add('value', {
     type: 'number',

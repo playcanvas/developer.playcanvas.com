@@ -118,15 +118,15 @@ Rotate.attributes.add('speed', { type: 'number', default: 10 });
 </TabItem>
 </Tabs>
 
-This exposes a Script member as an attribute. [Attributes](./script-attributes.md) are a powerful feature that allow you to expose parameters of your script to the editor, and manually set these at author time. 
+This exposes a Script member as an attribute. [Attributes](./script-attributes.md) are a powerful feature that allow you to expose parameters of your script to the editor, and manually set these at author time.
 
 Learn more about [Script Attributes](./script-attributes.md)
 
 ## Life-Cycle Methods
 
-The lifecycle hooks are optional methods called at various stages in the application. They allow scripts to initialize and react to frame updates and more. For convenience, they're listed below in the order of execution. 
+The lifecycle hooks are optional methods called at various stages in the application. They allow scripts to initialize and react to frame updates and more. For convenience, they're listed below in the order of execution.
 
-If an entity has multiple scripts attached to it, the methods are called in the order specified in the component. 
+If an entity has multiple scripts attached to it, the methods are called in the order specified in the component.
 
 ### Initialize()
 
@@ -243,7 +243,7 @@ Script instances fire a number of events that can be used to respond to specific
 
 ### state
 
-The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. 
+The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to.
 
 ```javascript
 this.on("state", (enabled) => {
@@ -253,6 +253,7 @@ this.on("state", (enabled) => {
 ```
 
 ### enable/disable
+
 The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
 
 ```javascript

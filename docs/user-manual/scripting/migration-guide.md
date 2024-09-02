@@ -19,6 +19,7 @@ You do not need to update all your scripts together. We recommend gradually migr
 ---
 
 ## Codemod
+
 In order to migrate legacy PlayCanvas Scripts, we've provided a [codemod](https://codemod.com/registry/playcanvas-esm-scripts) that will automatically update your code to the newer ESM Format.
 
 You can find the codemods in our [github repository](https://github.com/playcanvas/codemods) and you can run the codemod using the following command:
@@ -30,20 +31,23 @@ npx codemod playcanvas-esm-scripts
 ---
 
 ## Known differences
+
 In general ESM Scripts provide a more expressive and flexible way of creating projects. Whilst we have attempted to keep the migration process as seamless as possible, there are some note-able differences that you should bare in mind.
 
 ### Module Scope
+
 **ESM Scripts have module scope, classic scripts have global scope**. This means modules cannot implicitly access variables defined in other files. Often this is used as a way to define a global settings or configuration. The config has a higher loading order than the script, and so the `SPEED` is accessible globally.
 
 <details>
 <summary>**See code example**</summary>
+
 ```javascript
 // config.js
 var SPEED = 10;
 
 // script.js
 // ❌ This will not work. `SPEED` is scoped to config.js
-console.log(SPEED) 
+console.log(SPEED)
 ```
 
 This is a *hidden dependency* which breaks if the loading order changes. Instead, use `import/export` syntax to explicitly define the dependency.
@@ -57,6 +61,7 @@ import { SPEED } from './config.mjs';
 // ✅ Works!
 console.log(SPEED); 
 ```
+
 </details>
 
 You can learn more about the other difference between [ES Modules and standard scripts here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_standard_scripts)
@@ -71,11 +76,12 @@ The loading order of scripts was introduced as a way to organize dependencies be
 
 ### The new `Script` class
 
-With ESM Scripts the new `Script` base class replaces the existing `ScriptType` class as the default base class. The `Script` class represents the minimal set of features necessary, but omits a couple of features present in the original `ScriptType` class. 
+With ESM Scripts the new `Script` base class replaces the existing `ScriptType` class as the default base class. The `Script` class represents the minimal set of features necessary, but omits a couple of features present in the original `ScriptType` class.
 
 It's worth noting that although `Script` is now the default base class, it's still possible to use `ScriptType` as the base class (internally `ScriptType` extends `Script`), however we do not recommend doing this for ESM Scripts, due to some of the reasons listed below.
 
 #### Attribute Events
+
 :::note
 ESM Script do not fire Attribute Events.
 :::
@@ -85,6 +91,7 @@ Instead you can define your own events around class attribute members using some
 
 <details>
 <summary>**See code example**</summary>
+
 ```javascript
 const watch = (scope, prop) => new Proxy(scope, {
     set(target, property, value) {
@@ -103,12 +110,15 @@ export class Rotate extends Script {
         this.speed = watch(this, 'speed');
     }
 }
+
 ```
+
 </details>
+
 This also means you can have events for any class members too, not only script attributes.
 
-
 #### Attribute Copying
+
 :::note
 **ESM Script Attributes are not copied, they are passed by reference.**
 :::
@@ -118,6 +128,7 @@ Instead, if you do need to copy values, we recommend you do it manually and expl
 
 <details>
 <summary>**See code example**</summary>
+
 ```javascript
 import { Script, Vec3 } from 'playcanvas';
 class Rotate extends Script {
@@ -133,5 +144,5 @@ class Rotate extends Script {
     }
 }
 ```
-</details>
 
+</details>

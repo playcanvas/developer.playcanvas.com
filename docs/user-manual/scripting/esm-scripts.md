@@ -4,18 +4,19 @@ sidebar_position: 3
 image: /img/user-manual/scripting/esm-script-meta.webp
 ---
 
-### A modern way to create PlayCanvas projects.
+### A modern way to create PlayCanvas projects
 
 <video width="100%" controls autoPlay loop>
   <source src="/video/pc-esm-scripts.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
-ESM Scripts, built around ES Modules, offer a more expressive, flexible, and modern approach to creating interactive PlayCanvas projects. They introduce a modular structure that enhances code organization and maintainability. By allowing you to [import and export code](#importing-modules) across modules, ESM Scripts lead to cleaner, more readable code. Compared to classic scripts, ESM Scripts support static imports, improving performance through more efficient [bundling](#bundling) and dead code-removal. 
+ESM Scripts, built around ES Modules, offer a more expressive, flexible, and modern approach to creating interactive PlayCanvas projects. They introduce a modular structure that enhances code organization and maintainability. By allowing you to [import and export code](#importing-modules) across modules, ESM Scripts lead to cleaner, more readable code. Compared to classic scripts, ESM Scripts support static imports, improving performance through more efficient [bundling](#bundling) and dead code-removal.
 
 You can learn more about ES Modules and their features on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
 ## Getting Started
+
 To create an ES Module Script (ESM Script for short), simply create a script with a name that ends with `.mjs` such as `Rotator.mjs`.
 
 :::tip
@@ -108,6 +109,6 @@ Only import 3rd party code from a known and trusted source.
 
 ### Bundling
 
-When you export a project that contains ESM Scripts, the entire project application is bundled together. The aim is deliver an optimized build of your project that gives a better loading experience for your end users. 
+When you export a project that contains ESM Scripts, the entire project application is bundled together. The aim is deliver an optimized build of your project that gives a better loading experience for your end users.
 
 Bundling itself is a complex topic, and not one strategy fits all needs. However by default the bundling process will eliminate dead code and minify it's output.

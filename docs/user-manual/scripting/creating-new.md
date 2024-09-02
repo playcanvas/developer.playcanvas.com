@@ -37,5 +37,3 @@ To remove a script from a component use the `destroy` method
 ```javascript
 entity.script.destroy("rotate");
 ```
-
-[3]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#load

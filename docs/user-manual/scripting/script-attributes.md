@@ -10,7 +10,7 @@ You can find documentation for the [**legacy attributes system here**](./legacy/
 
 ## What are Attributes?
 
-Attributes are a powerful feature that allow you to expose specific parameters to the editor. 
+Attributes are a powerful feature that allow you to expose specific parameters to the editor.
 
 This means you can write code once, then tweak values on different instances to give them different properties. Artists, designers or other non-programmer team members can then adjust and modify them without writing code.
 
@@ -61,7 +61,8 @@ Once you've declared your attributes the Editor needs to parse the code in order
 When you expose an attribute to the editor, you can also surface additional information that helps provide context and present more specific controls. This can help create a better user experiences for your scripts.
 
 ### Attribute descriptions
-The first sentence of an `@attribute` comment block is used a description in the editor. This is a useful way to surface 
+
+The first sentence of an `@attribute` comment block is used a description in the editor. This is a useful way to surface
 contextual information on what the attribute is and how it behaves
 
 ```javascript
@@ -77,6 +78,7 @@ In the editor this is available as a tooltip.
 ![Attribute Description](/img/user-manual/scripting/attribute-description.png)
 
 ### Attribute constraints
+
 What if you also want to define a sensible range values for speed. You can do this with the `@range` tag
 
 ```javascript
@@ -88,7 +90,6 @@ speed = 10
 ```
 
 This simply tells the editor that speed is an attribute and it's value should be within 0 - 10. The editor will create a numerical slider mapped to this range.
-
 
 ![Attribute Description](/img/user-manual/scripting/attribute-constraint.png)
 
@@ -105,7 +106,8 @@ speed = 10
 ```
 
 ## Attribute types
-When you expose a script member as an attribute, the editor will show a control thats relevant to the type of attribute. If the attribute is a number, it shows a numerical input, if it's a boolean, a checkbox. 
+
+When you expose a script member as an attribute, the editor will show a control thats relevant to the type of attribute. If the attribute is a number, it shows a numerical input, if it's a boolean, a checkbox.
 
 An attribute can be a `number`, `string`, `boolean`, `Vec2`, `Vec3`, `Vec4`, `Entity`, `Asset` or `Color`.
 
@@ -126,6 +128,7 @@ An attribute must either be initialized with a value `speed = 10`, or have a jsd
 :::
 
 ### Entity attribute
+
 The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
 
 ```javascript
@@ -137,6 +140,7 @@ target
 ```
 
 ### Asset attribute
+
 The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `@resource` tag which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
 
 The runtime type of an Asset attribute is `Asset`. You can reference the resource of an Asset attribute at runtime like so:
@@ -188,11 +192,8 @@ wave
 
 The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
 
-
----
-
-
 ### Attribute arrays
+
 In some cases you may want to expose a list of grouped attributes together. Let's say you have a script that generates a gradient, but rather than having a start and end point, you want to allow users to set an arbitrary amount of 'color stops' on the gradient. In this case you can an array qualifier in a `@type` tag.
 
 ```javascript
@@ -266,14 +267,13 @@ class GameLogic extends Script {
 
 This defines `enemy` as as Attribute Group. The editor will expose the enemy attribute with nested controllable power and speed sub-attributes. It provides a more flexible way to logically group attributes together.
 
-
 :::tip
 Attribute Groups allow you to logically group together related attributes into object based structure
 :::
 
 There are different ways you can declare Attribute Groups. You can use Inline Attribute Groups or TypeDef Groups.
 
-#### Inline Group
+### Inline Group
 
 A simple inline way of declaring attribute groups
 
@@ -284,7 +284,7 @@ class GameLogic extends Script {
 }
 ```
 
-#### TypeDef Groups
+### TypeDef Groups
 
 This is a more modular way of declaring Attribute Groups. Whilst it is more verbose than using the inline version, the typedef version is more modular and can be used across multiple scripts and attributes.
 
@@ -330,10 +330,11 @@ class GameLogic extends Script {
 In the above example we've created a new `Enemy` Interface with a power member constrained within _0 - 11_ range. We've also declared that the `GameLogic` Script has an attribute `enemy` which is a type of `Enemy`.
 
 :::tip
-An _Interface Attribute_ allows you to both logically group attributes together and set constraints on individual sub attributes. It also allows you to modularize your code. 
+An _Interface Attribute_ allows you to both logically group attributes together and set constraints on individual sub attributes. It also allows you to modularize your code.
 :::
 
 #### Rules of Interface attributes
+
 There are a number of requirements to use Interface Attributes.
 
 - An Interface Attribute must have an `/** @interface */` block comment before a class declaration
@@ -342,6 +343,7 @@ There are a number of requirements to use Interface Attributes.
 - You cannot have nested Interface Attributes.
 
 ### Interface Attribute Arrays
+
 Interface attributes can be used as arrays, just like plain attributes. This means that your `GameLogic` script can use an array of enemies, each with their own controllable power and speed properties.
 
 ```javascript
