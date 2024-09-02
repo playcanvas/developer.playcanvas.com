@@ -4,7 +4,7 @@ sidebar_position: 11
 unlisted: true
 ---
 
-ESM Scripts replace the legacy [Scripting](./legacy) system as the recommended way to develop PlayCanvas applications. Whilst legacy scripts will continue to be work in existing projects amd will be supported for the foreseeable future, we recommend using the newer ESM format for your projects.
+ESM Scripts replace the legacy [Scripting](./legacy/script-attributes.md) system as the recommended way to develop PlayCanvas applications. Whilst legacy scripts will continue to be work in existing projects amd will be supported for the foreseeable future, we recommend using the newer ESM format for your projects.
 
 ## Gradual Migration
 
