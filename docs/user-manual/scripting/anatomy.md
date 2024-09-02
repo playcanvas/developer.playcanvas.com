@@ -3,7 +3,12 @@ title: Anatomy of a script
 sidebar_position: 3
 ---
 
-Here is a basic script. We can learn about the structure of a PlayCanvas script from it.
+Scripts provide powerful features for adding interactivity to your project. To learn more about the anatomy of a Script we've provided a simple `Rotate` script below. Let's break down what this means.
+
+:::note
+Scripts can be defined as either **[ES Modules](./esm-scripts.md)**, or **legacy scripts**.
+**[Learn more](./esm-scripts.md)**.
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,9 +20,9 @@ import TabItem from '@theme/TabItem';
 import { Script } from 'playcanvas';
 
 export class Rotate extends Script {
-    static attributes = {
-        speed: { type: 'number', default: 10 }
-    }
+
+    /** @attribute */
+    speed = 10;
 
     initialize() {
         this.local = false; // choose local rotation or world rotation
@@ -69,9 +74,7 @@ Rotate.prototype.swap = function(old) {
 </TabItem>
 </Tabs>
 
-We'll break down each section of the script
-
-## Declaration of a Script
+## Declaring a Script
 
 <Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
@@ -81,7 +84,7 @@ import { Script } from 'playcanvas';
 export class Rotate extends Script {};
 ```
 
-You define a script by creating and exporting a class that extends the `Script` class. The class name is used to identify the script in script components and each script declared in a project must have a unique name. You can have multiple scripts per file, however only classes that are exported and extend Script are available in the editor.
+You declare a script by **exporting a class that extends `Script`**. The class name is used to identify the script. Each script in a project must have a unique name.
 
 </TabItem>
 <TabItem value="legacy" label="Legacy">
@@ -95,15 +98,14 @@ This line creates a new Script called 'rotate'. The name of the script is used t
 </TabItem>
 </Tabs>
 
-## Script Attributes
+## Attributes
 
 <Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
-static attributes = {
-    speed: { type: 'number', default: 10 }
-}
+/** @attribute */
+speed = 10
 ```
 
 </TabItem>
@@ -116,13 +118,17 @@ Rotate.attributes.add('speed', { type: 'number', default: 10 });
 </TabItem>
 </Tabs>
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed to the Editor UI. This allows you to customize individual entities in the Editor. In the above example, the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.
+This exposes a Script member as an attribute. [Attributes](./script-attributes.md) are a powerful feature that allow you to expose parameters of your script to the editor, and manually set these at author time. 
 
-Attributes are automatically inherited from a new script instance during code hot-swap.
+Learn more about [Script Attributes](./script-attributes.md)
 
-## Script Methods
+## Life-Cycle Methods
 
-### Initialize
+The lifecycle hooks are optional methods called at various stages in the application. They allow scripts to initialize and react to frame updates and more. For convenience, they're listed below in the order of execution. 
+
+If an entity has multiple scripts attached to it, the methods are called in the order specified in the component. 
+
+### Initialize()
 
 <Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem value="esm" label="ESM">
@@ -149,13 +155,17 @@ Rotate.prototype.initialize = function() {
 </TabItem>
 </Tabs>
 
-The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only called once for each entity. You can use it to define and initialize member variables of the script instance. If an entity or script is disabled when the application starts, the initialize method will be called the first time the entity is enabled.
+`Initialize` is called before any other life-cycle method. It's useful for setting up event listeners or any other data needed by the Script. It will only ever be called once when the script and it's entity are enabled.
+
+More formally, `initialize` is called after the application has loaded and the entity hierarchy has been constructed but before the first update loop or frame is rendered. If an entity or script is disabled when the application starts, the initialize method will be called the first time the entity is enabled.
 
 When an entity is cloned using the `entity.clone` method, the `initialize` method on the script is only called when the cloned entity is added to the scene hierarchy; as long as both the entity and script are enabled as well.
 
-If a script component has multiple scripts attached to it, the `initialize` method is called in the order of the scripts on the component.
+:::tip
+`postInitialize()` is an additional life-cycle hook invoked after `initialize()` has been called on all scripts in the scene. This can be particularly useful when you need to perform setup actions that depend on the results of other scripts' `initialize()` methods.
+:::
 
-### Update
+### Update()
 
 <Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem value="esm" label="ESM">
@@ -188,11 +198,13 @@ Rotate.prototype.update = function(dt) {
 </TabItem>
 </Tabs>
 
-The update method is called for every frame; it is invoked within each entity that has an enabled script component and enabled script instance. Each frame is passed  the `dt` argument containing the time, in seconds, since the last frame.
+The `update()` method is called every frame whilst enabled. It's useful for animating things or handling anything that needs to happen every frame. It's called with the `dt` argument which specifies the time, in seconds, since the last frame.
 
-If a script component has multiple scripts attached to it, `update` is called in the order of the scripts on the component.
+:::tip
+The **`postUpdate()`** method is an additional life-cycle hook invoked after **`update()`** has been called on all scripts in the scene. This can be particularly useful when you need to perform actions that depend on the results of other scripts' **`update()`** methods.
+:::
 
-### Swap
+### Swap()
 
 <Tabs defaultValue="legacy" groupId='script-code'>
 <TabItem value="esm" label="ESM">
@@ -219,49 +231,33 @@ Rotate.prototype.swap = function(old) {
 </TabItem>
 </Tabs>
 
-The `swap` method is called whenever a Script with same is added to registry. This is done automatically during Launch when a script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
+The `swap()` method is used to enable [hot-reloading](./hot-reloading.md) of scripts. In practice this means you can update code at author-time, and use the `swap()` method to copy state over from the previous script instance, to the new one. This is extremely useful if you wish to iterate on code without refreshing your project.
 
-The `swap` method is passed the old script instance as an argument and you can use this to copy the state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
+The `swap` method is passed the old script instance as an argument. You should use this to copy any state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
 
 If you do not wish to support hot-swapping of code, you can delete the swap method and the engine will not attempt to refresh the script.
-
-### Additional Methods: postInitialize and postUpdate
-
-There are two more methods that are called by the engine on scripts if they are present. `postInitialize` is called on all scripts that implement it after all scripts have been initialized. Use this method to perform functions that can assume all scripts are initialized. `postUpdate` is an update method that is called after all scripts have been updated. Use this to perform functions that can assume that all scripts have been updated. For example, a camera that is tracking another entity should update its position in `postUpdate` so that the other entity has completed its motion for the frame.
 
 ## Events
 
 Script instances fire a number of events that can be used to respond to specific circumstances.
 
-### state and enable/disable
+### state
 
-The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
+The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. 
 
 ```javascript
-Rotate.prototype.initialize = function () {
-    this.on("state", function (enabled) {
-        // play a sound effect when the entity is enabled or disabled
-        if (enabled) {
-            this.entity.sound.play("bell");
-        } else {
-            this.entity.sound.play("horn");
-        }
-    });
-};
+this.on("state", (enabled) => {
+    // play a sound effect when the entity is enabled or disabled
+    this.entity.sound.play(enabled ? "bell" : "horn");
+});
 ```
 
-or the equivalent using `enable` and `disable`
+### enable/disable
+The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
 
 ```javascript
-Rotate.prototype.initialize = function () {
-    this.on("enable", function () {
-        this.entity.sound.play("bell");
-    });
-
-    this.on("disable", function () {
-        this.entity.sound.play("horn");
-    });
-};
+this.on("enable", () => this.entity.sound.play("bell"));
+this.on("disable", () => this.entity.sound.play("horn"));
 ```
 
 ### destroy
@@ -269,14 +265,13 @@ Rotate.prototype.initialize = function () {
 The `destroy` event is fired when the script instance is destroyed. This could be because the script was removed from the component by calling the `destroy()` method, or script component been removed from Entity, or because the Entity it was attached to was destroyed.
 
 ```javascript
-Rotate.prototype.initialize = function () {
-    this.on("destroy", function () {
-        // remove a DOM event listener when the entity is destroyed
-        window.removeEventListener("resize", this._onResize);
-    });
-};
+this.on("destroy", () => {
+    // remove a DOM event listener when the entity is destroyed
+    window.removeEventListener("resize", this._onResize);
+});
 ```
 
+<!--
 ### attr and attr:[name]
 
 The `attr` and `attr:[name]` events are fired when a declared script attribute value is changed. This could be in the course of running the application or it could be when changes are made to the value via the Editor. The `attr` is fired for every attribute changed. The `attr:[name]` is fired only for a specific attribute e.g. if you have an attribute called 'speed' the event `attr:speed` would be fired when the speed is changed.
@@ -288,3 +283,4 @@ Rotate.prototype.initialize = function () {
     });
 };
 ```
+-->

@@ -4,31 +4,22 @@ sidebar_position: 3
 image: /img/user-manual/scripting/esm-script-meta.webp
 ---
 
-:::warning
-**ESM Scripts are currently in beta** and should be used cautiously
-:::
+### A modern way to create PlayCanvas projects.
 
 <video width="100%" controls autoPlay loop>
   <source src="/video/pc-esm-scripts.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
-:::info
-ESM Scripts are available in PlayCanvas engine 2.0.0
-:::
-
-ES Modules are a modern standardized way of writing JavaScript, which provide a richer set of features and solve many of their shortcomings of classic scripts. This means you can import modules locally from an asset registry or externally via a CDN. This gives you much more flexibility in how you structure your projects whilst being able to leverage existing libraries in the wider JavaScript ecosystem, such as NPM.
+ESM Scripts, built around ES Modules, offer a more expressive, flexible, and modern approach to creating interactive PlayCanvas projects. They introduce a modular structure that enhances code organization and maintainability. By allowing you to [import and export code](#importing-modules) across modules, ESM Scripts lead to cleaner, more readable code. Compared to classic scripts, ESM Scripts support static imports, improving performance through more efficient [bundling](#bundling) and dead code-removal. 
 
 You can learn more about ES Modules and their features on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
 ## Getting Started
-
-Let's walk through how to use ES Modules in your project.
-
-When you create a script in the Editor, you can give it a name. Only scripts ending with `.mjs` extension are treated as an ES Module. Scripts ending with `.js` or without a suffix are treated as regular plain scripts. To create an ES Module Script (ESM Script for short), simply create a script with a name that ends with `.mjs` such as `Rotator.mjs`.
+To create an ES Module Script (ESM Script for short), simply create a script with a name that ends with `.mjs` such as `Rotator.mjs`.
 
 :::tip
-Only Scripts ending with `.mjs` are valid ES Modules.
+An ESM Scripts must end with the `.mjs` suffix.
 :::
 
 You'll notice that the newly created ESM Script has a new boilerplate, based on JavaScript class syntax. Although this looks a little different, it provides exactly the same functionality.
@@ -104,18 +95,7 @@ NPM is a free public repository, so if you have some code you use consistently u
 
 We will be adding more detailed tutorials of publishing PlayCanvas libraries to NPM soon.
 
-## Notes
-
-For the most part ESM Scripts provide the same functionality as classic scripts, however, at a fundamental level, there are a number of key differences between ES Modules and classic scripts.
-
-### Module Scope
-
-ESM Scripts have a different variables scope when compared to classic scripts, which by default have global scope. In practice, this means that variables defined outside of any block or function in a classical script are accessible globally to every other script. They all share the same global scope. In some situations this can be useful to share global state or configuration settings. But in practice, it's error prone and depends upon loading order which is easy to overlook.
-
-ESM Scripts have module scope, meaning by default, when you define a variable - it's only available locally. You need to explicitly 'export' variables, which allows them to 'imported' by other modules.
-
-[Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_standard_scripts) about Module scope and their differences from classic scripts.
-
+<!--
 ### 3rd Party CDN's
 
 With ES Modules it is possible to import code directly from a 3rd party host or CDN, such as [jsdelivr](https://www.jsdelivr.com/). Whilst this can be convenient, it also means relying on external services, which can occasionally lead to challenges with reliability, or expose you to security risks if the CDN encounters issues. To help keep things smooth and secure, we recommend using the Dependency Manager for using 3rd party libraries.
@@ -124,9 +104,10 @@ Any library installed with the Dependency Manager will be bundled into the appli
 :::warning
 Only import 3rd party code from a known and trusted source.
 :::
+-->
 
-### Module Bundling
+### Bundling
 
-Bundling is a process of merging JavaScript modules together and producing a single JavaScript file, or a set of bundled files. This is generally done to minimize a number of network requests a browser has to make, and to reduce overall load time, which makes your app start faster. Whilst ES Modules are supported natively by browsers and don't inherently require bundling, it is often beneficial in many situations and helps to reduce a perceived load time, which means happy users! Not only that, but bundling comes with a range of other benefits, such as tree-shaking and pre-processing.
+When you export a project that contains ESM Scripts, the entire project application is bundled together. The aim is deliver an optimized build of your project that gives a better loading experience for your end users. 
 
-Currently PlayCanvas does not bundle ESM Scripts, however we are actively working on this feature and you can track the [progress on Github](https://github.com/playcanvas/editor/issues/1109). Until then, ESM Scripts are published and exported in projects as-is.
+Bundling itself is a complex topic, and not one strategy fits all needs. However by default the bundling process will eliminate dead code and minify it's output.
