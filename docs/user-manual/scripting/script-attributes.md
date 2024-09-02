@@ -4,18 +4,17 @@ description: Expose dynamic script properties to the PlayCanvas Editor.
 sidebar_position: 5
 ---
 :::note
-This is the documentation for the newer ESM Script Attributes which replaces the previous legacy system.
-You can find documentation for the [legacy attributes system here](./legacy/script-attributes.md)
+This is the documentation for the newer **ESM Script Attributes**.
+You can find documentation for the [**legacy attributes system here**](./legacy/script-attributes.md)
 :::
 
-## What are Script Attributes?
+## What are Attributes?
 
-Script Attributes are a powerful feature that allow you to expose properties to the PlayCanvas editor. They allow you to tweak  values at runtime via the editor and give greater control to dynamically tweak your application as you author it. Script attributes becomes accessible as UI controls within the editor, perfect for artists, designers or other non-programmer team members to adjust and modify values without writing code
+Attributes are a powerful feature that allow you to expose specific parameters to the editor. 
 
+This means you can write code once, then tweak values on different instances to give them different properties. Artists, designers or other non-programmer team members can then adjust and modify them without writing code.
 
-## Getting Started
-
-Let's start with a simple example, say you have a script that rotates an entity around it's Y axis.
+Let's start with a simple rotate script example.
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -23,27 +22,25 @@ import { Script } from 'playcanvas';
 export class Rotator extends Script {
     /**
      * @attribute
-     * The speed attribute is now exposed to the editor
+     * You can now set the `speed`property dynamically in the editor
      */
-    speed = 2
+    speed = 2;
 
     update(dt){
-        this.entity.rotateLocal(0, this.speed, 0)
+        this.entity.rotateLocal(0, this.speed * dt, 0)
     }
 }
 ```
 
-The `@attribute` tag above the `speed` member exposes it to the editor as an attribute. This creates a controller in the editor that allows you to dynamically set the value of `speed` at run time for each entity it's attached to.
+In this example the script simply rotates the entity according to it's speed, but what value is speed?
+
+The `@attribute` tag above the `speed` member promotes it to an attribute. When attached to an entity, the editor creates controls that allows you to dynamically set the value of `speed` at run time for each entity it's attached to.
 
 What this means in practice is that you can expose various members of a script to the editor and create controls to edit their values at run-time.
 
 ![Attribute](/img/user-manual/scripting/attribute-basic.png)
 
-:::tip
-Adding an `/** @attribute */` comment before a Script member exposes it to the editor.
-:::
-
-When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
+Because `speed` is simply a class member you can access it as you would any other member.
 
 ```javascript
 update(dt) {
@@ -289,7 +286,7 @@ class GameLogic extends Script {
 
 #### TypeDef Groups
 
-This is a more modular way of declaring Attribute Groups. Whilst it is more verbose than using the inline version, the typedef version is more modulear and can be used across multiple scripts and attributes.
+This is a more modular way of declaring Attribute Groups. Whilst it is more verbose than using the inline version, the typedef version is more modular and can be used across multiple scripts and attributes.
 
 ```javascript
 /**
