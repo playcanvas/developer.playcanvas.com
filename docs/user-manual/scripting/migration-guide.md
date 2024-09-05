@@ -93,13 +93,22 @@ Instead you can define your own events around class attribute members using some
 <summary>**See code example**</summary>
 
 ```javascript
-const watch = (scope, prop) => new Proxy(scope, {
-    set(target, property, value) {
-        if (target[property] === value) return;
-        scope.fire(`attr:${prop}`, value)
-        target[property] = value;
-    },
-})
+const watch = (target, prop) => {
+    const privateProp = `#{prop}`;
+    target[privateProp] = target[prop];
+
+    Object.defineProperty(target, prop, {
+        set(value) {
+            if (target[privateProp] !== value) {
+                target.fire(`changed:${prop}`, value);
+                target[privateProp] = value;
+            }
+        },
+        get() {
+            return this[privateProp];
+        }
+    });
+}
 
 import { Script } from 'playcanvas'
 export class Rotate extends Script {
@@ -107,7 +116,9 @@ export class Rotate extends Script {
     speed = 10;
 
     initialize() {
-        this.speed = watch(this, 'speed');
+        watch(this, 'speed');
+
+        this.on('changed:speed', console.log)
     }
 }
 
