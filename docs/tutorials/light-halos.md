@@ -133,7 +133,7 @@ export class Halo extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Halo = pc.createScript('halo');

@@ -106,7 +106,7 @@ export class ProgressBar extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var ProgressBar = pc.createScript('progressBar');

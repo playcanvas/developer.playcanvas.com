@@ -67,7 +67,7 @@ export class Generate extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Generate = pc.createScript('generate');

@@ -89,7 +89,7 @@ export class Trigger extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Trigger = pc.createScript('trigger');
@@ -166,7 +166,7 @@ export class Collider extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Collider = pc.createScript('collider');

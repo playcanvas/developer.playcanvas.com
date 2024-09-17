@@ -121,7 +121,7 @@ export class InputScript extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var InputScript = pc.createScript('inputScript');
@@ -173,7 +173,7 @@ export class TouchFix extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var TouchFix = pc.createScript('touchFix');

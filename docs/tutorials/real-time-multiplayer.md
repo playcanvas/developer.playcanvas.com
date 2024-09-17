@@ -178,7 +178,7 @@ export class Movement extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Movement = pc.createScript('movement');
@@ -350,7 +350,7 @@ addPlayer(data) {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 Network.prototype.initializePlayers = function (data) {
@@ -436,7 +436,7 @@ updatePosition() {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 Network.prototype.movePlayer = function (data) {

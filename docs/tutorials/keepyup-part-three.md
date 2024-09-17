@@ -114,7 +114,7 @@ export class Game extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Game = pc.createScript('game');
@@ -330,7 +330,7 @@ export class Input extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Input = pc.createScript('input');

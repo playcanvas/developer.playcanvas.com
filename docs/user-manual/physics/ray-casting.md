@@ -65,7 +65,7 @@ export class Raycast extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Raycast = pc.createScript('raycast');

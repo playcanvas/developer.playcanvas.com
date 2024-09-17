@@ -49,7 +49,7 @@ export class JsonScript extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var JsonScript = pc.createScript('jsonScript');

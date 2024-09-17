@@ -196,7 +196,7 @@ export class CustomShader extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 // update code called every frame
@@ -306,7 +306,7 @@ export class CustomShader extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var CustomShader = pc.createScript('customShader');

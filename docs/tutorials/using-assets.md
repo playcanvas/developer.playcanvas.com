@@ -155,7 +155,7 @@ export class UpdateAsset extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var UpdateAsset = pc.createScript('updateAsset');

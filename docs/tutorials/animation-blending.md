@@ -88,7 +88,7 @@ export class AnimationBlending extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var AnimationBlending = pc.createScript('animationBlending');

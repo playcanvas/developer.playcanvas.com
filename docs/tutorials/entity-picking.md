@@ -61,7 +61,7 @@ export class PickerRaycast extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var PickerRaycast = pc.createScript('pickerRaycast');
@@ -188,7 +188,7 @@ export class PickerFramebuffer extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');

@@ -114,7 +114,7 @@ export class FbUi extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var FbUi = pc.createScript('fbUi');
@@ -306,7 +306,7 @@ export class FacePhoto extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var FacePhoto = pc.createScript('facePhoto');

@@ -135,7 +135,7 @@ export class LightHandler extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var LightHandler = pc.createScript('lightHandler');

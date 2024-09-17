@@ -166,7 +166,7 @@ export class Ball extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Ball = pc.createScript('ball');

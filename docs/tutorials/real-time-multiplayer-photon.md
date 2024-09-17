@@ -251,7 +251,7 @@ initialize () {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
@@ -317,7 +317,7 @@ onJoinRoom(createdByMe) {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
@@ -450,7 +450,7 @@ export class Movement extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 const Player = pc.createScript("player");
@@ -595,7 +595,7 @@ export class PhotonLoadBalancingPlayCanvas extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 const PhotonLoadBalancingPlayCanvas = pc.createScript("photonLoadBalancingPlayCanvas");
@@ -751,7 +751,7 @@ export class Player extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 const Player = pc.createScript("player");

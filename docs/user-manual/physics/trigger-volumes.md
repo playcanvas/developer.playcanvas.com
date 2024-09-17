@@ -33,7 +33,7 @@ export class TriggerVolume extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var TriggerVolume = pc.createScript('triggerVolume');

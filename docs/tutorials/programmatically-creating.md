@@ -167,7 +167,7 @@ export class EntityCreator extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var EntityCreator = pc.createScript('entityCreator');

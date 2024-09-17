@@ -46,7 +46,7 @@ export class AnimationEvents extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var AnimationEvents = pc.createScript('animationEvents');

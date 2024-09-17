@@ -144,7 +144,7 @@ export class PointToPointConstraint extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var PointToPointConstraint = pc.createScript('pointToPointConstraint');
@@ -318,7 +318,7 @@ export class Ccd extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Ccd = pc.createScript('ccd');

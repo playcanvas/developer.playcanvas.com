@@ -57,7 +57,7 @@ export class Analyser extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Analyser = pc.createScript('analyser');
@@ -167,7 +167,7 @@ export class Visualizer extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Visualizer = pc.createScript('visualizer');

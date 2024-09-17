@@ -56,7 +56,7 @@ export class Zoom extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Zoom = pc.createScript('zoom');
@@ -158,7 +158,7 @@ export class CameraManager extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var CameraManager = pc.createScript('cameraManager');

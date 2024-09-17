@@ -55,7 +55,7 @@ app.fire("score:set", 10);
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 // method one: define a global function to set the score
@@ -136,7 +136,7 @@ window.addEventListener("message", (event) => {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 window.addEventListener("message", function (event) {

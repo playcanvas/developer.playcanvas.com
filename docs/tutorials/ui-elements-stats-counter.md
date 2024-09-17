@@ -106,7 +106,7 @@ export class UiStats extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var UiStats = pc.createScript('uiStats');

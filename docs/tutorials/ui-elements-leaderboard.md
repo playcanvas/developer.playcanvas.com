@@ -149,7 +149,7 @@ export class Leaderboard extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Leaderboard = pc.createScript('leaderboard');
