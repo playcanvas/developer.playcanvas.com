@@ -19,7 +19,7 @@ Our music visualizer consists of two scripts. The analyser, plays the audio and 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -104,7 +104,7 @@ Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData
 
 ## The Visualizer
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

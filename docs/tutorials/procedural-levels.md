@@ -17,7 +17,7 @@ This script below is a very simple level generation program. It takes two Entiti
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

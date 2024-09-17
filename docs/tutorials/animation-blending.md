@@ -43,7 +43,7 @@ So this kind of functionality goes beyond the abilities of the humble animation 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

@@ -72,7 +72,7 @@ Now hit EDIT to open the Code Editor. You'll see the following skeleton script:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -111,7 +111,7 @@ Movement.prototype.update = function(dt) {
 
 To make the sphere controllable, let's add some code to the `update` function. Copy and paste the code below:
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

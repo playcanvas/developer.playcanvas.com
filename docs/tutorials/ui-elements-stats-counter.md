@@ -64,7 +64,7 @@ The main script that handles the interactions for each stat is `uiStats`:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

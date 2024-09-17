@@ -117,7 +117,7 @@ Add a script component to your player, and attach a new script called `Movement.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -303,7 +303,7 @@ socket.on ('playerJoined', function (data) {
 
 And then declare these new functions inside Network.js:
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -418,7 +418,7 @@ Network.prototype.update = function (dt) {
 
 And then declare these new functions inside Network.js:
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

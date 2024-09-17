@@ -16,7 +16,7 @@ Here is the script for a point-to-point constraint (essentially a ball and socke
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -278,7 +278,7 @@ Sometimes, you might find that fast moving rigid bodies in your simulations pass
 
 You can enable CCD for any PlayCanvas rigid body using the following script:
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

@@ -36,7 +36,7 @@ In this example we've implemented a user interface to let you log in and log out
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -222,7 +222,7 @@ Note, also we fire our own application events `app:fblogin` and `app:fblogout` t
 
 The file `face-photo.js` uses the Facebook API to retrieve a list of photos from the user and display them in the 3D world.
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

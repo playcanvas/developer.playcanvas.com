@@ -96,7 +96,7 @@ Calling `stopPropagation` will also stop the event from being handled by the oth
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -152,7 +152,7 @@ To prevent this behavior you can call the ```preventDefault()``` method of the n
 
 Here is small script to include once in your scene:
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

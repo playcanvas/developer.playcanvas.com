@@ -116,7 +116,7 @@ Create a script asset named **photon-loadbalancing-playcanvas.js** to the projec
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -231,7 +231,7 @@ this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.ws
 
 #### Connect to the master server using `connectToRegionMaster`
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -285,7 +285,7 @@ If you successfully connect to the lobby by running connectToRegionMaster, Joine
 
 **JoinRandomOrCreateRoom** to join a room if it exists, or randomly join a room if it does not exist.
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -421,7 +421,7 @@ If successful, the entity is added when the player joins.
 
 Create a new **player.js** for character movement.
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -486,7 +486,7 @@ Use **raiseEvent** and **onEvent** to synchronize the player's location.
 
 #### Position synchronization using **raiseEvent**
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -717,7 +717,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onEvent = function (code, content, actor
 
 #### Changed to fire events when player moves
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript

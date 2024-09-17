@@ -31,7 +31,7 @@ Collision based picking uses the collision components to add a shape to each Ent
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -105,7 +105,7 @@ You are able modify the size of the buffer to be smaller to improve the performa
 
 It's also possible to restrict the layers to pick which the script supports via `layerNames` array. We can add the names of the layers that we want to pick from and also improves performance by rendering only what we need to the internal buffer.
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
