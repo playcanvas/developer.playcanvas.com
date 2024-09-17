@@ -155,7 +155,7 @@ Rotate.prototype.initialize = function() {
 </TabItem>
 </Tabs>
 
-`Initialize` is called before any other life-cycle method. It's useful for setting up event listeners or any other data needed by the Script. It will only ever be called once when the script and it's entity are enabled.
+The `initialize()` method is called before any other life-cycle method. It's useful for setting up event listeners or any other data needed by the Script. It will only ever be called once when the script and it's entity are enabled.
 
 More formally, `initialize` is called after the application has loaded and the entity hierarchy has been constructed but before the first update loop or frame is rendered. If an entity or script is disabled when the application starts, the initialize method will be called the first time the entity is enabled.
 
