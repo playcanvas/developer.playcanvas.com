@@ -1,54 +1,37 @@
 ---
 title: Script Attributes
-description: Expose dynamic script properties to the PlayCanvas Editor.
 sidebar_position: 5
 ---
-:::note
-This is the documentation for the newer **ESM Script Attributes**.
-You can find documentation for the [**legacy attributes system here**](./legacy/script-attributes.md)
-:::
 
-## What are Attributes?
+Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
 
-Attributes are a powerful feature that allow you to expose specific parameters to the editor.
+## Declaring Script Attributes
 
-This means you can write code once, then tweak values on different instances to give them different properties. Artists, designers or other non-programmer team members can then adjust and modify them without writing code.
-
-Let's start with a simple rotate script example.
+Script Attributes are declared at the top of your script file using this format:
 
 ```javascript
-import { Script } from 'playcanvas';
+var MyScript = pc.createScript('myScript');
 
-export class Rotator extends Script {
-    /**
-     * @attribute
-     * You can now set the `speed`property dynamically in the editor
-     */
-    speed = 2;
-
-    update(dt){
-        this.entity.rotateLocal(0, this.speed * dt, 0)
-    }
-}
+MyScript.attributes.add('speed', {
+    type: 'number',
+    default: 80
+});
 ```
 
-In this example the script simply rotates the entity according to it's speed, but what value is speed?
+In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
 
-The `@attribute` tag above the `speed` member promotes it to an attribute. When attached to an entity, the editor creates controls that allows you to dynamically set the value of `speed` at run time for each entity it's attached to.
-
-What this means in practice is that you can expose various members of a script to the editor and create controls to edit their values at run-time.
-
-![Attribute](/img/user-manual/scripting/attribute-basic.png)
-
-Because `speed` is simply a class member you can access it as you would any other member.
+If you need an array of attributes set `array: true` like so:
 
 ```javascript
-update(dt) {
-    this.entity.rotateLocal(0, this.speed, 0);
-}
+var MyScript = pc.createScript('myScript');
+
+MyScript.attributes.add('names', {
+    type: 'string',
+    array: true
+});
 ```
 
-### Attributes in the Editor
+## Getting Attributes into Editor
 
 ![Script Attributes](/img/user-manual/scripting/script-attributes.png)
 
@@ -56,312 +39,144 @@ Once you've declared your attributes the Editor needs to parse the code in order
 
 ![Parse Button](/img/user-manual/scripting/script-parse-button.png)
 
-## Attribute Information
+## Accessing attributes in your code
 
-When you expose an attribute to the editor, you can also surface additional information that helps provide context and present more specific controls. This can help create a better user experiences for your scripts.
-
-### Attribute descriptions
-
-The first sentence of an `@attribute` comment block is used a description in the editor. This is a useful way to surface
-contextual information on what the attribute is and how it behaves
+When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
 
 ```javascript
-/**
- * @attribute
- * Sets the speed of the Y rotation in degrees.
- */
-speed = 2
+MyScript.prototype.update = function (dt) {
+    this.entity.translate(this.speed * dt, 0, 0);
+}
 ```
 
-In the editor this is available as a tooltip.
+## Updating attributes
 
-![Attribute Description](/img/user-manual/scripting/attribute-description.png)
-
-### Attribute constraints
-
-What if you also want to define a sensible range values for speed. You can do this with the `@range` tag
+When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
 
 ```javascript
-/** 
- * @attribute
- * @range [0, 10]
- */
-speed = 10
-```
+MyScript.prototype.initialize = function () {
+    // fires only for `speed` attribute
+    this.on('attr:speed', function (value, prev) {
+        // new value for speed
+    });
 
-This simply tells the editor that speed is an attribute and it's value should be within 0 - 10. The editor will create a numerical slider mapped to this range.
-
-![Attribute Description](/img/user-manual/scripting/attribute-constraint.png)
-
-There are additional numerical constraints that you can set which help the editor limit the set of possible values
-
-```javascript
-/** 
- * @attribute
- * @range [0, 10]
- * @precison 0.1
- * @step 0.05
- */
-speed = 10
+    // fires for all attribute changes
+    this.on('attr', function(name, value, prev) {
+        // new attribute value
+    });
+}
 ```
 
 ## Attribute types
 
-When you expose a script member as an attribute, the editor will show a control thats relevant to the type of attribute. If the attribute is a number, it shows a numerical input, if it's a boolean, a checkbox.
-
-An attribute can be a `number`, `string`, `boolean`, `Vec2`, `Vec3`, `Vec4`, `Entity`, `Asset` or `Color`.
-
-### The @type tag
-
-In some situations you won't actually know an attributes initial value ahead of time. For example, if you want to define an asset attribute on a script, you won't necessarily have an initial value. In these situations, where a value isn't known ahead of time, but it's type is, you can use the jsdoc `@type` tag.
-
-```javascript
-/**
- * @attribute
- * @type {Asset}
- */
-myTexture;
-```
-
-:::warning
-An attribute must either be initialized with a value `speed = 10`, or have a jsdoc type `@type {number}`. If neither are present, the attribute will ignored
-:::
+When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][3] for more details.
 
 ### Entity attribute
 
-The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
-
 ```javascript
-/**
- * @attribute
- * @type {Entity}
- */
-target
+MyScript.attributes.add('target', { type: 'entity' })
 ```
+
+The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
 
 ### Asset attribute
 
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `@resource` tag which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+```javascript
+MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
+```
 
-The runtime type of an Asset attribute is `Asset`. You can reference the resource of an Asset attribute at runtime like so:
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+
+The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
 
 ```javascript
-/**
- * @attribute
- * @type {Asset}
- * @resource texture
- */
-texture
+MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
 
-initialize() {
+MyScript.prototype.initialize = function () {
     console.log('This is the texture asset', this.texture);
     console.log('This is the texture resource', this.texture.resource);
-}
+};
+
 ```
 
 ### Color attribute
 
 ```javascript
-/** @attribute */
-color = new Color()
+MyScript.attributes.add('color', { type: 'rgba' });
 ```
 
 The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
 
-### Vector attribute
-
-```javascript
-/** @attribute */
-position = new Vec3()
-```
-
-The vector attribute can be a 2, 3 or 4 dimension. The editor will show a numerical input for each component, allowing you to set each one independently.
-
-![Attribute Vector](/img/user-manual/scripting/attribute-vec3.png)
-
 ### Curve attribute
 
 ```javascript
-/**
- * @attribute
- * @type {Curve}
- * @color rgba
- */
-wave
+MyScript.attributes.add('wave', { type: 'curve' }); // one curve
+MyScript.attributes.add('wave', { type: 'curve', curves: [ 'x', 'y', 'z' ] }); // three curves: x, y, z
+MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // one curve for red channel
+MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curves for full color including alpha
 ```
 
 The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
 
-### Attribute arrays
+### Enumeration attribute
 
-In some cases you may want to expose a list of grouped attributes together. Let's say you have a script that generates a gradient, but rather than having a start and end point, you want to allow users to set an arbitrary amount of 'color stops' on the gradient. In this case you can an array qualifier in a `@type` tag.
+The Enumeration attribute allows you to choose one of the available options:
 
 ```javascript
-/**
- * @attribute
- * @type {Color[]}
- */
-gradientStops;
+MyScript.attributes.add('value', {
+    type: 'number',
+    enum: [
+        { 'valueOne': 1 },
+        { 'valueTwo': 2 },
+        { 'valueThree': 3 }
+    ]
+});
 ```
 
-The `Color[]` declaration uses the [jsdoc type tag](https://jsdoc.app/tags-type) to declare that `gradientStops` is an array of `Colors`. The editor will interpret in this way, creating a controller that allows you to set multiple `Color` values in a list.
+Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`.
 
-![Attribute Array](/img/user-manual/scripting/attribute-array.png)
+### JSON attribute
 
-In your initialize or update loop, you can iterate over `gradientStops` as an array
+The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
 
 ```javascript
-initialize(){
-    this.gradientStops.forEach(color => {
-        console.log('This is a Color class', color)
-    })
-}
+MyScript.attributes.add('gameConfig', {
+    type: 'json',
+    schema: [{
+        name: 'numEnemies',
+        type: 'number',
+        default: 10
+    }, {
+        name: 'enemyModels',
+        type: 'asset',
+        assetType: 'model',
+        array: true
+    }, {
+        name: 'godMode',
+        type: 'boolean',
+        default: false
+    }]
+});
 ```
 
-### Enumerations
+You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
 
-Sometimes you may want to constrain an attribute to a set of possible values. In this situation you can use the `@enum` tag. This uses an enumeration as a value for the attribute making the editor display a combo box constrained to the list of possible values
-
-```javascript
-
-/** @enum {number} */
-const Lights = {
-    ON: 1,
-    OFF: 0,
-    UNKNOWN: 0.5
-}
-
-class MyScript extends Script {
-    /**
-     * @attribute
-     * @type {Lights}
-     */
-    ambient = Lights.OFF
-}
-```
-
-This uses the `Lights` class as an enumeration of possible values. The `@type {Lights}` indicates that `ambient` should only have a value listed in `Lights`. At author-time the editor will generate a drop-down control using the Lights enumeration keys as labels (ON/OFF/UNKNOWN) and setting the corresponding value on `ambient`. An enumerators values can only be numbers, strings, or booleans.
-
-![Attribute Enumerations](/img/user-manual/scripting/attribute-enum.png)
-
-## Grouping Attributes
-
-In some situations you may want to logically group attributes together. For example lets say you have a `GameLogic` Script with an enemy with the speed and power. Rather than declare the attributes individually, it makes sense to group them together under one `enemy` attribute. You can do this with **Attribute Groups**.
-
-Attribute groups are essentially objects that contain sub-attributes:
+Here's an example of accessing the above attributes in a script:
 
 ```javascript
-class GameLogic extends Script {
-    /** 
-     * @attribute 
-     * `power` and `speed` are exposed as sub attributes
-     */
-    enemy = { power: 10, speed: 3 }
-
-    initialize(){
-        console.log(this.enemy.speed) // 3
-        console.log(this.enemy.power) // 10
+MyScript.prototype.update = function (dt) {
+    if (this.gameConfig.godMode) {
+        for (let i = 0; i < this.gameConfig.numEnemies; i++) {
+            // ...
+        }
     }
-}
+};
 ```
 
-This defines `enemy` as as Attribute Group. The editor will expose the enemy attribute with nested controllable power and speed sub-attributes. It provides a more flexible way to logically group attributes together.
+:::note
 
-:::tip
-Attribute Groups allow you to logically group together related attributes into object based structure
+We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.
+
 :::
 
-There are different ways you can declare Attribute Groups. You can use Inline Attribute Groups or TypeDef Groups.
-
-### Inline Group
-
-A simple inline way of declaring attribute groups
-
-```javascript
-class GameLogic extends Script {
-    /** @attribute */
-    enemy = { power: 10, speed: 3 }
-}
-```
-
-### TypeDef Groups
-
-This is a more modular way of declaring Attribute Groups. Whilst it is more verbose than using the inline version, the typedef version is more modular and can be used across multiple scripts and attributes.
-
-```javascript
-/**
- * @typedef {Object} Enemy
- * @prop {number} speed - The enemies speed
- * @prop {number} power - The enemies power
- */
-
-class GameLogic extends Script {
-    /** 
-     * @attribute 
-     * @type {Enemy}
-     */
-    enemy
-}
-```
-
-### Interface Attributes
-
-If you want to group attributes together and set individual constraints on it's members you can use an Interface Attribute. This provides a morea more flexible way of grouping attributes.
-
-```javascript
-/** @interface */
-class Enemy {
-    /**
-     * @range [0, 11]
-     */
-    power = 10;
-    speed = 3
-}
-
-class GameLogic extends Script {
-    /**
-     * @attribute 
-     * @type {Enemy}
-     */
-    enemy
-}
-```
-
-In the above example we've created a new `Enemy` Interface with a power member constrained within _0 - 11_ range. We've also declared that the `GameLogic` Script has an attribute `enemy` which is a type of `Enemy`.
-
-:::tip
-An _Interface Attribute_ allows you to both logically group attributes together and set constraints on individual sub attributes. It also allows you to modularize your code.
-:::
-
-#### Rules of Interface attributes
-
-There are a number of requirements to use Interface Attributes.
-
-- An Interface Attribute must have an `/** @interface */` block comment before a class declaration
-- A Script Attribute must use an Interface Attribute using the `@type {InterfaceAttribute}` tag
-- All public members of an Interface Attribute are available to the editor and will be used. You do not need to use the `@attribute` tag on each member.
-- You cannot have nested Interface Attributes.
-
-### Interface Attribute Arrays
-
-Interface attributes can be used as arrays, just like plain attributes. This means that your `GameLogic` script can use an array of enemies, each with their own controllable power and speed properties.
-
-```javascript
-class GameLogic extends Script {
-    /**
-     * @attribute
-     * @type {Enemy[]}
-     */
-    enemies
-
-    update(){
-        this.enemies.forEach(({ power, speed }) => {
-            this.updateEnemy(power, speed)
-        })
-    }
-}
-```
-
-This creates an array of Enemy controls in the editor, each with it's own numerical controls for the sub attributes
-
-![Attribute Complex Arrays](/img/user-manual/scripting/attribute-complex-arrays.png)
+[3]: https://api.playcanvas.com/classes/Engine.ScriptAttributes.html

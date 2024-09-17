@@ -19,53 +19,6 @@ When a script with a `swap` function is changed in the code editor, any launched
 
 For example:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs defaultValue="legacy" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
-```javascript
-import { ScriptType, math } from 'playcanvas';
-
-export class Rotator extends Script {
-    static attributes = {
-        xSpeed: { type: 'number', default: 10 }
-    };
-
-    initialize() {
-        // Listen for enable event and call method
-        this.on('enable', this._onEnable);
-
-        this.ySpeed = 0;
-    }
-
-    swap(old) {
-        // xSpeed is an attribute and so is automatically copied
-
-        // Copy the ySpeed property from the old script instance to the new one
-        this.ySpeed = old.ySpeed;
-
-        // Remove the old event listener
-        old.off('enable', old._onEnable);
-        // Add a new event listener
-        this.on('enable', this._onEnable);
-    }
-
-    _onEnable() {
-        // When enabled, randomize the speed
-        this.ySpeed = math.random(0, 10);
-    }
-
-    update(dt) {
-        this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="legacy" label="Legacy">
-
 ```javascript
 var Rotator = pc.createScript('rotator');
 
@@ -99,9 +52,6 @@ Rotator.prototype.update = function (dt) {
     this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
 };
 ```
-
-</TabItem>
-</Tabs>
 
 Try changing logic within the `update` method and save the code. The launched application will automatically swap `rotator` script instances with new ones and your application will keep working with the new logic.
 

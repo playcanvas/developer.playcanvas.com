@@ -19,21 +19,26 @@ The script component is created in the same way as other components. Once you ha
 
 Scripts are shown by their name, when you select a script to add it to a component, the script content is parsed and any attributes that have been declared are exposed in the interface.
 
-## Adding a script at run time
+## Adding a script component at run time
 
-If you want to dynamically add scripts while your application is running you can do so from the script component.
+If you want to dynamically add scripts while your application is running you can do so from the script component
 
 ```javascript
-import { Entity } from 'playcanvas';
-import { Rotate } from './rotate.mjs'
-
-const entity = new Entity();
+const entity = new pc.Entity();
 entity.addComponent("script");
-entity.script.create(Rotate);
+entity.script.create("rotate", {
+    attributes: {
+        speed: 20
+    }
+});
 ```
+
+Note, that the "rotate" script should already have been loaded at this point. You can load a script using the Asset Registry's [load()][3] method.
 
 To remove a script from a component use the `destroy` method
 
 ```javascript
 entity.script.destroy("rotate");
 ```
+
+[3]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#load

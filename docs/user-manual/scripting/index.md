@@ -3,28 +3,31 @@ title: Scripting
 sidebar_position: 11
 ---
 
-### Making your projects interactive
+Scripts are how you make your PlayCanvas application interactive. They are written in regular **JavaScript** the same programming language that is used to program web pages.
 
-Scripts are re-usable pieces of code that interactivity to your project. Conceptually they're attached to an entity and define a specific behavior or operation.
+You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which are often specific to your application or re-usable chunks that provide useful behaviors.
 
-For example, this `Rotate` script rotates an entity by 10° every second.
+Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
+
+Here is an example of a simple script. It is called "rotate" and it rotates the entity that it is attached to by 10° every second.
 
 ```javascript
-import { Script } from 'playcanvas';
+var Rotate = pc.createScript("rotate");
 
-export class Rotate extends Script {
-    update(dt) {
-        this.entity.rotate(0, 10 * dt, 0);
-    }
-}
+Rotate.prototype.update = function (dt) {
+    this.entity.rotate(0, 10*dt, 0);
+};
 ```
 
-In the example above, the  `update()` method is called every frame. This is one of the [life-cycle](./anatomy.md) methods a script can define. It allows your script to hook into various changes in your application.
+Scripts are defined by the name given when they are created and they are attached to [Script Component][1] via the Editor or by adding a script component to an Entity in your code.
 
-:::tip
-A **Script** is a re-usable piece of logic attached to an **Entity** within a scene.
-:::
+## Terminology
 
-Scripts can be attached to multiple entities within a scene. The simply define a set of behavior without necessarily specifying the entities it should apply to. This separation allows you to create re-usable behaviors across your project.
+Lets define a few pieces of terminology.
 
-Find out how to [create a new script](./creating-new.md) and attach it to an entity.
+* ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
+* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
+* ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
+* ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
+
+[1]: /user-manual/scenes/components/script/
