@@ -18,79 +18,6 @@ Mouse handling in the PlayCanvas engine is provided by the `pc.Mouse` object. Th
 
 Take a look at the [tutorial project][1]. Here is the code from mouse.js:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs defaultValue="legacy" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
-```javascript
-import { ScriptType, Vec3, MOUSEBUTTON_LEFT, MOUSEBUTTON_MIDDLE, MOUSEBUTTON_RIGHT } from 'playcanvas';
-
-export class Mouse extends Script {
-    static attributes = {
-        redMaterial: {
-            type: 'asset',
-            assetType: 'material'
-        },
-        greenMaterial: {
-            type: 'asset',
-            assetType: 'material'
-        },
-        blueMaterial: {
-            type: 'asset',
-            assetType: 'material'
-        }
-    };
-
-    // initialize code called once per entity
-    initialize() {
-        this.pos = new Vec3();
-
-        // Disabling the context menu stops the browser displaying a menu when
-        // you right-click the page
-        this.app.mouse.disableContextMenu();
-
-        // Use the on() method to attach event handlers.
-        // The mouse object supports events on move, button down and
-        // up, and scroll wheel.
-        this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
-        this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
-    }
-
-    onMouseMove(event) {
-        // Use the camera component's screenToWorld function to convert the
-        // position of the mouse into a position in 3D space
-        var depth = 10;
-        var cameraEntity = this.app.root.findByName('Camera');
-        cameraEntity.camera.screenToWorld(event.x, event.y, depth, this.pos);
-
-        // Finally update the cube's world-space position
-        this.entity.setPosition(this.pos);
-    }
-
-    onMouseDown(event) {
-        // If the left mouse button is pressed, change the cube color to red
-        if (event.button === MOUSEBUTTON_LEFT) {
-            this.entity.model.meshInstances[0].material = this.redMaterial.resource;
-        }
-        
-        // If the middle mouse button is pressed, change the cube color to green
-        if (event.button === MOUSEBUTTON_MIDDLE) {
-            this.entity.model.meshInstances[0].material = this.greenMaterial.resource;
-        }
-        
-        // If the right mouse button is pressed, change the cube color to blue
-        if (event.button === MOUSEBUTTON_RIGHT) {
-            this.entity.model.meshInstances[0].material = this.blueMaterial.resource;
-        }
-    }
-}
-```
-
-</TabItem>
-<TabItem value="legacy" label="Legacy">
-
 ```javascript
 var Mouse = pc.createScript('mouse');
 
@@ -152,9 +79,6 @@ Mouse.prototype.onMouseDown = function (event) {
     }
 };
 ```
-
-</TabItem>
-</Tabs>
 
 ### Accessing the mouse
 

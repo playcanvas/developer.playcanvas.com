@@ -14,8 +14,4 @@ Credit: https://playcanvas.com/user/lexxik
     <iframe loading="lazy" src="https://playcanv.as/p/5SJsWtg3/" title="Pan Camera to Target" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/project/1209322/'>Open ESM Project ↗</Link>
-
-<br/>
-
-<Link to='https://playcanvas.com/project/693889/'>Open Legacy Project ↗</Link>
+<Link to='https://playcanvas.com/project/693889/'>Open Project ↗</Link>
