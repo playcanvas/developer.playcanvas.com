@@ -75,6 +75,38 @@ With the animations fully set up, we now need to make it possible for users to i
 
 Remember that parameter `punch` that we set up before? This script will simply toggle that parameter on and off depending on whether the ‘P’ key is currently pressed and whether the character is currently punching:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs defaultValue="classic" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
+```javascript
+import { ScriptType, EVENT_KEYDOWN, EVENT_KEYUP, KEY_P } from 'playcanvas';
+
+export class KeyboardControls extends Script {
+
+    // initialize code called once per entity
+    initialize() {
+        this.app.keyboard.on(EVENT_KEYDOWN, this.keyDown, this);
+        this.app.keyboard.on(EVENT_KEYUP, this.keyUp, this);
+    }
+
+    update(dt) {
+        if (this.app.keyboard.wasPressed(KEY_P) && (this.entity.anim.baseLayer.activeState !== 'Punch')) {
+            this.entity.anim.setBoolean('punch', true);
+        }
+
+        if (this.app.keyboard.wasReleased(KEY_P) && (this.entity.anim.baseLayer.activeState === 'Punch')) {
+            this.entity.anim.setBoolean('punch', false);
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
+
 ```javascript
 var KeyboardControls = pc.createScript('keyboardControls');
 
@@ -94,6 +126,9 @@ KeyboardControls.prototype.update = function(dt) {
     }
 };
 ```
+
+</TabItem>
+</Tabs>
 
 From this point, you are able to add more and more animations to the animstategraph asset and start building much more complex animation state graphs!
 
