@@ -13,35 +13,6 @@ To access data from a Text Asset in a script:
 
 Example:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs defaultValue="legacy" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
-
-```javascript
-import { Script } from 'playcanvas';
-
-export class TextScript extends Script {
-    static attributes = {
-        textAsset: { type: 'asset', assetType: 'text' }
-    };
-
-    initialize() {
-        if (this.textAsset) {
-            // Get the Text asset's resource (a string)
-            var textData = this.textAsset.resource;
-            
-            // Output the content of the text asset
-            console.log('Content of text asset: ', textData);
-        }
-    }
-}
-```
-
-</TabItem>
-<TabItem value="legacy" label="Legacy">
-
 ```javascript
 var TextScript = pc.createScript('textScript');
 
@@ -58,6 +29,3 @@ TextScript.prototype.initialize = function() {
     }
 };
 ```
-
-</TabItem>
-</Tabs>
