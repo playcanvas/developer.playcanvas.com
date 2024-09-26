@@ -11,7 +11,7 @@ image: /img/user-manual/scripting/esm-script-meta.webp
   Your browser does not support the video tag.
 </video>
 
-ESM Scripts, built around ES Modules, offer a more expressive, flexible, and modern approach to creating interactive PlayCanvas projects than Classic Scripts. They introduce a modular structure that enhances code organization and maintainability. By allowing you to [import and export code](#importing-modules) across modules, ESM Scripts lead to cleaner, more readable code. Compared to classic scripts, ESM Scripts support static imports, improving performance through more efficient [bundling](#bundling) and dead code-removal.
+ESM Scripts, leveraging the power of ES Modules, provide a significant improvement over Classic Scripts, offering a more expressive, flexible, and modern approach to creating interactive PlayCanvas projects. They introduce a modular structure that enhances code organization and maintainability. By allowing you to [import and export code](#importing-modules) across modules, ESM Scripts lead to cleaner, more readable code. Compared to classic scripts, ESM Scripts support static imports, improving performance through more efficient [bundling](#bundling) and dead code-removal.
 
 You can learn more about ES Modules and their features on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
