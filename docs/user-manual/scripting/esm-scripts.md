@@ -97,6 +97,7 @@ PlayCanvas will automatically add the library to your project and make it availa
 NPM is a free public repository, so if you have some code you use consistently use across all your projects, you can publish it to NPM and import directly in your projects. Also, if it's something other developers might use, why not document and promote it to the wider PlayCanvas community.
 
 We will be adding more detailed tutorials of publishing PlayCanvas libraries to NPM soon.
+-->
 
 ### 3rd Party CDN's
 
@@ -106,10 +107,9 @@ Any library installed with the Dependency Manager will be bundled into the appli
 :::warning
 Only import 3rd party code from a known and trusted source.
 :::
--->
 
 ### Bundling
 
-When you export a project that contains ESM Scripts, the entire project application is bundled together. The aim is deliver an optimized build of your project that gives a better loading experience for your end users.
+When you export an ESM Scripts project your entire project is bundled together. The aim is deliver an optimized build of your project that gives a better loading experience for your end users.
 
 Bundling itself is a complex topic, and not one strategy fits all needs. However by default the bundling process will eliminate dead code and minify it's output.

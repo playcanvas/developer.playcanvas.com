@@ -16,6 +16,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs defaultValue="esm" groupId='script-code'>
 <TabItem value="esm" label="ESM">
+
 ```javascript
 import { Script } from 'playcanvas';
 
@@ -24,9 +25,12 @@ export class Rotate extends Script {
         this.entity.rotate(0, 10 * dt, 0);
     }
 }
+
 ```
+
 </TabItem>
 <TabItem value="classic" label="Classic">
+
 ```javascript
 var Rotate = pc.createScript('Rotate');
 
@@ -34,6 +38,7 @@ Rotate.prototype.update = function(dt) {
     this.entity.rotate(0, 10 * dt, 0);
 }
 ```
+
 </TabItem>
 </Tabs>
 
