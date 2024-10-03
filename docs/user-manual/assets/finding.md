@@ -33,7 +33,7 @@ There are tools available that can generate game assets procedurally. Here are s
 
 * [Sound FX Generator][2]
 * [Spacescape Skybox Generator][3]
-* [Sloyd 3D model Generator][4]
+* [Sloyd 3D Model Generator][4]
 
 [1]: https://forum.playcanvas.com/
 [2]: https://www.bfxr.net/
