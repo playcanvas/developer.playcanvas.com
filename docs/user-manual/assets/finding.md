@@ -38,4 +38,4 @@ There are tools available that can generate game assets procedurally. Here are s
 [1]: https://forum.playcanvas.com/
 [2]: https://www.bfxr.net/
 [3]: http://alexcpeterson.com/spacescape
-[4]: http://sloyd.ai
+[4]: https://sloyd.ai
