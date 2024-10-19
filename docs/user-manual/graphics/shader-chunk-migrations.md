@@ -276,6 +276,7 @@ struct SheenArgs
 | `shadow(EVSM/EVSMn/Standard/StandardGL2/VSM8)` | <ul><li>Accepts a vec3 shadow sample coordinate instead of using `dShadowCoord`</li></ul> |
 | `spot` | <ul><li>Accepts a vec3 normalized light direction instead of using `dLightDirNormW`</li></ul> |
 | `TBN(-/ObjectSpace/derivative/fast)` | <ul><li>Accepts a vec3 tangent, binormal and normal instead of using `dTangentW`, `dBinormalW` and `dNormalW`</li></ul> |
+
 ---
 
 ### Engine v1.60
