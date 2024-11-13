@@ -44,7 +44,7 @@ jobs:
 
       # Re-crawl the site with Algolia search after deployment
       - name: Algolia Crawler Automatic Crawl
-        uses: algolia/algoliasearch-crawler-github-actions@v1.1.10
+        uses: algolia/algoliasearch-crawler-github-actions@v1.1.13
         with: # mandatory parameters
           crawler-name: developer-playcanvas
           crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
