@@ -70,7 +70,7 @@ To do this, visit the account page for your subscribed account (remembering that
 
 :::note
 
-Editing the details of an existing subscription will not trigger a payment straight away. But on your next scheduled billing date, the invoice will show the updated details.
+While the button says 'PAY NOW', editing the details of an existing subscription will not trigger a payment straight away. You will be billed as normal on the next billing date and the invoice will show the updated details.
 
 :::
 
