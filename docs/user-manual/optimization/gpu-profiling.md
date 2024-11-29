@@ -60,3 +60,5 @@ https://github.com/playcanvas/engine/blob/main/scripts/utils/mac-gpu-profiling.j
 ## WebGL and WebGPU application on Windows
 
 Please read this article on how to use Microsoft's PIX to capture GPU frames using Chrome browser: https://toji.dev/webgpu-profiling/pix
+
+Alternatively, read this article on how to use RenderDoc to capture GPU frames: https://edw.is/renderdoc-webgl/
