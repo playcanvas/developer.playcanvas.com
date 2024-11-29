@@ -28,7 +28,7 @@ Tools/Scripts/build-webkit -cmakeargs="-DENABLE_WEBGPU_BY_DEFAULT=1" --release
 __XPC_METAL_CAPTURE_ENABLED=1 Tools/Scripts/run-minibrowser --release --url https://playcanvas.github.io/
 ```
 
-* Configure the number of frames to capture, from a separate command-line interface window. This defaults to 1.
+* Configure the number of frames to capture from a separate command-line interface window. This defaults to 1.
 
 ```bash
 notifyutil -s com.apple.WebKit.WebGPU.CaptureFrame 2
