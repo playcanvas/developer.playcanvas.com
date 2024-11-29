@@ -15,7 +15,7 @@ This is particularly challenging on the Web platform, as web applications typica
 git clone https://github.com/WebKit/WebKit.git WebKit
 ```
 
-* Build MiniBrowser:
+* Build MiniBrowser (this takes around 30 minutes):
 
 ```bash
 cd WebKit
