@@ -22,7 +22,7 @@ cd WebKit
 Tools/Scripts/build-webkit -cmakeargs="-DENABLE_WEBGPU_BY_DEFAULT=1" --release
 ```
 
-* Start the MiniBrowser, specify url to your web application
+* Start the MiniBrowser, specify url to your web application:
 
 ```bash
 __XPC_METAL_CAPTURE_ENABLED=1 Tools/Scripts/run-minibrowser --release --url https://playcanvas.github.io/
