@@ -63,3 +63,9 @@ https://github.com/playcanvas/engine/blob/main/scripts/utils/mac-gpu-profiling.j
 Please read this article on how to use Microsoft's PIX to capture GPU frames using the Chrome browser: https://toji.dev/webgpu-profiling/pix
 
 Alternatively, read this article on how to use RenderDoc to capture GPU frames: https://edw.is/renderdoc-webgl/
+
+If you want to use AMD's Radeon GPU Profiler or Nvidia's Nsight with Chrome, read [this article](https://frguthmann.github.io/posts/profiling_webgpu).
+
+## WebGL applications on Meta Quest
+
+Please read [this article](https://developers.meta.com/horizon/downloads/package/renderdoc-oculus/) on how to use Meta's fork of RenderDoc to capture rendering on Meta's Quest devices.
