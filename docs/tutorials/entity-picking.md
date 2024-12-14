@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 Collision Picking - click to select a shape
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/b/Ps1tTzWn/" title="Collision Picking"></iframe>
+    <iframe src="https://playcanv.as/b/Ps1tTzWn/" title="Collision Picking" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 ---
@@ -15,7 +15,7 @@ Collision Picking - click to select a shape
 Frame Buffer Picking - click to select a grey shape. The red shapes are set to be not pickable.
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking"></iframe>
+    <iframe src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 ---

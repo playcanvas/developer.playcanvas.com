@@ -6,7 +6,7 @@ sidebar_position: 3.5
 3D Gaussian Splatting is a relatively new technique for capturing and rendering photorealistic volumetric point clouds. Since the technique relies on photogrammetry, it is very quick, cheap and easy to generate high-quality rendered scenes.
 
 <div className="iframe-container">
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Pe4Sx8t1Ud4" title="Templates Overview" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Pe4Sx8t1Ud4" title="Templates Overview" allowfullscreen></iframe>
 </div>
 
 ## Working with Gaussian Splats

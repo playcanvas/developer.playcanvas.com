@@ -5,13 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4604
 ---
 
 <div className="iframe-container">
-    <iframe
-        loading="lazy"
-        src="https://playcanv.as/p/TAYVQgU2/"
-        title="WebXR UI Interaction"
-        allow="camera; microphone; xr-spatial-tracking; fullscreen"
-        allowfullscreen
-    ></iframe>
+    <iframe src="https://playcanv.as/p/TAYVQgU2/" title="WebXR UI Interaction" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 *Click the VR/AR button if you have a VR/AR compatible device/headset.*
