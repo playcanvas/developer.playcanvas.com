@@ -14,7 +14,7 @@ This is the most common approach that developers take where each scene is a self
 [Here is an example][switch-scenes-completely-project] where the user can move to and from the title screen to other levels.
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/e/p/Q1gKd1ek/"  title="Switching Scenes Completely"></iframe>
+    <iframe src="https://playcanv.as/e/p/Q1gKd1ek/"  title="Switching Scenes Completely"></iframe>
 </div>
 
 This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
@@ -57,7 +57,7 @@ Sometimes developers use this approach to ensure that certain code and entities 
 [Below is a simplified example][additively-loading-scenes-project] of additively loading scenes where the UI in the top left is the 'main' scene and different scene hierarchies are loaded/destroyed.
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes"></iframe>
+    <iframe src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes"></iframe>
 </div>
 
 Please note that multiple instances of the scene hierarchy cannot be loaded at once. This is due to the entities having their unique GUIDs assigned in the Editor. When multiple instances of the same scene hierarchy are attempted to be loaded at once, there's a clash of GUIDs which are meant to be unique per entity.
@@ -193,7 +193,7 @@ More information about asset tags and asset loading can be found on [this page][
 The [example project][asset-load-for-scene-project] below loads the assets when loading the scene and unloads when returning the main menu.
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
+    <iframe src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
 </div>
 
 [switch-scenes-completely-project]: https://playcanvas.com/project/924351/overview/switch-full-scene-example

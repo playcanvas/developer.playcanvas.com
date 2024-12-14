@@ -5,7 +5,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460
 ---
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/TAYVQgU2/" title="WebXR UI Interaction" allow="autoplay;xr-spatial-tracking"></iframe>
+    <iframe src="https://playcanv.as/p/TAYVQgU2/" title="WebXR UI Interaction" allow="autoplay;xr-spatial-tracking"></iframe>
 </div>
 
 *VR/AR対応のデバイスやヘッドセットがある場合は、VR/ARボタンをクリックしてください。*

@@ -58,7 +58,7 @@ PlayCanvasアプリケーションをiframeに埋め込むことは、すばや�
 iframeとソーシャル共有バーを含まないバージョンのビルドを取得するためには、URLの `https://playcanv.as` の後に`/e`を追加します。
 
 ```html
-<iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">
+<iframe id="app-frame" src="https://playcanv.as/e/p/example/">
 <script>
 const iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({

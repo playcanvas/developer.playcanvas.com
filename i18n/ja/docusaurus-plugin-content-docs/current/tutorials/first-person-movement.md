@@ -5,7 +5,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 ---
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
+    <iframe src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
 </div>
 
 このアプリケーションは、ファーストパーソンでのキャラクター移動を実装しています。

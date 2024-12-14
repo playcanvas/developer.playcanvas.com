@@ -5,7 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 ---
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="Creating a Music Visualizer"></iframe>
+    <iframe src="https://playcanv.as/p/BqhCi6oy/" title="Creating a Music Visualizer"></iframe>
 </div>
 
 *Find out more by forking the [full project][1].*

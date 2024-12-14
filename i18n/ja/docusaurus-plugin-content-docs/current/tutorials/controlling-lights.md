@@ -5,7 +5,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 ---
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
+    <iframe src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
 </div>
 
 *1、2、3を押すとそれぞれスポットライト、ポイントライト、ディレクショナルライトのON/OFFが切り替わります。*

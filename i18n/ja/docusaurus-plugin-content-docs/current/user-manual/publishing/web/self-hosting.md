@@ -18,7 +18,7 @@ sidebar_position: 2
         <title>My Great Game</title>
     </head>
     <body>
-        <iframe loading="lazy" src="https://playcanv.as/p/PROJECT_ID/"></iframe>
+        <iframe src="https://playcanv.as/p/PROJECT_ID/"></iframe>
     </body>
 </html>
 ```

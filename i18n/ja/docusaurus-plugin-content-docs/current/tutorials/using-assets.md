@@ -5,7 +5,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 ---
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
+    <iframe src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 </div>
 
 :::info

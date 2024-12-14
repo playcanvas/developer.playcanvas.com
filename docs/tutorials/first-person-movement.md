@@ -5,7 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 ---
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
+    <iframe src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
 </div>
 
 This is an application that implements first person character movement.

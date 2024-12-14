@@ -11,7 +11,7 @@ This tutorial covers how to start creating your own multiplayer from scratch. If
 :::
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
+    <iframe src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
 </div>
 
 *Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*

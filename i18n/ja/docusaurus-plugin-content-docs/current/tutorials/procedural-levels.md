@@ -5,7 +5,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 ---
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
+    <iframe src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
 </div>
 
 このプロジェクトでは、エディターで作成されたエンティティを元に、[clone()][1] 関数を使用してステージ（レベル）をランダムに生成しています。

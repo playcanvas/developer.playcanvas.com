@@ -14,7 +14,7 @@ sidebar_position: 4
 [ここに][switch-scenes-completely-project]ユーザーがタイトル画面から他のレベルに移動できる例があります。
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/e/p/Q1gKd1ek/"  title="Switching Scenes Completely"></iframe>
+    <iframe src="https://playcanv.as/e/p/Q1gKd1ek/"  title="Switching Scenes Completely"></iframe>
 </div>
 
 This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
@@ -57,7 +57,7 @@ Sometimes developers use this approach to ensure that certain code and entities 
 [Below is a simplified example][additively-loading-scenes-project] of additively loading scenes where the UI in the top left is the 'main' scene and different scene hierarchies are loaded/destroyed.
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes"></iframe>
+    <iframe src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes"></iframe>
 </div>
 
 シーンヒエラルキーの複数のインスタンスを同時にロードすることはできません。これは、エンティティがエディタでユニークなGUIDが割り当てられているためです。同じシーンヒエラルキーの複数のインスタンスを同時にロードしようとすると、エンティティごとにユニークである必要があるGUIDが衝突するため、エラーが発生します。
@@ -193,7 +193,7 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 下記の[サンプルプロジェクト][asset-load-for-scene-project]は、シーンのロード時にアセットをロードし、メインメニューに戻る際にアンロードするものです。
 
 <div className="iframe-container">
-    <iframe loading="lazy" src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
+    <iframe src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
 </div>
 
 [switch-scenes-completely-project]: https://playcanvas.com/project/924351/overview/switch-full-scene-example
