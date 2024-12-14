@@ -266,38 +266,31 @@ And then declare these new functions inside Network.js:
 ```javascript
 Network.prototype.initializePlayers = function (data) {
     this.players = data.players;
-    // Create a player array and populate it with the currently connected players.
+    Network.id = data.id;
 
-    this.id = data.id;
-    // Keep track of what ID number you are.
-
-    for(var id in this.players){
-        if(id != Network.id){
+    for (var id in this.players) {
+        if (id != Network.id) {
             this.players[id].entity = this.createPlayerEntity(this.players[id]);
         }
     }
-    // For every player already connected, create a new capsule entity.
 
     this.initialized = true;
-    // Mark that the client has received data from the server.
+    console.log('initialized');
 };
 
 Network.prototype.createPlayerEntity = function (data) {
+    // Create a new player entity
     var newPlayer = this.other.clone();
-    // Create a new player entity.
-
     newPlayer.enabled = true;
-    // Enable the newly created player.
 
+    // Add the entity to the entity hierarchy
     this.other.getParent().addChild(newPlayer);
-    // Add the entity to the entity hierarchy.
 
+    // If a location was given, teleport the new entity to the position of the connected player
     if (data)
         newPlayer.rigidbody.teleport(data.x, data.y, data.z);
-    // If a location was given, teleport the new entity to the position of the connected player.
 
     return newPlayer;
-    // Return the new entity.
 };
 
 Network.prototype.addPlayer = function (data) {
@@ -312,7 +305,7 @@ Add this code into the `initialize` of your Network.js script:
 
 ```javascript
 socket.on('playerMoved', function (data) {
-    self.movePlayer (data);
+    self.movePlayer(data);
 });
 ```
 
@@ -328,14 +321,15 @@ And then declare these new functions inside Network.js:
 
 ```javascript
 Network.prototype.movePlayer = function (data) {
-    if (this.initialized)
+    if (this.initialized && !this.players[data.id].deleted) {
         this.players[data.id].entity.rigidbody.teleport(data.x, data.y, data.z);
+    }
 };
 
 Network.prototype.updatePosition = function () {
-    if (this.initialized) {
+    if (this.initialized) {    
         var pos = this.player.getPosition();
-        this.socket.emit ('positionUpdate', {id: this.id, x: pos.x, y: pos.y, z: pos.z});
+        Network.socket.emit('positionUpdate', {id: Network.id, x: pos.x, y: pos.y, z: pos.z});
     }
 };
 ```
