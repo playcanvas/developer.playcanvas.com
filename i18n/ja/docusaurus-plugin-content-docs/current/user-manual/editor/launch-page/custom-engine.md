@@ -14,25 +14,25 @@ title: カスタムエンジンの使用
 
 エディターからアプリを起動すると、launchページと呼ばれる新しいタブが開きます。このページのURLは以下の形式です。
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>
 ```
 
 launchページのURLを編集して、次の文字列を末尾に追加します。
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-latest.js
 ```
 
 このビルドでローンチする場合は、次を使用してください。
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-latest.min.js
 ```
 
 デバッグモードを有効にして起動する場合は、次のようにしてください。
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?debug=true&use_local_engine=https://code.playcanvas.com/playcanvas-latest.dbg.js
 ```
 
@@ -40,25 +40,25 @@ launchページのURLを編集して、次の文字列を末尾に追加しま�
 
 PlayCanvasエンジンの前の安定したビルドはcode.playcanvas.comにアーカイブされています。過去のすべてのリリースは[GitHub][2]で見つけることができます。エンジンは次の規則に従って命名されています。
 
-```
+```none
     playcanvas-<major>.<minor>.<patch>.js
 ```
 
 例：
 
-```
+```none
     playcanvas-0.225.0.js
 ```
 
 この特定のエンジンビルドで起動するには、次のローンチURLを使用してください。
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-0.225.0.js
 ```
 
 このビルドでローンチする場合は、次を使用してください。
 
-```
+```none
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-0.225.0.min.js
 ```
 
@@ -70,19 +70,19 @@ PlayCanvasエンジンの前の安定したビルドはcode.playcanvas.comにア
 
 ### ローカルにビルドしたエンジンで起動
 
-GitHubでエンジンリポジトリをフォークすると、そのエンジンを自分でビルドできます。ローンチページでカスタムビルドを起動するには、まずポート51000でlocalhostからサービングする必要があります。次のURLでエンジンのソースを確認してください。
+If you fork the engine repo on GitHub, you can build the engine yourself (via `npm run build`). To have the launch page launch your custom build, you need to start a local web server by running `npm run serve`.
 
-```
-    http://localhost:51000/path/to/engine/playcanvas-latest.js
-```
+Verify you can see your engine source at the URL:
 
-さて、次のURLを編集して、このエンジンをローンチページで使用します。
-
-```
-    http://launch.playcanvas.com/<scene_id>?use_local_engine=http://localhost:51000/path/to/engine/playcanvas-latest.js
+```none
+    http://localhost:51000/playcanvas.js
 ```
 
-ローカルにサービスされたエンジンを使用するために、起動ページをhttpに変更する必要があることに注意してください。
+To use this engine in the launch page, edit the URL to:
+
+```none
+    https://launch.playcanvas.com/<scene_id>?use_local_engine=http://localhost:51000/playcanvas.js
+```
 
 [1]: https://github.com/playcanvas/engine
 [2]: https://github.com/playcanvas/engine/releases

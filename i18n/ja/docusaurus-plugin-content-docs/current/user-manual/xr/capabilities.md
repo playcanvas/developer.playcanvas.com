@@ -1,6 +1,6 @@
 ---
 title: Capabilities
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 WebXR exposes various capabilities and new APIs through Modules, which are integrated into the PlayCanvas Engine for ease of use.
@@ -26,7 +26,7 @@ Some of the capabilities can be used either in [VR][1] or [AR][2], and some are 
 
 ## Experimental Features
 
-The WebXR API is constantly evolving and additional APIs get released extending the XR feature set. While the engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. 
+The WebXR API is constantly evolving and additional APIs get released extending the XR feature set. While the engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags.
 
 :::warning
 
@@ -39,7 +39,7 @@ Here is an example of enabling the experimental API for [WebXR Layers][3]:
 ```javascript
 app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
     optionalFeatures: [ 'layers' ],
-    callback: function(err) {
+    callback: (err) => {
         if (err) {
             console.log(err);
             return;

@@ -1,6 +1,7 @@
 ---
 title: 移行ガイド
 sidebar_position: 11
+unlisted: true
 ---
 
 ## レガシースクリプトプロジェクトの移行方法
@@ -75,8 +76,8 @@ MyScript.attributes.add('speed', { type: 'number', default: 10 });
 
 // initialize code called once per entity
 MyScript.prototype.initialize = function() {
-    var app = this.app;       // application instance is available as this.app
-    var entity = this.entity; // entity property already set up
+    const app = this.app;       // application instance is available as this.app
+    const entity = this.entity; // entity property already set up
 };
 
 // update code called every frame
@@ -85,6 +86,7 @@ MyScript.prototype.update = function(dt) {
 ```
 
 注意すべき点:
+
 * 現在のスクリプト形式にはコンストラクタはありません。コンストラクタコードは `initialize` 関数に移動する必要があります。
 * スクリプトの `pc.Application` インスタンスである `app` は `this.app` になります。
 * `this.entity` は自動的に現在のフォーマットのスクリプトで使用できるようになりました。
@@ -130,7 +132,7 @@ MyScript.prototype.initialize = function() {
 次に、レガシープロジェクトのシーン階層を転送します。PlayCanvasエディターでは、2 つの Editor インスタンス間でコピー&ペーストをサポートしています。ただし、レガシーScriptコンポーネントが選択された場合、この操作は失敗します。そのため、最初にレガシースクリプトプロジェクトからすべてのScriptコンポーネントを削除する必要があります。これを行うには、レガシーScriptコンポーネントを持つすべてのエンティティを選択します。ブラウザの JavaScript コンソールで次の JavaScript を実行します。
 
 ```javascript
-var entities = editor.call('entities:list').filter(function(entity) {
+const entities = editor.call('entities:list').filter(function(entity) {
     return entity.has('components.script');
 });
 if (entities.length) {

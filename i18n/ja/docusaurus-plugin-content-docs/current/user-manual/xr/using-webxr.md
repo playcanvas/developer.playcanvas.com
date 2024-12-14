@@ -13,9 +13,9 @@ if (app.xr.supported) {
 }
 ```
 
-## Starting
+## Starting an XR Session
 
-To start XR session, you can use method on the Camera Component or [XrManager][2] on the Application. To start an XR session you need to provide CameraComponent and provide the type of XR session, reference space, and optional object with additional arguments:
+To start XR session, you can use method on the Camera Component or [XrManager][2] on the Application. To start an XR session, you need to provide CameraComponent and provide the type of XR session, reference space, and optional object with additional arguments:
 
 ```javascript
 app.xr.start(entity.camera, pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
@@ -32,8 +32,8 @@ button.on('click', () => {
 To know when a session is started, you can subscribe to the `start` event:
 
 ```javascript
-app.xr.on('start', function () {
-    // XRセッションが開始されました
+app.xr.on('start', () => {
+    // XR session has started
 });
 ```
 
@@ -41,9 +41,9 @@ app.xr.on('start', function () {
 
 ```javascript
 entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
-    callback: function(err) {
+    callback: (err) => {
         if (err) {
-            //セッション開始に失敗しました。
+            // failed to start session
         }
     }
 });
@@ -60,8 +60,8 @@ app.xr.end();
 Also, the user might exit XR via some external process like the back button in the browser. [XrManager][2] will fire events associated with the session `end`:
 
 ```javascript
-app.xr.on('end', function () {
-    // XRセッションが終了しました。
+app.xr.on('end', () => {
+    // XR session has ended
 });
 ```
 
@@ -69,8 +69,8 @@ app.xr.on('end', function () {
 
 それぞれのプラットフォームで、異なる種類のセッションがサポートされています。これらは以下の通りです。
 
- * **VR**(仮想現実)-一定レベルのビューアートラッキングを提供し、XRデバイスに独占アクセスを提供します。これは、アプリケーションがデバイスのフレームバッファにレンダリングされ、HTMLキャンバス要素にはレンダリングされないことを意味します。
- * **AR** (Augmented Reality) - This type of session provides exclusive access to the XR Device and content is meant to be blended with the real-world environment. In this mode, the camera's clear color should be transparent.
+- **VR**(仮想現実)-一定レベルのビューアートラッキングを提供し、XRデバイスに独占アクセスを提供します。これは、アプリケーションがデバイスのフレームバッファにレンダリングされ、HTMLキャンバス要素にはレンダリングされないことを意味します。
+- **AR** (Augmented Reality) - This type of session provides exclusive access to the XR Device and content is meant to be blended with the real-world environment. In this mode, the camera's clear color should be transparent.
 
 The availability of a session type can change during an application's lifetime, based on devices being plugged in or features on devices being enabled. To check if a session type is available do:
 
@@ -83,12 +83,12 @@ if (app.xr.isAvailable(pc.XRTYPE_VR)) {
 You can subscribe to availability change events too:
 
 ```javascript
-app.xr.on('available', function (type, available) {
+app.xr.on('available', (type, available) => {
     console.log('XR session', type, 'type is now', available ? 'available' : 'unavailable');
 });
 
-//または特定のセッションタイプ
-app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
+// or specific session type
+app.xr.on('available:' + pc.XRTYPE_VR, (available) => {
     console.log('XR session VR type is now', available ? 'available' : 'unavailable');
 });
 ```
@@ -106,4 +106,3 @@ Position, orientation and rays of different XR objects: input sources, tracked m
 Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason, there is no way to enter XR immediately on loading a page.
 
 [2]: https://api.playcanvas.com/classes/Engine.XrManager.html
-[3]: https://immersive-web.github.io/layers/

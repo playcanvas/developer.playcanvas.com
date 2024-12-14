@@ -88,8 +88,8 @@ Tree1/Sphereの位置を変更します。これにより、Sphereエンティ�
 次のように、実行時にTemplateアセットをインスタンス化することができます。
 
 ```javascript
-var templateAsset = this.app.assets.get(templateAssetId);
-var instance = templateAsset.resource.instantiate();
+const templateAsset = this.app.assets.get(templateAssetId);
+const instance = templateAsset.resource.instantiate();
 this.app.root.addChild(instance);
 ```
 
