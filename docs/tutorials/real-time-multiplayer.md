@@ -60,7 +60,7 @@ To include a package, go to `package.json` and click on the `Add Package` button
 
 ![Adding a package](/img/tutorials/multiplayer/glitch-add-package.png)
 
-Once `socket.io` has finished installing, the server will automatically restart and you should see `Server started on port 3000` in the log. Congratulations! You've successfully deployed a server! 
+Once `socket.io` has finished installing, the server will automatically restart and you should see `Server started on port 3000` in the log. Congratulations! You've successfully deployed a server!
 
 You can find the domain your server is deployed at by clicking `Settings` in the left sidebar. This is where you can also rename the project.
 
