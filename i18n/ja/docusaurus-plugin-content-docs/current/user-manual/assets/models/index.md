@@ -7,7 +7,7 @@ sidebar_position: 4
 
 PlayCanvasは多様な形式をサポートしており、GLB、FBX、COLLADA、objなどが含まれます。最高の結果を得るためには、GLB形式を使用することをお勧めします。
 
-これらのファイルの中から1つをアップロードすると、タイプが「モデル」の[ソースアセット][3]が作成され、モデルの階層を持つ「[テンプレート][7]」と「Render」アセットを含む複数の[ターゲットアセット][4]が生成されます。ゲーム内に「Template」のインスタンスを追加することができます。
+Uploading one of these files will create a [Source Asset][3] of type 'Model' and will produce several [Target Assets][4] including a '[Template][7]' with the model hierarchy and 'Render' assets. You can add an instance of the 'Template' in your game.
 
 詳しくは以下をご覧ください:
 

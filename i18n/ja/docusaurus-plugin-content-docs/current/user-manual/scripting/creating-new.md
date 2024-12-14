@@ -24,7 +24,7 @@ sidebar_position: 1
 スクリプトコンポーネントから、アプリケーションが実行している間に動的にスクリプトを追加することができます。
 
 ```javascript
-var entity = new pc.Entity();
+const entity = new pc.Entity();
 entity.addComponent("script");
 entity.script.create("rotate", {
     attributes: {
