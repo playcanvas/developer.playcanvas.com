@@ -52,7 +52,7 @@ server.listen(PORT, () => {
 });
 ```
 
-Glitch will automatically re-run the server every time you finish typing. Once you’ve copied this, you should get an error. Click on the `Logs` button on the left side of the screen to open up the server console. Here you can see any server output, as well as the errors. You should see `Error: Cannot find module 'socket.io'`.
+Glitch will automatically re-run the server every time you finish typing. Once you’ve copied this, you should get an error. Click on the `Logs` button at the bottom of the window to open up the server console. Here you can see any server output, as well as the errors. You should see `Error: Cannot find module 'socket.io'`.
 
 ![Opening the log](/img/tutorials/multiplayer/glitch-error.png)
 
@@ -60,19 +60,17 @@ To include a package, go to `package.json` and click on the `Add Package` button
 
 ![Adding a package](/img/tutorials/multiplayer/glitch-add-package.png)
 
-Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started on port 3000` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
+Once `socket.io` has finished installing, the server will automatically restart and you should see `Server started on port 3000` in the log. Congratulations! You've successfully deployed a server! 
 
-You can find the domain your server is deployed at by clicking in the top left. This is where you can also rename the project.
+You can find the domain your server is deployed at by clicking `Settings` in the left sidebar. This is where you can also rename the project.
 
 This server will simply log a message every time someone connects. This should be enough to start working on our client and confirm that it connects to the server.
 
 ## Setting up the Project
 
-Create a new project on PlayCanvas. We first need to include the Socket.io client JS library, as an external script.
+Create a new project on PlayCanvas. We first need to include the Socket.io client JS library, as an external script. To do this. go to your project settings:
 
-Go to project settings.
-
-![Project settings](/img/tutorials/multiplayer/project_settings.png)
+![Project settings](/img/tutorials/multiplayer/project-settings.png)
 
 Find and open 'External Scripts'.
 
