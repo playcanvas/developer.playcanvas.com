@@ -5,7 +5,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 ---
 
 <div className="iframe-container">
-    <iframe src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
+    <iframe src="https://playcanv.as/p/rnIUbXws/" title="Light Halos" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 [完成されたプロジェクト][4]をフォークして詳細をご確認ください。

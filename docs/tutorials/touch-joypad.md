@@ -5,7 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/1007
 ---
 
 <div className="iframe-container">
-    <iframe src="https://playcanv.as/p/kvE0iJWc/" title="Touchscreen Joypad Controls"></iframe>
+    <iframe src="https://playcanv.as/p/kvE0iJWc/" title="Touchscreen Joypad Controls" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 [Click here to see the project][project-link].

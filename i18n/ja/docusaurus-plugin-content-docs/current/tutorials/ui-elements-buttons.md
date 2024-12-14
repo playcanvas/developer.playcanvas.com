@@ -5,7 +5,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 ---
 
 <div className="iframe-container">
-    <iframe src="https://playcanv.as/p/jpRiV53D/" title="User Interface - Buttons"></iframe>
+    <iframe src="https://playcanv.as/p/jpRiV53D/" title="User Interface - Buttons" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 *ElementとButtonコンポーネントを使用したシンプルなボタン。[完全なシーン][1]を参照してください。*

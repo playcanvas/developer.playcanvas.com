@@ -5,7 +5,7 @@ thumb: "https://avatars.githubusercontent.com/u/28384334?s=300&v=4"
 ---
 
 <div className="iframe-container">
-  <iframe src="https://playcanv.as/p/1QoAsx7r/" title="Real-time Multiplayer with Colyseus"></iframe>
+  <iframe src="https://playcanv.as/p/1QoAsx7r/" title="Real-time Multiplayer with Colyseus" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 > *「create game」を選択し、新しいゲームを立ち上げます。床のいずれかをクリックしてオブジェクトを移動します。*

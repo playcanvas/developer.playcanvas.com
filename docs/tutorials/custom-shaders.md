@@ -5,7 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 ---
 
 <div className="iframe-container">
-    <iframe src="https://playcanv.as/p/zwvhLoS9/" title="Custom Shaders"></iframe>
+    <iframe src="https://playcanv.as/p/zwvhLoS9/" title="Custom Shaders" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 :::info

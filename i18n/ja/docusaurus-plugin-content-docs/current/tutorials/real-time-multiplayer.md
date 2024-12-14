@@ -11,7 +11,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 :::
 
 <div className="iframe-container">
-    <iframe src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
+    <iframe src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
 *WASD キーを使用してプレイヤーを移動します。カプセルが 1 つしか表示されない場合は、別のタブまたは別のコンピューターでこのページを開いてみてください。*
