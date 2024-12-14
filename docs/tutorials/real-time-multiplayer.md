@@ -92,7 +92,7 @@ this.socket = io.connect('https://playcanvas-multiplayer-server.glitch.me');
 
 Replace `https://playcanvas-multiplayer-server.glitch.me` with the address of your own server.
 
-To confirm that this works, attach this network script to the `Root` entity, and then launch the game. Keep your eye on the server log at Glitch. If everything worked, the server should log `Client has connected!`. The project is now setup to send and receive messages to and from the server.
+To confirm that this works, attach this network script to the `Root` entity, and then launch the game. Keep your eye on the server log at Glitch. If everything worked, the server should log `New client connected:` along with the client ID. The project is now setup to send and receive messages to and from the server.
 
 ## Server and Client Communication
 
