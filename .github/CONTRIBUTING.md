@@ -82,7 +82,7 @@ Historically, links have been placed at the bottom of a page:
 [1]: https://example.com
 ```
 
-However, we now recommend using the inline `\[link text\](url)` format.
+However, we now recommend using the inline `[link text](url)` format.
 
 ### Other files
 
