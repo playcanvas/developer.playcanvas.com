@@ -31,7 +31,7 @@ The `jsdom` package is used to simulate a DOM environment in Node.js. This is re
 
 :::
 
-## Setting up the Engine
+## Configuring jsdom
 
 Let's create a function that uses `jsdom` to configure the DOM environment so that the PlayCanvas Engine can run successfully.
 
