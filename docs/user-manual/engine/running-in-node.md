@@ -17,9 +17,9 @@ The PlayCanvas Engine runs its own [unit tests](https://github.com/playcanvas/en
 
 :::
 
-## Installing the Engine
+## Installation
 
-To get started, install the PlayCanvas Engine and `jsdom` using npm.
+Before you begin, verify you have Node.js 18+ installed. Then you can install the PlayCanvas Engine and `jsdom` using npm.
 
 ```bash
 npm install jsdom playcanvas --save-dev
