@@ -37,7 +37,7 @@ Let's create a function that uses `jsdom` to configure the DOM environment so th
 
 ```javascript
 import { JSDOM } from 'jsdom';
-import { pc } from 'playcanvas';
+import * as pc from 'playcanvas';
 
 let jsdom;
 
