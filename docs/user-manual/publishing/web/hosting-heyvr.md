@@ -14,7 +14,7 @@ To publish your game on heyVR, you'll need to follow a few simple steps:
 2. Upload your game
 3. Publish!
 
-You can optionally integrate they [heyVR SDK][5] into your game, which will boost player engagement and grant you access to useful features such as leaderboards, cloud saves, matchmaking and more.
+You can optionally integrate the [heyVR SDK](https://docs.heyvr.io/en/game-development/sdk) into your game, which will boost player engagement and grant you access to useful features such as leaderboards, cloud saves, matchmaking and more.
 
 ### 1. Create a developer account
 
