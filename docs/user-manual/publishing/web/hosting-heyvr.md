@@ -39,7 +39,7 @@ The SDK offers the following features and more:
 - Leaderboards
 - Cloud Saves
 - In-Game Purchases (both free & paid)
-- In-Game Advertisement
+- In-Game Advertisements
 - Multiplayer
 
 A comprehensive guide on how to implement these features into your game is provided on heyVR's [Technical Documentation][5].
