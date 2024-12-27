@@ -21,9 +21,7 @@ Simply head over to the heyVR's [developer area](https://developer.heyvr.io) and
 
 ### 2. Upload your game
 
-Once you have created your developer account, you'll need to download a web build of your application.
-The steps for this process are explained in details on the [Self-hosting][1] documentation page. 
-Simply follow the steps for **Self-hosting on your own server** steps to acquire a **zip** file.
+Once you have created your developer account, you'll need to download a web build of your application. The steps for this process are explained in details on the [Self-hosting](/user-manual/publishing/web/self-hosting/#self-hosting-on-your-own-server) documentation page. Simply follow the steps for **Self-hosting on your own server** to acquire a **zip** file.
 
 Once you have the zip build, you can follow the step-by-step guide on [publishing a game][4] on heyVR.
 The guide includes all the steps, requirements and common questions regarding the publishing process.
