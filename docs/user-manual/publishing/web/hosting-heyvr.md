@@ -8,7 +8,7 @@ It offers a wide range of ready-to-use gameplay features to enhance your players
 
 ## Publishing Flow
 
-To publish your game on heyVR, You'll need to follow a few simple steps:
+To publish your game on heyVR, you'll need to follow a few simple steps:
 
 1. Create a developer account (assuming you don't have one yet)
 2. Upload your game
