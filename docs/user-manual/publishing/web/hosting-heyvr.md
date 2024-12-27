@@ -46,16 +46,6 @@ A comprehensive guide on how to implement these features into your game is provi
 
 ## Useful Links
 
-- [heyVR.io][6]
-- [Developer Area][2]
-- [heyVR Documentation][3]
-- [heyVR Support (Discord)][7]
-
-[1]: /user-manual/publishing/web/self-hosting/#self-hosting-on-your-own-server
-[2]: https://developer.heyvr.io
-[3]: https://docs.heyvr.io
-[4]: https://docs.heyvr.io/en/developer-area/publish-a-game
-[5]: https://docs.heyvr.io/en/game-development/sdk
-[6]: https://heyvr.io
-[7]: https://heyvr.io/discord
-[8]: https://heyvr.io/hc/legal/heyvr-io-publishing-policies
+- [Developer Area](https://developer.heyvr.io)
+- [heyVR Documentation](https://docs.heyvr.io)
+- [heyVR Support (Discord)](https://heyvr.io/discord)
