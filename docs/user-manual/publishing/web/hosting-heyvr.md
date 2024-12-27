@@ -17,8 +17,7 @@ You can optionally integrate the [heyVR SDK](https://docs.heyvr.io/en/game-devel
 
 ### 1. Create a developer account
 
-Simply head over to the heyVR's [developer area][2] and register your developer account free of charge. 
-After registration, you'll be able to create/manage your games. To read more, check out the documentations (link below).
+Simply head over to the heyVR's [developer area](https://developer.heyvr.io) and register your developer account free of charge. After registration, you'll be able to create/manage your games. To read more, check out the [documentation](https://docs.heyvr.io).
 
 ### 2. Upload your game
 
