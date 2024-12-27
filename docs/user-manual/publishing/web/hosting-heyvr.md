@@ -42,7 +42,7 @@ The SDK offers the following features and more:
 - In-Game Advertisements
 - Multiplayer
 
-A comprehensive guide on how to implement these features into your game is provided on heyVR's [Technical Documentation][5].
+A comprehensive guide on how to implement these features into your game is provided on heyVR's [Technical Documentation](https://docs.heyvr.io/en/game-development/sdk).
 
 ## Useful Links
 
