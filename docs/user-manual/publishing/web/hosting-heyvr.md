@@ -25,13 +25,13 @@ Once you have created your developer account, you'll need to download a web buil
 
 Once you have the zip build, you can follow the step-by-step guide on [publishing a game](https://docs.heyvr.io/en/developer-area/publish-a-game) on heyVR. The guide includes all the steps, requirements and common questions regarding the publishing process.
 
-### 3. Publish!
+### 3. Publish
 
 That's it! By now you should be able to see, view and test your game on heyVR. Once you're ready to make it publicly accessible, you can submit your game for review. The review process is to ensure that your game aligns with the [Publishing Guidelines](https://heyvr.io/hc/legal/heyvr-io-publishing-policies) and is fully functional.
 
 ### 4. SDK Implementation (optional)
 
-To further enrich the user experience and boost engagement to your game, you can use the [heyVR SDK](https://docs.heyvr.io/en/game-development/sdk) to implement additional features in your game. 
+To further enrich the user experience and boost engagement to your game, you can use the [heyVR SDK](https://docs.heyvr.io/en/game-development/sdk) to implement additional features in your game.
 
 The SDK offers the following features and more:
 
