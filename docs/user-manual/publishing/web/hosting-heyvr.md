@@ -27,9 +27,7 @@ Once you have the zip build, you can follow the step-by-step guide on [publishin
 
 ### 3. Publish!
 
-That's it! By now you should be able to see, view and test your game on heyVR. 
-Once you're ready to make it publicly accessible, you can submit your game for review. 
-The review process is to ensure that your game aligns with the [Publishing Guidelines][8] and is fully functional.
+That's it! By now you should be able to see, view and test your game on heyVR. Once you're ready to make it publicly accessible, you can submit your game for review. The review process is to ensure that your game aligns with the [Publishing Guidelines](https://heyvr.io/hc/legal/heyvr-io-publishing-policies) and is fully functional.
 
 ### 4. SDK Implementation (optional)
 
