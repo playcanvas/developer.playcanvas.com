@@ -31,7 +31,7 @@ That's it! By now you should be able to see, view and test your game on heyVR. O
 
 ### 4. SDK Implementation (optional)
 
-To further enrich the user experience and boost engagement to your game, you can use the [heyVR SDK][5] to implement additional features in your game. 
+To further enrich the user experience and boost engagement to your game, you can use the [heyVR SDK](https://docs.heyvr.io/en/game-development/sdk) to implement additional features in your game. 
 
 The SDK offers the following features and more:
 
