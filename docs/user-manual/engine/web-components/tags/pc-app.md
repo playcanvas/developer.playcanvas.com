@@ -1,0 +1,38 @@
+The `pc-app` tag is the root element for your PlayCanvas application. It is used to initialize the PlayCanvas application and provide a container for your scene.
+
+:::note
+
+* It must be a descendant of the document's `body` element.
+
+:::
+
+| Attribute | Description |
+| --- | --- |
+| `alpha` | Boolean attribute. Determines whether the application allocates an alpha channel in the frame buffer. Defaults to `true`. |
+| `antialias` | Boolean attribute. Determines whether the application uses anti-aliasing. Defaults to `true`. |
+| `depth` | Boolean attribute. Determines whether the application allocates a depth buffer. Defaults to `true`. |
+| `high-resolution` | Boolean attribute. Determines whether the application renders using physical resolution or CSS resolution. Defaults to `true`. |
+| `stencil` | Boolean attribute. Determines whether the application allocates a stencil buffer. Defaults to `true`. |
+
+## Example
+
+```html
+<!-- A lit sphere -->
+<pc-app>
+    <pc-scene>
+        <pc-entity name="camera" position="0 0 3">
+            <pc-camera></pc-camera>
+        </pc-entity>
+        <pc-entity name="light" rotation="45 45 0">
+            <pc-light></pc-light>
+        </pc-entity>
+        <pc-entity name="ball">
+            <pc-render type="sphere"></pc-render>
+        </pc-entity>
+    </pc-scene>
+</pc-app>
+```
+
+## JavaScript Interface
+
+You can programmatically create and manipulate `pc-app` elements using the [AppElement API](https://api.playcanvas.com/classes/EngineWebComponents.AppElement.html).
