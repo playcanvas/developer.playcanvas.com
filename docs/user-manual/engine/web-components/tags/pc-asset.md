@@ -1,12 +1,12 @@
 ---
-title: pc-asset
+title: <pc-asset>
 ---
 
-The `pc-asset` tag is used to define an asset.
+The `<pc-asset>` tag is used to define an asset.
 
 :::note
 
-* It must be a direct child of [`pc-app`](pc-app.md).
+* It must be a direct child of [`<pc-app>`](pc-app.md).
 
 :::
 
@@ -27,4 +27,4 @@ The `pc-asset` tag is used to define an asset.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-asset` elements using the [AssetElement API](https://api.playcanvas.com/classes/EngineWebComponents.AssetElement.html).
+You can programmatically create and manipulate `<pc-asset>` elements using the [AssetElement API](https://api.playcanvas.com/classes/EngineWebComponents.AssetElement.html).

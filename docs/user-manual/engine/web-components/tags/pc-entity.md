@@ -1,12 +1,12 @@
 ---
-title: pc-entity
+title: <pc-entity>
 ---
 
-The `pc-entity` tag is used to define an entity.
+The `<pc-entity>` tag is used to define an entity.
 
 :::note
 
-* It must be a direct child of [`pc-scene`](pc-scene.md) or another `pc-entity`.
+* It must be a direct child of [`<pc-scene>`](pc-scene.md) or another `<pc-entity>`.
 
 :::
 
@@ -29,4 +29,4 @@ The `pc-entity` tag is used to define an entity.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-entity` elements using the [EntityElement API](https://api.playcanvas.com/classes/EngineWebComponents.EntityElement.html).
+You can programmatically create and manipulate `<pc-entity>` elements using the [EntityElement API](https://api.playcanvas.com/classes/EngineWebComponents.EntityElement.html).

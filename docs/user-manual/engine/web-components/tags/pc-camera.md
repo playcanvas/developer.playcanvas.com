@@ -1,12 +1,12 @@
 ---
-title: pc-camera
+title: <pc-camera>
 ---
 
-The `pc-camera` tag is used to define a camera component.
+The `<pc-camera>` tag is used to define a camera component.
 
 :::note
 
-* It must be a direct child of an [`pc-entity`](pc-entity.md).
+* It must be a direct child of an [`<pc-entity>`](pc-entity.md).
 
 :::
 
@@ -39,4 +39,4 @@ The `pc-camera` tag is used to define a camera component.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-camera` elements using the [CameraComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.CameraComponentElement.html).
+You can programmatically create and manipulate `<pc-camera>` elements using the [CameraComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.CameraComponentElement.html).

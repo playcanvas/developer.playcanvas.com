@@ -1,12 +1,12 @@
 ---
-title: pc-light
+title: <pc-light>
 ---
 
-The `pc-light` tag is used to define a light component.
+The `<pc-light>` tag is used to define a light component.
 
 :::note
 
-* It must be a direct child of a [`pc-entity`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
 
 :::
 
@@ -33,4 +33,4 @@ The `pc-light` tag is used to define a light component.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-light` elements using the [LightComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.LightComponentElement.html).
+You can programmatically create and manipulate `<pc-light>` elements using the [LightComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.LightComponentElement.html).

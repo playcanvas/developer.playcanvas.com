@@ -1,12 +1,12 @@
 ---
-title: pc-scene
+title: <pc-scene>
 ---
 
-The `pc-scene` tag is used to define the scene.
+The `<pc-scene>` tag is used to define the scene.
 
 :::note
 
-* It must be a direct child of [`pc-app`](pc-app.md).
+* It must be a direct child of [`<pc-app>`](pc-app.md).
 
 :::
 
@@ -30,4 +30,4 @@ The `pc-scene` tag is used to define the scene.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-scene` elements using the [SceneElement API](https://api.playcanvas.com/classes/EngineWebComponents.SceneElement.html).
+You can programmatically create and manipulate `<pc-scene>` elements using the [SceneElement API](https://api.playcanvas.com/classes/EngineWebComponents.SceneElement.html).
