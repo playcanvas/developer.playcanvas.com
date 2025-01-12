@@ -4,7 +4,7 @@ title: Getting Started
 
 ## Installing from NPM
 
-PlayCanvas Web Components is available as a package on [NPM](https://www.npmjs.com/package/@playcanvas/web-components). 
+PlayCanvas Web Components is available as a package on [NPM](https://www.npmjs.com/package/@playcanvas/web-components).
 You can install it (and the PlayCanvas Engine) as follows:
 
 ```bash

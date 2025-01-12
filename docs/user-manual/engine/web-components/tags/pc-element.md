@@ -31,4 +31,3 @@ The `pc-element` tag is used to define an element component.
 ## JavaScript Interface
 
 You can programmatically create and manipulate `pc-element` elements using the [ElementComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.ElementComponentElement.html).
-

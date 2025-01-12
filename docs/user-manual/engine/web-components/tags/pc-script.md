@@ -26,4 +26,3 @@ The `pc-script` tag is used to define a script.
 ## JavaScript Interface
 
 You can programmatically create and manipulate `pc-script` elements using the [ScriptElement API](https://api.playcanvas.com/classes/EngineWebComponents.ScriptElement.html).
-
