@@ -1,3 +1,7 @@
+---
+title: pc-screen
+---
+
 The `pc-screen` tag is used to define a screen component.
 
 :::note

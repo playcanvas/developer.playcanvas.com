@@ -1,3 +1,7 @@
+---
+title: pc-app
+---
+
 The `pc-app` tag is the root element for your PlayCanvas application. It is used to initialize the PlayCanvas application and provide a container for your scene.
 
 :::note

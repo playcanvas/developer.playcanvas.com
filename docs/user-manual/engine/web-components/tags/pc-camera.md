@@ -1,3 +1,7 @@
+---
+title: pc-camera
+---
+
 The `pc-camera` tag is used to define a camera component.
 
 :::note

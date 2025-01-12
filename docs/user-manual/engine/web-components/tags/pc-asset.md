@@ -1,3 +1,7 @@
+---
+title: pc-asset
+---
+
 The `pc-asset` tag is used to define an asset.
 
 :::note

@@ -1,3 +1,7 @@
+---
+title: pc-sky
+---
+
 The `pc-sky` tag is used to define a sky component.
 
 :::note

@@ -1,3 +1,7 @@
+---
+title: pc-script
+---
+
 The `pc-script` tag is used to define a script.
 
 :::note

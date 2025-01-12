@@ -1,3 +1,7 @@
+---
+title: pc-sound
+---
+
 The `pc-sound` tag is used to define a sound.
 
 :::note

@@ -1,3 +1,7 @@
+---
+title: pc-scene
+---
+
 The `pc-scene` tag is used to define the scene.
 
 :::note

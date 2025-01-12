@@ -1,3 +1,7 @@
+---
+title: pc-scripts
+---
+
 The `pc-scripts` tag is used to define a scripts component.
 
 :::note

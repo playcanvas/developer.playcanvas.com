@@ -1,3 +1,7 @@
+---
+title: pc-entity
+---
+
 The `pc-entity` tag is used to define an entity.
 
 :::note

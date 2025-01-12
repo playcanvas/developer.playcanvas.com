@@ -1,3 +1,7 @@
+---
+title: pc-listener
+---
+
 The `pc-listener` tag is used to define a listener component. It has no attributes.
 
 :::note

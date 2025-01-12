@@ -1,3 +1,7 @@
+---
+title: pc-element
+---
+
 The `pc-element` tag is used to define an element component.
 
 :::note

@@ -1,3 +1,7 @@
+---
+title: pc-light
+---
+
 The `pc-light` tag is used to define a light component.
 
 :::note

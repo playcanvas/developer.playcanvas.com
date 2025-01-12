@@ -1,3 +1,7 @@
+---
+title: pc-rigidbody
+---
+
 The `pc-rigidbody` tag is used to define a rigidbody component.
 
 :::note

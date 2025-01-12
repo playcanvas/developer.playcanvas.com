@@ -1,3 +1,7 @@
+---
+title: pc-module
+---
+
 The `pc-module` tag is used to load a WebAssembly module.
 
 :::note

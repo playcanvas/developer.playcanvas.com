@@ -1,3 +1,7 @@
+---
+title: pc-splat
+---
+
 The `pc-splat` tag is used to define a splat component.
 
 :::note

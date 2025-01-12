@@ -1,3 +1,7 @@
+---
+title: pc-render
+---
+
 The `pc-render` tag is used to define a render component that renders a 3D primitive.
 
 :::note
