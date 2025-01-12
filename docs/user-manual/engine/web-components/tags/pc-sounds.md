@@ -1,13 +1,13 @@
 ---
-title: pc-sounds
+title: <pc-sounds>
 ---
 
-The `pc-sounds` tag is used to define a sound component.
+The `<pc-sounds>` tag is used to define a sound component.
 
 :::note
 
-* It must be a direct child of a [`pc-entity`](pc-entity.md).
-* It can have 0..n [`pc-sound`](pc-sound.md) children.
+* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
+* It can have 0..n [`<pc-sound>`](pc-sound.md) children.
 
 :::
 
@@ -33,4 +33,4 @@ The `pc-sounds` tag is used to define a sound component.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-sounds` elements using the [SoundComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.SoundComponentElement.html).
+You can programmatically create and manipulate `<pc-sounds>` elements using the [SoundComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.SoundComponentElement.html).

@@ -1,13 +1,13 @@
 ---
-title: pc-script
+title: <pc-script>
 ---
 
-The `pc-script` tag is used to define a script.
+The `<pc-script>` tag is used to define a script.
 
 :::note
 
-* It must be a direct child of a [`pc-scripts`](pc-scripts.md) component.
-* The script must have been loaded via the [`pc-asset`](pc-asset.md) tag.
+* It must be a direct child of a [`<pc-scripts>`](pc-scripts.md) component.
+* The script must have been loaded via the [`<pc-asset>`](pc-asset.md) tag.
 
 :::
 
@@ -29,4 +29,4 @@ The `pc-script` tag is used to define a script.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-script` elements using the [ScriptElement API](https://api.playcanvas.com/classes/EngineWebComponents.ScriptElement.html).
+You can programmatically create and manipulate `<pc-script>` elements using the [ScriptElement API](https://api.playcanvas.com/classes/EngineWebComponents.ScriptElement.html).

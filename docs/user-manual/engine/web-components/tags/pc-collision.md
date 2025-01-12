@@ -1,12 +1,12 @@
 ---
-title: pc-collision
+title: <pc-collision>
 ---
 
-The `pc-collision` tag is used to define a collision component.
+The `<pc-collision>` tag is used to define a collision component.
 
 :::note
 
-* It must be a direct child of a [`pc-entity`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
 
 :::
 
@@ -40,4 +40,4 @@ The `pc-collision` tag is used to define a collision component.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-collision` elements using the [CollisionComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.CollisionComponentElement.html).
+You can programmatically create and manipulate `<pc-collision>` elements using the [CollisionComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.CollisionComponentElement.html).

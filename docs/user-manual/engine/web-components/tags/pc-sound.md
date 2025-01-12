@@ -1,18 +1,18 @@
 ---
-title: pc-sound
+title: <pc-sound>
 ---
 
-The `pc-sound` tag is used to define a sound.
+The `<pc-sound>` tag is used to define a sound.
 
 :::note
 
-* It must be a direct child of a [`pc-sounds`](pc-sounds.md) component.
+* It must be a direct child of a [`<pc-sounds>`](pc-sounds.md) component.
 
 :::
 
 | Attribute | Description |
 | --- | --- |
-| `asset` | A string that should match the `id` of a [`pc-asset`](pc-asset.md) tag that has a type of `audio`. |
+| `asset` | A string that should match the `id` of a [`<pc-asset>`](pc-asset.md) tag that has a type of `audio`. |
 | `auto-play` | Valueless attribute. If present, the sound slot plays automatically. |
 | `duration` | The duration of the sound slot. |
 | `loop` | Valueless attribute. If present, the sound slot loops. |
@@ -32,4 +32,4 @@ The `pc-sound` tag is used to define a sound.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-sound` elements using the [SoundElement API](https://api.playcanvas.com/classes/EngineWebComponents.SoundElement.html).
+You can programmatically create and manipulate `<pc-sound>` elements using the [SoundElement API](https://api.playcanvas.com/classes/EngineWebComponents.SoundElement.html).

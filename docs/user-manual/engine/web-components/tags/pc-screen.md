@@ -1,12 +1,12 @@
 ---
-title: pc-screen
+title: <pc-screen>
 ---
 
-The `pc-screen` tag is used to define a screen component.
+The `<pc-screen>` tag is used to define a screen component.
 
 :::note
 
-* It must be a direct child of a [`pc-entity`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
 
 :::
 
@@ -34,4 +34,4 @@ The `pc-screen` tag is used to define a screen component.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-screen` elements using the [ScreenComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.ScreenComponentElement.html).
+You can programmatically create and manipulate `<pc-screen>` elements using the [ScreenComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.ScreenComponentElement.html).

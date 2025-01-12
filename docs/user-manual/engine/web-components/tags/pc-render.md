@@ -1,12 +1,12 @@
 ---
-title: pc-render
+title: <pc-render>
 ---
 
-The `pc-render` tag is used to define a render component that renders a 3D primitive.
+The `<pc-render>` tag is used to define a render component that renders a 3D primitive.
 
 :::note
 
-* It must be a direct child of a [`pc-entity`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
 
 :::
 
@@ -26,4 +26,4 @@ The `pc-render` tag is used to define a render component that renders a 3D primi
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-render` elements using the [RenderComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.RenderComponentElement.html).
+You can programmatically create and manipulate `<pc-render>` elements using the [RenderComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.RenderComponentElement.html).

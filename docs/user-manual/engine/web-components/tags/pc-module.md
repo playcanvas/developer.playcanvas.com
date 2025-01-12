@@ -1,12 +1,12 @@
 ---
-title: pc-module
+title: <pc-module>
 ---
 
-The `pc-module` tag is used to load a WebAssembly module.
+The `<pc-module>` tag is used to load a WebAssembly module.
 
 :::note
 
-* It must be a direct child of [`pc-app`](pc-app.md).
+* It must be a direct child of [`<pc-app>`](pc-app.md).
 
 :::
 
@@ -28,4 +28,4 @@ The `pc-module` tag is used to load a WebAssembly module.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-module` elements using the [ModuleElement API](https://api.playcanvas.com/classes/EngineWebComponents.ModuleElement.html).
+You can programmatically create and manipulate `<pc-module>` elements using the [ModuleElement API](https://api.playcanvas.com/classes/EngineWebComponents.ModuleElement.html).

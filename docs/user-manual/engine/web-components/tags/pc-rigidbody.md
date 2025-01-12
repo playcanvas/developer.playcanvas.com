@@ -1,14 +1,14 @@
 ---
-title: pc-rigidbody
+title: <pc-rigidbody>
 ---
 
-The `pc-rigidbody` tag is used to define a rigidbody component.
+The `<pc-rigidbody>` tag is used to define a rigidbody component.
 
 :::note
 
-* It must be a direct child of a [`pc-entity`](pc-entity.md).
-* It must be a sibling of a [`pc-collision`](pc-collision.md) component.
-* The ammo.js WebAssembly module must be loaded via a [`pc-module`](pc-module.md) tag.
+* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
+* It must be a sibling of a [`<pc-collision>`](pc-collision.md) component.
+* The ammo.js WebAssembly module must be loaded via a [`<pc-module>`](pc-module.md) tag.
 
 :::
 
@@ -44,4 +44,4 @@ The `pc-rigidbody` tag is used to define a rigidbody component.
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `pc-rigidbody` elements using the [RigidBodyComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.RigidBodyComponentElement.html).
+You can programmatically create and manipulate `<pc-rigidbody>` elements using the [RigidBodyComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.RigidBodyComponentElement.html).
