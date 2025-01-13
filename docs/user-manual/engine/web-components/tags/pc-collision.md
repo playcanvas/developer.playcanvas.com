@@ -18,7 +18,7 @@ The `<pc-collision>` tag is used to define a collision component.
 | `half-extents` | The half-extents of the collision component. Specified as a space-separated list of X, Y, and Z values. If not specified, `0.5 0.5 0.5` is used. |
 | `height` | The height of the collision component. If not specified, `2` is used. |
 | `radius` | The radius of the collision component. If not specified, `0.5` is used. |
-| `type` | The type of collision component. Can be `box`, `capsule`, `cone`, `cylinder` or `sphere`. |
+| `type` | The type of collision component. Can be `box`, `capsule`, `cone`, `cylinder` or `sphere`. If not specified, `box` is used. |
 
 ## Example
 

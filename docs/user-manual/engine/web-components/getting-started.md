@@ -11,7 +11,7 @@ You can install it (and the PlayCanvas Engine) as follows:
 npm install playcanvas @playcanvas/web-components --save-dev
 ```
 
-Next, in your HTML file, you will need an import map because the web components need to be able to find the PlayCanvas Engine (which is an external dependency):
+Next, in your HTML file, you will need an import map because the Web Components need to be able to find the PlayCanvas Engine (which is an external dependency):
 
 ```html
 <script type="importmap">
@@ -23,7 +23,7 @@ Next, in your HTML file, you will need an import map because the web components 
 </script>
 ```
 
-You can then import the components as follows:
+You can then import the Web Components as follows:
 
 ```html
 <script type="module" src="/node_modules/@playcanvas/web-components/dist/pwc.mjs"></script>
@@ -48,5 +48,5 @@ Instead of loading the library from a local package, you can instead opt to load
 And the components would now be imported as follows:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@playcanvas/web-components@0.1.10/dist/pwc.mjs"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@playcanvas/web-components@0.1.11/dist/pwc.mjs"></script>
 ```
