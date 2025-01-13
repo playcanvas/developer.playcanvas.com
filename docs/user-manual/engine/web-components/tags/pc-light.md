@@ -21,7 +21,10 @@ The `<pc-light>` tag is used to define a light component.
 | `range` | The range of the light. If not specified, `10` is used. |
 | `shadow-bias` | The bias of the light's shadows. If not specified, `0.2` is used. |
 | `shadow-distance` | The distance at which the light's shadows are no longer rendered. If not specified, `16` is used. |
-| `type` | The type of light. Can be `directional`, `point` or `omni`. |
+| `shadow-resolution` | The resolution of the light's shadow map. If not specified, `1024` is used. |
+| `shadow-type` | The type of shadow map. Can be `pcf1-16f`, `pcf1-32f`, `pcf3-16f`, `pcf3-32f`, `pcf5-16f`, `pcf5-32f`, `vsm-16f`, `vsm-32f` or `pcss-32f`. If not specified, `pcf3-32f` is used. |
+| `type` | The type of light. Can be `directional`, `point` or `omni`. If not specified, `directional` is used. |
+| `vsm-bias` | The bias used for VSM shadows. If not specified, `0.01` is used. |
 
 ## Example
 
