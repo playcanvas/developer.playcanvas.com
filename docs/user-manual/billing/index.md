@@ -97,6 +97,10 @@ The billing events from May to October will be as follows:
 * 10th September: $50 - $50 x 21/31 = **$16.13**. The users has one seat on this billing date so is charged $50 for the upcoming month. A seat was removed on 20th August so it was only used for 10 of the 31 days between billing dates. Since the user paid $50 for that seat on the previous billing date, they are due a refund for the unused 21 days. So $50 x 21/31 is subtracted from the bill.
 * 10th October: **$50**. The plan has 1 seat and no changes were made to the plan in the previous month.
 
+### I have a Personal plan. Can I add a free user to my private project?
+
+No. You can only add users with a Personal plan to your private projects.
+
 ### How can I contact PlayCanvas about billing?
 
 If your question about billing is not answered on this page, please email [billing@playcanvas.com](mailto:billing@playcanvas.com).
