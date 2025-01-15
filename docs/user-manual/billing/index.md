@@ -1,6 +1,6 @@
 ---
 title: Billing
-sidebar_position: 24
+sidebar_position: 21
 ---
 
 Welcome to the Billing FAQ that lists the common questions relating to your PlayCanvas subscription.
