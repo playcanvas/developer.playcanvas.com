@@ -2,13 +2,17 @@
 title: <pc-splat>
 ---
 
-The `<pc-splat>` tag is used to define a splat component.
+The `<pc-splat>` tag is used to define a splat component for rendering 3D Gaussian Splats.
+
+When rendering splat-based scenes, it is recommended to set `antialias` and `high-resolution` on your [`<pc-app>`](pc-app.md) tag to `false` for best performance.
 
 :::note
 
 * It must be a direct child of a [`<pc-entity>`](pc-entity.md).
 
 :::
+
+## Attributes
 
 | Attribute | Description |
 | --- | --- |
@@ -17,12 +21,10 @@ The `<pc-splat>` tag is used to define a splat component.
 
 ## Example
 
-```html
-<pc-entity>
-    <pc-splat asset="splat"></pc-splat>
-</pc-entity>
-```
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
+
+<CodePenEmbed id="MYgGZax" title="<pc-splat> example" />
 
 ## JavaScript Interface
 
-You can programmatically create and manipulate `<pc-splat>` elements using the [GSplatComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.GSplatComponentElement.html).
+You can programmatically create and manipulate `<pc-splat>` elements using the [SplatComponentElement API](https://api.playcanvas.com/classes/EngineWebComponents.SplatComponentElement.html).

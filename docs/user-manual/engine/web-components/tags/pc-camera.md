@@ -10,6 +10,8 @@ The `<pc-camera>` tag is used to define a camera component.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `clear-color` | The background color of the camera. Can be a space-separated list of R, G, B, and A values, a hex color code, or a [named color](https://github.com/playcanvas/web-components/blob/main/src/colors.ts). If unspecified, `0.75,0.75,0.75,1` is used. |

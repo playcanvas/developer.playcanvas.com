@@ -10,6 +10,8 @@ The `<pc-sound>` tag is used to define a sound.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `asset` | A string that should match the `id` of a [`<pc-asset>`](pc-asset.md) tag that has a type of `audio`. |

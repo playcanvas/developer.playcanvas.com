@@ -11,6 +11,8 @@ The `<pc-sounds>` tag is used to define a sound component.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `distance-model` | The distance model of the sound. Can be `exponential`, `inverse` or `linear`. If not specified, `linear` is used. |

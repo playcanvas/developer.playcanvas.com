@@ -10,6 +10,8 @@ The `<pc-collision>` tag is used to define a collision component.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `axis` | The axis of the collision component. If not specified, `1` is used (Y-axis). |

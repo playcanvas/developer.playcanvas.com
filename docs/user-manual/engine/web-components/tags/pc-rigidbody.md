@@ -12,6 +12,8 @@ The `<pc-rigidbody>` tag is used to define a rigidbody component.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `angular-damping` | The angular damping of the rigidbody. If not specified, `0` is used. |
@@ -26,21 +28,9 @@ The `<pc-rigidbody>` tag is used to define a rigidbody component.
 
 ## Example
 
-```html
-<!-- static 1x1x1 box -->
-<pc-entity>
-    <pc-render type="box"></pc-render>
-    <pc-collision></pc-collision>
-    <pc-rigidbody></pc-rigidbody>
-</pc-entity>
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
 
-<!-- dynamic sphere with radius 0.5 -->
-<pc-entity>
-    <pc-render type="sphere"></pc-render>
-    <pc-collision type="sphere"></pc-collision>
-    <pc-rigidbody type="dynamic"></pc-rigidbody>
-</pc-entity>
-```
+<CodePenEmbed id="XJrqjJr" title="<pc-rigidbody> example" />
 
 ## JavaScript Interface
 

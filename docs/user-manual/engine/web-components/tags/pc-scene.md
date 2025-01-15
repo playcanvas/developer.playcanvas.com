@@ -10,6 +10,8 @@ The `<pc-scene>` tag is used to define the scene.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `fog` | The type of fog to use. Can be `linear`, `exp`, or `exp2`. |
