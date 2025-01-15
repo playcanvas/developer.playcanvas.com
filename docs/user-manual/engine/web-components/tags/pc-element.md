@@ -10,6 +10,8 @@ The `<pc-element>` tag is used to define an element component.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `anchor` | The anchor of the element component. Specified as a space-separated list of X, Y, Z, and W values. If not specified, `0 0 0 1` is used. |

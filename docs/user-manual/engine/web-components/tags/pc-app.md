@@ -10,6 +10,8 @@ The `<pc-app>` tag is the root element for your PlayCanvas application. It is us
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `alpha` | Boolean attribute. Determines whether the application allocates an alpha channel in the frame buffer. Defaults to `true`. |
@@ -20,22 +22,9 @@ The `<pc-app>` tag is the root element for your PlayCanvas application. It is us
 
 ## Example
 
-```html
-<!-- A lit sphere -->
-<pc-app>
-    <pc-scene>
-        <pc-entity name="camera" position="0 0 3">
-            <pc-camera></pc-camera>
-        </pc-entity>
-        <pc-entity name="light" rotation="45 45 0">
-            <pc-light></pc-light>
-        </pc-entity>
-        <pc-entity name="ball">
-            <pc-render type="sphere"></pc-render>
-        </pc-entity>
-    </pc-scene>
-</pc-app>
-```
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
+
+<CodePenEmbed id="JoPvXjO" title="<pc-app> example" />
 
 ## JavaScript Interface
 

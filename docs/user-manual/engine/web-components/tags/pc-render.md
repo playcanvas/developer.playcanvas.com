@@ -10,6 +10,8 @@ The `<pc-render>` tag is used to define a render component that renders a 3D pri
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `type` | The type of render component. Can be `box`, `capsule`, `cone`, `cylinder`, `plane` or `sphere`. |
@@ -18,11 +20,9 @@ The `<pc-render>` tag is used to define a render component that renders a 3D pri
 
 ## Example
 
-```html
-<pc-entity>
-    <pc-render type="box" cast-shadows receive-shadows></pc-render>
-</pc-entity>
-```
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
+
+<CodePenEmbed id="NPKMrLy" title="<pc-render> example" />
 
 ## JavaScript Interface
 

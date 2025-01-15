@@ -10,6 +10,8 @@ The `<pc-screen>` tag is used to define a screen component.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `blend` | Valueless attribute. If present, the screen component blends. |

@@ -10,6 +10,8 @@ The `<pc-module>` tag is used to load a WebAssembly module.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `name` | The name of the module. This is used to reference the module in scripts. |

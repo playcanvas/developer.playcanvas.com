@@ -10,6 +10,8 @@ The `<pc-sky>` tag is used to define a sky component.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `asset` | A string that should match the `id` of a `<pc-asset>` tag that has a type of `texture`. |

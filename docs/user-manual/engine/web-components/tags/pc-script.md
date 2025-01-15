@@ -11,6 +11,8 @@ The `<pc-script>` tag is used to define a script.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `attributes` | A JSON string of attributes for the script. |

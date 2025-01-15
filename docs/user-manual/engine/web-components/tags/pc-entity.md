@@ -10,6 +10,8 @@ The `<pc-entity>` tag is used to define an entity.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `enabled` | Enabled state of the entity. If not specified, `true` is used. |

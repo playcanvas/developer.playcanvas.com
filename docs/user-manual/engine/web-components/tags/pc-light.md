@@ -10,6 +10,8 @@ The `<pc-light>` tag is used to define a light component.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `color` | The color of the light. Can be a space-separated list of R, G, B values, a hex color code, or a [named color](https://github.com/playcanvas/web-components/blob/main/src/colors.ts). If not specified, `1 1 1` is used. |

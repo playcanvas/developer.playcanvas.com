@@ -10,6 +10,8 @@ The `<pc-asset>` tag is used to define an asset.
 
 :::
 
+## Attributes
+
 | Attribute | Description |
 | --- | --- |
 | `id` | The ID of the asset. This is used to reference the asset in scripts. |
