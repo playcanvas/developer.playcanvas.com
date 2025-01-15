@@ -1,6 +1,6 @@
 ---
 title: Graphics
-sidebar_position: 14
+sidebar_position: 12
 ---
 
 PlayCanvas incorporates an advanced graphics engine. Internally it uses the WebGL API to draw graphical primitives to the screen.
