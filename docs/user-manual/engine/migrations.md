@@ -4,7 +4,7 @@ The PlayCanvas Engine is continually evolving, and its updates occasionally intr
 
 This guide provides an overview of all major breaking changes across releases, offering users a helpful resource for migrating their code to newer versions.
 
-## Migration from 1.75.0 to 2.3.0
+## Migration from 1.75.0 to 2.4.0
 
 The migration from major version 1 to major version 2 is a substantial update, introducing numerous breaking changes.
 
@@ -74,3 +74,4 @@ For detailed information on the changes, refer to the release notes for each ind
 * [2.1.0](https://github.com/playcanvas/engine/releases/tag/v2.1.0)
 * [2.2.0](https://github.com/playcanvas/engine/releases/tag/v2.2.0)
 * [2.3.0](https://github.com/playcanvas/engine/releases/tag/v2.3.0)
+* [2.4.0](https://github.com/playcanvas/engine/releases/tag/v2.4.0)
