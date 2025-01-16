@@ -1,27 +1,27 @@
 ---
-title: Viewport
+title: ビューポート (Viewport)
 sidebar_position: 4
 ---
 
 ![Viewport](/img/user-manual/editor/viewport/viewport.jpg)
 
-The viewport shows your scene as currently rendered. You can freely move around the scene by manipulating the Editor's current camera.
+ビューポートは現在レンダリングされているシーンを表示します。エディタの現在のカメラを操作して、自由にシーン内を移動できます。
 
-## Cameras {#cameras}
+## カメラ (Cameras) {#cameras}
 
-Initially the Editor is set to use the **Perspective** camera. This camera is as if a movie camera was floating in your scene. You can use the camera dropdown menu to view the scene using various other cameras.
+エディタは最初に **Perspective** (透視投影) カメラを使用するように設定されています。このカメラは、シーン内に浮かんでいるかのように見えます。カメラドロップダウンメニューを使用して、他のさまざまなカメラを使用してシーンを表示できます。
 
 ![Camera Dropdown](/img/user-manual/editor/viewport/camera-dropdown.jpg)
 
-The **orthographic** cameras: Top, Bottom, Front, Back, Left, Right, let you view a version of the scene with no perspective. Useful for fine-tuning positions.
+上部、下部、前面、背面、左側、右側の**正投影**カメラでは、遠近法のないシーンを表示できます。位置を微調整するのに便利です。
 
-You can also use the camera menu to select any of the camera Entities in your scene. This way you can position your in-game camera exactly as required.
+また、カメラメニューを使用して、シーン内の任意のカメラエンティティを選択することもできます。これにより、ゲーム内カメラを必要な位置に正確に配置できます。
 
-## Gizmos {#gizmos}
+## ギズモ (Gizmo) {#gizmos}
 
 ![Gizmos](/img/user-manual/editor/viewport/gizmos.jpg)
 
-The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][4]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate (with arrows on the ends of the axes); Rotate (which is made up of three colored rings) and Scale (with cubes on the ends of the axes).
+スクリーンショットで見ることができる3色の軸は、[ギズモ][4]と呼ばれます。これは、選択したエンティティの変換行列を操作するために使用されます。ギズモには3つの種類があります。矢印が軸の端にある「移動」、色付きの円がある「回転」、軸の端にキューブがある「拡大縮小」です。
 
 ## Render Mode {#render-mode}
 

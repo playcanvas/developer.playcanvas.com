@@ -1,13 +1,13 @@
 ---
-title: Toolbar
+title: ツールバー
 sidebar_position: 1
 ---
 
-The Editor's main toolbar can be found on the left, vertical edge of the Editor. You can access many common operations via the toolbar. Here is a list of the functionality available:
+エディターのツールバーは、エディタの左側にあります。ツールバーを介して多くの操作ができます。以下が利用可能な機能です。
 
-| Button | Command | Description |
+| ボタン | コマンド | 説明 |
 | ------ | ------- | ----------- |
-| ![Menu](/img/user-manual/editor/toolbar/menu.png) | **Menu** | Open the main menu to access the most commonly needed Editor functions. |
+| ![Menu](/img/user-manual/editor/toolbar/menu.png) | **Menu** | メインメニューを開いて、最もよく必要とされるエディターの機能にアクセスしてください。 |
 | ![Gizmo Translate](/img/user-manual/editor/toolbar/translate.png) | **Translate** | Activate the translate [gizmo](../viewport#gizmos) in the [Viewport](../viewport). |
 | ![Gizmo Rotate](/img/user-manual/editor/toolbar/rotate.png) | **Rotate** | Activate the rotate [gizmo](../viewport#gizmos) in the [Viewport](../viewport). |
 | ![Gizmo Scale](/img/user-manual/editor/toolbar/scale.png) | **Scale** | Activate the scale [gizmo](../viewport#gizmos) in the [Viewport](../viewport). |

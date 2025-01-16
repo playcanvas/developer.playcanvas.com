@@ -1,5 +1,5 @@
 ---
-title: Interface
+title: インターフェイス
 sidebar_position: 1
 ---
 
@@ -7,9 +7,9 @@ sidebar_position: 1
 
 This is the main interface to the PlayCanvas Editor. You can see labeled the main areas:
 
-* **Menu** The menu contains all the commands available in the Editor. If you can't find the button or remember the hotkey, use the menu.
-* **Toolbar** Commonly used commands are available on the toolbar for quick access.
-* **Hierarchy** A hierarchical view of the Entities that make up the open Scene. Use this to select, delete and re-parent Entities.
+* **メニュー (Menu)** メニューにはエディターで利用可能なすべてのコマンドが含まれています。ボタンが見つからない場合やホットキーを覚えていない場合は、メニューを使用してください。
+* **ツールバー (Toolbar)** よく使われるコマンドはツールバーにあり、クイックアクセスできます。
+* **ヒエラルキー (Hierarchy)** 開いているSceneを構成するEntityの階層ビューです。これを使用して、Entityを選択、削除、および親Entityを変更できます。
 * **Inspector** Detailed properties of the selected [Entity](/user-manual/glossary#entity), [Asset](/user-manual/glossary#asset) or [Component](/user-manual/glossary#component).
-* **Viewport** A 3D view onto your scene, use this view to select, position and orientate Entities.
-* **Assets** A view of all the Assets in the current Project. You can search for assets by name, filter by type and also drag and drop assets to various slots or in the Design View.
+* **ビューポート (Viewport)** シーンの3Dビューを持ち、Entityを選択、位置調整、および方向転換します。
+* **アセット (Assets)** 現在のプロジェクトに含まれるすべてのアセットのビュー。名前で検索したり、タイプでフィルタリングしたり、さまざまなスロットまたはデザインビューにアセットをドラッグアンドドロップすることができます。

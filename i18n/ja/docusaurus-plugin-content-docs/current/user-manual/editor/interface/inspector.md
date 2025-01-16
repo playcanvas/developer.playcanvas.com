@@ -1,24 +1,24 @@
 ---
-title: Inspector
+title: インスペクター (Inspector)
 sidebar_position: 3
 ---
 
 ![Inspector Panel](/img/user-manual/editor/inspector/inspector.png)
 
-The Inspector panel shows attribute values for the currently selected item.
+インスペクターパネルでは、現在選択されているアイテムの属性値が表示されます。
 
-Depending on what you have selected, you will see different inspector panels. Some available selections are:
+選択されている内容に応じて、さまざまなインスペクターパネルが表示されます。例えば、以下のものがあります。
 
-* **Entity/Component Inspector**
-* **Texture Inspector**
-* **Material Inspector**
-* **Cubemap Inspector**
+* **エンティティ/コンポーネントインスペクター**
+* **テクスチャインスペクター**
+* **マテリアルインスペクター**
+* **キューブマップインスペクター**
 
-Modifying these values is how you specify how your [Entity][2] behaves. For example, you can set which model to render for a Model Component, or what color a light is.
+これらの値を変更することで、あなたの[エンティティ][2]の振る舞いを指定することができます。例えば、Modelコンポーネントでレンダリングするモデルや、ライトの色を設定することができます。
 
-Some attributes are simple text or numbers in which case a standard text field or slider control will be used. Other values may require a more specialized input method. For example, choosing an Asset highlights available Assets in the asset panel. Some values can be manipulated via the viewport, for example, the Translate, Rotate and Scale values can be edited by moving and Entity dragging the relevant [Gizmo][3] around in the viewport.
+一部の属性は、スライダーコントロールまたは標準のテキストフィールドが使用される単純なテキストや数値です。他の値にはより特殊な入力方法が必要な場合があります。例えば、アセットを選択すると、アセットパネル内の利用可能なアセットが強調表示されます。一部の値はビューポートを介して操作することもできます。例えば、Translate、Rotate、Scaleの値は、ビューポート内で適切な[Gizmo][3]を移動させたり、ドラッグしたりして編集することができます。
 
-When running both a game and the Editor simultaneously changes to attributes will be transmitted to Entities in the running application. An excellent way of iterating on values is to launch your game using the Play button, then place the Editor and the game tabs side by side and tweak values in the Editor as you watch and play the game.
+ゲームとエディターの両方を同時に実行している場合、属性の変更は実行中のアプリケーション内のエンティティに送信されます。値を反復して調整するための素晴らしい方法は、再生ボタンを使用してゲームを起動し、エディターとゲームタブを並べて、ゲームを見ながらエディターで値を調整することです。
 
 [2]: /user-manual/glossary#entity
 [3]: /user-manual/glossary#gizmo
