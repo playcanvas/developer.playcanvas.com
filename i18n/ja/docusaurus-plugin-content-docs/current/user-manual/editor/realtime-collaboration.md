@@ -13,7 +13,7 @@ Let's examine how real-time collaboration is surfaced in the interface.
 
 ## Presence Bar
 
-In the bottom left corner of the [Viewport](../viewport) (next to the CHAT button), you will find the Presence Bar.
+In the bottom left corner of the [Viewport](../interface/viewport) (next to the CHAT button), you will find the Presence Bar.
 
 ![Presence Bar](/img/user-manual/editor/realtime-collaboration/presence-bar.png)
 
@@ -41,7 +41,7 @@ If you paste URLs into the chat, they will be formatted as clickable hyperlinks.
 
 ## Viewport Cameras
 
-Each user in the scene is represented in the [Viewport](../viewport) by a colored, wireframe camera frustum.
+Each user in the scene is represented in the [Viewport](../interface/viewport) by a colored, wireframe camera frustum.
 
 ![Viewport Cameras](/img/user-manual/editor/realtime-collaboration/viewport-cameras.webp)
 
@@ -51,10 +51,10 @@ Mouse over the shaded center plane of a user camera to view the associated usern
 
 ## Selection Indicators
 
-It can be useful to know what entities other users are selecting and potentially editing. The [Hierarchy](../hierarchy) displays square indicators to the right of entities selected by other users (shaded according to their user color).
+It can be useful to know what entities other users are selecting and potentially editing. The [Hierarchy](../interface/hierarchy) displays square indicators to the right of entities selected by other users (shaded according to their user color).
 
 ![Selection Indicators](/img/user-manual/editor/realtime-collaboration/selection-indicators.gif)
 
-Whenever an entity with a 3D model is selected by any user, its outline will be rendered in the [Viewport](../viewport).
+Whenever an entity with a 3D model is selected by any user, its outline will be rendered in the [Viewport](../interface/viewport).
 
 ![Viewport Selection](/img/user-manual/editor/realtime-collaboration/viewport-selection.gif)

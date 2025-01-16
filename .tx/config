@@ -1597,26 +1597,12 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/dashboard/settings.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-assets]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/assets.md
-source_file   = docs/user-manual/editor/assets.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/editor/assets.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-editor-api]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/editor-api.md
 source_file   = docs/user-manual/editor/editor-api.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/editor-api.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-hierarchy]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/hierarchy.md
-source_file   = docs/user-manual/editor/hierarchy.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/editor/hierarchy.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/index.md
@@ -1625,12 +1611,47 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/index.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-inspector]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/inspector.md
-source_file   = docs/user-manual/editor/inspector.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-interface-assets]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/interface/assets.md
+source_file   = docs/user-manual/editor/interface/assets.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/editor/inspector.md
+resource_name = content/en/user-manual/editor/interface/assets.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-interface-hierarchy]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/interface/hierarchy.md
+source_file   = docs/user-manual/editor/interface/hierarchy.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/interface/hierarchy.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-interface-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/interface/index.md
+source_file   = docs/user-manual/editor/interface/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/interface/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-interface-inspector]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/interface/inspector.md
+source_file   = docs/user-manual/editor/interface/inspector.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/interface/inspector.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-interface-toolbar]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/interface/toolbar.md
+source_file   = docs/user-manual/editor/interface/toolbar.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/interface/toolbar.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-interface-viewport]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/interface/viewport.md
+source_file   = docs/user-manual/editor/interface/viewport.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/interface/viewport.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-keyboard-shortcuts]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/keyboard-shortcuts.md
@@ -1695,13 +1716,6 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/templates/nested.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-toolbar]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/toolbar.md
-source_file   = docs/user-manual/editor/toolbar.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/editor/toolbar.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-version-control-branch-workflows]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/version-control/branch-workflows.md
 source_file   = docs/user-manual/editor/version-control/branch-workflows.md
@@ -1758,19 +1772,19 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/version-control/merging.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-viewport]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/viewport.md
-source_file   = docs/user-manual/editor/viewport.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/editor/viewport.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-engine-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/engine/index.md
 source_file   = docs/user-manual/engine/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/engine/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-engine-migrations]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/engine/migrations.md
+source_file   = docs/user-manual/engine/migrations.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/engine/migrations.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-engine-running-in-node]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/engine/running-in-node.md

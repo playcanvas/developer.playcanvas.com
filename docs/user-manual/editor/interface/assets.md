@@ -119,7 +119,7 @@ If an asset does have references, you can check them via the References content 
 
 Selecting a reference will load it into the Inspector panel.
 
-[2]: /user-manual/editor/inspector
-[3]: /user-manual/editor/viewport
+[2]: /user-manual/editor/interface/inspector
+[3]: /user-manual/editor/interface/viewport
 [4]: /user-manual/editor/settings
 [7]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#findByTag
