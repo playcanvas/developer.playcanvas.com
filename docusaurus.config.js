@@ -54,6 +54,31 @@ const config = {
           redirects.push(redirect);
         }
 
+        if (existingPath.includes('/user-manual/editor/interface/assets')) {
+          const redirect = existingPath.replace('/user-manual/editor/interface/assets', '/user-manual/editor/assets');
+          redirects.push(redirect);
+        }
+
+        if (existingPath.includes('/user-manual/editor/interface/hierarchy')) {
+          const redirect = existingPath.replace('/user-manual/editor/interface/hierarchy', '/user-manual/editor/hierarchy');
+          redirects.push(redirect);
+        }
+
+        if (existingPath.includes('/user-manual/editor/interface/inspector')) {
+          const redirect = existingPath.replace('/user-manual/editor/interface/inspector', '/user-manual/editor/inspector');
+          redirects.push(redirect);
+        }
+
+        if (existingPath.includes('/user-manual/editor/interface/toolbar')) {
+          const redirect = existingPath.replace('/user-manual/editor/interface/toolbar', '/user-manual/editor/toolbar');
+          redirects.push(redirect);
+        }
+
+        if (existingPath.includes('/user-manual/editor/interface/viewport')) {
+          const redirect = existingPath.replace('/user-manual/editor/interface/viewport', '/user-manual/editor/viewport');
+          redirects.push(redirect);
+        }
+
         if (existingPath.includes('/user-manual/editor/templates/')) {
           const redirect = existingPath.replace('/user-manual/editor/templates/', '/user-manual/templates/');
           redirects.push(redirect);

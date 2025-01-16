@@ -3,7 +3,7 @@ title: ビューポート (Viewport)
 sidebar_position: 4
 ---
 
-![Viewport][1]
+![Viewport](/img/user-manual/editor/viewport/viewport.jpg)
 
 ビューポートは現在レンダリングされているシーンを表示します。エディタの現在のカメラを操作して、自由にシーン内を移動できます。
 
@@ -11,7 +11,7 @@ sidebar_position: 4
 
 エディタは最初に **Perspective** (透視投影) カメラを使用するように設定されています。このカメラは、シーン内に浮かんでいるかのように見えます。カメラドロップダウンメニューを使用して、他のさまざまなカメラを使用してシーンを表示できます。
 
-![Camera Dropdown][2]
+![Camera Dropdown](/img/user-manual/editor/viewport/camera-dropdown.jpg)
 
 上部、下部、前面、背面、左側、右側の**正投影**カメラでは、遠近法のないシーンを表示できます。位置を微調整するのに便利です。
 
@@ -19,7 +19,7 @@ sidebar_position: 4
 
 ## ギズモ (Gizmo) {#gizmos}
 
-![Gizmos][3]
+![Gizmos](/img/user-manual/editor/viewport/gizmos.jpg)
 
 スクリーンショットで見ることができる3色の軸は、[ギズモ][4]と呼ばれます。これは、選択したエンティティの変換行列を操作するために使用されます。ギズモには3つの種類があります。矢印が軸の端にある「移動」、色付きの円がある「回転」、軸の端にキューブがある「拡大縮小」です。
 
@@ -37,7 +37,4 @@ You can also visualize your scene in various debug render modes. This restricts 
 
 ![Viewport Render Modes](/img/user-manual/editor/viewport/render-modes.png)
 
-[1]: /img/user-manual/editor/viewport/viewport.jpg
-[2]: /img/user-manual/editor/viewport/camera-dropdown.jpg
-[3]: /img/user-manual/editor/viewport/gizmos.jpg
 [4]: /user-manual/glossary#gizmo

@@ -21,7 +21,7 @@ sidebar_position: 2
 
 ## ヒエラルキーの検索
 
-Near the top of the Hierarchy panel is a Search box which you can use to dynamically filter the content of the Entity tree. 
+Near the top of the Hierarchy panel is a Search box which you can use to dynamically filter the content of the Entity tree.
 
 ![Hierarchy Panel Search](/img/user-manual/editor/hierarchy/hierarchy-search.png)
 
