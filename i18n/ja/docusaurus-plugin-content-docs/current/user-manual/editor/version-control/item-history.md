@@ -27,4 +27,4 @@ Graph View の詳細については、[こちら][graph-view]をご覧くださ�
 
 ![Scene Item History](/img/user-manual/version-control/item-history/scene-item-history.gif)
 
-[graph-view]: /user-manual/version-control/graph-view/
+[graph-view]: /user-manual/editor/version-control/graph-view/

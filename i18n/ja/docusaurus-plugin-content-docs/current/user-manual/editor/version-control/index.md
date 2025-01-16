@@ -1,13 +1,13 @@
 ---
 title: バージョン管理
-sidebar_position: 13
+sidebar_position: 10.75
 ---
 
 シンプルなプロジェクトについて理解したら、バージョン管理がアプリケーション開発プロセスに重要だとわかるはずです。バージョン管理は、次の機能を実行するシステムの包括的用語です。
 
-* コードとアセットの以前のバージョンに戻すことができる
-* プロジェクトの変更履歴を見ることができる
-* 新しい変更を他の開発者から隔離した安全な場所で試し、準備ができたら変更をマージすることができる
+- コードとアセットの以前のバージョンに戻すことができる
+- プロジェクトの変更履歴を見ることができる
+- 新しい変更を他の開発者から隔離した安全な場所で試し、準備ができたら変更をマージすることができる
 
 PlayCanvasには、エディタに直接組み込まれたバージョン管理ツールがあり、これは主に3つの機能に分けられます。**チェックポイント**はプロジェクトのある一点のスナップショットで、プロジェクトへの変更のタイムラインを形成します。**ブランチ**は一つの開発ラインで、一つの機能の作成や一人の開発者による変更を表しています。一つのブランチでのアセットへの変更は、別のブランチへの変更に影響を及ぼしません。**マージとコンフリクトの解決**、マージは一つのブランチを別のブランチに組み込むプロセスで、両方のブランチが同じデータを編集したときにコンフリクトが発生します。コンフリクトを解決した後、宛先のブランチは両方のブランチからの変更を含むべきです。
 
@@ -40,9 +40,9 @@ PlayCanvasの**ブランチ**は、他のシステムのブランチと同じよ
 
 ストレージスペースが必要な場合は、[support@playcanvas.jp][6]までメールでお問い合わせください。ほとんどの場合、追加料金なしでストレージ割り当てを増やすことが可能です。
 
-[1]: /user-manual/version-control/checkpoints
-[2]: /user-manual/version-control/branches
-[3]: /user-manual/version-control/merging
-[4]: /user-manual/version-control/checkpoints/#hard-reset-to-a-checkpoint
-[5]: /user-manual/version-control/branches/#deleting-a-branch
+[1]: /user-manual/editor/version-control/checkpoints
+[2]: /user-manual/editor/version-control/branches
+[3]: /user-manual/editor/version-control/merging
+[4]: /user-manual/editor/version-control/checkpoints/#hard-reset-to-a-checkpoint
+[5]: /user-manual/editor/version-control/branches/#deleting-a-branch
 [6]: mailto:support@playcanvas.com

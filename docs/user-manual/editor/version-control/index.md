@@ -1,6 +1,6 @@
 ---
 title: Version Control
-sidebar_position: 11
+sidebar_position: 10.75
 ---
 
 Once you've moved beyond the simplest of projects, you will find that version control becomes an important part of your application development process. Version Control is a catch-all term for a system that performs the following functions
@@ -40,9 +40,9 @@ Unfortunately, it is not possible to delete branches or checkpoints except in th
 
 If you need more storage space, please email us at [support@playcanvas.com][6]. In most cases, we can increase your storage allowance with no extra charge.
 
-[1]: /user-manual/version-control/checkpoints
-[2]: /user-manual/version-control/branches
-[3]: /user-manual/version-control/merging
-[4]: /user-manual/version-control/checkpoints/#hard-reset-to-a-checkpoint
-[5]: /user-manual/version-control/branches/#deleting-a-branch
+[1]: /user-manual/editor/version-control/checkpoints
+[2]: /user-manual/editor/version-control/branches
+[3]: /user-manual/editor/version-control/merging
+[4]: /user-manual/editor/version-control/checkpoints/#hard-reset-to-a-checkpoint
+[5]: /user-manual/editor/version-control/branches/#deleting-a-branch
 [6]: mailto:support@playcanvas.com
