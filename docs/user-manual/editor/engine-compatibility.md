@@ -8,9 +8,9 @@ sidebar_position: 12
 The Editor supports two major release streams of the engine:
 
 - The latest release of engine v1.x.x (**Engine V1**)
-    - This provides support for WebGL1 and WebGL2, but does not receive any new features, and only critical bug fixes.
+  - This provides support for WebGL1 and WebGL2, but does not receive any new features, and only critical bug fixes.
 - The latest release of engine v2.x.x (**Engine V2**)
-    - This has no support for WebGL1 and supports WebGL2 and WebGPU for rendering, and receives new features and fixes.
+  - This has no support for WebGL1 and supports WebGL2 and WebGPU for rendering, and receives new features and fixes.
 
 You are free to switch between these at any time.
 
