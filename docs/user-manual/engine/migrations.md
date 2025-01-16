@@ -43,13 +43,12 @@ The engine previously executed multiple callbacks per frame for camera and layer
 
 #### StandardMaterial tint flags
 
-The tint options for StandardMaterial have been confusing and inconsistent, so we've removed the flags for Ambient, Diffuse, Specular and Emissive tint. Previously, these flags only affected certain cases, such as when a texture was applied. With this update, tint colors are now always applied. To disable tinting, set the color to a neutral value (the default tint colors used when creating a new material):
+The tint options for StandardMaterial have been confusing and inconsistent, so we've removed the flags for Ambient, Diffuse and Emissive tint. Previously, these flags only affected certain cases, such as when a texture was applied. With this update, tint colors are now always applied. To disable tinting, set the color to a neutral value (the default tint colors used when creating a new material):
 
 Here is the list of default colors per tint type:
 
 * **Ambient**: `new Color(1, 1, 1)` (white)
 * **Diffuse**: `new Color(1, 1, 1)` (white)
-* **Specular**: `new Color(0, 0, 0)` (black)
 * **Emissive**: `new Color(0, 0, 0)` (black)
 
 There is one somewhat confusing behavior to note. By default, the emissive tint is set to black to ensure the material doesn't emit any color. When you assign an emissive texture, it's important to set the emissive color to white; otherwise, the black tint will override the emissive contribution from the texture, resulting in no visible emission.
