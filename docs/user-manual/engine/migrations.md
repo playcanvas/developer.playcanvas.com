@@ -3,8 +3,6 @@ title: Engine Migrations
 sidebar_position: 4
 ---
 
-# Engine Migrations
-
 The PlayCanvas Engine is continually evolving, and its updates occasionally introduce breaking changes that require users to adapt their scripts.
 
 This guide provides an overview of all major breaking changes across releases, offering users a helpful resource for migrating their code to newer versions.
