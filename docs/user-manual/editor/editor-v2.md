@@ -3,7 +3,7 @@ title: Editor V2
 sidebar_position: 12
 ---
 
-# Introduction to Editor V2
+## Introduction to Editor V2
 
 This page is to outline all the changes regarding the update of the Editor to support Engine V2. This process consists of two parts:
 
@@ -12,11 +12,11 @@ This page is to outline all the changes regarding the update of the Editor to su
 
 Both Project V1 and Project V2 will support the latest major and previous minor of these respective versions and you are free to switch between these as required. If your project requires WebGL 1.0 then you will need to remain on Project V1. Otherwise updating to Project V2 is highly recommended as all new features will be added to Engine V2 only.
 
-## Editor changes
+### Editor changes
 
 This Editor has been updated to now use Engine V2 internally. This change may cause some small visual changes for some projects. We have collated a list of the most common issues and how to fix them.
 
-### Cubemap edge filtering
+#### Cubemap edge filtering
 
 <img src='/img/user-manual/editor/editor-v2/edge-filter.png' width='600' />
 
@@ -24,7 +24,7 @@ If your cubemap skybox has pronounced edges such as this example above, navigate
 
 <img src='/img/user-manual/editor/editor-v2/prefiltered-data.png' width='400' />
 
-### Gamma Correction
+#### Gamma Correction
 
 <img src='/img/user-manual/editor/editor-v2/gamma-compare.png' />
 
@@ -34,7 +34,7 @@ If you have a project with a gamma correction set to 1.0 your scene may appear m
 
 <img src='/img/user-manual/editor/editor-v2/gamma-tonemap-settings.png' width='400' />
 
-## Project V1 to V2
+### Project V1 to V2
 
 This process will involve migration and updating of scripts given differences in our Engine API between Engine V1 and V2. All details regarding the engine changes can be found here [LINK].
 
@@ -44,7 +44,7 @@ To initiate this navigate to the settings panel and click the `SWITCH TO ENGINE 
 
 <img src='/img/user-manual/editor/editor-v2/switch-engine.png' width='400' />
 
-### Scripting
+#### Scripting
 
 Given the changes in API for the engine you may wish to test your project in the launcher with Engine V1 or V2. You can do this by enabling the Force Engine V2 or Force Engine V1 checkboxes in the launcher options:
 
@@ -54,7 +54,7 @@ Additionally conditionally checking the Engine version at runtime will allow you
 
 <img src='/img/user-manual/editor/editor-v2/scripting-engine.png' width='300' />
 
-### Gamma and Tonemap
+#### Gamma and Tonemap
 
 These settings were previously found under the rendering section of the settings panel. However in Engine V2 these have been moved to be set per camera. Each camera component will now have these additional fields:
 
@@ -66,7 +66,7 @@ The viewport settings are now located inside the editor section of the settings 
 
 > **Note:** If you change the settings per camera and switch back to Project V1 your per camera settings will be lost.
 
-### sRGB Textures
+#### sRGB Textures
 
 <img src='/img/user-manual/editor/editor-v2/srgb-texture.png' width='400' />
 
