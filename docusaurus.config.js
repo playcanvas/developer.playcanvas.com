@@ -38,12 +38,28 @@ const config = {
       redirects: [
         { from: ['/api', '/en/api'], to: 'https://api.playcanvas.com' }
       ],
-      createRedirects: (path) => {
-        path = path.replace('/user-manual/editor/', '/user-manual/designer/');
-        path = path.replace('/user-manual/scenes/', '/user-manual/packs/');
-        path = path.replace('/user-manual/version-control/', '/user-manual/editor/version-control/');
+      createRedirects: (existingPath) => {
+        // Create redirects from old paths prefixed with /en
+        const redirects = [
+          `/en${existingPath}`
+        ];
 
-        return `/en${path}`;
+        if (existingPath.includes('/user-manual/editor/')) {
+          const redirect = existingPath.replace('/user-manual/editor/', '/user-manual/designer/');
+          redirects.push(redirect);
+        }
+
+        if (existingPath.includes('/user-manual/scenes/')) {
+          const redirect = existingPath.replace('/user-manual/scenes/', '/user-manual/packs/');
+          redirects.push(redirect);
+        }
+
+        if (existingPath.includes('/user-manual/editor/version-control/')) {
+          const redirect = existingPath.replace('/user-manual/editor/version-control/', '/user-manual/version-control/');
+          redirects.push(redirect);
+        }
+
+        return redirects;
       }
     }],
     'docusaurus-plugin-sass',
