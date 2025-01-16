@@ -1,40 +1,20 @@
 ---
-title: Editor V2
+title: Engine Compatibility
 sidebar_position: 12
 ---
 
-## Introduction to Editor V2
+## Introduction
 
-This page is to outline all the changes regarding the update of the Editor to support Engine V2. This process consists of two parts:
+The Editor supports two major release streams of the engine:
 
-- Updating the Editor internally from running Engine V1 to Engine V2
-- Migrating projects over from using Engine V1 to Engine V2 (This will be referred to as **Project V1** and **Project V2**)
+- The latest release of engine v1.x.x (**Engine V1**)
+    - This provides support for WebGL1 and WebGL2, but does not receive any new features, and only critical bug fixes.
+- The latest release of engine v2.x.x (**Engine V2**)
+    - This has no support for WebGL1 and supports WebGL2 and WebGPU for rendering, and receives new features and fixes.
 
-Both Project V1 and Project V2 will support the latest major and previous minor of these respective versions and you are free to switch between these as required. If your project requires WebGL 1.0 then you will need to remain on Project V1. Otherwise updating to Project V2 is highly recommended as all new features will be added to Engine V2 only.
+You are free to switch between these at any time.
 
-### Editor changes
-
-This Editor has been updated to now use Engine V2 internally. This change may cause some small visual changes for some projects. We have collated a list of the most common issues and how to fix them.
-
-#### Cubemap edge filtering
-
-<img src='/img/user-manual/editor/editor-v2/edge-filter.png' width='600' />
-
-If your cubemap skybox has pronounced edges such as this example above, navigate to your cubemap asset and delete and regenerate the prefiltered data to remove them.
-
-<img src='/img/user-manual/editor/editor-v2/prefiltered-data.png' width='400' />
-
-#### Gamma Correction
-
-<img src='/img/user-manual/editor/editor-v2/gamma-compare.png' />
-
-If you have a project with a gamma correction set to 1.0 your scene may appear more saturated such as the example above (New editor on the right). Under the rendering settings change your gamma correction to 2.2 to achieve a similar effect as before.
-
-> **Note:** Your scene will be rendered with more correct linear workflow however there will be slight visual changes related to lighting and alpha blending.
-
-<img src='/img/user-manual/editor/editor-v2/gamma-tonemap-settings.png' width='400' />
-
-### Project V1 to V2
+### Switching projects between Engine V1 and V2
 
 This process will involve migration and updating of scripts given differences in our Engine API between Engine V1 and V2. All details regarding the engine changes can be found [here](/user-manual/engine/migrations)
 
