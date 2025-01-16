@@ -1,6 +1,6 @@
 ---
 title: テンプレート
-sidebar_position: 12
+sidebar_position: 10.6
 ---
 
 テンプレート(またはプレハブ)は再利用可能なエンティティを作成することにより、開発を迅速化することができます。シーン内に複数のテンプレートのインスタンスを配置することができ、Templateアセットに変更を加えてそれを適用すると、そのテンプレートのすべてのインスタンスが更新されます。
@@ -103,4 +103,4 @@ this.app.root.addChild(instance);
 
 テンプレートのインスタンスを実行時にインスタンス化する場合にのみ、Templateアセットをロードする必要があります。
 
-[4]: /user-manual/templates/diff
+[4]: /user-manual/editor/templates/diff

@@ -198,7 +198,7 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 
 [switch-scenes-completely-project]: https://playcanvas.com/project/924351/overview/switch-full-scene-example
 [additively-loading-scenes-project]: https://playcanvas.com/project/685077/overview/additive-loading-scenes
-[templates]: /user-manual/templates/
+[templates]: /user-manual/editor/templates/
 [assets]: /user-manual/assets/
 [loadscenehierarchy-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneHierarchy
 [loadscenesettings-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneSettings
