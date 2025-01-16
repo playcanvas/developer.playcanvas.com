@@ -45,7 +45,6 @@ PlayCanvasサーバから独立してゲームをホスティングするには�
 * 「DOWNLOAD」ボタンをクリックして、デプロイ用に準備されたプロジェクトのzipファイルをダウンロードしてください。
 * 以下の手順で、プロジェクトのzipファイルを展開し、任意の場所に保存します。そして、`index.html` ファイルを開くことでアプリケーションを起動できます。
 
-
 ## GitHub Pages での自己ホスティング {#self-hosting-on-github-pages}
 
 PlayCanvasアプリケーションは静的コンテンツであるため、[Self-hosting on your own server](#self-hosting-on-your-own-server)と同じ手順で[GitHub Pages][12]を使用してアプリケーションをホストすることができます。

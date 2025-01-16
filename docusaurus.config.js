@@ -36,12 +36,12 @@ const config = {
   plugins: [
     [ '@docusaurus/plugin-client-redirects', {
       redirects: [
-        { from: ['/api', '/en/api'], to: 'https://api.playcanvas.com' },
+        { from: ['/api', '/en/api'], to: 'https://api.playcanvas.com' }
       ],
       createRedirects: (path) => {
-
         path = path.replace('/user-manual/editor/', '/user-manual/designer/');
         path = path.replace('/user-manual/scenes/', '/user-manual/packs/');
+        path = path.replace('/user-manual/version-control/', '/user-manual/editor/version-control/');
 
         return `/en${path}`;
       }
