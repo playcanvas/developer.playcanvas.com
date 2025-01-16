@@ -25,7 +25,7 @@ Editor API code:
 
 ```javascript
 (function(){
-    const entities = editor.entities.root.listByTag('red');
+    const entities = editor.api.globals.entities.root.listByTag('red');
     for (const entity of entities) {
         entity.set('enabled', false);
     }
@@ -62,9 +62,9 @@ The code for the above user script is:
 (function() {
     async function generateBoxes(count, position, radius) {
         // create box entity
-        const box = editor.entities.create({ parent: editor.entities.root });
+        const box = editor.api.globals.entities.create({ parent: editor.api.globals.entities.root });
         // find box material asset
-        const boxMaterial = editor.assets.findOne(asset => asset.get('name') === 'boxMaterial');
+        const boxMaterial = editor.api.globals.assets.findOne(asset => asset.get('name') === 'boxMaterial');
         // add render component
         box.addComponent('render', {
             type: 'box',
@@ -106,7 +106,7 @@ The code for the above user script is:
         btn.on('click', () => {
             // delete existing boxes
             if (boxes) {
-                editor.entities.delete(boxes);
+                editor.api.globals.entities.delete(boxes);
                 boxes = null;
             }
 
@@ -159,7 +159,7 @@ The button created is from the [PCUI][pcui] framework library that the Editor is
         btn.on('click', () => {
             // delete existing boxes
             if (boxes) {
-                editor.entities.delete(boxes);
+                editor.api.globals.entities.delete(boxes);
                 boxes = null;
             }
 
