@@ -142,4 +142,4 @@ The response will contain the following headers to help you regulate how often y
 
 If you exceed the rate limit you will get a `429 Too Many Requests` status code. You will have to wait for the current window to reset in order to continue making requests.
 
-[5]: /user-manual/version-control/
+[5]: /user-manual/editor/version-control/

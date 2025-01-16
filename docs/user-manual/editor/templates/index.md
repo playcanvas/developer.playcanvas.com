@@ -1,6 +1,6 @@
 ---
 title: Templates
-sidebar_position: 10
+sidebar_position: 10.6
 ---
 
 Templates (or prefabs) allow you to speed up your development by creating Entities that are reusable. You can place multiple instances of a Template in your Scene and if you make any changes and apply them to the Template Asset, all instances of that Template will be updated.
@@ -103,4 +103,4 @@ At runtime, the Template instance is not linked to the asset and you can reduce 
 
 You only need Template assets to be loaded if you are instantiating instances at runtime.
 
-[4]: /user-manual/templates/diff
+[4]: /user-manual/editor/templates/diff

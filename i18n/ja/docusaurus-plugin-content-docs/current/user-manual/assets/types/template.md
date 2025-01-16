@@ -6,4 +6,4 @@ title: テンプレート (Template)
 
 テンプレートの使用方法については、[こちら][1]を参照してください。
 
-[1]: /user-manual/templates/
+[1]: /user-manual/editor/templates/

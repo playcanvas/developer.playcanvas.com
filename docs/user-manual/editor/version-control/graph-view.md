@@ -83,7 +83,7 @@ The color of each branch remains the same whenever you open the Graph View and d
 
 The Graph View supports zooming in and out with the scroll wheel and panning via click and drag.
 
-[view-changes]: /user-manual/version-control/changes/
-[new-branch]: /user-manual/version-control/branches/#creating-a-new-branch
-[restore-checkpoint]: /user-manual/version-control/checkpoints/#restoring-a-checkpoint
-[hard-reset]: /user-manual/version-control/checkpoints/#restoring-a-checkpoint
+[view-changes]: /user-manual/editor/version-control/changes/
+[new-branch]: /user-manual/editor/version-control/branches/#creating-a-new-branch
+[restore-checkpoint]: /user-manual/editor/version-control/checkpoints/#restoring-a-checkpoint
+[hard-reset]: /user-manual/editor/version-control/checkpoints/#restoring-a-checkpoint

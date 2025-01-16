@@ -61,4 +61,4 @@ The conflict manager shows each resource that is in conflict on the left, and fo
 
 While the conflict manager and the merge is in progress your current branch is locked to further edits from other users. This prevents changes being overwritten by your merge when you finish resolving the conflicts. If another user has blocked a branch you need with a merge, you can forcibly end their merge from the editor.
 
-[1]: /user-manual/version-control/branches
+[1]: /user-manual/editor/version-control/branches
