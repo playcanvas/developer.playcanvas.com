@@ -54,6 +54,11 @@ const config = {
           redirects.push(redirect);
         }
 
+        if (existingPath.includes('/user-manual/editor/templates/')) {
+          const redirect = existingPath.replace('/user-manual/editor/templates/', '/user-manual/templates/');
+          redirects.push(redirect);
+        }
+
         if (existingPath.includes('/user-manual/editor/version-control/')) {
           const redirect = existingPath.replace('/user-manual/editor/version-control/', '/user-manual/version-control/');
           redirects.push(redirect);

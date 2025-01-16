@@ -1674,6 +1674,27 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/settings.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-templates-diff]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/templates/diff.md
+source_file   = docs/user-manual/editor/templates/diff.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/templates/diff.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-templates-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/templates/index.md
+source_file   = docs/user-manual/editor/templates/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/templates/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-templates-nested]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/templates/nested.md
+source_file   = docs/user-manual/editor/templates/nested.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/templates/nested.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-toolbar]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/toolbar.md
 source_file   = docs/user-manual/editor/toolbar.md
@@ -2751,27 +2772,6 @@ source_file   = docs/user-manual/scripting/vscode-extension.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/scripting/vscode-extension.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-templates-diff]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/templates/diff.md
-source_file   = docs/user-manual/templates/diff.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/templates/diff.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-templates-index]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/templates/index.md
-source_file   = docs/user-manual/templates/index.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/templates/index.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-templates-nested]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/templates/nested.md
-source_file   = docs/user-manual/templates/nested.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/templates/nested.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-elements]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/user-interface/elements.md
