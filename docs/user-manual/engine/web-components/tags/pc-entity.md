@@ -6,7 +6,7 @@ The `<pc-entity>` tag is used to define an entity.
 
 :::note
 
-* It must be a direct child of [`<pc-scene>`](pc-scene.md) or another `<pc-entity>`.
+* It must be a direct child of [`<pc-scene>`](../pc-scene) or another `<pc-entity>`.
 
 :::
 

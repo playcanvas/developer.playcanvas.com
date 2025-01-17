@@ -6,7 +6,7 @@ The `<pc-camera>` tag is used to define a camera component.
 
 :::note
 
-* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](../pc-entity).
 
 :::
 

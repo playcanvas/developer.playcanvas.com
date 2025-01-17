@@ -6,9 +6,9 @@ The `<pc-rigidbody>` tag is used to define a rigidbody component.
 
 :::note
 
-* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
-* It must be a sibling of a [`<pc-collision>`](pc-collision.md) component.
-* The ammo.js WebAssembly module must be loaded via a [`<pc-module>`](pc-module.md) tag.
+* It must be a direct child of a [`<pc-entity>`](../pc-entity).
+* It must be a sibling of a [`<pc-collision>`](../pc-collision) component.
+* The ammo.js WebAssembly module must be loaded via a [`<pc-module>`](../pc-module) tag.
 
 :::
 
