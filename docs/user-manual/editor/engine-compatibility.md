@@ -50,7 +50,7 @@ The viewport settings are now located inside the editor section of the settings 
 
 <img src='/img/user-manual/editor/editor-v2/srgb-texture.png' width='400' />
 
-For Engine V2 textures are required to be set or not set as sRGB depending on their use case. This is found under the texture asset panel as shown above. These will be automatically set however if there are conflicts the console will display them:
+For Engine V2, textures must be set as sRGB or not, depending on their use case. The textures that store color data, such as diffuse and emissive maps, should use sRGB for accurate color representation. This is found under the texture asset panel as shown above. These will be automatically set however if there are conflicts the console will display them:
 
 <img src='/img/user-manual/editor/editor-v2/console-texture.png' width='600' />
 
