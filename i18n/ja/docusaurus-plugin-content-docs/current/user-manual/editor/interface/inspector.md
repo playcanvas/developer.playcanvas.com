@@ -3,7 +3,7 @@ title: インスペクター (Inspector)
 sidebar_position: 3
 ---
 
-![Inspector Panel][1]
+![Inspector Panel](/img/user-manual/editor/inspector/inspector.png)
 
 インスペクターパネルでは、現在選択されているアイテムの属性値が表示されます。
 
@@ -20,6 +20,5 @@ sidebar_position: 3
 
 ゲームとエディターの両方を同時に実行している場合、属性の変更は実行中のアプリケーション内のエンティティに送信されます。値を反復して調整するための素晴らしい方法は、再生ボタンを使用してゲームを起動し、エディターとゲームタブを並べて、ゲームを見ながらエディターで値を調整することです。
 
-[1]: /img/user-manual/editor/inspector/inspector.png
 [2]: /user-manual/glossary#entity
 [3]: /user-manual/glossary#gizmo
