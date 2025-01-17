@@ -23,4 +23,4 @@ This will render a single text input to the document's body element. You can see
     <iframe src="https://playcanvas.github.io/pcui/storybook/iframe?id=components-textinput--main&viewMode=story"></iframe>
 </div>
 
-For more extensive examples, see the [examples](examples) section.
+For more extensive examples, see the [examples](../examples) section.
