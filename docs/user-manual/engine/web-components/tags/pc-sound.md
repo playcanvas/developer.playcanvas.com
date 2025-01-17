@@ -6,7 +6,7 @@ The `<pc-sound>` tag is used to define a sound.
 
 :::note
 
-* It must be a direct child of a [`<pc-sounds>`](pc-sounds.md) component.
+* It must be a direct child of a [`<pc-sounds>`](../pc-sounds) component.
 
 :::
 
@@ -14,7 +14,7 @@ The `<pc-sound>` tag is used to define a sound.
 
 | Attribute | Description |
 | --- | --- |
-| `asset` | A string that should match the `id` of a [`<pc-asset>`](pc-asset.md) tag that has a type of `audio`. |
+| `asset` | A string that should match the `id` of a [`<pc-asset>`](../pc-asset) tag that has a type of `audio`. |
 | `auto-play` | Valueless attribute. If present, the sound slot plays automatically. |
 | `duration` | The duration of the sound slot. |
 | `loop` | Valueless attribute. If present, the sound slot loops. |

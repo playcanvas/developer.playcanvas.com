@@ -6,7 +6,7 @@ The `<pc-asset>` tag is used to define an asset.
 
 :::note
 
-* It must be a direct child of [`<pc-app>`](pc-app.md).
+* It must be a direct child of [`<pc-app>`](../pc-app).
 
 :::
 
@@ -14,7 +14,7 @@ The `<pc-asset>` tag is used to define an asset.
 
 | Attribute | Description |
 | --- | --- |
-| `id` | The ID of the asset. This is used to reference the asset in scripts. |
+| `id` | The ID of the asset. This is used by other tags (such as [`<pc-sky>`](../pc-sky)) to reference this asset. |
 | `src` | The path to the asset. |
 | `preload` | Valueless attribute. If present, the asset is loaded immediately. |
 | `type` | The type of asset. If not specified, the type is inferred from the file extension. Can be: `audio`, `binary`, `css`, `container`, `gsplat`, `html`, `json`, `script`, `shader`, `text`, `texture`. |

@@ -15,7 +15,7 @@ To enable XR support, you'll need:
 
 ### XR Scripts
 
-Specify the following scripts using `<pc-asset>` elements:
+Specify the following scripts using [`<pc-asset>`](../tags/pc-asset) elements:
 
 ```html
 <pc-asset id="xr-controllers" src="/node_modules/playcanvas/scripts/esm/xr-controllers.mjs" preload></pc-asset>
