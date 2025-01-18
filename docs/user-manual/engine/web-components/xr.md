@@ -22,8 +22,8 @@ Specify the following scripts using [`<pc-asset>`](../tags/pc-asset) elements:
 <pc-asset id="xr-navigation" src="/node_modules/playcanvas/scripts/esm/xr-navigation.mjs" preload></pc-asset>
 ```
 
-* [`xr-controllers`](https://github.com/playcanvas/engine/blob/main/scripts/esm/xr-controllers.mjs) - Dynamically downloads XR controller models (GLBs) for any detected XR controllers.
-* [`xr-navigation`](https://github.com/playcanvas/engine/blob/main/scripts/esm/xr-navigation.mjs) - Implements basic teleportation navigation (via point and select actions).
+* [`xr-controllers.mjs`](https://github.com/playcanvas/engine/blob/main/scripts/esm/xr-controllers.mjs) - Dynamically downloads XR controller models (GLBs) for any detected XR controllers (including hands).
+* [`xr-navigation.mjs`](https://github.com/playcanvas/engine/blob/main/scripts/esm/xr-navigation.mjs) - Implements basic teleportation navigation (via point and select actions).
 
 ### Camera Setup
 
@@ -42,7 +42,7 @@ The XR scripts require the scene's camera to be set up as follows:
 </pc-entity>
 ```
 
-### UI Controls
+### UI for Entering/Exiting XR
 
 Finally, you'll need to add some UI controls to allow the user to enter and exit XR mode. This is a WebXR-specific requirement, where a user gesture is required to activate a XR session. Let's create two simple buttons to trigger either an AR or VR session.
 
@@ -80,4 +80,4 @@ Most of the [Web Component examples](https://playcanvas.github.io/web-components
 
 ### Next Steps
 
-The PlayCanvas Engine has comprehensive XR support, with a wide range of features and options. For more information, see the [XR documentation](https://developer.playcanvas.com/user-manual/xr/).
+The PlayCanvas Engine has comprehensive XR support, with a wide range of features and options. For more information, see the [XR documentation](/user-manual/xr).
