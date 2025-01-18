@@ -22,7 +22,7 @@ Specify the following scripts using [`<pc-asset>`](../tags/pc-asset) elements:
 <pc-asset id="xr-navigation" src="/node_modules/playcanvas/scripts/esm/xr-navigation.mjs" preload></pc-asset>
 ```
 
-* [`xr-controllers.mjs`](https://github.com/playcanvas/engine/blob/main/scripts/esm/xr-controllers.mjs) - Dynamically downloads XR controller models (GLBs) for any detected XR controllers (including hands).
+* [`xr-controllers.mjs`](https://github.com/playcanvas/engine/blob/main/scripts/esm/xr-controllers.mjs) - Dynamically downloads and renders XR controller models (GLBs) for any detected XR controllers (including hands).
 * [`xr-navigation.mjs`](https://github.com/playcanvas/engine/blob/main/scripts/esm/xr-navigation.mjs) - Implements basic teleportation navigation (via point and select actions).
 
 ### Camera Setup
