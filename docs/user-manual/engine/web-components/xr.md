@@ -18,8 +18,8 @@ To enable XR support, you'll need:
 Specify the following scripts using [`<pc-asset>`](../tags/pc-asset) elements:
 
 ```html
-<pc-asset id="xr-controllers" src="/node_modules/playcanvas/scripts/esm/xr-controllers.mjs" preload></pc-asset>
-<pc-asset id="xr-navigation" src="/node_modules/playcanvas/scripts/esm/xr-navigation.mjs" preload></pc-asset>
+<pc-asset src="/node_modules/playcanvas/scripts/esm/xr-controllers.mjs"></pc-asset>
+<pc-asset src="/node_modules/playcanvas/scripts/esm/xr-navigation.mjs"></pc-asset>
 ```
 
 * [`xr-controllers.mjs`](https://github.com/playcanvas/engine/blob/main/scripts/esm/xr-controllers.mjs) - Dynamically downloads and renders XR controller models (GLBs) for any detected XR controllers (including hands).

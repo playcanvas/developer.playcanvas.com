@@ -2,11 +2,11 @@
 title: <pc-model>
 ---
 
-The `<pc-model>` tag is used to define an entity that instantiates a 3D model from a GLB file. It inherits from [`<pc-entity>`](../pc-entity).
+The `<pc-model>` tag is used to define an entity that instantiates a 3D model from a GLB file.
 
 :::note
 
-* It must be a direct child of a [`<pc-scene>`](../pc-scene) or another [`<pc-entity>`](../pc-entity).
+* It must be a direct child of a [`<pc-scene>`](../pc-scene) or a [`<pc-entity>`](../pc-entity).
 
 :::
 
@@ -21,7 +21,7 @@ All attributes of [`<pc-entity>`](../pc-entity) are also available.
 ## Example
 
 ```html
-<pc-asset id="car" src="assets/car.glb" preload></pc-asset>
+<pc-asset src="assets/car.glb" id="car"></pc-asset>
 <pc-scene>
     <pc-model asset="car"></pc-model>
 </pc-scene>
