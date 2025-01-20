@@ -25,6 +25,10 @@ If your cubemap skybox has pronounced edges such as this example above, navigate
 
 If you have a project with gamma correction set to 1.0, your scene may appear more saturated such as the example above (new editor on the right). Under the rendering settings, change your gamma correction to 2.2 to achieve a similar effect as before.
 
-> **Note:** Your scene will be rendered with more correct linear workflow however there will be slight visual changes related to lighting and alpha blending.
+:::note
+
+Your scene will be rendered with the more correct linear workflow. However, there will be slight visual changes related to lighting and alpha blending.
+
+:::
 
 <img src='/img/user-manual/editor/editor-v2/gamma-tonemap-settings.png' width='400' />
