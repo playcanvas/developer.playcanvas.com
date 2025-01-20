@@ -44,7 +44,11 @@ The viewport settings are now located inside the EDITOR section of the Settings 
 
 <img src='/img/user-manual/editor/editor-v2/viewport-camera.png' width='400' />
 
-> **Note:** If you change the settings per camera and switch back to Project V1 your per camera settings will be lost.
+:::note
+
+If you change the settings per camera and switch back to Project V1, your per-camera settings will be lost.
+
+:::
 
 #### sRGB Textures
 
