@@ -30,7 +30,7 @@ Given the changes in API for the engine you may wish to test your project in the
 
 <img src='/img/user-manual/editor/editor-v2/launcher-options.png' width='600' />
 
-Additionally conditionally checking the Engine version at runtime will allow your script to be made compatible with both versions of the engine, during the transition time.
+Additionally, conditionally checking the Engine version at runtime will allow your script to be made compatible with both versions of the engine during the transition time.
 
 <img src='/img/user-manual/editor/editor-v2/scripting-engine.png' width='300' />
 
