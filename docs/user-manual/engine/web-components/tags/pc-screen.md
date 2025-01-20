@@ -6,7 +6,7 @@ The `<pc-screen>` tag is used to define a screen component.
 
 :::note
 
-* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](../pc-entity).
 
 :::
 

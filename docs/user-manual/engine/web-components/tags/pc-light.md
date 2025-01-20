@@ -6,7 +6,7 @@ The `<pc-light>` tag is used to define a light component.
 
 :::note
 
-* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](../pc-entity).
 
 :::
 

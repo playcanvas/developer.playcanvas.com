@@ -6,7 +6,7 @@ The `<pc-collision>` tag is used to define a collision component.
 
 :::note
 
-* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](../pc-entity).
 
 :::
 

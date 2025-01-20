@@ -6,7 +6,7 @@ The `<pc-listener>` tag is used to define a listener component. It has no attrib
 
 :::note
 
-* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](../pc-entity).
 
 :::
 

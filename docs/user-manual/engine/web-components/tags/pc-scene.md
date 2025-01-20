@@ -6,7 +6,7 @@ The `<pc-scene>` tag is used to define the scene.
 
 :::note
 
-* It must be a direct child of [`<pc-app>`](pc-app.md).
+* It must be a direct child of [`<pc-app>`](../pc-app).
 
 :::
 

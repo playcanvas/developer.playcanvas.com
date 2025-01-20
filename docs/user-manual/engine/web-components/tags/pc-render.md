@@ -6,7 +6,7 @@ The `<pc-render>` tag is used to define a render component that renders a 3D pri
 
 :::note
 
-* It must be a direct child of a [`<pc-entity>`](pc-entity.md).
+* It must be a direct child of a [`<pc-entity>`](../pc-entity).
 
 :::
 
