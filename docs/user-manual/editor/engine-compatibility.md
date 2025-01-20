@@ -40,7 +40,7 @@ These settings were previously found under the rendering section of the Settings
 
 <img src='/img/user-manual/editor/editor-v2/gamma-tonemap.png' width='400' />
 
-The viewport settings are now located inside the editor section of the settings panel:
+The viewport settings are now located inside the EDITOR section of the Settings panel:
 
 <img src='/img/user-manual/editor/editor-v2/viewport-camera.png' width='400' />
 
