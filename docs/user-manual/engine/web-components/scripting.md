@@ -97,5 +97,3 @@ As well as standard JavaScript types, you can pass script attribute values based
 ## Using Ready Made Scripts from the Engine
 
 Before you set about writing your own scripts, check to see whether the functionality you need is already available in the PlayCanvas Engine. The Engine ships with a library of useful scripts that you can use in your app. You can find them on [GitHub](https://github.com/playcanvas/engine/tree/main/scripts/esm) and they are used heavily in the [Web Component Examples](https://playcanvas.github.io/web-components/examples/).
-
-
