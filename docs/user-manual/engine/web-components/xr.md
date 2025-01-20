@@ -1,6 +1,6 @@
 ---
 title: XR Support
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 PlayCanvas Web Components make it easy to add Virtual Reality (VR) and Augmented Reality (AR) support to your applications.

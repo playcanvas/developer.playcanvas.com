@@ -1,6 +1,6 @@
 ---
 title: Tag Reference
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 Here is a complete list of the tags that are available in the PlayCanvas Engine Web Components.
