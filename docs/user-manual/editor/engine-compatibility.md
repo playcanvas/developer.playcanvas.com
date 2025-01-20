@@ -54,7 +54,7 @@ If you change the settings per camera and switch back to Project V1, your per-ca
 
 <img src='/img/user-manual/editor/editor-v2/srgb-texture.png' width='400' />
 
-For Engine V2, textures must be set as sRGB or not, depending on their use case. The textures that store color data, such as diffuse and emissive maps, should use sRGB for accurate color representation. This is found under the texture asset panel as shown above. These will be automatically set however if there are conflicts the console will display them:
+For Engine V2, textures must be set as sRGB or not, depending on their use case. The textures that store color data, such as diffuse and emissive maps, should use sRGB for accurate color representation. This is found under the texture asset panel as shown above. These will be automatically set. However, if there are conflicts, the console will display them:
 
 <img src='/img/user-manual/editor/editor-v2/console-texture.png' width='600' />
 
