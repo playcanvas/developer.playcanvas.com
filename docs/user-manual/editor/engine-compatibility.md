@@ -36,7 +36,7 @@ Additionally, conditionally checking the Engine version at runtime will allow yo
 
 #### Gamma and Tonemap
 
-These settings were previously found under the rendering section of the settings panel. However in Engine V2 these have been moved to be set per camera. Each camera component will now have these additional fields:
+These settings were previously found under the rendering section of the Settings panel. However, in Engine V2, these have been moved to be set per camera. Each camera component will now have these additional fields:
 
 <img src='/img/user-manual/editor/editor-v2/gamma-tonemap.png' width='400' />
 
