@@ -70,7 +70,7 @@ Textures that represent colors, such as Diffuse, Emissive, Specular, and Sheen, 
 
 #### Instancing
 
-If your code includes customisations to the instancing section of the transformVS chunk, you’ll need to update it by moving these customisations to the transformInstancingVS chunk. Additionally, configure the material to specify which attributes are in use. For further details, refer to [this pull request](https://github.com/playcanvas/engine/pull/6867).
+If your code includes customizations to the instancing section of the `transformVS` chunk, you’ll need to update it by moving these customizations to the `transformInstancingVS` chunk. Additionally, configure the material to specify which attributes are in use. For further details, refer to [this pull request](https://github.com/playcanvas/engine/pull/6867).
 
 ### Other changes
 
