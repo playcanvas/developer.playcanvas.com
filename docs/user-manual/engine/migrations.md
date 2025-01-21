@@ -68,6 +68,10 @@ Textures that represent colors, such as Diffuse, Emissive, Specular, and Sheen, 
 * When loading a Texture asset that represents colors in sRGB space, it's important to specify an sRGB encoding. For details, see [this pull request](https://github.com/playcanvas/engine/pull/6739).
 * When creating a Texture instance that represents color in sRGB space, it is essential to use an sRGB pixel format, such as `PIXELFORMAT_SRGBA8`.
 
+#### Instancing
+
+If your code includes customisations to the instancing section of the transformVS chunk, you’ll need to update it by moving these customisations to the transformInstancingVS chunk. Additionally, configure the material to specify which attributes are in use. For further details, refer to [this pull request](https://github.com/playcanvas/engine/pull/6867).
+
 ### Other changes
 
 For detailed information on the changes, refer to the release notes for each individual engine version:
