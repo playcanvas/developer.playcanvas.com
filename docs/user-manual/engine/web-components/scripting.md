@@ -83,14 +83,14 @@ The `attributes` attribute takes a JSON string. Because JSON requires properties
 
 As well as standard JavaScript types, you can pass script attribute values based on PlayCanvas types:
 
-| PlayCanvas Type | Attribute Type |
-| --------------- | -------------- |
-| `Asset`         | `string` (`asset:` concatenated with a `pc-asset`'s `id` attribute) |
-| `Color`         | `number[] (3 elements for RGB, 4 for RGBA)` |
-| `Entity`        | `string` (`entity:` concatenated with a `pc-entity`'s `id` attribute) |
-| `Vec2`          | `number[] (2 elements)` |
-| `Vec3`          | `number[] (3 elements)` |
-| `Vec4`          | `number[] (4 elements)` |
+| PlayCanvas Type | Attribute Type | Description |
+| --------------- | -------------- | ----------- |
+| `Asset`         | `string`       | (`asset:` concatenated with a `pc-asset`'s `id` attribute) |
+| `Entity`        | `string`       | (`entity:` concatenated with a `pc-entity`'s `id` attribute) |
+| `Color`         | `string`       | (`color:` concatenated with 3 or 4 comma separated numbers for RGB or RGBA respectively) |
+| `Vec2`          | `string`       | (`vec2:` concatenated with 2 comma separated numbers) |
+| `Vec3`          | `string`       | (`vec3:` concatenated with 3 comma separated numbers) |
+| `Vec4`          | `string`       | (`vec4:` concatenated with 4 comma separated numbers) |
 
 [Read more](/user-manual/scripting/script-attributes) about Script Attributes.
 
