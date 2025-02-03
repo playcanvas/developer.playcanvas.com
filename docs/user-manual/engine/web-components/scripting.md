@@ -81,16 +81,30 @@ The `attributes` attribute takes a JSON string. Because JSON requires properties
 
 :::
 
-As well as standard JavaScript types, you can pass script attribute values based on PlayCanvas types:
+#### PlayCanvas-Specific Types for Script Attributes
 
-| PlayCanvas Type | Attribute Type | Description |
-| --------------- | -------------- | ----------- |
-| `Asset`         | `string`       | (`asset:` concatenated with a `pc-asset`'s `id` attribute) |
-| `Entity`        | `string`       | (`entity:` concatenated with a `pc-entity`'s `id` attribute) |
-| `Color`         | `string`       | (`color:` concatenated with 3 or 4 comma separated numbers for RGB or RGBA respectively) |
-| `Vec2`          | `string`       | (`vec2:` concatenated with 2 comma separated numbers) |
-| `Vec3`          | `string`       | (`vec3:` concatenated with 3 comma separated numbers) |
-| `Vec4`          | `string`       | (`vec4:` concatenated with 4 comma separated numbers) |
+In addition to standard JavaScript types, you can configure script attributes using special PlayCanvas data types. When passing these values, you must supply them as strings formatted with a prefix followed by the required data. This ensures that the engine correctly interprets the attribute values.
+
+The expected format for each type is as follows:
+
+| PlayCanvas Data Type | Format Example                           | Description |
+| -------------------- | ---------------------------------------- | ----------- |
+| **Asset**            | `asset:your-asset-id`                    | References a `<pc-asset>`. Concatenate `asset:` with the asset's `id` attribute. |
+| **Entity**           | `entity:your-entity-id`                  | References a `<pc-entity>`. Concatenate `entity:` with the entity's `id` attribute. |
+| **Color**            | `color:255,200,100` or `color:255,200,100,255` | Specifies a color. Provide three comma-separated values (RGB) or four values (RGBA) prefixed by `color:`. |
+| **Vec2**             | `vec2:10,20`                             | Defines a two-dimensional vector. Concatenate `vec2:` with two comma-separated numbers. |
+| **Vec3**             | `vec3:10,20,30`                          | Defines a three-dimensional vector. Concatenate `vec3:` with three comma-separated numbers. |
+| **Vec4**             | `vec4:10,20,30,40`                       | Defines a four-dimensional vector. Concatenate `vec4:` with four comma-separated numbers. |
+
+Example Usage in HTML:
+
+```html
+<pc-script name="myScript" attributes='{
+    "speed": 180,
+    "targetColor": "color:255,100,50,255",
+    "velocity": "vec3:5,0,0"
+}'></pc-script>
+```
 
 [Read more](/user-manual/scripting/script-attributes) about Script Attributes.
 
