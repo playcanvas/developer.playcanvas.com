@@ -32,15 +32,15 @@ The following tables break down the chunk changes by Engine release.
 
 The following chunks were removed and replaced by a single `fogPS` chunk:
 
-    - `fogExpPS`
-    - `fogExp2PS`
-    - `fogLinearPS`
-    - `fogNonePS`
+- `fogExpPS`
+- `fogExp2PS`
+- `fogLinearPS`
+- `fogNonePS`
 
 The following chunks were removed and replaced by a single `gammaPS` chunk:
 
-    - `gamma1_0PS`
-    - `gamma2_2PS`
+- `gamma1_0PS`
+- `gamma2_2PS`
 
 ### *Engine v1.70*
 
