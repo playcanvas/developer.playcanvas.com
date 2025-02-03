@@ -81,7 +81,7 @@ The `attributes` attribute takes a JSON string. Because JSON requires properties
 
 :::
 
-#### PlayCanvas-Specific Types for Script Attributes
+### PlayCanvas-Specific Types for Script Attributes
 
 In addition to standard JavaScript types, you can configure script attributes using special PlayCanvas data types. When passing these values, you must supply them as strings formatted with a prefix followed by the required data. This ensures that the engine correctly interprets the attribute values.
 
