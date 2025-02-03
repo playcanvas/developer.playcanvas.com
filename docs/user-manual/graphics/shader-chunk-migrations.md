@@ -30,7 +30,8 @@ The following tables break down the chunk changes by Engine release.
 
 ### *Engine v2.5*
 
-Following chunks were removed, and replaced by a single fogPS chunk:
+The following chunks were removed and replaced by a single `fogPS` chunk:
+
     - fogExpPS
     - fogExp2PS
     - fogLinearPS
