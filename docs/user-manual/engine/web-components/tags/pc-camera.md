@@ -23,7 +23,7 @@ The `<pc-camera>` tag is used to define a camera component.
 | `flip-faces` | Boolean attribute. Controls whether the camera flips faces. If unspecified, faces are not flipped. |
 | `fov` | The field of view of the camera. If unspecified, `45` is used. |
 | `frustum-culling` | Boolean attribute. Controls whether the camera uses frustum culling. If unspecified, frustum culling is used. |
-| `gamma` | The gamma of the camera. Can be `none` or `srgb`. If unspecified, `none` is used. |
+| `gamma` | The gamma of the camera. Can be `linear` or `srgb`. If unspecified, `srgb` is used. |
 | `horizontal-fov` | Valueless attribute. If present, the camera uses a horizontal field of view. If unspecified, the camera uses a vertical field of view. |
 | `near-clip` | The near clipping plane of the camera. If unspecified, `0.1` is used. |
 | `orthographic` | Valueless attribute. If present, the camera uses an orthographic projection. If unspecified, the camera uses a perspective projection. |
