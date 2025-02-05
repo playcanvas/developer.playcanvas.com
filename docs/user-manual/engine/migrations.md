@@ -11,7 +11,7 @@ It’s advisable to use the debug version of the engine when troubleshooting iss
 
 ## Migration from 1.4.0 to 2.5.0
 
-### Breaking changes
+### Breaking changes in 2.5.0
 
 #### ShaderMaterial
 
