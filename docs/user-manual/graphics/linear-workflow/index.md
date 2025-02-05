@@ -12,6 +12,7 @@ In engine v1, linear workflow was limited to StandardMaterial, but in engine v2,
 A proper linear workflow ensures that all color calculations in the shader occur in a physically correct manner. This requires careful handling of both inputs and outputs to maintain accuracy throughout the rendering pipeline.  
 
 ### **Shader Inputs: Ensuring Linear Data**  
+
 Shaders require all input values to be in linear space to avoid incorrect lighting results. This affects both textures and uniform color values:  
 
 - **Textures** that store color data (such as albedo maps) should be marked as **sRGB**. When a texture is sampled, the GPU automatically converts sRGB-encoded values into linear space, ensuring correct color calculations.  
@@ -20,10 +21,10 @@ Shaders require all input values to be in linear space to avoid incorrect lighti
 Once all inputs are in linear space, the shader performs lighting calculations with physically accurate results.  
 
 ### **Shader Output: Managing Gamma Correction**  
+
 When writing the final color output, the handling of gamma correction depends on whether the rendering is LDR (Low Dynamic Range) or HDR (High Dynamic Range):  
 
 - **LDR Rendering**: Colors are gamma corrected immediately in the shader before being written to the render target, ensuring they are displayed correctly on standard monitors.  
 - **HDR Rendering**: Colors remain in linear space when written to the render target, typically requiring a **floating-point format** (e.g., RGBA16F or RGBA32F) to preserve precision and avoid banding. Gamma correction is then applied later, usually at the final tone-mapping or post-processing stage, allowing effects such as bloom and color grading to work with high-precision linear HDR colors.  
 
 This structured approach ensures that lighting, blending, and post-processing operate consistently, leading to more realistic and predictable rendering results.
-

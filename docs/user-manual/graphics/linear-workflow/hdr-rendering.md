@@ -18,7 +18,7 @@ These settings can be configured based on the rendering mode.
 
 ### LDR (Low Dynamic Range)
 
-- **toneMapping**: For LDR rendering, you can select any tone mapping method to achieve the desired visual style. The tone mapping compresses HDR values into displayable LDR values. 
+- **toneMapping**: For LDR rendering, you can select any tone mapping method to achieve the desired visual style. The tone mapping compresses HDR values into displayable LDR values.
 - **gammaCorrection**: Set to `GAMMA_SRGB` to indicate that the output should be stored in gamma space, as it represents colors.
   - If the output pixel format is sRGB, gamma correction is handled by the hardware.
   - Otherwise, gamma encoding is applied in shader code.
@@ -33,7 +33,7 @@ For HDR rendering, the goal is to preserve HDR colour information:
 
 ### HDR Display Output
 
-When rendering in HDR mode, an HDR display output can be enabled by configuring the `Application` with the `displayFormat` parameter set to `DISPLAYFORMAT_HDR`. 
+When rendering in HDR mode, an HDR display output can be enabled by configuring the `Application` with the `displayFormat` parameter set to `DISPLAYFORMAT_HDR`.
 
 - **toneMapping**: If HDR output is supported, set to `TONEMAP_NONE`.
 - **gammaCorrection**: Keep set to `GAMMA_SRGB` to ensure low-intensity values remain visually similar to LDR rendering.
@@ -45,7 +45,7 @@ When rendering in HDR mode, an HDR display output can be enabled by configuring 
 
 The PlayCanvas Engine offers a comprehensive rendering setup through the `CameraFrame` class, which integrates advanced effects such as High Dynamic Range (HDR) rendering, bloom, Screen Space Ambient Occlusion (SSAO), and more. This setup enhances visual fidelity by simulating realistic lighting and post-processing effects.
 
-### Key Features of CameraFrame:
+### Key Features of CameraFrame
 
 - **Bloom**: Simulates the scattering of light to create a glow around bright areas.
 - **SSAO**: Enhances depth perception by simulating ambient light occlusion in crevices and corners.
@@ -54,7 +54,7 @@ The PlayCanvas Engine offers a comprehensive rendering setup through the `Camera
 - **Vignette**: Darkens the image's corners to draw attention to the center.
 - **Color Grading**: Adjusts the color balance for stylistic effects.
 
-### Configuring CameraFrame on a Camera:
+### Configuring CameraFrame on a Camera
 
 ```javascript
 const cameraFrame = new pc.CameraFrame(app, cameraEntity.camera);
@@ -80,7 +80,7 @@ For more detailed information, refer to the CameraFrame [API documentation](http
 
 There is a `CameraScript` [available here](https://github.com/playcanvas/engine/blob/main/scripts/esm/camera-frame.mjs) for the PlayCanvas Editor project. This script integrates `CameraFrame` functionality directly into the Editor's Inspector, making it easy to set up and configure cameras with advanced rendering features.
 
-### Instructions on Use:
+### Instructions on Use
 
 1. Add the `CameraScript` into your project and parse it.
 2. Add it to an entity that has the `CameraComponent`.
