@@ -37,7 +37,7 @@ The BasicMaterial has been removed. To achieve equivalent functionality, you can
 
 #### Shader Material
 
-If you've received error `Material class cannot be instantiated, use ShaderMaterial instead`, this indicates the need to modify your code use ShaderMaterial instead. Details description and an example can be found [here](https://github.com/playcanvas/engine/pull/6831).
+If you've received the error `Material class cannot be instantiated, use ShaderMaterial instead`, this indicates the need to modify your code to use `ShaderMaterial` instead. Detailed description and an example can be found [here](https://github.com/playcanvas/engine/pull/6831).
 
 #### Rendering to a texture
 
