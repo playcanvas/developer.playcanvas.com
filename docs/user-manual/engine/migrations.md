@@ -15,7 +15,7 @@ It’s advisable to use the debug version of the engine when troubleshooting iss
 
 #### ShaderMaterial
 
-The `ShaderMaterial` previously streamlined gamma correction, tone mapping, and fog handling by automatically injecting the necessary code blocks into each fragment shader. This functionality has now been removed, making it the responsibility of individual shaders to include the relevant features manually.
+`ShaderMaterial` previously streamlined gamma correction, tone mapping, and fog handling by automatically injecting the necessary code blocks into each fragment shader. This functionality has now been removed, making it the responsibility of individual shaders to include the relevant features manually.
 
 If you encounter shader errors due to missing functions such as `gammaCorrectOutput`, `toneMap`, or `addFog`, ensure that you explicitly include the required functions in your shader. For more details, see [this update](https://github.com/playcanvas/engine/pull/7331).
 
