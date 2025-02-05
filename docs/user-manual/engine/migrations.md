@@ -7,6 +7,8 @@ The PlayCanvas Engine is continually evolving, and its updates occasionally intr
 
 This guide provides an overview of all major breaking changes across releases, offering users a helpful resource for migrating their code to newer versions.
 
+It’s advisable to use the debug version of the engine when troubleshooting issues, as it provides logs for deprecated messages, warnings, and errors related to incorrect usage.
+
 ## Migration from 1.75.0 to 2.4.0
 
 The migration from major version 1 to major version 2 is a substantial update, introducing numerous breaking changes.
@@ -32,6 +34,10 @@ Numerous deprecated functions that provided backward compatibility have been rem
 #### Basic Material
 
 The BasicMaterial has been removed. To achieve equivalent functionality, you can use a StandardMaterial with the emissive color or emissive map set as a replacement.
+
+#### Shader Material
+
+If you've received the error `Material class cannot be instantiated, use ShaderMaterial instead`, this indicates the need to modify your code to use `ShaderMaterial` instead. Detailed description and an example can be found [here](https://github.com/playcanvas/engine/pull/6831).
 
 #### Rendering to a texture
 
