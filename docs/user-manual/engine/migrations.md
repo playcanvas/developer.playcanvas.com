@@ -9,6 +9,16 @@ This guide provides an overview of all major breaking changes across releases, o
 
 It’s advisable to use the debug version of the engine when troubleshooting issues, as it provides logs for deprecated messages, warnings, and errors related to incorrect usage.
 
+## Migration from 1.4.0 to 2.5.0
+
+### Breaking changes in 2.5.0
+
+#### ShaderMaterial
+
+`ShaderMaterial` previously streamlined gamma correction, tone mapping, and fog handling by automatically injecting the necessary code blocks into each fragment shader. This functionality has now been removed, making it the responsibility of individual shaders to include the relevant features manually.
+
+If you encounter shader errors due to missing functions such as `gammaCorrectOutput`, `toneMap`, or `addFog`, ensure that you explicitly include the required functions in your shader. For more details, see [this update](https://github.com/playcanvas/engine/pull/7331).
+
 ## Migration from 1.75.0 to 2.4.0
 
 The migration from major version 1 to major version 2 is a substantial update, introducing numerous breaking changes.
