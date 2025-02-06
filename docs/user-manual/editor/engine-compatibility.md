@@ -28,7 +28,7 @@ It is recommended to create a checkpoint before switching engines.
 
 :::warning
 
-Once the switch has been confirmed **all users** in the current project will be reloaded.
+Once the switch has been confirmed, **all users** in the current project will be reloaded.
 
 :::
 
