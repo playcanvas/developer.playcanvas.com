@@ -7,6 +7,18 @@ The PlayCanvas Engine is continually evolving, and its updates occasionally intr
 
 This guide provides an overview of all major breaking changes across releases, offering users a helpful resource for migrating their code to newer versions.
 
+It’s advisable to use the debug version of the engine when troubleshooting issues, as it provides logs for deprecated messages, warnings, and errors related to incorrect usage.
+
+## Migration from 1.4.0 to 2.5.0
+
+### Breaking changes in 2.5.0
+
+#### ShaderMaterial
+
+`ShaderMaterial` previously streamlined gamma correction, tone mapping, and fog handling by automatically injecting the necessary code blocks into each fragment shader. This functionality has now been removed, making it the responsibility of individual shaders to include the relevant features manually.
+
+If you encounter shader errors due to missing functions such as `gammaCorrectOutput`, `toneMap`, or `addFog`, ensure that you explicitly include the required functions in your shader. For more details, see [this update](https://github.com/playcanvas/engine/pull/7331).
+
 ## Migration from 1.75.0 to 2.4.0
 
 The migration from major version 1 to major version 2 is a substantial update, introducing numerous breaking changes.
@@ -32,6 +44,10 @@ Numerous deprecated functions that provided backward compatibility have been rem
 #### Basic Material
 
 The BasicMaterial has been removed. To achieve equivalent functionality, you can use a StandardMaterial with the emissive color or emissive map set as a replacement.
+
+#### Shader Material
+
+If you've received the error `Material class cannot be instantiated, use ShaderMaterial instead`, this indicates the need to modify your code to use `ShaderMaterial` instead. Detailed description and an example can be found [here](https://github.com/playcanvas/engine/pull/6831).
 
 #### Rendering to a texture
 
@@ -67,6 +83,10 @@ Textures that represent colors, such as Diffuse, Emissive, Specular, and Sheen, 
 
 * When loading a Texture asset that represents colors in sRGB space, it's important to specify an sRGB encoding. For details, see [this pull request](https://github.com/playcanvas/engine/pull/6739).
 * When creating a Texture instance that represents color in sRGB space, it is essential to use an sRGB pixel format, such as `PIXELFORMAT_SRGBA8`.
+
+#### Instancing
+
+If your code includes customizations to the instancing section of the `transformVS` chunk, you’ll need to update it by moving these customizations to the `transformInstancingVS` chunk. Additionally, configure the material to specify which attributes are in use. For further details, refer to [this pull request](https://github.com/playcanvas/engine/pull/6867).
 
 ### Other changes
 
