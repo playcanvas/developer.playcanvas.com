@@ -88,11 +88,11 @@ This integration streamlines the process of setting up complex camera effects an
 
 ![CameraFrame Script](/img/user-manual/graphics/linear-workflow/camera-frame.png)
 
-## CameraFrame Tips 
+## CameraFrame Tips
 
 - HDR bloom requires at least one renderable float format (e.g., RG11B10, RGBA16F, or RGBA32F). If none of these formats are supported by the device, HDR bloom is automatically disabled.
 - The `toneMapping` property of `StandardMaterial` is ignored. Tonemapping is applied as a full-screen post-processing pass, so per-mesh tonemapping control is not possible.
 - When using `CameraFrame`, two properties control tonemapping:
-    - `CameraFrame.rendering.toneMapping` – Controls tonemapping for the 3D scene rendered within the `CameraFrame`.
-    - `CameraComponent.toneMapping` – Controls tonemapping applied after the 3D scene including post-processing is rendered. This typically affects UI elements rendered on top.
+  - `CameraFrame.rendering.toneMapping` – Controls tonemapping for the 3D scene rendered within the `CameraFrame`.
+  - `CameraComponent.toneMapping` – Controls tonemapping applied after the 3D scene including post-processing is rendered. This typically affects UI elements rendered on top.
 - When using `CameraFrame`, you may notice differences in the intensity of alpha-blended geometry. This occurs because blending takes place in linear HDR space, which is more physically accurate than blending in gamma space. As a result, you may need to adjust material properties related to alpha blending.
