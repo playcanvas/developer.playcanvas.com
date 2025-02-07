@@ -194,6 +194,18 @@ For more complete examples, and also for details on how to implement instancing,
 
 :::
 
+#### Generated Shaders
+
+If you have a need to inspect the generated shaders, you can add this to your script
+
+```javascript
+pc.Tracing.set(pc.TRACEID_SHADER_ALLOC, true);
+```
+
+And Each created shader will be logged in the browser console, where you can inspect its source code, for example:
+
+![sRGB](/img/user-manual/graphics/shaders/shader-log.png)
+
 For further information, refer to the [ShaderMaterial API documentation](https://api.playcanvas.com/classes/Engine.ShaderMaterial.html).
 
 [1]: /user-manual/graphics/physical-rendering/physical-materials/
