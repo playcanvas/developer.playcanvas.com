@@ -34,14 +34,14 @@ and then create instances of your material, which you can use for rendering:
 ``` javascript
 const material = new pc.ShaderMaterial(shaderDesc);
 ```
+
 The shader source code can be written in GLSL if you're targeting the WebGL2 or WebGPU platforms, or in WGSL if you're targeting WebGPU only.
 
-:::note 
+:::note
 
 If you write a GLSL shader, it is directly supported by the WebGL2 platform. However, on the WebGPU platform, GLSL shaders require transpilation to WGSL using WASM transpilers. To avoid this transpilation step and achieve native performance related to shader compilation, and avoid additional download of WASM files, you might want to consider writing an equivalent shader in WGSL for the WebGPU platform, which is supported directly.
 
 :::
-
 
 ## Preprocessor
 
@@ -157,6 +157,7 @@ void main(void)
     gl_Position = matrix_viewProjection * worldPos;
 }
 ```
+
 #### Fragment Shader
 
 The engine provides predefined shader chunks you can include for common color processing effects such as gamma correction, tone mapping, and fog. These includes ensure that colors are processed correctly according to the rendering settings.
@@ -187,7 +188,7 @@ void main(void)
 
 These functions are automatically configured based on the engine's settings, ensuring that color processing is consistent across different rendering conditions.
 
-:::note 
+:::note
 
 For more complete examples, and also for details on how to implement instancing, refer to the engine examples.
 

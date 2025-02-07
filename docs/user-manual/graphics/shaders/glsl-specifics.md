@@ -7,7 +7,7 @@ GLSL shaders used by the PlayCanvas engine must satisfy certain requirements. Th
 
 The following sections outline key aspects of writing GLSL shaders for PlayCanvas.
 
-:::note 
+:::note
 
 `#version` should not be included in the shader source. PlayCanvas automatically adds the appropriate version directive based on whether WebGL2 or WebGPU is targeted.
 
@@ -23,7 +23,7 @@ attribute vec2 aUv0;
 
 The attribute name must match the name specified in the `attributes` property when creating the [ShaderMaterial][1].
 
-:::note 
+:::note
 
 The `in` keyword (introduced in GLSL 3.3+) is not supported.
 
@@ -47,7 +47,7 @@ Varyings are used to pass values from the vertex shader to the fragment shader. 
 varying vec2 uv0;
 ```
 
-:::note 
+:::note
 
 The `in`/`out` syntax (introduced in GLSL 3.3+) is not supported.
 
