@@ -1,9 +1,8 @@
 ---
 title: GLSL Specifics
-sidebar_position: 0
 ---
 
-GLSL shaders used by the PlayCanvas engine must satisfy certain requirements. These requirements allow the engine to correctly integrate shaders, ensuring they receive the necessary resources such as attributes, uniforms, and varyings. Following these rules also allows us to automatically process the shader for slightly different requirement for their transpilation to WGSL used by the WebGPU.
+GLSL shaders used by the PlayCanvas engine must satisfy certain requirements. These requirements allow the engine to correctly integrate shaders, ensuring they receive the necessary resources such as attributes, uniforms, and varyings. Following these rules also allows us to automatically process the shader for slightly different requirement for their transpilation to WGSL used by WebGPU.
 
 The following sections outline key aspects of writing GLSL shaders for PlayCanvas.
 
@@ -41,7 +40,7 @@ The engine automatically sets appropriate uniform values when rendering.
 
 ### Varyings
 
-Varyings are used to pass values from the vertex shader to the fragment shader. They must be declared using the standard GLSL syntax:
+Varyings are used to pass values from the vertex shader to the fragment shader. They must be declared using standard GLSL syntax:
 
 ```glsl
 varying vec2 uv0;

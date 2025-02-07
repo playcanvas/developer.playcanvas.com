@@ -3,13 +3,13 @@ title: Shaders
 sidebar_position: 6
 ---
 
-When you import your 3D models into PlayCanvas by default they will use our [Physical Material][1]. This is a versatile material type that can cover a lot of your rendering needs.
+When you import your 3D models into PlayCanvas, by default, they will use our [Physical Material][1]. This is a versatile material type that can cover a lot of your rendering needs.
 
-However, you will often want to perform special effects or special cases for your materials. To do this you will need to write a custom shader. In this cases, you need to use `ShaderMaterial`.
+However, you will often want to perform special effects or special cases for your materials. To do this you will need to write a custom shader. In this case, you need to use `ShaderMaterial`.
 
 To create an instance of `ShaderMaterial`, these are the steps:
 
-Create a description of your shader.
+Create a description of your shader:
 
 ``` javascript
 const shaderDesc = {
@@ -29,7 +29,7 @@ const shaderDesc = {
 
 ```
 
-and then create instances of your material, which you can use for rendering:
+Then create instances of your material, which you can use for rendering:
 
 ``` javascript
 const material = new pc.ShaderMaterial(shaderDesc);
@@ -39,7 +39,7 @@ The shader source code can be written in GLSL if you're targeting the WebGL2 or 
 
 :::note
 
-If you write a GLSL shader, it is directly supported by the WebGL2 platform. However, on the WebGPU platform, GLSL shaders require transpilation to WGSL using WASM transpilers. To avoid this transpilation step and achieve native performance related to shader compilation, and avoid additional download of WASM files, you might want to consider writing an equivalent shader in WGSL for the WebGPU platform, which is supported directly.
+If you write a GLSL shader, it is directly supported by the WebGL2 platform. However, on the WebGPU platform, GLSL shaders require transpilation to WGSL using a WASM transpiler. To avoid this transpilation step and achieve native performance related to shader compilation, and avoid additional download of WASM files, you might want to consider writing an equivalent shader in WGSL for the WebGPU platform, which is supported directly.
 
 :::
 
@@ -47,11 +47,11 @@ If you write a GLSL shader, it is directly supported by the WebGL2 platform. How
 
 Before the shader is used, a preprocessing step is applied, allowing you to manage shader variations effectively.
 
-This preprocessing step follows a typical C-like preprocessor structure, handling directives such as `#define`, `#if`, `#else`, `#endif`, and similar. This gives you fine-grained control over how the shader code is compiled and customised for different use cases.
+This preprocessing step follows a typical C-like preprocessor structure, handling directives such as `#define`, `#if`, `#else`, `#endif`, and similar. This gives you fine-grained control over how the shader code is compiled and customized for different use cases.
 
 ### Material Shader Defines
 
-Shader defines can be set on a per-material basis, allowing dynamic customisation of shader behaviour. For example:
+Shader defines can be set on a per-material basis, allowing dynamic customization of shader behavior. For example:
 
 ```javascript
 material.setDefine('USE_TEXTURE', true);
@@ -84,7 +84,7 @@ This system enables flexible shader variation without requiring multiple shader 
 The engine provides some defines automatically, allowing integration with render passes. By default, one of these three defines is provided to allow you to write code specific to different render passes:
 
 ```glsl
-// Defined for normal forward passes rendering colours
+// Defined for normal forward passes rendering colors
 #define FORWARD_PASS
 
 // Defined for shadow rendering passes
@@ -109,7 +109,7 @@ This results in the following define being added to the shader:
 
 ### Shader Includes
 
-The engine builds internal shaders out of chunks—small shader functions that are combined to form a final shader. These chunks are also available for use in custom shaders with `ShaderMaterial`, making it easy to integrate engine functionality.
+The engine builds internal shaders out of chunks; small shader functions that are combined to form a final shader. These chunks are also available for use in custom shaders with `ShaderMaterial`, making it easy to integrate engine functionality.
 
 #### Vertex Shader
 
@@ -160,7 +160,7 @@ void main(void)
 
 #### Fragment Shader
 
-The engine provides predefined shader chunks you can include for common color processing effects such as gamma correction, tone mapping, and fog. These includes ensure that colors are processed correctly according to the rendering settings.
+The engine provides predefined shader chunks you can include for common color processing effects such as gamma correction, tone mapping and fog. These includes ensure that colors are processed correctly according to the rendering settings.
 
 Example Usage
 
