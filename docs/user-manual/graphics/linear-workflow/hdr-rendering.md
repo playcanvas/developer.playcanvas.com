@@ -72,8 +72,6 @@ material.emissive = pc.Color.YELLOW;
 material.emissiveIntensity = 50;
 ```
 
-It's important to note that HDR bloom requires at least one renderable float format (e.g., RG11B10, RGBA16F, or RGBA32F). If these formats are not supported by the device, HDR bloom is automatically disabled.
-
 For more detailed information, refer to the CameraFrame [API documentation](https://api.playcanvas.com/classes/Engine.CameraFrame.html).
 
 ## CameraFrame in the Editor
@@ -89,3 +87,12 @@ There is a `CameraScript` [available here](https://github.com/playcanvas/engine/
 This integration streamlines the process of setting up complex camera effects and enhances the overall workflow within the PlayCanvas Editor.
 
 ![CameraFrame Script](/img/user-manual/graphics/linear-workflow/camera-frame.png)
+
+## CameraFrame Tips 
+
+- HDR bloom requires at least one renderable float format (e.g., RG11B10, RGBA16F, or RGBA32F). If none of these formats are supported by the device, HDR bloom is automatically disabled.
+- The `toneMapping` property of `StandardMaterial` is ignored. Tonemapping is applied as a full-screen post-processing pass, so per-mesh tonemapping control is not possible.
+- When using `CameraFrame`, two properties control tonemapping:
+    - `CameraFrame.rendering.toneMapping` – Controls tonemapping for the 3D scene rendered within the `CameraFrame`.
+    - `CameraComponent.toneMapping` – Controls tonemapping applied after the 3D scene including post-processing is rendered. This typically affects UI elements rendered on top.
+- When using `CameraFrame`, you may notice differences in the intensity of alpha-blended geometry. This occurs because blending takes place in linear HDR space, which is more physically accurate than blending in gamma space. As a result, you may need to adjust material properties related to alpha blending.
