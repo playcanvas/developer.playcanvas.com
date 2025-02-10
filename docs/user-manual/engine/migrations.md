@@ -9,7 +9,7 @@ This guide provides an overview of all major breaking changes across releases, o
 
 It’s advisable to use the debug version of the engine when troubleshooting issues, as it provides logs for deprecated messages, warnings, and errors related to incorrect usage.
 
-## Migration from 1.4.0 to 2.5.0
+## Migration from 2.4.0 to 2.5.0
 
 ### Breaking changes in 2.5.0
 

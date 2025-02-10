@@ -8,6 +8,7 @@ PlayCanvas incorporates an advanced graphics engine. Internally it uses the WebG
 Some of its key features are as follows:
 
 * Physically based rendering (PBR)
+* Linear Workflow
 * Directional, point and spot lights (all of which can cast shadows)
 * Static and skinned mesh rendering
 * GPU particle engine
