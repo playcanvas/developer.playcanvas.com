@@ -47,7 +47,7 @@ The BasicMaterial has been removed. To achieve equivalent functionality, you can
 
 #### Shader Material
 
-If you've received the error `Material class cannot be instantiated, use ShaderMaterial instead`, this indicates the need to modify your code to use `ShaderMaterial` instead. Detailed description and an example can be found [here](https://github.com/playcanvas/engine/pull/6831).
+If you've received the error `Material class cannot be instantiated, use ShaderMaterial instead`, this indicates the need to modify your code to use [ShaderMaterial][1] instead. Note that as the engine shaders now use [Linear Workflow][2], notice how `gammaCorrectOutput` is used to apply final gamma correction in the [fragment shader][3].
 
 #### Rendering to a texture
 
@@ -97,3 +97,7 @@ For detailed information on the changes, refer to the release notes for each ind
 * [2.2.0](https://github.com/playcanvas/engine/releases/tag/v2.2.0)
 * [2.3.0](https://github.com/playcanvas/engine/releases/tag/v2.3.0)
 * [2.4.0](https://github.com/playcanvas/engine/releases/tag/v2.4.0)
+
+[1]: /user-manual/graphics/shaders/
+[2]: /user-manual/graphics/linear-workflow/
+[3]: /user-manual/graphics/shaders/#fragment-shader
