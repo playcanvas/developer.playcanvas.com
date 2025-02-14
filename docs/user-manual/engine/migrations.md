@@ -69,6 +69,10 @@ Here is the list of default colors per tint type:
 
 There is one somewhat confusing behavior to note. By default, the emissive tint is set to black to ensure the material doesn't emit any color. When you assign an emissive texture, it's important to set the emissive color to white; otherwise, the black tint will override the emissive contribution from the texture, resulting in no visible emission.
 
+#### Black movie texture
+
+If your movie texture appears black, check the warnings in the debug version of the engine. It likely indicates that the material’s tint emissive color is set to black, causing the movie to render as black. To fix this, change the emissive color to white.
+
 #### Gamma-correction, tone-mapping and fog settings
 
 Previously, the `gammaCorrection` and `toneMapping` settings were applied globally on the `Scene` and affected all cameras' rendering. Now, these settings are available directly on each camera, allowing for unique configurations and rendering for each individual camera.
