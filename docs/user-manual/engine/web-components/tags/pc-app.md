@@ -12,6 +12,8 @@ The `<pc-app>` tag is the root element for your PlayCanvas application. It is us
 
 ## Attributes
 
+<div className="nowrap-first-col">
+
 | Attribute | Description |
 | --- | --- |
 | `alpha` | Boolean attribute. Determines whether the application allocates an alpha channel in the frame buffer. Defaults to `true`. |
@@ -19,6 +21,8 @@ The `<pc-app>` tag is the root element for your PlayCanvas application. It is us
 | `depth` | Boolean attribute. Determines whether the application allocates a depth buffer. Defaults to `true`. |
 | `high-resolution` | Boolean attribute. Determines whether the application renders using physical resolution or CSS resolution. Defaults to `true`. |
 | `stencil` | Boolean attribute. Determines whether the application allocates a stencil buffer. Defaults to `true`. |
+
+</div>
 
 ## Example
 

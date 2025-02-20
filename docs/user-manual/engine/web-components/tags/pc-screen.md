@@ -12,6 +12,8 @@ The `<pc-screen>` tag is used to define a screen component.
 
 ## Attributes
 
+<div className="nowrap-first-col">
+
 | Attribute | Description |
 | --- | --- |
 | `blend` | Valueless attribute. If present, the screen component blends. |
@@ -20,6 +22,8 @@ The `<pc-screen>` tag is used to define a screen component.
 | `resolution` | The resolution of the screen component. Specified as a space-separated list of Width and Height values. If not specified, `640 320` is used. |
 | `scale-blend` | The scale blend of the screen component. Must be a number between `0` and `1`. If not specified, `0.5` is used. |
 | `screen-space` | Valueless attribute. If present, the screen component is in screen space. |
+
+</div>
 
 ## Example
 

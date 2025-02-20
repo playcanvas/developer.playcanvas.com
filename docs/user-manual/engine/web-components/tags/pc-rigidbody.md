@@ -14,6 +14,8 @@ The `<pc-rigidbody>` tag is used to define a rigidbody component.
 
 ## Attributes
 
+<div className="nowrap-first-col">
+
 | Attribute | Description |
 | --- | --- |
 | `angular-damping` | The angular damping of the rigidbody. If not specified, `0` is used. |
@@ -25,6 +27,8 @@ The `<pc-rigidbody>` tag is used to define a rigidbody component.
 | `restitution` | The restitution of the rigidbody. If not specified, `0` is used. |
 | `rolling-friction` | The rolling friction of the rigidbody. If not specified, `0` is used. |
 | `type` | The type of rigidbody component. Can be `static`, `kinematic` or `dynamic`. |
+
+</div>
 
 ## Example
 
