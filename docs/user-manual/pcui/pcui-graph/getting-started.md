@@ -40,4 +40,4 @@ You can see a full list of options [here](https://api.playcanvas.com/classes/PCU
 
 ## Examples
 
-Examples of PCUI Graph usage can be found in this [Storybook](https://playcanvas.github.io/pcui-graph/storybook/index.html).
+Examples of PCUI Graph usage can be found in this [Storybook](https://playcanvas.github.io/pcui-graph/storybook/).
