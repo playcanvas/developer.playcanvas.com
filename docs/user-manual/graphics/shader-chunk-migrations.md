@@ -28,6 +28,16 @@ By doing this you will no longer see warning messages in the console.
 
 The following tables break down the chunk changes by Engine release.
 
+### *Engine v2.6*
+
+The following chunks were removed and replaced by a single `litMainVS` chunk:
+
+- `endVS`
+- `startVS`
+- `baseVS`
+- `viewNormalVS`
+- `baseNineSlicedVS`
+
 ### *Engine v2.5*
 
 The following chunks were removed and replaced by a single `fogPS` chunk:
