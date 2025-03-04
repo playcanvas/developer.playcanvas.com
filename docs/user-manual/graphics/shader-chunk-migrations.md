@@ -30,13 +30,23 @@ The following tables break down the chunk changes by Engine release.
 
 ### *Engine v2.6*
 
-The following chunks were removed and replaced by a single `litMainVS` chunk:
+The following vertex shader chunks were removed and replaced by a single `litMainVS` chunk:
 
 - `endVS`
 - `startVS`
 - `baseVS`
 - `viewNormalVS`
 - `baseNineSlicedVS`
+
+`lightmapDirAddPS` chunk has been removed, and its functionality integrated into `lightmapAddPS` chunk.
+
+`TBNderivativePS` and `TBNObjectSpacePS` chunks were removed, and their functionality integrated into `TBNPS` chunk.
+
+`startPS` chunk has been removed, and a replacement larger chunk will be added at a later stage.
+
+`outputAlphaOpaquePS` and `outputAlphaPremulPS` chunks were merged into `outputAlphaPS` chunk.
+
+`cubeMapProjectBoxPS` and `cubeMapProjectNonePS` chunks were merged into `cubeMapProjectPS` chunk.
 
 ### *Engine v2.5*
 
