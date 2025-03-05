@@ -30,6 +30,8 @@ The following tables break down the chunk changes by Engine release.
 
 ### *Engine v2.6*
 
+#### Internal engine chunks
+
 The following vertex shader chunks were removed and replaced by a single `litMainVS` chunk:
 
 - `endVS`
@@ -47,6 +49,17 @@ The following vertex shader chunks were removed and replaced by a single `litMai
 `outputAlphaOpaquePS` and `outputAlphaPremulPS` chunks were merged into `outputAlphaPS` chunk.
 
 `cubeMapProjectBoxPS` and `cubeMapProjectNonePS` chunks were merged into `cubeMapProjectPS` chunk.
+
+`envMultiplyPS` and `envConstPS` were merged into `envProcPS` chunk.
+
+`aoSpecOccSimplePS`, `aoSpecOccConstSimplePS`, `aoSpecOccPS` and `aoSpecOccConstPS` chunks were merged into `aoSpecOccPS` chunk.
+
+The following reflection related chunks had a slight change in how the texture decode function is provided. `$DECODE` is now `{reflectionDecode}` and `$DECODE_CUBEMAP` is now `{reflectionCubemapDecode}`. These chunks were affected:
+
+- `reflectionEnvPS`
+- `reflectionEnvHQPS`
+- `reflectionCubePS`
+- `reflectionSpherePS`
 
 ### *Engine v2.5*
 
