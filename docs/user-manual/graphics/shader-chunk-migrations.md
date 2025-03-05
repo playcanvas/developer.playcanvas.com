@@ -61,7 +61,7 @@ The following reflection related chunks had a slight change in how the texture d
 - `reflectionCubePS`
 - `reflectionSpherePS`
 
-The following ambient lightign related chunks had been removed, and merged into a single `ambientPS` chunk:
+The following ambient lighting related chunks had been removed, and merged into a single `ambientPS` chunk:
 
 - `ambientConstantPS`
 - `ambientEnvPS`
