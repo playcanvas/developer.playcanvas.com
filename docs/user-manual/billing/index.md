@@ -33,7 +33,7 @@ When you cancel your subscription, it will not revert to the free tier immediate
 
 ### What happens to my published apps when I cancel my subscription?
 
-Your published apps will be completely unaffected if you cancel your subscription.
+Your published apps will be completely unaffected if you cancel your subscription. This is true regardless of whether your apps are hosted by us or by you.
 
 ### What happens to my private projects when I cancel my subscription?
 
