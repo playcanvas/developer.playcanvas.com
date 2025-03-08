@@ -54,6 +54,8 @@ The following vertex shader chunks were removed and replaced by a single `litMai
 
 `aoSpecOccSimplePS`, `aoSpecOccConstSimplePS`, `aoSpecOccPS` and `aoSpecOccConstPS` chunks were merged into `aoSpecOccPS` chunk.
 
+`shadowSampleCoordPS` chunk has been removed, and its content is now part of `lightFunctionPS` chunk.
+
 The following reflection related chunks had a slight change in how the texture decode function is provided. `$DECODE` is now `{reflectionDecode}` and `$DECODE_CUBEMAP` is now `{reflectionCubemapDecode}`. These chunks were affected:
 
 - `reflectionEnvPS`
