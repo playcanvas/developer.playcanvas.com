@@ -16,6 +16,7 @@ Here is a complete list of the tags that are available in the PlayCanvas Engine 
 | [&lt;pc-light&gt;](pc-light) | Defines a light component. |
 | [&lt;pc-listener&gt;](pc-listener) | Defines a listener component. |
 | [&lt;pc-module&gt;](pc-module) | Defines a WebAssembly module. |
+| [&lt;pc-particles&gt;](pc-particles) | Defines a particle system component. |
 | [&lt;pc-render&gt;](pc-render) | Defines a render component. |
 | [&lt;pc-rigidbody&gt;](pc-rigidbody) | Defines a rigidbody component. |
 | [&lt;pc-scene&gt;](pc-scene) | Defines a scene. |
