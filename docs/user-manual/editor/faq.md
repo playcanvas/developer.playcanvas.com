@@ -5,22 +5,13 @@ sidebar_position: 0
 
 This is a list compiled of all the most commonly asked questions and answers for the Editor powered by Engine V2 for projects running Engine V1 or V2.
 
-## Q1. My scene looks brighter/darker in the Editor compared to the Launcher. How do I fix this?
+## 1. My scene looks brighter/darker in the Editor when it was powered by Engine V1 vs V2
 
-This is usually due to differences in either gamma or tone mapping. This can be split into two parts:
+### Check Camera settings
 
-- Mismatched camera settings
-- Incorrectly set sRGB flags on textures
-
-### A1a. Check Camera settings
-
-- **Settings -> Rendering** for **Scene Settings**
-- **Settings -> Editor** for viewport camera settings
-- For Engine V1 projects
-  - Cameras created in the **Editor** the settings are automatically copied from your **Scene Settings**
-  - Cameras created in the **Launcher** (at runtime) have to have their settings **explicitly set in a script**
-- For Engine V2 projects
-  - Each **CameraComponent** in your scene for camera settings
+- Check gamma and tone mapping for scene under **Settings -> Rendering**
+- Check gamma and tone mapping for viewport under **Settings -> Editor**
+- Check gamma and tone mapping for each `CameraComponent` (**Engine V2 PROJECT ONLY**)
 
 #### Scene Settings
 
@@ -30,12 +21,20 @@ This is usually due to differences in either gamma or tone mapping. This can be 
 
 <img src='/img/user-manual/editor/editor-v2/settings-editor.png' width='400px' />
 
-### A1b. Check Texture sRGB flags
+#### Camera Settings
 
-- Audit count **Status Bar -> N audits found**
+<img src='/img/user-manual/editor/editor-v2/camera-settings.png' width='400px' />
+
+### Check Texture sRGB flags
+
+- Check if you have any audit fixes **Status Bar -> N audits found**
   - Fixes can be applied automatically **Status Bar -> N audits found -> Fix Issues**
   - Conflicts have to resolved case-by-case. Refer to **Console Output** and click each warning/error to jump to where the texture is used
 
 #### Asset Auditor
 
 <img src='/img/user-manual/editor/editor-v2/console-auditor.png' width='600px' />
+
+## 2 .My camera makes objects look brighters/darker in the Editor compared to the Launcher.
+
+If the camera is created by a script make sure the gamma and tone mapping settings are explicity set on the camera component.
