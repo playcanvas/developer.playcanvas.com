@@ -1,11 +1,11 @@
 ---
-title: Editor Migrations
+title: Migrations
 sidebar_position: 13
 ---
 
 ## Introduction
 
-This page outlines the migrations of data between different editor versions.
+This page outlines the migrations of project data between different Editor versions.
 
 ### Migration from 1.48.0 to 1.50.0
 
