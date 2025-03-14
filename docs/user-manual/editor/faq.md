@@ -39,4 +39,4 @@ This is a list compiled of all the most commonly asked questions and answers for
 
 ## 2. My camera makes objects look brighter/darker in the Editor compared to the Launcher
 
-If the camera is created by a script make sure the **gamma** and **tone mapping** settings are explicity set on the camera component.
+If the camera is created by a script, make sure the **gamma** and **tone mapping** settings are explicitly set on the camera component.
