@@ -30,7 +30,7 @@ This is a list compiled of all the most commonly asked questions and answers for
 - Check if you have any audit fixes **Status Bar -> N audits found**
   - Fixes can be applied automatically **Status Bar -> N audits found -> Fix Issues**
   - Conflicts have to be resolved case-by-case:
-        1. Refer to **Console Output** for which textures/textureatlas' are affected and where they are used
+        1. Refer to **Console Output** for which textures/texture atlases are affected and where they are used
         2. Click each warning/error to jump to where the texture/sprite is used
 
 #### Asset Auditor
