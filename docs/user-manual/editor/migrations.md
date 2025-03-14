@@ -1,6 +1,6 @@
 ---
 title: Migrations
-sidebar_position: 13
+sidebar_position: 8
 ---
 
 ## Introduction
