@@ -37,6 +37,6 @@ This is a list compiled of all the most commonly asked questions and answers for
 
 <video autoplay controls src='/video/asset-auditor.mp4' width='600px' />
 
-## 2 .My camera makes objects look brighters/darker in the Editor compared to the Launcher.
+## 2 .My camera makes objects look brighters/darker in the Editor compared to the Launcher
 
 If the camera is created by a script make sure the **gamma** and **tone mapping** settings are explicity set on the camera component.
