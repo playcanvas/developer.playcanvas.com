@@ -35,7 +35,7 @@ This is a list compiled of all the most commonly asked questions and answers for
 
 #### Asset Auditor
 
-<img src='/img/user-manual/editor/editor-v2/console-auditor.png' width='600px' />
+<video autoplay controls src='/video/asset-auditor.mp4' width='600px' />
 
 ## 2 .My camera makes objects look brighters/darker in the Editor compared to the Launcher.
 
