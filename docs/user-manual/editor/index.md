@@ -18,7 +18,7 @@ The PlayCanvas Editor is a visual editing tool which you use to create and edit 
 
 The PlayCanvas Editor is ever changing with each update bringing in new features and deprecating old ones. To keep up, project data may have to be [migrated](migrations) to accomodate such changes. For larger and more complicated changes, you may have to adjust your project manually to ensure it is [compatible](engine-compatibility) with your current engine.
 
-If you are having trouble appling these adjustments or notice unusual changes in your project, visit our [FAQ](faq) page.
+If you are having trouble applying these adjustments or notice unusual changes in your project, visit our [FAQ](faq) page.
 
 ## Customization
 
