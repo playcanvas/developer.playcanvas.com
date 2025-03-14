@@ -1,6 +1,6 @@
 ---
 title: Assets Panel
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査、編集などが行えます。
@@ -121,5 +121,5 @@ Editorはコードで作成されたアセットの参照を検出できませ�
 
 [2]: /user-manual/editor/interface/inspector
 [3]: /user-manual/editor/interface/viewport
-[4]: /user-manual/editor/settings
+[4]: /user-manual/editor/interface/settings
 [7]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#findByTag

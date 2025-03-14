@@ -1,6 +1,6 @@
 ---
-title: Editor Settings
-sidebar_position: 7
+title: Settings
+sidebar_position: 2
 ---
 
 By default, the Editor is configured with settings that should suit the majority of users. However, in some circumstances, you may wish to modify the default behavior of the Editor. To do this, load the Settings into the [Inspector](../interface/inspector) by clicking the 'cog' icon on the [Toolbar](../interface/toolbar) or in the [Viewport](../interface/viewport).
