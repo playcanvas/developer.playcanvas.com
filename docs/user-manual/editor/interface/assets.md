@@ -1,6 +1,6 @@
 ---
 title: Assets Panel
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 The Assets Panel manages all of the Assets that are available in your project. From here, you can create, upload, delete, inspect and edit any Asset.
@@ -121,5 +121,5 @@ Selecting a reference will load it into the Inspector panel.
 
 [2]: /user-manual/editor/interface/inspector
 [3]: /user-manual/editor/interface/viewport
-[4]: /user-manual/editor/settings
+[4]: /user-manual/editor/interface/settings
 [7]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#findByTag
