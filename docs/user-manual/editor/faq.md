@@ -9,9 +9,9 @@ This is a list compiled of all the most commonly asked questions and answers for
 
 ### Check Camera settings
 
-- Check gamma and tone mapping for scene under **Settings -> Rendering**
-- Check gamma and tone mapping for viewport under **Settings -> Editor**
-- Check gamma and tone mapping for each `CameraComponent` (**Engine V2 PROJECT ONLY**)
+- Check **gamma** and **tone mapping** for scene under **Settings -> Rendering**
+- Check **gamma** and **tone mapping** for viewport under **Settings -> Editor**
+- Check **gamma** and **tone mapping** for each `CameraComponent` (**Engine V2 PROJECT ONLY**)
 
 #### Scene Settings
 
@@ -29,7 +29,9 @@ This is a list compiled of all the most commonly asked questions and answers for
 
 - Check if you have any audit fixes **Status Bar -> N audits found**
   - Fixes can be applied automatically **Status Bar -> N audits found -> Fix Issues**
-  - Conflicts have to resolved case-by-case. Refer to **Console Output** and click each warning/error to jump to where the texture is used
+  - Conflicts have to resolved case-by-case:
+        1. Refer to **Console Output** for which textures/textureatlas' are affected and where they are used
+        2. Click each warning/error to jump to where the texture/sprite is used
 
 #### Asset Auditor
 
@@ -37,4 +39,4 @@ This is a list compiled of all the most commonly asked questions and answers for
 
 ## 2 .My camera makes objects look brighters/darker in the Editor compared to the Launcher.
 
-If the camera is created by a script make sure the gamma and tone mapping settings are explicity set on the camera component.
+If the camera is created by a script make sure the **gamma** and **tone mapping** settings are explicity set on the camera component.
