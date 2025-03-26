@@ -246,7 +246,7 @@ This uses the `Lights` class as an enumeration of possible values. The `@type {L
 
 ## Conditional Attributes
 
-Every attribute in your script creates a corresponding UI control in the editor. In some cases, you may want to hide or disable certain controls based on the values of other attributes.
+Every attribute in your script creates a corresponding UI control in the Editor. In some cases, you may want to hide or disable certain controls based on the values of other attributes.
 
 Let’s walk through an example:
 
