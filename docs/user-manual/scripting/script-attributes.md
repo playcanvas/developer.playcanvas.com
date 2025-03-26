@@ -244,6 +244,86 @@ This uses the `Lights` class as an enumeration of possible values. The `@type {L
 
 ![Attribute Enumerations](/img/user-manual/scripting/attribute-enum.png)
 
+## Conditional Attributes
+
+Every attribute in your script creates a corresponding UI control in the Editor. In some cases, you may want to hide or disable certain controls based on the values of other attributes.
+
+Let’s walk through an example:
+
+```javascript
+export class Delorean extends Script {
+    /**
+     * @attribute
+     */
+    power = false
+
+    /** 
+     * @attribute
+     */
+    speed = 10
+}
+```
+
+This will create a checkbox for power and a slider for speed. But what if we want to prevent users from adjusting the speed unless power is turned on? 
+
+We can achieve this by using the `@enabledif` tag:
+
+```javascript
+export class Delorean extends Script {
+    /**
+     * @attribute
+     */
+    power = false
+
+    /** 
+     * @attribute
+     * @enabledif {power}
+     */
+    speed = 10
+}
+```
+
+Now, the speed slider will only be enabled when power is `true`.
+
+### Expression-Based Conditions
+
+You can also use more expressive conditions. If the condition evaluates to a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value, the control is enabled.
+
+```javascript
+export class Delorean extends Script {
+    /**
+     * @attribute
+     */
+    power = false
+
+    /** 
+     * @attribute
+     * @enabledif {power}
+     */
+    speed = 10
+
+    /**
+     * @attribute
+     * @visibleif {speed > 88.8}
+     */
+    enableFluxCapacitor = true
+}
+```
+
+In this case:
+
+ - The `speed` slider is only enabled if power is on.
+ - The `enableFluxCapacitor` checkbox is only *visible* when `speed` is greater than `88.8`.
+
+This allows for rich, dynamic Editor interfaces based on script state.
+
+#### Example in Action
+
+<video width="50%" controls autoplay loop>
+  <source src="/video/conditional-attribtues.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
 ## Grouping Attributes
 
 In some situations you may want to logically group attributes together. For example lets say you have a `GameLogic` Script with an enemy with the speed and power. Rather than declare the attributes individually, it makes sense to group them together under one `enemy` attribute. You can do this with **Attribute Groups**.
