@@ -311,6 +311,7 @@ export class Delorean extends Script {
 ```
 
 In this case:
+
  - The `speed` slider is only enabled if power is on.
  - The `enableFluxCapacitor` checkbox is only *visible* when `speed` is greater than `88.8`.
 
