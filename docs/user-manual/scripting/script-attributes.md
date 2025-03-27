@@ -264,7 +264,7 @@ export class Delorean extends Script {
 }
 ```
 
-This will create a checkbox for power and a slider for speed. But what if we want to prevent users from adjusting the speed unless power is turned on? 
+This will create a checkbox for power and a slider for speed. But what if we want to prevent users from adjusting the speed unless power is turned on.
 
 We can achieve this by using the `@enabledif` tag:
 
@@ -312,8 +312,8 @@ export class Delorean extends Script {
 
 In this case:
 
- - The `speed` slider is only enabled if power is on.
- - The `enableFluxCapacitor` checkbox is only *visible* when `speed` is greater than `88.8`.
+- The `speed` slider is only enabled if power is on.
+- The `enableFluxCapacitor` checkbox is only *visible* when `speed` is greater than `88.8`.
 
 This allows for rich, dynamic Editor interfaces based on script state.
 
@@ -407,10 +407,10 @@ class GameLogic extends Script {
 }
 ```
 
-In the above example we've created a new `Enemy` Interface with a power member constrained within _0 - 11_ range. We've also declared that the `GameLogic` Script has an attribute `enemy` which is a type of `Enemy`.
+In the above example we've created a new `Enemy` Interface with a power member constrained within *0 - 11* range. We've also declared that the `GameLogic` Script has an attribute `enemy` which is a type of `Enemy`.
 
 :::tip
-An _Interface Attribute_ allows you to both logically group attributes together and set constraints on individual sub attributes. It also allows you to modularize your code.
+An *Interface Attribute* allows you to both logically group attributes together and set constraints on individual sub attributes. It also allows you to modularize your code.
 :::
 
 #### Rules of Interface attributes
