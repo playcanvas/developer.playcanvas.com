@@ -179,4 +179,4 @@ We currently do not support defining JSON attributes as children of other JSON a
 
 :::
 
-[3]: https://api.playcanvas.com/classes/Engine.ScriptAttributes.html
+[3]: https://api.playcanvas.com/engine/classes/ScriptAttributes.html
