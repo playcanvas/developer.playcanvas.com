@@ -145,4 +145,4 @@ FirstPersonMovement.prototype._createCamera = function () {
 ```
 
 [1]: https://playcanvas.com/project/405842
-[3]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html#applyForce
+[3]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyForce

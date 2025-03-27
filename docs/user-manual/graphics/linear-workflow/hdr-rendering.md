@@ -72,7 +72,7 @@ material.emissive = pc.Color.YELLOW;
 material.emissiveIntensity = 50;
 ```
 
-For more detailed information, refer to the CameraFrame [API documentation](https://api.playcanvas.com/classes/Engine.CameraFrame.html).
+For more detailed information, refer to the CameraFrame [API documentation](https://api.playcanvas.com/engine/classes/CameraFrame.html).
 
 ## CameraFrame in the Editor
 
