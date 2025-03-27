@@ -62,7 +62,7 @@ export const ROTATION_SPEED = 0.1;
 import { Script } from 'playcanvas';
 import { ROTATION_SPEED } from './settings/config.mjs';
 
-export Rotator extends Script {
+export class Rotator extends Script {
     update(){
         this.entity.rotateLocal(0, ROTATION_SPEED, 0);
     }
