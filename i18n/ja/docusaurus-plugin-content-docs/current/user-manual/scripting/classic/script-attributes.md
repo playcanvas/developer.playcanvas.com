@@ -1,12 +1,12 @@
 ---
-title: Script Attributes [Legacy]
+title: Script Attributes
 tags: 
     - Scripting
 ---
 :::warning
-**This documentation is for the legacy scripting system.**
+**This documentation is for the Classic scripting system.**
 
-See [**Script Attributes**](../script-attributes.md) for the latest documentation.
+See [**ESM Script Attributes**](../script-attributes.md) for the latest documentation.
 :::
 
 Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
