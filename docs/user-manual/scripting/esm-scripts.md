@@ -111,4 +111,4 @@ Only import 3rd party code from a known and trusted source.
 
 When you export an ESM Scripts project your entire project is bundled together. The aim is deliver an optimized build of your project that gives a better loading experience for your end users.
 
-Bundling itself is a complex topic, and not one strategy fits all needs. However by default the bundling process will eliminate dead code and minify it's output.
+Bundling itself is a complex topic, and not one strategy fits all needs. However by default the bundling process will eliminate dead code and minify its output.
