@@ -5,8 +5,7 @@ sidebar_position: 9
 
 ### Making your projects interactive
 
-Scripts are re-usable pieces of code that interactivity to your project. Conceptually they're attached to an entity and define a specific behavior or operation.
-
+Scripts are re-usable pieces of code that add interactivity to your project. Conceptually they're attached to an entity and define a specific behavior or operation.
 Scripts can be created using [ES Modules](./esm-scripts.md) or using the older [classic](./classic/script-attributes.md) scripts.
 
 For example, this `Rotate` script rotates an entity by 10° every second.

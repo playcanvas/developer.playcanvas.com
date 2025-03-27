@@ -3,7 +3,7 @@ title: Loading Order
 sidebar_position: 7
 ---
 :::warning
-**This documentation is for the classic scripting system.**
+**This documentation is for the Classic scripting system.**
 
 See [**Script Attributes**](../script-attributes.md) for the latest documentation.
 :::

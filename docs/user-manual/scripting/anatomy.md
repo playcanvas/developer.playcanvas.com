@@ -1,5 +1,5 @@
 ---
-title: Anatomy of a script
+title: Script Anatomy
 sidebar_position: 3
 ---
 
