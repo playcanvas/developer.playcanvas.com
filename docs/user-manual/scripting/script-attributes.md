@@ -5,7 +5,7 @@ sidebar_position: 5
 ---
 :::note
 This is the documentation for the newer **ESM Script Attributes**.
-You can find documentation for the [**legacy attributes system here**](./classic/script-attributes.md)
+For **Classic Script Attributes** click [here](./classic/script-attributes.md)
 :::
 
 ## What are Attributes?

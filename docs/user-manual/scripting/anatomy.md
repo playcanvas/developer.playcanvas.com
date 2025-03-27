@@ -6,8 +6,7 @@ sidebar_position: 3
 Scripts provide powerful features for adding interactivity to your project. To learn more about the anatomy of a Script we've provided a simple `Rotate` script below. Let's break down what this means.
 
 :::note
-Scripts can be defined as either **[ES Modules](./esm-scripts.md)**, or **legacy scripts**.
-**[Learn more](./esm-scripts.md)**.
+Scripts can be defined as either **[ES Modules](esm-scripts.md)**, or **[Classic Scripts](../classic)**.
 :::
 
 import Tabs from '@theme/Tabs';

@@ -36,7 +36,7 @@ In general ESM Scripts provide a more expressive and flexible way of creating pr
 
 ### Module Scope
 
-**ESM Scripts have module scope, classic scripts have global scope**. This means modules cannot implicitly access variables defined in other files. Often this is used as a way to define a global settings or configuration. The config has a higher loading order than the script, and so the `SPEED` is accessible globally.
+**ESM Scripts have module scope, Classic Scripts have global scope**. This means modules cannot implicitly access variables defined in other files. Often this is used as a way to define a global settings or configuration. The config has a higher loading order than the script, and so the `SPEED` is accessible globally.
 
 <details>
 <summary>**See code example**</summary>
