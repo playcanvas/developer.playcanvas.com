@@ -151,7 +151,7 @@ class Rotate extends Script {
     }
 
     get speed() {
-        return this_.speed'
+        return this._speed;
     }
 }
 ```
