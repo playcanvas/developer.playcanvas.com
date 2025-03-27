@@ -30,8 +30,7 @@ You'll notice that the newly created ESM Script has a new boilerplate, based on 
 ```javascript
 import { Script } from 'playcanvas';
 
-export Rotator extends Script {
-
+export class Rotator extends Script {
     initialize() {
     }
 
