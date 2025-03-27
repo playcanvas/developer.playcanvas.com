@@ -1,10 +1,10 @@
 ---
-title: Script Attributes [Legacy]
+title: Script Attributes [Classic]
 tags: 
     - Scripting
 ---
 :::warning
-**This documentation is for the legacy scripting system.**
+**This documentation is for the classic scripting system.**
 
 See [**Script Attributes**](../script-attributes.md) for the latest documentation.
 :::

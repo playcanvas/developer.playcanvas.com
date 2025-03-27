@@ -4,14 +4,14 @@ sidebar_position: 11
 unlisted: true
 ---
 
-ESM Scripts replace the legacy [Scripting](./classic/script-attributes.md) system as the recommended way to develop PlayCanvas applications. Whilst legacy scripts will continue to be work in existing projects amd will be supported for the foreseeable future, we recommend using the newer ESM format for your projects.
+ESM Scripts replace the older [Classic Scripting](./classic/script-attributes.md) system as the recommended way to develop PlayCanvas applications. Whilst classic scripts will continue to be work in existing projects amd will be supported for the foreseeable future, we recommend using the newer ESM format for your projects.
 
 ## Gradual Migration
 
 Using ESM Scripts within your project is entirely optional and allows you to gradually migrate your projects over to the newer ESM based format in your own time, without affecting existing projects.
 
 :::tip
-**Projects can contain both ESM Scripts and legacy scripts**
+**Projects can contain both ESM Scripts and Classic Scripts**
 
 You do not need to update all your scripts together. We recommend gradually migrating scripts and iteratively testing
 :::
