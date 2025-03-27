@@ -20,7 +20,17 @@ This process will involve migration and updating of scripts given differences in
 
 To initiate this navigate to the settings panel and click the `SWITCH TO ENGINE V2` button to convert your project to using Engine V2 (This will require a confirmation before converting). If you wish to switch back, there is a `SWITCH TO ENGINE V1` button in the same location for Project V2.
 
-> **Note:** Once the switch has been confirmed **all users** in the current project will be reloaded.
+:::important
+
+It is recommended to create a checkpoint before switching engines.
+
+:::
+
+:::warning
+
+Once the switch has been confirmed, **all users** in the current project will be reloaded.
+
+:::
 
 <img src='/img/user-manual/editor/editor-v2/switch-engine.png' width='400' />
 
