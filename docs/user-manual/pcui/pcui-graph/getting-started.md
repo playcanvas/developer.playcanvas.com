@@ -36,7 +36,7 @@ const graph = new Graph(schema, {
 });
 ```
 
-You can see a full list of options [here](https://api.playcanvas.com/classes/PCUIGraph.Graph.html#constructor).
+You can see a full list of options [here](https://api.playcanvas.com/pcui-graph/classes/Graph.html#constructor).
 
 ## Examples
 

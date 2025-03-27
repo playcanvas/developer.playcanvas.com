@@ -74,7 +74,7 @@ Scenes are represented by [Scene Registry Items][sceneregistryitem-api] that are
 
 :::note
 
-The [application root node](https://api.playcanvas.com/classes/Engine.Application.html#root) is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
+The [application root node](https://api.playcanvas.com/engine/classes/Application.html#root) is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
 
 :::
 
@@ -200,15 +200,15 @@ The [example project][asset-load-for-scene-project] below loads the assets when 
 [additively-loading-scenes-project]: https://playcanvas.com/project/685077/overview/additive-loading-scenes
 [templates]: /user-manual/editor/templates/
 [assets]: /user-manual/assets/
-[loadscenehierarchy-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneHierarchy
-[loadscenesettings-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneSettings
-[sceneregistryitem-api]: https://api.playcanvas.com/classes/Engine.SceneRegistryItem.html
-[sceneregistry-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html
-[application-sceneregistry-api]: https://api.playcanvas.com/classes/Engine.Application.html#scenes
-[loadhierarchycallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadHierarchyCallback
-[loadsettingscallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadSettingsCallback
-[application-root-api]: https://api.playcanvas.com/classes/Engine.Application.html#root
-[loadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneData
+[loadscenehierarchy-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html#loadSceneHierarchy
+[loadscenesettings-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html#loadSceneSettings
+[sceneregistryitem-api]: https://api.playcanvas.com/engine/classes/SceneRegistryItem.html
+[sceneregistry-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html
+[application-sceneregistry-api]: https://api.playcanvas.com/engine/classes/Application.html#scenes
+[loadhierarchycallback-api]: https://api.playcanvas.com/engine/types/LoadHierarchyCallback.html
+[loadsettingscallback-api]: https://api.playcanvas.com/engine/types/LoadSettingsCallback.html
+[application-root-api]: https://api.playcanvas.com/engine/classes/AppBase.html#root
+[loadscenedata-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html#loadSceneData
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
-[changescene-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#changeScene
+[changescene-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html#changeScene
