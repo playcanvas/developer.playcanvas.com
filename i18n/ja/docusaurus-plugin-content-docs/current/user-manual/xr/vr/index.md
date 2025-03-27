@@ -9,17 +9,23 @@ PlayCanvas also lets you create Virtual Reality (VR) applications.
 
 ## 対応プラットフォーム
 
-VR capabilities are available across various platforms: desktop (Chrome, Edge), mobile (Chrome, Samsung) and HMDs (Oculus, Magic Leap, Pico).
+VR capabilities are available across various platforms: desktop (Chrome, Edge), mobile (Chrome, Samsung) and HMDs (Apple Vision Pro, Meta, Magic Leap, Pico).
+
+:::warning
+
+Due to an issue in WebKit on Apple Vision Pro, you must currently disable `Anti-Alias` in the Scene Settings of your project.
+
+:::
 
 ## WebXR VRの始め方
 
-VRセッション (VR session) を開始するには、まずデバイスのサポートと利用可能性を確認する必要があります。その後、ボタンのクリックや他の入力などのユーザーのインタラクションにより、VRセッションを開始することができます。
+To start a VR session, device support and availability should be checked first. Then, on a user interaction such as a button click or other input, a VR session can be started:
 
 ```javascript
-button.element.on('click', function () {
-    // XRがサポートされ、VRが利用可能かどうかを確認する
+button.element.on('click', () => {
+    // check if XR is supported and VR is available
     if (app.xr.supported && app.xr.isAvailable(pc.XRTYPE_VR)) {
-        // Cameraコンポーネントを使用してARを開始する
+        // start AR using a camera component
         entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
     }
 });
@@ -33,4 +39,4 @@ app.xr.end();
 
 ## スターターキット
 
-PlayCanvasは「VR Kit」プロジェクトを提供しており、これによりあなたのVR体験をより迅速に立ち上げることができます。新しいプロジェクトを作成する際には、ダイアログから「VR Kit」を選択するだけです。
+PlayCanvas provides a ‘VR Kit’ project to help you and your VR experience get up and running faster. When creating a new project, simply select ‘VR Kit’ from the New Project dialog.

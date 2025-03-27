@@ -20,7 +20,7 @@ Below is an example of the Model Viewer Starter Kit with device pixel ratio enab
 デバイスピクセル比は、プロパティ[`pc.GraphicsDevice#maxPixelRatio`][4]を使ってランタイムで変更することができます。
 
 ```javascript
-var device = pc.Application.getApplication().graphicsDevice;
+const device = pc.Application.getApplication().graphicsDevice;
 if (highTierDevice) {
     // Use the default device pixel ratio of the device
     device.maxPixelRatio = window.devicePixelRatio;
@@ -49,7 +49,7 @@ ANGLE (NVIDIA GeForce GTX 1050 Direct3D11 vs_5_0 ps_5_0)
 
 ```javascript
 function isLowQualityGPU() {
-    var renderer = pc.Application.getApplication().graphicsDevice.unmaskedRenderer;
+    const renderer = pc.Application.getApplication().graphicsDevice.unmaskedRenderer;
 
     // Only check the GPU if we are on mobile
     if (renderer && pc.platform.mobile) {

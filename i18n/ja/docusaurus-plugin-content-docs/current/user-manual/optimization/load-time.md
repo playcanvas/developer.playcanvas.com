@@ -51,7 +51,7 @@ Using [Virtual Voodoo][2] as an example, we can show the 'typical' sequence that
 
 ![Lazy Load Character][5]
 
-[1]: /user-manual/templates/#when-do-i-need-to-load-template-assets
+[1]: /user-manual/editor/templates/#when-do-i-need-to-load-template-assets
 [2]: https://playcanv.as/p/tRUfwVg1/
 [3]: /img/user-manual/optimization/loading/virtual-voodoo-phases.jpg
 [4]: /img/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif

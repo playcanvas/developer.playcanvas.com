@@ -28,6 +28,61 @@ By doing this you will no longer see warning messages in the console.
 
 The following tables break down the chunk changes by Engine release.
 
+### *Engine v2.6*
+
+#### Internal engine chunks
+
+The following vertex shader chunks were removed and replaced by a single `litMainVS` chunk:
+
+- `endVS`
+- `startVS`
+- `baseVS`
+- `viewNormalVS`
+- `baseNineSlicedVS`
+
+`lightmapDirAddPS` chunk has been removed, and its functionality integrated into `lightmapAddPS` chunk.
+
+`TBNderivativePS` and `TBNObjectSpacePS` chunks were removed, and their functionality integrated into `TBNPS` chunk.
+
+`startPS` chunk has been removed, and a replacement larger chunk will be added at a later stage.
+
+`outputAlphaOpaquePS` and `outputAlphaPremulPS` chunks were merged into `outputAlphaPS` chunk.
+
+`cubeMapProjectBoxPS` and `cubeMapProjectNonePS` chunks were merged into `cubeMapProjectPS` chunk.
+
+`envMultiplyPS` and `envConstPS` were merged into `envProcPS` chunk.
+
+`aoSpecOccSimplePS`, `aoSpecOccConstSimplePS`, `aoSpecOccPS` and `aoSpecOccConstPS` chunks were merged into `aoSpecOccPS` chunk.
+
+`shadowSampleCoordPS` chunk has been removed, and its content is now part of `lightFunctionPS` chunk.
+
+The following reflection related chunks had a slight change in how the texture decode function is provided. `$DECODE` is now `{reflectionDecode}` and `$DECODE_CUBEMAP` is now `{reflectionCubemapDecode}`. These chunks were affected:
+
+- `reflectionEnvPS`
+- `reflectionEnvHQPS`
+- `reflectionCubePS`
+- `reflectionSpherePS`
+
+The following ambient lighting related chunks had been removed, and merged into a single `ambientPS` chunk:
+
+- `ambientConstantPS`
+- `ambientEnvPS`
+- `ambientSHPS`
+
+### *Engine v2.5*
+
+The following chunks were removed and replaced by a single `fogPS` chunk:
+
+- `fogExpPS`
+- `fogExp2PS`
+- `fogLinearPS`
+- `fogNonePS`
+
+The following chunks were removed and replaced by a single `gammaPS` chunk:
+
+- `gamma1_0PS`
+- `gamma2_2PS`
+
 ### *Engine v1.70*
 
 | Chunk | Changes |
@@ -276,6 +331,7 @@ struct SheenArgs
 | `shadow(EVSM/EVSMn/Standard/StandardGL2/VSM8)` | <ul><li>Accepts a vec3 shadow sample coordinate instead of using `dShadowCoord`</li></ul> |
 | `spot` | <ul><li>Accepts a vec3 normalized light direction instead of using `dLightDirNormW`</li></ul> |
 | `TBN(-/ObjectSpace/derivative/fast)` | <ul><li>Accepts a vec3 tangent, binormal and normal instead of using `dTangentW`, `dBinormalW` and `dNormalW`</li></ul> |
+
 ---
 
 ### Engine v1.60

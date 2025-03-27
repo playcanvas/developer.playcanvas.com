@@ -6,7 +6,7 @@ A GSplat asset contains 3D Gaussian Splat data. PlayCanvas supports the import o
 
 ## Asset Inspector
 
-You can select a GSplat asset in the [Assets Panel](/user-manual/editor/assets) and view it in the [Inspector](/user-manual/editor/inspector).
+You can select a GSplat asset in the [Assets Panel](/user-manual/editor/interface/assets) and view it in the [Inspector](/user-manual/editor/interface/inspector).
 
 ![GSplat Asset Inspector](/img/user-manual/assets/types/asset-inspector-gsplat.png)
 

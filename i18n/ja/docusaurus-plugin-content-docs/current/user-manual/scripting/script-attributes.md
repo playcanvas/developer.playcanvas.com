@@ -166,7 +166,7 @@ MyScript.attributes.add('gameConfig', {
 ```javascript
 MyScript.prototype.update = function (dt) {
     if (this.gameConfig.godMode) {
-        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
+        for (let i = 0; i < this.gameConfig.numEnemies; i++) {
             // ...
         }
     }

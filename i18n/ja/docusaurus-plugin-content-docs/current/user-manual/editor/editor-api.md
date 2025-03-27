@@ -173,7 +173,7 @@ PlayCanvas チームは現在、[Violentmonkey][violentmonkey]オープンソー
 [github-api]: https://api.playcanvas.com/modules/Editor.html
 [github-repo]: https://github.com/playcanvas/editor-api
 [user-scripts]: https://en.wikipedia.org/wiki/Userscript
-[viewport]: /user-manual/editor/viewport
+[viewport]: /user-manual/editor/interface/viewport
 [violentmonkey]: https://violentmonkey.github.io/
 [violentmonkey-docs]: https://violentmonkey.github.io/guide/creating-a-userscript/
 [violentmonkey-matching]: https://violentmonkey.github.io/api/matching/

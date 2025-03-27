@@ -1,6 +1,6 @@
 ---
 title: Common Questions
-sidebar_position: 25
+sidebar_position: 22
 ---
 
 
