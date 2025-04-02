@@ -44,9 +44,9 @@
     "clsx": "^2.1.1",
     "docusaurus-plugin-sass": "^0.2.6",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "sass": "^1.85.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sass": "^1.86.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
