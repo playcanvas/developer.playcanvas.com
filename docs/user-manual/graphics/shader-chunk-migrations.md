@@ -28,6 +28,45 @@ By doing this you will no longer see warning messages in the console.
 
 The following tables break down the chunk changes by Engine release.
 
+### *Engine v2.7*
+
+We've adjusted StandardMaterial shader chunks responsible for reading textures, uniforms, and vertex colors. This prepares them for refactoring the shader generation system to natively support WebGPU chunks in the WGSL language. It's strongly recommended to use a debug version of the engine, which logs out the required modification into the console. For details, please refer [this PR](https://github.com/playcanvas/engine/pull/7487). The following chunks were modified:
+
+- More commonly modified chunks that need to be updated:
+    - `diffusePS`
+    - `emissivePS`
+    - `opacityPS`
+
+- Less commonly modified chunks that need to be updated:
+    - `parallaxPS`
+    - `normalDetailMapPS`
+    - `normalMapPS`
+    - `diffuseDetailMapPS`
+    - `transmissionPS`
+    - `thicknessPS`
+    - `iridescencePS`
+    - `iridescenceThicknessPS`
+    - `sheenPS`
+    - `sheenGlossPS`
+    - `metalnessPS`
+    - `iorPS`
+    - `specularityFactorPS`
+    - `specularPS`
+    - `glossPS`
+    - `aoDetailMapPS`
+    - `aoPS`
+    - `clearCoatPS`
+    - `clearCoatGlossPS`
+    - `clearCoatNormalPS`
+    - `lightmapDirPS`
+    - `lightmapSinglePS`
+
+Additional shader chunk changes:
+- `diffuseDetailMapPS` chunk has been removed, and it's functionality has been folded into also change `diffusePS` chunk. This should have no impact on your custom chunks, unless you use the detail map functionality.
+- `aoDetailMapPS` chunk has been removed, and it's functionality has been folded into also change `aoPS` chunk. This should have no impact on your custom chunks, unless you use the detail map functionality.
+- Chunks `normalMapPS`, `normalDetailMapPS` and `clearCoatNormalPS`, handling normal map sampling, used hardcoded decode functions. This now matches other chunks, where the decode function is driven by texture parameters. This also triggered removal of internal chunks `normalXYZPS` and `normalXYPS` and their functionality added to `decodePS` chunk.
+- Lightmapping related chunks `lightmapDirPS` and `lightmapSinglePS` were removed and their functionality used to create `lightmapPS` chunk.
+
 ### *Engine v2.6*
 
 #### Internal engine chunks
