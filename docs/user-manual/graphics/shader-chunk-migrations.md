@@ -30,7 +30,7 @@ The following tables break down the chunk changes by Engine release.
 
 ### *Engine v2.7*
 
-We've adjusted StandardMaterial shader chunks responsible for reading textures, uniforms, and vertex colors. This prepares them for refactoring the shader generation system to natively support WebGPU chunks in the WGSL language. It's strongly recommended to use a debug version of the engine, which logs out the required modification into the console. For details, please refer [this PR](https://github.com/playcanvas/engine/pull/7487). The following chunks were modified:
+We've adjusted the `StandardMaterial` shader chunks responsible for reading textures, uniforms, and vertex colors. This prepares them for the refactoring of the shader generation system to natively support WebGPU chunks in the WGSL language. It's strongly recommended to use a debug version of the engine, which logs out the required modifications to the console. For details, please refer [this PR](https://github.com/playcanvas/engine/pull/7487). The following chunks were modified:
 
 - More commonly modified chunks that need to be updated:
   - `diffusePS`
