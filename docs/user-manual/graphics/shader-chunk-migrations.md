@@ -63,7 +63,7 @@ We've adjusted StandardMaterial shader chunks responsible for reading textures, 
 
 Additional shader chunk changes:
 
-- `diffuseDetailMapPS` chunk has been removed, and it's functionality has been folded into also change `diffusePS` chunk. This should have no impact on your custom chunks, unless you use the detail map functionality.
+- `diffuseDetailMapPS` chunk has been removed, and its functionality has been folded into also change `diffusePS` chunk. This should have no impact on your custom chunks, unless you use the detail map functionality.
 - `aoDetailMapPS` chunk has been removed, and it's functionality has been folded into also change `aoPS` chunk. This should have no impact on your custom chunks, unless you use the detail map functionality.
 - Chunks `normalMapPS`, `normalDetailMapPS` and `clearCoatNormalPS`, handling normal map sampling, used hardcoded decode functions. This now matches other chunks, where the decode function is driven by texture parameters. This also triggered removal of internal chunks `normalXYZPS` and `normalXYPS` and their functionality added to `decodePS` chunk.
 - Lightmapping related chunks `lightmapDirPS` and `lightmapSinglePS` were removed and their functionality used to create `lightmapPS` chunk.
