@@ -38,28 +38,28 @@ We've adjusted the `StandardMaterial` shader chunks responsible for reading text
   - `opacityPS`
 
 - Less commonly modified chunks that need to be updated:
-  - `parallaxPS`
-  - `normalDetailMapPS`
-  - `normalMapPS`
-  - `diffuseDetailMapPS`
-  - `transmissionPS`
-  - `thicknessPS`
-  - `iridescencePS`
-  - `iridescenceThicknessPS`
-  - `sheenPS`
-  - `sheenGlossPS`
-  - `metalnessPS`
-  - `iorPS`
-  - `specularityFactorPS`
-  - `specularPS`
-  - `glossPS`
   - `aoDetailMapPS`
   - `aoPS`
-  - `clearCoatPS`
   - `clearCoatGlossPS`
   - `clearCoatNormalPS`
+  - `clearCoatPS`
+  - `diffuseDetailMapPS`
+  - `glossPS`
+  - `iorPS`
+  - `iridescencePS`
+  - `iridescenceThicknessPS`
   - `lightmapDirPS`
   - `lightmapSinglePS`
+  - `metalnessPS`
+  - `normalDetailMapPS`
+  - `normalMapPS`
+  - `parallaxPS`
+  - `sheenGlossPS`
+  - `sheenPS`
+  - `specularPS`
+  - `specularityFactorPS`
+  - `thicknessPS`
+  - `transmissionPS`
 
 Additional shader chunk changes:
 
