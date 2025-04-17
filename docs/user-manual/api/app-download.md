@@ -35,7 +35,7 @@ curl -H "Authorization: Bearer {accessToken}" -H "Content-Type: application/json
 | ```scripts_minify```        | ```boolean```  |           | true             | Set it to true if you want scripts to be minified. Defaults to true.                                                                                                  |
 | ```scripts_sourcemaps```    | ```boolean```  |           | false            | Set it to true if you want script sourcemaps to be generated. Defaults to false.                                                                                      |
 | ```optimize_scene_format``` | ```boolean```  |           | false            | Set it to true if you want scenes to be in an optimized format (see [Optimize Scene Format](/user-manual/optimization/optimizing-scene-format) for more information). |
-| ```engine_version```        | ```string```   |           | v1.x.x (Current) | Set it to a Engine version string ([full list of releases](https://github.com/playcanvas/engine/releases)) if a specific version is needed for the app.               |
+| ```engine_version```        | ```string```   |           | v1.x.x (Current) | Set it to a Engine version string ([full list of releases](https://github.com/playcanvas/engine/releases)) if a specific version is needed for the app. If you're using engine v2, you must override this value.              |
 
 ## Response Schema
 
