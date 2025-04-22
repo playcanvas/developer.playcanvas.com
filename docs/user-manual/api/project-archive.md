@@ -22,10 +22,10 @@ curl -H "Authorization: Bearer {accessToken}" -H "Content-Type: application/json
 
 ## Parameters
 
-| Name         | Type       | Required | Default | Description                                                                |
-| ------------ | ---------- | :------: | ------- | -------------------------------------------------------------------------- |
-| `projectId`  | `number`   |   ✔️     |   —     | The id of the project.                                                     |
-| `branch_id`  | `string`   |          | main    | The id of the branch.                                                      |
+| Name         | Type       | Required | Default           | Description                                                                |
+| ------------ | ---------- | :------: | :---------------: | -------------------------------------------------------------------------- |
+| `projectId`  | `number`   | ✔️       | —                 | The id of the project.                                                     |
+| `branch_id`  | `string`   |          | id of main branch | The id of the branch.                                                      |
 
 ## Response Schema
 

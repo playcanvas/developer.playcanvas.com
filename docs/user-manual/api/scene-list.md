@@ -27,10 +27,10 @@ Authorization: Bearer {accessToken}
 
 ## Parameters
 
-| Name         | Type       | Required | Default | Description                                                                |
-| ------------ | ---------- | :------: | ------- | -------------------------------------------------------------------------- |
-| `projectId`  | `number`   |   ✔️     |   —     | The id of the project.                                                     |
-| `branchId`   | `string`   |          | main    | The id of the branch.                                                      |
+| Name         | Type       | Required | Default           | Description                                                                |
+| ------------ | ---------- | :------: | :---------------: | -------------------------------------------------------------------------- |
+| `projectId`  | `number`   | ✔️       | —                 | The id of the project.                                                     |
+| `branchId`   | `string`   |          | id of main branch | The id of the branch.                                                      |
 
 ## Response Schema
 

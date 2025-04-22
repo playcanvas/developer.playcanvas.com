@@ -21,8 +21,8 @@ curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/jobs/{
 ## Parameters
 
 | Name   | Type       | Required | Default | Description        |
-| ------ | ---------- | :------: | ------- | ------------------ |
-| `id`   | `number`   |   ✔️     |   —     | The id of the job. |
+| ------ | ---------- | :------: | :-----: | ------------------ |
+| `id`   | `number`   | ✔️       | —       | The id of the job. |
 
 ## Response Schema
 

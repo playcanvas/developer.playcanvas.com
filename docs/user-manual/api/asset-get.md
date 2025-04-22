@@ -28,9 +28,9 @@ Authorization: Bearer {accessToken}
 ## Parameters
 
 | Name        | Type       | Required | Default | Description           |
-| ----------- | ---------- | :------: | ------- | --------------------- |
-| `assetId`   | `number`   |   ✔️     |   —     | The id of the asset.  |
-| `branchId`  | `string`   |   ✔️     |   —     | The id of the branch. |
+| ----------- | ---------- | :------: | :-----: | --------------------- |
+| `assetId`   | `number`   | ✔️       | —       | The id of the asset.  |
+| `branchId`  | `string`   | ✔️       | —       | The id of the branch. |
 
 ## Response Schema
 

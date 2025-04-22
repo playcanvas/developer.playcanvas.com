@@ -21,8 +21,8 @@ curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/project
 ## Parameters
 
 | Name        | Type       | Required | Default | Description            |
-| ----------- | ---------- | :------: | ------- | ---------------------- |
-| `projectId` | `number`   |   ✔️     |   —     | The id of the project. |
+| ----------- | ---------- | :------: | :-----: | ---------------------- |
+| `projectId` | `number`   | ✔️       | —       | The id of the project. |
 
 ## Response Schema
 

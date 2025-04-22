@@ -28,10 +28,10 @@ Authorization: Bearer {accessToken}
 ## Parameters
 
 | Name        | Type       | Required | Default | Description                |
-| ----------- | ---------- | :------: | ------- | -------------------------- |
-| `assetId`   | `number`   |   ✔️     |   —     | The id of the asset.       |
-| `branchId`  | `string`   |   ✔️     |   —     | The id of the branch.      |
-| `filename`  | `string`   |   ✔️     |   —     | The filename of the asset. |
+| ----------- | ---------- | :------: | :-----: | -------------------------- |
+| `assetId`   | `number`   | ✔️       | —       | The id of the asset.       |
+| `branchId`  | `string`   | ✔️       | —       | The id of the branch.      |
+| `filename`  | `string`   | ✔️       | —       | The filename of the asset. |
 
 ## Response Schema
 

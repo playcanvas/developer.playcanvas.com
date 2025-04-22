@@ -60,14 +60,14 @@ Content-Type: application/javascript
 ## Parameters
 
 | Name        | Type      | Required | Default | Description                                                                                                 |
-| ----------- | --------- | :------: | ------- | ----------------------------------------------------------------------------------------------------------- |
-| `name`      | `string`  |   ✔️     |   —     | The name of the asset.                                                                                      |
-| `projectId` | `number`  |   ✔️     |   —     | The id of the project.                                                                                      |
-| `branchId`  | `string`  |   ✔️     |   —     | The id of the branch.                                                                                       |
-| `parent`    | `number`  |          |   —     | Parent asset's id.                                                                                          |
-| `preload`   | `boolean` |          |   —     | Preload the asset (true / false).                                                                           |
-| `file`      | `file`    |          |   —     | Data to store as the asset file.                                                                            |
-| `pow2`      | `boolean` |          | false   | Only used for textures. Resize the texture to power of two dimensions (true / false).                       |
+| ----------- | --------- | :------: | :-----: | ----------------------------------------------------------------------------------------------------------- |
+| `name`      | `string`  | ✔️       | —       | The name of the asset.                                                                                      |
+| `projectId` | `number`  | ✔️       | —       | The id of the project.                                                                                      |
+| `branchId`  | `string`  | ✔️       | —       | The id of the branch.                                                                                       |
+| `parent`    | `number`  |          | —       | Parent asset's id.                                                                                          |
+| `preload`   | `boolean` |          | —       | Preload the asset (true / false).                                                                           |
+| `file`      | `file`    |          | —       | Data to store as the asset file.                                                                            |
+| `pow2`      | `boolean` |          | `false` | Only used for textures. Resize the texture to power of two dimensions (true / false).                       |
 
 ## Response Schema
 

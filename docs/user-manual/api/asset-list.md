@@ -28,11 +28,11 @@ Authorization: Bearer {accessToken}
 ## Parameters
 
 | Name        | Type       | Required | Default | Description                                                                  |
-| ----------- | ---------- | :------: | ------- | ---------------------------------------------------------------------------- |
-| `projectId` | `number`   |   ✔️     |   —     | The id of the project.                                                       |
-| `branchId`  | `string`   |   ✔️     |   —     | The id of the branch.                                                        |
-| `skip`      | `number`   |          |   0     | Number of assets to skip before listing. Used for pagination.                |
-| `limit`     | `number`   |          |  16     | Maximum number of assets to list. Maximum 100000.                            |
+| ----------- | ---------- | :------: | :-----: | ---------------------------------------------------------------------------- |
+| `projectId` | `number`   | ✔️       | —       | The id of the project.                                                       |
+| `branchId`  | `string`   | ✔️       | —       | The id of the branch.                                                        |
+| `skip`      | `number`   |          | `0`     | Number of assets to skip before listing. Used for pagination.                |
+| `limit`     | `number`   |          | `16`    | Maximum number of assets to list. Maximum 100000.                            |
 
 ## Response Schema
 

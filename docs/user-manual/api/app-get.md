@@ -21,8 +21,8 @@ curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/apps/{i
 ## Parameters
 
 | Name   | Type       | Required | Default | Description        |
-| ------ | ---------- | :------: | ------- | ------------------ |
-| `id`   | `number`   |   ✔️     |   —     | The id of the app. |
+| ------ | ---------- | :------: | :-----: | ------------------ |
+| `id`   | `number`   | ✔️       | —       | The id of the app. |
 
 ## Response Schema
 

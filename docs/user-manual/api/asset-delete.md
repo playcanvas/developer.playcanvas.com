@@ -34,9 +34,9 @@ Authorization: Bearer {accessToken}
 ## Parameters
 
 | Name       | Type       | Required | Default | Description                                    |
-| ---------- | ---------- | :------: | ------- | ---------------------------------------------- |
-| `assetId`  | `number`   |   ✔️     |   —     | The id of the asset to delete.                 |
-| `branchId` | `string`   |   ✔️     |   —     | The id of the branch to delete the asset from. |
+| ---------- | ---------- | :------: | :-----: | ---------------------------------------------- |
+| `assetId`  | `number`   | ✔️       | —       | The id of the asset to delete.                 |
+| `branchId` | `string`   | ✔️       | —       | The id of the branch to delete the asset from. |
 
 ## Response Schema
 
