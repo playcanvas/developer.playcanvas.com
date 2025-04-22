@@ -14,7 +14,7 @@ Get a list of all scenes for a project
 
 ## Example
 
-```none
+```bash
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}"
 ```
 
@@ -27,10 +27,10 @@ Authorization: Bearer {accessToken}
 
 ## Parameters
 
-| Name        | Type     | Required | Description                                                                |
-| ----------- | -------- | :------: | -------------------------------------------------------------------------- |
-| `projectId` | `number` | ✔️      | The id of the project.                                                     |
-| `branchId`  | `string` |          | The id of the branch. If no id is specified, the main branch will be used. |
+| Name         | Type       | Required | Default           | Description                                                                |
+| ------------ | ---------- | :------: | :---------------: | -------------------------------------------------------------------------- |
+| `projectId`  | `number`   | ✔️       | —                 | The id of the project.                                                     |
+| `branchId`   | `string`   |          | id of main branch | The id of the branch.                                                      |
 
 ## Response Schema
 

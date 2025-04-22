@@ -14,15 +14,15 @@ Gets a published App by id.
 
 ## Example
 
-```none
+```bash
 curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/apps/{id}
 ```
 
 ## Parameters
 
-| Name | Type     | Description        |
-| ---- | -------- | ------------------ |
-| `id` | `number` | The id of the app. |
+| Name   | Type       | Required | Default | Description        |
+| ------ | ---------- | :------: | :-----: | ------------------ |
+| `id`   | `number`   | ✔️       | —       | The id of the app. |
 
 ## Response Schema
 

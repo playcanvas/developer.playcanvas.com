@@ -14,7 +14,7 @@ Get the details of a single asset
 
 ## Example
 
-```none
+```bash
 curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 ```
 
@@ -27,10 +27,10 @@ Authorization: Bearer {accessToken}
 
 ## Parameters
 
-| Name       | Type     | Required | Description           |
-| ---------- | -------- | :------: | --------------------- |
-| `assetId`  | `number` | ✔️      | The id of the asset.  |
-| `branchId` | `string` | ✔️      | The id of the branch. |
+| Name        | Type       | Required | Default | Description           |
+| ----------- | ---------- | :------: | :-----: | --------------------- |
+| `assetId`   | `number`   | ✔️       | —       | The id of the asset.  |
+| `branchId`  | `string`   | ✔️       | —       | The id of the branch. |
 
 ## Response Schema
 

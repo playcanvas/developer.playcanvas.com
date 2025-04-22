@@ -14,15 +14,15 @@ Gets the Primary App of a Project.
 
 ## Example
 
-```none
+```bash
 curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/app
 ```
 
 ## Parameters
 
-| Name        | Type     | Description            |
-| ----------- | -------- | ---------------------- |
-| `projectId` | `number` | The id of the project. |
+| Name        | Type       | Required | Default | Description            |
+| ----------- | ---------- | :------: | :-----: | ---------------------- |
+| `projectId` | `number`   | ✔️       | —       | The id of the project. |
 
 ## Response Schema
 
