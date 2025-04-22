@@ -14,15 +14,15 @@ Gets a Job by id.
 
 ## Example
 
-```none
+```bash
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/jobs/{id}"
 ```
 
 ## Parameters
 
-| Name | Type     | Description        |
-| ---- | -------- | ------------------ |
-| `id` | `number` | The id of the job. |
+| Name   | Type       | Required | Default | Description        |
+| ------ | ---------- | :------: | ------- | ------------------ |
+| `id`   | `number`   |   ✔️     |   —     | The id of the job. |
 
 ## Response Schema
 
