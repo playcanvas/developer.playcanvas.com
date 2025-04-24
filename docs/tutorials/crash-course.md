@@ -46,7 +46,7 @@ Play below! Try to get as many food items as you can before the timer runs out! 
 
 :::note
 
-Phase 3 of this tutorial is still incomplete
+Phase 3 of this tutorial is still incomplete.
 
 :::
 
