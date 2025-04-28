@@ -10,7 +10,7 @@ GET https://playcanvas.com/api/users/:userId/projects
 
 ## Description
 
-Lists all projects that a user has access to.
+Retrieve all projects to which the specified user has explicit access. Use it to enumerate every project where that user has either read, write or admin rights.
 
 ## Example
 
