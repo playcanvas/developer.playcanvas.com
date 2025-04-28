@@ -10,7 +10,7 @@ GET https://playcanvas.com/api/users/:userId/projects
 
 ## Description
 
-Lists all projects owned by a user.
+Lists all projects that a user has access to.
 
 ## Example
 
