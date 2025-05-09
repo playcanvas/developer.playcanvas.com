@@ -95,7 +95,7 @@ The engine provides some defines automatically, allowing integration with render
 #define SHADOW_PICK 
 ```
 
-If you use a custom render pass, created using [`CameraComponent.setShaderPass`](https://api.playcanvas.com/classes/Engine.CameraComponent.html#setshaderpass), a matching define is automatically generated. For example:
+If you use a custom render pass, created using [`CameraComponent.setShaderPass`](https://api.playcanvas.com/engine/classes/CameraComponent.html#setshaderpass), a matching define is automatically generated. For example:
 
 ```javascript
 camera.setRenderPass('custom');
@@ -206,6 +206,6 @@ And Each created shader will be logged in the browser console, where you can ins
 
 ![sRGB](/img/user-manual/graphics/shaders/shader-log.png)
 
-For further information, refer to the [ShaderMaterial API documentation](https://api.playcanvas.com/classes/Engine.ShaderMaterial.html).
+For further information, refer to the [ShaderMaterial API documentation](https://api.playcanvas.com/engine/classes/ShaderMaterial.html).
 
 [1]: /user-manual/graphics/physical-rendering/physical-materials/

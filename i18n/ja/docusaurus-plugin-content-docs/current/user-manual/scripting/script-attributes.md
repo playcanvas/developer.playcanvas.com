@@ -179,4 +179,4 @@ MyScript.prototype.update = function (dt) {
 
 :::
 
-[3]: https://api.playcanvas.com/classes/Engine.ScriptAttributes.html
+[3]: https://api.playcanvas.com/engine/classes/ScriptAttributes.html

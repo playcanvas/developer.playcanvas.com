@@ -137,4 +137,4 @@ This is just a taster of how you can visualize your music. Why not try scaling 3
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
-[4]: https://api.playcanvas.com/classes/Engine.Application.html#renderLines
+[4]: https://api.playcanvas.com/engine/classes/Application.html#renderLines
