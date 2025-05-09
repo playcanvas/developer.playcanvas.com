@@ -107,10 +107,10 @@ entity.button.on('click', function() {
 [1]: https://playcanvas.com/project/460449/overview/webvr-ray-input
 [2]: /user-manual/xr/using-webxr/
 [3]: /user-manual/user-interface/
-[4]: https://api.playcanvas.com/classes/Engine.XrInput.html
-[5]: https://api.playcanvas.com/classes/Engine.XrInputSource.html
-[6]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html
-[7]: https://api.playcanvas.com/classes/Engine.ElementComponent.html
-[8]: https://api.playcanvas.com/classes/Engine.XrInputSource.html#getOrigin
-[9]: https://api.playcanvas.com/classes/Engine.XrInputSource.html#getDirection
-[10]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html#event:click
+[4]: https://api.playcanvas.com/engine/classes/XrInput.html
+[5]: https://api.playcanvas.com/engine/classes/XrInputSource.html
+[6]: https://api.playcanvas.com/engine/classes/ButtonComponent.html
+[7]: https://api.playcanvas.com/engine/classes/ElementComponent.html
+[8]: https://api.playcanvas.com/engine/classes/XrInputSource.html#getOrigin
+[9]: https://api.playcanvas.com/engine/classes/XrInputSource.html#getDirection
+[10]: https://api.playcanvas.com/engine/classes/ButtonComponent.html#event:click

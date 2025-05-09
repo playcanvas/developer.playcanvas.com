@@ -107,4 +107,4 @@ Changing the `width` makes the fill image larger and changing the `rect` makes s
 [1]: https://playcanvas.com/editor/scene/547906
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[8]: https://api.playcanvas.com/classes/Engine.ElementComponent.html#rect
+[8]: https://api.playcanvas.com/engine/classes/ElementComponent.html#rect
