@@ -39,4 +39,4 @@ Note that you must add a [collision component][4] to the same entity in order to
 
 [4]: /user-manual/scenes/components/collision/
 [5]: /user-manual/scenes/components/script
-[6]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html
+[6]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html

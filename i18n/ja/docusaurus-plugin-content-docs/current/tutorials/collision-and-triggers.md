@@ -137,4 +137,4 @@ Collider.prototype.onCollisionStart = function (result) {
 
 [1]: https://playcanvas.com/project/405871
 [5]: /user-manual/scenes/components/rigidbody/
-[8]: https://api.playcanvas.com/classes/Engine.Entity.html
+[8]: https://api.playcanvas.com/engine/classes/Entity.html
