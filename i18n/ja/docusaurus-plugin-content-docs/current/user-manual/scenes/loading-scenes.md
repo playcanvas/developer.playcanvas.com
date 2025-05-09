@@ -74,7 +74,7 @@ Sometimes developers use this approach to ensure that certain code and entities 
 
 :::note
 
-[アプリケーションルートノード](https://api.playcanvas.com/engine/classes/Application.html#root)は、エディタで見ることができるデフォルトで 'Root' と名前が付けられたシーンヒエラルキールートエンティティではありません。シーンヒエラルキールートエンティティは、アプリケーションルートノードの子になります。
+[アプリケーションルートノード](https://api.playcanvas.com/engine/classes/AppBase.html#root)は、エディタで見ることができるデフォルトで 'Root' と名前が付けられたシーンヒエラルキールートエンティティではありません。シーンヒエラルキールートエンティティは、アプリケーションルートノードの子になります。
 
 :::
 
@@ -204,10 +204,10 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 [loadscenesettings-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html#loadSceneSettings
 [sceneregistryitem-api]: https://api.playcanvas.com/engine/classes/SceneRegistryItem.html
 [sceneregistry-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html
-[application-sceneregistry-api]: https://api.playcanvas.com/engine/classes/Application.html#scenes
+[application-sceneregistry-api]: https://api.playcanvas.com/engine/classes/AppBase.html#scenes
 [loadhierarchycallback-api]: https://api.playcanvas.com/engine/types/LoadHierarchyCallback.html
 [loadsettingscallback-api]: https://api.playcanvas.com/engine/types/LoadSettingsCallback.html
-[application-root-api]: https://api.playcanvas.com/engine/classes/Application.html#root
+[application-root-api]: https://api.playcanvas.com/engine/classes/AppBase.html#root
 [loadscenedata-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html#loadSceneData
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
