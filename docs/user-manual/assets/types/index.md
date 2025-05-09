@@ -7,8 +7,10 @@ The [Assets Panel](/user-manual/editor/interface/assets) manages the assets in y
 
 | Type                             | Imported From                    | Resource Extensions              | Description                        |
 | -------------------------------- | -------------------------------- | -------------------------------- | ---------------------------------- |
-| [`animation`](animation)         | `.glb`, `.fbx`                   | `.glb`                           | Animation keyframe data            |
+| [`animation`](animation)         | `.glb`, `.fbx`, `.json`          | `.glb`, `.json`                  | Animation keyframe data            |
 | [`audio`](audio)                 | `.mp3`, `.wav`, `.ogg`           | `.mp3`, `.wav`, `.ogg`           | Sound data                         |
+| `binary`                         | `.bin`, `.gltf`                  | `.bin`, `.gltf`                  | Binary data                        |
+| `bundle`                         | `.tar`                           | `.tar`                           | Bundled assets                     |
 | [`css`](css)                     | `.css`                           | `.css`                           | Stylesheets for HTML               |
 | [`cubemap`](cubemap)             | `.png`, `.jpg`, `.webp`, `.avif` | `.png`, `.jpg`, `.webp`, `.avif` | Environment lighting data          |
 | [`font`](font)                   | `.ttf`, `.woff`                  | `.json`, `.png`                  | Font data for rendering text       |
@@ -17,6 +19,7 @@ The [Assets Panel](/user-manual/editor/interface/assets) manages the assets in y
 | [`json`](json)                   | `.json`                          | `.json`                          | JSON documents                     |
 | [`material`](material)           | `.glb`, `.fbx`                   | None                             | Material definitions for 3D models |
 | [`render`](render)               | `.glb`, `.fbx`                   | `.glb`                           | 3D mesh data                       |
+| `script`                         | `.js`, `.mjs`, `.ts`             | `.js`, `.mjs`, `.ts`             | Scripts                            |
 | [`shader`](shader)               | `.glsl`, `.vert`, `.frag`        | `.glsl`, `.vert`, `.frag`        | Custom shaders for rendering       |
 | [`sprite`](sprite)               | Created in the Editor            | None                             | 2D images for UIs or textures      |
 | [`template`](template)           | `.glb`                           | None                             | Templates for entity hierarchy     |
