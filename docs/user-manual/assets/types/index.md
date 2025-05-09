@@ -19,7 +19,7 @@ The [Assets Panel](/user-manual/editor/interface/assets) manages the assets in y
 | [`json`](json)                   | `.json`                          | `.json`                          | JSON documents                     |
 | [`material`](material)           | `.glb`, `.fbx`                   | None                             | Material definitions for 3D models |
 | [`render`](render)               | `.glb`, `.fbx`                   | `.glb`                           | 3D mesh data                       |
-| `script`                         | `.js`, `.mjs`, `.ts`             | `.js`, `.mjs`, `.ts`             | Scripts                            |
+| [`script`](../../scripting/index.md) | `.js`, `.mjs`, `.ts`         | `.js`, `.mjs`, `.ts`             | Scripts                            |
 | [`shader`](shader)               | `.glsl`, `.vert`, `.frag`        | `.glsl`, `.vert`, `.frag`        | Custom shaders for rendering       |
 | [`sprite`](sprite)               | Created in the Editor            | None                             | 2D images for UIs or textures      |
 | [`template`](template)           | `.glb`                           | None                             | Templates for entity hierarchy     |
