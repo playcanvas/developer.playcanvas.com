@@ -40,4 +40,4 @@ This will result in your first component being appended to your document body!
 
 ## API Reference
 
-The [API reference](https://api.playcanvas.com/modules/PCUI.html) is a list of all of PCUI's class components and their properties. It is automatically generated from the source code.
+The [API reference](https://api.playcanvas.com/pcui/) is a list of all of PCUI's class components and their properties. It is automatically generated from the source code.
