@@ -10,7 +10,7 @@ The [Assets Panel](/user-manual/editor/interface/assets) manages the assets in y
 | [`animation`](animation)         | `.glb`, `.fbx`                   | `.glb`                           | Animation keyframe data            |
 | [`audio`](audio)                 | `.mp3`, `.wav`, `.ogg`           | `.mp3`, `.wav`, `.ogg`           | Sound data                         |
 | `binary`                         | `.bin`                           | `.bin`                           | Binary data                        |
-| `bundle`                         | `.tar`                           | `.tar`                           | Bundled assets                     |
+| `bundle`                         | Created in the Editor            | `.tar`                           | Bundled assets                     |
 | [`css`](css)                     | `.css`                           | `.css`                           | Stylesheets for HTML               |
 | [`cubemap`](cubemap)             | `.png`, `.jpg`, `.webp`, `.avif` | `.png`, `.jpg`, `.webp`, `.avif` | Environment lighting data          |
 | [`font`](font)                   | `.ttf`, `.woff`                  | `.json`, `.png`                  | Font data for rendering text       |
