@@ -170,7 +170,7 @@ The button created is from the [PCUI][pcui] framework library that the Editor is
     }
 ```
 
-[github-api]: https://api.playcanvas.com/modules/Editor.html
+[github-api]: https://api.playcanvas.com/editor/
 [github-repo]: https://github.com/playcanvas/editor-api
 [user-scripts]: https://en.wikipedia.org/wiki/Userscript
 [viewport]: /user-manual/editor/interface/viewport
