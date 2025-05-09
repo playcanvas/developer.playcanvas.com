@@ -7,7 +7,7 @@ The [Assets Panel](/user-manual/editor/interface/assets) manages the assets in y
 
 | Type                             | Imported From                    | Resource Extensions              | Description                        |
 | -------------------------------- | -------------------------------- | -------------------------------- | ---------------------------------- |
-| [`animation`](animation)         | `.glb`, `.fbx`, `.json`          | `.glb`, `.json`                  | Animation keyframe data            |
+| [`animation`](animation)         | `.glb`, `.fbx`                   | `.glb`                           | Animation keyframe data            |
 | [`audio`](audio)                 | `.mp3`, `.wav`, `.ogg`           | `.mp3`, `.wav`, `.ogg`           | Sound data                         |
 | `binary`                         | `.bin`, `.gltf`                  | `.bin`, `.gltf`                  | Binary data                        |
 | `bundle`                         | `.tar`                           | `.tar`                           | Bundled assets                     |
