@@ -190,7 +190,7 @@ DynamicBody.prototype.reset = function () {
 [4]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyTorqueImpulse
 [5]: https://api.playcanvas.com/engine/classes/Vec3.html
 [6]: https://api.playcanvas.com/engine/classes/CollisionComponent.html
-[7]: https://api.playcanvas.com/modules/Engine.html
+[7]: https://api.playcanvas.com/engine/
 [8]: /tutorials/first-person-movement/
 [9]: /tutorials/collision-and-triggers/
 [10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses

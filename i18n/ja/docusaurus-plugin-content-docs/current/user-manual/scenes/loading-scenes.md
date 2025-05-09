@@ -205,8 +205,8 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 [sceneregistryitem-api]: https://api.playcanvas.com/engine/classes/SceneRegistryItem.html
 [sceneregistry-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html
 [application-sceneregistry-api]: https://api.playcanvas.com/engine/classes/Application.html#scenes
-[loadhierarchycallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadHierarchyCallback
-[loadsettingscallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadSettingsCallback
+[loadhierarchycallback-api]: https://api.playcanvas.com/engine/types/LoadHierarchyCallback.html
+[loadsettingscallback-api]: https://api.playcanvas.com/engine/types/LoadSettingsCallback.html
 [application-root-api]: https://api.playcanvas.com/engine/classes/Application.html#root
 [loadscenedata-api]: https://api.playcanvas.com/engine/classes/SceneRegistry.html#loadSceneData
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
