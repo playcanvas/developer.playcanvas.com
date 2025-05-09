@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">一人称視点での移動方法 | PlayCanvas Developer Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://developer.playcanvas.com/ja/img/playcanvas-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://developer.playcanvas.com/ja/img/playcanvas-social-card.jpg"><meta data-rh="true" property="og:url" content="https://developer.playcanvas.com/ja/tutorials/first-person-movement/"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="一人称視点での移動方法 | PlayCanvas Developer Site"><meta data-rh="true" name="description" content="このアプリケーションは、ファーストパーソンでのキャラクター移動を実装しています。"><meta data-rh="true" property="og:description" content="このアプリケーションは、ファーストパーソンでのキャラクター移動を実装しています。"><link data-rh="true" rel="icon" href="/ja/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://developer.playcanvas.com/ja/tutorials/first-person-movement/"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/tutorials/first-person-movement/" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/ja/tutorials/first-person-movement/" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/tutorials/first-person-movement/" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://69QRBNV3NH-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="PlayCanvas Developer Site" href="/ja/opensearch.xml"><link rel="stylesheet" href="/ja/assets/css/styles.910900f1.css">
-<script src="/ja/assets/js/runtime~main.2c1fb238.js" defer="defer"></script>
+<script src="/ja/assets/js/runtime~main.a153243b.js" defer="defer"></script>
 <script src="/ja/assets/js/main.05dacb05.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -18,7 +18,7 @@
 <li>マウスの入力からカメラエンティティを更新する</li>
 <li>重力を適用してプレイヤーエンティティをシーン内で移動する</li>
 </ul>
-<p>注意:プレーヤーの速度は直接設定されず、<a href="https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html#applyForce" target="_blank" rel="noopener noreferrer"><code>applyForce</code></a>を使用して力を加えることで移動されます。</p>
+<p>注意:プレーヤーの速度は直接設定されず、<a href="https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyForce" target="_blank" rel="noopener noreferrer"><code>applyForce</code></a>を使用して力を加えることで移動されます。</p>
 <p>RigidBodyコンポーネントでは、以下の値がエディタインスペクタに設定されています。</p>
 <ul>
 <li>最大速度を制限するには、プレイヤーが入力キーを離した後にプレイヤーがスライドしないように線形減衰を適用します。</li>
