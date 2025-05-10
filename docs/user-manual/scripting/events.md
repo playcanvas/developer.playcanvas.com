@@ -1,5 +1,5 @@
 ---
-title: Communication
+title: Events
 sidebar_position: 6
 ---
 
@@ -20,7 +20,7 @@ Trigger an event using `fire()`. In this example, the player script fires a `mov
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="esm" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -36,7 +36,7 @@ export class Player extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Player = pc.createScript('player');
@@ -53,16 +53,18 @@ Player.prototype.update = function (dt) {
 
 Listen for events firing by using `on()` and `off()`. In this example, the display script listens for the `move` event on the player and prints out the x and y values.
 
-<Tabs defaultValue="legacy" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+<Tabs defaultValue="esm" groupId='script-code'>
+<TabItem value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
 
 export class Display extends Script {
-    static attributes = {
-        playerEntity: { type: 'entity' }
-    };
+    /**
+     * @attribute
+     * @type {Entity}
+     */
+    playerEntity;
 
     initialize() {
         // Method to call when player moves
@@ -84,7 +86,7 @@ export class Display extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Display = pc.createScript('display');
@@ -94,7 +96,7 @@ Display.attributes.add('playerEntity', { type: 'entity' });
 
 Display.prototype.initialize = function () {
     // method to call when player moves
-    const onPlayerMove = function(x, y) {
+    const onPlayerMove = (x, y) => {
         console.log(x, y);
     };
 
@@ -102,8 +104,8 @@ Display.prototype.initialize = function () {
     this.playerEntity.script.player.on('move', onPlayerMove);
 
     // remove player move event listeners when script destroyed
-    this.playerEntity.script.player.on('destroy', function() {
-        this.playerEntity.script.player.app.off('move', onPlayerMove);
+    this.playerEntity.script.player.once('destroy', () => {
+        this.playerEntity.script.player.off('move', onPlayerMove);
     });
 };
 ```
@@ -121,7 +123,7 @@ Let's try the same example using application events.
 
 Firing the `player:move` event:
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="esm" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -154,7 +156,7 @@ export class Display extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Player = pc.createScript('player');
@@ -173,7 +175,7 @@ var Display = pc.createScript('display');
 
 Display.prototype.initialize = function () {
     // method to call when player moves
-    const onPlayerMove = function(x, y) {
+    const onPlayerMove = (x, y) => {
         console.log(x, y);
     };
 
