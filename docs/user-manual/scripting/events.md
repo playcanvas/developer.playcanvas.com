@@ -1,5 +1,5 @@
 ---
-title: Communication
+title: Events
 sidebar_position: 6
 ---
 
@@ -17,6 +17,27 @@ Many PlayCanvas object types (such as script instances) have event handling supp
 
 Trigger an event using `fire()`. In this example, the player script fires a `move` event every frame with the x and y values passed as arguments.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs defaultValue="esm" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
+```javascript
+import { Script } from 'playcanvas';
+
+export class Player extends Script {
+    update(dt) {
+        const x = 1;
+        const y = 1;
+        this.fire('move', x, y);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
+
 ```javascript
 var Player = pc.createScript('player');
 
@@ -27,7 +48,45 @@ Player.prototype.update = function (dt) {
 };
 ```
 
+</TabItem>
+</Tabs>
+
 Listen for events firing by using `on()` and `off()`. In this example, the display script listens for the `move` event on the player and prints out the x and y values.
+
+<Tabs defaultValue="esm" groupId='script-code'>
+<TabItem value="esm" label="ESM">
+
+```javascript
+import { Script } from 'playcanvas';
+
+export class Display extends Script {
+    /**
+     * @attribute
+     * @type {Entity}
+     */
+    playerEntity;
+
+    initialize() {
+        // Method to call when player moves
+        const onPlayerMove = (x, y) => {
+            console.log(x, y);
+        };
+
+        // Listen for the player move event
+        if (this.playerEntity && this.playerEntity.script && this.playerEntity.script.player) {
+            this.playerEntity.script.player.on('move', onPlayerMove);
+
+            // Remove player move event listeners when script destroyed
+            this.playerEntity.script.player.once('destroy', () => {
+                this.playerEntity.script.player.off('move', onPlayerMove);
+            });
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Display = pc.createScript('display');
@@ -37,7 +96,7 @@ Display.attributes.add('playerEntity', { type: 'entity' });
 
 Display.prototype.initialize = function () {
     // method to call when player moves
-    const onPlayerMove = function(x, y) {
+    const onPlayerMove = (x, y) => {
         console.log(x, y);
     };
 
@@ -45,11 +104,14 @@ Display.prototype.initialize = function () {
     this.playerEntity.script.player.on('move', onPlayerMove);
 
     // remove player move event listeners when script destroyed
-    this.playerEntity.script.player.on('destroy', function() {
-        this.playerEntity.script.player.app.off('move', onPlayerMove);
+    this.playerEntity.script.player.once('destroy', () => {
+        this.playerEntity.script.player.off('move', onPlayerMove);
     });
 };
 ```
+
+</TabItem>
+</Tabs>
 
 ## Application Events
 
@@ -60,6 +122,41 @@ This works by firing and listening to all events on `this.app`. By convention, w
 Let's try the same example using application events.
 
 Firing the `player:move` event:
+
+<Tabs defaultValue="esm" groupId='script-code'>
+<TabItem  value="esm" label="ESM">
+
+```javascript
+import { Script } from 'playcanvas';
+
+export class Player extends Script {
+    update(dt) {
+        var x = 1;
+        var y = 1;
+        this.app.fire('player:move', x, y);
+    }
+}
+
+export class Display extends Script {
+    initialize() {
+        // Method to call when player moves
+        const onPlayerMove = (x, y) => {
+            console.log(x, y);
+        };
+
+        // Listen for the player:move event
+        this.app.on('player:move', onPlayerMove);
+
+        // Remove player:move event listeners when script destroyed
+        this.on('destroy', () => {
+            this.app.off('player:move', onPlayerMove);
+        });
+    }
+}
+```
+
+</TabItem>
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Player = pc.createScript('player');
@@ -78,7 +175,7 @@ var Display = pc.createScript('display');
 
 Display.prototype.initialize = function () {
     // method to call when player moves
-    const onPlayerMove = function(x, y) {
+    const onPlayerMove = (x, y) => {
         console.log(x, y);
     };
 
@@ -91,6 +188,9 @@ Display.prototype.initialize = function () {
     });
 };
 ```
+
+</TabItem>
+</Tabs>
 
 As you can see, this reduces the amount of set up and makes for cleaner code.
 
