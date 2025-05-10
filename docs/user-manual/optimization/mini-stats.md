@@ -22,7 +22,6 @@ The information displayed is as follows:
   * WebGPU: The underlying WebGPU implementation must support the GPU Adapter feature [`timestamp-query`](https://web3dsurvey.com/webgpu/features/timestamp-query).
 * **CPU** - Shows the time in milliseconds to render each frame by the CPU.
 
-
 The CPU and GPU graphs display a breakdown of the update and render portion of the frame using red and green respectively.
 
 ## Using MiniStats Outside of the Editor
