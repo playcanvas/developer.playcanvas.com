@@ -27,7 +27,7 @@ for (let i = 0; i < instanceCount; i++) {
 }
 ```
 
-Create a VertexBuffer which stores per-instance state and initialize it with the matrices. In the following example, we use [`pc.VertexFormat.getDefaultInstancingFormat`](https://api.playcanvas.com/engine/classes/VertexFormat.html#getDefaultInstancingFormat) which allows us to store a per-instance Mat4 matrix. Then we enable instancing on a MeshInstance, which contains the mesh geometry we want to instance.
+Create a VertexBuffer which stores per-instance state and initialize it with the matrices. In the following example, we use [`pc.VertexFormat.getDefaultInstancingFormat`](https://api.playcanvas.com/engine/classes/VertexFormat.html#getdefaultinstancingformat) which allows us to store a per-instance Mat4 matrix. Then we enable instancing on a MeshInstance, which contains the mesh geometry we want to instance.
 
 ```javascript
 const instanceCount = 10;
