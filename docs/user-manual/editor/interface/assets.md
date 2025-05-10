@@ -122,4 +122,4 @@ Selecting a reference will load it into the Inspector panel.
 [2]: /user-manual/editor/interface/inspector
 [3]: /user-manual/editor/interface/viewport
 [4]: /user-manual/editor/interface/settings
-[7]: https://api.playcanvas.com/engine/classes/AssetRegistry.html#findByTag
+[7]: https://api.playcanvas.com/engine/classes/AssetRegistry.html#findbytag

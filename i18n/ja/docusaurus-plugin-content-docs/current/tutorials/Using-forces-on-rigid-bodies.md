@@ -184,10 +184,10 @@ DynamicBody.prototype.reset = function () {
 };
 ```
 
-[1]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyForce
-[2]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyImpulse
-[3]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyTorque
-[4]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyTorqueImpulse
+[1]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyforce
+[2]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applyimpulse
+[3]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applytorque
+[4]: https://api.playcanvas.com/engine/classes/RigidBodyComponent.html#applytorqueimpulse
 [5]: https://api.playcanvas.com/engine/classes/Vec3.html
 [6]: https://api.playcanvas.com/engine/classes/CollisionComponent.html
 [7]: https://api.playcanvas.com/engine/
