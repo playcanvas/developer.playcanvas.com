@@ -111,6 +111,6 @@ entity.button.on('click', function() {
 [5]: https://api.playcanvas.com/engine/classes/XrInputSource.html
 [6]: https://api.playcanvas.com/engine/classes/ButtonComponent.html
 [7]: https://api.playcanvas.com/engine/classes/ElementComponent.html
-[8]: https://api.playcanvas.com/engine/classes/XrInputSource.html#getOrigin
-[9]: https://api.playcanvas.com/engine/classes/XrInputSource.html#getDirection
+[8]: https://api.playcanvas.com/engine/classes/XrInputSource.html#getorigin
+[9]: https://api.playcanvas.com/engine/classes/XrInputSource.html#getdirection
 [10]: https://api.playcanvas.com/engine/classes/ButtonComponent.html#event:click

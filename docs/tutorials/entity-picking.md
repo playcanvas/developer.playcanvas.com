@@ -146,5 +146,5 @@ PickerFramebuffer.prototype.onSelect = function (event) {
 ```
 
 [1]: https://playcanvas.com/project/405856
-[2]: https://api.playcanvas.com/engine/classes/RigidBodyComponentSystem.html#raycastFirst
+[2]: https://api.playcanvas.com/engine/classes/RigidBodyComponentSystem.html#raycastfirst
 [3]: https://api.playcanvas.com/engine/classes/Picker.html
