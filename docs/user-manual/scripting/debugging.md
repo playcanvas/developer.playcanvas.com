@@ -1,6 +1,6 @@
 ---
 title: Debugging
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 In order to create scripts for PlayCanvas, it is vital that you know how to access and use your browser's development tools.

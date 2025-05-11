@@ -1,11 +1,13 @@
 ---
-title: Script Attributes
-description: Expose dynamic script properties to the PlayCanvas Editor.
-sidebar_position: 3
+title: ESM Reference
+sidebar_position: 1
 ---
+
 :::note
+
 This is the documentation for the newer **ESM Script Attributes**.
 For **Classic Script Attributes** click [here](./classic/script-attributes.md)
+
 :::
 
 ## What are Attributes?
