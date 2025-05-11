@@ -6,13 +6,15 @@ sidebar_position: 3
 Scripts provide powerful features for adding interactivity to your project. To learn more about the anatomy of a Script we've provided a simple `Rotate` script below. Let's break down what this means.
 
 :::note
+
 Scripts can be defined as either **[ES Modules](esm-scripts.md)**, or **[Classic Scripts](../classic)**.
+
 :::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
@@ -42,7 +44,7 @@ export class Rotate extends Script {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Rotate = pc.createScript('rotate');
@@ -75,18 +77,21 @@ Rotate.prototype.swap = function(old) {
 
 ## Declaring a Script
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem  value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
-export class Rotate extends Script {};
+
+export class Rotate extends Script {
+
+}
 ```
 
 You declare a script by **exporting a class that extends `Script`**. The class name is used to identify the script. Each script in a project must have a unique name.
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 var Rotate = pc.createScript('rotate');
@@ -99,7 +104,7 @@ This line creates a new Script called 'rotate'. The name of the script is used t
 
 ## Attributes
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
@@ -108,7 +113,7 @@ speed = 10
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
@@ -129,7 +134,7 @@ If an entity has multiple scripts attached to it, the methods are called in the 
 
 ### Initialize()
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
@@ -141,7 +146,7 @@ initialize() {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 // initialize code called once per entity
@@ -166,7 +171,7 @@ When an entity is cloned using the `entity.clone` method, the `initialize` metho
 
 ### Update()
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
@@ -181,7 +186,7 @@ update(dt) {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 // update code called every frame
@@ -205,7 +210,7 @@ The **`postUpdate()`** method is an additional life-cycle hook invoked after **`
 
 ### Swap()
 
-<Tabs defaultValue="legacy" groupId='script-code'>
+<Tabs defaultValue="classic" groupId='script-code'>
 <TabItem value="esm" label="ESM">
 
 ```javascript
@@ -217,7 +222,7 @@ swap(old) {
 ```
 
 </TabItem>
-<TabItem value="legacy" label="Legacy">
+<TabItem value="classic" label="Classic">
 
 ```javascript
 // swap method called for script hot-reloading

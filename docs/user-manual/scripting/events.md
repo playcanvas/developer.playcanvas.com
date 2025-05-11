@@ -13,9 +13,9 @@ Many PlayCanvas object types (such as script instances) have event handling supp
 * `fire()` - sends an event.
 * `hasEvent()` - queries whether an object is listening on a particular event.
 
-## Using events
+## Using Events
 
-Trigger an event using `fire()`. In this example, the player script fires a `move` event every frame with the x and y values passed as arguments.
+Trigger an event using `fire()`. In this example, the player script fires a `move` event every frame with the `x` and `y` values passed as arguments.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -91,19 +91,19 @@ export class Display extends Script {
 ```javascript
 var Display = pc.createScript('display');
 
-// set up an entity reference for the player entity
+// Set up an entity reference for the player entity
 Display.attributes.add('playerEntity', { type: 'entity' });
 
 Display.prototype.initialize = function () {
-    // method to call when player moves
+    // Method to call when player moves
     const onPlayerMove = (x, y) => {
         console.log(x, y);
     };
 
-    // listen for the player move event
+    // Listen for the player move event
     this.playerEntity.script.player.on('move', onPlayerMove);
 
-    // remove player move event listeners when script destroyed
+    // Remove player move event listeners when script destroyed
     this.playerEntity.script.player.once('destroy', () => {
         this.playerEntity.script.player.off('move', onPlayerMove);
     });
@@ -174,15 +174,15 @@ Listening for the `player:move` event:
 var Display = pc.createScript('display');
 
 Display.prototype.initialize = function () {
-    // method to call when player moves
+    // Method to call when player moves
     const onPlayerMove = (x, y) => {
         console.log(x, y);
     };
 
-    // listen for the player:move event
+    // Listen for the player:move event
     this.app.on('player:move', onPlayerMove);
 
-    // remove player:move event listeners when script destroyed
+    // Remove player:move event listeners when script destroyed
     this.on('destroy', function() {
         this.app.off('player:move', onPlayerMove);
     });
