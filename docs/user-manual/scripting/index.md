@@ -48,5 +48,3 @@ A **Script** is a re-usable piece of logic attached to an **Entity** within a sc
 :::
 
 Scripts can be attached to multiple entities within a scene. They simply define a set of behavior without necessarily specifying the entities it should apply to. This separation allows you to create re-usable behaviors across your project.
-
-Find out how to [create a new script](./creating-new.md) and attach it to an entity.

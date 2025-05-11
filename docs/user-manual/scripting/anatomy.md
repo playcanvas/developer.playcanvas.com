@@ -235,7 +235,7 @@ Rotate.prototype.swap = function(old) {
 </TabItem>
 </Tabs>
 
-The `swap()` method is used to enable [hot-reloading](./hot-reloading.md) of scripts. In practice this means you can update code at author-time, and use the `swap()` method to copy state over from the previous script instance, to the new one. This is extremely useful if you wish to iterate on code without refreshing your project.
+The `swap()` method is used to enable [hot-reloading](../editor-users/hot-reloading) of scripts. In practice this means you can update code at author-time, and use the `swap()` method to copy state over from the previous script instance, to the new one. This is extremely useful if you wish to iterate on code without refreshing your project.
 
 The `swap` method is passed the old script instance as an argument. You should use this to copy any state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
 
