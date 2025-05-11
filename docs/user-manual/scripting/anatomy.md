@@ -1,6 +1,6 @@
 ---
 title: Script Anatomy
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 Scripts provide powerful features for adding interactivity to your project. To learn more about the anatomy of a Script we've provided a simple `Rotate` script below. Let's break down what this means.

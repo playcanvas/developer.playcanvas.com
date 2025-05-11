@@ -1,6 +1,6 @@
 ---
 title: ESM Scripts
-sidebar_position: 3
+sidebar_position: 2
 image: /img/user-manual/scripting/esm-script-meta.webp
 ---
 
