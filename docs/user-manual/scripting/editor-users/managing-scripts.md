@@ -3,11 +3,11 @@ title: Managing Your Scripts
 sidebar_position: 1
 ---
 
-In the PlayCanvas Editor, your JavaScript code lives in Script Assets. These are .js or .mjs files stored within your project's Asset panel, just like your models, textures, and materials. Effectively managing these Script Assets is key to an organized and efficient workflow. This page covers how to create, organize, delete, import, and assign scripts using the Editor interface.
+In the PlayCanvas Editor, your JavaScript code lives in Script Assets. These are `.js` or `.mjs` files stored within your project's Asset panel, just like your models, textures, and materials. Effectively managing these Script Assets is key to an organized and efficient workflow. This page covers how to create, organize, delete, import, and assign scripts using the Editor interface.
 
 Key Concepts:
 
-* **Script Asset:** The .js or .mjs file containing your script's code. It resides in the Asset Panel.
+* **Script Asset:** The `.js` or `.mjs` file containing your script's code. It resides in the Asset Panel.
 * **Script Component:** An instance of one or more Script Assets attached to an Entity. This is what makes your script "run" on that specific Entity.
 
 ## Creating New Scripts
@@ -26,15 +26,15 @@ You can create new Script Assets directly within the Editor:
 
 You can bring scripts into your PlayCanvas project from external sources:
 
-* **Importing .js Files from Your Computer:**
-    1. Locate the .js/.mjs file(s) on your computer's file system.
+* **Importing Scripts from Your Computer:**
+    1. Locate the `.js`/`.mjs` file(s) on your computer's file system.
     2. Drag the file(s) directly from your file explorer/finder into the desired folder in the PlayCanvas Editor's Asset Panel.
     3. The Editor will upload and process the script, making it available as a Script Asset.
-* **Importing from the PlayCanvas Asset Store:**
-    1. Open the Asset Store (usually accessible from a button in the Editor or via the project dashboard).
-    2. Browse or search for script packages or individual scripts.
-    3. Once you find a script/package you want, click to add it to your project.
-    4. The imported scripts will appear in your Asset Panel, often within a new folder named after the Asset Store package. These are now regular Script Assets you can manage and use.
+* **Importing Scripts from the PlayCanvas Asset Store:**
+    1. Open the [Asset Store](/user-manual/assets/asset-store/) (accessible via a button in the Asset Panel header).
+    2. Browse or apply the SCRIPT filter.
+    3. Once you find a script/package you want, click to view its details and select IMPORT.
+    4. The imported script(s) will appear in your Asset Panel, typically within a new folder named after the Asset Store package. These are now regular Script Assets you can manage and use.
 
 ## Assigning Scripts to Entities (via Script Components)
 
