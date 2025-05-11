@@ -18,7 +18,7 @@ As an Editor user, you benefit from a tightly integrated development environment
 
 This collection of pages will delve into the tools and techniques unique to scripting within the PlayCanvas Editor:
 
-* [Managing Scripts in the Editor](creating-scripts):
+* [Managing Scripts in the Editor](managing-scripts):
   * Creating, organizing, and deleting Script Assets in the Asset panel.
   * Understanding the connection between Script Assets (.js/.mjs files) and Script Components (instances on Entities).
   * Renaming and moving scripts, and how the Editor handles references.

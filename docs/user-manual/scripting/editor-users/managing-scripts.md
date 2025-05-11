@@ -1,5 +1,5 @@
 ---
-title: Creating Scripts
+title: Managing Your Scripts
 sidebar_position: 1
 ---
 
