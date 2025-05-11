@@ -33,6 +33,11 @@ const config = {
     locales: ['en', 'ja']
   },
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
   plugins: [
     [ '@docusaurus/plugin-client-redirects', {
       redirects: [
