@@ -110,6 +110,10 @@ MyScript.prototype.initialize = function() {
 * Useful for setup logic that depends on other scripts or Entities having already completed their own `initialize()` phase.
 * Helps avoid race conditions where one script tries to access another script's properties before that other script has set them up.
 
+:::warn
+Avoid using the constructor for startup logic — use initialize() instead. Execution order of constructors is not guaranteed.
+:::
+
 **Example:**
 
 <Tabs>
