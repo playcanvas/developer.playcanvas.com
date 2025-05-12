@@ -324,7 +324,9 @@ The three main lifecycle events are `enable`, `disable`, and `destroy`.
 
 ```javascript
 // Typically inside initialize()...
-this.on('enable', this.onEnable, this);
+this.on('enable', () => {
+    console.log('script enabled');
+});
 ```
 
 :::tip
@@ -354,7 +356,37 @@ If a script starts in an enabled state, the `enable` event fires during the init
 
 ```javascript
 // Typically inside initialize()...
-this.on('disable', this.onDisable, this);
+this.on('disable', () => {
+    console.log('script disabled');
+});
+```
+
+### `state` Event
+
+**When it's fired:**
+
+* Whenever a script instance's effective running state changes from enabled to disabled, or from disabled to enabled. This can happen due to:
+    * The `this.enabled` property of the script instance being changed programmatically.
+    * The `enabled` state of the parent Script Component changing.
+    * The `enabled` state of the script's parent Entity (or an ancestor Entity) changing.
+
+**Purpose:**
+
+* Provides a single callback to react to any change in the script's active status.
+* Useful when you need to perform an action regardless of whether the script just became enabled or disabled, often based on the new state itself.
+* Can sometimes simplify logic compared to handling [`enable`](#enable-event) and [`disable`](#disable-event) separately, if the required action is similar in both cases but depends on the resulting state.
+
+**Parameter:**
+
+* enabled (boolean): The new state of the script instance (`true` if it just became enabled, `false` if it just became disabled).
+
+**Subscribing:**
+
+```javascript
+// Typically inside initialize()...
+this.on('state', (enabled) => {
+    console.log(`script ${enabled ? 'enabled' : 'disabled'}`);
+});
 ```
 
 ### `destroy` Event
@@ -378,11 +410,19 @@ this.on('disable', this.onDisable, this);
 
 ```javascript
 // Typically inside initialize()...
-this.once('destroy', this.onDestroy, this);
+this.once('destroy', () => {
+    console.log('script destroyed');
+});
 ```
 
-:::tip
+:::tip[on vs once]
 
 It's common to use `this.once('destroy', ...)` because the `destroy` handler only needs to run once.
+
+:::
+
+:::important[unregister event handlers]
+
+If your script has used `on` or `once` to register any event handlers, remember to use `off` for those handlers in the `destroy` handler. Otherwise, the garbage collector may not be able to free up memory used by your script.
 
 :::
