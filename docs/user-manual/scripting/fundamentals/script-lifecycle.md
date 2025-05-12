@@ -28,6 +28,12 @@ graph TD
     end
 ```
 
+:::note[Execution Order]
+
+It's important to note that if an Entity has multiple scripts attached via its Script Component, the lifecycle methods (`initialize`, `postInitialize`, `update`, `postUpdate`) for those scripts will be called in the order they appear in the component's script list for that particular Entity. This order applies consistently frame-to-frame.
+
+:::
+
 ## Lifecycle Methods
 
 Let's break down each of the key lifecycle methods.
@@ -39,6 +45,8 @@ Let's break down each of the key lifecycle methods.
 * Once per script instance.
 * After the script instance is created and its Entity is enabled.
 * After all its Script Attributes have been parsed and assigned their initial values (either defaults or values set in the Editor).
+* Crucially, it's called after the application has loaded and the entity hierarchy is constructed, but before the first `update` loop or frame is rendered.
+* If an entity or script is disabled when the application starts, the `initialize` method will be called the first time the entity and script are both enabled.
 
 **Purpose:**
 
@@ -49,9 +57,15 @@ Let's break down each of the key lifecycle methods.
     * Creating any objects the script needs to manage internally.
     * Caching references to other Entities in the scene hierarchy.
     
-:::warn
+:::warning[Constructor vs initialize]
 
 Avoid using the `constructor` for startup logic — use `initialize()` instead. Execution order of `constructor`s is not guaranteed.
+
+:::
+
+:::info[Cloning Entities]
+
+When an entity is cloned using the `entity.clone()` method, the `initialize` method on its scripts is **not** called immediately. It will only be called when the cloned entity is subsequently added to the scene hierarchy (e.g., using `this.app.root.addChild(clonedEntity)`), provided both the cloned entity and the script instance itself are enabled at that time.
 
 :::
 
@@ -315,7 +329,7 @@ this.on('enable', this.onEnable, this);
 
 :::tip
 
-If a script starts in an enabled state, the `enable` event fires during the initialization phase. If you need to ensure certain setup from `onScriptEnabled` also runs if the script starts enabled, you can call the handler directly in `initialize` after subscribing, guarded by an `if (this.enabled)` check.
+If a script starts in an enabled state, the `enable` event fires during the initialization phase. If you need to ensure certain setup from `onEnable` also runs if the script starts enabled, you can call the handler directly in `initialize` after subscribing, guarded by an `if (this.enabled)` check.
 
 :::
 
