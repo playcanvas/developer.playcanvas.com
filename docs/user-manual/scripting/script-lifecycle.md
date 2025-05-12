@@ -111,6 +111,7 @@ MyScript.prototype.initialize = function() {
 * Helps avoid race conditions where one script tries to access another script's properties before that other script has set them up.
 
 :::warn
+
 Avoid using the `constructor` for startup logic — use `initialize()` instead. Execution order of `constructor`s is not guaranteed.
 
 :::
