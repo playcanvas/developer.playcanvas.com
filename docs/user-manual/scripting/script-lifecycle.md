@@ -112,6 +112,7 @@ MyScript.prototype.initialize = function() {
 
 :::warn
 Avoid using the `constructor` for startup logic — use `initialize()` instead. Execution order of `constructor`s is not guaranteed.
+
 :::
 
 **Example:**
