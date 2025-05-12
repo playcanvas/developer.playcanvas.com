@@ -44,8 +44,8 @@ Let's break down each of the key lifecycle methods.
 
 * This is your script's primary setup or "constructor-like" phase.
 * Ideal for:
-    * Subscribing to script lifecycle events.
-    * Registering DOM event handlers.
+    * Subscribing to script [lifecycle events](#lifecycle-events).
+    * Registering [DOM event](https://developer.mozilla.org/en-US/docs/Web/Events) handlers.
     * Creating any objects the script needs to manage internally.
     * Caching references to other Entities in the scene hierarchy.
 
