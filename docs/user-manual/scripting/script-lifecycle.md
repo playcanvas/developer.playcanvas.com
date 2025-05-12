@@ -48,6 +48,12 @@ Let's break down each of the key lifecycle methods.
     * Registering [DOM event](https://developer.mozilla.org/en-US/docs/Web/Events) handlers.
     * Creating any objects the script needs to manage internally.
     * Caching references to other Entities in the scene hierarchy.
+    
+:::warn
+
+Avoid using the `constructor` for startup logic — use `initialize()` instead. Execution order of `constructor`s is not guaranteed.
+
+:::
 
 **Example:**
 
