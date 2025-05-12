@@ -1,6 +1,6 @@
 ---
 title: Migration Guide
-sidebar_position: 11
+sidebar_position: 4
 unlisted: true
 ---
 
