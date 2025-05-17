@@ -3,11 +3,11 @@ title: Classic Reference
 sidebar_position: 2
 ---
 
-:::warning
+:::note
 
-**This documentation is for the Classic scripting system.**
+This page documents Script Attributes for the deprecated **Classic Scripts** system.
 
-See [**ESM Script Attributes**](../script-attributes.md) for the latest documentation.
+For **ESM Script Attributes**, click [here](../esm).
 
 :::
 

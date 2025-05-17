@@ -5,8 +5,9 @@ sidebar_position: 1
 
 :::note
 
-This is the documentation for the newer **ESM Script Attributes**.
-For **Classic Script Attributes** click [here](./classic/script-attributes.md)
+This page documents Script Attributes for the recommended **ESM Scripts** system.
+
+For **Classic Script Attributes**, click [here](../classic).
 
 :::
 
@@ -23,8 +24,9 @@ import { Script } from 'playcanvas';
 
 export class Rotator extends Script {
     /**
+     * You can now set the `speed`property dynamically in the editor.
+     *
      * @attribute
-     * You can now set the `speed`property dynamically in the editor
      */
     speed = 2;
 
