@@ -1,7 +1,13 @@
 ---
-title: Script Attributes
-sidebar_position: 5
+title: Script Attributes [Classic]
+tags: 
+    - Scripting
 ---
+:::warning
+**This documentation is for the Classic scripting system.**
+
+See [**ESM Script Attributes**](../script-attributes.md) for the latest documentation.
+:::
 
 Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
 
@@ -96,7 +102,6 @@ MyScript.prototype.initialize = function () {
     console.log('This is the texture asset', this.texture);
     console.log('This is the texture resource', this.texture.resource);
 };
-
 ```
 
 ### Color attribute
@@ -166,7 +171,7 @@ Here's an example of accessing the above attributes in a script:
 ```javascript
 MyScript.prototype.update = function (dt) {
     if (this.gameConfig.godMode) {
-        for (let i = 0; i < this.gameConfig.numEnemies; i++) {
+        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
             // ...
         }
     }
@@ -179,4 +184,4 @@ We currently do not support defining JSON attributes as children of other JSON a
 
 :::
 
-[3]: https://api.playcanvas.com/engine/classes/ScriptAttributes.html
+[3]: https://api.playcanvas.com/classes/Engine.ScriptAttributes.html

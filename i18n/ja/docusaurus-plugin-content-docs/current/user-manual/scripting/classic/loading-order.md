@@ -2,6 +2,11 @@
 title: Loading Order
 sidebar_position: 7
 ---
+:::warning
+**This documentation is for the Classic scripting system.**
+
+See [**Script Attributes**](../script-attributes.md) for the latest documentation.
+:::
 
 Generally all scripts are loaded at the beginning of your application. The loading order is determined by a setting in your project which you can access from the main Editor menu or Scene Settings
 
@@ -12,6 +17,10 @@ The loading order panel shows all your scripts that marked as `preload` and the 
 ![Loading Order List](/img/user-manual/scripting/loading-order-list.jpg)
 
 You can drag to move individual scripts around in order.
+
+:::info
+ESM Scripts do not have an explicit loading order, and should not be relied upon loading in a specific order. Instead you should use regular imports to declare dependencies between modules.
+:::
 
 When scripts are first loaded, they are immediately executed, that means that the scripts are first executed in the order that they are loaded. However, the loading order of the script **does not** effect the execution of order of script methods within script component. E.g. the initialize methods of scripts on the same entity are called in the order that they are listed on the Entity not the loading order.
 
