@@ -108,7 +108,6 @@ Currently, our uniform system supports only simple types, including `f32`, `i32`
 
 :::
 
-
 ### Texture resources
 
 Texture resources are using simplified WGSL syntax, where specifying a @group and @binding index for each resource has to be omitted.
@@ -169,6 +168,7 @@ Support for `texture_external` is not available yet, and will be added in the fu
 Storage buffers are GPU-accessible memory resources that allow shaders to read and write arbitrary data with random access. In WGSL, they are declared using `var<storage>` and are ideal for working with large or structured datasets such as particle systems, compute data, or dynamic geometry. Unlike uniforms, storage buffers support both read and write access (with appropriate access control).
 
 Example of using storage buffer in Vertex Shader:
+
 ```wgsl
 struct Particle {
     position: vec3f,
@@ -198,6 +198,7 @@ position: @builtin(position)
 ```
 
 Example:
+
 ```wgsl
 varying texCoord: vec2f;
 
@@ -220,6 +221,7 @@ sampleIndex: builtin(sample_index)      // sample index for MSAA
 ```
 
 These build-ins are also available in the global scope using these names:
+
 ```wgsl
 pcPosition
 pcFrontFacing
@@ -227,6 +229,7 @@ pcSampleIndex
 ```
 
 Example:
+
 ```wgsl
 varying texCoord: vec2f;
 
@@ -237,6 +240,7 @@ fn fragmentMain(input: FragmentInput) -> FragmentOutput {
     return output;
 }
 ```
+
 ### Fragment shader outputs
 
 The fragment shader is responsible for producing one or more color outputs, which are written to the render targets (color attachments) of the framebuffer.
@@ -250,6 +254,7 @@ fragDepth: @builtin(frag_depth)
 ```
 
 Example:
+
 ```wgsl
 @fragment fn fragmentMain(input: FragmentInput) -> FragmentOutput {
     var output: FragmentOutput;
